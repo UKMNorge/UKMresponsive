@@ -75,8 +75,12 @@
 	margin: 0 auto;
 }
 
-.btn-default {
-	background: #6dc6c1;
+#almostfooter {
+	text-align: center;
+}
+
+.center {
+	text-align: center;
 }
 
 
