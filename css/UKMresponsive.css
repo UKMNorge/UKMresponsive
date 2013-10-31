@@ -57,7 +57,13 @@
 	#logo img {
 		width: 100%;
 	}
-
+#menu {
+	margin: 0 0 20px 0;
+}
+#menu .btn-group {
+	display: block;
+	width: 100%;
+}
 	#menu ul {
 		text-align: center;
 		float: none;
