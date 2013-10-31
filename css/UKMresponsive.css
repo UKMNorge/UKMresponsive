@@ -39,6 +39,13 @@
 	}
 }
 
+/* NEWS */
+.news {
+	margin-top: 20px;
+}
+.news img {
+	width: 100%;
+}
 /* FRAME */
 #logo {
 	margin-bottom: 20px;
