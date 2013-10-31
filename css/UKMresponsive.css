@@ -70,6 +70,16 @@
 #top {
 	margin: 0 auto;
 }
+
+#content {
+	margin: 0 auto;
+}
+
+.btn-default {
+	background: #6dc6c1;
+}
+
+
 .test {
 	background: #d53b3b;
 	border: 1px solid black;
