@@ -8,7 +8,7 @@
 }
 
 #header {
-	margin: 20px auto 0 auto;
+	margin: 20px auto 20px auto;
 	border-bottom: 1px solid #ddd;
 }
 
@@ -60,19 +60,15 @@
 	#logo img {
 		width: 100%;
 	}
-#menu {
-	margin: 0 0 20px 0;
+#menu-xs {
+	margin: 5% 0 0 0;
 }
-#menu .btn-group {
-	display: block;
-	width: 100%;
+#menu ul {
+	text-align: center;
+	float: none;
+	border: none;
+	margin: 0 auto;
 }
-	#menu ul {
-		text-align: center;
-		float: none;
-		border: none;
-		margin: 0 auto;
-	}
 	#menu ul li {
 		background: #6dc6c1;
 		border-radius: 5px 5px 0 0;
