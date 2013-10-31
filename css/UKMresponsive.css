@@ -47,6 +47,9 @@
 .news {
 	margin-top: 20px;
 }
+.news h2 {
+	margin-top: 0px;
+}
 .news img {
 	width: 100%;
 }
@@ -124,6 +127,10 @@
  	font-weight: bold;
 }
 
+/* FOOTER */
+#footer {
+	margin-bottom: 30px;
+}
 #footer a {
 	color: #1e4a45;	
 }
