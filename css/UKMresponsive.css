@@ -72,15 +72,22 @@
 	#menu ul li {
 		background: #6dc6c1;
 		border-radius: 5px 5px 0 0;
+		border: none;
 		margin: 0 2px;
+	}
+	#menu ul li a {
+		background: #6dc6c1;
+		border: 1px solid #6dc6c1;
+		border-bottom: none;
 	}
 	#menu ul li a, a:hover, a:visited {
 		color: #000;
 	}
 	#menu ul li a:hover {
 		background: #fff7e1;
-		border-radius: 5px 5px 0 0;
-		margin: 0 2px;
+		border: 1px solid #6dc6c1;
+		border-bottom: none;
+		width: 100%;
 	}
 	
 #top {
