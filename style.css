@@ -1,6 +1,11 @@
-/*!
-	* UKM Responsive CSS
-	* 2013
+/*
+Theme Name: UKM Responsive
+Theme URI: https://github.com/UKMNorge/UKMresponsive
+Description: 
+Version: 0.1
+Tags: one-column, white
+Author: UKM Norge / Marius Mandal + UKM Norge developers
+Author URI: https://github.com/UKMNorge?tab=members
 */
 
 #body {
@@ -146,4 +151,24 @@
 .test {
 	background: #d53b3b;
 	border: 1px solid black;
+}
+
+
+/* SINGLE POST */
+.post_image {
+	width: 100%;
+	padding: 0px;
+	padding-top: 60%;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.post_image .data {
+	height: 6%;
+	background: #fff;
+	width: 100%;
+	margin: 0px;
+	padding: 1%;
+	background: rgba(255, 255, 255, 0.8);	
 }
