@@ -23,43 +23,13 @@
 
     
     {# Byline #}
-    <div class="byline">
-        <span>FIMRANAVN!</span> <!-- TODO: få dette fra kontroller -->
-        {{post.author.display_name}}
+    <div class="post_byline">
+        <span>{{post.author.company_name}}</span> 
+        <span>{{post.author.display_name}}</span>
+        <span>{{post.author.user_email}}</span>
+        <span>{{post.author.facebook_url}}</span>
     </div>
 
 {{dump(page)|raw}}
 {% endblock %}
 
-
-{#
-
-{% extends "layout.twig.html" %}
-
-{% block content %}
-<article>
-        <div class="post">
-                <h1>{{post.title|raw}}</h1>
-                <div class="infos">
-                        <div class="date">
-                                <i class="li_calendar"></i>
-                                <span class="timeago" title="{{post.date|date('Y-m-d H:i')}}">{{post.date|date('d.m.Y H:i')}}</span>
-                        </div>
-                        <div class="categories">
-                                <i class="li_tag"></i>
-                                {% for category in post.categories %}
-                                        <a href="{{category.url}}">{{category.name}}</a>
-                                        {% if loop.last != true %}, {% endif %}
-                                {% endfor %}
-                        </div>
-                        <div class="clearfix"></div>
-                </div>
-                <p class="lead">{{post.excerpt}}</p>
-                {{post.content|raw}}
-        </div>
-</article>
-
-{% embed "comments.twig.html" %}{% endembed %}
-{% endblock %}
-
-#}

@@ -3,4 +3,7 @@
 the_post();
 $DATA['post'] = new WPOO_Post( $post );
 
-// TODO: Definere "firmanavn" for author
+/* TODO: Definere:
+    post.author.company_name
+    post.author.facebook_url
+*/
