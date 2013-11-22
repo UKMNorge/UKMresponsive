@@ -39,7 +39,7 @@ class DinMonstringController {
                  'INNER JOIN zip_places ON zip_places.municipal_id = municipal.municipal_id' .
                  'WHERE place_id = "#placeId"';
                  
-        $sql = new SQL($query, array('placeId' => $placeId);
+        $sql = new SQL($query, array('placeId' => $placeId));
         
         $result = $sql->run('field', 'municipal.municipal_id');
         
@@ -80,6 +80,7 @@ class DinMonstringController {
 if(isset($_GET['lat']) && isset($_GET['lng'])) {
     
     // Decide where to redirect
+    
     $controller = new DinMonstringController($_GET['lat'], $_GET['lng']);
     
     try {
@@ -95,6 +96,6 @@ if(isset($_GET['lat']) && isset($_GET['lng'])) {
 }
 // Render view for map
 else {
-    // IF NOT DESKTOP
+    // @TODO: ADD CHECK FOR IF NOT DESKTOP
     $DATA['findme'] = true;
 }
