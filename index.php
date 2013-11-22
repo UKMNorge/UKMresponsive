@@ -44,7 +44,7 @@ ini_set('display_errors',1);
 		$VIEW = 'homepage';
 	} elseif( is_page() ) {
 		
-		$viseng = get_post_meta($post->ID, 'UKMviseng', true)
+		$viseng = get_post_meta($post->ID, 'UKMviseng', true);
 		switch ( $viseng ) {
 			case 'dinmonstring':
 				require_once('controller/view/dinmonstring.controller.php');
