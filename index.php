@@ -18,7 +18,7 @@ ini_set('display_errors',1);
 **********************************/
 	$DATA = array();
 	$DATA['url']['base']		= 'http://'. $_SERVER['HTTP_HOST'];
-	$DATA['url']['theme_dir'] 	= get_stylesheet_directory_uri();
+	$DATA['url']['theme_dir'] 	= get_stylesheet_directory_uri().'/';
 	$DATA['url']['blog']		= get_option('site_url');
 	$DATA['url']['current']		= get_permalink();
 

@@ -8,14 +8,7 @@ Author: UKM Norge / Marius Mandal + UKM Norge developers
 Author URI: https://github.com/UKMNorge?tab=members
 */
 
-#body {
-	margin: 0;
-}
-
-#header {
-	margin: 20px auto 20px auto;
-	border-bottom: 1px solid #ddd;
-}
+@import "css/base.less";
 
 /* MENU ELEMENTS */
 .menuElm {

@@ -1,17 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-  	<title>{% if page.title is empty %}UKM.no - Ungdommens kulturmønstring{% else %}{{page.title}}{% endif %}</title>
-    <meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	<head>
+		<meta charset="utf-8">
+		<title>{% if page.title is empty %}UKM.no - Ungdommens kulturmønstring{% else %}{{page.title}}{% endif %}</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="description" content="{{ post.lead }}">
+		<meta name="author" content="{{ post.author.display_name }}">
 
-	<link href="{{url.theme_dir}}/vendor/bootstrap/3.0.1/css/bootstrap.min.css" rel="stylesheet">
+		<link rel="canonical" href="{{post.url}}" />
+		<meta property="og:title" content="{{post.title}}"/>
+		<meta property="og:type" content="article" />
+		<meta property="og:image" content="{{post.image.url}}" />
+		<meta property="og:url" content="{{post.url}}" />
+		<meta property="og:site_name" content="{{site.name}}" />
+		<meta property="fb:admins" content="597605662" />
 
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script src="{{url.theme_dir}}/vendor/bootstrap/3.0.1/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600,700' type='text/css'>
+		
+		<link href="{{url.theme_dir}}/vendor/bootstrap/3.0.1/css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="{{ url.theme_dir }}css/jquery.pageslide.css">
+		<link rel="stylesheet" href="{{ url.theme_dir}}css/linecons/style.css" />
+
+		<link href="{{ url.theme_dir }}style.css" rel="stylesheet/less">
 	
-	<link  href="{{url.theme_dir}}/style.css" rel="stylesheet">
-  </head>
+		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script type="text/javascript" src="{{ url.theme_dir }}js/jquery.timeago.js"></script>
+		<script type="text/javascript" src="{{ url.theme_dir }}js/jquery.autogrow.js"></script>
+	    <script type="text/javascript" src='https://www.google.com/jsapi'></script>
+		<script src="{{url.theme_dir}}/vendor/bootstrap/3.0.1/js/bootstrap.min.js"></script>
+		{#  !!! DEVELOPMENT SETTING !!!! #}
+			<script>var less=less||{};less.env='development';</script>
+		{#  !!! DEVELOPMENT SETTING !!!! #}
+		<script type="text/javascript" src="{{ url.theme_dir }}js/less.min.js"></script>
+
+		{# IVIEW #}
+		<link rel="stylesheet" href="{{ url.theme_dir }}css/iview/iview.css" />
+		<link rel="stylesheet" href="{{ url.theme_dir }}css/iview/skin4/style.css" />
+		<script type="text/javascript" src="{{ url.theme_dir }}js/iview/raphael-min.js"></script>
+		<script type="text/javascript" src="{{ url.theme_dir }}js/iview/jquery.easing.js"></script>
+		<script type="text/javascript" src="{{ url.theme_dir }}js/iview/iview.js"></script>
+
+	</head>
+
   
   <body>
   {% embed "nav_top.twig.html" %}{% endembed %}
