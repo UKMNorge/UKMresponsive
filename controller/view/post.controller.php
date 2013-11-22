@@ -1,4 +1,6 @@
 <?php
 // LOAD PAGE DATA
 the_post();
-$DATA['page'] = new WPOO_Post( $post );
+$DATA['post'] = new WPOO_Post( $post );
+
+// TODO: Definere "firmanavn" for author
