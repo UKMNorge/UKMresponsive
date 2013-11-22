@@ -13,7 +13,12 @@
 
 
 
-
+function add_remove_contactmethods( $contactmethods ) {
+    $contactmethods['facebook'] = 'Facebook';
+	$contactmethods['Title'] = 'Tittel';
+    return $contactmethods;
+}
+add_filter('user_contactmethods','add_remove_contactmethods',10,1);
 
 
 
