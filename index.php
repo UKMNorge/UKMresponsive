@@ -33,18 +33,22 @@ ini_set('display_errors',1);
 * SWITCH VIEW
 **********************************/
 	if( is_archive() ) {
+		require_once('controller/view/archive.controller.php');
+		$VIEW = 'archive';
 	} elseif( is_single() ) {
 		require_once('controller/view/post.controller.php');
+		require_once('controller/element/comments.controller.php');
 		$VIEW = 'post';
 	} elseif( is_front_page() ) {
 		require_once('controller/view/homepage.controller.php');
 		$VIEW = 'homepage';
 	} elseif( is_page() ) {
+		require_once('controller/post.controller.php');
+		$VIEW = 'page';
 	} else {
 		require_once('controller/view/404.controller.php');
 		$VIEW = '404';
 	}
-
 
 echo TWIGrender('view/'.$VIEW, object_to_array($DATA),true);
 die();
