@@ -43,7 +43,7 @@ ini_set('display_errors',1);
 		require_once('controller/view/homepage.controller.php');
 		$VIEW = 'homepage';
 	} elseif( is_page() ) {
-		require_once('controller/post.controller.php');
+		require_once('controller/view/post.controller.php');
 		$VIEW = 'page';
 	} else {
 		require_once('controller/view/404.controller.php');
