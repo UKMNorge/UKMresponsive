@@ -26,10 +26,13 @@
     <div class="post_byline">
         <span>{{post.author.company_name}}</span> 
         <span>{{post.author.display_name}}</span>
-        <span>{{post.author.user_email}}</span>
-        <span>{{post.author.facebook_url}}</span>
+        <span>
+            <span class="glyphicon glyphicon-envelope"></span>
+            <a href="mailto:{{post.author.user_email}}">e-post</a>
+        </span>
+        <span><a href="{{post.author.facebook_url}}">Facebook</a></span>
     </div>
 
-{{dump(page)|raw}}
+{{dump(post.author)|raw}}
 {% endblock %}
 
