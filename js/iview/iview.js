@@ -1746,3 +1746,21 @@
 	});
 
 })(jQuery, this);
+
+jQuery(document).ready(function(){
+	jQuery('#iview').iView({
+		pauseTime: 2750,
+		pauseOnHover: true,
+		directionNavHoverOpacity: 0,
+		timerPadding: 0,
+		timerStroke: 7,
+		timerBarStroke: 0,
+		timerColor: "#ccc",
+		timerPosition: "bottom-right",
+		directionNav: true,
+		controlNav: true,
+	});
+	jQuery('div.wp-caption, iframe, img').attr('style', 'max-width: 100%');
+	
+	jQuery('textarea').autogrow();
+});

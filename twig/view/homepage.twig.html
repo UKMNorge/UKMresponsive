@@ -2,7 +2,9 @@
 
 {% block content %}
 	<div class="row">
-		{% embed "element/slider.twig.html" %}{% endembed %}
+	<div id="slider" class="col-xs-12 col-md-7">
+		{% embed "./element/slider/ungdom.twig.html" %}{% endembed %}
+	</div>
 		<div id="infosquare" class="col-xs-12 col-md-5">
 			<div class="row">
 				{% for nav in page_nav %}

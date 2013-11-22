@@ -5,17 +5,17 @@
 
 #iview {
 	display: block;
-	max-width: 960px;
-	min-width: 300px;
+	width: 100%;
+	max-height: 550px;
 	background: #000;
 	background: rgba(0, 0, 0, 0.7);
 	padding: 0px;
 	border-radius: 5px;
 	position: relative;
-	-webkit-box-shadow: 0 28px 20px -18px rgba(0, 0, 0, 0.5);
-	-moz-box-shadow: 0 28px 20px -18px rgba(0, 0, 0, 0.5);
-	box-shadow: 0 28px 20px -18px rgba(0, 0, 0, 0.5);
-	margin: 40px auto;
+	-webkit-box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.5);
+	box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
+	margin: none;
 	overflow: hidden;
 }
 
@@ -43,7 +43,7 @@
 	position: absolute;
 	width: 27px;
 	height: 27px;
-	background-image: url(../../img/bg_direction_nav.png);
+	background-image: url('../../../img/iview/bg_direction_nav_white.png');
 	text-indent: -9999px;
 	-webkit-transition: left 0.3s ease-in-out;
 	-webkit-transition-property: left,right;
