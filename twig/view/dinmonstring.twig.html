@@ -2,6 +2,17 @@
 
 {% block content %}
 	{% if findme is defined %}
+    	<script>
+    		navigator.geolocation.getCurrentPosition(
+    			function(pos) {
+    				window.location = '?lat='+pos.coords.latitude + 
+    								'&lng=' + pos.coords.longitude;
+    			},
+    			function(){
+    				window.location = 'http://ukm.no/din_monstring/';
+    			}
+    		);
+    	</script>
 		<div class="alert alert-info hidden-lg">Tillat å dele din posisjon med UKM.no, så kan vi finne din nærmeste mønstring</div>
 	{% endif %}
 	
