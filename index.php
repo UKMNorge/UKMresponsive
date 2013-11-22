@@ -40,8 +40,13 @@ ini_set('display_errors',1);
 		require_once('controller/element/comments.controller.php');
 		$VIEW = 'post';
 	} elseif( is_front_page() ) {
-		require_once('controller/view/homepage.controller.php');
-		$VIEW = 'homepage';
+		if( get_option('site_type') == 'fylke' ) {
+			require_once('controller/view/fylke.controller.php');
+			$VIEW = 'fylke';
+		} else {
+			require_once('controller/view/homepage.controller.php');
+			$VIEW = 'homepage';
+		}
 	} elseif( is_page() ) {
 		
 		$viseng = get_post_meta($post->ID, 'UKMviseng', true);
