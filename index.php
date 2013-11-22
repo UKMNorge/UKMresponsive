@@ -43,8 +43,18 @@ ini_set('display_errors',1);
 		require_once('controller/view/homepage.controller.php');
 		$VIEW = 'homepage';
 	} elseif( is_page() ) {
-		require_once('controller/view/post.controller.php');
-		$VIEW = 'page';
+		
+		$viseng = get_post_meta($post->ID, 'UKMviseng', true)
+		switch ( $viseng ) {
+			case 'dinmonstring':
+				require_once('controller/view/dinmonstring.controller.php');
+				$VIEW = 'dinmonstring';
+				break;
+			default:
+				require_once('controller/view/post.controller.php');
+				$VIEW = 'page';
+				break;
+		}
 	} else {
 		require_once('controller/view/404.controller.php');
 		$VIEW = '404';
