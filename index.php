@@ -98,4 +98,5 @@ ini_set('display_errors',1);
 	}
 
 echo TWIGrender('view/'.$VIEW, object_to_array($DATA),true);
+wp_footer();
 die();
