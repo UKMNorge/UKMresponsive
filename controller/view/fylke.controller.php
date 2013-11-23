@@ -73,6 +73,9 @@ if( time() > $siste_pamelding && time() < $siste ) {
 	$VIEW = 'fylke_post';
 }
 
+// DEBUG
+$VIEW = 'fylke_pre_fylke';
+
 // PAGE NAV
 $DATA['page_nav'][] = (object) array( 'url' 			=> '#',
 									   'title'		 	=> 'Program',

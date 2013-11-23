@@ -2,20 +2,47 @@
 
 {% block content %}
     <h1>Fylkesside</h1>
+
+    <div class="col-xs-12 col-md-5 pull-right">
+        <div>
+            {% embed "element/fylke/monstring_beskrivelse.twig.html" %}
+            {% endembed %}
+        </div>
     
-    {% embed "element/fylke/monstring_beskrivelse.twig.html" %}
-    {% endembed %}
+        <div>
+            {% embed "element/fylke/monstring_navigasjon.twig.html" %}
+            {% endembed %}
+        </div>
+    </div>
 
-    {% embed "element/fylke/monstring_navigasjon.twig.html" %}
-    {% endembed %}
+    <div class="col-xs-12 col-md-7">
+        {% embed "element/fylke/monstring_hovedartikkel.twig.html" %}
+        {% endembed %}
+    </div>
 
-    {% embed "element/fylke/monstring_hovedartikkel.twig.html" %}
-    {% endembed %}
+    <div class="col-xs-12 col-md-5 pull-right">
+        
+        
+        
+        <div class="hidden-lg">
+            <h3>Lokalmønstringer</h3>
+            <button class="btn btn-medium btn-primary toggle" data-action="show" data-toggle="#lokalmonstringer_slide">Vis lokalmønstringer</button>
+            <div style="display:none" id="lokalmonstringer_slide">
+                {% embed "element/fylke/lokalmonstring.twig.html" %}
+                {% endembed %}
+            </div>
+        </div>
+        
+        <div class="visible-lg" style="display:none">
+            {% embed "element/fylke/lokalmonstring.twig.html" %}
+            {% endembed %}
+        </div>
+    </div>
+        
+    <div class="col-xs-12 col-md-7">
+        {% embed "element/fylke/monstring_flere_artikler.twig.html" %}
+        {% endembed %}
+    </div>
 
-    {% embed "element/fylke/lokalmonstring.twig.html" %}
-    {% endembed %}
-
-    {% embed "element/fylke/monstring_flere_artikler.twig.html" %}
-    {% endembed %}
 
 {% endblock %}
