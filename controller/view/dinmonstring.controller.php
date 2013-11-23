@@ -6,12 +6,33 @@ require_once('UKM/sql.class.php');
  */
 class DinMonstringController {
     
-    public $lat;
-    public $lng;
+    public $lat = 0;
+    public $lng = 0;
     
-    public function __construct($lat, $lng) {
-        $this->lat = floatval($lat);
-        $this->lng = floatval($lng);
+    public function __construct() {
+        if(isset($_GET['lat']) && isset($_GET['lng'])) {
+            $this->lat = floatval($_GET['lat']);
+            $this->lng = floatval($_GET['lng']);
+        }
+    }
+    
+    public function renderAction()
+    {
+        if($this->lat > 0 && $this->lng > 0) {
+            try {
+                $placeId = $this->getPlaceId();
+                $municipalId = $this->getMunicipalId($placeId);
+                $plId = $this->getPlId($municipalId);
+            }
+            catch(Exception $e) {
+                $this->redirect('http://ukm.no/din_monstring/');
+            }
+
+            $this->redirect('http://ukm.no/pl' . $plId . '/');  
+        }
+        // @TODO: ADD CHECK FOR IF NOT DESKTOP
+        $data['findme'] = true;
+        return $data;
     }
     
     public function getPlaceId()
@@ -27,7 +48,7 @@ class DinMonstringController {
         $result = $sql->run('field', 'place_id');
 
         if(!$result) {
-            throw new \Exception('Could not fetch place_id');
+            throw new Exception('Could not fetch place_id');
         }
         
         return $result;
@@ -44,7 +65,7 @@ class DinMonstringController {
         $result = $sql->run('field', 'municipal.municipal_id');
         
         if(!$result) {
-            throw new \Exception('Could not fetch municipal_id');
+            throw new Exception('Could not fetch municipal_id');
         }
         
         return $result;
@@ -62,7 +83,7 @@ class DinMonstringController {
         $result = $sql->run('field', 'pl_id');   
         
         if(!$result) {
-            throw new \Exception('Could not fetch pl_id');
+            throw new Exception('Could not fetch pl_id');
         }
         
         return $result;      
@@ -75,27 +96,5 @@ class DinMonstringController {
     }
 }
 
-
-// Check if lat & lng is set
-if(isset($_GET['lat']) && isset($_GET['lng'])) {
-    
-    // Decide where to redirect
-    
-    $controller = new DinMonstringController($_GET['lat'], $_GET['lng']);
-    
-    try {
-        $placeId = $controller->getPlaceId();
-        $municipalId = $controller->getMunicipalId($placeId);
-        $plId = $controller->getPlId($municipalId);
-    }
-    catch(\Exception $e) {
-        $controller->redirect('http://ukm.no/din_monstring/');
-    }
-    
-    $controller->redirect('http://ukm.no/pl' . $plId . '/');
-}
-// Render view for map
-else {
-    // @TODO: ADD CHECK FOR IF NOT DESKTOP
-    $DATA['findme'] = true;
-}
+$controller = new DinMonstringController();
+$DATA = array_merge($DATA, $controller->renderAction());
