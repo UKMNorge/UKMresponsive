@@ -1,4 +1,4 @@
-{% extends "view/fylke_pre_fylke.twig.html" %}
+{% extends "view/fylke_pre.twig.html" %}
 
 {% block content %}
     <h1>Fylkesside</h1>
@@ -9,13 +9,13 @@
         </div>
     
         <div>
-            {% embed "element/fylke/monstring_navigasjon.twig.html" %}
+            {% embed "element/monstring/monstring_navigasjon.twig.html" %}
             {% endembed %}
         </div>
     </div>
 
     <div class="col-xs-12 col-md-7">
-        {% embed "element/fylke/monstring_hovedartikkel.twig.html" %}
+        {% embed "element/monstring/monstring_hovedartikkel.twig.html" %}
         {% endembed %}
     </div>
 
@@ -26,14 +26,14 @@
             <button class="btn btn-medium btn-primary toggle" data-action="show" data-toggle="#lokalmonstringer_slide">Vis lokalmønstringer</button>
         </div>
         <div class="visible-lg visible-md" style="display:none" id="lokalmonstringer_slide">
-            {% embed "element/fylke/lokalmonstring.twig.html" %}
+            {% embed "element/monstring/lokalmonstringer_liste.twig.html" %}
             {% endembed %}
         </div>
     </div>
     <div class="visible-xs visible-sm clearfix"></div>
         
     <div class="col-xs-12 col-md-7">
-        {% embed "element/fylke/monstring_flere_artikler.twig.html" %}
+        {% embed "element/monstring/monstring_flere_artikler.twig.html" %}
         {% endembed %}
     </div>
 
