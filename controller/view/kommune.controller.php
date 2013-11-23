@@ -22,19 +22,21 @@ $DATA['kommune'] = get_option('kommune');
         $monstring->starter = $pl->get('pl_start');
         $monstring->slutter = $pl->get('pl_stop');
         $monstring->sted = $pl->get('pl_place');
+        $monstring->frist_1 = $pl->frist(1);
+        $monstring->frist_2 = $pl->frist(2);
         $DATA['monstring'] = $monstring;
 
 // HVILKEN PERIODE ER KOMMUNESIDEN I?      
-        if (!$m->registered())
+        if (!$pl->registered())
             $VIEW = 'kommune_ikke_klar';
 
         else {
             $utenforsesong = mktime(0,0,0,12,1,get_option('season')-1)>time();
             if ($utenforsesong) {
                 $VIEW = 'kommune_pre_lokal';
-            } else if ( time() < $m->frist()) {
+            } else if ( time() < $pl->frist()) {
                 $VIEW = 'kommune_lokal';
-            } elseif( time() > $m->frist() && time() < $pl->get('pl_start') ) {
+            } elseif( time() > $pl->frist() && time() < $pl->get('pl_start') ) {
                 $VIEW = 'kommune_pre';
             } elseif( time() > $pl->get('pl_start') && time() < $pl->get('pl_stop') ) {
                 $VIEW = 'kommune';
@@ -43,7 +45,7 @@ $DATA['kommune'] = get_option('kommune');
             }
         }
         
-        $DATA = array_merge($monstring->pameldingsikoner());
+        $DATA = array_merge($DATA, $pl->pameldingsikoner());
 
 // PAGE NAV
         $DATA['page_nav'][] = (object) array( 'url' => '#',

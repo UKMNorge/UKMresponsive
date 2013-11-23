@@ -53,7 +53,10 @@ ini_set('display_errors',1);
 		} elseif( get_option('site_type') == 'fylke' ) {
             $VIEW = 'fylke';
 			require_once('controller/view/fylke.controller.php');
-		} else {
+		} elseif( get_option('site_type') == 'kommune' ) {
+            $VIEW = 'kommune';
+			require_once('controller/view/kommune.controller.php');
+                } else {
 			require_once('controller/view/homepage.controller.php');
 			$VIEW = 'homepage';
 		}
