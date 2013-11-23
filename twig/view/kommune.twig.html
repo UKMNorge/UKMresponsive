@@ -4,8 +4,15 @@
     <h1>Lokalmønstring</h1>
     
     <div class="col-xs-12 col-md-5 pull-right">
-        {% embed "element/monstring/monstring_navigasjon.twig.html" %}
-        {% endembed %}
+        <div>
+            {% embed "element/monstring/monstring_beskrivelse.twig.html" with {"time_verb":"er"} %}
+            {% endembed %}
+        </div>
+    
+        <div>
+            {% embed "element/monstring/monstring_navigasjon.twig.html" %}
+            {% endembed %}
+        </div>
     </div>
     
     <div class="col-xs-12 col-md-7">

@@ -51,9 +51,9 @@ $DATA['kommune'] = get_option('kommune');
         else {
             $utenforsesong = mktime(0,0,0,12,1,get_option('season')-1)>time();
             if ($utenforsesong) {
-                $VIEW = 'kommune_pre_lokal';
+                $VIEW = 'kommune_pre_lokal'; // USELESS!!
             } else if ( time() < $pl->frist()) {
-                $VIEW = 'kommune_lokal';
+                $VIEW = 'kommune_lokal'; // USELESS!!
             } elseif( time() > $pl->frist() && time() < $pl->get('pl_start') ) {
                 $VIEW = 'kommune_pre';
             } elseif( time() > $pl->get('pl_start') && time() < $pl->get('pl_stop') ) {
@@ -64,7 +64,7 @@ $DATA['kommune'] = get_option('kommune');
         }
         
 // DEBUG
-$VIEW = 'kommune_pre';
+$VIEW = 'kommune';
 
         $DATA = array_merge($DATA, $pl->pameldingsikoner());
 

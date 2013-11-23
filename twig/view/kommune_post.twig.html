@@ -1,11 +1,25 @@
-{% extends "view/fylke_pre.twig.html" %}
+{% extends "layout.twig.html" %}
 
 {% block content %}
-    <h1>Fylkesside</h1>
+    <script type="text/javascript" src="{{ url.theme_dir }}js/lokalside_pamelding.js"></script>
+    
+    {% if monstring.kommuner|length > 1 %}
+        <h1>Lokalside for 
+            {% for kommune in monstring.kommuner %} 
+                {% if loop.first %} {{ kommune.name }}
+                {% elseif not loop.last %}, {{ kommune.name }}
+                {% else %} og {{ kommune.name }}
+                {% endif %} 
+            {% endfor %}
+        </h1>
+    {% else %}
+        <h1>Lokalside for {{ monstring.kommuner[0].name }}</h1>
+    {% endif %}
 
     <div class="col-xs-12 col-md-5 pull-right">
         <div>
-            <p>Fylkesmønstringen var fra {{monstring.starter | date("D j. F")}} til {{monstring.slutter | date("D j. F")}} i {{monstring.sted}}</p>
+            {% embed "element/monstring/monstring_beskrivelse.twig.html" with {"time_verb":"var"} %}
+            {% endembed %}
         </div>
     
         <div>
@@ -19,9 +33,18 @@
         {% endembed %}
     </div>
 
-    <div class="col-xs-12 col-md-5 pull-right">
-        <h3>Kategorier</h3>
+
+    {# contact #}
+    <div class="col-xs-12 col-md-5">
+        {% for kontakt in monstring.kontaktpersoner %}
+            
+            {% embed "element/monstring/kontaktperson.twig.html" with kontakt.info %}
+            {% endembed %}
+        
+        {% endfor %}
+        
     </div>
+
     <div class="visible-xs visible-sm clearfix"></div>
         
     <div class="col-xs-12 col-md-7">
@@ -31,3 +54,4 @@
 
 
 {% endblock %}
+
