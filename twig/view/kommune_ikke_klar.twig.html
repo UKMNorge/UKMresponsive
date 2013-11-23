@@ -1,12 +1,12 @@
 {% extends "layout.twig.html" %}
 
 {% block content %}
-    <h1>Lokalside</h1>
+    
 
     <div class="col-xs-12 col-md-5 pull-right">
-        <div>
-            <p>Lokalmønstringen er ikke klargjort av kommunekontakt</p>
-        </div>
+        <h1>Lokalside</h1>
+        <p>Lokalmønstringen er ikke klargjort av kommunekontakt</p>
+        
     </div>
 
     <div class="col-xs-12 col-md-7">
@@ -17,10 +17,17 @@
     <div class="col-xs-12 col-md-5 pull-right">
         
         <h3>Kategorier</h3>
+        
+        <ul>
+        {% for ikon in ikoner_tittel %}
+            <li>{{ ikon.name }}</li>
+        {% endfor %}
+        </ul>
+            
     </div>
     <div class="visible-xs visible-sm clearfix"></div>
         
-    <div class="col-xs-12 col-md-7">
+    <div class="col-xs-12 col-md-12">
         {% embed "element/monstring/monstring_flere_artikler.twig.html" %}
         {% endembed %}
     </div>
