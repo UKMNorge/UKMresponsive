@@ -33,50 +33,56 @@ ini_set('display_errors',1);
 /**********************************
 * SWITCH VIEW
 **********************************/
-	if( is_archive() ) {
-	    require_once('controller/view/archive.controller.php');
-		if(is_author()) {
-    		require_once('controller/view/author.controller.php');
-    		$VIEW = 'author';
-		}
-		else {
-    		$VIEW = 'archive';
-        }
-	} elseif( is_single() ) {
-		require_once('controller/view/post.controller.php');
-		require_once('controller/element/comments.controller.php');
-		$VIEW = 'post';
-	} elseif( is_front_page() ) {
-		if( get_option('ukm_top_page') == 'internasjonalt' ) {
-			require_once('controller/view/homepage.controller.php');
-			$VIEW = 'homepage_internasjonalt';	
-		} elseif( get_option('site_type') == 'fylke' ) {
-            $VIEW = 'fylke';
-			require_once('controller/view/fylke.controller.php');
-		} elseif( get_option('site_type') == 'kommune' ) {
-            $VIEW = 'kommune';
-			require_once('controller/view/kommune.controller.php');
-                } else {
-			require_once('controller/view/homepage.controller.php');
-			$VIEW = 'homepage';
-		}
-	} elseif( is_page() ) {
-		
-		$viseng = get_post_meta($post->ID, 'UKMviseng', true);
-		switch ( $viseng ) {
-			case 'dinmonstring':
-				require_once('controller/view/dinmonstring.controller.php');
-				$VIEW = 'dinmonstring';
-				break;
-			default:
-				require_once('controller/view/post.controller.php');
-				$VIEW = 'page';
-				break;
-		}
-	} else {
-		require_once('controller/view/404.controller.php');
-		$VIEW = '404';
+	if( get_option('ukm_top_page' == 'arrangor') ) {
+        require_once('controller/view/arrangorlogon.controller.php');
+        $VIEW = 'arrangorlogon';  
 	}
+	else {
+    	if( is_archive() ) {
+    	    require_once('controller/view/archive.controller.php');
+    		if(is_author()) {
+        		require_once('controller/view/author.controller.php');
+        		$VIEW = 'author';
+    		}
+    		else {
+        		$VIEW = 'archive';
+            }
+    	} elseif( is_single() ) {
+    		require_once('controller/view/post.controller.php');
+    		require_once('controller/element/comments.controller.php');
+    		$VIEW = 'post';
+    	} elseif( is_front_page() ) {
+    		if( get_option('ukm_top_page') == 'internasjonalt' ) {
+    			require_once('controller/view/homepage.controller.php');
+    			$VIEW = 'homepage_internasjonalt';      
+    		} elseif( get_option('site_type') == 'fylke' ) {
+                $VIEW = 'fylke';
+    			require_once('controller/view/fylke.controller.php');
+    		} elseif( get_option('site_type') == 'kommune' ) {
+                $VIEW = 'kommune';
+    			require_once('controller/view/kommune.controller.php');
+                    } else {
+    			require_once('controller/view/homepage.controller.php');
+    			$VIEW = 'homepage';
+    		}
+    	} elseif( is_page() ) {
+    		
+    		$viseng = get_post_meta($post->ID, 'UKMviseng', true);
+    		switch ( $viseng ) {
+    			case 'dinmonstring':
+    				require_once('controller/view/dinmonstring.controller.php');
+    				$VIEW = 'dinmonstring';
+    				break;
+    			default:
+    				require_once('controller/view/post.controller.php');
+    				$VIEW = 'page';
+    				break;
+    		}
+    	} else {
+    		require_once('controller/view/404.controller.php');
+    		$VIEW = '404';
+    	}
+    }
 
 echo TWIGrender('view/'.$VIEW, object_to_array($DATA),true);
 die();
