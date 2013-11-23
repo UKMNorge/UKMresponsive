@@ -25,10 +25,16 @@
     </div>
     <div class="visible-xs visible-sm hidden-md hidden-lg clearfix"></div>
         
-    <div class="col-xs-12 col-md-7 md-pull-left">
-        {% embed "element/monstring/monstring_flere_artikler.twig.html" %}
-        {% endembed %}
-    </div>
+	<div class="col-xs-4 col-sm-2 pull-right">
+		<a href="{{ nextpost|raw }}"><button type="button" class="btn btn-default">Se flere nyheter</button></a>
+	</div>
+	
+	{% if prevpost|length > 0 %}
+	<div class="col-xs-4 col-sm-2 pull-left">
+	      <a href="{{ prevpost|raw }}"><button type="button" class="btn btn-default">Se forrige nyheter</button></a>
+	</div>
+	{% endif %}
+
 
     
 
