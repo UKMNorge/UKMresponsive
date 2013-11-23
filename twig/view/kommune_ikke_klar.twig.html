@@ -14,20 +14,22 @@
         {% endembed %}
     </div>
 
-    <div class="col-xs-12 col-md-5 pull-right">
-        
+    <div class="col-xs-12 col-md-5">
         <h3>Kategorier</h3>
         
         <ul class="list-inline col-xs-12">
         {% for ikon in ikoner_tittel %}
-            <li class="centered col-xs-4 centered col-s-3 ">
-                <img class="img-roudned" src="{{ ikon.ico }}" alt="{{ ikon.name }}"> 
-                <div>{{ ikon.name }}</div>
+            <li class="col-xs-3">
+                <img class="col-xs-12" src="{{ ikon.ico }}" alt="{{ ikon.name }}"> 
+                <h4 class="centered">{{ ikon.name }}</h4>
             </li>
+            {% if loop.index is divisibleby(4) %}
+                <div class="clearfix"></div>
+            {% endif %}
         {% endfor %}
-        </ul>
-            
+        </ul> 
     </div>
+
     <div class="visible-xs visible-sm clearfix"></div>
         
     <div class="col-xs-12 col-md-12">
@@ -35,6 +37,6 @@
         {% endembed %}
     </div>
 
-{{ dump(monstring.bandtypesdetails) | raw }}
+{{ dump(ikoner_tittel|raw) | raw }}
 
 {% endblock %}
