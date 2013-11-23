@@ -1,50 +1,54 @@
 {% extends "layout.twig.html" %}
 
 {% block content %}
-	<div class="col-xs-12">
-        {# Image #}
-        <div class="post_image" style="background-image: url('{{post.image.url}}');">
-            <div class="data">
-                <div class="row">
-                    <div class="col-xs-12 col-sm-10 col-md-11">
-                        <h2>{{post.title}}</h2>
-                        <p> 
-                            <span class="glyphicon glyphicon-calendar"></span>
-                            {{post_date|date('d.M')}} | 
-                            {% for category in post.categories %}
-                                <a href="{{category.url}}">{{category.name}}</a>
-                                {% if loop.last != true %}, {% endif %}
-                            {% endfor %}
-                            
-                        </p>
-                    </div>
-                    <div class="col-sm-2 col-md-1 hidden-xs">
-                        <div class="fb-like" id="fb-sm" data-href="{{url.current}}" data-layout="box_count" data-action="like" data-show-faces="true" data-share="false"></div>
-                    </div>
-                    <div class="col-xs-12 visible-xs">
-                        <div class="fb-like" id="fb-xs" data-href="{{url.current}}" data-layout="standard" data-action="like" data-show-faces="false" data-share="false"></div>
-                    </div>
-                </div>
-            </div>
-                
-        </div>
+    <div class="row">
+        <div class="col-xs-12 col-md-10 col-md-offset-1">
         
-        {# Byline sm+ #}
-        <div class="post_byline_wrapper col-sm-5 pull-right hidden-xs">
-        	{% embed "element/post/byline.twig.html" %}{% endembed %}
+        	{# Post image #}
+        	<div class="col-xs-12">
+		        <div class="post_image" style="background-image: url('{{post.image.url}}');">
+		            <div class="data">
+		                <div class="row">
+		                    <div class="col-xs-12 col-sm-10 col-md-11">
+		                        <h2>{{post.title}}</h2>
+		                        <p> 
+		                            <span class="glyphicon glyphicon-calendar"></span>
+		                            {{post_date|date('d.M')}} | 
+		                            {% for category in post.categories %}
+		                                <a href="{{category.url}}">{{category.name}}</a>
+		                                {% if loop.last != true %}, {% endif %}
+		                            {% endfor %}
+		                            
+		                        </p>
+		                    </div>
+		                    <div class="col-sm-2 col-md-1 hidden-xs">
+		                        <div class="fb-like" id="fb-sm" data-href="{{url.current}}" data-layout="box_count" data-action="like" data-show-faces="true" data-share="false"></div>
+		                    </div>
+		                    <div class="col-xs-12 visible-xs">
+		                        <div class="fb-like" id="fb-xs" data-href="{{url.current}}" data-layout="standard" data-action="like" data-show-faces="false" data-share="false"></div>
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+        	</div>
+		
+	        {# Byline sm+ #}
+	        <div class="post_byline_wrapper col-sm-5 pull-right hidden-xs">
+	        	{% embed "element/post/byline.twig.html" %}{% endembed %}
+	        </div>
+	    
+	        {# Content #}
+	        <div class="col-xs-12">
+	            {{post.content|raw}}
+	        </div>
+	        
+	        {# Byline xs #}
+	        <div class="post_byline_wrapper col-xs-12 visible-xs">
+	        	{% embed "element/post/byline.twig.html" %}{% endembed %}
+	        </div>
+	        
         </div>
-    
-        {# Content #}
-        <div class="col-xs-12">
-            {{post.content|raw}}
-        </div>
-        
-        {# Byline xs #}
-        <div class="post_byline_wrapper col-xs-12 visible-xs">
-        	{% embed "element/post/byline.twig.html" %}{% endembed %}
-        </div>
-        
-	</div>
+    </div>
 
     
     
