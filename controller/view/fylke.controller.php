@@ -19,8 +19,9 @@ $DATA['fylke'] = get_option('fylke');
 // INFO OM MØNSTRINGEN
 $pl = new monstring( get_option('pl_id') );
 $monstring = new StdClass();
-$monstring->starter = $pl->starter();
-$monstring->slutter = $pl->slutter();
+$monstring->starter = $pl->get('pl_start');
+$monstring->slutter = $pl->get('pl_stop');
+$monstring->sted = $pl->get('pl_place');
 $DATA['monstring'] = $monstring;
 
 // INFO OM LOKALMØNSTRINGER
@@ -49,7 +50,13 @@ foreach( $lokal_plids as $lm ) {
 		$siste_pamelding = $lokalmonstring->get('pl_deadline');
 	}
 	
-	$lokalmonstringer[] = $lokalmonstring;
+    $lm = new StdClass();
+    $lm->starter = $lokalmonstring->get('pl_start');
+    $lm->slutter = $lokalmonstring->get('pl_stop');
+    $lm->url = $lokalmonstring->get('link');
+    $lm->navn = $lokalmonstring->get('pl_name');
+    
+	$lokalmonstringer[] = $lm;
 }
 $DATA['lokalmonstringer'] = $lokalmonstringer;
 
@@ -82,3 +89,4 @@ $DATA['page_nav'][] = (object) array( 'url' 			=> '#',
 									   'icon'			=> 'mobile',
 									   'description'	=> 'Har du spørsmål om UKM i '. $pl->get('pl_name').'? Disse kan hjelpe!'
 									  );
+
