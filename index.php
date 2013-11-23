@@ -2,6 +2,9 @@
 error_reporting(E_ALL ^ E_DEPRECATED);
 ini_set('display_errors',1);
 
+setlocale(LC_ALL, 'nb_NO', 'nb', 'no');
+
+
 define('THEME_PATH', get_theme_root().'/UKMresponsive/' );
 define('TWIG_PATH', __DIR__ );
 
