@@ -166,6 +166,35 @@ Author URI: https://github.com/UKMNorge?tab=members
 	background: rgba(255, 255, 255, 0.8);	
 }
 
+/* POST BYLINE */
+.post_byline_wrapper {
+	margin: 10px 0 0 0;
+}
+.post_byline_wrapper p {
+	margin: 0 5px;
+}
+.post_byline_wrapper .post_byline {
+	background: #ddd;
+	margin: none;
+	padding: 10px;
+	height: 100%;
+}
+.post_byline_wrapper .post_byline div {
+	float: left;
+}
+.post_byline_wrapper .post_byline hr {
+	margin: 5px 0 ;
+	border: 0;
+    border-bottom: 1px dashed #ccc;
+    background: #999;
+}
+.post_byline_wrapper .post_byline img {
+	float: left;
+	height: 85px;
+	width: 64px;
+	margin-right: 10px;
+}
+
 /* FACEBOOK */
 #fb-sm {
 	float: right;
