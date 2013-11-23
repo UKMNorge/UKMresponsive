@@ -26,13 +26,18 @@
     <div class="post_byline">
         <span>{{post.author.company_name}}</span> 
         <span>{{post.author.display_name}}</span>
-        <span>
-            <span class="glyphicon glyphicon-envelope"></span>
-            <a href="mailto:{{post.author.user_email}}">e-post</a>
-        </span>
-        <span><a href="{{post.author.facebook_url}}">Facebook</a></span>
+        
+        {% if post.author.user_email %}
+            <span>
+                <span class="glyphicon glyphicon-envelope"></span>
+                <a href="mailto:{{post.author.user_email}}">e-post</a>
+            </span>
+        {% endif %}
+        
+        {% if post.author.facebook_url %} 
+            <span><a href="{{post.author.facebook_url}}">Facebook</a></span>
+        {% endif %}
     </div>
 
-{{dump(post.author)|raw}}
 {% endblock %}
 
