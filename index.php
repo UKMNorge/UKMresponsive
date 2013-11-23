@@ -68,6 +68,10 @@ ini_set('display_errors',1);
 				require_once('controller/view/dinmonstring.controller.php');
 				$VIEW = 'dinmonstring';
 				break;
+            case 'arrangor':
+                require_once('controller/view/arrangorlogon.controller.php');
+                $VIEW = 'arrangorlogon';
+                break;
 			default:
 				require_once('controller/view/post.controller.php');
 				$VIEW = 'page';
