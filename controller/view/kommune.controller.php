@@ -24,7 +24,7 @@ $DATA['kommune'] = get_option('kommune');
         $monstring->sted = $pl->get('pl_place');
         $monstring->frist_1 = $pl->frist(1);
         $monstring->frist_2 = $pl->frist(2);
-        $monstring->bandtypesdetails = $pl->getAllBandTypesDetailed();
+        $monstring->bandtypesdetails = $pl->getAllBandTypesDetailedNew();
         $DATA['monstring'] = $monstring;
 
 // HVILKEN PERIODE ER KOMMUNESIDEN I?      
