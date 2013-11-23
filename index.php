@@ -74,7 +74,7 @@ ini_set('display_errors',1);
     		} elseif( get_option('site_type') == 'kommune' ) {
                 $VIEW = 'kommune';
     			require_once('controller/view/kommune.controller.php');
-                    } else {
+			} else {
     			require_once('controller/view/homepage.controller.php');
     			$VIEW = 'homepage';
     		}
