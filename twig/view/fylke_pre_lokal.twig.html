@@ -1,21 +1,5 @@
-{% extends "layout.twig.html" %}
+{% extends "view/fylke_lokal.twig.html" %}
 
 {% block content %}
-    <h1>Fylkesside</h1>
-    
-    {% embed "element/fylke/lokalmonstring.twig.html" %}
-    {% endembed %}
-
-    {% embed "element/fylke/monstring_beskrivelse.twig.html" %}
-    {% endembed %}
-
-    {% embed "element/fylke/monstring_navigasjon.twig.html" %}
-    {% endembed %}
-
-    {% embed "element/fylke/monstring_hovedartikkel.twig.html" %}
-    {% endembed %}
-
-    {% embed "element/fylke/monstring_flere_artikler.twig.html" %}
-    {% endembed %}
-
+    {{ parent() }}
 {% endblock %}
