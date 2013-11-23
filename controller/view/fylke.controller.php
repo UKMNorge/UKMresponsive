@@ -32,9 +32,7 @@ $DATA['fylke'] = get_option('fylke');
 	
 	foreach( $kommuner_i_fylket as $kommune_id => $kommune_navn ) {
 		$lokalmonstring = new kommune_monstring( $kommune_id, get_option('season') );
-		var_dump($lokalmonstring);
 		$lokalmonstring = $lokalmonstring->monstring_get();
-		var_dump($lokalmonstring);
 		
 		if($forste == 0) {
 			$forste = $lokalmonstring->get('pl_start');
