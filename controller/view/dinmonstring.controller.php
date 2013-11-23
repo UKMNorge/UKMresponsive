@@ -47,7 +47,7 @@ class DinMonstringController {
         
         $result = $sql->run('field', 'place_id');
 
-        if(!$result) {
+        if(!isset($result)) {
             throw new Exception('Could not fetch place_id');
         }
         
@@ -64,7 +64,7 @@ class DinMonstringController {
         
         $result = $sql->run('field', 'municipal.municipal_id');
         
-        if(!$result) {
+        if(!isset($result)) {
             throw new Exception('Could not fetch municipal_id');
         }
         
@@ -82,7 +82,7 @@ class DinMonstringController {
         
         $result = $sql->run('field', 'pl_id');   
         
-        if(!$result) {
+        if(!isset($result)) {
             throw new Exception('Could not fetch pl_id');
         }
         
