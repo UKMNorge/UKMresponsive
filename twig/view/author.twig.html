@@ -1,1 +1,38 @@
-hei
+{% extends "layout.twig.html" %}
+
+{% block content %}
+<div class="row">
+	<div class="col-xs-12 post_byline_wrapper">
+        <div class="well post_byline">
+			<img src="{{author.image}}" />
+			<span><p>Artikler skrevet av</p></span>
+	        <span><h4>{{author.company_name}}</h4></span> 
+	        <span><h1>{{author.display_name}}</h1></span>
+	        <hr />
+	        {% if author.user_email %}
+	            <span class="glyphicon glyphicon-envelope"></span>
+	            <span><a href="mailto:{{author.user_email}}">E-post</a> | </span>
+	        {% endif %}
+	        
+	        {% if author.facebook_url %}
+	            <span><a href="{{author.facebook_url}}">Facebook</a></span>
+	        {% endif %}
+		</div>
+	</div>
+
+
+{% for post in posts %}
+    <div class="news col-xs-6 col-md-4">
+        {% embed "element/post/grid_element.twig.html" with post %}{% endembed %}
+    </div>
+    {% if loop.index is divisibleby(3) %}
+        <div class="clearfix visible-md visible-lg"></div>
+    {% elseif loop.index is divisibleby(2) %}
+        <div class="clearfix visible-xs visible-sm"></div>
+    {% endif %}
+
+{% endfor %}
+</div>
+
+
+{% endblock %}
