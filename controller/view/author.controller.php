@@ -5,17 +5,19 @@ class AuthorController {
     protected $authorId;
     
     public function __construct()
-    {
-        $this->authorId = the_author_meta('ID');
+    {   
+        global $post;
+        $this->authorId = $post->post_author;
     }
     
     public function renderAction() 
     {
-        $data[$author] = new WPOO_Author(get_userdata($this->authorId));
+        $data = array();
+        $data['author'] = new WPOO_Author(get_userdata($this->authorId));
         
         return $data;
     }
 }
 
 $controller = new AuthorController();
-$DATA = array_merge($data, $controller->renderAction());
+$DATA = array_merge($DATA, $controller->renderAction());
