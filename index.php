@@ -36,10 +36,20 @@ ini_set('display_errors',1);
 /**********************************
 * SWITCH VIEW
 **********************************/
-	if( get_option('ukm_top_page' == 'arrangor') ) {
+	if( get_option('ukm_top_page') == 'arrangorer' ) {
         require_once('controller/view/arrangorlogon.controller.php');
-        $VIEW = 'arrangorlogon';  
-	}
+        $controller = new ArrangorLogonController();
+        if($controller->isLoggedIn()) {
+            // IS LOGGED IN TO ARRANGORER
+			require_once('controller/view/homepage.controller.php');
+			$VIEW = 'homepage';
+        }
+        else {
+            // IS NOT LOGGED IN TO ARRANGORER
+            $DATA = array_merge($DATA, $controller->renderAction());
+            $VIEW = 'arrangorlogon';            
+        }
+    }
 	else {
     	if( is_archive() ) {
     	    require_once('controller/view/archive.controller.php');
