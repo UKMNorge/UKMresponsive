@@ -1,0 +1,33 @@
+{% extends "layout.twig.html" %}
+
+{% block content %}
+	<div class="row">
+	<div id="slider" class="col-xs-12 col-md-7">
+		TOPPSAK
+	</div>
+		<div id="infosquare" class="col-xs-12 col-md-5">
+			<div class="row">
+				TEKST
+			</div>
+		</div>
+	</div>
+	
+	<div class="row">
+		{% for post in posts %}
+			<div class="news col-xs-6 col-md-4">
+				{% embed "element/post/grid_element.twig.html" with post %}{% endembed %}
+			</div>
+			
+			{% if loop.index is divisibleby(3) %}
+				<div class="clearfix visible-md visible-lg"></div>
+			{% elseif loop.index is divisibleby(2) %}
+				<div class="clearfix visible-xs visible-sm"></div>
+			{% endif %}
+		{% endfor %}
+	
+		<div class="col-xs-4 col-sm-2 pull-right">
+			<button type="button" class="btn btn-default">Se flere nyheter</button>
+		</div>
+	</div>
+
+{% endblock %}

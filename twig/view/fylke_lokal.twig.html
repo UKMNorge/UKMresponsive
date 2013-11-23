@@ -10,8 +10,7 @@
     </div>
 
     <div class="col-xs-12 col-md-5">
-        {% embed "element/fylke/monstring_beskrivelse.twig.html" %}
-        {% endembed %}
+        <p>Fylkesmønstringen er fra {{monstring.starter | date("D j. F")}} til {{monstring.slutter | date("D j. F")}} i {{monstring.sted}}</p>
     </div>
 
     <div class="col-xs-12 col-md-5">

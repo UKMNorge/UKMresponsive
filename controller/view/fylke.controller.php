@@ -76,7 +76,7 @@ $DATA['fylke'] = get_option('fylke');
 	}
 
 // DEBUG
-$VIEW = 'fylke';
+$VIEW = 'fylke_post';
 
 // PAGE NAV
 	$DATA['page_nav'][] = (object) array( 'url' 			=> '#',
