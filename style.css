@@ -9,6 +9,7 @@ Author URI: https://github.com/UKMNorge?tab=members
 */
 
 @import "css/base.less";
+@import "css/internasjonalt.less";
 
 /* MENU ELEMENTS */
 .menuElm {
