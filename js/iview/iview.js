@@ -1760,7 +1760,7 @@ jQuery(document).ready(function(){
 		directionNav: true,
 		controlNav: true,
 	});
-	jQuery('div.wp-caption, iframe, img').attr('style', 'max-width: 100%');
+	jQuery('div.wp-caption, iframe, img').css('max-width', '100%');
 	
 	jQuery('textarea').autogrow();
 });

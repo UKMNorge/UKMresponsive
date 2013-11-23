@@ -156,6 +156,7 @@ Author URI: https://github.com/UKMNorge?tab=members
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
+	margin: 0 0 20px 0;
 }
 .post_image .data {
 	height: 6%;
@@ -163,18 +164,18 @@ Author URI: https://github.com/UKMNorge?tab=members
 	width: 100%;
 	margin: 0px;
 	padding: 1%;
-	background: rgba(255, 255, 255, 0.8);	
+	background: rgba(255, 255, 255, 0.8);
+	border-radius: 5px 5px 0 0;
 }
 
 /* POST BYLINE */
 .post_byline_wrapper {
-	margin: 10px 0 0 0;
+	margin: none;
 }
 .post_byline_wrapper p {
 	margin: 0 5px;
 }
 .post_byline_wrapper .post_byline {
-	background: #ddd;
 	margin: none;
 	padding: 10px;
 	height: 100%;
@@ -193,6 +194,31 @@ Author URI: https://github.com/UKMNorge?tab=members
 	height: 85px;
 	width: 64px;
 	margin-right: 10px;
+	border-radius: 5px;
+	border: none;
+}
+
+/* ALIGNEMENTS */
+.alignright {
+	float: right;
+}
+.alignleft {
+	float: left;
+}
+.alignnone {
+	float: none;
+	margin: 0 auto;
+	display: block;
+}
+
+/* WP-shit */
+.wp-caption {
+	padding: 10px;
+}
+.wp-caption-text {
+	font-size: 0.8em;
+	margin: 0;
+	display: block;
 }
 
 /* FACEBOOK */
