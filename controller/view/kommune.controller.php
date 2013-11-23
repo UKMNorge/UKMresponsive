@@ -19,10 +19,11 @@ $DATA['kommune'] = get_option('kommune');
            $DATA['posts'][] = new WPOO_Post($post); 
         }
     
-
-        $npl = explode('"',get_next_posts_link()); 
-        $DATA['nextpost']=$npl[1];
-        
+        $npl = get_next_posts_link();
+        if($npl) {
+            $npl = explode('"',get_next_posts_link()); 
+            $DATA['nextpost']=$npl[1];
+        }
         $ppl = get_previous_posts_link();
         if($ppl) {
             $ppl = explode('"',$ppl); 
