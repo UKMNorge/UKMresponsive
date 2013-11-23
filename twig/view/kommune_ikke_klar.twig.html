@@ -18,9 +18,12 @@
         
         <h3>Kategorier</h3>
         
-        <ul>
+        <ul class="list-inline col-xs-12">
         {% for ikon in ikoner_tittel %}
-            <li>{{ ikon.name }}</li>
+            <li class="centered col-xs-4 centered col-s-3 ">
+                <img class="img-roudned" src="{{ ikon.ico }}" alt="{{ ikon.name }}"> 
+                <div>{{ ikon.name }}</div>
+            </li>
         {% endfor %}
         </ul>
             
@@ -32,5 +35,6 @@
         {% endembed %}
     </div>
 
+{{ dump(monstring.bandtypesdetails) | raw }}
 
 {% endblock %}
