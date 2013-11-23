@@ -47,7 +47,10 @@ ini_set('display_errors',1);
 		require_once('controller/element/comments.controller.php');
 		$VIEW = 'post';
 	} elseif( is_front_page() ) {
-		if( get_option('site_type') == 'fylke' ) {
+		if( get_option('ukm_top_page') == 'internasjonalt' ) {
+			require_once('controller/view/homepage.controller.php');
+			$VIEW = 'homepage_internasjonalt';	
+		} elseif( get_option('site_type') == 'fylke' ) {
             $VIEW = 'fylke';
 			require_once('controller/view/fylke.controller.php');
 		} else {
