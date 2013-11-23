@@ -1,5 +1,6 @@
 <?php
 require_once('UKM/sql.class.php');
+require_once('UKM/monstring.class.php');
 
 /*
  * DinMonstringController
@@ -25,27 +26,31 @@ class DinMonstringController {
                 $plId = $this->getPlId($municipalId);
             }
             catch(Exception $e) {
-                $this->redirect('http://ukm.no/din_monstring/');
+                $this->redirect('http://'.$_SERVER['HTTP_HOST'].'/din_monstring/?couldnotfind');
             }
 
-            $this->redirect('http://ukm.no/pl' . $plId . '/');  
+            $this->redirect('http://'.$_SERVER['HTTP_HOST'].'/pl' . $plId . '/');  
         }
         // @TODO: ADD CHECK FOR IF NOT DESKTOP
-        $data['findme'] = true;
+        if (!isset($_GET['couldnotfind']))
+            $data['findme'] = true;
+        else 
+            $data['findme'] = false;
+        
         return $data;
     }
     
     public function getPlaceId()
     {
-        $query = 'SELECT place_id, SQRT(POW((69.1 * (zip_codes.lat - #lat)) , 2 ) +' .
-                 'POW((53 * (zip_codes.lon - #lng)), 2)) AS distance' .
-                 'FROM `zip_codes`' .
-                 'ORDER BY distance ASC' .
+        $query = 'SELECT poststedID, SQRT(POW((69.1 * (zip_codes.lat - #lat)) , 2 ) + ' .
+                 'POW((53 * (zip_codes.lon - #lng)), 2)) AS distance ' .
+                 'FROM `zip_codes` ' .
+                 'ORDER BY distance ASC ' .
                  'LIMIT 1';
                  
         $sql = new SQL($query, array('lat' => $this->lat, 'lng' => $this->lng));
-        
-        $result = $sql->run('field', 'place_id');
+                
+        $result = $sql->run('field', 'poststedID');
 
         if(!isset($result)) {
             throw new Exception('Could not fetch place_id');
@@ -56,13 +61,13 @@ class DinMonstringController {
     
     public function getMunicipalId($placeId) 
     {
-        $query = 'SELECT municipal.municipal_id FROM `municipal`' .
-                 'INNER JOIN zip_places ON zip_places.municipal_id = municipal.municipal_id' .
-                 'WHERE place_id = "#placeId"';
-                 
+        $query = 'SELECT municipal.kommuneID FROM `municipal` ' .
+                 'INNER JOIN zip_places ON zip_places.kommuneID = municipal.kommuneID ' .
+                 'WHERE poststedID = "#placeId"';
+        
         $sql = new SQL($query, array('placeId' => $placeId));
         
-        $result = $sql->run('field', 'municipal.municipal_id');
+        $result = $sql->run('field', 'kommuneID');
         
         if(!isset($result)) {
             throw new Exception('Could not fetch municipal_id');
@@ -73,20 +78,15 @@ class DinMonstringController {
     
     public function getPlId($municipalId) 
     {
-        $query = 'SELECT `pl_id`' .
-                 'FROM `smartukm_rel_pl_k`' .
-                 'WHERE `k_id` = "#kid"' .
-                 'AND `season` = "#season"';
+        $monstring = new kommune_monstring($municipalId, get_option('season'));
+        $monstring = $monstring->monstring_get();
         
-        $sql = new SQL($query, array('kid' => intval($municipalId), 'season' => get_option('season')));
+        $pl_id = $monstring->get('pl_id');
         
-        $result = $sql->run('field', 'pl_id');   
+        if (!is_numeric($pl_id)) 
+            throw new Exception ('Could not fetch pl_id');
         
-        if(!isset($result)) {
-            throw new Exception('Could not fetch pl_id');
-        }
-        
-        return $result;      
+        return $pl_id;
     }
     
     public function redirect($url) 
