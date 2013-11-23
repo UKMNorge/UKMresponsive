@@ -165,3 +165,13 @@ Author URI: https://github.com/UKMNorge?tab=members
 	padding: 1%;
 	background: rgba(255, 255, 255, 0.8);	
 }
+
+/* FACEBOOK */
+#fb-sm {
+	float: right;
+	margin: 20px 0 0 0;
+}
+#fb-xs {
+	float: none;
+	margin: 0 auto;
+}
