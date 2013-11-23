@@ -1,17 +1,16 @@
-<div>
-    {% for i in 1..4 %}
-        {% if posts[i] is defined %}
-            <div class="col-xs-6"> 
-            <a href="{{ posts[i].url}}">
-                <img src="{{ posts[i].image.url }}" />
-                <h3> {{ posts[i].title }} </h3>
-                <p> {{ posts[i].lead | raw }}</p>
-            </a>
-            </div>
-        {% endif %}
-    
-        {% if loop.index is divisibleby(2) %}
-            <div class="clearfix"></div>
-        {% endif %}
-    {% endfor %}
-</div>
+{% for i in 1..4 %}
+    {% if posts[i] is defined %}
+        <div class="col-xs-6"> 
+        <a href="{{ posts[i].url}}">
+            <img src="{{ posts[i].image.url }}" />
+            <h3> {{ posts[i].title }} </h3>
+            <p> {{ posts[i].lead | raw }}</p>
+        </a>
+        </div>
+    {% endif %}
+
+    {% if loop.index is divisibleby(2) %}
+        <div class="clearfix"></div>
+    {% endif %}
+{% endfor %}
+

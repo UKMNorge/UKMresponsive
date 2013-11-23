@@ -18,7 +18,7 @@ class DinMonstringController {
     }
     
     public function renderAction()
-    {
+    {      
         if($this->lat > 0 && $this->lng > 0) {
             try {
                 $placeId = $this->getPlaceId();
@@ -31,8 +31,9 @@ class DinMonstringController {
 
             $this->redirect('http://'.$_SERVER['HTTP_HOST'].'/pl' . $plId . '/');  
         }
-        // @TODO: ADD CHECK FOR IF NOT DESKTOP
-        if (!isset($_GET['couldnotfind']))
+        
+        $md = new Mobile_Detect();       
+        if ($md->isMobile() === true && !isset($_GET['couldnotfind']))
             $data['findme'] = true;
         else 
             $data['findme'] = false;
@@ -91,7 +92,7 @@ class DinMonstringController {
     
     public function redirect($url) 
     {
-        header("location: " . $url);
+        header("Location:" . $url);
         die();
     }
 }

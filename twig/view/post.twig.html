@@ -3,7 +3,6 @@
 {% block content %}
     <div class="row">
         <div class="col-xs-12 col-md-10 col-md-offset-1">
-        
         	{# Post image #}
         	<div class="col-xs-12">
 		        <div class="post_image" style="background-image: url('{{post.image.url}}');">
@@ -11,6 +10,7 @@
 		                <div class="row">
 		                    <div class="col-xs-12 col-sm-10 col-md-11">
 		                        <h2>{{post.title}}</h2>
+		                        <a href="{{ post.author.link }}">{{ post.author.display_name }}</a>
 		                        <p> 
 		                            <span class="glyphicon glyphicon-calendar"></span>
 		                            {{post_date|date('d.M')}} | 
@@ -56,4 +56,3 @@
     
 
 {% endblock %}
-

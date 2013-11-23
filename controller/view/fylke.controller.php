@@ -75,13 +75,26 @@ $DATA['fylke'] = get_option('fylke');
 		$VIEW = 'fylke_post';
 	}
 
-
 // DEBUG
-	$VIEW = 'fylke_pre_lokal';
-
+$VIEW = 'fylke';
 
 // PAGE NAV
 	$DATA['page_nav'][] = (object) array( 'url' 			=> '#',
+										   'title'		 	=> 'Program',
+										   'icon'			=> 'mobile',
+										   'description'	=> 'Se program for fylkesmønstringen'
+										  );
+	$DATA['page_nav'][] = (object) array( 'url' 			=> '#',
+										   'title'		 	=> 'Hvem deltar?',
+										   'icon'			=> 'mobile',
+										   'description'	=> 'Se alle som deltar på fylkesmønstringen.'
+										  );
+	$DATA['page_nav'][] = (object) array( 'url' 			=> '#',
+										   'title'		 	=> 'Kontaktpersoner',
+										   'icon'			=> 'mobile',
+										   'description'	=> 'Har du spørsmål om UKM i '. $pl->get('pl_name').'? Disse kan hjelpe!'
+										  );
+    $DATA['page_nav'][] = (object) array( 'url' 			=> '#',
 										   'title'		 	=> 'Program',
 										   'icon'			=> 'mobile',
 										   'description'	=> 'Se program for fylkesmønstringen'

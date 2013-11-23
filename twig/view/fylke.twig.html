@@ -1,18 +1,40 @@
 {% extends "layout.twig.html" %}
 
 {% block content %}
-	<h1>Fylkesside</h1>
+    <h1>Fylkesside</h1>
     
-    {% block easteregg %}
-    {% endblock %}
+    <div class="col-xs-12 col-md-5 pull-right">
+        {% embed "element/fylke/monstring_navigasjon.twig.html" %}
+        {% endembed %}
+    </div>
+    
+    <div class="col-xs-12 col-md-7">
+        {% embed "element/fylke/monstring_hovedartikkel.twig.html" %}
+        {% endembed %}
+    </div>
+    
+    <div class="col-xs-12 col-md-5 pull-right">
+        <h3>Lokalmønstringer</h3>
+        <div class="hidden-lg hidden-md">
+            <button class="btn btn-medium btn-primary toggle" data-action="show" data-toggle="#lokalmonstringer_slide">Vis lokalmønstringer</button>
+        </div>
+        <div class="visible-lg visible-md" style="display:none" id="lokalmonstringer_slide">
+            {% embed "element/fylke/lokalmonstring.twig.html" %}
+            {% endembed %}
+        </div>
+    </div>
+    <div class="visible-xs visible-sm hidden-md hidden-lg clearfix"></div>
+        
+    <div class="col-xs-12 col-md-7 md-pull-left">
+        {% embed "element/fylke/monstring_flere_artikler.twig.html" %}
+        {% endembed %}
+    </div>
+
+    
+
+    {# @TODO: add kontaktinfo #}
 
 {% endblock %}
-
-
-
-
-
-
 
 
 

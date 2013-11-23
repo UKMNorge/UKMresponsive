@@ -1,5 +1,4 @@
-<ul>
-    <li>Program</li>
-    <li>Hvem deltar?</li>
-    <li>Kontaktpersoner</li>
-</ul>
+
+{% for nav in page_nav %}
+    {% embed "element/nav_page.twig.html" with nav %}{% endembed %}
+{% endfor %}
