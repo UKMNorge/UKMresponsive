@@ -13,34 +13,9 @@ Author URI: https://github.com/UKMNorge?tab=members
 @import "css/post.less";
 @import "css/wpshit.less";
 @import "css/internasjonalt.less";
+@import "css/infosquares.less";
 
 
-/* MENU ELEMENTS */
-.menuElm {
-	padding: 2px;
-}
-.menuElm .title {
-	font-weight: bold;
-}
-
-@media screen and (min-width: 993px) {
-	.menuElm {
-		padding: 8px;
-		font-size: 11px;
-	}
-	.menuElm .title { 
-		font-size: 14px;
-	}
-	.menuElm img {
-		margin: none;
-		padding: 0;
-	}
-}
-@media screen and (max-width: 992px) {
-	.menuElm .title {
-		text-align: center;
-	}
-}
 /* SLIDER */
 #slider {
 	margin-bottom: 10px;
