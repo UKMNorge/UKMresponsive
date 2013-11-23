@@ -24,18 +24,25 @@ $DATA['kommune'] = get_option('kommune');
 	$monstring->sted = $pl->get('pl_place');
 	$DATA['monstring'] = $monstring;
 
-// HVILKEN PERIODE ER KOMMUNESIDEN I?
-	$VIEW = 'kommune_pre_lokal';
-	if( time() > $siste_pamelding && time() < $siste ) {
-		$VIEW = 'kommune_lokal';
-	} elseif( time() > $siste && time() < $pl->get('pl_start') ) {
-		$VIEW = 'kommune_pre';
-	} elseif( time() > $pl->get('pl_start') && time() < $pl->get('pl_stop') ) {
-		$VIEW = 'kommune';
-	} elseif( time() > $pl->get('pl_stop') ) {
-		$VIEW = 'kommune_post';
-	}
-
+// HVILKEN PERIODE ER KOMMUNESIDEN I?      
+        if (!$m->registered())
+            $VIEW = 'kommune_ikke_klar';
+        
+        else {
+            $utenforsesong = mktime(0,0,0,12,1,get_option('season')-1)>time();
+            if ($utenforsesong) {
+                $VIEW = 'kommune_pre_lokal';
+            } else if ( time() < $m->frist()) {
+                    $VIEW = 'kommune_lokal';
+            } elseif( time() > $m->frist() && time() < $pl->get('pl_start') ) {
+                    $VIEW = 'kommune_pre';
+            } elseif( time() > $pl->get('pl_start') && time() < $pl->get('pl_stop') ) {
+                    $VIEW = 'kommune';
+            } elseif( time() > $pl->get('pl_stop') ) {
+                    $VIEW = 'kommune_post';
+            }
+        }
+            
 // PAGE NAV
 	$DATA['page_nav'][] = (object) array( 'url' 			=> '#',
 										   'title'		 	=> 'Program',
