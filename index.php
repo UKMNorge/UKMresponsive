@@ -41,8 +41,8 @@ ini_set('display_errors',1);
 		$VIEW = 'post';
 	} elseif( is_front_page() ) {
 		if( get_option('site_type') == 'fylke' ) {
+            $VIEW = 'fylke';
 			require_once('controller/view/fylke.controller.php');
-			$VIEW = 'fylke';
 		} else {
 			require_once('controller/view/homepage.controller.php');
 			$VIEW = 'homepage';
