@@ -25,8 +25,6 @@ class DinMonstringController {
                 $plId = $this->getPlId($municipalId);
             }
             catch(Exception $e) {
-                echo $e->getMessage();
-                die();
                 $this->redirect('http://ukm.no/din_monstring/');
             }
 
