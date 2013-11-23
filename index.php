@@ -5,7 +5,7 @@ ini_set('display_errors',1);
 define('THEME_PATH', get_theme_root().'/UKMresponsive/' );
 define('TWIG_PATH', __DIR__ );
 
-
+require_once('vendor/autoload.php');
 require_once('WPOO/WPOO/Post.php');
 require_once('UKM/inc/twig-admin.inc.php');
 require_once('functions_theme.php');

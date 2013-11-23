@@ -1,7 +1,6 @@
 <?php
 require_once('UKM/sql.class.php');
 require_once('UKM/monstring.class.php');
-require_once('UKM/mobiledetect.class.php');
 
 /*
  * DinMonstringController
@@ -33,7 +32,7 @@ class DinMonstringController {
             $this->redirect('http://'.$_SERVER['HTTP_HOST'].'/pl' . $plId . '/');  
         }
         
-        $md = new mobiledetect();       
+        $md = new Mobile_Detect();       
         if ($md->isMobile() === true && !isset($_GET['couldnotfind']))
             $data['findme'] = true;
         else 
