@@ -1,6 +1,7 @@
 <?php
 require_once('UKM/sql.class.php');
 require_once('UKM/monstring.class.php');
+require_once('UKM/mobiledetect.class.php');
 
 /*
  * DinMonstringController
@@ -18,7 +19,7 @@ class DinMonstringController {
     }
     
     public function renderAction()
-    {
+    {      
         if($this->lat > 0 && $this->lng > 0) {
             try {
                 $placeId = $this->getPlaceId();
@@ -31,8 +32,9 @@ class DinMonstringController {
 
             $this->redirect('http://'.$_SERVER['HTTP_HOST'].'/pl' . $plId . '/');  
         }
-        // @TODO: ADD CHECK FOR IF NOT DESKTOP
-        if (!isset($_GET['couldnotfind']))
+        
+        $md = new mobiledetect();       
+        if ($md->isMobile() === true && !isset($_GET['couldnotfind']))
             $data['findme'] = true;
         else 
             $data['findme'] = false;
