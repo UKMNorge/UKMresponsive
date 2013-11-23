@@ -13,9 +13,6 @@ class ArrangorLogonController {
         }
         
         $this->cookies = array(
-            'UKM_username', 'UKM_email',
-            'UKM_kommune', 'UKM_pl_id',
-            'UKM_pl_type', 'UKM_pl_fylke',
             'UKM' . $this->version . '_username',
             'UKM' . $this->version . '_email',
             'UKM' . $this->version . '_kommune',
@@ -48,6 +45,14 @@ class ArrangorLogonController {
         }
         
         return $data;
+    }
+    
+    public function isLoggedIn()
+    {
+        if(!isset($_COOKIE['UKM' . $this->version . '_username'])) {
+            return false;
+        }
+        return true;
     }
     
     public function login($user, $pass)
@@ -140,6 +145,3 @@ class ArrangorLogonController {
         die();
     } 
 }
-
-$controller = new ArrangorLogonController();
-$DATA = array_merge($DATA, $controller->renderAction());
