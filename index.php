@@ -5,8 +5,9 @@ ini_set('display_errors',1);
 define('THEME_PATH', get_theme_root().'/UKMresponsive/' );
 define('TWIG_PATH', __DIR__ );
 
-
+require_once('vendor/autoload.php');
 require_once('WPOO/WPOO/Post.php');
+require_once('WPOO/WPOO/Author.php');
 require_once('UKM/inc/twig-admin.inc.php');
 require_once('functions_theme.php');
 error_reporting(E_ALL);
@@ -33,8 +34,14 @@ ini_set('display_errors',1);
 * SWITCH VIEW
 **********************************/
 	if( is_archive() ) {
-		require_once('controller/view/archive.controller.php');
-		$VIEW = 'archive';
+	    require_once('controller/view/archive.controller.php');
+		if(is_author()) {
+    		require_once('controller/view/author.controller.php');
+    		$VIEW = 'author';
+		}
+		else {
+    		$VIEW = 'archive';
+        }
 	} elseif( is_single() ) {
 		require_once('controller/view/post.controller.php');
 		require_once('controller/element/comments.controller.php');

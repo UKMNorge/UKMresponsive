@@ -8,6 +8,7 @@
                 <div class="row">
                     <div class="col-xs-12 col-sm-10 col-md-11">
                         <h2>{{post.title}}</h2>
+                        <a href="{{ post.author.link }}">{{ post.author.display_name }}</a>
                         <p> 
                             <span class="glyphicon glyphicon-calendar"></span>
                             {{post_date|date('d.M')}} | 
