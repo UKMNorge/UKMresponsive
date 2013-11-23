@@ -171,6 +171,7 @@ Author URI: https://github.com/UKMNorge?tab=members
 /* POST BYLINE */
 .post_byline_wrapper {
 	margin: none;
+	z-index: 5;
 }
 .post_byline_wrapper p {
 	margin: 0 5px;
