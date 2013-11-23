@@ -1,8 +1,8 @@
 <h2>Lokalmønstringer</h2>
 
-<ul>
+<ul class="list-unstyled">
 {% for monstring in lokalmonstringer %}
-    <li>{{ monstring.navn }}</li>
+    <li><a href="{{monstring.url}}">{{ monstring.navn }}</a></li>
 {% endfor %}
 </ul>
 
