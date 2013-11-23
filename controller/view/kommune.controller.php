@@ -19,9 +19,11 @@ $DATA['kommune'] = get_option('kommune');
 // INFO OM MØNSTRINGEN
         $pl = new monstring( get_option('pl_id') );
         $monstring = new StdClass();
+        $monstring->pl_id = $pl->get('pl_id'); 
         $monstring->starter = $pl->get('pl_start');
         $monstring->slutter = $pl->get('pl_stop');
         $monstring->sted = $pl->get('pl_place');
+        $monstring->kommuner = $pl->get('kommuner');
         $monstring->frist_1 = $pl->frist(1);
         $monstring->frist_2 = $pl->frist(2);
         $monstring->bandtypesdetails = $pl->getAllBandTypesDetailedNew();
@@ -46,6 +48,9 @@ $DATA['kommune'] = get_option('kommune');
             }
         }
         
+// DEBUG
+$VIEW = 'kommune_pre';
+
         $DATA = array_merge($DATA, $pl->pameldingsikoner());
 
 // PAGE NAV
