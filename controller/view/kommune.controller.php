@@ -41,6 +41,7 @@ $DATA['kommune'] = get_option('kommune');
         $monstring->frist_1 = $pl->frist(1);
         $monstring->frist_2 = $pl->frist(2);
         $monstring->bandtypesdetails = $pl->getAllBandTypesDetailedNew();
+        $monstring->kontaktpersoner = $pl->kontakter();
         $DATA['monstring'] = $monstring;
 
 // HVILKEN PERIODE ER KOMMUNESIDEN I?      
@@ -83,5 +84,6 @@ $VIEW = 'kommune_pre';
                                               'icon'  => 'mobile',
                                               'description' => 'Har du spørsmål om UKM i '. $pl->get('pl_name').'? Disse kan hjelpe!'
                                           );
-	
+
+//  var_dump($monstring);
 ?>
