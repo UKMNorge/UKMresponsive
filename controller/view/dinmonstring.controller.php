@@ -92,7 +92,7 @@ class DinMonstringController {
     
     public function redirect($url) 
     {
-        header("location: " . $url);
+        header("Location:" . $url);
         die();
     }
 }
