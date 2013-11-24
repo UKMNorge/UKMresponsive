@@ -10,48 +10,35 @@
  #}
  
  {% block content %}
-    <div>
-        Her kommer innloggingssiden, fordi du er ikke logget inn!
-    </div>
-        
-    <div id="intranett_login" class="col-md-6">
-        <h3>Intranett</h3>
+    
+    <div id="intranett_login" class="centered col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+        <h2>Innlogging for arrangører</h2>
         <form class="form-horizontal" role="form" action="#">
             <div class="form-group">
-                <label for="ukm_user" class="col-sm-2 control-label">Brukernavn</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="ukm_user" name="ukm_user" placeholder="Brukernavn">
-                </div>
-            </div>
+                <label for="ukm_user" class="control-label">Brukernavn</label>
+                <input type="text" class="form-control" id="ukm_user" name="ukm_user" placeholder="Brukernavn">
             
-            <div class="form-group">
-                <label for="ukm_pass" class="col-sm-2 control-label">Passord</label>
-                <div class="col-sm-10">
-                    <input type="password" class="form-control" id="ukm_pass" name="ukm_pass" placeholder="Passord">
-                </div>
+                <label for="ukm_pass" class="control-label">Passord</label>
+                <input type="password" class="form-control" id="ukm_pass" name="ukm_pass" placeholder="Passord">
             </div>
             <button type="submit" class="btn btn-default pull-right">Logg inn</button>
         </form>
     </div>
+    <div class="clearfix"></div>
 
-    <div id="wp_login" class="col-md-6">
-        <h3>Wordpress</h3>
-        <form class="form-horizontal" role="form" action="#">
+    <div id="wp_login" class="centered col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+        <h4>Kun redigere nettside</h4>
+        <form class="form-horizontal col-xs-12" role="form" action="#">
             <div class="form-group">
-                <label for="ukm_user_wp" class="col-sm-2 control-label">Brukernavn</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="ukm_user_wp" name="ukm_user_wp" placeholder="Brukernavn">
-                </div>
-            </div>
+                <label for="ukm_user_wp" class="input-sm control-label">Brukernavn</label>
+                <input type="text" class="input-sm form-control" id="ukm_user_wp" name="ukm_user_wp" placeholder="Brukernavn">
             
-            <div class="form-group">
-                <label for="ukm_pass_wp" class="col-sm-2 control-label">Passord</label>
-                <div class="col-sm-10">
-                    <input type="password" class="form-control" id="ukm_pass_wp" name="ukm_pass_wp" placeholder="Passord">
-                </div>
+                <label for="ukm_pass_wp" class="input-sm control-label">Passord</label>
+                <input type="password" class="input-sm form-control" id="ukm_pass_wp" name="ukm_pass_wp" placeholder="Passord">
             </div>
-            <button type="submit" class="btn btn-default pull-right">Logg inn</button>
+            <button type="submit" class="btn btn-xs btn-default pull-right">Logg inn</button>
         </form>
     </div>
+    <div class="clearfix"></div>
     
  {% endblock %}
