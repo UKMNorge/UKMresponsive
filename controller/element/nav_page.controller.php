@@ -36,30 +36,31 @@ switch( get_option('ukm_top_page') ) {
 	###############################################
 	## MENU OF UKM.no FRONTPAGE
 	default: 
-		$DATA['page_nav'][] = (object) array( 'url' 			=> '#',
+		$DATA['page_nav'][] = (object) array( 'url' 			=> '/din_monstring/',
 											   'title'		 	=> 'Finn din mønstring',
 											   'icon'			=> 'maps',
 											   'description'	=> 'UKM består av én lokalmønstring for hver kommune. Finn din her.'
 											  );
-		$DATA['page_nav'][] = (object) array( 'url' 			=> '#',
+		$DATA['page_nav'][] = (object) array( 'url' 			=> '/hva-er-ukm/',
 											   'title'		 	=> 'Hva er UKM?',
 											   'icon'			=> 'star',
 											   'description'	=> 'UKM består av én lokalmønstring for hver kommune. Finn din her.'
 											  );
-		$DATA['page_nav'][] = (object) array( 'url' 			=> '#',
+		$DATA['page_nav'][] = (object) array( 'url' 			=> '/urg/',
 											   'title'		 	=> 'Alt om URG',
 											   'icon'			=> 'rabbit',
 											   'description'	=> 'UKM består av én lokalmønstring for hver kommune. Finn din her.'
 											  );
-		$DATA['page_nav'][] = (object) array( 'url' 			=> '#',
+		$DATA['page_nav'][] = (object) array( 'url' 			=> '/tidligere-nettsider/',
 											   'title'		 	=> 'Tidligere nettsider',
 											   'icon'			=> 'file',
 											   'description'	=> 'UKM består av én lokalmønstring for hver kommune. Finn din her.'
 											  );
-		$DATA['page_nav'][] = (object) array( 'url' 			=> '#',
+		$DATA['page_nav'][] = (object) array( 'url' 			=> '//tv.ukm.no',
 											   'title'		 	=> 'UKM-TV',
 											   'icon'			=> 'play',
-											   'description'	=> 'UKM består av én lokalmønstring for hver kommune. Finn din her.'
+											   'description'	=> 'UKM består av én lokalmønstring for hver kommune. Finn din her.',
+											   'target'			=> '_blank'
 											  );
 	break;											   
 }

@@ -4,13 +4,13 @@
   			<img src="http://grafikk.ukm.no/profil/logo/UKM_logo.png" />
   		</div>
   		<div id="menu-xs" class="pull-right hidden-sm hidden-md hidden-lg">
-				<div class="btn-group">
+			<div class="btn-group">
 			 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
 			    For voksne og presse <span class="caret"></span>
 			  </button>
 			  <ul class="dropdown-menu" role="menu">
   				{% for nav in nav_top %}
-  					<li {{active?'class="active"':''}}><a href="{{nav.url}}">{{nav.title}}</a></li>
+  					<li {{nav.ctive?'class="active"':''}}><a href="{{nav.url}}">{{nav.title}}</a></li>
   				{% endfor %}
 			  </ul>
 			</div>
@@ -20,7 +20,7 @@
   		<div id="menu" class="hidden-xs col-sm-12 col-md-12 col-lg-10 col-lg-offset-1">
   			<ul class="nav nav-tabs">
   				{% for nav in nav_top %}
-  					<li {{active?'class="active"':''}}><a href="{{nav.url}}">{{nav.title}}</a></li>
+  					<li {{nav.active?'class="active"':''}}><a href="{{nav.url}}">{{nav.title}}</a></li>
   				{% endfor %}
   			</ul>
   		</div>
