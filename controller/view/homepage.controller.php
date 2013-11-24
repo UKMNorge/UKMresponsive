@@ -27,19 +27,19 @@ if($ppl) {
 }
 wp_reset_postdata(); 
 
+$args = array( 
+        'child_of' => 20, 
+        'parent ' => 20,
+        'hierarchical' => 0,
+        'sort_column' => 'menu_order', 
+        'sort_order' => 'asc'
+);
+$projects = get_pages( $args );
 
-$my_wp_query = new WP_Query();
-$all_wp_pages = $my_wp_query->query(array('post_type' => 'page'));
-
-$page = get_post(20);
-
-if($page) {
-    $projects = get_page_children($page->ID, $all_wp_pages);
-    
+if($projects) {
     foreach($projects as $project) {
         $DATA['projects'][] = new WPOO_Post($project);
-    }
+    } 
 }
-
 
 require_once(THEME_PATH . 'controller/element/nav_page.controller.php');
