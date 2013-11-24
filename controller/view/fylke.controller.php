@@ -96,31 +96,16 @@ $VIEW = 'fylke_post';
 // PAGE NAV
 	$DATA['page_nav'][] = (object) array( 'url' 			=> '#',
 										   'title'		 	=> 'Program',
-										   'icon'			=> 'mobile',
+										   'icon'			=> 'table',
 										   'description'	=> 'Se program for fylkesmønstringen'
 										  );
 	$DATA['page_nav'][] = (object) array( 'url' 			=> '#',
 										   'title'		 	=> 'Hvem deltar?',
-										   'icon'			=> 'mobile',
+										   'icon'			=> 'hvem',
 										   'description'	=> 'Se alle som deltar på fylkesmønstringen.'
 										  );
 	$DATA['page_nav'][] = (object) array( 'url' 			=> '#',
 										   'title'		 	=> 'Kontaktpersoner',
-										   'icon'			=> 'mobile',
-										   'description'	=> 'Har du spørsmål om UKM i '. $pl->get('pl_name').'? Disse kan hjelpe!'
-										  );
-    $DATA['page_nav'][] = (object) array( 'url' 			=> '#',
-										   'title'		 	=> 'Program',
-										   'icon'			=> 'mobile',
-										   'description'	=> 'Se program for fylkesmønstringen'
-										  );
-	$DATA['page_nav'][] = (object) array( 'url' 			=> '#',
-										   'title'		 	=> 'Hvem deltar?',
-										   'icon'			=> 'mobile',
-										   'description'	=> 'Se alle som deltar på fylkesmønstringen.'
-										  );
-	$DATA['page_nav'][] = (object) array( 'url' 			=> '#',
-										   'title'		 	=> 'Kontaktpersoner',
-										   'icon'			=> 'mobile',
+										   'icon'			=> 'info',
 										   'description'	=> 'Har du spørsmål om UKM i '. $pl->get('pl_name').'? Disse kan hjelpe!'
 										  );

@@ -74,7 +74,7 @@ switch( get_option('ukm_top_page') ) {
 											  );
 		$DATA['page_nav'][] = (object) array( 'url' 			=> '/tidligere-nettsider/',
 											   'title'		 	=> 'Tidligere nettsider',
-											   'icon'			=> 'file',
+											   'icon'			=> 'kulturminne',
 											   'description'	=> 'UKM består av én lokalmønstring for hver kommune. Finn din her.'
 											  );
 		$DATA['page_nav'][] = (object) array( 'url' 			=> '//tv.ukm.no',
