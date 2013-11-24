@@ -11,7 +11,8 @@
     {% elseif loop.index is divisibleby(2) %}
         <div class="clearfix visible-xs visible-sm"></div>
     {% endif %}
-    
+
+{% endfor %}
     {% if nextpost|length > 0 %}
 	<div class="col-xs-4 col-sm-2 pull-right">
 		<a href="{{ nextpost|raw }}"><button type="button" class="btn btn-default">Se flere nyheter</button></a>
@@ -23,6 +24,4 @@
 	      <a href="{{ prevpost|raw }}"><button type="button" class="btn btn-default">Se forrige nyheter</button></a>
 	</div>
 	{% endif %}
-
-{% endfor %}
 {% endblock %}
