@@ -38,32 +38,27 @@ switch( get_option('ukm_top_page') ) {
 	default: 
 		$DATA['page_nav'][] = (object) array( 'url' 			=> '#',
 											   'title'		 	=> 'Finn din mønstring',
-											   'icon'			=> 'mobile',
+											   'icon'			=> 'maps',
 											   'description'	=> 'UKM består av én lokalmønstring for hver kommune. Finn din her.'
 											  );
 		$DATA['page_nav'][] = (object) array( 'url' 			=> '#',
 											   'title'		 	=> 'Hva er UKM?',
-											   'icon'			=> 'mobile',
+											   'icon'			=> 'maps',
 											   'description'	=> 'UKM består av én lokalmønstring for hver kommune. Finn din her.'
 											  );
 		$DATA['page_nav'][] = (object) array( 'url' 			=> '#',
 											   'title'		 	=> 'Alt om URG',
-											   'icon'			=> 'mobile',
+											   'icon'			=> 'maps',
 											   'description'	=> 'UKM består av én lokalmønstring for hver kommune. Finn din her.'
 											  );
 		$DATA['page_nav'][] = (object) array( 'url' 			=> '#',
 											   'title'		 	=> 'Tidligere nettsider',
-											   'icon'			=> 'mobile',
+											   'icon'			=> 'maps',
 											   'description'	=> 'UKM består av én lokalmønstring for hver kommune. Finn din her.'
 											  );
 		$DATA['page_nav'][] = (object) array( 'url' 			=> '#',
 											   'title'		 	=> 'UKM-TV',
-											   'icon'			=> 'mobile',
-											   'description'	=> 'UKM består av én lokalmønstring for hver kommune. Finn din her.'
-											  );
-		$DATA['page_nav'][] = (object) array( 'url' 			=> '#',
-											   'title'		 	=> 'Whatevva',
-											   'icon'			=> 'mobile',
+											   'icon'			=> 'maps',
 											   'description'	=> 'UKM består av én lokalmønstring for hver kommune. Finn din her.'
 											  );
 	break;											   
