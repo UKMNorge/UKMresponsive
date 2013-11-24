@@ -9,6 +9,32 @@ switch( get_option('ukm_top_page') ) {
 
 	###############################################
 	## MENU OF om.UKM.no FRONTPAGE
+	case 'ambassadorer':
+		$DATA['page_nav'][] = (object) array( 'url' 			=> '#',
+											   'title'		 	=> 'Din erfaring og t-skjorte',
+											   'icon'			=> 'mobile',
+											   'description'	=> 'Bestill din ambassadørskjorte, og registrer din UKM-erfaring'
+											  );
+		$DATA['page_nav'][] = (object) array( 'url' 			=> '#',
+											   'title'		 	=> 'Materiell',
+											   'icon'			=> 'mobile',
+											   'description'	=> 'Lag UKM-materiell som plakater, flyers, last ned videoer++'
+											  );
+		$DATA['page_nav'][] = (object) array( 'url' 			=> '#',
+											   'title'		 	=> 'Andre ambassadører',
+											   'icon'			=> 'mobile',
+											   'description'	=> 'Se alle ambassadører, sortert etter lokalmønstring'
+											  );
+		$DATA['page_nav'][] = (object) array( 'url' 			=> '#',
+											   'title'		 	=> 'Facebook-gruppen',
+											   'icon'			=> 'mobile',
+											   'description'	=> 'Møt andre ambassadører og delta i diskusjoner'
+											  );
+
+		break;
+
+	###############################################
+	## MENU OF om.UKM.no FRONTPAGE
 	case 'voksneogpresse':
 		$DATA['page_nav'][] = (object) array( 'url' 			=> '#',
 											   'title'		 	=> 'Kontakt',

@@ -70,6 +70,9 @@ require_once('functions_theme.php');
 	} elseif( is_front_page() ) {
 		if( get_option('ukm_top_page') == 'internasjonalt' ) {
 			require_once('controller/view/homepage.controller.php');
+			$VIEW = 'homepage_ambassador';      
+		} elseif( get_option('ukm_top_page') == 'internasjonalt' ) {
+			require_once('controller/view/homepage.controller.php');
 			$VIEW = 'homepage_internasjonalt';      
 		} elseif( get_option('site_type') == 'fylke' ) {
             $VIEW = 'fylke';
@@ -77,7 +80,7 @@ require_once('functions_theme.php');
 		} elseif( get_option('site_type') == 'kommune' ) {
             $VIEW = 'kommune';
 			require_once('controller/view/kommune.controller.php');
-                } else {
+        } else {
 			require_once('controller/view/homepage.controller.php');
 			$VIEW = 'homepage';
 		}

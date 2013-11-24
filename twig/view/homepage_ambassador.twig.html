@@ -1,0 +1,47 @@
+{% extends "layout.twig.html" %}
+
+{% block content %}
+	<div class="row">
+	<div class="col-xs-12 col-md-7">
+		<img src="http://ico.ukm.no/ambassador-128.png" class="pull-left" />
+		Marius Mandal
+		Ambassadør nr 2
+		Andeby i Testfylke
+		Del på facebook
+	</div>
+		<div id="infosquare" class="col-xs-12 col-md-5">
+			<div class="todo">
+	        	<ol>
+				{% for nav in page_nav %}
+					{% embed "element/nav_page.twig.html" %}{% endembed %}
+				{% endfor %}
+				</ol>
+			</div>
+		</div>
+	</div>
+	
+	<div class="row">
+		{% for post in posts %}
+			<div class="news col-xs-6 col-md-4">
+				{% embed "element/post/grid_element.twig.html" with post %}{% endembed %}
+			</div>
+			
+			{% if loop.index is divisibleby(3) %}
+				<div class="clearfix visible-md visible-lg"></div>
+			{% elseif loop.index is divisibleby(2) %}
+				<div class="clearfix visible-xs visible-sm"></div>
+			{% endif %}
+		{% endfor %}
+	
+		<div class="col-xs-4 col-sm-2 pull-right">
+			<a href="{{ nextpost|raw }}"><button type="button" class="btn btn-default">Se flere nyheter</button></a>
+		</div>
+		
+		{% if prevpost|length > 0 %}
+		<div class="col-xs-4 col-sm-2 pull-left">
+		      <a href="{{ prevpost|raw }}"><button type="button" class="btn btn-default">Se forrige nyheter</button></a>
+		</div>
+		{% endif %}
+	</div>
+
+{% endblock %}
