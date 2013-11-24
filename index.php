@@ -68,7 +68,7 @@ require_once('functions_theme.php');
 		require_once('controller/element/comments.controller.php');
 		$VIEW = 'post';
 	} elseif( is_front_page() ) {
-		if( get_option('ukm_top_page') == 'internasjonalt' ) {
+		if( get_option('ukm_top_page') == 'ambassadorer' ) {
 			require_once('controller/view/homepage.controller.php');
 			$VIEW = 'homepage_ambassador';      
 		} elseif( get_option('ukm_top_page') == 'internasjonalt' ) {
