@@ -12,17 +12,17 @@ switch( get_option('ukm_top_page') ) {
 	case 'ambassadorer':
 		$DATA['page_nav'][] = (object) array( 'url' 			=> '#',
 											   'title'		 	=> 'Materiell',
-											   'icon'			=> 'mobile',
+											   'icon'			=> 'file',
 											   'description'	=> 'Lag UKM-materiell som plakater, flyers, last ned videoer++'
 											  );
 		$DATA['page_nav'][] = (object) array( 'url' 			=> '#',
 											   'title'		 	=> 'Andre ambassadører',
-											   'icon'			=> 'mobile',
+											   'icon'			=> 'ambassador',
 											   'description'	=> 'Se alle ambassadører, sortert etter lokalmønstring'
 											  );
 		$DATA['page_nav'][] = (object) array( 'url' 			=> '#',
 											   'title'		 	=> 'Facebook-gruppen',
-											   'icon'			=> 'mobile',
+											   'icon'			=> 'facebook',
 											   'description'	=> 'Møt andre ambassadører og delta i diskusjoner'
 											  );
 
@@ -33,23 +33,23 @@ switch( get_option('ukm_top_page') ) {
 	case 'voksneogpresse':
 		$DATA['page_nav'][] = (object) array( 'url' 			=> '#',
 											   'title'		 	=> 'Kontakt',
-											   'icon'			=> 'mobile',
+											   'icon'			=> 'info',
 											   'description'	=> 'Finn kontaktpersoner i administrasjonen, fylket og styret'
 											  );
 		$DATA['page_nav'][] = (object) array( 'url' 			=> '#',
 											   'title'		 	=> 'Hva er UKM?',
-											   'icon'			=> 'mobile',
+											   'icon'			=> 'star',
 											   'description'	=> 'UKM består av én lokalmønstring for hver kommune. Finn din her.'
 											  );
 		$DATA['page_nav'][] = (object) array( 'url' 			=> '#',
-											   'title'		 	=> 'Strategiplan',
-											   'icon'			=> 'mobile',
-											   'description'	=> 'Se UKM Norges strategiplan'
+											   'title'		 	=> 'PRESSE',
+											   'icon'			=> 'pen',
+											   'description'	=> 'Informasjon, logoer, bilder med mer'
 											  );
 		$DATA['page_nav'][] = (object) array( 'url' 			=> '#',
-											   'title'		 	=> 'PRESSE',
-											   'icon'			=> 'mobile',
-											   'description'	=> 'Informasjon, logoer, bilder med mer'
+											   'title'		 	=> 'Strategiplan',
+											   'icon'			=> 'hus',
+											   'description'	=> 'Se UKM Norges strategiplan'
 											  );
 		break;
 
