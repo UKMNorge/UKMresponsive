@@ -43,22 +43,22 @@ switch( get_option('ukm_top_page') ) {
 											  );
 		$DATA['page_nav'][] = (object) array( 'url' 			=> '#',
 											   'title'		 	=> 'Hva er UKM?',
-											   'icon'			=> 'maps',
+											   'icon'			=> 'star',
 											   'description'	=> 'UKM består av én lokalmønstring for hver kommune. Finn din her.'
 											  );
 		$DATA['page_nav'][] = (object) array( 'url' 			=> '#',
 											   'title'		 	=> 'Alt om URG',
-											   'icon'			=> 'maps',
+											   'icon'			=> 'rabbit',
 											   'description'	=> 'UKM består av én lokalmønstring for hver kommune. Finn din her.'
 											  );
 		$DATA['page_nav'][] = (object) array( 'url' 			=> '#',
 											   'title'		 	=> 'Tidligere nettsider',
-											   'icon'			=> 'maps',
+											   'icon'			=> 'file',
 											   'description'	=> 'UKM består av én lokalmønstring for hver kommune. Finn din her.'
 											  );
 		$DATA['page_nav'][] = (object) array( 'url' 			=> '#',
 											   'title'		 	=> 'UKM-TV',
-											   'icon'			=> 'maps',
+											   'icon'			=> 'play',
 											   'description'	=> 'UKM består av én lokalmønstring for hver kommune. Finn din her.'
 											  );
 	break;											   
