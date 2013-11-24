@@ -31,7 +31,7 @@ wp_reset_postdata();
 $my_wp_query = new WP_Query();
 $all_wp_pages = $my_wp_query->query(array('post_type' => 'page'));
 
-$page = get_page_by_title('Prosjekter');
+$page = get_post(20);
 
 if($page) {
     $projects = get_page_children($page->ID, $all_wp_pages);
