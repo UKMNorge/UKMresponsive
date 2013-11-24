@@ -11,11 +11,6 @@ switch( get_option('ukm_top_page') ) {
 	## MENU OF om.UKM.no FRONTPAGE
 	case 'ambassadorer':
 		$DATA['page_nav'][] = (object) array( 'url' 			=> '#',
-											   'title'		 	=> 'Din erfaring og t-skjorte',
-											   'icon'			=> 'mobile',
-											   'description'	=> 'Bestill din ambassadørskjorte, og registrer din UKM-erfaring'
-											  );
-		$DATA['page_nav'][] = (object) array( 'url' 			=> '#',
 											   'title'		 	=> 'Materiell',
 											   'icon'			=> 'mobile',
 											   'description'	=> 'Lag UKM-materiell som plakater, flyers, last ned videoer++'
