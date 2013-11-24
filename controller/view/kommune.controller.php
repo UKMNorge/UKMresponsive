@@ -73,21 +73,32 @@ $VIEW = 'kommune_post';
         $DATA = array_merge($DATA, $pl->pameldingsikoner());
 
 // PAGE NAV
+
+        $DATA['page_nav'][] = (object) array( 'url' => 'bilder/',
+                                              'title' => 'Bilder',
+                                              'icon'  => 'kamera',
+                                              'description' => 'Bilder fra '. $pl->get('pl_name').''
+                                          );
+        $DATA['page_nav'][] = (object) array( 'url' => '//tv.ukm.no',
+                                              'title' => 'Film',
+                                              'icon'  => 'ukmtv_black',
+                                              'description' => 'Film fra fra '. $pl->get('pl_name').' i UKM-TV'
+                                          );
+
+
         $DATA['page_nav'][] = (object) array( 'url' => '#',
                                             'title' => 'Program',
-                                            'icon'  => 'mobile',
+                                            'icon'  => 'table',
                                             'description' => 'Se program for lokalmønstringen'
                                            );
         $DATA['page_nav'][] = (object) array( 'url' => '#',
                                               'title' => 'Hvem deltar?',
-                                              'icon' => 'mobile',
+                                              'icon' => 'hvem',
                                               'description' => 'Se alle som deltar på lokalmønstringen.'
                                           );
         $DATA['page_nav'][] = (object) array( 'url' => '#',
                                               'title' => 'Kontaktpersoner',
-                                              'icon'  => 'mobile',
+                                              'icon'  => 'info',
                                               'description' => 'Har du spørsmål om UKM i '. $pl->get('pl_name').'? Disse kan hjelpe!'
                                           );
-
-//  var_dump($monstring);
 ?>

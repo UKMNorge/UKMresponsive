@@ -94,6 +94,18 @@ $DATA['fylke'] = get_option('fylke');
 $VIEW = 'fylke_post';
 
 // PAGE NAV
+
+    $DATA['page_nav'][] = (object) array( 'url' => 'bilder/',
+                                          'title' => 'Bilder',
+                                          'icon'  => 'kamera',
+                                          'description' => 'Bilder fra '. $pl->get('pl_name').''
+                                      );
+    $DATA['page_nav'][] = (object) array( 'url' => '//tv.ukm.no',
+                                          'title' => 'Film',
+                                          'icon'  => 'ukmtv_black',
+                                          'description' => 'Film fra fra '. $pl->get('pl_name').' i UKM-TV'
+                                      );
+
 	$DATA['page_nav'][] = (object) array( 'url' 			=> '#',
 										   'title'		 	=> 'Program',
 										   'icon'			=> 'table',
