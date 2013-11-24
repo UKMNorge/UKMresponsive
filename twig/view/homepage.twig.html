@@ -3,7 +3,11 @@
 {% block content %}
 	<div class="row">
 	<div id="slider" class="col-xs-12 col-md-7">
-		{% embed "./element/slider/ungdom.twig.html" %}{% endembed %}
+		{% if( slider == 'voksneogpresse' ) %}
+			{% embed "./element/slider/voksneogpresse.twig.html" %}{% endembed %}
+		{% else %}
+			{% embed "./element/slider/ungdom.twig.html" %}{% endembed %}
+		{% endif %}
 	</div>
 		<div id="infosquare" class="col-xs-12 col-md-5">
 			<div class="todo">

@@ -28,8 +28,17 @@ require_once('functions_theme.php');
 * 
 **********************************/
 	require_once('controller/nav_top.controller.php');
-
-
+	
+	$DATA['top_page'] = get_option('ukm_top_page');
+	
+	switch( $DATA['top_page'] ) {
+		case 'voksneogpresse':
+			$DATA['slider'] = 'voksneogpresse';
+			break;
+		default:
+			$DATA['slider'] = 'ungdom';
+			break;
+	}
 
 /**********************************
 * SWITCH VIEW
@@ -45,7 +54,6 @@ require_once('functions_theme.php');
             die();
         }
     }
-
 	if( is_archive() ) {
 	    require_once('controller/view/archive.controller.php');
 		if(is_author()) {
@@ -73,8 +81,7 @@ require_once('functions_theme.php');
 			require_once('controller/view/homepage.controller.php');
 			$VIEW = 'homepage';
 		}
-	} elseif( is_page() ) {
-		
+	} elseif( is_page() ) {	
 		$viseng = get_post_meta($post->ID, 'UKMviseng', true);
 		switch ( $viseng ) {
 			case 'dinmonstring':
