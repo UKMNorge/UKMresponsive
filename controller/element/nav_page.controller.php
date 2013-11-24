@@ -80,7 +80,7 @@ switch( get_option('ukm_top_page') ) {
 											  );
 		$DATA['page_nav'][] = (object) array( 'url' 			=> 'http://tv.ukm.no',
 											   'title'		 	=> 'UKM-TV',
-											   'icon'			=> 'play',
+											   'icon'			=> 'ukmtv_black',
 											   'description'	=> 'UKM består av én lokalmønstring for hver kommune. Finn din her.',
 											   'target'			=> '_blank'
 											  );

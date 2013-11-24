@@ -97,12 +97,12 @@ $VIEW = 'fylke_post';
 
     $DATA['page_nav'][] = (object) array( 'url' => 'bilder/',
                                           'title' => 'Bilder',
-                                          'icon'  => 'mobile',
+                                          'icon'  => 'kamera',
                                           'description' => 'Bilder fra '. $pl->get('pl_name').''
                                       );
     $DATA['page_nav'][] = (object) array( 'url' => '//tv.ukm.no',
                                           'title' => 'Film',
-                                          'icon'  => 'mobile',
+                                          'icon'  => 'ukmtv_black',
                                           'description' => 'Film fra fra '. $pl->get('pl_name').' i UKM-TV'
                                       );
 
