@@ -35,8 +35,8 @@ $DATA['fylke'] = get_option('fylke');
 	$monstring = new StdClass();
 	$monstring->starter = $pl->get('pl_start');
 	$monstring->slutter = $pl->get('pl_stop');
-	$monstring->sted = $pl->info['pl_place']; // get('pl_place');
-    $monstring->navn = $pl->info['pl_name'];  // get('pl_name');
+	$monstring->sted = $pl->get('pl_place'); // info['pl_place']; //
+    $monstring->navn = $pl->get('pl_name'); // info['pl_name'];  //
 	$DATA['monstring'] = $monstring;
 
 // INFO OM LOKALMØNSTRINGER
