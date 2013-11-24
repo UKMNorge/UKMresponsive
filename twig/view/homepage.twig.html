@@ -32,10 +32,16 @@
 				<div class="clearfix visible-xs visible-sm"></div>
 			{% endif %}
 		{% endfor %}
-	
+
+        {% if nextpost|length > 0 or prevpost|length > 0 %}
+            <div style="clear:both;"></div>
+        {% endif %}
+
+        {% if nextpost|length > 0 %}
 		<div class="col-xs-4 col-sm-2 pull-right">
 			<a href="{{ nextpost|raw }}"><button type="button" class="btn btn-default">Se flere nyheter</button></a>
 		</div>
+		{% endif %}
 		
 		{% if prevpost|length > 0 %}
 		<div class="col-xs-4 col-sm-2 pull-left">
@@ -43,5 +49,11 @@
 		</div>
 		{% endif %}
 	</div>
+	
+	{# to fetch "prosjekter":
+	 #  {% for project in projects %}
+     #      {{ project.title|raw }}
+	 #  {% endfor %}
+	#}
 
 {% endblock %}
