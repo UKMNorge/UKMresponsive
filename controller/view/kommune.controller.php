@@ -63,7 +63,7 @@ $DATA['kommune'] = get_option('kommune');
     
         
 // DEBUG
-$VIEW = 'kommune_ikke_klar';
+$VIEW = 'kommune_post';
 
         $DATA = array_merge($DATA, $pl->pameldingsikoner());
 

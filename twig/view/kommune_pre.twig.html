@@ -27,26 +27,21 @@
 
     {# Registration #}
     <div class="col-xs-12 col-md-5">
-        <h3>Påmelding</h3>
+        <h3>Påmelding er stengt</h3>
+        <strong>Kategorier</strong>
         
-        <div id="paamelding_container">
-            <ul class="list-inline col-xs-12">
-            {% for ikon in ikoner_tittel %}
-                <li class="col-xs-3">
-                    {% if monstring.kommuner|length > 1 %}
-                        
-                        <a onclick="kommuneValg.vis('{{ ikon.name }}', '{{ monstring.pl_id }}', '{{ ikon.ico }}', {{monstring.kommuner | json_encode()}} )">
-                    {% else %}
-                        <a href="http://pamelding.ukm.no/quickstart.php?steg=kontaktperson&type={{ ikon.ico }}&kommune={{ monstring.kommuner[0].id }}&pl_id={{monstring.pl_id}}">
-                    {% endif %}
-                    <img class="col-xs-12" src="{{ ikon.ico_url }}" alt="{{ ikon.name }}"> 
-                    <h4 class="centered">{{ ikon.name | raw }}</h4>
-                    </a>
-                </li>
-                {% if loop.index is divisibleby(4) %} <div class="clearfix"></div> {% endif %}
-            {% endfor %}
-            </ul> 
-        </div>
+        <ul class="list-inline col-xs-12">
+        {% for ikon in ikoner_tittel %}
+            <li class="col-xs-3">
+                <img class="col-xs-12" src="{{ ikon.ico_url }}" alt="{{ ikon.name }}"> 
+                <h4 class="centered">{{ ikon.name }}</h4>
+            </li>
+            {% if loop.index is divisibleby(4) %}
+                <div class="clearfix"></div>
+            {% endif %}
+        {% endfor %}
+        </ul> 
+        <div class="clearfix"></div>
     </div>
 
     {# contact #}

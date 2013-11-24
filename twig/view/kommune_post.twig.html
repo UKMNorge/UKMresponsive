@@ -1,7 +1,6 @@
 {% extends "layout.twig.html" %}
 
 {% block content %}
-    <script type="text/javascript" src="{{ url.theme_dir }}js/lokalside_pamelding.js"></script>
     
     {# Tittel #}
     {% embed "element/monstring/monstring_tittel.twig.html" with {"monstring_type":"lokal"} %}
@@ -24,6 +23,24 @@
         {% endembed %}
     </div>
 
+    {# Category #}
+    <div class="col-xs-12 col-md-5 pull-right">
+        <h3>Kategorier</h3>
+        
+        <ul class="list-inline col-xs-12">
+        {% for ikon in ikoner_tittel %}
+            <li class="col-xs-3">
+                <img class="col-xs-12" src="{{ ikon.ico_url }}" alt="{{ ikon.name }}"> 
+                <h4 class="centered">{{ ikon.name }}</h4>
+            </li>
+            {% if loop.index is divisibleby(4) %}
+                <div class="clearfix"></div>
+            {% endif %}
+        {% endfor %}
+        </ul> 
+        <div class="clearfix"></div>
+    </div>
+
 
     {# contact #}
     <div class="col-xs-12 col-md-5">
@@ -42,6 +59,8 @@
         {% embed "element/monstring/monstring_flere_artikler.twig.html" %}
         {% endembed %}
     </div>
+
+   
 
 
 {% endblock %}

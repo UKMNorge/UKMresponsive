@@ -28,6 +28,7 @@
     {# Registration #}
     <div class="col-xs-12 col-md-5">
         <h3>Påmelding</h3>
+        <strong>Kategorier</strong>
         
         <div id="paamelding_container">
             <ul class="list-inline col-xs-12">
@@ -45,8 +46,9 @@
                 </li>
                 {% if loop.index is divisibleby(4) %} <div class="clearfix"></div> {% endif %}
             {% endfor %}
-            </ul> 
+            </ul>
         </div>
+        <div class="clearfix"></div>
     </div>
 
     {# contact #}

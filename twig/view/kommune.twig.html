@@ -25,6 +25,19 @@
     
     <div class="col-xs-12 col-md-5 pull-right">
         <h3>Kategorier</h3>
+        
+        <ul class="list-inline col-xs-12">
+        {% for ikon in ikoner_tittel %}
+            <li class="col-xs-3">
+                <img class="col-xs-12" src="{{ ikon.ico_url }}" alt="{{ ikon.name }}"> 
+                <h4 class="centered">{{ ikon.name }}</h4>
+            </li>
+            {% if loop.index is divisibleby(4) %}
+                <div class="clearfix"></div>
+            {% endif %}
+        {% endfor %}
+        </ul> 
+        <div class="clearfix"></div>
     </div>
 
     <div class="visible-xs visible-sm hidden-md hidden-lg clearfix"></div>
