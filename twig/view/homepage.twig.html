@@ -6,10 +6,12 @@
 		{% embed "./element/slider/ungdom.twig.html" %}{% endembed %}
 	</div>
 		<div id="infosquare" class="col-xs-12 col-md-5">
-			<div class="row">
+			<div class="todo">
+	        	<ol>
 				{% for nav in page_nav %}
-					{% embed "element/nav_page.twig.html" with nav %}{% endembed %}
+					{% embed "element/nav_page.twig.html" %}{% endembed %}
 				{% endfor %}
+				</ol>
 			</div>
 		</div>
 	</div>

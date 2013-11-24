@@ -1,0 +1,14 @@
+{% extends "layout.twig.html" %}
+
+{% block content %}
+<article>
+        <div class="page">
+                <h1>{{post.title|raw}}</h1>
+                {{post.content|raw}}
+        </div>
+</article>
+<div class="pull-right lastupdated">
+        Sist oppdatert for 
+        <span class="timeago" title="{{post.date|date('Y-m-d H:i:s')}}">{{post.date|date('d.m.Y H:i')}}</span>
+</div>
+{% endblock %}
