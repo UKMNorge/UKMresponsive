@@ -85,13 +85,16 @@ class ArrangorLogonController {
                  'ORDER BY `season` DESC ' .
                  'LIMIT 1';
                  
-        $sql = new SQL($query, array($row['kommune']));
+        $sql = new SQL($query, array('kommune' => $row['kommune']));
         
+        echo $sql->debug();
         $pl_id = $sql->run('field', 'pl_id');
-        
+	
+/*
         if(!isset($pl_id)) {
             throw new Exception('Could not fetch pl_id');
         }
+*/
         
         $row['pl_id'] = $pl_id;
         $row['pl_type'] = $row['kommune'] == 0 ? 'fylke' : 'kommune';
@@ -105,14 +108,14 @@ class ArrangorLogonController {
         }
         
         // Login success
-        $this->redirect(get_permalink() . '/arrangor?logon=true');
+        $this->redirect('http://'.$_SERVER['HTTP_HOST'].'/arrangor/?logon=true');
     }
     
     public function logout()
     {
         $this->setCookie($this->cookies);
         $this->unsetCookie($this->cookies);
-        $this->redirect(get_permalink() . '?UKMstatus=logget_ut');
+        $this->redirect('http://'.$_SERVER['HTTP_HOST'].'/arrangor/?UKMstatus=logget_ut');
     }
     
     public function setCookie($cookie, $value = '', $time = 1) 
