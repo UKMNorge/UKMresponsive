@@ -2,11 +2,24 @@
 
 {% block content %}
     <script type="text/javascript" src="{{ url.theme_dir }}js/lokalside_pamelding.js"></script>
-    <h1>Lokalside</h1>
+    
+    {% if monstring.kommuner|length > 1 %}
+        <h1>Lokalside for 
+            {% for kommune in monstring.kommuner %} 
+                {% if loop.first %} {{ kommune.name }}
+                {% elseif not loop.last %}, {{ kommune.name }}
+                {% else %} og {{ kommune.name }}
+                {% endif %} 
+            {% endfor %}
+        </h1>
+    {% else %}
+        <h1>Lokalside for {{ monstring.kommuner[0].name }}</h1>
+    {% endif %}
 
     <div class="col-xs-12 col-md-5 pull-right">
         <div>
-            <p>Lokalmønstringen er fra {{monstring.starter | date("D j. F")}} til {{monstring.slutter | date("D j. F")}} i {{monstring.sted}}</p>
+            {% embed "element/monstring/monstring_beskrivelse.twig.html" with {"time_verb":"er"} %}
+            {% endembed %}
         </div>
     
         <div>
@@ -20,6 +33,8 @@
         {% endembed %}
     </div>
 
+
+    {# Registration #}
     <div class="col-xs-12 col-md-5">
         <h3>Påmelding</h3>
         
@@ -37,14 +52,22 @@
                     <h4 class="centered">{{ ikon.name | raw }}</h4>
                     </a>
                 </li>
-                {% if loop.index is divisibleby(4) %}
-                    <div class="clearfix"></div>
-                {% endif %}
+                {% if loop.index is divisibleby(4) %} <div class="clearfix"></div> {% endif %}
             {% endfor %}
             </ul> 
         </div>
     </div>
 
+    {# contact #}
+    <div class="col-xs-12 col-md-5">
+        {% for kontakt in monstring.kontaktpersoner %}
+            
+            {% embed "element/monstring/kontaktperson.twig.html" with kontakt.info %}
+            {% endembed %}
+        
+        {% endfor %}
+        
+    </div>
 
     <div class="visible-xs visible-sm clearfix"></div>
         
@@ -52,5 +75,6 @@
         {% embed "element/monstring/monstring_flere_artikler.twig.html" %}
         {% endembed %}
     </div>
+
 
 {% endblock %}

@@ -41,6 +41,7 @@ $DATA['kommune'] = get_option('kommune');
         $monstring->frist_1 = $pl->frist(1);
         $monstring->frist_2 = $pl->frist(2);
         $monstring->bandtypesdetails = $pl->getAllBandTypesDetailedNew();
+        $monstring->kontaktpersoner = $pl->kontakter();
         $DATA['monstring'] = $monstring;
 
 // HVILKEN PERIODE ER KOMMUNESIDEN I?      
@@ -50,9 +51,9 @@ $DATA['kommune'] = get_option('kommune');
         else {
             $utenforsesong = mktime(0,0,0,12,1,get_option('season')-1)>time();
             if ($utenforsesong) {
-                $VIEW = 'kommune_pre_lokal';
+                $VIEW = 'kommune_pre_lokal'; // USELESS!!
             } else if ( time() < $pl->frist()) {
-                $VIEW = 'kommune_lokal';
+                $VIEW = 'kommune_lokal'; // USELESS!!
             } elseif( time() > $pl->frist() && time() < $pl->get('pl_start') ) {
                 $VIEW = 'kommune_pre';
             } elseif( time() > $pl->get('pl_start') && time() < $pl->get('pl_stop') ) {
@@ -63,7 +64,7 @@ $DATA['kommune'] = get_option('kommune');
         }
         
 // DEBUG
-$VIEW = 'kommune_pre';
+$VIEW = 'kommune';
 
         $DATA = array_merge($DATA, $pl->pameldingsikoner());
 
@@ -83,5 +84,6 @@ $VIEW = 'kommune_pre';
                                               'icon'  => 'mobile',
                                               'description' => 'Har du spørsmål om UKM i '. $pl->get('pl_name').'? Disse kan hjelpe!'
                                           );
-	
+
+//  var_dump($monstring);
 ?>
