@@ -1,4 +1,7 @@
-
-{% for nav in page_nav %}
-    {% embed "element/nav_page.twig.html" with nav %}{% endembed %}
-{% endfor %}
+<div class="todo">
+	<ol>
+	{% for nav in page_nav %}
+	    {% embed "element/nav_page.twig.html" with nav %}{% endembed %}
+	{% endfor %}
+	</ol>
+</div>
