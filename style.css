@@ -9,12 +9,15 @@ Author URI: https://github.com/UKMNorge?tab=members
 */
 
 @import "css/base.less";
+@import "css/tabs.less";
 @import "css/byline.less";
 @import "css/post.less";
 @import "css/wpshit.less";
 @import "css/internasjonalt.less";
 @import "css/infosquares.less";
 @import "css/flatui.less";
+@import "css/footer.less";
+@import "css/facebook.less";
 
 
 /* SLIDER */
@@ -32,42 +35,14 @@ Author URI: https://github.com/UKMNorge?tab=members
 .news img {
 	width: 100%;
 }
+
 /* FRAME */
 #logo {
 	margin-bottom: 20px;
 }
-	#logo img {
-		width: 100%;
-	}
-#menu-xs {
-	margin: 5% 0 0 0;
+#logo img {
+	width: 100%;
 }
-#menu ul {
-	text-align: center;
-	float: none;
-	border: none;
-	margin: 0 auto;
-}
-	#menu ul li {
-		background: #6dc6c1;
-		border-radius: 5px 5px 0 0;
-		border: none;
-		margin: 0 2px;
-	}
-	#menu ul li a {
-		background: #6dc6c1;
-		border: 1px solid #6dc6c1;
-		border-bottom: none;
-	}
-	#menu ul li a, a:hover, a:visited {
-		color: #000;
-	}
-	#menu ul li a:hover {
-		background: #fff7e1;
-		border: 1px solid #6dc6c1;
-		border-bottom: none;
-		width: 100%;
-	}
 	
 #top {
 	margin: 0 auto;
@@ -77,64 +52,8 @@ Author URI: https://github.com/UKMNorge?tab=members
 	margin: 0 auto;
 }
 
-#almostfooter {
-	text-align: center;
-}
-
 .center {
 	text-align: center;
-}
-
-/* ALMOSTFOOTER */
-
-#almostfooter {
-	text-align: center;
-	border-top: 2px solid #1e4a45;
-	border-bottom: 2px solid #1e4a45;
-	margin-top: 20px;
-	background: #6dc6c1;
-	padding: 24px 10px 24px 10px;
-}
-#almostfooter ol {
-	margin: -8px;
-}
-#almostfooter ol li {
-	padding: 6px 0px 6px 0px;
-}
-#almostfooter h3 {
-	color: #1e4a45;
-}
-#almostfooter a {
-	color: #1e4a45;
- 	font-weight: bold;
-}
-
-/* FOOTER */
-#footer {
-	margin-bottom: 30px;
-}
-#footer a {
-	color: #1e4a45;	
-}
-
-
-.center {
-	text-align: center;
-}
-
-.test {
-	background: #d53b3b;
-	border: 1px solid black;
-}
-
-/* FACEBOOK */
-#fb-sm {
-	float: right;
-	margin: 20px 0 0 0;
-}
-#fb-xs {
-	float: none;
-	margin: 0 auto;
 }
 
 a:hover, a:active, a:visited {
