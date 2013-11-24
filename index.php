@@ -13,8 +13,6 @@ require_once('WPOO/WPOO/Post.php');
 require_once('WPOO/WPOO/Author.php');
 require_once('UKM/inc/twig-admin.inc.php');
 require_once('functions_theme.php');
-error_reporting(E_ALL);
-ini_set('display_errors',1);
 
 
 /**********************************
