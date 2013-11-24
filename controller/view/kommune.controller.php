@@ -42,6 +42,11 @@ $DATA['kommune'] = get_option('kommune');
         $monstring->frist_2 = $pl->frist(2);
         $monstring->bandtypesdetails = $pl->getAllBandTypesDetailedNew();
         $monstring->kontaktpersoner = $pl->kontakter();
+        
+        foreach($monstring->kontaktpersoner as $i => $kp) {
+	        $monstring->kontaktpersoner[$i]->info['name'] = $kp->get('name');
+        }
+        
         $DATA['monstring'] = $monstring;
 
 // HVILKEN PERIODE ER KOMMUNESIDEN I?      
