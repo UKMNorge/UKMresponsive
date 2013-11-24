@@ -1,7 +1,10 @@
 <?php
 $active = get_option( 'ukm_top_page' );
 
-if($active == 'ungdom' && $post->post_name == 'din_monstring')
+if($active == 'ungdom' && is_front_page() )
+	$active = 'ungdom';
+	
+if(!$active)
 	$active = 'din_monstring';
 
 $DATA['nav_top'][] = (object) array('url' 		=> '//'.$_SERVER['HTTP_HOST'].'/',
