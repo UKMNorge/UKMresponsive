@@ -11,6 +11,8 @@
 
 
 
+add_theme_support( 'post-thumbnails' );
+
 
 
 function add_remove_contactmethods( $contactmethods ) {
