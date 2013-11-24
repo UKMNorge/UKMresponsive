@@ -35,7 +35,8 @@ $DATA['fylke'] = get_option('fylke');
 	$monstring = new StdClass();
 	$monstring->starter = $pl->get('pl_start');
 	$monstring->slutter = $pl->get('pl_stop');
-	$monstring->sted = $pl->get('pl_place');
+	$monstring->sted = $pl->info['pl_place']; // get('pl_place');
+    $monstring->navn = $pl->info['pl_name'];  // get('pl_name');
 	$DATA['monstring'] = $monstring;
 
 // INFO OM LOKALMØNSTRINGER
@@ -123,4 +124,3 @@ $VIEW = 'fylke_post';
 										   'icon'			=> 'mobile',
 										   'description'	=> 'Har du spørsmål om UKM i '. $pl->get('pl_name').'? Disse kan hjelpe!'
 										  );
-	

@@ -2,6 +2,9 @@
 
 {% block content %}
     
+    {# Tittel #}
+    {% embed "element/monstring/monstring_tittel.twig.html" with {"monstring_type":"lokal"} %}
+    {% endembed %}
 
     <div class="col-xs-12 col-md-5 pull-right">
         <div>
@@ -26,7 +29,7 @@
         <ul class="list-inline col-xs-12">
         {% for ikon in ikoner_tittel %}
             <li class="col-xs-3">
-                <img class="col-xs-12" src="{{ ikon.ico }}" alt="{{ ikon.name }}"> 
+                <img class="col-xs-12" src="{{ ikon.ico_url }}" alt="{{ ikon.name }}"> 
                 <h4 class="centered">{{ ikon.name }}</h4>
             </li>
             {% if loop.index is divisibleby(4) %}
@@ -42,7 +45,5 @@
         {% embed "element/monstring/monstring_flere_artikler.twig.html" %}
         {% endembed %}
     </div>
-
-{{ dump(ikoner_tittel|raw) | raw }}
 
 {% endblock %}

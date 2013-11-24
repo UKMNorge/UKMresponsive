@@ -1,7 +1,9 @@
 {% extends "layout.twig.html" %}
 
 {% block content %}
-    <h1>Fylkesside</h1>
+    {# Tittel #}
+    {% embed "element/monstring/monstring_tittel.twig.html" with {"monstring_type":"fylke"} %}
+    {% endembed %}
     
     <div class="col-xs-12 col-md-5 pull-right">
         {% embed "element/monstring/monstring_navigasjon.twig.html" %}

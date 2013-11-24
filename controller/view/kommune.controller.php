@@ -45,26 +45,25 @@ $DATA['kommune'] = get_option('kommune');
         $DATA['monstring'] = $monstring;
 
 // HVILKEN PERIODE ER KOMMUNESIDEN I?      
-        if (!$pl->registered())
-            $VIEW = 'kommune_ikke_klar';
 
-        else {
-            $utenforsesong = mktime(0,0,0,12,1,get_option('season')-1)>time();
-            if ($utenforsesong) {
-                $VIEW = 'kommune_pre_lokal'; // USELESS!!
-            } else if ( time() < $pl->frist()) {
-                $VIEW = 'kommune_lokal'; // USELESS!!
-            } elseif( time() > $pl->frist() && time() < $pl->get('pl_start') ) {
-                $VIEW = 'kommune_pre';
-            } elseif( time() > $pl->get('pl_start') && time() < $pl->get('pl_stop') ) {
-                $VIEW = 'kommune';
-            } elseif( time() > $pl->get('pl_stop') ) {
-                $VIEW = 'kommune_post';
-            }
+        $utenforsesong = mktime(0,0,0,12,1,get_option('season')-1)>time();
+        if (!$pl->registered()) {
+            $VIEW = 'kommune_ikke_klar';
+        } else if ($utenforsesong) {
+            $VIEW = 'kommune_pre_pamelding'; 
+        } else if ( time() < $pl->frist()) {
+            $VIEW = 'kommune_pamelding';
+        } elseif( time() > $pl->get('deadline') && time() < $pl->get('pl_start') ) {
+            $VIEW = 'kommune_pre';
+        } elseif( time() > $pl->get('pl_start') && time() < $pl->get('pl_stop') ) {
+            $VIEW = 'kommune';
+        } else { // if( time() > $pl->get('pl_stop') ) {
+            $VIEW = 'kommune_post';
         }
+    
         
 // DEBUG
-$VIEW = 'kommune';
+$VIEW = 'kommune_ikke_klar';
 
         $DATA = array_merge($DATA, $pl->pameldingsikoner());
 

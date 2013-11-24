@@ -3,18 +3,9 @@
 {% block content %}
     <script type="text/javascript" src="{{ url.theme_dir }}js/lokalside_pamelding.js"></script>
     
-    {% if monstring.kommuner|length > 1 %}
-        <h1>Lokalside for 
-            {% for kommune in monstring.kommuner %} 
-                {% if loop.first %} {{ kommune.name }}
-                {% elseif not loop.last %}, {{ kommune.name }}
-                {% else %} og {{ kommune.name }}
-                {% endif %} 
-            {% endfor %}
-        </h1>
-    {% else %}
-        <h1>Lokalside for {{ monstring.kommuner[0].name }}</h1>
-    {% endif %}
+    {# Tittel #}
+    {% embed "element/monstring/monstring_tittel.twig.html" with {"monstring_type":"lokal"} %}
+    {% endembed %}
 
     <div class="col-xs-12 col-md-5 pull-right">
         <div>
