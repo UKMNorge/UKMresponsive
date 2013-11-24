@@ -30,7 +30,7 @@
         {% for ikon in ikoner_tittel %}
             <li class="col-xs-3">
                 <img class="col-xs-12" src="{{ ikon.ico_url }}" alt="{{ ikon.name }}"> 
-                <h4 class="centered">{{ ikon.name }}</h4>
+                <h4 class="centered">{{ ikon.name|raw }}</h4>
             </li>
             {% if loop.index is divisibleby(4) %}
                 <div class="clearfix"></div>
