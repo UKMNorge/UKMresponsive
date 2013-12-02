@@ -1,12 +1,16 @@
 {% extends "view/fylke_pre.twig.html" %}
 
 {% block content %}
-    {# Tittel #}
-    {% embed "element/monstring/monstring_tittel.twig.html" with {"monstring_type":"fylke"} %}
-    {% endembed %}
+	<div class="row monstring_tittel">
+		<div class="pull-right">
+		    {% embed "element/monstring/monstring_tittel.twig.html" with {"monstring_type":"fylke"} %}
+		    {% endembed %}
+		</div>
+	    <div class="pull-left"><p><a href="http://ukm.no">UKM.no</a> &gt; <a href="#">Der du bor</a> &gt; <a href="#">Østfold</a></p></div>
+	</div>
 
     <div class="row">
-    	<div class="col-xs-12 col-md-7">
+    	<div class="col-xs-12 col-md-7 fylke_hovedartikkel">
     		{% embed "element/monstring/monstring_hovedartikkel.twig.html" %}
     		{% endembed %}
     	</div>
@@ -16,33 +20,14 @@
             {% endembed %}
     	</div>
     	<div class="col-xs-12 col-md-5">
-	    	<div class="todo">
-				<ol>
-			    	<li>
-			    		<a href="#" data-action="show" data-toggle="#lokalmonstringer_slide" id="lokalmonstringer_toggle">
-							<div class="todo-icon fui-list"><span><img src="{{url.theme_dir}}/img/nav/maps.png" /></span></div>
-							<div class="todo-content">
-								<h4 class="todo-name">
-								<strong>Lokalmønstringer</strong>
-								</h4>
-								<span id="lokalmonstringer_text">Vis lokalmønstringer</span>
-							</div>
-			    		</a>
-			    		<div id="lokalmonstringer_slide" style="display:none;">
-				            {% embed "element/monstring/lokalmonstringer_liste.twig.html" %}
-				            {% endembed %}
-				        </div>
-					</li>
-				</ol>
-	    	</div>
+	    	{% embed "element/monstring/fylke_lokalmonstringer_liste.twig.html" %}
+	    	{% endembed %}
     	</div>
     </div>
     
     <div class="row">
-    	<div class="col-xs-12">
-    		{% embed "element/monstring/monstring_flere_artikler.twig.html" %}
-	        {% endembed %}
-    	</div>
+		{% embed "element/monstring/monstring_flere_artikler.twig.html" %}
+        {% endembed %}
     </div>
     
 {% endblock %}

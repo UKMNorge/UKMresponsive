@@ -5,7 +5,7 @@
 
 {% if monstring_type == "lokal" %}
     {% if monstring.kommuner|length > 1 %}
-        <h1>Lokalside for 
+        <h1>UKM  
             {% for kommune in monstring.kommuner %} 
                 {% if loop.first %} {{ kommune.name }}
                 {% elseif not loop.last %}, {{ kommune.name }}
@@ -18,7 +18,7 @@
     {% endif %}
 
 {% elseif monstring_type == "fylke" %}
-    <h1>Fylkesside for {{monstring.navn|raw}}</h1>
+    <h1>UKM {{monstring.navn|raw}}</h1>
 {% elseif monstring_type == "festival" %}
     <h1>UKM-festivalen</h1>
 {% else %}
