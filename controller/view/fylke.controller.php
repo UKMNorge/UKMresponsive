@@ -74,7 +74,14 @@ $DATA['fylke'] = get_option('fylke');
 	    
 		$lokalmonstringer[] = $lm;
 	}
-	$DATA['lokalmonstringer'] = $lokalmonstringer;
+	$num_lokalmonstringer = sizeof( $lokalmonstringer );
+	$half_lokalmonstringer = ceil( $num_lokalmonstringer / 2);
+	
+	$DATA['lokalmonstringer']['alle'] = $lokalmonstringer;
+	$DATA['lokalmonstringer']['first_half'] = array_splice( $lokalmonstringer, 0, $half_lokalmonstringer);
+	$DATA['lokalmonstringer']['second_half'] = array_splice( $lokalmonstring, $half_lokalmonstringer);
+	
+	$DATA['lokalmonstringer'] = array_splice( $lokalmonstringer, 0 , sizeof( $lokalmonstringer )/2 ;
 	
 
 
