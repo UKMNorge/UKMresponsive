@@ -80,9 +80,6 @@ $DATA['fylke'] = get_option('fylke');
 	$DATA['lokalmonstringer']['first_half'] = array_splice( $lokalmonstringer, 0, $half_lokalmonstringer);
 	$DATA['lokalmonstringer']['second_half'] = array_splice( $lokalmonstringer, $half_lokalmonstringer);
 	
-	$DATA['lokalmonstringer'] = array_splice( $lokalmonstringer, 0 , sizeof( $lokalmonstringer )/2 );
-	
-
 
 // HVILKEN PERIODE ER FYLKESSIDEN I?
 	$VIEW = 'fylke_pre_lokal';
