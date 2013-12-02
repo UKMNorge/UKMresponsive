@@ -1,10 +1,10 @@
 <ol class="list-unstyled pull-left col-xs-12 col-sm-6">
-{% for monstring in lokalmonstringer %}
+{% for monstring in lokalmonstringer.first_half %}
     <li><a href="{{monstring.url}}">{{ monstring.navn }}</a></li>
 {% endfor %}
 </ol>
 <ol class="list-unstyled pull-left col-xs-12 col-sm-6">
-{% for monstring in lokalmonstringer %}
+{% for monstring in lokalmonstringer.second_half %}
     <li><a href="{{monstring.url}}">{{ monstring.navn }}</a></li>
 {% endfor %}
 </ol>
