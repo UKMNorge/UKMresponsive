@@ -13,7 +13,8 @@
 
 add_theme_support( 'post-thumbnails' );
 
-
+// POST IMAGE GALLERIES
+require_once('functions/shortcode.gallery.php');
 
 function add_remove_contactmethods( $contactmethods ) {
     $contactmethods['facebook'] = 'Facebook';
