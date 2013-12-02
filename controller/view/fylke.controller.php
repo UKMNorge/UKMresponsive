@@ -77,8 +77,8 @@ $DATA['fylke'] = get_option('fylke');
 	$half_lokalmonstringer = ceil( sizeof( $lokalmonstringer ) / 2);
 	
 	$DATA['lokalmonstringer']['alle'] = $lokalmonstringer;
-	$DATA['lokalmonstringer']['first_half'] = array_splice( $lokalmonstringer, 0, $half_lokalmonstringer);
-	$DATA['lokalmonstringer']['second_half'] = array_splice( $lokalmonstringer, $half_lokalmonstringer);
+	$DATA['lokalmonstringer']['first_half'] = array_slice( $lokalmonstringer, 0, $half_lokalmonstringer);
+	$DATA['lokalmonstringer']['second_half'] = array_slice( $lokalmonstringer, $half_lokalmonstringer);
 	
 
 // HVILKEN PERIODE ER FYLKESSIDEN I?
