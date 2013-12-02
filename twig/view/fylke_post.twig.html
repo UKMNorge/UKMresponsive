@@ -19,19 +19,19 @@
 	    	<div class="todo">
 				<ol>
 			    	<li>
-						<a href="#">
+			    		<a href="#" data-action="show" data-toggle="#lokalmonstringer_slide" id="lokalmonstringer_toggle">
 							<div class="todo-icon fui-list"><span><img src="{{url.theme_dir}}/img/nav/maps.png" /></span></div>
 							<div class="todo-content">
 								<h4 class="todo-name">
 								<strong>Lokalmønstringer</strong>
 								</h4>
-								Vis lokalmønstringer
-								{# <div style="display:block" id="lokalmonstringer_slide">
-						            {% embed "element/monstring/lokalmonstringer_liste.twig.html" %}
-						            {% endembed %}
-						        </div> #}
+								<span id="lokalmonstringer_text">Vis lokalmønstringer</span>
 							</div>
-						</a>
+			    		</a>
+			    		<div id="lokalmonstringer_slide" style="display:none;">
+				            {% embed "element/monstring/lokalmonstringer_liste.twig.html" %}
+				            {% endembed %}
+				        </div>
 					</li>
 				</ol>
 	    	</div>
