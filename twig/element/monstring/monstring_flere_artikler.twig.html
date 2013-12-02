@@ -1,16 +1,15 @@
 {% for i in 1..4 %}
     {% if posts[i] is defined %}
-        <div class="col-xs-6"> 
-        <a href="{{ posts[i].url}}">
-            <img src="{{ posts[i].image.url }}" />
-            <h3> {{ posts[i].title }} </h3>
-            <p> {{ posts[i].lead | raw }}</p>
-        </a>
+        <div class="col-xs-4"> 
+	        <a href="{{ posts[i].url}}">
+				<div class="grid_post_image" style="background-image: url('{{posts[i].image.url}}');"></div>
+	            <h3> {{ posts[i].title }} </h3>
+	            <p> {{ posts[i].lead | raw }}</p>
+	        </a>
         </div>
     {% endif %}
 
-    {% if loop.index is divisibleby(2) %}
+    {% if loop.index is divisibleby(3) %}
         <div class="clearfix"></div>
     {% endif %}
 {% endfor %}
-

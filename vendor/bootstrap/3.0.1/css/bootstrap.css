@@ -6406,6 +6406,7 @@ button.close {
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
   opacity: 0.5;
   filter: alpha(opacity=50);
+  z-index: 999;
 }
 
 .carousel-control.left {
@@ -6514,10 +6515,19 @@ button.close {
   padding-top: 20px;
   padding-bottom: 20px;
   color: #ffffff;
-  text-align: center;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+  text-align: left;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 1);
+  color: #ffffff;
 }
-
+.carousel-caption h3 {
+	margin: none;
+	padding: none;
+	color: #ffffff;
+}
+.carousel-caption p {
+	margin: none;
+	padding: none;
+}
 .carousel-caption .btn {
   text-shadow: none;
 }
@@ -6534,12 +6544,20 @@ button.close {
     font-size: 30px;
   }
   .carousel-caption {
-    right: 20%;
-    left: 20%;
+	top: -20px;
+    left: 20px;
     padding-bottom: 30px;
   }
+  .carousel-caption h3 {
+	margin: none;
+	padding: none;
+  }
+  .carousel-caption p {
+	margin: none;
+	padding: none;
+  }
   .carousel-indicators {
-    bottom: 20px;
+    bottom: 0px;
   }
 }
 
