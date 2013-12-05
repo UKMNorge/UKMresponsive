@@ -88,13 +88,13 @@ $DATA['fylke'] = get_option('fylke');
 	} elseif( time() > $siste && time() < $pl->get('pl_start') ) {
 		$VIEW = 'fylke_pre';
 	} elseif( time() > $pl->get('pl_start') && time() < $pl->get('pl_stop') ) {
-		$VIEW = 'fylke';
+		$VIEW = 'fylke_aktiv';
 	} elseif( time() > $pl->get('pl_stop') ) {
 		$VIEW = 'fylke_post';
 	}
 
 // DEBUG
-$VIEW = 'fylke_post';
+$VIEW = 'fylke_pre_lokal';
 
 // PAGE NAV
 

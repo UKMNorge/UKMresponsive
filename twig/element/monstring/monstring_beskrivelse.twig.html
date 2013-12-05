@@ -3,17 +3,13 @@
 #}
 
 {% if time_verb is not defined %}
-    <div>
-        <p>Mønstringen er ikke klargjort</p>
-    </div>
+    <p>Mønstringen er ikke klargjort</p>
 {% else %}
-    <div>
-        {% if monstring.starter|dato("l j") != monstring.slutter|dato("l j") %}
-            <p>Mønstringen {{time_verb}} fra {{monstring.starter | dato("l j. F")}} til {{monstring.slutter | dato("l j. F")}} i {{monstring.sted}} </p>
-        {% else %}
-            <p>Mønstringen {{time_verb}} {{ monstring.starter | dato("l j. F") }} i {{monstring.sted}}</p>
-        {% endif %}
-    </div>
+    {% if monstring.starter|dato("l j") != monstring.slutter|dato("l j") %}
+        <p>Mønstringen {{time_verb}} fra {{monstring.starter | dato("l j. F")}} til {{monstring.slutter | dato("l j. F")}} i {{monstring.sted}} </p>
+    {% else %}
+        <p>Mønstringen {{time_verb}} {{ monstring.starter | dato("l j. F") }} i {{monstring.sted}}</p>
+    {% endif %}
 {% endif %}
 
 
