@@ -13,7 +13,11 @@
 							<span id="lokalmonstringer_text">Vis lokalmønstringer</span>
 						</div>
 		    		</a>
-			    	<div id="lokalmonstringer_slide" style="display:none;">
+			    	<div class="visible-xs visible-sm" id="lokalmonstringer_slide" style="display:none;">
+			            {% embed "element/monstring/lokalmonstringer_liste.twig.html" %}
+			            {% endembed %}
+			    	</div>
+			    	<div class="visible-md visible-lg">
 			            {% embed "element/monstring/lokalmonstringer_liste.twig.html" %}
 			            {% endembed %}
 			    	</div>
