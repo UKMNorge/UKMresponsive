@@ -101,6 +101,10 @@ require_once('functions_theme.php');
             	require_once('controller/view/urg.controller.php');
             	$VIEW = 'urg';
             	break;
+            case 'kontakt_start':
+				require_once('controller/view/post.controller.php');
+            	$VIEW = 'kontakt_start';
+            	break;
 			default:
 				require_once('controller/view/post.controller.php');
 				$VIEW = 'page';
