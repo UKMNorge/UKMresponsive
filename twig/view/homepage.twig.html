@@ -2,13 +2,9 @@
 
 {% block content %}
 	<div class="row">
-	<div id="slider" class="col-xs-12 col-md-7">
-		{% if( slider == 'voksneogpresse' ) %}
-			{% embed "./element/slider/voksneogpresse.twig.html" %}{% endembed %}
-		{% else %}
-			{% embed "./element/slider/ungdom.twig.html" %}{% endembed %}
-		{% endif %}
-	</div>
+		<div class="hidden-xs col-md-7">
+			{% embed "element/post/grid_element.twig.html" with posts[0] %}{% endembed %}
+		</div>
 		<div id="infosquare" class="col-xs-12 col-md-5">
 			<div class="todo">
 	        	<ol>
@@ -21,7 +17,13 @@
 	</div>
 	
 	<div class="row">
-		{% for post in posts %}
+		<div class="hidden-sm hidden-md hidden-lg visible-xs col-xs-12">
+			{% embed "element/post/grid_element.twig.html" with posts[0] %}{% endembed %}
+		</div>
+	</div>
+	
+	<div class="row">
+		{% for post in posts|slice(1) %}
 			<div class="news col-xs-6 col-md-4">
 				{% embed "element/post/grid_element.twig.html" with post %}{% endembed %}
 			</div>
@@ -39,13 +41,13 @@
 
         {% if nextpost|length > 0 %}
 		<div class="col-xs-4 col-sm-2 pull-right">
-			<a href="{{ nextpost|raw }}"><button type="button" class="btn btn-default">Se flere nyheter</button></a>
+			<a href="{{ nextpost|raw }}"><button type="button" class="btn btn-default">Se eldre nyheter</button></a>
 		</div>
 		{% endif %}
 		
 		{% if prevpost|length > 0 %}
 		<div class="col-xs-4 col-sm-2 pull-left">
-		      <a href="{{ prevpost|raw }}"><button type="button" class="btn btn-default">Se forrige nyheter</button></a>
+		      <a href="{{ prevpost|raw }}"><button type="button" class="btn btn-default">Se nyere nyheter</button></a>
 		</div>
 		{% endif %}
 	</div>

@@ -1,5 +1,12 @@
 {% extends "view/fylke_pre.twig.html" %}
 
+{% block jumbo_header %}
+	UKM Østfold
+{% endblock %}
+{% block jumbo_content %}
+	Lokalmønstringene er i gang!
+{% endblock %}
+
 {% block content %}
     {# Tittel #}
     {% embed "element/monstring/monstring_tittel.twig.html" with {"monstring_type":"fylke"} %}

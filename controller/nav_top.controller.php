@@ -8,7 +8,7 @@ if(!$active)
 	$active = 'din_monstring';
 
 $DATA['nav_top'][] = (object) array('url' 		=> '//'.$_SERVER['HTTP_HOST'].'/',
-									'title' 	=> 'ungdom',
+									'title' 	=> 'for ungdom',
 								    'active'	=> $active == 'ungdom');
 								    
 $DATA['nav_top'][] = (object) array('url' 		=> '//'.$_SERVER['HTTP_HOST'].'/din_monstring/',
@@ -27,6 +27,6 @@ $DATA['nav_top'][] = (object) array('url' 		=> '//'.$_SERVER['HTTP_HOST'].'/amba
 									'title' 	=> 'ambassadører',
 								    'active'	=> $active == 'ambassadorer');
 								    
-$DATA['nav_top'][] = (object) array('url' 		=> '//'.$_SERVER['HTTP_HOST'].'/arrangor/',
+$DATA['nav_top_right'][] = (object) array('url' 		=> '//'.$_SERVER['HTTP_HOST'].'/arrangor/',
 									'title' 	=> 'arrangører',
 								    'active'	=> $active == 'arrangor');

@@ -1,14 +1,19 @@
 {% extends "layout.twig.html" %}
 
+{% if jumbo is defined %}
+	{% block jumbo_header %}
+		{{ jumbo.header }}
+	{% endblock %}
+	{% block jumbo_content %}
+		{{ jumbo.content }}
+	{% endblock %}
+{% endif %}
+
+
 {% block content %}
 	<div class="row">
-	<div class="col-xs-12 col-md-6" id="international_ukm_lead">
-		<p class="lead">
-		I strategiplanen som UKM Norges styre har utarbeidet står det at UKM skal jobbe mot å øke internasjonal utveksling for deltakerne. Dette for å gi deltakerne mulighet til å la seg inspirere av andre kulturer, mennesker og annen musikk.
-		</p>
-	</div>
-		<div id="international_ukm" class="col-xs-12 col-md-5 col-md-offset-1 well">
-			<img src="http://grafikk.ukm.no/flagg/united_kingdom.png" id="flag" class="img img-circle col-xs-2 col-md-4 pull-right" />
+		<div id="international_ukm" class="col-xs-12 well">
+			<img src="http://grafikk.ukm.no/flagg/united_kingdom.png" id="flag" class="img img-circle col-xs-2 col-lg-1 pull-right" />
 			<h2>About UKM</h2>
 			<p>The objective of the Norwegian Youth Festivals of Art (UKM) is to stimulate young people’s creativity and make their cultural activity visible.</p>
 			<a href="http://internasjonalt.ukm.no/about/" class="btn btn-small">Read more</a>

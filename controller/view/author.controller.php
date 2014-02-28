@@ -21,3 +21,8 @@ class AuthorController {
 
 $controller = new AuthorController();
 $DATA = array_merge($DATA, $controller->renderAction());
+
+$DATA['jumbo'] = (object) array('header' => $DATA['author']->display_name,
+								'content' => 'Alle innlegg fra forfatteren',
+								'image' => $DATA['author']->image
+								);

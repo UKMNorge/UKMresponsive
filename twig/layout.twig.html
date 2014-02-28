@@ -57,11 +57,97 @@
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
   
-  {% embed "nav_top.twig.html" %}{% endembed %}
+
+	<header class="navbar navbar-static-top" id="top" role="banner">
+		<div class="container">
+			<div id="menu-xs" class="pull-right hidden-md hidden-lg">
+				<div class="btn-group">
+					<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+					For voksne og presse <span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu" role="menu">
+						{% for nav in nav_top %}
+						<li {{nav.active?'class="active"':''}}><a href="{{nav.url}}">{{nav.title}}</a></li>
+						{% endfor %}
+						<li></li>
+						{% for nav in nav_top_right %}
+						<li {{nav.active?'class="active"':''}}><a href="{{nav.url}}">{{nav.title}}</a></li>
+						{% endfor %}
+					</ul>
+				</div>
+			</div>
+			
+			<div class="navbar-header">
+				<a href="/" class="navbar-brand">
+					<img src="http://grafikk.ukm.no/profil/logo/UKM_logo.png" width="70" />
+				</a>
+			</div>
+			
+			<nav role="navigation">
+				<ul class="nav navbar-nav hidden-xs hidden-sm">
+					{% for nav in nav_top %}
+					<li {{nav.active?'class="active"':''}}><a href="{{nav.url}}">{{nav.title}}</a></li>
+					{% endfor %}
+				</ul>
+				<ul class="nav navbar-nav navbar-right hidden-xs hidden-sm">
+					{% for nav in nav_top_right %}
+					<li {{nav.active?'class="active"':''}}><a href="{{nav.url}}">{{nav.title}}</a></li>
+					{% endfor %}
+				</ul>
+			</nav>
+		</div>
+	</header>
+	{% block jumbo %}
+	<div class="ukm_page_jumbo">
+		<div class="container">
+			{% if jumbo.image is defined %}
+				<img class="img img-circle pull-left" src="{{jumbo.image}}" id="ukm_page_jumbo_image" />
+			{% endif %}
+			<h1>	
+				{% block jumbo_header %}
+					{{ jumbo is defined ? jumbo.header : 'UKM' }}
+				{% endblock %}
+			</h1>
+			<p>
+				{% block jumbo_content %}
+					{{ jumbo is defined ? jumbo.content : '400 festivaler hvor ungdom deltar med all slags kultur' }}
+				{% endblock %}
+			</p>
+		</div>
+	</div>
+	{% endblock %}
+
+
+
+
   	<div id="top" class="container">
 	  	{% block content %}
 	  	{% endblock %}
   	</div>
-  {% embed "footer.twig.html" %}{% endembed %}
+
+
+
+
+
+
+	<div id="footer" class="center">
+		<a href="#top" class="pull-right btn-xs">Til toppen</a>
+		<div class="row">
+			<img src="http://grafikk.ukm.no/profil/logo/UKM_logo.png" id="footerlogo" />
+		</div>
+		<div class="row">
+			<div class="col-xs-12 center">
+				<p>
+					<a href="//creativecommons.org/licenses/by-sa/3.0/deed.no">Alt innhold er CC-lisensiert (CC BY-SA 3.0)</a>
+					<br class="visible-xs" />
+					<a href="//om.ukm.local/kontakt/administrasjonen/">UKM Norge, Fjordgata 1, 7010 Trondheim</a>
+				</p>
+			</div>
+		</div>
+	</div>
+	<div class="clearfix"></div>
+
+
+
   </body>
 </html>

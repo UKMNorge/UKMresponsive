@@ -55,7 +55,6 @@ require_once('functions_theme.php');
         }
     }
 	if( is_archive() ) {
-	    require_once('controller/view/archive.controller.php');
 		if(is_author()) {
     		require_once('controller/view/author.controller.php');
     		$VIEW = 'author';
@@ -63,6 +62,8 @@ require_once('functions_theme.php');
 		else {
     		$VIEW = 'archive';
         }
+	    require_once('controller/view/archive.controller.php');
+
 	} elseif( is_single() ) {
 		require_once('controller/view/post.controller.php');
 		require_once('controller/element/comments.controller.php');
@@ -84,7 +85,7 @@ require_once('functions_theme.php');
 			require_once('controller/view/homepage.controller.php');
 			$VIEW = 'homepage';
 		}
-	} elseif( is_page() ) {	
+	} elseif( is_page() ) {
 		$viseng = get_post_meta($post->ID, 'UKMviseng', true);
 		switch ( $viseng ) {
 			case 'dinmonstring':
@@ -95,6 +96,11 @@ require_once('functions_theme.php');
                 require_once('controller/view/styrerommet.controller.php');
                 $VIEW = 'styrerommet';
                 break;
+            case 'urg':
+				require_once('controller/view/post.controller.php');
+            	require_once('controller/view/urg.controller.php');
+            	$VIEW = 'urg';
+            	break;
 			default:
 				require_once('controller/view/post.controller.php');
 				$VIEW = 'page';
@@ -103,8 +109,15 @@ require_once('functions_theme.php');
 	} else {
 		require_once('controller/view/404.controller.php');
 		$VIEW = '404';
+		$DATA['jumbo'] = (object) array('header' => 'Siden ikke funnet!', 'content' => 'Såkalt 404 altså');
+
 	}
+	
+if( !isset( $DATA['jumbo'] ) ) {
+	$JUMBO_POST_ID = $post->ID;
+	require_once('controller/element/jumbo.controller.php');
+}
 
 echo TWIGrender('view/'.$VIEW, object_to_array($DATA),true);
-wp_footer();
+#wp_footer();
 die();

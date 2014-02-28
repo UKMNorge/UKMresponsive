@@ -2,6 +2,10 @@
 
 $DATA['page']['title'] = single_cat_title('', false);
 
+if( !isset( $DATA['jumbo'] ) ) {
+	$DATA['jumbo'] = (object) array('header' => single_cat_title('', false), 'content' => 'Alle innlegg i kategorien');
+}
+
 the_post();
 $DATA['page'] = new WPOO_Post($post);
 
