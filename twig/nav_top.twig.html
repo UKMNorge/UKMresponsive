@@ -1,0 +1,22 @@
+<div id="header_new">
+	<div class="row hidden-xs hidden-sm">
+		<div class="col-md-12" id="logo_new">
+			<div class="container">
+				<div class="col-md-2 col-md-offset-5">
+				<a href="/"><img src="http://grafikk.ukm.no/profil/logo/UKM_logo.png" /></a>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-12" id="nav_new">
+			<div class="container">
+				<div class="col-md-12 nav_table">
+					<ul class="nav nav-tabs nav-justified">
+					{% for nav in nav_top %}
+	  					<li><a href="{{nav.url}}">{{nav.title}}</a></li>
+	  				{% endfor %}
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
