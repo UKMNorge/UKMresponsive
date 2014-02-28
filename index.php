@@ -101,6 +101,11 @@ require_once('functions_theme.php');
             	require_once('controller/view/urg.controller.php');
             	$VIEW = 'urg';
             	break;
+            case 'fylkeskontaktene':
+				require_once('controller/view/post.controller.php');
+            	require_once('controller/view/fylkeskontaktene.controller.php');
+            	$VIEW = 'fylkeskontaktene';
+            	break;
             case 'kontakt_start':
 				require_once('controller/view/post.controller.php');
             	$VIEW = 'kontakt_start';

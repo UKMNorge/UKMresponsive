@@ -11,6 +11,7 @@
 	
 </script>
 <div class="hidden-xs">
+	<h2>Klikk på ett hode for å se kontaktinfo</h2>
 	<div class="col-sm-12 col-md-4">
 		<h2 id="contactMe" style="display:none;">Ta kontakt med</h2>
 		{% for kontakt in kontakter %}
@@ -21,7 +22,7 @@
 				</div>
 				<div class="col-xs-8">
 					<h3 class="name" style="margin-top:0px;">{{kontakt.fornavn}} {{kontakt.etternavn}}</h3>
-					<p><strong>URG {{kontakt.fylke.navn}}</strong></p>
+					<p><strong>{{kontakt.fylke.navn}}</strong></p>
 					<p class="phone">{{kontakt.mobil}}</p>
 				</div>
 			</div>
