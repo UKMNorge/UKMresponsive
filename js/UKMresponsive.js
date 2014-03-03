@@ -15,6 +15,17 @@
 	jQuery(document).on('click','#show_kontaktpersoner', function(){
 		pageFocus( jQuery(this) );
 	});
+	
+	jQuery(document).on('click','li.innslag', function() {
+		jQuery('li.innslag div.row.data').slideUp();
+		innslag = jQuery(this);
+		data = innslag.find('div.row.data');
+		if(data.is(':visible')) {
+			data.slideUp();
+		} else {
+			data.slideDown();
+		}
+	});
 
 /* ON CLICK OF TOGGLE-CLASS ELEMENTS */
 jQuery(document).on('click','.toggle', function(){

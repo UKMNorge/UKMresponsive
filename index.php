@@ -96,7 +96,10 @@ require_once('functions_theme.php');
 				require_once('controller/view/post.controller.php');
 				require_once('controller/view/kontakt.controller.php');
             	$VIEW = 'kontakt';
-            	break;            
+            	break;
+            case 'program':
+            	require_once('controller/view/program.controller.php');
+            	break;
 			default:
 				require_once('controller/view/post.controller.php');
 				$VIEW = 'page';

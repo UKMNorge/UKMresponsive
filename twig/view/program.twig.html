@@ -1,0 +1,40 @@
+{% extends "layout.twig.html" %}
+
+
+{% block content %}
+	<ul class="list-unstyled">
+	{% for dag, hendelser in program %}
+		<li class="col-xs-12 col-sm-6 col-md-{{12/dag_max_col}}">
+			<div class="well">
+				<h3 class="center">{{dag | dato('l') }} <small>{{ dag | dato('d.m') }}</small></h3>
+					<ol class="list-unstyled">
+						{% for hendelse in hendelser %}
+							<li class="container">
+								{% if hendelse.offentlig %}
+								<a href="?hendelse={{hendelse.ID}}">
+								{% endif %}
+								<div class="row">
+									<div class="col-xs-2 col-sm-1">{{hendelse.start | dato('H:i' )}}</div>
+									<div class="col-xs-10 col-sm-11">
+										<div class="pull-left">{{ hendelse.navn }}</div>
+										<div class="hidden-xs hidden-sm"><small>{{hendelse.sted}}</small></div>
+										<div class="clearfix"></div>
+									</div>
+								</div>
+								{% if hendelse.offentlig %}
+								</a>
+								{% endif %}
+							</li>
+						{% endfor %}
+					</ol>
+			</div>
+		</li>
+	{% else %}
+		<li class="alert alert-info">
+			<h3>Program ikke satt opp</h3>
+			<p>Det er ikke satt opp noe program for UKM {{monstring.navn}} enda</p>
+			<p>Ta kontakt med {{monstring.type_tekst}}kontakten om du mener dette burde vært gjort. Kontaktinfo finner du på {{monstring.type_tekst}}siden</p>
+		</li>
+	{% endfor %}
+	</ul>
+{% endblock %}

@@ -122,12 +122,13 @@ $VIEW = 'fylke_post';
                                           'icon'  => 'ukmtv_black',
                                           'description' => 'Film fra fra '. $pl->get('pl_name').' i UKM-TV'
                                       );
-
-	$DATA['page_nav'][] = (object) array( 'url' 			=> 'program/',
-										   'title'		 	=> 'Program',
-										   'icon'			=> 'table',
-										   'description'	=> 'Se program for fylkesmønstringen'
-										  );
+	if( in_array( $VIEW, array('fylke_pre','fylke_aktiv','fylke_post')) || $pl->har_program() ) {
+		$DATA['page_nav'][] = (object) array( 'url' 			=> 'program/',
+											   'title'		 	=> 'Program',
+											   'icon'			=> 'table',
+											   'description'	=> 'Se program for fylkesmønstringen'
+											  );
+	}
 	$DATA['page_nav'][] = (object) array( 'url' 			=> 'pameldte/',
 										   'title'		 	=> 'Hvem deltar?',
 										   'icon'			=> 'hvem',

@@ -68,6 +68,10 @@ Author URI: https://github.com/UKMNorge?tab=members
 	text-align: center;
 }
 
+.clickable {
+	cursor: pointer;
+}
+
 a > h2 {
 	color: #333;
 	font-weight: 400;
