@@ -1,0 +1,18 @@
+{% extends "layout.twig.html" %}
+ 
+ {% block content %}   
+    <div id="intranett_login" class="centered col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+        <form method="post" class="form-horizontal" role="form" action="/wp-login.php?UKMsierJegHarLov=sant">
+            <div class="form-group">
+                <label for="ukm_user" class="control-label">Brukernavn</label>
+                <input type="text" class="form-control" id="ukm_user" name="log" placeholder="Brukernavn">
+            
+                <label for="ukm_pass" class="control-label">Passord</label>
+                <input type="password" class="form-control" id="ukm_pass" name="pwd" placeholder="Passord">
+            </div>
+            <button type="submit" class="btn btn-default pull-right">Logg inn</button>
+        </form>
+    </div>
+    <div class="clearfix"></div>
+    
+ {% endblock %}
