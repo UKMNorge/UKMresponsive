@@ -78,11 +78,24 @@ switch( get_option('ukm_top_page') ) {
 											   'icon'			=> 'kulturminne',
 											   'description'	=> 'UKM består av én lokalmønstring for hver kommune. Finn din her.'
 											  );
+/*
 		$DATA['page_nav'][] = (object) array( 'url' 			=> 'http://tv.ukm.no',
 											   'title'		 	=> 'UKM-TV',
 											   'icon'			=> 'ukmtv_black',
 											   'description'	=> 'UKM består av én lokalmønstring for hver kommune. Finn din her.',
 											   'target'			=> '_blank'
 											  );
+*/
+		$DATA['page_nav'][] = (object) array( 'url' 			=> 'internasjonalt/',
+											   'title'		 	=> 'Internasjonalt',
+											   'icon'			=> 'flag',
+											   'description'	=> 'Alt om UKMs internasjonale utvekslinger'
+											  );
+		$DATA['page_nav'][] = (object) array( 'url' 			=> 'ambassador/',
+											   'title'		 	=> 'Ambassadører',
+											   'icon'			=> 'star',
+											   'description'	=> 'UKMs ambassadørkorps består av flere hundre ambassadører'
+											  );
+
 	break;											   
 }

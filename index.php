@@ -30,30 +30,9 @@ require_once('functions_theme.php');
 	require_once('controller/nav_top.controller.php');
 	
 	$DATA['top_page'] = get_option('ukm_top_page');
-	
-	switch( $DATA['top_page'] ) {
-		case 'voksneogpresse':
-			$DATA['slider'] = 'voksneogpresse';
-			break;
-		default:
-			$DATA['slider'] = 'ungdom';
-			break;
-	}
-
 /**********************************
 * SWITCH VIEW
 **********************************/
-	if( get_option('ukm_top_page') == 'arrangorer' ) {
-        require_once('controller/view/arrangorlogon.controller.php');
-        $controller = new ArrangorLogonController();
-        if(!$controller->isLoggedIn()) {
-            // IS NOT LOGGED IN TO ARRANGORER
-            $DATA = array_merge($DATA, $controller->renderAction());
-            $VIEW = 'arrangorlogon';  
-            echo TWIGrender('view/'.$VIEW, object_to_array($DATA),true);
-            die();
-        }
-    }
 	if( is_archive() ) {
 		if(is_author()) {
     		require_once('controller/view/author.controller.php');
@@ -72,6 +51,9 @@ require_once('functions_theme.php');
 		if( get_option('ukm_top_page') == 'ambassadorer' ) {
 			require_once('controller/view/homepage.controller.php');
 			$VIEW = 'homepage_ambassador';      
+		} elseif( get_option('ukm_top_page') == 'arrangorer' ) {
+			require_once('controller/view/arrangorlogon.controller.php');
+			$VIEW = 'homepage_arrangorer';
 		} elseif( get_option('ukm_top_page') == 'internasjonalt' ) {
 			require_once('controller/view/homepage.controller.php');
 			$VIEW = 'homepage_internasjonalt';      
@@ -133,5 +115,10 @@ if( !isset( $DATA['jumbo'] ) ) {
 }
 
 echo TWIGrender('view/'.$VIEW, object_to_array($DATA),true);
-#wp_footer();
+/*
+wp_footer();
+if(is_user_logged_in() ) {
+	echo '<style>body {margin-top: 33px;}</style>';
+}
+*/
 die();

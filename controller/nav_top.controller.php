@@ -1,10 +1,10 @@
 <?php
 $active = get_option( 'ukm_top_page' );
-
-if($active == 'ungdom' && is_front_page() )
-	$active = 'ungdom';
 	
-if(!$active)
+if($active == 'ungdom' && is_page() && 'dinmonstring' == get_post_meta($post->ID, 'UKMviseng', true) ) 
+	$active = 'din_monstring';
+	
+if( !$active ) 
 	$active = 'din_monstring';
 
 $DATA['nav_top'][] = (object) array('url' 		=> '//'.$_SERVER['HTTP_HOST'].'/',
@@ -16,9 +16,14 @@ $DATA['nav_top'][] = (object) array('url' 		=> '//'.$_SERVER['HTTP_HOST'].'/din_
 								    'active'	=> $active == 'din_monstring');
 								    
 $DATA['nav_top'][] = (object) array('url' 		=> '//'.$_SERVER['HTTP_HOST'].'/om/',
-									'title' 	=> 'voksne og presse',
+									'title' 	=> 'for voksne og presse',
 								    'active'	=> $active == 'voksneogpresse');
+
+$DATA['nav_top'][] = (object) array('url' 		=> '//tv.'.$_SERVER['HTTP_HOST'].'/',
+									'title' 	=> 'TV',
+								    'active'	=> $active == 'ukmtv');
 								    
+/*
 $DATA['nav_top'][] = (object) array('url' 		=> '//'.$_SERVER['HTTP_HOST'].'/internasjonalt/',
 									'title' 	=> 'internasjonalt',
 								    'active'	=> $active == 'internasjonalt');
@@ -26,6 +31,7 @@ $DATA['nav_top'][] = (object) array('url' 		=> '//'.$_SERVER['HTTP_HOST'].'/inte
 $DATA['nav_top'][] = (object) array('url' 		=> '//'.$_SERVER['HTTP_HOST'].'/ambassador/',
 									'title' 	=> 'ambassadører',
 								    'active'	=> $active == 'ambassadorer');
+*/
 								    
 $DATA['nav_top_right'][] = (object) array('url' 		=> '//'.$_SERVER['HTTP_HOST'].'/arrangor/',
 									'title' 	=> 'arrangører',
