@@ -78,3 +78,11 @@ a > h2 {
 a:hover, a:active, a:visited {
 	color: #3498DB;
 }
+
+#ico_international {
+	margin-top: 20px;
+}
+
+#ukm_page_post_content {
+	margin: 20px auto 20px auto;
+}

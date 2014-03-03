@@ -13,7 +13,7 @@ $DATA['fylke'] = get_option('fylke');
 	// LOAD POSTS
     $paged = (get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
     
-    $posts = query_posts('posts_per_page=6&paged='.$paged);
+    $posts = query_posts('posts_per_page=7&paged='.$paged);
     while(have_posts()) {
        the_post();
        $DATA['posts'][] = new WPOO_Post($post); 
@@ -38,6 +38,20 @@ $DATA['fylke'] = get_option('fylke');
 	$monstring->sted = $pl->get('pl_place'); // info['pl_place']; //
     $monstring->navn = $pl->get('pl_name'); // info['pl_name'];  //
 	$DATA['monstring'] = $monstring;
+	
+	$kontaktpersoner = $pl->kontakter();
+	foreach( $kontaktpersoner as $kontakt ) {
+		$k = new stdClass();
+		$k->navn 	= $kontakt->get('name');
+		$k->tittel	= $kontakt->get('title');
+		$k->bilde	= $kontakt->get('image');
+		$k->mobil	= $kontakt->get('tlf');
+		$k->epost	= $kontakt->get('email');
+		$k->facebook= $kontakt->get('facebook');
+		
+		$kontakter[] = $k;
+	}
+	$DATA['kontaktpersoner'] = $kontakter;
 
 // INFO OM LOKALMØNSTRINGER
 	$kommuner_i_fylket = $pl->get('kommuner_i_fylket');
@@ -94,7 +108,7 @@ $DATA['fylke'] = get_option('fylke');
 	}
 
 // DEBUG
-$VIEW = 'fylke_pre_lokal';
+$VIEW = 'fylke_post';
 
 // PAGE NAV
 
@@ -109,18 +123,19 @@ $VIEW = 'fylke_pre_lokal';
                                           'description' => 'Film fra fra '. $pl->get('pl_name').' i UKM-TV'
                                       );
 
-	$DATA['page_nav'][] = (object) array( 'url' 			=> '#',
+	$DATA['page_nav'][] = (object) array( 'url' 			=> 'program/',
 										   'title'		 	=> 'Program',
 										   'icon'			=> 'table',
 										   'description'	=> 'Se program for fylkesmønstringen'
 										  );
-	$DATA['page_nav'][] = (object) array( 'url' 			=> '#',
+	$DATA['page_nav'][] = (object) array( 'url' 			=> 'pameldte/',
 										   'title'		 	=> 'Hvem deltar?',
 										   'icon'			=> 'hvem',
 										   'description'	=> 'Se alle som deltar på fylkesmønstringen.'
 										  );
-	$DATA['page_nav'][] = (object) array( 'url' 			=> '#',
+	$DATA['page_nav'][] = (object) array( 'url' 			=> '#kontaktpersoner',
 										   'title'		 	=> 'Kontaktpersoner',
 										   'icon'			=> 'info',
-										   'description'	=> 'Har du spørsmål om UKM i '. $pl->get('pl_name').'? Disse kan hjelpe!'
+										   'description'	=> 'Har du spørsmål om UKM i '. $pl->get('pl_name').'? Disse kan hjelpe!',
+										   'id'				=> 'show_kontaktpersoner'
 										  );

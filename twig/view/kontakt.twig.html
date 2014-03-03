@@ -7,57 +7,7 @@
 </article>
 
 	{% for kontakt in kontakter %}
-	<div class="col-xs-12 col-sm-6 col-lg-4">
-		<div class="well">
-			<div class="row" style="min-height:120px;">
-				<div class="col-xs-4">
-					<img class="img img-circle" src="{{kontakt.bilde}}" width="140" />
-				</div>
-				<div class="col-xs-8">
-					<h3 class="name" style="margin-top:0px;">{{kontakt.navn}}</h3>
-					<div class="phone">{{kontakt.mobil}}</div>
-				</div>
-			</div>
-			<p></p>
-			<p>{{kontakt.tekst}}</p>
-			<p></p>
-			<div class="row">
-				<div class="col-xs-12">
-					{% if kontakt.mobil is not empty %}
-					<p class="call">
-						<a href="tel:{{kontakt.mobil}}" class="btn btn-default btn-lg btn-block">
-						<span class="glyphicon glyphicon-phone"></span> Ring
-						</a>
-					</p>
-					<p class="text">
-						<a href="sms:{{kontakt.mobil}}" class="btn btn-default btn-lg btn-block">
-						<span class="glyphicon glyphicon-phone"></span> SMS
-						</a>
-					</p>
-					{% endif %}
-	
-					{% if kontakt.epost is not empty %}
-					<p class="e-post">
-						<a href="mailto:{{kontakt.epost}}" class="btn btn-default btn-lg btn-block">
-						<span class="glyphicon glyphicon-envelope"></span>
-						{{kontakt.epost}}
-						</a>
-					</p>
-					{% endif %}
-					
-					{% if kontakt.facebook is not empty %}
-					<p class="facebook">
-						<a href="{{kontakt.facebook}}" target="_blank" class="btn btn-default btn-lg btn-block">
-						<span class="glyphicon glyphicon-user"></span>
-						På facebook
-						</a>
-					</p>
-					{% endif %}
-				</div>
-				<div class="clearfix"></div>
-			</div>
-		</div>
-	</div>
+		{% embed "element/kontakt.twig.html" %}{% endembed %}
 	{% if loop.index is divisibleby(2) %}
 		<div class="visible-sm visible-md clearfix"></div>
 	{% endif %}

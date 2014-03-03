@@ -89,6 +89,11 @@
 					<li {{nav.active?'class="active"':''}}><a href="{{nav.url}}">{{nav.title}}</a></li>
 					{% endfor %}
 				</ul>
+				<div class="pull-right">
+					<a href="{{base.url}}about/">
+						<img src="http://ico.ukm.no/flagg/uk-16.png" class="img img-circle" id="ico_international" />
+					</a>
+				</div>
 				<ul class="nav navbar-nav navbar-right hidden-xs hidden-sm">
 					{% for nav in nav_top_right %}
 					<li {{nav.active?'class="active"':''}}><a href="{{nav.url}}">{{nav.title}}</a></li>
@@ -108,21 +113,25 @@
 					{{ jumbo is defined ? jumbo.header : 'UKM' }}
 				{% endblock %}
 			</h1>
-			<p>
+			<p id="ukm_page_jumbo_content">
 				{% block jumbo_content %}
 					{{ jumbo is defined ? jumbo.content : '400 festivaler hvor ungdom deltar med all slags kultur' }}
 				{% endblock %}
 			</p>
+			<p id="ukm_page_jumbo_temp" style="display:none;"></p>
 		</div>
 	</div>
 	{% endblock %}
 
 
 
-
-  	<div id="top" class="container">
+  	<div id="ukm_page_pre_content" class="container" style="display:none"></div>
+  	<div id="ukm_page_content" class="container">
 	  	{% block content %}
 	  	{% endblock %}
+  	</div>
+  	<div id="ukm_page_post_content" class="container" style="display:none">
+	  	<button id="pageDeFocus" class="btn btn-block btn-primary"></button>
   	</div>
 
 

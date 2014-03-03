@@ -1,44 +1,42 @@
 {% extends "layout.twig.html" %}
 
 {% block jumbo_header %}
-	UKM Østfold
+	UKM {{monstring.navn|raw}}
 {% endblock %}
+
 {% block jumbo_content %}
-	Lokalmønstringene er i gang!
+	{% embed "element/monstring/monstring_beskrivelse.twig.html" with {"time_verb":"var"} %}{% endembed %}
 {% endblock %}
 
 {% block content %}
-	<div class="row monstring_tittel">
-		<div class="pull-right">
-		    {% embed "element/monstring/monstring_tittel.twig.html" with {"monstring_type":"fylke"} %}
-		    {% endembed %}
-		</div>
-	    <div class="pull-left">
-			{% block monstring_beskrivelse %}
-				{% embed "element/monstring/monstring_beskrivelse.twig.html" with {"time_verb":"var"} %}
-		        {% endembed %}
-		    {% endblock %}
-	    </div>
-	</div>
-
     <div class="row">
+    	{% block hovedfokus_pre %}{% endblock %}
+
     	<div class="col-xs-12 col-md-7 fylke_hovedartikkel">
 	    	{% block hovedfokus %}
-	    		{% embed "element/monstring/monstring_hovedartikkel.twig.html" %}
-	    		{% endembed %}
+		    	<div id="lokalmonstringer_slide" style="display:none;">
+		            {% embed "element/monstring/lokalmonstringer_liste.twig.html" %}
+		            {% endembed %}
+		    	</div>
+		    	<div id="fokussak">
+		    		{% embed "element/monstring/monstring_hovedartikkel.twig.html" %}{% endembed %}
+		    	</div>
 	    	{% endblock %}
     	</div>
     	
     	<div class="col-xs-12 col-md-5">
-    		{% embed "element/monstring/monstring_navigasjon.twig.html" %}
-            {% endembed %}
-    	</div>
-    	<div class="col-xs-12 col-md-5">
+    		{% block meny_pre %}{% endblock %}
+    		{% block meny %}
+	    		{% embed "element/monstring/monstring_navigasjon.twig.html" %}{% endembed %}
+	    	{% endblock %}
+
+			<div class="clearfix"></div>
+
     		{% block meny_ekstra %}
 		    	<div class="todo">
 					<ol>
 				    	<li>
-				    		<a href="#lokalmonstringer_link" data-action="show" data-toggle="#lokalmonstringer_slide" id="lokalmonstringer_toggle">
+				    		<a href="#lokalmonstringer" data-action="show" data-toggle="#lokalmonstringer_slide" data-toggletitle="Alle lokalmønstringer" data-toggleclose="Lukk listen med lokalmønstringer" id="lokalmonstringer_toggle">
 								<div class="todo-icon fui-list" id="lokalmonstringer_link"><span><img src="{{url.theme_dir}}/img/nav/maps.png" /></span></div>
 								<div class="todo-content">
 									<h4 class="todo-name">
@@ -47,10 +45,6 @@
 									<span id="lokalmonstringer_text">Vis lokalmønstringer</span>
 								</div>
 				    		</a>
-					    	<div id="lokalmonstringer_slide" style="display:none;">
-					            {% embed "element/monstring/lokalmonstringer_liste.twig.html" %}
-					            {% endembed %}
-					    	</div>
 				    	</li>
 					</ol>
 		    	</div>
@@ -58,9 +52,42 @@
     	</div>
     </div>
     
-    <div class="row">
-		{% embed "element/monstring/monstring_flere_artikler.twig.html" %}
-        {% endembed %}
+	<div class="row">
+		{% block innhold %}
+			{% if posts_include_top_post_in_full_list %}
+				{% embed "element/monstring/posts_include_top.twig.html" %}{% endembed %}
+			{% else %}
+				{% embed "element/monstring/posts_exclude_top.twig.html" %}{% endembed %}
+			{% endif %}
+	
+	        {% if nextpost|length > 0 or prevpost|length > 0 %}
+	            <div style="clear:both;"></div>
+	        {% endif %}
+	
+	        {% if nextpost|length > 0 %}
+			<div class="col-xs-4 col-sm-2 pull-right">
+				<a href="{{ nextpost|raw }}"><button type="button" class="btn btn-default">Se eldre nyheter</button></a>
+			</div>
+			{% endif %}
+			
+			{% if prevpost|length > 0 %}
+			<div class="col-xs-4 col-sm-2 pull-left">
+			      <a href="{{ prevpost|raw }}"><button type="button" class="btn btn-default">Se nyere nyheter</button></a>
+			</div>
+			{% endif %}
+		{% endblock %}
+	</div>
+    
+    <div id="monstring_kontaktpersoner" style="display:none">
+		{% for kontakt in kontaktpersoner %}
+			{% embed "element/kontakt.twig.html" %}{% endembed %}
+		{% if loop.index is divisibleby(2) %}
+			<div class="visible-sm visible-md clearfix"></div>
+		{% endif %}
+		{% if loop.index is divisibleby(3) %}
+			<div class="visible-lg clearfix"></div>
+		{% endif %}
+		{% endfor %}
     </div>
     
 {% endblock %}

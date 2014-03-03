@@ -1,1 +1,32 @@
-{% extends "view/fylke_lokal.twig.html" %}
+{% extends "view/fylke.twig.html" %}
+
+{% set posts_include_top_post_in_full_list = true %}
+
+{% block jumbo_content %}
+	Meld deg på UKM {{monstring.navn}} i dag. Velg lokalmønstring!
+{% endblock %}
+
+{% block hovedfokus_pre %}
+	<div class="col-xs-12">
+		<h2>Lokalmønstringer</h2>
+	</div>
+{% endblock %}
+
+{% block meny_pre %}
+	<div class="col-xs-12 hidden-sm hidden-md hidden-lg">
+		<h2>UKM {{monstring.navn}}</h2>
+	</div>
+{% endblock %}
+
+{% block meny_ekstra %}
+	<p>
+		{% embed "element/monstring/monstring_beskrivelse.twig.html" with {'time_verb': 'er', 'type': 'Fylkes'} %}{% endembed %}
+	</p>
+{% endblock %}
+
+
+
+{% block hovedfokus %}
+    {% embed "element/monstring/lokalmonstringer_liste.twig.html" %}
+    {% endembed %}
+{% endblock %}

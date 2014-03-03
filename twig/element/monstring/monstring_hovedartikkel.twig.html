@@ -1,7 +1,7 @@
 {% if posts[0] is defined %}
 <a href="{{ posts[0].url}}">
     <div class="grid_post_image" style="background-image: url('{{posts[0].image.url}}');"></div>
-    <h2>{{posts[0].title}} </h2>
+    <h2>{{posts[0].title|raw}} </h2>
     <p>{{posts[0].lead|raw}}</p>
     <span>Les mer</span>
 </a>

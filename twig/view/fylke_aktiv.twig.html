@@ -1,8 +1,5 @@
 {% extends "view/fylke.twig.html" %}
 
-{% block monstring_beskrivelse %}
-<div class="pull-left">
-	{% embed "element/monstring/monstring_beskrivelse.twig.html" with {"time_verb":"er"} %}
-	{% endembed %}
-</div>
+{% block jumbo_content %}
+	Det er fylkesmønstring! {{monstring.starter | dato("l j. F") | capitalize }} til {{monstring.slutter | dato("l j. F")}} i {{monstring.sted}}
 {% endblock %}
