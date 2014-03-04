@@ -17,7 +17,7 @@ $DATA['jumbo'] = (object) array('header' => 'Påmeldte',
 
 $alle_innslag = $pl->innslag();
 
-if($_GET['type'] == 'false')
+if(isset( $_GET['type'] ) && $_GET['type'] == 'false')
 	unset( $_GET['type'] );
 
 if( isset( $_GET['type'] ) ) {
