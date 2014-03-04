@@ -169,7 +169,7 @@ function generate_list_data( $innslag, $pl, $current_c_id=false ) {
 		foreach( $media['post'] as $artikkel ) {
 			$a = new stdClass();
 			$a->url 	= $artikkel['post_meta']['link'];
-			$a->title 	= base64_decode($artikkel['post_meta']['title']);
+			$a->tittel 	= base64_decode($artikkel['post_meta']['title']);
 			
 			$data->artikler[] = $a;
 		}

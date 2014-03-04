@@ -106,7 +106,7 @@
 							<ol class="list-unstyled">
 								{% for artikkel in innslag.artikler %}
 									<li>
-										<strong>{{artikkel.tittel}}</strong>
+										<a href="{{artikkel.url}}"><strong>{{artikkel.tittel}}</strong></a>
 									</li>
 								{% endfor %}
 							</ol>
