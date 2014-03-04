@@ -155,6 +155,7 @@ function generate_list_data( $innslag, $pl, $current_c_id=false ) {
 											'wp-content/blogs.dir/'.$item['blog_id'].'/files/',
 											$imgRealPath);
 				$b = new stdClass();
+				$b->full 	= $imgRealPath . $large;
 				$b->url 	= $imgRealPath;
 				$b->foto	= isset($item['post_meta']['author']) ? $item['post_meta']['author'] : '';
 				$b->pl_type	= $item['pl_type'];
