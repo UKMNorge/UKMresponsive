@@ -70,6 +70,7 @@
 			</div>
 			
 			{# =============== HENDELSER =============== #}
+			{% if innslag.hendelser is defined or innslag.hendelser_kun_denne %}
 			<div class="col-xs-12 col-sm-6 col-md-4">
 				<h5>Hendelser</h5>
 				<ol class="list-unstyled">
@@ -85,7 +86,8 @@
 					{% endif %}
 				</ol>
 			</div>
-
+			{% endif %}
+			
 			{# =============== ARTIKLER =============== #}
 			{% if innslag.artikler is defined and innslag.artikler|length > 0 %}
 				<div class="clearfix"></div>

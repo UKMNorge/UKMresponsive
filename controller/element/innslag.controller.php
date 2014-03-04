@@ -48,22 +48,24 @@ function generate_list_data( $innslag, $pl, $current_c_id=false ) {
 	}
 	
 	// HENDELSER
-	$hendelser = $innslag->forestillinger( $pl->g('pl_id') );
-	$data->hendelser	= array();
-	foreach( $hendelser as $c_id => $nr ) {
-		if( $c_id == $current_c_id ) {
-			continue;
+	if( $current_c_id ) {
+		$hendelser = $innslag->forestillinger( $pl->g('pl_id') );
+		$data->hendelser	= array();
+		foreach( $hendelser as $c_id => $nr ) {
+			if( $c_id == $current_c_id ) {
+				continue;
+			}
+			$hendelse = new forestilling( $c_id );
+			$h = new stdClass();
+			$h->navn 		= $hendelse->g('c_name');
+			$h->start		= $hendelse->g('c_start');
+			$h->nr			= $nr;
+			
+			$data->hendelser[] = $h;
 		}
-		$hendelse = new forestilling( $c_id );
-		$h = new stdClass();
-		$h->navn 		= $hendelse->g('c_name');
-		$h->start		= $hendelse->g('c_start');
-		$h->nr			= $nr;
-		
-		$data->hendelser[] = $h;
-	}
-	if( sizeof( $data->hendelser ) == 0 ) {
-		$data->hendelser_kun_denne = true;
+		if( sizeof( $data->hendelser ) == 0 ) {
+			$data->hendelser_kun_denne = true;
+		}
 	}
 	
 	// RELATERT MEDIA
