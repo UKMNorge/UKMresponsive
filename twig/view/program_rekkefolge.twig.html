@@ -106,7 +106,7 @@
 							<ol class="list-unstyled">
 								{% for artikkel in innslag.artikler %}
 									<li>
-										<a href="{{artikkel.url}}"><strong>{{artikkel.tittel}}</strong></a>
+										<a href="{{artikkel.url}}" target="_blank"><strong>{{artikkel.tittel}}</strong></a>
 									</li>
 								{% endfor %}
 							</ol>
@@ -124,7 +124,9 @@
 								<h6>Lokalmønstringen</h6>
 								<div class="row">
 									{% for bilde in innslag.bilder.kommune %}
-									<img src="{{bilde.full}}" class="col-xs-6 col-sm-4 col-md-3 col-lg-2" />
+									<a class="swipebox" href="{{bilde.full}}" rel="gallery-{{innslag.ID}}" title="{{ bilde.foto is not empty ? 'Foto: ' + bilde.foto : '' }}">
+										<img src="" class="col-xs-6 col-sm-4 col-md-3 col-lg-2" />
+									</a>
 									{% endfor %}
 								</div>
 							{% endif %}
@@ -134,7 +136,9 @@
 								<h6>Fylkesmønstringen</h6>
 								<div class="row">
 									{% for bilde in innslag.bilder.fylke %}
-									<img src="{{bilde.full}}" class="col-xs-6 col-sm-4 col-md-3 col-lg-2" />
+									<a class="swipebox" href="{{bilde.full}}" rel="gallery-{{innslag.ID}}" title="{{ bilde.foto is not empty ? 'Foto: ' + bilde.foto : '' }}">
+										<img src="" class="col-xs-6 col-sm-4 col-md-3 col-lg-2" />
+									</a>
 									{% endfor %}
 								</div>
 							{% endif %}
@@ -144,7 +148,9 @@
 								<h6>UKM-festivalen</h6>
 								<div class="row">
 									{% for bilde in innslag.bilder.land %}
-									<img src="{{bilde.full}}" class="col-xs-6 col-sm-4 col-md-3 col-lg-2" />
+									<a class="swipebox" href="{{bilde.full}}" rel="gallery-{{innslag.ID}}" title="{{ bilde.foto is not empty ? 'Foto: ' + bilde.foto : '' }}">
+										<img src="" class="col-xs-6 col-sm-4 col-md-3 col-lg-2" />
+									</a>
 									{% endfor %}
 								</div>
 							{% endif %}
