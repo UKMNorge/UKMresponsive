@@ -44,7 +44,14 @@
 	
 	
 	
-	
+	// LINK #filter_search and #filter_search_mobile + bind fastLiveFilter	
+	jQuery(document).on('keyup', '#filter_search', function(){
+		jQuery('#filter_search_mobile').val(jQuery(this).val());
+	});
+	jQuery(document).on('keyup', '#filter_search_mobile', function(){
+		jQuery('#filter_search').val( jQuery(this).val() );
+		jQuery('#filter_search').change();
+	});
 	jQuery(document).ready(function() {
 		jQuery('#filter_search').fastLiveFilter('#filter_this', 
 												{callback:
@@ -55,6 +62,7 @@
 															jQuery('#filter_none').hide();
 													}
 												});
+
 	});
 
 /* ON CLICK OF TOGGLE-CLASS ELEMENTS */
