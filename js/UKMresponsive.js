@@ -32,7 +32,7 @@
 		embedcontainer = container.find('div.embedcontainer'); 
 		embedcontainer.html('<iframe src="' 
 							+ container.find('div.embedcontainer').attr('data-framesource') 
-							+ '?autoplay=true" width="'+ jQuery(this).width() +'" height="'+ jQuery(this).height() +'" style="max-width: 100%;"></iframe>').slideDown();
+							+ '?autoplay=true" frameborder width="'+ jQuery(this).width() +'" height="'+ jQuery(this).height() +'" style="max-width: 100%; border:none;"></iframe>').slideDown();
 		jQuery(this).slideUp();
 	});
 
