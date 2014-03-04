@@ -147,16 +147,8 @@ function generate_list_data( $innslag, $pl, $current_c_id=false ) {
 							);
 							
 			if( strlen( $large ) > 0 ) {		
-				$large = $url . $large;
-				$imgRealPath = preg_replace('(\/pl[0-9]+\/files\/)',
-											'/wp-content/blogs.dir/'.$item['blog_id'].'/files/',
-											$url);
-				$imgRealPath = preg_replace('([a-z,-]+\/files\/)',
-											'wp-content/blogs.dir/'.$item['blog_id'].'/files/',
-											$imgRealPath);
 				$b = new stdClass();
-				$b->full 	= $imgRealPath . $large;
-				$b->url 	= $imgRealPath;
+				$b->full 	= $url . $large;
 				$b->foto	= isset($item['post_meta']['author']) ? $item['post_meta']['author'] : '';
 				$b->pl_type	= $item['pl_type'];
 				
