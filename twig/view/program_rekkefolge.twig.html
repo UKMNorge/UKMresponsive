@@ -78,7 +78,7 @@
 							{% endfor %}
 							{% if innslag.hendelser_kun_denne %}
 								<li>
-									<p>Deltar kun i {{hendelse.navn}} på denne mønstringen<small class="hidden-xs">(denne hendelsen)</small></p>
+									<p>Deltar kun i {{hendelse.navn}} på denne mønstringen</p>
 								</li>
 							{% endif %}
 						</ol>
@@ -100,12 +100,11 @@
 					{# =============== BILDER =============== #}
 					<div class="col-xs-12">
 						<h5>Bilder</h5>
-						<ol class="list-unstyled">
-							{% for artikkel in innslag.bilder %}
-								<li>
-								</li>
+						<div class="row">
+							{% for bilde in innslag.bilder %}
+							<img src="{{bilde.url}}" class="col-xs-6 col-sm-4 col-md-3 col-lg-2 img img-thumbnail" />
 							{% endfor %}
-						</ol>
+						</div>
 					</div>
 
 					<div class="clearfix"></div>

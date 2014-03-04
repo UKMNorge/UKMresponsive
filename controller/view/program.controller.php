@@ -59,7 +59,7 @@ if( isset($_GET['hendelse'] ) ) {
 	}
 	
 	
-	if( sizeof($DATA['program']) < 4 ) {
+	if( isset( $DATA['program'] ) && sizeof($DATA['program']) < 4 ) {
 		$DATA['dag_max_col'] = sizeof($DATA['program']);
 	} else {
 		$DATA['dag_max_col'] = 3;
@@ -127,7 +127,44 @@ function generate_list_data( $innslag, $pl, $current_c_id=false ) {
 	}
 	if( sizeof( $data->hendelser ) == 0 ) {
 		$data->hendelser_kun_denne = true;
-	}	
+	}
+	
+	// RELATERT MEDIA
+	$media = $innslag->related_items();
+	
+	
+	
+	// BILDER
+	if(isset($media['image']) && is_array($media['image'])) {
+		$imageCounter = 0;
+		global $blog_id;
+		$pl_id = get_option('pl_id');
+		foreach($media['image'] as $id => $item){			
+			$url = $item['blog_url'].'/files/';
+			$large = (!isset($item['post_meta']['sizes']['large'])
+							? $item['post_meta']['file']
+							: $item['post_meta']['sizes']['large']['file']
+							);
+							
+			if( strlen( $large ) > 0 ) {		
+				$large = $url . $large;
+				$imgRealPath = preg_replace('(\/pl[0-9]+\/files\/)',
+											'/wp-content/blogs.dir/'.$item['blog_id'].'/files/',
+											$url);
+				$imgRealPath = preg_replace('([a-z,-]+\/files\/)',
+											'wp-content/blogs.dir/'.$item['blog_id'].'/files/',
+											$imgRealPath);
+				$b = new stdClass();
+				$b->url 	= $imgRealPath;
+				$b->foto	= isset($item['post_meta']['author']) ? $item['post_meta']['author'] : '';
+				$b->pl_type	= $item['pl_type'];
+				
+				$data->bilder[ $item['pl_type'] ][] = $b;
+			}
+		}
+	}
+
+
 	
 	
 	return $data;
