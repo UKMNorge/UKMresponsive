@@ -31,8 +31,8 @@
 		container = jQuery(this).parents('div.UKMTV');
 		embedcontainer = container.find('div.embedcontainer'); 
 		console.log( embedcontainer );
-		console.log( embedcontainer.height() );
-		console.log( embedcontainer.width() );
+		console.log( jQuery(this).height() );
+		console.log( jQuery(this).width() );
 		
 		embedcontainer.html('<iframe src="' 
 							+ container.find('div.embedcontainer').attr('data-framesource') 
