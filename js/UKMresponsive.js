@@ -29,9 +29,14 @@
 	
 	jQuery(document).on('click', '.UKMTV img', function(){
 		container = jQuery(this).parents('div.UKMTV');
-		container.find('div.embedcontainer').html('<iframe src="' 
-												+ container.find('div.embedcontainer').attr('data-framesource') 
-												+ '?autoplay=true" width="535" height="301"></iframe>').slideDown();
+		embedcontainer = container.find('div.embedcontainer'); 
+		console.log( embedcontainer );
+		console.log( embedcontainer.height() );
+		console.log( embedcontainer.width() );
+		
+		embedcontainer.html('<iframe src="' 
+							+ container.find('div.embedcontainer').attr('data-framesource') 
+							+ '?autoplay=true" width="535" height="301" style="max-width: 100%;"></iframe>').slideDown();
 		jQuery(this).slideUp();
 	});
 
