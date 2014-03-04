@@ -168,8 +168,8 @@ function generate_list_data( $innslag, $pl, $current_c_id=false ) {
 	if(isset($media['post']) && is_array($media['post'])) {
 		foreach( $media['post'] as $artikkel ) {
 			$a = new stdClass();
-			$a->url 	= $art['post_meta']['link'];
-			$a->title 	= base64_decode($art['post_meta']['title']);
+			$a->url 	= $artikkel['post_meta']['link'];
+			$a->title 	= base64_decode($artikkel['post_meta']['title']);
 			
 			$data->artikler[] = $a;
 		}
