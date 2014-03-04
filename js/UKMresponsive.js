@@ -25,6 +25,7 @@
 		} else {
 			data.slideDown();
 		}
+		jQuery(function($) {$(".swipebox").swipebox();});
 	});
 	
 	jQuery(document).on('click', '.UKMTV img', function(){
