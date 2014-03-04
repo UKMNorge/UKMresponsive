@@ -84,68 +84,74 @@
 						</ol>
 					</div>
 
-					<div class="clearfix"></div>
 					{# =============== ARTIKLER =============== #}
-					<div class="col-xs-12">
-						<h5>Artikler</h5>
-						<ol class="list-unstyled">
-							{% for artikkel in innslag.artikler %}
-								<li>
-								</li>
-							{% endfor %}
-						</ol>
-					</div>
+					{% if innslag.artikler is defined and innslag.artikler|length > 1 %}
+						<div class="clearfix"></div>
+						<div class="col-xs-12">
+							<h5>Artikler</h5>
+							<ol class="list-unstyled">
+								{% for artikkel in innslag.artikler %}
+									<li>
+										<strong>{{artikkel.tittel}}</strong>
+									</li>
+								{% endfor %}
+							</ol>
+						</div>
+					{% endif %}
 					
-					<div class="clearfix"></div>
 					{# =============== BILDER =============== #}
-					<div class="col-xs-12">
-						<h5>Bilder</h5>
-						
-						{% if innslag.bilder.kommune is defined %}
-							<div class="clearfix"></div>
-							<h6>Lokalmønstringen</h6>
-							<div class="row">
-								{% for bilde in innslag.bilder.kommune %}
-								<img src="{{bilde.full}}" class="col-xs-6 col-sm-4 col-md-3 col-lg-2 img img-thumbnail" />
-								{% endfor %}
-							</div>
-						{% endif %}
-						
-						{% if innslag.bilder.fylke is defined %}
-							<div class="clearfix"></div>
-							<h6>Fylkesmønstringen</h6>
-							<div class="row">
-								{% for bilde in innslag.bilder.fylke %}
-								<img src="{{bilde.full}}" class="col-xs-6 col-sm-4 col-md-3 col-lg-2 img img-thumbnail" />
-								{% endfor %}
-							</div>
-						{% endif %}
-						
-						{% if innslag.bilder.land is defined %}
-							<div class="clearfix"></div>
-							<h6>UKM-festivalen</h6>
-							<div class="row">
-								{% for bilde in innslag.bilder.land %}
-								<img src="{{bilde.full}}" class="col-xs-6 col-sm-4 col-md-3 col-lg-2 img img-thumbnail" />
-								{% endfor %}
-							</div>
-						{% endif %}
-						
-						
-					</div>
+					{% if innslag.bilder is defined and innslag.bilder|length > 1 %}
+						<div class="clearfix"></div>
+						<div class="col-xs-12">
+							<h5>Bilder</h5>
+							
+							{% if innslag.bilder.kommune is defined %}
+								<div class="clearfix"></div>
+								<h6>Lokalmønstringen</h6>
+								<div class="row">
+									{% for bilde in innslag.bilder.kommune %}
+									<img src="{{bilde.full}}" class="col-xs-6 col-sm-4 col-md-3 col-lg-2 img img-thumbnail" />
+									{% endfor %}
+								</div>
+							{% endif %}
+							
+							{% if innslag.bilder.fylke is defined %}
+								<div class="clearfix"></div>
+								<h6>Fylkesmønstringen</h6>
+								<div class="row">
+									{% for bilde in innslag.bilder.fylke %}
+									<img src="{{bilde.full}}" class="col-xs-6 col-sm-4 col-md-3 col-lg-2 img img-thumbnail" />
+									{% endfor %}
+								</div>
+							{% endif %}
+							
+							{% if innslag.bilder.land is defined %}
+								<div class="clearfix"></div>
+								<h6>UKM-festivalen</h6>
+								<div class="row">
+									{% for bilde in innslag.bilder.land %}
+									<img src="{{bilde.full}}" class="col-xs-6 col-sm-4 col-md-3 col-lg-2 img img-thumbnail" />
+									{% endfor %}
+								</div>
+							{% endif %}
+						</div>
+					{% endif %}
 
-					<div class="clearfix"></div>
 					{# =============== UKM-TV =============== #}
-					<div class="col-xs-12">
-						<h5>{{innslag.navn}} i UKM-TV</h5>
-						<ol class="list-unstyled">
-							{% for artikkel in innslag.filmer %}
-								<li>
-								</li>
-							{% endfor %}
-						</ol>
-					</div>
-
+					{% if innslag.UKMTV is defined and innslag.UKMTV|length > 1 %}
+						<div class="clearfix"></div>
+						<div class="col-xs-12">
+							<h5>{{innslag.navn}} i UKM-TV</h5>
+							<ol class="list-unstyled">
+								{% for tv in innslag.UKMTV %}
+									<div class="UKMTV clickable">
+										<div class="image"><img src="{{tv.image_url}}" /></div>
+										<div class="embedcontainer" style="display:none;" data-framesource="{{tv.embed_url}}"></div>
+									</div>
+								{% endfor %}
+							</ol>
+						</div>
+					{% endif %}
 
 				</div>
 				

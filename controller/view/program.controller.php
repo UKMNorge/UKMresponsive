@@ -131,8 +131,9 @@ function generate_list_data( $innslag, $pl, $current_c_id=false ) {
 	
 	// RELATERT MEDIA
 	$media = $innslag->related_items();
-	
-	
+
+	// FILMER
+	$data->UKMTV = $media['tv'];
 	
 	// BILDER
 	if(isset($media['image']) && is_array($media['image'])) {
@@ -156,9 +157,16 @@ function generate_list_data( $innslag, $pl, $current_c_id=false ) {
 			}
 		}
 	}
-
-
 	
-	
+	// ARTIKLER
+	if(isset($media['post']) && is_array($media['post'])) {
+		foreach( $media['post'] as $artikkel ) {
+			$a = new stdClass();
+			$a->url 	= $art['post_meta']['link'];
+			$a->title 	= base64_decode($art['post_meta']['title']);
+			
+			$data->artikler[] = $a;
+		}
+	}	
 	return $data;
 }

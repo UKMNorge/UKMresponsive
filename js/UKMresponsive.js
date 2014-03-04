@@ -16,7 +16,7 @@
 		pageFocus( jQuery(this) );
 	});
 	
-	jQuery(document).on('click','li.innslag', function() {
+	jQuery(document).on('click','li.innslag div.header', function() {
 		jQuery('li.innslag div.row.data').slideUp();
 		innslag = jQuery(this);
 		data = innslag.find('div.row.data');
@@ -25,6 +25,14 @@
 		} else {
 			data.slideDown();
 		}
+	});
+	
+	jQuery(document).on('click', '.UKMTV img', function(){
+		container = jQuery(this).parents('div.UKMTV');
+		container.find('div.embedcontainer').html('<iframe src="' 
+												+ container.find('div.embedcontainer').attr('data-framesource') 
+												+ '?autoplay=true" width="535" height="301"></iframe>').slideDown();
+		jQuery(this).slideUp();
 	});
 
 /* ON CLICK OF TOGGLE-CLASS ELEMENTS */
