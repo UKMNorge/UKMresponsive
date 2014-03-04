@@ -133,7 +133,9 @@ function generate_list_data( $innslag, $pl, $current_c_id=false ) {
 	$media = $innslag->related_items();
 
 	// FILMER
-	$data->UKMTV = $media['tv'];
+	if( isset( $media['tv'] ) && sizeof( $media['tv'] ) > 0) {
+		$data->UKMTV = $media['tv'];	
+	}
 	
 	// BILDER
 	if(isset($media['image']) && is_array($media['image'])) {

@@ -18,7 +18,7 @@
 	
 	jQuery(document).on('click','li.innslag div.header', function() {
 		jQuery('li.innslag div.row.data').slideUp();
-		innslag = jQuery(this);
+		innslag = jQuery(this).parents('li.innslag');
 		data = innslag.find('div.row.data');
 		if(data.is(':visible')) {
 			data.slideUp();
