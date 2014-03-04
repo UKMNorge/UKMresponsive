@@ -34,11 +34,15 @@
 
 		<div class="col-xs-12 col-sm-9">
 			<h2>{{active_filter | capitalize}}</h2>
-			{# <div class="row">
-				<input type="search" class="input input-block" placeholder="Søk i listen.." />
+			<div class="row">
+				<div class="input-group input-group-sm col-xs-12 col-sm-4 pull-right">
+					<span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+					<input type="search" class="form-control" id="filter_search" placeholder="Søk i listen.." />
+				</div>
 			</div>
-			#}
-			<ol class="list-unstyled">
+			<p></p>
+
+			<ol class="list-unstyled" id="filter_this">
 				{% for innslag in rekkefolge %}
 					{% embed "element/innslag.twig.html" with {'showIndex': false} %}{% endembed %}
 				{% else %}
@@ -48,6 +52,16 @@
 					</li>				
 				{% endfor %}
 			</ol>
+			
+			<div id="filter_none" class="alert alert-danger">
+				<h4>Ingen treff</h4>
+				<p>Fant ingen treff i listen for det du søkte etter. Du kan søke etter navn på innslag, personer og titler.</p>
+				{% if list_filtered %}
+					<p>
+						<strong>Husk at du nå kun søker blant {{active_filter}}-innslag</strong>
+					</p>
+				{% endif %}
+			</div>
 		</div>
 	</div>
 {% endblock %}

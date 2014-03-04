@@ -41,6 +41,21 @@
 	  url = window.location.href.split("?")[0];
 	  window.location.href = url + '?type=' + jQuery(this).val();
 	});
+	
+	
+	
+	
+	jQuery(document).ready(function() {
+		jQuery('#filter_search').fastLiveFilter('#filter_this', 
+												{callback:
+													function(numShown) {
+														if(numShown == 0) 
+															jQuery('#filter_none').slideDown();
+														else
+															jQuery('#filter_none').hide();
+													}
+												});
+	});
 
 /* ON CLICK OF TOGGLE-CLASS ELEMENTS */
 jQuery(document).on('click','.toggle', function(){

@@ -28,9 +28,11 @@ if( isset( $_GET['type'] ) ) {
 				  );
 	$DATA['active_filter'] = strtolower( utf8_encode( $sql->run('field','bt_name') ) );
 	$DATA['active_filter_id'] = $_GET['type'];
+	$DATA['list_filtered'] = true;
 } else {
 	$DATA['active_filter'] = 'alle innslag';
 	$DATA['active_filter_id'] = 'false';
+	$DATA['list_filtered'] = false;
 }
 
 $DATA['typer'] = array();

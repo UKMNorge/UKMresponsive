@@ -1,4 +1,4 @@
-<li class="innslag" id="innslag_{{innslag.ID}}">
+<li class="innslag" id="innslag_{{innslag.ID}}" data-filter="{{innslag.navn}} {% for p in innslag.personer %}{{p.navn}} {% endfor %}{% for t in innslag.titler %}{{t.tittel}} {% endfor %}">
 	<div class="well well-sm">
 		<div class="row header clickable">
 			<div class="col-xs-12 col-sm-8">
