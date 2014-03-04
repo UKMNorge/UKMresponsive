@@ -92,7 +92,7 @@
 					</div>
 
 					{# =============== ARTIKLER =============== #}
-					{% if innslag.artikler is defined and innslag.artikler|length > 1 %}
+					{% if innslag.artikler is defined and innslag.artikler|length > 0 %}
 						<div class="clearfix"></div>
 						<div class="col-xs-12">
 							<h5>Artikler</h5>
@@ -107,7 +107,7 @@
 					{% endif %}
 					
 					{# =============== BILDER =============== #}
-					{% if innslag.bilder is defined and innslag.bilder|length > 1 %}
+					{% if innslag.bilder is defined and innslag.bilder|length > 0 %}
 						<div class="clearfix"></div>
 						<div class="col-xs-12">
 							<h5>Bilder</h5>
@@ -145,7 +145,7 @@
 					{% endif %}
 
 					{# =============== UKM-TV =============== #}
-					{% if innslag.UKMTV is defined and innslag.UKMTV|length > 1 %}
+					{% if innslag.UKMTV is defined and innslag.UKMTV|length > 0 %}
 						<div class="clearfix"></div>
 						<div class="col-xs-12">
 							<h5>{{innslag.navn}} i UKM-TV</h5>
