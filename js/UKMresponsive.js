@@ -30,13 +30,9 @@
 	jQuery(document).on('click', '.UKMTV img', function(){
 		container = jQuery(this).parents('div.UKMTV');
 		embedcontainer = container.find('div.embedcontainer'); 
-		console.log( embedcontainer );
-		console.log( jQuery(this).height() );
-		console.log( jQuery(this).width() );
-		
 		embedcontainer.html('<iframe src="' 
 							+ container.find('div.embedcontainer').attr('data-framesource') 
-							+ '?autoplay=true" width="535" height="301" style="max-width: 100%;"></iframe>').slideDown();
+							+ '?autoplay=true" width="'+ jQuery(this).width() +'" height="'+ jQuery(this).height() +'" style="max-width: 100%;"></iframe>').slideDown();
 		jQuery(this).slideUp();
 	});
 
