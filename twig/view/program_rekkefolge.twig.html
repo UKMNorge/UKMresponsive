@@ -117,7 +117,7 @@
 								<h6>Lokalmønstringen</h6>
 								<div class="row">
 									{% for bilde in innslag.bilder.kommune %}
-									<img src="{{bilde.full}}" class="col-xs-6 col-sm-4 col-md-3 col-lg-2 img img-thumbnail" />
+									<img src="{{bilde.full}}" class="col-xs-6 col-sm-4 col-md-3 col-lg-2" />
 									{% endfor %}
 								</div>
 							{% endif %}
@@ -127,7 +127,7 @@
 								<h6>Fylkesmønstringen</h6>
 								<div class="row">
 									{% for bilde in innslag.bilder.fylke %}
-									<img src="{{bilde.full}}" class="col-xs-6 col-sm-4 col-md-3 col-lg-2 img img-thumbnail" />
+									<img src="{{bilde.full}}" class="col-xs-6 col-sm-4 col-md-3 col-lg-2" />
 									{% endfor %}
 								</div>
 							{% endif %}
@@ -137,7 +137,7 @@
 								<h6>UKM-festivalen</h6>
 								<div class="row">
 									{% for bilde in innslag.bilder.land %}
-									<img src="{{bilde.full}}" class="col-xs-6 col-sm-4 col-md-3 col-lg-2 img img-thumbnail" />
+									<img src="{{bilde.full}}" class="col-xs-6 col-sm-4 col-md-3 col-lg-2" />
 									{% endfor %}
 								</div>
 							{% endif %}
