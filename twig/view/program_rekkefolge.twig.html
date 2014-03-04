@@ -100,11 +100,38 @@
 					{# =============== BILDER =============== #}
 					<div class="col-xs-12">
 						<h5>Bilder</h5>
-						<div class="row">
-							{% for bilde in innslag.bilder %}
-							<img src="{{bilde.url}}" class="col-xs-6 col-sm-4 col-md-3 col-lg-2 img img-thumbnail" />
-							{% endfor %}
-						</div>
+						
+						{% if innslag.bilder.kommune is defined %}
+							<div class="clearfix"></div>
+							<h6>Lokalmønstringen</h6>
+							<div class="row">
+								{% for bilde in innslag.bilder.kommune %}
+								<img src="{{bilde.url}}" class="col-xs-6 col-sm-4 col-md-3 col-lg-2 img img-thumbnail" />
+								{% endfor %}
+							</div>
+						{% endif %}
+						
+						{% if innslag.bilder.fylke is defined %}
+							<div class="clearfix"></div>
+							<h6>Fylkesmønstringen</h6>
+							<div class="row">
+								{% for bilde in innslag.bilder.fylke %}
+								<img src="{{bilde.url}}" class="col-xs-6 col-sm-4 col-md-3 col-lg-2 img img-thumbnail" />
+								{% endfor %}
+							</div>
+						{% endif %}
+						
+						{% if innslag.bilder.land is defined %}
+							<div class="clearfix"></div>
+							<h6>UKM-festivalen</h6>
+							<div class="row">
+								{% for bilde in innslag.bilder.land %}
+								<img src="{{bilde.url}}" class="col-xs-6 col-sm-4 col-md-3 col-lg-2 img img-thumbnail" />
+								{% endfor %}
+							</div>
+						{% endif %}
+						
+						
 					</div>
 
 					<div class="clearfix"></div>
