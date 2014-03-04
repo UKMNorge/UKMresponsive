@@ -36,6 +36,11 @@
 							+ '?autoplay=true" frameborder width="'+ jQuery(this).width() +'" height="'+ jQuery(this).height() +'" style="max-width: 100%; border:none;"></iframe>').slideDown();
 		jQuery(this).slideUp();
 	});
+	
+	jQuery(document).on('change', '#pameldte_filter', function(){
+	  url = window.location.href.split("?")[0];
+	  window.location.href = url + '?type=' + jQuery(this).val();
+	});
 
 /* ON CLICK OF TOGGLE-CLASS ELEMENTS */
 jQuery(document).on('click','.toggle', function(){

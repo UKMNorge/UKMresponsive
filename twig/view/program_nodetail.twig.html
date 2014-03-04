@@ -1,0 +1,11 @@
+{% extends "layout.twig.html" %}
+
+{% block content %}
+	<h2>{{hendelse.navn}} <small>{{hendelse.start | dato('l d.m H:i' )}}</small></h2>
+	<p>{{hendelse.sted}}</p>
+	
+	<div class="alert alert-info">
+		<h4>Detaljprogram ikke tilgjengelig</h4>
+		<p>Det finnes ikke noe offentlig detaljprogram for denne hendelsen</p>
+	</div>
+{% endblock %}

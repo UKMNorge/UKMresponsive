@@ -1,0 +1,53 @@
+{% extends "layout.twig.html" %}
+
+{% block content %}
+	<div class="row">
+		<div class="col-xs-12 col-sm-3 pull-right" id="rightnav">
+			<div class="visible-xs hidden-sm hidden-md hidden-lg">
+				<label for="pameldte_filter">Viser nå:</label>
+				<select id="pameldte_filter" class="form-control">
+					<option value="false" {{active_filter_id=='false'?'selected="selected"':''}}>Alle innslag</option>
+					{% for bt_id, bt_name in typer %}
+					<option value="{{bt_id}}" {{active_filter_id==bt_id?'selected="selected"':''}}>{{bt_name}}</option>
+					{% endfor %}
+				</select>
+			</div>
+			
+			<div class="clearfix"></div>	
+			
+			<div class="hidden-xs visible-sm visible-md visible-lg">
+				<div class="pull-right hidden-xs">
+					<small>filtrer listen</small>
+				</div>
+				<div class="clearfix"></div>
+
+				<p>
+					<a href="?" class="btn btn-default btn-block">Alle innslag</a>
+					{% for bt_id, type in typer %}
+						<a href="?type={{bt_id}}" class="btn btn-default btn-block">{{type}}</a>
+					{% endfor %}
+				</p>
+			</div>
+			
+		</div>
+		<div class="clearfix hidden-sm hidden-md hidden-lg"></div>
+
+		<div class="col-xs-12 col-sm-9">
+			<h2>{{active_filter | capitalize}}</h2>
+			{# <div class="row">
+				<input type="search" class="input input-block" placeholder="Søk i listen.." />
+			</div>
+			#}
+			<ol class="list-unstyled">
+				{% for innslag in rekkefolge %}
+					{% embed "element/innslag.twig.html" with {'showIndex': false} %}{% endembed %}
+				{% else %}
+					<li class="alert alert-info">
+						<h4>Ingen innslag</h4>
+						<p>Det er ingen påmeldte til UKM {{monstring.navn}} enda</p>
+					</li>				
+				{% endfor %}
+			</ol>
+		</div>
+	</div>
+{% endblock %}

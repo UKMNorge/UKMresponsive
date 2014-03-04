@@ -98,8 +98,15 @@ require_once('functions_theme.php');
             	$VIEW = 'kontakt';
             	break;
             case 'program':
+				require_once('controller/element/innslag.controller.php');
             	require_once('controller/view/program.controller.php');
             	break;
+            case 'pameldte':
+				require_once('controller/element/innslag.controller.php');
+            	require_once('controller/view/pameldte.controller.php');
+            	$VIEW = 'pameldte';
+            	break;
+
 			default:
 				require_once('controller/view/post.controller.php');
 				$VIEW = 'page';
