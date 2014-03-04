@@ -95,6 +95,15 @@ $DATA['fylke'] = get_option('fylke');
 	$DATA['lokalmonstringer']['second_half'] = array_slice( $lokalmonstringer, $half_lokalmonstringer);
 	
 
+// HAR UKM-TV-SIDE? (opplastede videoer?)
+	$kategori = 'Fylkesmønstringen i '. $pl->g('pl_name').' '.$pl->g('season');
+	$sql = new SQL("SELECT `tv_id` FROM `ukm_tv_files`
+					WHERE `tv_category` LIKE '#kategori%'",
+					array('kategori' => $kategori) );
+	$res = $sql->run();
+	$UKMTV = mysql_num_rows( $res ) > 0 ? $kategori : false;
+
+
 // HVILKEN PERIODE ER FYLKESSIDEN I?
 	$VIEW = 'fylke_pre_lokal';
 	if( time() > $siste_pamelding && time() < $siste ) {
@@ -110,18 +119,22 @@ $DATA['fylke'] = get_option('fylke');
 // DEBUG
 $VIEW = 'fylke_post';
 
-// PAGE NAV
+
 
     $DATA['page_nav'][] = (object) array( 'url' => 'bilder/',
                                           'title' => 'Bilder',
                                           'icon'  => 'kamera',
                                           'description' => 'Bilder fra '. $pl->get('pl_name').''
                                       );
-    $DATA['page_nav'][] = (object) array( 'url' => '//tv.ukm.no',
+	// HAR UKM-TV SIDE
+	if( $UKMTV ) {
+	    $DATA['page_nav'][] = (object) array( 'url' => '//tv.ukm.no/samling/'. urlencode($UKMTV),
                                           'title' => 'Film',
                                           'icon'  => 'ukmtv_black',
                                           'description' => 'Film fra fra '. $pl->get('pl_name').' i UKM-TV'
                                       );
+    }
+    // HAR PROGRAM
 	if( in_array( $VIEW, array('fylke_pre','fylke_aktiv','fylke_post')) || $pl->har_program() ) {
 		$DATA['page_nav'][] = (object) array( 'url' 			=> 'program/',
 											   'title'		 	=> 'Program',
@@ -129,11 +142,15 @@ $VIEW = 'fylke_post';
 											   'description'	=> 'Se program for fylkesmønstringen'
 											  );
 	}
-	$DATA['page_nav'][] = (object) array( 'url' 			=> 'pameldte/',
-										   'title'		 	=> 'Hvem deltar?',
-										   'icon'			=> 'hvem',
-										   'description'	=> 'Se alle som deltar på fylkesmønstringen.'
-										  );
+	// HAR INNSLAG
+	$innslag = $pl->innslag();
+	if( sizeof( $innslag ) > 0 ) {
+		$DATA['page_nav'][] = (object) array( 'url' 			=> 'pameldte/',
+											   'title'		 	=> 'Hvem deltar?',
+											   'icon'			=> 'hvem',
+											   'description'	=> 'Se alle som deltar på fylkesmønstringen.'
+											  );
+	}
 	$DATA['page_nav'][] = (object) array( 'url' 			=> '#kontaktpersoner',
 										   'title'		 	=> 'Kontaktpersoner',
 										   'icon'			=> 'info',
