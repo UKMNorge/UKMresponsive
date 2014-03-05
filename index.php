@@ -33,6 +33,8 @@ require_once('functions_theme.php');
 /**********************************
 * SWITCH VIEW
 **********************************/
+	require_once(THEME_PATH .'controller/breadcrumbs.controller.php');
+
 	if( is_archive() ) {
 		if(is_author()) {
     		require_once('controller/view/author.controller.php');
@@ -47,6 +49,7 @@ require_once('functions_theme.php');
 		require_once('controller/view/post.controller.php');
 		require_once('controller/element/comments.controller.php');
 		$VIEW = 'post';
+		$BC->add( $DATA['url']['current'], 'artikkel' );
 	} elseif( is_front_page() ) {
 		if( get_option('ukm_top_page') == 'ambassadorer' ) {
 			require_once('controller/view/homepage.controller.php');
@@ -56,7 +59,7 @@ require_once('functions_theme.php');
 			$VIEW = 'homepage_arrangorer';
 		} elseif( get_option('ukm_top_page') == 'internasjonalt' ) {
 			require_once('controller/view/homepage.controller.php');
-			$VIEW = 'homepage_internasjonalt';      
+			$VIEW = 'homepage_internasjonalt';
 		} elseif( get_option('site_type') == 'fylke' ) {
             $VIEW = 'fylke';
 			require_once('controller/element/kontakt.controller.php');
@@ -75,6 +78,7 @@ require_once('functions_theme.php');
 			case 'dinmonstring':
 				require_once('controller/view/dinmonstring.controller.php');
 				$VIEW = 'dinmonstring';
+				$BC->home('derdubor');
 				break;
             case 'styrerommet':
                 require_once('controller/view/styrerommet.controller.php');
@@ -112,19 +116,28 @@ require_once('functions_theme.php');
 			default:
 				require_once('controller/view/post.controller.php');
 				$VIEW = 'page';
+				$BC->add( $DATA['url']['current'], $DATA['post']->title);
 				break;
 		}
+		if(isset( $DATA['jumbo'] ) && $BC->addJumbo )
+			$BC->add( $DATA['url']['current'], $DATA['jumbo']->header );
+/*
+		elseif( isset( $DATA['post'] ) && isset( $DATA['post']->title ))
+			$BC->add( $DATA['url']['current'], $DATA['post']->title);
+*/
 	} else {
 		require_once('controller/view/404.controller.php');
 		$VIEW = '404';
 		$DATA['jumbo'] = (object) array('header' => 'Siden ikke funnet!', 'content' => 'Såkalt 404 altså');
-
+		$BC->add( $DATA['url']['current'], 'side ikke funnet');
 	}
 	
 if( !isset( $DATA['jumbo'] ) ) {
 	$JUMBO_POST_ID = $post->ID;
 	require_once('controller/element/jumbo.controller.php');
 }
+
+$DATA['breadcrumbs'] = $BC->get();
 
 echo TWIGrender('view/'.$VIEW, object_to_array($DATA),true);
 /*

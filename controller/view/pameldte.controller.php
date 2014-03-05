@@ -29,11 +29,17 @@ if( isset( $_GET['type'] ) ) {
 	$DATA['active_filter'] = strtolower( utf8_encode( $sql->run('field','bt_name') ) );
 	$DATA['active_filter_id'] = $_GET['type'];
 	$DATA['list_filtered'] = true;
+	
 } else {
 	$DATA['active_filter'] = 'alle innslag';
 	$DATA['active_filter_id'] = 'false';
 	$DATA['list_filtered'] = false;
 }
+
+$BC->addJumbo = false;
+$BC->add( $DATA['url']['current'], $DATA['jumbo']->header );
+$BC->add( $DATA['url']['current'].'?type='.$DATA['active_filter_id'], ucfirst($DATA['active_filter']) );
+
 
 $DATA['typer'] = array();
 foreach( $alle_innslag as $innslag ) {

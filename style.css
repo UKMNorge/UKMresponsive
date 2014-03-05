@@ -28,6 +28,7 @@ Author URI: https://github.com/UKMNorge?tab=members
 @import "css/monstring.less";
 @import "css/dinmonstring.less";
 @import "css/innslag.less";
+@import "css/breadcrumbs.less";
 
 .center {
 	text-align: center;

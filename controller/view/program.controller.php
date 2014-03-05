@@ -12,7 +12,7 @@ $DATA['monstring'] = $monstring;
 $DATA['jumbo'] = (object) array('header' => 'Program',
 								'content' => 'UKM ' . $pl->g('pl_name')
 								);
-
+								
 if( isset($_GET['hendelse'] ) ) {
 	require_once('UKM/forestilling.class.php');
 	$VIEW = 'program_rekkefolge';
@@ -24,6 +24,10 @@ if( isset($_GET['hendelse'] ) ) {
 	$hendelse->start	= $con->g('c_start');
 	$hendelse->sted		= $con->g('c_place');
 	$hendelse->offentlig= $con->g('c_visible_detail')=='true';
+
+	$BC->addJumbo = false;
+	$BC->add( $DATA['url']['current'], $DATA['jumbo']->header );
+	$BC->add( $DATA['url']['current'].'?hendelse='.$_GET['hendelse'], $hendelse->navn );
 
 	$DATA['hendelse'] = $hendelse;
 

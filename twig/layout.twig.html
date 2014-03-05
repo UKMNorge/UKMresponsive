@@ -127,7 +127,9 @@
 	</div>
 	{% endblock %}
 
-
+	{% block breadcrumbs_top %}
+		{% embed "element/breadcrumbs.twig.html" %}{% endembed %}
+	{% endblock %}
 
   	<div id="ukm_page_pre_content" class="container" style="display:none"></div>
   	<div id="ukm_page_content" class="container">

@@ -1,11 +1,15 @@
 <?php
 $active = get_option( 'ukm_top_page' );
+$NAV_TOP = array('ungdom','din_monstring','voksneogpresse','ukmtv','arrangorer');
 	
 if($active == 'ungdom' && is_page() && 'dinmonstring' == get_post_meta($post->ID, 'UKMviseng', true) ) 
 	$active = 'din_monstring';
 	
 if( !$active ) 
 	$active = 'din_monstring';
+
+if( !in_array( $active, $NAV_TOP ) )
+	$active = 'ungdom';
 
 $DATA['nav_top'][] = (object) array('url' 		=> '//'.$_SERVER['HTTP_HOST'].'/',
 									'title' 	=> 'for ungdom',
@@ -35,4 +39,4 @@ $DATA['nav_top'][] = (object) array('url' 		=> '//'.$_SERVER['HTTP_HOST'].'/amba
 								    
 $DATA['nav_top_right'][] = (object) array('url' 		=> '//'.$_SERVER['HTTP_HOST'].'/arrangor/',
 									'title' 	=> 'arrangører',
-								    'active'	=> $active == 'arrangor');
+								    'active'	=> $active == 'arrangorer');
