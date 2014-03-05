@@ -13,18 +13,22 @@ if( !in_array( $active, $NAV_TOP ) )
 
 $DATA['nav_top'][] = (object) array('url' 		=> '//'.$_SERVER['HTTP_HOST'].'/',
 									'title' 	=> 'for ungdom',
+									'full_title'=> 'UKM for ungdom',
 								    'active'	=> $active == 'ungdom');
 								    
 $DATA['nav_top'][] = (object) array('url' 		=> '//'.$_SERVER['HTTP_HOST'].'/din_monstring/',
 									'title' 	=> 'der du bor',
+									'full_title'=> 'UKM der du bor',
 								    'active'	=> $active == 'din_monstring');
 								    
 $DATA['nav_top'][] = (object) array('url' 		=> '//'.$_SERVER['HTTP_HOST'].'/om/',
 									'title' 	=> 'for voksne og presse',
+									'full_title'=> 'UKM for voksne og presse',
 								    'active'	=> $active == 'voksneogpresse');
 
 $DATA['nav_top'][] = (object) array('url' 		=> '//tv.'.$_SERVER['HTTP_HOST'].'/',
 									'title' 	=> 'TV',
+									'full_title'=> 'UKM-TV',
 								    'active'	=> $active == 'ukmtv');
 								    
 /*
@@ -39,4 +43,5 @@ $DATA['nav_top'][] = (object) array('url' 		=> '//'.$_SERVER['HTTP_HOST'].'/amba
 								    
 $DATA['nav_top_right'][] = (object) array('url' 		=> '//'.$_SERVER['HTTP_HOST'].'/arrangor/',
 									'title' 	=> 'arrangører',
+									'full_title'=> 'UKM for arrangører',
 								    'active'	=> $active == 'arrangorer');

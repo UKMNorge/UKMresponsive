@@ -4,6 +4,10 @@
 									   .attr('data-toggle','#monstring_kontaktpersoner')
 									   .attr('data-toggletitle', 'Kontaktpersoner')
 									   .attr('data-toggleclose', 'Skjul kontaktpersoner');
+
+		jQuery('[data-toggle=offcanvas]').click(function () {
+			jQuery('.row-offcanvas').toggleClass('active');
+		});
 	});
 
 /* DOCUMENT ON CLICK */
