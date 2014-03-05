@@ -1,26 +1,6 @@
 {% extends "layout.twig.html" %}
 
-{% if jumbo is defined %}
-	{% block jumbo_header %}
-		{{ jumbo.header }}
-	{% endblock %}
-	{% block jumbo_content %}
-		{{ jumbo.content }}
-	{% endblock %}
-{% endif %}
-
-
 {% block content %}
-{#	<div class="row">
-		<div id="international_ukm" class="col-xs-12 well">
-			<img src="http://grafikk.ukm.no/flagg/united_kingdom.png" id="flag" class="img img-circle col-xs-2 col-lg-1 pull-right" />
-			<h2>About UKM</h2>
-			<p>The objective of the Norwegian Youth Festivals of Art (UKM) is to stimulate young people’s creativity and make their cultural activity visible.</p>
-			<a href="http://internasjonalt.ukm.no/about/" class="btn btn-small">Read more</a>
-			<a href="javascript:var%20t=((window.getSelection&&window.getSelection())||(document.getSelection&&document.getSelection())||(document.selection&&document.selection.createRange&&document.selection.createRange().text));var%20e=(document.charset||document.characterSet);if(t!=''){location.href='http://translate.google.com/?text='+t+'&hl=no&langpair=auto|en&tbb=1&ie='+e;}else{location.href='http://translate.google.com/translate?u='+encodeURIComponent('http://ukm.no/')+'&hl=no&langpair=auto|en&tbb=1&ie='+e;};" target="_blank" class="btn btn-small">Translate UKM.no with Google</a>
-		</div>
-	</div>
-#}	
 	<div class="row">
 		{% for post in posts %}
 			<div class="news col-xs-6 col-md-4">
