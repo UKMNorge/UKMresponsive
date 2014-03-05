@@ -3,7 +3,9 @@
 $DATA['page']['title'] = single_cat_title('', false);
 
 if( !isset( $DATA['jumbo'] ) ) {
-	$DATA['jumbo'] = (object) array('header' => single_cat_title('', false), 'content' => 'Alle innlegg i kategorien');
+	$DATA['jumbo'] = (object) array('header' => single_cat_title('', false),
+									'content' => get_bloginfo('blog_name')
+								   );
 }
 
 the_post();
