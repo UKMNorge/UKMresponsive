@@ -1,6 +1,9 @@
 <?php
 error_reporting(E_ALL ^ E_DEPRECATED);
-ini_set('display_errors',1);
+if( $_SERVER['HTTP_HOST'] == 'ukm.no' )
+	ini_set('display_errors',0);
+else
+	ini_set('display_errors',1);
 
 setlocale(LC_ALL, 'nb_NO', 'nb', 'no');
 
