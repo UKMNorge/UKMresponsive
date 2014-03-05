@@ -8,6 +8,9 @@
 		jQuery('[data-toggle=offcanvas]').click(function () {
 			jQuery('.row-offcanvas').toggleClass('active');
 		});
+		
+		jQuery('div.post div.wp-caption, div.post img').attr('style', 'max-width: 100%;height:auto');
+		jQuery('div.post iframe').css('max-width','100%');
 	});
 
 /* DOCUMENT ON CLICK */

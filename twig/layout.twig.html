@@ -84,7 +84,7 @@
 					{% endfor %}
 				</ul>
 				<div class="pull-right hidden-xs hidden-sm">
-					<a href="{{url.base}}about/">
+					<a href="{{url.base}}/about/">
 						<img src="http://ico.ukm.no/flagg/uk-16.png" class="img img-circle" id="ico_international" />
 					</a>
 				</div>
@@ -150,9 +150,13 @@
 				</div>
 				{% endblock %}
 			
-				{% block breadcrumbs_top %}
-					{% embed "element/breadcrumbs.twig.html" %}{% endembed %}
-				{% endblock %}
+				<div class="container hidden-xs hidden-sm">
+					{% block breadcrumbs_top %}
+						{% embed "element/breadcrumbs.twig.html" %}{% endembed %}
+					{% endblock %}
+				</div>
+				<div class="clearfix"></div>
+
 			
 			  	<div id="ukm_page_pre_content" class="container" style="display:none"></div>
 			  	<div id="ukm_page_content" class="container">

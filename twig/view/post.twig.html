@@ -4,58 +4,85 @@
 	{% embed "element/no_jumbo.twig.html" %}{% endembed %}
 {% endblock %}
 
+{% block breadcrumbs_top %}{% endblock %}
+
 {% block content %}
-    <div class="row">
-        <div class="col-xs-12 col-md-10 col-md-offset-1">
-        	{# Post image #}
-        	<div class="col-xs-12">
-		         <div class="{% if post.image.url is not empty %}post_image{% endif %}" style="background-image: url('{{post.image.url}}');">
-		            <div class="data">
-		                <div class="row">
-		                    <div class="col-xs-12 col-sm-10 col-md-11">
-		                        <h2>{{post.title|raw}}</h2>
-		                        <p> 
-		                            <span class="glyphicon glyphicon-calendar"></span>
-		                            {{post_date|date('d.M')}} | 
-		                            {% for category in post.categories %}
-		                                <a href="{{category.url}}">{{category.name}}</a>
-		                                {% if loop.last != true %}, {% endif %}
-		                            {% endfor %}
-		                            
-		                        </p>
-		                    </div>
-		                    <div class="col-sm-2 col-md-1 hidden-xs">
-		                        <div class="fb-like" id="fb-sm" data-href="{{url.current}}" data-layout="box_count" data-action="like" data-show-faces="true" data-share="false"></div>
-		                    </div>
-		                    <div class="col-xs-12 visible-xs">
-		                        <div class="fb-like" id="fb-xs" data-href="{{url.current}}" data-layout="standard" data-action="like" data-show-faces="false" data-share="false"></div>
-		                    </div>
-		                </div>
-		            </div>
+	 <div class="col-xs-12 col-md-10 col-md-offset-1 post">
+		<div class="row">
+		 	<div class="col-xs-12" style="text-align:right">
+			{% embed "element/breadcrumbs.twig.html" %}{% endembed %}
+		 	</div>
+			<h2 class="col-xs-12 visible-xs centered">{{post.title|raw}}</h2>
+			<img class="col-xs-12" src="{{post.image.url}}" />
+			<h2 class="col-xs-12 hidden-xs">{{post.title|raw}}</h2>
+			<p class="visible-xs"></p>
+			<p class="col-xs-12 lead">{{post.lead|raw}}</p>
+			<div class="infos">
+				<div class="date">
+					<i class="li_calendar"></i>
+					<span class="timeago" title="{{post.date|date('Y-m-d H:i')}}">{{post.date|date('d.m.Y H:i')}}</span>
+				</div>
+				<div class="categories">
+					<i class="li_tag"></i>
+					{% for category in post.categories %}
+					<a href="{{category.url}}">{{category.name}}</a>
+					{% if loop.last != true %}, {% endif %}
+					{% endfor %}
+				</div>
+				<div class="hidden-xs pull-right">
+					<div class="fb-like" data-href="{{post.url}}" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="visible-xs col-xs-12" align="center" style="padding-top:10px;">
+				<div class="fb-like" data-href="{{post.url}}" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12">
+		        <div class="post_byline_wrapper col-sm-5 pull-right hidden-xs">
+		        	{% embed "element/post/byline.twig.html" %}{% endembed %}
 		        </div>
-        	</div>
+				{{post.content_wo_lead|raw}}
+			</div>
+		</div>
 		
-	        {# Byline sm+ #}
-	        <div class="post_byline_wrapper col-sm-5 pull-right hidden-xs">
-	        	{% embed "element/post/byline.twig.html" %}{% endembed %}
-	        </div>
-	    
-	        {# Content #}
-	        <div class="col-xs-12">
-	            {{post.content|raw}}
-	        </div>
-	        
-	        {# Byline xs #}
+		<div class="row">
 	        <div class="post_byline_wrapper col-xs-12 visible-xs">
 	        	{% embed "element/post/byline.twig.html" %}{% endembed %}
 	        </div>
-	        
+		</div>
+	</div>
+{% endblock %}		
+{% block trash %}
+    		<div class="pull-right">
+				<div class="fb-like" id="fb-sm" data-href="{{url.current}}" data-layout="box_count" data-action="like" data-show-faces="true" data-share="false"></div>
+    		</div>       		
+			<h2>{{post.title|raw}}</h2>
+    	</div>
+		<div class="row">
+			<span class="glyphicon glyphicon-calendar"></span>
+	                            {{post_date|date('d.M')}} | 
+	                            {% for category in post.categories %}
+	                                <a href="{{category.url}}">{{category.name}}</a>
+	                                {% if loop.last != true %}, {% endif %}
+	                            {% endfor %}
+		</div>
+	
+        {# Byline sm+ #}
+        <div class="post_byline_wrapper col-sm-5 pull-right hidden-xs">
+        	{% embed "element/post/byline.twig.html" %}{% endembed %}
         </div>
+    
+        {# Content #}
+        <div class="col-xs-12">
+            {{post.content|raw}}
+        </div>
+        
+        {# Byline xs #}
+        <div class="post_byline_wrapper col-xs-12 visible-xs">
+        	{% embed "element/post/byline.twig.html" %}{% endembed %}
+        </div>
+        
     </div>
-
-    
-    
-    
-    
-
 {% endblock %}

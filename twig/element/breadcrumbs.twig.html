@@ -1,12 +1,9 @@
-<div class="container hidden-xs hidden-sm">
-	<div class="UKMbread">
-		{% for crumb in breadcrumbs %}
-			{% if loop.last %}
-				{{crumb.title}}
-			{% else %}
-				<a href="{{crumb.link}}">{{crumb.title}}</a> /
-			{% endif %}
-		{% endfor %}
-	</div>
+<div class="UKMbread">
+	{% for crumb in breadcrumbs %}
+		{% if loop.last %}
+			{{crumb.title}}
+		{% else %}
+			<a href="{{crumb.link}}">{{crumb.title}}</a> /
+		{% endif %}
+	{% endfor %}
 </div>
-<div class="clearfix"></div>
