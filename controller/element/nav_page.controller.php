@@ -42,16 +42,27 @@ switch( get_option('ukm_top_page') ) {
 											   'icon'			=> 'star',
 											   'description'	=> 'UKM består av én lokalmønstring for hver kommune. Finn din her.'
 											  );
+		$DATA['page_nav'][] = (object) array( 'url' 			=> 'grafisk-profil/',
+											   'title'		 	=> 'Grafisk profil',
+											   'icon'			=> 'palette',
+											   'description'	=> 'UKM-logo, skrifter og farger'
+											  );
 		$DATA['page_nav'][] = (object) array( 'url' 			=> 'presse/',
 											   'title'		 	=> 'PRESSE',
 											   'icon'			=> 'pen',
-											   'description'	=> 'Informasjon, logoer, bilder med mer'
+											   'description'	=> 'Informasjon, bilder med mer'
 											  );
 		$DATA['page_nav'][] = (object) array( 'url' 			=> 'strategiplan/',
 											   'title'		 	=> 'Strategiplan',
 											   'icon'			=> 'hus',
 											   'description'	=> 'Se UKM Norges strategiplan'
 											  );
+		$DATA['page_nav'][] = (object) array( 'url' 			=> 'prosjekter/',
+											   'title'		 	=> 'Prosjekter',
+											   'icon'			=> 'project',
+											   'description'	=> 'asd'
+											  );
+
 		break;
 
 	
