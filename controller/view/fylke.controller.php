@@ -117,15 +117,17 @@ $DATA['fylke'] = get_option('fylke');
 	}
 
 // DEBUG
-$VIEW = 'fylke_post';
+$VIEW = 'fylke_pre';
 
 
 
+/*
     $DATA['page_nav'][] = (object) array( 'url' => 'bilder/',
                                           'title' => 'Bilder',
                                           'icon'  => 'kamera',
                                           'description' => 'Bilder fra '. $pl->get('pl_name').''
                                       );
+*/
 	// HAR UKM-TV SIDE
 	if( $UKMTV ) {
 	    $DATA['page_nav'][] = (object) array( 'url' => '//tv.ukm.no/samling/'. urlencode($UKMTV),
@@ -151,6 +153,7 @@ $VIEW = 'fylke_post';
 											   'description'	=> 'Se alle som deltar på fylkesmønstringen.'
 											  );
 	}
+	
 	$DATA['page_nav'][] = (object) array( 'url' 			=> '#kontaktpersoner',
 										   'title'		 	=> 'Kontaktpersoner',
 										   'icon'			=> 'info',

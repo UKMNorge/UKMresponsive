@@ -1,0 +1,23 @@
+{% for kontakt in kontaktpersoner %}
+	{% embed "element/kontakt.twig.html" %}{% endembed %}
+{% if loop.index is divisibleby(2) %}
+	<div class="visible-sm visible-md clearfix"></div>
+{% endif %}
+{% if loop.index is divisibleby(3) %}
+	<div class="visible-lg clearfix"></div>
+{% endif %}
+{% endfor %}
+
+<div class="clearfix"></div>
+<div class="separator">Trøbbel med nettsiden, eller lurer på noe om UKM generelt?</div>
+<div id="monstring_kontaktpersoner_norge">
+	{% for kontakt in kontaktUKM %}
+		{% embed "element/kontakt.twig.html" %}{% endembed %}
+		{% if loop.index is divisibleby(2) %}
+			<div class="visible-sm visible-md clearfix"></div>
+		{% endif %}
+		{% if loop.index is divisibleby(3) %}
+			<div class="visible-lg clearfix"></div>
+		{% endif %}
+	{% endfor %}
+</div>

@@ -1,0 +1,5 @@
+{% extends "view/kommune.twig.html" %}
+
+{% block jumbo_content %}
+	Det er mønstring! {{monstring.starter | dato("l j. F") | capitalize }} til {{monstring.slutter | dato("l j. F")}} i {{monstring.sted}}
+{% endblock %}

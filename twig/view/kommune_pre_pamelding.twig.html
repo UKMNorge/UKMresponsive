@@ -1,65 +1,34 @@
-{% extends "layout.twig.html" %}
+{% extends "view/kommune.twig.html" %}
 
-{% block content %}
-    <script type="text/javascript" src="{{ url.theme_dir }}js/lokalside_pamelding.js"></script>
-    
-    {# Tittel #}
-    {% embed "element/monstring/monstring_tittel.twig.html" with {"monstring_type":"lokal"} %}
-    {% endembed %}
-
-    <div class="col-xs-12 col-md-5 pull-right">
-        <div>
-            {% embed "element/monstring/monstring_beskrivelse.twig.html" with {"time_verb":"er"} %}
-            {% endembed %}
-        </div>
-    
-        <div>
-            {% embed "element/monstring/monstring_navigasjon.twig.html" %}
-            {% endembed %}
-        </div>
-    </div>
-
-    <div class="col-xs-12 col-md-7">
-        {% embed "element/monstring/monstring_hovedartikkel.twig.html" %}
-        {% endembed %}
-    </div>
+{% block jumbo_content %}
+	1. desember åpner vi påmeldingen!
+{% endblock %}
 
 
-    {# Registration #}
-    <div class="col-xs-12 col-md-5">
-        <h3>Påmelding har ikke åpnet enda</h3>
-        <strong>Kategorier</strong>
-        
+{% block meny_ekstra %}
+    <div class="col-xs-12">
+    	<p class="centered">
+			<strong>{% embed "element/monstring/monstring_beskrivelse.twig.html" with {"time_verb":"er"} %}{% endembed %}</strong>
+    	</p>
+
+		<p></p>    	
+
+    	<p class="centered">1. desember kan du melde deg på med</p>
         <ul class="list-inline col-xs-12">
         {% for ikon in ikoner_tittel %}
-            <li class="col-xs-3">
-                <img class="col-xs-12" src="{{ ikon.ico_url }}" alt="{{ ikon.name }}"> 
-                <h4 class="centered">{{ ikon.name|raw }}</h4>
+            <li class="col-xs-3 col-sm-2 col-md-3 col-lg-2 centered">
+                <img src="{{ ikon.ico_url }}" alt="{{ ikon.name }}" style="width: 90%"> 
+                <small>{{ ikon.name|raw }}</small>
             </li>
             {% if loop.index is divisibleby(4) %}
-                <div class="clearfix"></div>
+                <li class="clearfix visible-xs hidden-sm visible-md hidden-lg"></li>
             {% endif %}
+            {% if loop.index is divisibleby(6) %}
+                <li class="clearfix hidden-xs visible-sm hidden-md visible-lg"></li>
+            {% endif %}
+
         {% endfor %}
         </ul> 
         <div class="clearfix"></div>
     </div>
-
-    {# contact #}
-    <div class="col-xs-12 col-md-5">
-        <h3>Kontaktpersoner</h3>
-        {% for kontakt in monstring.kontaktpersoner %}
-            {% embed "element/monstring/kontaktperson.twig.html" with kontakt.info %}
-            {% endembed %}
-        {% endfor %}
-        
-    </div>
-
-    <div class="visible-xs visible-sm clearfix"></div>
-        
-    <div class="col-xs-12 col-md-7">
-        {% embed "element/monstring/monstring_flere_artikler.twig.html" %}
-        {% endembed %}
-    </div>
-
-
 {% endblock %}

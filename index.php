@@ -59,9 +59,11 @@ require_once('functions_theme.php');
 			$VIEW = 'homepage_internasjonalt';      
 		} elseif( get_option('site_type') == 'fylke' ) {
             $VIEW = 'fylke';
+			require_once('controller/element/kontakt.controller.php');
 			require_once('controller/view/fylke.controller.php');
 		} elseif( get_option('site_type') == 'kommune' ) {
             $VIEW = 'kommune';
+			require_once('controller/element/kontakt.controller.php');
 			require_once('controller/view/kommune.controller.php');
         } else {
 			require_once('controller/view/homepage.controller.php');

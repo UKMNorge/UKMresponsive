@@ -1,71 +1,66 @@
 {% extends "layout.twig.html" %}
 
 {% block jumbo_header %}
-	UKM Østfold
+	UKM {{monstring.navn|raw}}
 {% endblock %}
+
 {% block jumbo_content %}
-	Lokalmønstringene er i gang!
+	{% embed "element/monstring/monstring_beskrivelse.twig.html" with {"time_verb":"var"} %}{% endembed %}
 {% endblock %}
 
 {% block content %}
+    <div class="row">
+    	{% block hovedfokus_pre %}{% endblock %}
 
-    {# Tittel #}
-    {% embed "element/monstring/monstring_tittel.twig.html" with {"monstring_type":"lokal"} %}
-    {% endembed %}
-    
-    <div class="col-xs-12 col-md-5 pull-right">
-        <div>
-            {% embed "element/monstring/monstring_beskrivelse.twig.html" with {"time_verb":"er"} %}
-            {% endembed %}
-        </div>
-    
-        <div>
-            {% embed "element/monstring/monstring_navigasjon.twig.html" %}
-            {% endembed %}
-        </div>
+    	<div class="col-xs-12 col-md-7 fylke_hovedartikkel">
+	    	{% block hovedfokus %}
+		    	<div id="fokussak">
+		    		{% embed "element/monstring/monstring_hovedartikkel.twig.html" %}{% endembed %}
+		    	</div>
+	    	{% endblock %}
+    	</div>
+    	
+    	<div class="col-xs-12 col-md-5">
+    		{% block meny_pre %}{% endblock %}
+    		{% block meny %}
+	    		{% embed "element/monstring/monstring_navigasjon.twig.html" %}{% endembed %}
+	    	{% endblock %}
+
+			<div class="clearfix"></div>
+
+    		{% block meny_ekstra %}
+	    	{% endblock %}
+    	</div>
     </div>
     
-    <div class="col-xs-12 col-md-7">
-        {% embed "element/monstring/monstring_hovedartikkel.twig.html" %}
-        {% endembed %}
-    </div>
-    
-    <div class="col-xs-12 col-md-5 pull-right">
-        <h3>Kategorier</h3>
-        
-        <ul class="list-inline col-xs-12">
-        {% for ikon in ikoner_tittel %}
-            <li class="col-xs-3">
-                <img class="col-xs-12" src="{{ ikon.ico_url }}" alt="{{ ikon.name }}"> 
-                <h4 class="centered">{{ ikon.name|raw }}</h4>
-            </li>
-            {% if loop.index is divisibleby(4) %}
-                <div class="clearfix"></div>
-            {% endif %}
-        {% endfor %}
-        </ul> 
-        <div class="clearfix"></div>
-    </div>
-
-    <div class="visible-xs visible-sm hidden-md hidden-lg clearfix"></div>
-
-    {% if nextpost|length > 0 or prevpost|length > 0 %}
-        <div style="clear:both;"></div>
-    {% endif %}
-
-    {% if prevpost|length > 0 %}
-	<div class="col-xs-4 col-sm-2 pull-right">
-		<a href="{{ nextpost|raw }}"><button type="button" class="btn btn-default">Se flere nyheter</button></a>
-	</div>
-	{% endif %}
+	<div class="row">
+		{% block innhold_pre %}{% endblock %}
+		{% block innhold %}
+			{% if posts_include_top_post_in_full_list %}
+				{% embed "element/monstring/posts_include_top.twig.html" %}{% endembed %}
+			{% else %}
+				{% embed "element/monstring/posts_exclude_top.twig.html" %}{% endembed %}
+			{% endif %}
 	
-	{% if prevpost|length > 0 %}
-	<div class="col-xs-4 col-sm-2 pull-left">
-	      <a href="{{ prevpost|raw }}"><button type="button" class="btn btn-default">Se forrige nyheter</button></a>
+	        {% if nextpost|length > 0 or prevpost|length > 0 %}
+	            <div style="clear:both;"></div>
+	        {% endif %}
+	
+	        {% if nextpost|length > 0 %}
+			<div class="col-xs-4 col-sm-2 pull-right">
+				<a href="{{ nextpost|raw }}"><button type="button" class="btn btn-default">Se eldre nyheter</button></a>
+			</div>
+			{% endif %}
+			
+			{% if prevpost|length > 0 %}
+			<div class="col-xs-4 col-sm-2 pull-left">
+			      <a href="{{ prevpost|raw }}"><button type="button" class="btn btn-default">Se nyere nyheter</button></a>
+			</div>
+			{% endif %}
+		{% endblock %}
 	</div>
-	{% endif %}
     
-
-    {# @TODO: add kontaktinfo #}
-
+    <div id="monstring_kontaktpersoner" style="display:none">
+		{% embed "element/monstring/monstring_kontaktpersoner.twig.html" %}{% endembed %}
+    </div>
 {% endblock %}

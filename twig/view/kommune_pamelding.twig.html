@@ -1,73 +1,83 @@
-{% extends "layout.twig.html" %}
+{% extends "view/kommune.twig.html" %}
 
-{% block content %}
-    <script type="text/javascript" src="{{ url.theme_dir }}js/lokalside_pamelding.js"></script>
-    
-    {# Tittel #}
-    {% embed "element/monstring/monstring_tittel.twig.html" with {"monstring_type":"lokal"} %}
-    {% endembed %}
+{% block jumbo_content %}
+	{% embed "element/monstring/monstring_beskrivelse.twig.html" with {"time_verb":"er"} %}{% endembed %}
+{% endblock %}
 
-    <div class="col-xs-12 col-md-5 pull-right">
-        <div>
-            {% embed "element/monstring/monstring_beskrivelse.twig.html" with {"time_verb":"er"} %}
-            {% endembed %}
-        </div>
-    
-        <div>
-            {% embed "element/monstring/monstring_navigasjon.twig.html" %}
-            {% endembed %}
-        </div>
+{% block meny_ekstra %}
+    <div class="col-xs-12">
+    	<p class="centered">
+			<strong></strong>
+    	</p>
     </div>
+{% endblock %}
 
-    <div class="col-xs-12 col-md-7">
-        {% embed "element/monstring/monstring_hovedartikkel.twig.html" %}
-        {% endembed %}
-    </div>
+{% block hovedfokus_pre %}
+	<div class="col-xs-12">
+        <h2>Meld deg på i dag!</h2>
+	</div>
+{% endblock %}
 
+{% set posts_include_top_post_in_full_list = false %}
 
+{% block innhold_pre %}
+	{% embed "element/monstring/monstring_hovedartikkel.twig.html" %}{% endembed %}
+{% endblock %}
+
+{% block hovedfokus %}
     {# Registration #}
-    <div class="col-xs-12 col-md-5">
-        <h3>Påmelding</h3>
-        <strong>Kategorier</strong>
-        
-        <div id="paamelding_container">
-            <ul class="list-inline col-xs-12">
-            {% for ikon in ikoner_tittel %}
-                <li class="col-xs-3">
-                    {% if monstring.kommuner|length > 1 %}
-                        
-                        <a onclick="kommuneValg.vis('{{ ikon.name }}', '{{ monstring.pl_id }}', '{{ ikon.ico }}', {{monstring.kommuner | json_encode()}} )">
-                    {% else %}
-                        <a href="http://pamelding.ukm.no/quickstart.php?steg=kontaktperson&type={{ ikon.ico }}&kommune={{ monstring.kommuner[0].id }}&pl_id={{monstring.pl_id}}">
-                    {% endif %}
-                    <img class="col-xs-12" src="{{ ikon.ico_url }}" alt="{{ ikon.name }}"> 
-                    <h4 class="centered">{{ ikon.name | raw }}</h4>
-                    </a>
-                </li>
-                {% if loop.index is divisibleby(4) %} <div class="clearfix"></div> {% endif %}
-            {% endfor %}
-            </ul>
-        </div>
-        <div class="clearfix"></div>
-    </div>
+    <script type="text/javascript" src="{{ url.theme_dir }}js/lokalside_pamelding.js"></script>
+    <div id="paamelding_container">
+       <ul class="list-inline col-xs-12">
+   		<li class="col-xs-12 separator">Påmeldingsfrist: {{monstring.frist_1 | dato('l j.M') }} kl. {{monstring.frist_1 | dato('H:i')}}</li>
+   		
+        {% for ikon in ikoner_tittel %}
+            <li class="col-xs-3 col-sm-2 col-md-3 col-lg-2 centered">
+                {% if monstring.kommuner|length > 1 %}
+                    
+                    <a onclick="kommuneValg.vis('{{ ikon.name }}', '{{ monstring.pl_id }}', '{{ ikon.ico }}', {{monstring.kommuner | json_encode()}} )">
+                {% else %}
+                    <a href="http://pamelding.ukm.no/quickstart.php?steg=kontaktperson&type={{ ikon.ico }}&kommune={{ monstring.kommuner[0].id }}&pl_id={{monstring.pl_id}}">
+                {% endif %}
+                <img src="{{ ikon.ico_url }}" alt="{{ ikon.name }}" style="width: 90%"> 
+                <small>{{ ikon.name|raw }}</small>
+                </a>
+            </li>
+            {% if loop.index is divisibleby(4) %}
+                <li class="clearfix visible-xs hidden-sm visible-md hidden-lg"></li>
+            {% endif %}
+            {% if loop.index is divisibleby(6) %}
+                <li class="clearfix hidden-xs visible-sm hidden-md visible-lg"></li>
+            {% endif %}
 
-    {# contact #}
-    <div class="col-xs-12 col-md-5">
-        {% for kontakt in monstring.kontaktpersoner %}
-            
-            {% embed "element/monstring/kontaktperson.twig.html" with kontakt.info %}
-            {% endembed %}
-        
         {% endfor %}
         
+        {% if monstring.frist_1 != monstring.frist_2 %}
+   		<li class="col-xs-12 separator">Påmeldingsfrist: {{monstring.frist_2 | dato('l j.M') }} kl. {{monstring.frist_2 | dato('H:i')}}</li>
+   		{% endif %}
+   		
+        {% for ikon in ikoner_tittel_los %}
+            <li class="col-xs-3 col-sm-2 col-md-3 col-lg-2 centered">
+                {% if monstring.kommuner|length > 1 %}
+                    
+                    <a onclick="kommuneValg.vis('{{ ikon.name }}', '{{ monstring.pl_id }}', '{{ ikon.ico }}', {{monstring.kommuner | json_encode()}} )">
+                {% else %}
+                    <a href="http://pamelding.ukm.no/quickstart.php?steg=kontaktperson&type={{ ikon.ico }}&kommune={{ monstring.kommuner[0].id }}&pl_id={{monstring.pl_id}}">
+                {% endif %}
+                <img src="{{ ikon.ico_url }}" alt="{{ ikon.name }}" style="width: 90%"> 
+                <small>{{ ikon.name|raw }}</small>
+                </a>
+            </li>
+            {% if loop.index is divisibleby(4) %}
+                <li class="clearfix visible-xs hidden-sm visible-md hidden-lg"></li>
+            {% endif %}
+            {% if loop.index is divisibleby(6) %}
+                <li class="clearfix hidden-xs visible-sm hidden-md visible-lg"></li>
+            {% endif %}
+
+        {% endfor %}
+
+        </ul> 
     </div>
-
-    <div class="visible-xs visible-sm clearfix"></div>
-        
-    <div class="col-xs-12 col-md-7">
-        {% embed "element/monstring/monstring_flere_artikler.twig.html" %}
-        {% endembed %}
-    </div>
-
-
+    <div class="clearfix"></div>
 {% endblock %}
