@@ -124,7 +124,7 @@
 					{% if innslag.bilder.fylke is defined %}
 						<div class="clearfix"></div>
 						<h6>Fylkesmønstringen</h6>
-						{% embed "pre-render/image_album.twig.html" with{'photos': innslag.bilder.fylke, 'album_id': 'fylke_'+innslag.ID} %}{% endembed %}
+						{% embed "pre-render/image_album.twig.html" with{'photos': innslag.bilder.fylke, 'album_id': 'fylke_'~innslag.ID} %}{% endembed %}
 					{% endif %}
 					
 					{% if innslag.bilder.land is defined %}
@@ -148,10 +148,10 @@
 					<h5>{{innslag.navn}} i UKM-TV</h5>
 					<ol class="list-unstyled">
 						{% for tv in innslag.UKMTV %}
-							<div class="UKMTV clickable">
+							<li class="UKMTV clickable">
 								<div class="image"><img src="{{tv.image_url}}" /></div>
 								<div class="embedcontainer" style="display:none;" data-framesource="{{tv.embed_url}}"></div>
-							</div>
+							</li>
 						{% endfor %}
 					</ol>
 				</div>
