@@ -28,11 +28,9 @@ function processPhotos(photos, containerSelector){
 //	var d = $("div.picrow");
 	parent_container = jQuery( containerSelector );
 	var d = parent_container.find('.grid_load');
-	
-	console.log(d);
-	
+		
 	// get row width - this is fixed.
-	var w = d.eq(0).innerWidth();
+	var w = d.eq(0).width();
 	if( w == null)
 		return false;
 	
