@@ -26,8 +26,8 @@ jQuery(document).ready(function(){
 function processPhotos(photos, containerSelector){
 	// divs to contain the images
 //	var d = $("div.picrow");
-	
-	var d = jQuery( containerSelector );
+	parent_container = jQuery( containerSelector );
+	var d = parent_container.find('.grid_load');
 	
 	console.log(d);
 	
@@ -128,5 +128,5 @@ function processPhotos(photos, containerSelector){
 	
 		baseLine += c;
 	}
-	d.find('.stupid_load').hide();
+	parent_container.find('.stupid_load').hide();
 }
