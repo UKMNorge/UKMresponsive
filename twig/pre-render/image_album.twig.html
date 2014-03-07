@@ -1,0 +1,11 @@
+<div class="clearfix"></div>
+<div class="col-xs-12">
+	<div class="image_album" id="image_album_{{album_id}}">
+		<div class="stupid_load" id="stupid_load_{{album_id}}">
+			{% for photo in photos %}
+				<img src="{{photo.url.thumb}}" data-width="{{photo.width}}" data-height="{{photo.height}}" data-source="{{photo.url.full}}" data-id="{{photo.id}}" id="photo_{{photo.id}}" />
+			{% endfor %}
+		</div>
+		<div class="grid_load" id="grid_load_{{album_id}}"></div>
+	</div>
+</div>

@@ -55,7 +55,8 @@ class SEO {
 	public function post( $WPOO_post ) {
 		$this->set('title', $WPOO_post->title );
 		$this->set('description', $WPOO_post->lead );
-		$this->setImage( $WPOO_post->og_image );
+		if( isset( $WPOO_post->og_image ) )
+			$this->setImage( $WPOO_post->og_image );
 	}
 	
 	public function section( $home ) {
