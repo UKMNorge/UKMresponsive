@@ -40,7 +40,7 @@
 	
 	jQuery(document).on('showInnslag','li.innslag', function(){
 		innslag = jQuery(this);
-		innslag.find('.image_albumTEST').each(function(){
+		innslag.find('.image_album_innslag').each(function(){
 			image_album = jQuery(this);
 			stupid_load = image_album.find('div.stupid_load');
 			grid_load   = image_album.find('div.grid_load');
