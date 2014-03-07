@@ -111,7 +111,7 @@ function generate_list_data( $innslag, $pl, $current_c_id=false ) {
 					}
 				}
 
-				if( isset( $item['post_meta']['sizes']['thumbnail']) ) {
+				if( isset( $item['post_meta']['sizes']['thumbnail']) && isset( $item['post_meta']['sizes']['thumbnail']['file'] ) ) {
 					$photo->thumb = $url. $item['post_meta']['sizes']['thumbnail']['file'];					
 				} else {				
 					$photo->url->thumb 	= $url . $large;
