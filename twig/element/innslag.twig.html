@@ -124,7 +124,9 @@
 					{% if innslag.bilder.fylke is defined %}
 						<div class="clearfix"></div>
 						<h6>Fylkesmønstringen</h6>
+						<div class="col-xs-12" style="padding:0px;">
 						{% embed "pre-render/image_album.twig.html" with{'photos': innslag.bilder.fylke, 'album_id': 'fylke_'~innslag.ID, 'selector': 'innslag'} %}{% endembed %}
+						</div>
 					{% endif %}
 					
 					{% if innslag.bilder.land is defined %}
