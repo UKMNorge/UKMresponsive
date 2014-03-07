@@ -69,6 +69,9 @@
 		innslag.find('div.grid_load').html('');
 		innslag.find('div.stupid_load').show();
 	});    
+	jQuery(document).on('visibleInnslag','li.innslag', function(){
+		jQuery(this).find('.UKMTV img:visible').click();
+	}); 
 	
 	
 	jQuery(document).on('click', '.UKMTV img', function(){
