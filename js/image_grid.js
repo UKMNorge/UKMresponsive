@@ -131,4 +131,5 @@ function processPhotos(photos, containerSelector){
 		baseLine += c;
 	}
 	parent_container.find('.stupid_load').hide();
+	parent_container.parents('div.removePadding').css('padding', '0px');
 }
