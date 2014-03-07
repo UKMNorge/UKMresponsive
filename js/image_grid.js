@@ -30,7 +30,7 @@ function processPhotos(photos, containerSelector){
 	var d = parent_container.find('.grid_load');
 		
 	// get row width - this is fixed.
-	var w = d.eq(0).width();
+	var w = d.eq(0).innerWidth();
 	if( w == null)
 		return false;
 	
