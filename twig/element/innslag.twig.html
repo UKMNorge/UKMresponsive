@@ -131,6 +131,7 @@
 								<div class="image_albumDILL" id="image_album_fylke_bid{{innslag.ID}}">
 									<div class="stupid_load" id="stupid_load_fylke_bid{{innslag.ID}}">
 										{% for photo in innslag.bilder.fylke %}
+										{{ dump( photo )}}
 											<img src="{{photo.url.thumb}}" data-width="{{photo.width}}" data-height="{{photo.height}}" data-source="{{photo.url.full}}" data-id="{{photo.id}}" id="photo_{{photo.id}}" />
 									{% endfor %}
 									</div>
