@@ -29,8 +29,10 @@
 		data = innslag.find('div.row.data');
 		if(data.is(':visible')) {
 			data.slideUp();
+			innslag.trigger('hideInnslag');
 		} else {
 			data.slideDown();
+			innslag.trigger('showInnslag');
 		}
 		jQuery(function($) {$(".swipebox").swipebox();});
 	});
