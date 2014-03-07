@@ -79,7 +79,7 @@ function generate_list_data( $innslag, $pl, $current_c_id=false ) {
 		}
 		$data->UKMTV = $media['tv'];	
 	}
-	
+
 	// BILDER
 	if(isset($media['image']) && is_array($media['image'])) {
 		$imageCounter = 0;
@@ -92,13 +92,44 @@ function generate_list_data( $innslag, $pl, $current_c_id=false ) {
 							: $item['post_meta']['sizes']['large']['file']
 							);
 							
-			if( strlen( $large ) > 0 ) {		
+			if( strlen( $large ) > 0 ) {
+				$photo = new stdClass();
+				$photo->url 	= new stdClass();
+
+				if( isset( $item['post_meta']['sizes']['large']) ) {
+					$photo->width = $item['post_meta']['sizes']['large']['width'];					
+					$photo->height = $item['post_meta']['sizes']['large']['height'];					
+				} else {
+					#$data = @getimagesize( $large );
+					if($data) {
+						list($width, $height, $type, $attr) = $data;
+						$photo->width = $width;
+						$photo->height = $height;
+					} else {
+						$photo->width = null;
+						$photo->height = null;
+					}
+				}
+
+				if( isset( $item['post_meta']['sizes']['thumbnail']) ) {
+					$photo->thumb = $url. $item['post_meta']['sizes']['thumbnail']['file'];					
+				} else {				
+					$photo->url->thumb 	= $url . $large;
+				}
+				
+				$photo->url->full	= $url . $large;
+				$photo->id 			= $item['rel_id'];
+				$photo->pl_type		= $item['pl_type'];
+				$photo->foto		= isset($item['post_meta']['author']) ? $item['post_meta']['author'] : '';
+
+/*
 				$b = new stdClass();
 				$b->full 	= $url . $large;
 				$b->foto	= isset($item['post_meta']['author']) ? $item['post_meta']['author'] : '';
 				$b->pl_type	= $item['pl_type'];
+*/
 				
-				$data->bilder[ $item['pl_type'] ][] = $b;
+				$data->bilder[ $item['pl_type'] ][] = $photo;
 			}
 		}
 	}
