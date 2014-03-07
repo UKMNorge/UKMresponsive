@@ -28,10 +28,14 @@
 		innslag = jQuery(this).parents('li.innslag');
 		data = innslag.find('div.row.data');
 		if(data.is(':visible')) {
-			data.slideUp();
+			data.slideUp(400,'swing',function(){
+			 jQuery('#'+innslag.attr('id')).trigger('hiddenInnslag');
+			});
 			innslag.trigger('hideInnslag');
 		} else {
-			data.slideDown();
+			data.slideDown(400,'swing',function(){
+			 jQuery('#'+innslag.attr('id')).trigger('visibleInnslag');
+			});
 			innslag.trigger('showInnslag');
 		}
 		jQuery(function($) {$(".swipebox").swipebox();});
@@ -40,6 +44,7 @@
 	
 	jQuery(document).on('showInnslag','li.innslag', function(){
 		innslag = jQuery(this);
+		
 		innslag.find('.image_album_innslag').each(function(){
 			image_album = jQuery(this);
 			stupid_load = image_album.find('div.stupid_load');
@@ -71,7 +76,7 @@
 		embedcontainer = container.find('div.embedcontainer'); 
 		embedcontainer.html('<iframe src="' 
 							+ container.find('div.embedcontainer').attr('data-framesource') 
-							+ '?autoplay=true" frameborder width="'+ jQuery(this).width() +'" height="'+ jQuery(this).height() +'" style="max-width: 100%; border:none;"></iframe>').slideDown();
+							+ '?autoplay=false" frameborder width="'+ jQuery(this).width() +'" height="'+ jQuery(this).height() +'" style="max-width: 100%; border:none;"></iframe>').slideDown();
 		jQuery(this).slideUp();
 	});
 	
