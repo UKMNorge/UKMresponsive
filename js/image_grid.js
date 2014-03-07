@@ -33,8 +33,8 @@ function processPhotos(photos, containerSelector){
 	
 	// get row width - this is fixed.
 	var w = d.eq(0).innerWidth();
-	
-	console.log(w);
+	if( w == null)
+		return false;
 	
 	// initial height - effectively the maximum height +/- 10%;
 	var h = 250;
