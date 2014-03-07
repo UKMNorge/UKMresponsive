@@ -18,7 +18,7 @@ jQuery(document).ready(function(){
 							  'link': thumb.attr('data-source')
 							  });
 		  });
-		processPhotos( photos, '#'+grid_load.attr('id') );
+		processPhotos( photos, '#'+image_album.attr('id') );
 	});
 	
 });

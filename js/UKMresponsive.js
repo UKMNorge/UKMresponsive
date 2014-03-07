@@ -37,6 +37,35 @@
 		jQuery(function($) {$(".swipebox").swipebox();});
 	});
 	
+	
+	jQuery(document).on('showInnslag','li.innslag', function(){
+		innslag = jQuery(this);
+		innslag.find('.image_albumTEST').each(function(){
+			image_album = jQuery(this);
+			stupid_load = image_album.find('div.stupid_load');
+			grid_load   = image_album.find('div.grid_load');
+			photos = new Array();
+			
+			// Loop all images
+			stupid_load.find('img').each(function(){
+				thumb = jQuery(this);	
+				photos.push( {	'id': thumb.attr('data-id'),
+								'source': thumb.attr('data-source'),
+								'width': thumb.attr('data-width'),
+								'height': thumb.attr('data-height'),
+								'link': thumb.attr('data-source')
+				});
+			});
+			processPhotos( photos, '#'+ image_album.attr('id') );
+		});
+	});
+	jQuery(document).on('hideInnslag','li.innslag', function(){
+		innslag = jQuery(this);
+		innslag.find('div.grid_load').html('');
+		innslag.find('div.stupid_load').show();
+	});    
+	
+	
 	jQuery(document).on('click', '.UKMTV img', function(){
 		container = jQuery(this).parents('div.UKMTV');
 		embedcontainer = container.find('div.embedcontainer'); 
