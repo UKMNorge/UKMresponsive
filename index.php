@@ -27,12 +27,15 @@ require_once('functions_theme.php');
 	$DATA['url']['blog']		= get_option('site_url');
 	$DATA['url']['current']		= get_permalink();
 
+	require_once('class/seo.class.php');
+	$SEO = new SEO( $DATA['url']['current'] );
 /**********************************
 * 
 **********************************/
 	require_once('controller/nav_top.controller.php');
 	
 	$DATA['top_page'] = get_option('ukm_top_page');
+	$SEO->section( $DATA['top_page'] );
 /**********************************
 * SWITCH VIEW
 **********************************/
@@ -47,13 +50,21 @@ require_once('functions_theme.php');
     		$VIEW = 'archive';
         }
 	    require_once('controller/view/archive.controller.php');
-
+   		$SEO->title( $DATA['jumbo']->header );
+   		$SEO->description( 'Alle innlegg fra '. $DATA['jumbo']->content );
 	} elseif( is_single() ) {
 		require_once('controller/view/post.controller.php');
 		require_once('controller/element/comments.controller.php');
 		$VIEW = 'post';
 		$BC->add( $DATA['url']['current'], 'artikkel' );
+		$SEO->post( $DATA['post'] );
+		$SEO->article( $DATA['post'] );
+			
 	} elseif( is_front_page() ) {
+		wp_reset_query();
+		wp_reset_postdata();
+		$SEO->jumbo( $post->ID );
+
 		if( get_option('ukm_top_page') == 'ambassadorer' ) {
 			require_once('controller/view/homepage.controller.php');
 			$VIEW = 'homepage_ambassador';      
@@ -82,30 +93,38 @@ require_once('functions_theme.php');
 				require_once('controller/view/dinmonstring.controller.php');
 				$VIEW = 'dinmonstring';
 				$BC->home('derdubor');
+				$SEO->jumbo( $post->ID );
+				$SEO->setImage( 'http://ukm.no/wp-content/uploads/2011/08/kart1.jpg' );
 				break;
+/*
             case 'styrerommet':
                 require_once('controller/view/styrerommet.controller.php');
                 $VIEW = 'styrerommet';
                 break;
+*/
             case 'urg':
 				require_once('controller/view/post.controller.php');
             	require_once('controller/view/urg.controller.php');
             	$VIEW = 'urg';
+				$SEO->jumbo( $post->ID );
             	break;
             case 'fylkeskontaktene':
 				require_once('controller/view/post.controller.php');
             	require_once('controller/view/fylkeskontaktene.controller.php');
             	$VIEW = 'fylkeskontaktene';
+				$SEO->jumbo( $post->ID );
             	break;
             case 'kontakt_start':
 				require_once('controller/view/post.controller.php');
             	$VIEW = 'kontakt_start';
+				$SEO->jumbo( $post->ID );
             	break;
             case 'kontakt':
 				require_once('controller/view/post.controller.php');
 				require_once('controller/view/kontakt.controller.php');
             	$VIEW = 'kontakt';
-            	break;
+				$SEO->jumbo( $post->ID );
+	        	break;
             case 'program':
 				require_once('controller/element/innslag.controller.php');
             	require_once('controller/view/program.controller.php');
@@ -120,6 +139,7 @@ require_once('functions_theme.php');
 				require_once('controller/view/post.controller.php');
 				$VIEW = 'page';
 				$BC->add( $DATA['url']['current'], $DATA['post']->title);
+				$SEO->post( $post );
 				break;
 		}
 		if(isset( $DATA['jumbo'] ) && $BC->addJumbo )
@@ -142,6 +162,16 @@ if( !isset( $DATA['jumbo'] ) ) {
 
 $DATA['breadcrumbs'] = $BC->get();
 
+// Opprinnelig er title page-spesific, uten breadcrumbs. Overskriver dette her
+	$seoTitle = '';
+	foreach( $DATA['breadcrumbs'] as $c ) {
+		$title = $c->title == 'artikkel' ?  $DATA['post']->title : $c->title;
+		$seoTitle .= $title .' &raquo; ';
+	}
+	$seoTitle = rtrim( $seoTitle, ' &raquo; ');
+	$SEO->title( $seoTitle );
+
+$DATA['SEO'] = $SEO;
 echo TWIGrender('view/'.$VIEW, object_to_array($DATA),true);
 /*
 wp_footer();

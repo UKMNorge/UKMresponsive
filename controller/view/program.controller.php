@@ -4,6 +4,9 @@ $pl = new monstring( get_option('pl_id') );
 
 $monstring = new stdClass();
 $monstring->navn = $pl->g('pl_name');
+$monstring->season = $pl->g('season');
+$monstring->start = $pl->starter();
+$monstring->slutt = $pl->slutter();
 $monstring->type_tekst = $pl->g('type') == 'kommune' ? 'lokal' : 'fylkes';
 
 
@@ -29,7 +32,14 @@ if( isset($_GET['hendelse'] ) ) {
 	$BC->add( $DATA['url']['current'], $DATA['jumbo']->header );
 	$BC->add( $DATA['url']['current'].'?hendelse='.$_GET['hendelse'], $hendelse->navn );
 
+
+
 	$DATA['hendelse'] = $hendelse;
+   	$SEO->set('title', $hendelse->navn .' @ UKM '. $monstring->navn );
+   	$SEO->set('description', 'Detaljprogram for '. $hendelse->navn .'. '. date('d.m.Y H:i', $hendelse->start) 
+   							. ( empty($hendelse->sted) ? '' : ' @ '. $hendelse->sted) 
+   			  );
+   	$SEO->set('canonical', $DATA['url']['current'].'?hendelse='.$_GET['hendelse'] );
 
 	if( $hendelse->offentlig ) {
 		$alle_innslag = $con->innslag();
@@ -42,6 +52,9 @@ if( isset($_GET['hendelse'] ) ) {
 		$VIEW = 'program_nodetail';
 	}
 } else {
+   	$SEO->set('title', 'Program UKM ' . $monstring->navn );
+   	$SEO->set('description', 'Rammeprogram for UKM '. $monstring->navn .' ('.$monstring->start.' - '.$monstring->slutt.')');
+
 	$VIEW = 'program'; 
 
 	$hendelser = $pl->forestillinger();

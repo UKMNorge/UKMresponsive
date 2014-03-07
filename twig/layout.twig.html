@@ -2,22 +2,13 @@
 <html lang="en">
   	<head>
 		<meta charset="utf-8">
-		<title>{% if page.title is empty %}UKM.no - Ungdommens kulturmønstring{% else %}{{page.title}}{% endif %}</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="description" content="{{ post.lead }}">
-		<meta name="author" content="{{ post.author.display_name }}">
+		{% embed "element/seo.twig.html" %}{% endembed %}
 
-		<link rel="canonical" href="{{post.url}}" />
-		<meta property="og:title" content="{{post.title}}"/>
-		<meta property="og:type" content="article" />
-		<meta property="og:image" content="{{post.image.url}}" />
-		<meta property="og:url" content="{{post.url}}" />
-		<meta property="og:site_name" content="{{site.name}}" />
-		<meta property="fb:admins" content="597605662" />
-
-		<link rel="stylesheet" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600,700' type='text/css'>
+		<link rel="shortcut icon" href="http://grafikk.ukm.no/favicon.ico" />
 		
+		<link rel="stylesheet" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600,700' type='text/css'>		
 		<link href="{{url.theme_dir}}/vendor/bootstrap/3.0.1/css/bootstrap.css" rel="stylesheet">
 		<link rel="stylesheet" href="{{ url.theme_dir }}css/jquery.pageslide.css">
 		<link rel="stylesheet" href="{{ url.theme_dir}}css/linecons/style.css" />
@@ -46,6 +37,18 @@
 		<script type="text/javascript" src="{{ url.theme_dir }}js/iview/jquery.easing.js"></script>
 		<script type="text/javascript" src="{{ url.theme_dir }}js/iview/iview.js"></script>
 		#}
+		
+		{#  !!! DEVELOPMENT SETTING !!!! #}
+		{# <script type="text/javascript">
+			console.group('PHP console');
+			{% for log in console %}
+			console.log( log );
+			{% endfor %}
+			console.groupEnd();
+		</script> #}
+		{#  !!! DEVELOPMENT SETTING !!!! #}
+
+
 	</head>
 
 

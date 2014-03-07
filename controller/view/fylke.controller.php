@@ -116,6 +116,13 @@ $DATA['fylke'] = get_option('fylke');
 		$VIEW = 'fylke_post';
 	}
 
+$SEO->title('UKM '. $monstring->navn);
+
+switch( $VIEW ) {
+	case 'fylke_lokal':
+		break;
+}
+
 // DEBUG
 $VIEW = 'fylke_pre';
 

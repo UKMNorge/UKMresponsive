@@ -11,6 +11,7 @@ switch( $site_type ) {
 		$fpl = $pl->videresendTil(true);
 
 		$BC->home('derdubor');
+		$SEO->section('derdubor');
 		$BC->add( $fpl->g('link'), 'UKM '. $fpl->g('pl_name') );
 		$BC->add( $pl->g('link'), 'UKM '. $pl->g('pl_name') );
 	break;
@@ -19,17 +20,20 @@ switch( $site_type ) {
 		$pl = new monstring( get_option('pl_id') );		
 
 		$BC->home('derdubor');
+		$SEO->section('derdubor');
 		$BC->add( $pl->g('link'), 'UKM '. $pl->g('pl_name') );
 	break;
 
 	default:
 		$BC->home('ungdom');
+		$SEO->section('ungdom');
 		break;
 }
 
 if( !$site_type ) {
 	if( !empty( $DATA['top_page'] ) && in_array( $DATA['top_page'], $NAV_TOP ) ) {
 		$BC->home( $DATA['top_page'] );
+		$SEO->section( $DATA['top_page'] );
 	} else {
 		$BC->add( get_site_url() , get_bloginfo('blog_name') );
 	}
