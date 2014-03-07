@@ -29,6 +29,8 @@ function processPhotos(photos, containerSelector){
 	
 	var d = jQuery( containerSelector );
 	
+	console.log(d);
+	
 	// get row width - this is fixed.
 	var w = d.eq(0).innerWidth();
 	
