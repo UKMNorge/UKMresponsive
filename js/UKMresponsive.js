@@ -67,7 +67,7 @@
 	
 	
 	jQuery(document).on('click', '.UKMTV img', function(){
-		container = jQuery(this).parents('div.UKMTV');
+		container = jQuery(this).parents('li.UKMTV');
 		embedcontainer = container.find('div.embedcontainer'); 
 		embedcontainer.html('<iframe src="' 
 							+ container.find('div.embedcontainer').attr('data-framesource') 
