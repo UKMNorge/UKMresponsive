@@ -76,7 +76,7 @@
 		embedcontainer = container.find('div.embedcontainer'); 
 		embedcontainer.html('<iframe src="' 
 							+ container.find('div.embedcontainer').attr('data-framesource') 
-							+ '?autoplay=false" frameborder width="'+ jQuery(this).width() +'" height="'+ jQuery(this).height() +'" style="max-width: 100%; border:none;"></iframe>').slideDown();
+							+ '" frameborder width="'+ jQuery(this).width() +'" height="'+ jQuery(this).height() +'" style="max-width: 100%; border:none;"></iframe>').slideDown();
 		jQuery(this).slideUp();
 	});
 	
