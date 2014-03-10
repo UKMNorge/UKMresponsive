@@ -27,6 +27,7 @@ function processPhotos(photos, containerSelector){
 	// divs to contain the images
 //	var d = $("div.picrow");
 	parent_container = jQuery( containerSelector );
+	parent_container.parents('div.removePadding').css('padding', '5px');
 	var d = parent_container.find('.grid_load');
 		
 	// get row width - this is fixed.
