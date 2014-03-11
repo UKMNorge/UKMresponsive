@@ -101,7 +101,10 @@ $DATA['fylke'] = get_option('fylke');
 					WHERE `tv_category` LIKE '#kategori%'",
 					array('kategori' => $kategori) );
 	$res = $sql->run();
-	$UKMTV = mysql_num_rows( $res ) > 0 ? $kategori : false;
+	if( !$res )
+		$UKMTV = false;
+	else
+		$UKMTV = mysql_num_rows( $res ) > 0 ? $kategori : false;
 
 
 // HVILKEN PERIODE ER FYLKESSIDEN I?
