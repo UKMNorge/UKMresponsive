@@ -42,6 +42,6 @@ $DATA['nav_top'][] = (object) array('url' 		=> '//'.$_SERVER['HTTP_HOST'].'/amba
 */
 								    
 $DATA['nav_top_right'][] = (object) array('url' 		=> '//'.$_SERVER['HTTP_HOST'].'/arrangor/',
-									'title' 	=> 'arrangører',
+									'title' 	=> 'for arrangører',
 									'full_title'=> 'UKM for arrangører',
 								    'active'	=> $active == 'arrangorer');
