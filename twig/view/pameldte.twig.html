@@ -6,6 +6,9 @@
 
 			<div class="row">		
 				<div class="col-xs-12 hidden-xs">
+				<div class="pull-right hidden-xs pameldteFilter">søk i listen</div>
+				<div class="clearfix"></div>
+
 					<div class="input-group input-group-sm">
 						<span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
 						<input type="search" class="form-control" id="filter_search" placeholder="Søk i listen.." />
@@ -35,9 +38,7 @@
 			</div>
 			
 			<div class="hidden-xs visible-sm visible-md visible-lg">
-				<div class="pull-right hidden-xs">
-					<small>filtrer listen</small>
-				</div>
+				<div class="pull-right hidden-xs pameldteFilter">filtrer listen</div>
 				<div class="clearfix"></div>
 
 				<p>
@@ -50,7 +51,7 @@
 			
 		</div>
 		<div class="clearfix hidden-sm hidden-md hidden-lg"></div>
-
+		<div class="pameldteFilter">&nbsp;</div>
 		<div class="col-xs-12 col-sm-9">
 			<ol class="list-unstyled" id="filter_this">
 				{% for innslag in rekkefolge %}
@@ -64,11 +65,11 @@
 			</ol>
 			
 			<div id="filter_none" class="alert alert-danger">
-				<h4>Ingen treff</h4>
+				<h4>Ingen treff i "{{active_filter}}"</h4>
 				<p>Fant ingen treff i listen for det du søkte etter. Du kan søke etter navn på innslag, personer og titler.</p>
 				{% if list_filtered %}
 					<p>
-						<strong>Husk at du nå kun søker blant {{active_filter}}-innslag</strong>
+						<a href="?">Klikk her for å søke blant alle innslag</a>
 					</p>
 				{% endif %}
 			</div>
