@@ -17,7 +17,7 @@
         <ul class="list-inline col-xs-12">
         {% for ikon in ikoner_tittel %}
             <li class="col-xs-3 col-sm-2 col-md-3 col-lg-2 centered">
-                <img src="{{ ikon.ico_url }}" alt="{{ ikon.name }}" style="width: 90%"> 
+                <img src="{{ ikon.ico_url_gray }}" alt="{{ ikon.name }}" style="width: 90%"> 
                 <small>{{ ikon.name|raw }}</small>
             </li>
             {% if loop.index is divisibleby(4) %}

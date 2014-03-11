@@ -41,7 +41,9 @@ $DATA['kommune'] = get_option('kommune');
     $monstring->sted = $pl->get('pl_place');
     $monstring->kommuner = $pl->get('kommuner');
     $monstring->frist_1 = $pl->get('pl_deadline');
+    $monstring->frist_1_aktiv = $pl->subscribable('pl_deadline');
     $monstring->frist_2 = $pl->get('pl_deadline2');
+    $monstring->frist_2_aktiv = $pl->subscribable('pl_deadline2');
     $monstring->bandtypesdetails = $pl->getAllBandTypesDetailedNew();
     $DATA['monstring'] = $monstring;
     
@@ -86,7 +88,7 @@ $DATA['kommune'] = get_option('kommune');
         }
     
 // DEBUG
-$VIEW = 'kommune_post';
+$VIEW = 'kommune_pamelding';
 
 
 // PÅMELDINGSIKONER
