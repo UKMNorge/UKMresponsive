@@ -1,5 +1,5 @@
 {% extends "view/fylke.twig.html" %}
 
 {% block jumbo_content %}
-	Det er fylkesmønstring! {{monstring.starter | dato("l j. F") | capitalize }} til {{monstring.slutter | dato("l j. F")}} i {{monstring.sted}}
+	Velkommen til fylkesmønstring {{monstring.starter | dato("l j. F") }} til {{monstring.slutter | dato("l j. F")}}, {{monstring.sted}}
 {% endblock %}
