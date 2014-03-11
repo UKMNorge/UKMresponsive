@@ -22,7 +22,6 @@
 				<div class="col-xs-8">
 					<h3 class="name" style="margin-top:0px;">{{kontakt.fornavn}} {{kontakt.etternavn}}</h3>
 					<p><strong>{{kontakt.fylke.navn}}</strong></p>
-					<p class="phone">{{kontakt.mobil}}</p>
 				</div>
 			</div>
 			<hr class="inwell">
@@ -30,12 +29,7 @@
 				<div class="col-xs-6 col-lg-12">
 					<p class="call">
 						<a href="tel:{{kontakt.mobil}}" class="btn btn-default btn-lg btn-block">
-						<span class="glyphicon glyphicon-phone"></span> Ring
-						</a>
-					</p>
-					<p class="text">
-						<a href="sms:{{kontakt.mobil}}" class="btn btn-default btn-lg btn-block">
-						<span class="glyphicon glyphicon-phone"></span> SMS
+						<span class="glyphicon glyphicon-phone"></span> {{kontakt.mobil}}
 						</a>
 					</p>
 				</div>
