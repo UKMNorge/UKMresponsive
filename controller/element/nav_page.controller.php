@@ -35,12 +35,12 @@ switch( get_option('ukm_top_page') ) {
 		$DATA['page_nav'][] = (object) array( 'url' 			=> 'kontakt/',
 											   'title'		 	=> 'Kontakt',
 											   'icon'			=> 'info',
-											   'description'	=> 'Finn kontaktpersoner i administrasjonen, fylket og styret'
+											   'description'	=> 'Kontaktpersoner i UKM-nettverket'
 											  );
 		$DATA['page_nav'][] = (object) array( 'url' 			=> 'om/',
-											   'title'		 	=> 'Hva er UKM?',
+											   'title'		 	=> 'Finn ut mer om UKM',
 											   'icon'			=> 'star',
-											   'description'	=> 'UKM består av én lokalmønstring for hver kommune. Finn din her.'
+											   'description'	=> 'Bakgrunnsstoff, verdier og historikk'
 											  );
 		$DATA['page_nav'][] = (object) array( 'url' 			=> 'grafisk-profil/',
 											   'title'		 	=> 'Grafisk profil',
@@ -52,15 +52,10 @@ switch( get_option('ukm_top_page') ) {
 											   'icon'			=> 'pen',
 											   'description'	=> 'Informasjon, bilder med mer'
 											  );
-		$DATA['page_nav'][] = (object) array( 'url' 			=> 'strategiplan/',
-											   'title'		 	=> 'Strategiplan',
-											   'icon'			=> 'hus',
-											   'description'	=> 'Se UKM Norges strategiplan'
-											  );
 		$DATA['page_nav'][] = (object) array( 'url' 			=> 'prosjekter/',
 											   'title'		 	=> 'Prosjekter',
 											   'icon'			=> 'project',
-											   'description'	=> 'asd'
+											   'description'	=> 'Nasjonale prosjekter og satsninger'
 											  );
 
 		break;
@@ -72,22 +67,12 @@ switch( get_option('ukm_top_page') ) {
 		$DATA['page_nav'][] = (object) array( 'url' 			=> 'din_monstring/',
 											   'title'		 	=> 'Finn din mønstring',
 											   'icon'			=> 'maps',
-											   'description'	=> 'UKM består av én lokalmønstring for hver kommune. Finn din her.'
+											   'description'	=> 'UKM har lokalmønstringer over hele landet'
 											  );
 		$DATA['page_nav'][] = (object) array( 'url' 			=> 'hva-er-ukm/',
-											   'title'		 	=> 'Hva er UKM?',
+											   'title'		 	=> 'Finn ut mer om UKM',
 											   'icon'			=> 'star',
-											   'description'	=> 'UKM består av én lokalmønstring for hver kommune. Finn din her.'
-											  );
-		$DATA['page_nav'][] = (object) array( 'url' 			=> 'urg/',
-											   'title'		 	=> 'Alt om URG',
-											   'icon'			=> 'rabbit',
-											   'description'	=> 'UKM består av én lokalmønstring for hver kommune. Finn din her.'
-											  );
-		$DATA['page_nav'][] = (object) array( 'url' 			=> 'tidligere-nettsider/',
-											   'title'		 	=> 'Tidligere nettsider',
-											   'icon'			=> 'kulturminne',
-											   'description'	=> 'UKM består av én lokalmønstring for hver kommune. Finn din her.'
+											   'description'	=> 'Hvem kan delta? Hva kan du gjøre?'
 											  );
 /*
 		$DATA['page_nav'][] = (object) array( 'url' 			=> 'http://tv.ukm.no',
@@ -97,15 +82,25 @@ switch( get_option('ukm_top_page') ) {
 											   'target'			=> '_blank'
 											  );
 */
+		$DATA['page_nav'][] = (object) array( 'url' 			=> 'urg/',
+											   'title'		 	=> 'URG - Ung ressursgruppe',
+											   'icon'			=> 'rabbit',
+											   'description'	=> 'Si din mening'
+											  );
+		$DATA['page_nav'][] = (object) array( 'url' 			=> 'ambassador/',
+											   'title'		 	=> 'Ambassadører',
+											   'icon'			=> 'star',
+											   'description'	=> 'For deg som vil spre ordet om UKM'
+											  );
 		$DATA['page_nav'][] = (object) array( 'url' 			=> 'internasjonalt/',
 											   'title'		 	=> 'Internasjonalt',
 											   'icon'			=> 'flag',
 											   'description'	=> 'Alt om UKMs internasjonale utvekslinger'
 											  );
-		$DATA['page_nav'][] = (object) array( 'url' 			=> 'ambassador/',
-											   'title'		 	=> 'Ambassadører',
-											   'icon'			=> 'star',
-											   'description'	=> 'UKMs ambassadørkorps består av flere hundre ambassadører'
+		$DATA['page_nav'][] = (object) array( 'url' 			=> 'tidligere-nettsider/',
+											   'title'		 	=> 'UKM tidligere år',
+											   'icon'			=> 'kulturminne',
+											   'description'	=> 'Bilder, video og info'
 											  );
 
 	break;											   
