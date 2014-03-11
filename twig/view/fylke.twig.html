@@ -79,15 +79,7 @@
 	</div>
     
     <div id="monstring_kontaktpersoner" style="display:none">
-		{% for kontakt in kontaktpersoner %}
-			{% embed "element/kontakt.twig.html" %}{% endembed %}
-		{% if loop.index is divisibleby(2) %}
-			<div class="visible-sm visible-md clearfix"></div>
-		{% endif %}
-		{% if loop.index is divisibleby(3) %}
-			<div class="visible-lg clearfix"></div>
-		{% endif %}
-		{% endfor %}
+		{% embed "element/monstring/monstring_kontaktpersoner.twig.html" %}{% endembed %}
     </div>
     
 {% endblock %}

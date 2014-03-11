@@ -2,7 +2,7 @@
 
 $s = new stdClass();
 $s->navn 	= 'UKM Norge support';
-$s->tekst 	= 'Kan hjelpe med alle problemer med nettsiden';
+$s->tekst 	= 'Kontakt support ved tekniske problemer med nettsiden';
 $s->mobil 	= 46421625;
 $s->epost	= 'support@ukm.no';
 $s->bilde	= 'http://grafikk.ukm.no/support/support_tech1.jpg';
