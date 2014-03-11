@@ -114,7 +114,7 @@ if( $UKMTV ) {
 if( in_array( $VIEW, array('kommune_pre','kommune_aktiv','kommune_post')) || $pl->har_program() ) {
 $DATA['page_nav'][] = (object) array( 'url' 			=> 'program/',
 									   'title'		 	=> 'Program',
-									   'icon'			=> 'table',
+									   'icon'			=> 'calendar',
                                         'description'	=> 'Se program for lokalmønstringen'
                                        );
 }
@@ -122,13 +122,13 @@ $innslag = $pl->innslag();
 if( sizeof( $innslag ) > 0 && $VIEW == 'kommune_post' ) {
     $DATA['page_nav'][] = (object) array( 'url'			=> 'pameldte/',
                                           'title'		=> 'Hvem deltok?',
-                                          'icon'		=> 'hvem',
+                                          'icon'		=> 'people',
                                           'description' => 'Se alle som deltok på lokalmønstringen.'
                                       );
 } elseif( sizeof( $innslag ) > 0 ) {
     $DATA['page_nav'][] = (object) array( 'url'			=> 'pameldte/',
                                           'title'		=> 'Hvem deltar?',
-                                          'icon'		=> 'hvem',
+                                          'icon'		=> 'people',
                                           'description' => 'Se alle som deltar på lokalmønstringen.'
                                       );
 }
@@ -136,7 +136,7 @@ if( sizeof( $innslag ) > 0 && $VIEW == 'kommune_post' ) {
 
 $DATA['page_nav'][] = (object) array( 'url' 			=> '#kontaktpersoner',
                                       'title' 			=> 'Kontaktpersoner',
-                                      'icon'  			=> 'info',
+                                      'icon'  			=> 'i',
                                       'description' 	=> 'Har du spørsmål om UKM i '. $pl->get('pl_name').'? Disse kan hjelpe!',
 										   'id'			=> 'show_kontaktpersoner'
                                   );
