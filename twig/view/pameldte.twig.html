@@ -3,6 +3,16 @@
 {% block content %}
 	<div class="row">
 		<div class="col-xs-12 col-sm-3 pull-right" id="rightnav">
+
+			<div class="row">		
+				<div class="col-xs-12 hidden-xs">
+					<div class="input-group input-group-sm">
+						<span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+						<input type="search" class="form-control" id="filter_search" placeholder="Søk i listen.." />
+					</div>
+				</div>
+			</div>
+		
 			<div class="visible-xs hidden-sm hidden-md hidden-lg">
 				<label for="pameldte_filter">Viser nå:</label>
 				<select id="pameldte_filter" class="form-control">
@@ -12,8 +22,17 @@
 					{% endfor %}
 				</select>
 			</div>
+
+			<div class="clearfix"></div>
+			<p></p>
 			
-			<div class="clearfix"></div>	
+			<div class="row">
+				<div class="input-group input-group-sm col-xs-12 visible-xs">
+					<input type="search" class="form-control" id="filter_search_mobile" placeholder="Søk i listen.." />
+				</div>
+				<div class="clearfix"></div>
+				<p></p>
+			</div>
 			
 			<div class="hidden-xs visible-sm visible-md visible-lg">
 				<div class="pull-right hidden-xs">
@@ -33,20 +52,6 @@
 		<div class="clearfix hidden-sm hidden-md hidden-lg"></div>
 
 		<div class="col-xs-12 col-sm-9">
-			<div class="row">
-				<div class="hidden-xs">
-					<div class="input-group input-group-sm col-xs-12 col-sm-5 col-md-4 pull-right">
-						<span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
-						<input type="search" class="form-control" id="filter_search" placeholder="Søk i listen.." />
-					</div>
-				</div>
-
-				<div class="input-group input-group-sm col-xs-12 col-sm-4 pull-right visible-xs">
-					<input type="search" class="form-control" id="filter_search_mobile" placeholder="Søk i listen.." />
-				</div>
-			</div>
-			<p></p>
-
 			<ol class="list-unstyled" id="filter_this">
 				{% for innslag in rekkefolge %}
 					{% embed "element/innslag.twig.html" with {'showIndex': false} %}{% endembed %}
