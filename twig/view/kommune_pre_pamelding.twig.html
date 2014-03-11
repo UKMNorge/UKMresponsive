@@ -23,7 +23,7 @@
             {% if loop.index is divisibleby(4) %}
                 <li class="clearfix visible-xs hidden-sm visible-md visible-lg"></li>
             {% elseif loop.index is divisibleby(6) %}
-                <li class="clearfix visible-xs hidden-sm hidden-md hidden-lg"></li>
+                <li class="clearfix hidden-xs visible-sm hidden-md hidden-lg"></li>
             {% endif %}
 			{% set firstIndex = loop.index %}
         {% endfor %}
@@ -34,8 +34,8 @@
             </li>
             {% if (firstIndex+loop.index) is divisibleby(4) %}
                 <li class="clearfix visible-xs hidden-sm visible-md visible-lg"></li>
-            {% elseif loop.index is divisibleby(6) %}
-                <li class="clearfix visible-xs hidden-sm hidden-md hidden-lg"></li>
+            {% elseif (firstIndex+loop.index) is divisibleby(6) %}
+                <li class="clearfix hidden-xs visible-sm hidden-md hidden-lg"></li>
             {% endif %}
 
         {% endfor %}
