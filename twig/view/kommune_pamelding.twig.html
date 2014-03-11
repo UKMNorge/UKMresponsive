@@ -18,17 +18,13 @@
 	</div>
 {% endblock %}
 
-{% set posts_include_top_post_in_full_list = false %}
-
-{% block innhold_pre %}
-	{% embed "element/monstring/monstring_hovedartikkel.twig.html" %}{% endembed %}
-{% endblock %}
+{% set posts_include_top_post_in_full_list = true %}
 
 {% block hovedfokus %}
     {# Registration #}
     <script type="text/javascript" src="{{ url.theme_dir }}js/lokalside_pamelding.js"></script>
     <div id="paamelding_container">
-       <ul class="list-inline col-xs-12">
+       <ul class="list-inline pameldingsikoner">
    		<li class="col-xs-12 separator">
    			Påmeldingsfrist: 
 
