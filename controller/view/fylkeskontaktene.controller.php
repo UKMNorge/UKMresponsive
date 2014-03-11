@@ -11,8 +11,9 @@ $DATA['kontaktkart'] = visitor_map($MAPNAME, $mailfilter);
 
 
 foreach( $DATA['kontaktkart']['kontakter'] as $key => $kontakt ) {
-	$kontakt->bilde = str_replace('ukm.local','ukm.no', $kontakt->bilde);
-	$kontakt->bilde_sirkel = str_replace('ukm.local','ukm.no', $kontakt->bilde_sirkel);
+	$kontakt->bilde_ikkesirkel = str_replace('ukm.local','ukm.no', $kontakt->bilde);
+	$kontakt->bilde = str_replace('ukm.local','ukm.no', $kontakt->bilde_sirkel);
+	$kontakt->navn = $kontakt->fornavn .' '. $kontakt->etternavn;
 	$DATA['kontaktkart']['kontakter'][$key] = $kontakt;
 }
 $DATA['kontaktkart']['kart_url'] = str_replace('ukm.local','ukm.no', $DATA['kontaktkart']['kart_url'] );
