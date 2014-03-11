@@ -34,7 +34,7 @@ switch( get_option('ukm_top_page') ) {
 	case 'voksneogpresse':
 		$DATA['page_nav'][] = (object) array( 'url' 			=> 'kontakt/',
 											   'title'		 	=> 'Kontakt',
-											   'icon'			=> 'info',
+											   'icon'			=> 'i',
 											   'description'	=> 'Kontaktpersoner i UKM-nettverket'
 											  );
 		$DATA['page_nav'][] = (object) array( 'url' 			=> 'om/',
@@ -49,17 +49,17 @@ switch( get_option('ukm_top_page') ) {
 											  );
 		$DATA['page_nav'][] = (object) array( 'url' 			=> 'presse/',
 											   'title'		 	=> 'PRESSE',
-											   'icon'			=> 'pen',
+											   'icon'			=> 'pencil',
 											   'description'	=> 'Informasjon, bilder med mer'
 											  );
 		$DATA['page_nav'][] = (object) array( 'url' 			=> 'prosjekter/',
 											   'title'		 	=> 'Prosjekter',
-											   'icon'			=> 'project',
+											   'icon'			=> 'folder',
 											   'description'	=> 'Nasjonale prosjekter og satsninger'
 											  );
 		$DATA['page_nav'][] = (object) array( 'url' 			=> $DATA['url']['base'].'/internasjonalt/',
 											   'title'		 	=> 'Internasjonalt',
-											   'icon'			=> 'project',
+											   'icon'			=> 'globe',
 											   'description'	=> 'Alt om UKMs internasjonale utvekslinger'
 											  );
 
@@ -89,22 +89,22 @@ switch( get_option('ukm_top_page') ) {
 */
 		$DATA['page_nav'][] = (object) array( 'url' 			=> 'urg/',
 											   'title'		 	=> 'URG - Ung ressursgruppe',
-											   'icon'			=> 'rabbit',
+											   'icon'			=> 'kanin',
 											   'description'	=> 'Si din mening'
 											  );
 		$DATA['page_nav'][] = (object) array( 'url' 			=> 'ambassador/',
 											   'title'		 	=> 'Ambassadører',
-											   'icon'			=> 'star',
+											   'icon'			=> 'heart',
 											   'description'	=> 'For deg som vil spre ordet om UKM'
 											  );
 		$DATA['page_nav'][] = (object) array( 'url' 			=> 'internasjonalt/',
 											   'title'		 	=> 'Internasjonalt',
-											   'icon'			=> 'flag',
+											   'icon'			=> 'globe',
 											   'description'	=> 'Alt om UKMs internasjonale utvekslinger'
 											  );
 		$DATA['page_nav'][] = (object) array( 'url' 			=> 'tidligere-nettsider/',
 											   'title'		 	=> 'UKM tidligere år',
-											   'icon'			=> 'kulturminne',
+											   'icon'			=> 'monitor',
 											   'description'	=> 'Bilder, video og info'
 											  );
 
