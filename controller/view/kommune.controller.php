@@ -119,13 +119,20 @@ $DATA['page_nav'][] = (object) array( 'url' 			=> 'program/',
                                        );
 }
 $innslag = $pl->innslag();
-if( sizeof( $innslag ) > 0 ) {
+if( sizeof( $innslag ) > 0 && $VIEW == 'kommune_post' ) {
+    $DATA['page_nav'][] = (object) array( 'url'			=> 'pameldte/',
+                                          'title'		=> 'Hvem deltok?',
+                                          'icon'		=> 'hvem',
+                                          'description' => 'Se alle som deltok på lokalmønstringen.'
+                                      );
+} elseif( sizeof( $innslag ) > 0 ) {
     $DATA['page_nav'][] = (object) array( 'url'			=> 'pameldte/',
                                           'title'		=> 'Hvem deltar?',
                                           'icon'		=> 'hvem',
                                           'description' => 'Se alle som deltar på lokalmønstringen.'
                                       );
 }
+
 
 $DATA['page_nav'][] = (object) array( 'url' 			=> '#kontaktpersoner',
                                       'title' 			=> 'Kontaktpersoner',
