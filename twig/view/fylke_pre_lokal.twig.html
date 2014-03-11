@@ -27,6 +27,19 @@
 
 
 {% block hovedfokus %}
-    {% embed "element/monstring/lokalmonstringer_liste.twig.html" %}
-    {% endembed %}
+	<div class="visible-xs">
+		Gå til din lokalside ved å velge fra listen	
+		<select name="lokalmonstring" class="form-control" id="select_lokalmonstring">
+		{% for monstring in lokalmonstringer.first_half %}
+			<option value="{{monstring.url}}">{{ monstring.navn }}</option>
+		{% endfor %}
+		{% for monstring in lokalmonstringer.second_half %}
+			<option value="{{monstring.url}}">{{ monstring.navn }}</option>
+		{% endfor %}
+		</select>
+	</div>
+	<div class="hidden-xs">
+	    {% embed "element/monstring/lokalmonstringer_liste.twig.html" %}
+	    {% endembed %}
+	</div>
 {% endblock %}

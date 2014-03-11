@@ -23,6 +23,13 @@
 		pageFocus( jQuery(this) );
 	});
 	
+	jQuery(document).on('change','#select_lokalmonstring', function(){
+	  selected = jQuery(this).val();
+	  if( selected != undefined && selected != null) {
+	    window.location.href = selected.replace('ukm.no','ukm.local');
+	  }
+	});
+	
 	jQuery(document).on('click','li.innslag div.header', function() {
 		jQuery('li.innslag div.row.data').slideUp();
 		innslag = jQuery(this).parents('li.innslag');
