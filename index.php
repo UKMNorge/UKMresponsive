@@ -64,6 +64,8 @@ require_once('functions_theme.php');
 		wp_reset_query();
 		wp_reset_postdata();
 		$SEO->jumbo( $post->ID );
+		$JUMBO_POST_ID = $post->ID;
+		require('controller/element/jumbo.controller.php');
 
 		if( get_option('ukm_top_page') == 'ambassadorer' ) {
 			require_once('controller/view/homepage.controller.php');
