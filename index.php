@@ -168,11 +168,12 @@ $DATA['breadcrumbs'] = $BC->get();
 	$seoTitle = '';
 	foreach( $DATA['breadcrumbs'] as $c ) {
 		$title = $c->title == 'artikkel' ?  $DATA['post']->title : $c->title;
-		$seoTitle .= $title .' &raquo; ';
+		if ($c === end($DATA['breadcrumbs']))
+			$seoTitle .= $title;
+		else 
+			$seoTitle .= $title .' &raquo; ';
 	}
-	$seoTitle = rtrim( $seoTitle, ' &raquo; ');
 	$SEO->title( $seoTitle );
-
 $DATA['SEO'] = $SEO;
 echo TWIGrender('view/'.$VIEW, object_to_array($DATA),true);
 /*
