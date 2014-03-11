@@ -42,9 +42,9 @@
 				<div class="clearfix"></div>
 
 				<p>
-					<a href="?" class="btn btn-default btn-block">Alle innslag</a>
+					<a href="?" class="btn btn-{{active_filter_id=='false'?'success':'default'}} btn-block">Alle innslag</a>
 					{% for bt_id, type in typer %}
-						<a href="?type={{bt_id}}" class="btn btn-default btn-block">{{type}}</a>
+						<a href="?type={{bt_id}}" class="btn btn-{{active_filter_id==bt_id?'success':'default'}} btn-block">{{type}}</a>
 					{% endfor %}
 				</p>
 			</div>
@@ -57,14 +57,14 @@
 				{% for innslag in rekkefolge %}
 					{% embed "element/innslag.twig.html" with {'showIndex': false} %}{% endembed %}
 				{% else %}
-					<li class="alert alert-info">
+					<li class="alert">
 						<h4>Ingen innslag</h4>
 						<p>Det er ingen påmeldte til UKM {{monstring.navn}}</p>
 					</li>				
 				{% endfor %}
 			</ol>
 			
-			<div id="filter_none" class="alert alert-danger">
+			<div id="filter_none" class="alert">
 				<h4>Ingen treff i "{{active_filter}}"</h4>
 				<p>Fant ingen treff i listen for det du søkte etter. Du kan søke etter navn på innslag, personer og titler.</p>
 				{% if list_filtered %}

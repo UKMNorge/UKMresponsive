@@ -11,9 +11,24 @@ Author URI: https://github.com/UKMNorge?tab=members
 @clr-ukm-green: #6dc6c1;
 @clr-ukm-green-l1: lighten(spin(@clr-ukm-green,5),5%);
 @clr-ukm-green-l2: lighten(spin(@clr-ukm-green,5),10%);
+@clr-ukm-green-l3: lighten(spin(@clr-ukm-green,5),30%);
 @clr-ukm-green-d1: darken(spin(@clr-ukm-green,5),5%);
 @clr-ukm-green-d2: darken(spin(@clr-ukm-green,5),10%);
 
+.btn-default {
+	background: @clr-ukm-green-l3 !important;
+}
+.btn-success {
+	background: @clr-ukm-green !important;
+}
+
+.btn-default a, .btn-default a:visited,
+a.btn-default, a.btn-default:visited,
+.btn-success a, .btn-success a:visited,
+a.btn-success, a.btn-success:visited {
+	font-weight: bold !important;
+	color: #1a1919 !important;
+}
 
 @color-clouds:			#ECF0F1;
 @color-silver: 			#BDC3C7;
