@@ -100,8 +100,6 @@ $DATA['fylke'] = get_option('fylke');
 	$DATA['lokalmonstringer']['first_half'] = array_slice( $lokalmonstringer, 0, $half_lokalmonstringer);
 	$DATA['lokalmonstringer']['second_half'] = array_slice( $lokalmonstringer, $half_lokalmonstringer);
 
-var_dump( $DATA['lokalmonstringer'] );	
-
 // HAR UKM-TV-SIDE? (opplastede videoer?)
 	$kategori = 'Fylkesmønstringen i '. $pl->g('pl_name').' '.$pl->g('season');
 	$sql = new SQL("SELECT `tv_id` FROM `ukm_tv_files`
@@ -125,6 +123,8 @@ var_dump( $DATA['lokalmonstringer'] );
 	} elseif( time() > $pl->get('pl_stop') ) {
 		$VIEW = 'fylke_post';
 	}
+	
+$DATA['console']['fm_view'][] = $VIEW;
 
 $SEO->title('UKM '. $monstring->navn);
 $description = 'Nyheter og informasjon om UKM '. $monstring->navn;
