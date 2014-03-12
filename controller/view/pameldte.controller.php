@@ -29,7 +29,7 @@ if( isset( $_GET['type'] ) ) {
 	$DATA['active_filter'] = strtolower( utf8_encode( $sql->run('field','bt_name') ) );
 	$DATA['active_filter_id'] = $_GET['type'];
 	$DATA['list_filtered'] = true;
-	$SEO->set('description', 'Viser alle '. utf8_decode($DATA['active_filter']).'-innslag');
+	$SEO->set('description', 'Viser alle '. $DATA['active_filter'].'-innslag');
 	$SEO->set('canonical', $DATA['url']['current'].'?type='.$DATA['active_filter_id']);
 } else {
 	$DATA['active_filter'] = 'alle innslag';
