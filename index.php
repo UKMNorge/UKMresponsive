@@ -28,6 +28,7 @@ require_once('functions_theme.php');
 	$DATA['url']['blog']		= get_bloginfo('url').'/';
 	$DATA['url']['current']		= get_permalink();
 
+	$DATA['placeholder']['post'] = THEME_DEFAULT_IMAGE;
 	require_once('class/seo.class.php');
 	$SEO = new SEO( $DATA['url']['current'] );
 /**********************************
