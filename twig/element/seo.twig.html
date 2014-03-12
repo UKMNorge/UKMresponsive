@@ -19,7 +19,7 @@
 	<meta property="og:image" content="{{SEO.image}}" />
 {% endif %}
 <meta property="og:url" content="{{SEO.canonical}}" />
-<meta property="og:description" content="{{SEO.description}}" />
+<meta property="og:description" content="{{SEO.description|raw}}" />
 
 {% if SEO.type == 'article' %}
 	<meta property="article:published_time" content="{{SEO.published_time}}" />
