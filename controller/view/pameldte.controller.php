@@ -5,7 +5,7 @@ require_once('UKM/tittel.class.php');
 $pl = new monstring( get_option('pl_id') );
 
 $monstring = new stdClass();
-$monstring->navn = $pl->g('pl_name');
+$monstring->navn = str_replace('UKM','',$pl->g('pl_name'));
 $monstring->type_tekst = $pl->g('type') == 'kommune' ? 'lokal' : 'fylkes';
 
 
