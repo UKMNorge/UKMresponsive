@@ -1,10 +1,4 @@
 <?php
-
-if( $_SERVER['REMOTE_ADDR'] == '81.0.146.162') {
-	var_dump( $_SERVER );
-	die();
-}
-
 header('Content-Type: text/html; charset=utf-8');
 
 error_reporting(E_ALL ^ E_DEPRECATED);
