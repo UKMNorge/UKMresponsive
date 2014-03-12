@@ -39,6 +39,7 @@ $DATA['fylke'] = get_option('fylke');
 	$pl = new monstring( get_option('pl_id') );
 	$monstring = new StdClass();
 	$monstring->starter = $pl->get('pl_start');
+	$monstring->starter_tekst = $pl->starter();
 	$monstring->slutter = $pl->get('pl_stop');
 	$monstring->sted = $pl->get('pl_place'); // info['pl_place']; //
     $monstring->navn = $pl->get('pl_name'); // info['pl_name'];  //
@@ -125,6 +126,11 @@ $DATA['fylke'] = get_option('fylke');
 	}
 
 $SEO->title('UKM '. $monstring->navn);
+$description = 'Nyheter og informasjon om UKM '. $monstring->navn;
+if( $pl->registered() ) {
+	$description .= ' - '. $monstring->starter_tekst.', '. $monstring->sted;
+}
+$SEO->description( $description );
 
 /*
     $DATA['page_nav'][] = (object) array( 'url' => 'bilder/',
