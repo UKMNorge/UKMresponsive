@@ -5,6 +5,12 @@ add_shortcode('gallery', 'image_gallery');
 the_post();
 $DATA['post'] = new WPOO_Post( $post );
 
+
+$DATA['post']->blog = new stdClass();
+$DATA['post']->blog->link = get_bloginfo('url');
+$DATA['post']->blog->name = get_bloginfo('name');
+
+
 $DATA['post']->author->company_name = 'UKM Norge';
 
 function image_gallery( $attr ) {
