@@ -86,7 +86,7 @@
 	<div>
 		<div class="row row-offcanvas row-offcanvas-right">
 			<div class="col-xs-6 hidden-md hidden-lg sidebar-offcanvas" id="sidebar" role="navigation">
-				<h2>Du er her</h2>
+				{#<h2>Du er her</h2>
 				<div class="todo">
 				<ol class="list-unstyled">
 					{% for crumb in breadcrumbs|reverse %}
@@ -94,7 +94,7 @@
 							<a href="{{crumb.link}}" class="{{crumb.active?'active':''}}">{{crumb.title}}</a>
 						</li>
 					{% endfor %}
-				</ol>
+				</ol>#}
 				<h2>Gå til</h2>
 				<ol class="list-unstyled">
 					{% for nav in nav_top %}
