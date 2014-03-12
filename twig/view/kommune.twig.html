@@ -76,17 +76,8 @@
 	            <div style="clear:both;"></div>
 	        {% endif %}
 	
-	        {% if nextpost|length > 0 %}
-			<div class="col-xs-4 col-sm-2 pull-right">
-				<a href="{{ nextpost|raw }}"><button type="button" class="btn btn-default">Se eldre nyheter</button></a>
-			</div>
-			{% endif %}
-			
-			{% if prevpost|length > 0 %}
-			<div class="col-xs-4 col-sm-2 pull-left">
-			      <a href="{{ prevpost|raw }}"><button type="button" class="btn btn-default">Se nyere nyheter</button></a>
-			</div>
-			{% endif %}
+			{% embed "element/post/prev_next.twig.html" %}{% endembed %}
+
 		{% endblock %}
 	</div>
     
