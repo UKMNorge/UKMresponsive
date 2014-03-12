@@ -52,11 +52,13 @@ switch( get_option('ukm_top_page') ) {
 											   'icon'			=> 'pencil',
 											   'description'	=> 'Informasjon, bilder med mer'
 											  );
+/*
 		$DATA['page_nav'][] = (object) array( 'url' 			=> 'prosjekter/',
 											   'title'		 	=> 'Prosjekter',
 											   'icon'			=> 'folder',
 											   'description'	=> 'Nasjonale prosjekter og satsninger'
 											  );
+*/
 		$DATA['page_nav'][] = (object) array( 'url' 			=> $DATA['url']['base'].'/internasjonalt/',
 											   'title'		 	=> 'Internasjonalt',
 											   'icon'			=> 'globe',
