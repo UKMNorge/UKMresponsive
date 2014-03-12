@@ -162,13 +162,13 @@ $SEO->description( $description );
 	    $DATA['page_nav'][] = (object) array( 'url'			=> 'pameldte/',
 	                                          'title'		=> 'Hvem deltok?',
 	                                          'icon'		=> 'people',
-	                                          'description' => 'Se alle som deltok på lokalmønstringen.'
+	                                          'description' => 'Se alle som deltok på fylkesmønstringen.'
 	                                      );
 	} elseif( sizeof( $innslag ) > 0 ) {
 	    $DATA['page_nav'][] = (object) array( 'url'			=> 'pameldte/',
 	                                          'title'		=> 'Hvem deltar?',
 	                                          'icon'		=> 'people',
-	                                          'description' => 'Se alle som deltar på lokalmønstringen.'
+	                                          'description' => 'Se alle som deltar på fylkesmønstringen.'
 	                                      );
 	}
 	
