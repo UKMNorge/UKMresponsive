@@ -104,7 +104,7 @@ switch( get_option('ukm_top_page') ) {
 											   'icon'			=> 'globe',
 											   'description'	=> 'Alt om UKMs internasjonale utvekslinger'
 											  );
-		$DATA['page_nav'][] = (object) array( 'url' 			=> 'tidligere-nettsider/',
+		$DATA['page_nav'][] = (object) array( 'url' 			=> 'tidligere-ar/',
 											   'title'		 	=> 'UKM tidligere år',
 											   'icon'			=> 'monitor',
 											   'description'	=> 'Bilder, video og info'
