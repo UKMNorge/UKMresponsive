@@ -30,8 +30,12 @@ require_once('functions_theme.php');
 	$DATA['url']['blog']		= get_bloginfo('url').'/';
 	$DATA['url']['current']		= get_permalink();
 
-	$DATA['console'] = array();
+	$DATA['blog']['url']		= get_bloginfo('url').'/';
+	$DATA['blog']['name']		= get_bloginfo('name');
 
+
+	$DATA['console'] = array();
+	
 	$DATA['placeholder']['post'] = THEME_DEFAULT_IMAGE;
 	require_once('class/seo.class.php');
 	$SEO = new SEO( $DATA['url']['current'] );
