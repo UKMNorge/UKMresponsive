@@ -7,12 +7,14 @@
 </article>
 
 	{% for kontakt in kontakter %}
-		{% embed "element/kontakt.twig.html" %}{% endembed %}
-	{% if loop.index is divisibleby(2) %}
-		<div class="visible-sm visible-md clearfix"></div>
-	{% endif %}
-	{% if loop.index is divisibleby(3) %}
-		<div class="visible-lg clearfix"></div>
-	{% endif %}
+		<div class="col-xs-12 col-sm-6 col-md-4">
+			{% embed "element/kontakt.twig.html" %}{% endembed %}
+		</div>
+		{% if loop.index is divisibleby(2) %}
+			<div class="visible-sm visible-md clearfix"></div>
+		{% endif %}
+		{% if loop.index is divisibleby(3) %}
+			<div class="visible-lg clearfix"></div>
+		{% endif %}
 	{% endfor %}
 {% endblock %}
