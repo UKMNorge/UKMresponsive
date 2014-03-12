@@ -81,12 +81,33 @@
 	width: 100%;
 	padding: 4px 0px 4px 0px;
 	font-size: 13px;
+	margin: 0px 0px 10px 0px;
 }
 
 .post .infos div {
 	float: left;
 	margin: 0px 20px 0px 10px;
 }
+.post .facebookinfos {
+	margin: 15px 0px 15px 0px;
+}
 .post .infos div.clearfix {
 	float: none;
+}
+
+.post .lead {
+	text-align: left;
+}
+@media (max-width: 991px) {
+	.post .lead {
+		text-align: center;
+	}
+	.post h2 {
+		text-align: center;
+	}
+	
+	.post .post_content img {
+		width: 100%;
+		height: auto;
+	}
 }

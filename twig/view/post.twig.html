@@ -34,7 +34,7 @@
 				</div>
 				<div class="clearfix"></div>
 			</div>
-			<div class="visible-xs col-xs-12" align="center" style="padding-top:10px;">
+			<div class="visible-xs col-xs-12 facebookinfos" align="center">
 				<div class="fb-like" data-href="{{post.url}}" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
 			</div>
 		</div>
@@ -43,46 +43,17 @@
 		        <div class="post_byline_wrapper col-sm-5 pull-right hidden-xs">
 		        	{% embed "element/post/byline.twig.html" %}{% endembed %}
 		        </div>
-				{{post.content_wo_lead|raw}}
+		        <div class="post_content">
+					{{post.content_wo_lead|raw}}
+		        </div>
 			</div>
 		</div>
 		
 		<div class="row">
 	        <div class="post_byline_wrapper col-xs-12 visible-xs">
+	        	<h3>Skrevet av</h3>
 	        	{% embed "element/post/byline.twig.html" %}{% endembed %}
 	        </div>
 		</div>
 	</div>
-{% endblock %}		
-{% block trash %}
-    		<div class="pull-right">
-				<div class="fb-like" id="fb-sm" data-href="{{url.current}}" data-layout="box_count" data-action="like" data-show-faces="true" data-share="false"></div>
-    		</div>       		
-			<h2>{{post.title|raw}}</h2>
-    	</div>
-		<div class="row">
-			<span class="glyphicon glyphicon-calendar"></span>
-	                            {{post_date|date('d.M')}} | 
-	                            {% for category in post.categories %}
-	                                <a href="{{category.url}}">{{category.name}}</a>
-	                                {% if loop.last != true %}, {% endif %}
-	                            {% endfor %}
-		</div>
-	
-        {# Byline sm+ #}
-        <div class="post_byline_wrapper col-sm-5 pull-right hidden-xs">
-        	{% embed "element/post/byline.twig.html" %}{% endembed %}
-        </div>
-    
-        {# Content #}
-        <div class="col-xs-12">
-            {{post.content|raw}}
-        </div>
-        
-        {# Byline xs #}
-        <div class="post_byline_wrapper col-xs-12 visible-xs">
-        	{% embed "element/post/byline.twig.html" %}{% endembed %}
-        </div>
-        
-    </div>
 {% endblock %}
