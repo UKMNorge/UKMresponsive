@@ -1,16 +1,14 @@
-<div class="">
-	<div class="col-xs-12 col-sm-6">
-		<ol class="list-unstyled">
-			{% for monstring in lokalmonstringer.first_half %}
-				<li class="btn btn-block btn-default"><a href="{{monstring.url}}">{{ monstring.navn }}</a></li>
-			{% endfor %}
-		</ol>
-	</div>
-	<div class="col-xs-12 col-sm-6">
-		<ol class="list-unstyled">
-			{% for monstring in lokalmonstringer.second_half %}
-				<li class="btn btn-block btn-default"><a href="{{monstring.url}}">{{ monstring.navn }}</a></li>
-			{% endfor %}
-		</ol>
-	</div>
+<div class="col-xs-12 col-sm-6">
+	<ol class="list-unstyled">
+		{% for monstring in lokalmonstringer.first_half %}
+			<li class="btn btn-block btn-default"><a href="{{monstring.url}}">{{ monstring.navn }}</a></li>
+		{% endfor %}
+	</ol>
+</div>
+<div class="col-xs-12 col-sm-6">
+	<ol class="list-unstyled">
+		{% for monstring in lokalmonstringer.second_half %}
+			<li class="btn btn-block btn-default"><a href="{{monstring.url}}">{{ monstring.navn }}</a></li>
+		{% endfor %}
+	</ol>
 </div>
