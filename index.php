@@ -172,10 +172,12 @@ $DATA['breadcrumbs'] = $BC->get();
 	$seoTitle = '';
 	foreach( $DATA['breadcrumbs']->crumbs as $c ) {
 		$title = $c->title == 'artikkel' ?  $DATA['post']->title : $c->title;
-		if ($c === end($DATA['breadcrumbs']))
+//		if ($c === end($DATA['breadcrumbs']))
 			$seoTitle .= $title;
+/*
 		else 
 			$seoTitle .= $title .' &raquo; ';
+*/
 	}
 	$SEO->title( $seoTitle );
 $DATA['SEO'] = $SEO;
