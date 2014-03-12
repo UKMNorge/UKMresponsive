@@ -11,22 +11,22 @@ if( !$active )
 if( !in_array( $active, $NAV_TOP ) )
 	$active = 'ungdom';
 
-$DATA['nav_top'][] = (object) array('url' 		=> '//'.$_SERVER['HTTP_HOST'].'/',
+$DATA['nav_top'][] = (object) array('url' 		=> '//ukm.no/',
 									'title' 	=> 'for ungdom',
 									'full_title'=> 'UKM for ungdom',
 								    'active'	=> $active == 'ungdom');
 								    
-$DATA['nav_top'][] = (object) array('url' 		=> '//'.$_SERVER['HTTP_HOST'].'/din_monstring/',
+$DATA['nav_top'][] = (object) array('url' 		=> '//ukm.no/din_monstring/',
 									'title' 	=> 'der du bor',
 									'full_title'=> 'UKM der du bor',
 								    'active'	=> $active == 'din_monstring');
 								    
-$DATA['nav_top'][] = (object) array('url' 		=> '//'.$_SERVER['HTTP_HOST'].'/om/',
+$DATA['nav_top'][] = (object) array('url' 		=> '//om.ukm.no/',
 									'title' 	=> 'for voksne og presse',
 									'full_title'=> 'UKM for voksne og presse',
 								    'active'	=> $active == 'voksneogpresse');
 
-$DATA['nav_top'][] = (object) array('url' 		=> '//tv.'.$_SERVER['HTTP_HOST'].'/',
+$DATA['nav_top'][] = (object) array('url' 		=> '//tv.ukm.no/',
 									'title' 	=> 'TV',
 									'full_title'=> 'UKM-TV',
 								    'active'	=> $active == 'ukmtv');
@@ -41,7 +41,7 @@ $DATA['nav_top'][] = (object) array('url' 		=> '//'.$_SERVER['HTTP_HOST'].'/amba
 								    'active'	=> $active == 'ambassadorer');
 */
 								    
-$DATA['nav_top_right'][] = (object) array('url' 		=> '//'.$_SERVER['HTTP_HOST'].'/arrangor/',
+$DATA['nav_top_right'][] = (object) array('url' 		=> '//arrangor.ukm.no/',
 									'title' 	=> 'for arrangører',
 									'full_title'=> 'UKM for arrangører',
 								    'active'	=> $active == 'arrangorer');
