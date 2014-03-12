@@ -66,6 +66,7 @@ $DATA['typer'] = $typer;
 
 function SMAS_encoding_pameldte($content) {
 	$characterEncoding = mb_detect_encoding($content."a", 'UTF-8, UTF-16, ISO-8859-1, ISO-8859-15, Windows-1252, ASCII');
+	var_dump( $characterEncoding );
 	switch ($characterEncoding) {
 	 case "UTF-8":
 	   return utf8_decode($content);
