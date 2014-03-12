@@ -71,6 +71,7 @@ function SMAS_encoding_pameldte($content) {
 	 case "UTF-8":
 	   return utf8_decode($content);
 	 case "ISO-8859-1":
+		 return utf8_encode( $content );
 	   break;
 	 default:
 	   return mb_convert_encoding($content,$characterEncoding);
