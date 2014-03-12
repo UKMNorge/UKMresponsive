@@ -45,6 +45,7 @@ $DATA['kommune'] = get_option('kommune');
     $monstring->frist_2 = $pl->get('pl_deadline2');
     $monstring->frist_2_aktiv = $pl->subscribable('pl_deadline2');
     $monstring->bandtypesdetails = $pl->getAllBandTypesDetailedNew();
+    $monstring->starter_tekst = $pl->starter();
     
     $fpl =  $pl->videresendTil(true);
     $monstring->fylke = new stdClass();
@@ -96,7 +97,7 @@ $DATA['kommune'] = get_option('kommune');
 $DATA['console']['kommune_view'][] = $VIEW;
 foreach( $monstring as $key => $val ) {
 	if(!is_object( $val ) ) {
-		$DATA['console'][$key][] = (string) $val;
+		$DATA['console'][$key][] = @(string) $val;
 	}
 }
 // PÅMELDINGSIKONER
@@ -153,5 +154,9 @@ $DATA['page_nav'][] = (object) array( 'url' 			=> $monstring->fylke->link,
                                       'icon'  			=> 'maps',
                                       'description' 	=> 'Info om UKM i '. $monstring->fylke->navn
                                   );
-
+$description = 'Nyheter og informasjon om UKM '. $monstring->navn;
+if( $pl->registered() ) {
+	$description .= ' - '. $monstring->starter_tekst.', '. $monstring->sted;
+}
+$SEO->description( $description );
 ?>
