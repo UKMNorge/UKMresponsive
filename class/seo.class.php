@@ -63,15 +63,19 @@ class SEO {
 		switch( $home ) {
 			case 'arrangorer':
 				$this->set( 'section', 'UKM for arrangører' );
+				$this->set( 'analytics', 'UA-46216680-3');
 				break;
 			case 'voksneogpresse':
 				$this->set( 'section', 'UKM for voksne og presse' );
+				$this->set( 'analytics', 'UA-46216680-2');
 				break;
 			case 'derdubor':
 				$this->set( 'section', 'UKM der du bor' );
+				$this->set( 'analytics', 'UA-46216680-1');
 				break;
 			default:
 				$this->set( 'section', 'UKM for ungdom' );
+				$this->set( 'analytics', 'UA-46216680-1');
 				break;
 		}
 	}
