@@ -86,31 +86,22 @@
 	<div>
 		<div class="row row-offcanvas row-offcanvas-right">
 			<div class="col-xs-6 hidden-md hidden-lg sidebar-offcanvas" id="sidebar" role="navigation">
-				{#<h2>Du er her</h2>
 				<div class="todo">
-				<ol class="list-unstyled">
-					{% for crumb in breadcrumbs|reverse %}
+					<h2>Gå til</h2>
+					<ol class="list-unstyled">
+						{% for nav in nav_top %}
 						<li>
-							<a href="{{crumb.link}}" class="{{crumb.active?'active':''}}">{{crumb.title}}</a>
+							<a href="{{nav.url}}" class="{{nav.active?'active':''}}">{{nav.full_title}}</a>
 						</li>
-					{% endfor %}
-				</ol>#}
-				<h2>Gå til</h2>
-				<ol class="list-unstyled">
-					{% for nav in nav_top %}
-					<li>
-						<a href="{{nav.url}}" class="{{nav.active?'active':''}}">{{nav.full_title}}</a>
-					</li>
-					{% endfor %}
-					{% for nav in nav_top_right %}
-					<li>
-						<a href="{{nav.url}}" class="{{nav.active?'active':''}}">{{nav.full_title}}</a>
-					</li>
-					{% endfor %}
-
-				</ol>
+						{% endfor %}
+						{% for nav in nav_top_right %}
+						<li>
+							<a href="{{nav.url}}" class="{{nav.active?'active':''}}">{{nav.full_title}}</a>
+						</li>
+						{% endfor %}
+	
+					</ol>
 				</div>
-
 			</div>
 	
 			<div id="pagecontent">
