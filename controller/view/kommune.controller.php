@@ -10,27 +10,6 @@ $DATA['kommune'] = get_option('kommune');
 	the_post();
 	$DATA['page'] = new WPOO_Post( $post );
 	
-	// LOAD POSTS
-    $paged = (get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
-    
-    $posts = query_posts('posts_per_page=7&paged='.$paged);
-    while(have_posts()) {
-       the_post();
-       $DATA['posts'][] = new WPOO_Post($post); 
-    }
-    
-    $npl = get_next_posts_link();
-    if($npl) {
-        $npl = explode('"',get_next_posts_link()); 
-        $DATA['nextpost']=$npl[1];
-    }
-    $ppl = get_previous_posts_link();
-    if($ppl) {
-        $ppl = explode('"',$ppl); 
-        $DATA['prevpost']=$ppl[1];
-    }
-
-
 // INFO OM MØNSTRINGEN
     $pl = new monstring( get_option('pl_id') );
     $monstring = new StdClass();
@@ -77,8 +56,8 @@ $DATA['kommune'] = get_option('kommune');
 	$res = $sql->run();
 	$UKMTV = mysql_num_rows( $res ) > 0 ? $kategori : false;
 
+$posts_per_page = 7;
 // HVILKEN PERIODE ER KOMMUNESIDEN I?      
-
         $utenforsesong = mktime(0,0,0,12,1,get_option('season')-1)>time();
         if (!$pl->registered()) {
             $VIEW = 'kommune_ikke_klar';
@@ -86,6 +65,7 @@ $DATA['kommune'] = get_option('kommune');
             $VIEW = 'kommune_pre_pamelding'; 
         } elseif( time() < $pl->get('pl_deadline') || time() < $pl->get('pl_start') ) {
             $VIEW = 'kommune_pamelding';
+            $posts_per_page = 6;
         } elseif( time() > $pl->get('pl_deadline') && time() < $pl->get('pl_start') ) {
             $VIEW = 'kommune_pre';
         } elseif( time() > $pl->get('pl_start') && time() < $pl->get('pl_stop') ) {
@@ -103,6 +83,27 @@ foreach( $monstring as $key => $val ) {
 // PÅMELDINGSIKONER
 $DATA = array_merge($DATA, $pl->pameldingsikoner());
 		
+		
+	// LOAD POSTS
+    $paged = (get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+    
+    $posts = query_posts('posts_per_page='.$posts_per_page.'&paged='.$paged);
+    while(have_posts()) {
+       the_post();
+       $DATA['posts'][] = new WPOO_Post($post); 
+    }
+    
+    $npl = get_next_posts_link();
+    if($npl) {
+        $npl = explode('"',get_next_posts_link()); 
+        $DATA['nextpost']=$npl[1];
+    }
+    $ppl = get_previous_posts_link();
+    if($ppl) {
+        $ppl = explode('"',$ppl); 
+        $DATA['prevpost']=$ppl[1];
+    }
+
 // PAGE NAV
 
 /*
