@@ -167,7 +167,7 @@ $DATA['breadcrumbs'] = $BC->get();
 
 // Opprinnelig er title page-spesific, uten breadcrumbs. Overskriver dette her
 	$seoTitle = '';
-	foreach( $DATA['breadcrumbs'] as $c ) {
+	foreach( $DATA['breadcrumbs']->crumbs as $c ) {
 		$title = $c->title == 'artikkel' ?  $DATA['post']->title : $c->title;
 		if ($c === end($DATA['breadcrumbs']))
 			$seoTitle .= $title;

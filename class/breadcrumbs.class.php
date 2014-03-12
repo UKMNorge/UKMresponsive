@@ -33,6 +33,9 @@ class crumbs {
 		}
 	}
 	public function get() {
-		return $this->crumbs;
+		if( sizeof( $this->crumbs ) > 1 ) {
+			$this->back = $this->crumbs[ sizeof($this->crumbs)-2 ];
+		}
+		return $this;
 	}
 }
