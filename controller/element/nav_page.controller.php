@@ -59,7 +59,7 @@ switch( get_option('ukm_top_page') ) {
 											   'description'	=> 'Nasjonale prosjekter og satsninger'
 											  );
 */
-		$DATA['page_nav'][] = (object) array( 'url' 			=> $DATA['url']['base'].'/internasjonalt/',
+		$DATA['page_nav'][] = (object) array( 'url' 			=> '//internasjonalt.ukm.no/',
 											   'title'		 	=> 'Internasjonalt',
 											   'icon'			=> 'globe',
 											   'description'	=> 'Alt om UKMs internasjonale utvekslinger'
