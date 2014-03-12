@@ -190,10 +190,8 @@ $DATA['SEO'] = $SEO;
 echo TWIGrender('view/'.$VIEW, object_to_array($DATA),true);
 
 echo TWIGrender('console', $DATA, true);
-/*
 wp_footer();
 if(is_user_logged_in() ) {
 	echo '<style>body {margin-top: 33px;}</style>';
 }
-*/
 die();
