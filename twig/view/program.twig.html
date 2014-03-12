@@ -5,8 +5,8 @@
 	<ul class="list-unstyled">
 	{% for dag, hendelser in program %}
 		<li class="col-xs-12 col-sm-6 col-md-{{12/dag_max_col}}">
-			<div class="well">
-				<h3 class="center">{{dag | dato('l') | capitalize }} <small>{{ dag | dato('d.m') }}</small></h3>
+			<div class="">
+				<h3 class="">{{dag | dato('l') | capitalize }} <small>{{ dag | dato('d.M') }}</small></h3>
 					<ol class="list-unstyled">
 						{% for hendelse in hendelser %}
 							<li class="container">
