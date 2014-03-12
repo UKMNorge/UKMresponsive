@@ -63,7 +63,7 @@ $posts_per_page = 7;
             $VIEW = 'kommune_ikke_klar';
         } else if ($utenforsesong) {
             $VIEW = 'kommune_pre_pamelding'; 
-        } elseif( time() < $pl->get('pl_deadline') || time() < $pl->get('pl_start') ) {
+        } elseif( time() < $pl->get('pl_deadline') || time() < $pl->get('pl_deadline2') ) {
             $VIEW = 'kommune_pamelding';
             $posts_per_page = 6;
         } elseif( time() > $pl->get('pl_deadline') && time() < $pl->get('pl_start') ) {
