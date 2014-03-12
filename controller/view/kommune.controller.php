@@ -72,7 +72,7 @@ $DATA['kommune'] = get_option('kommune');
 // HAR UKM-TV-SIDE? (opplastede videoer?)
 	$kategori = ''. $pl->g('pl_name').' '.$pl->g('season');
 	$sql = new SQL("SELECT `tv_id` FROM `ukm_tv_files`
-					WHERE `tv_category` LIKE '#kategori%'",
+					WHERE `tv_category` LIKE '#kategori'",
 					array('kategori' => $kategori) );
 	$res = $sql->run();
 	$UKMTV = mysql_num_rows( $res ) > 0 ? $kategori : false;
