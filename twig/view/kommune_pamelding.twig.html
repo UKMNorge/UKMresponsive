@@ -40,9 +40,9 @@
                 {% if monstring.frist_1_aktiv %}
 	                {% if monstring.kommuner|length > 1 %}
 	                    
-	                    <a onclick="kommuneValg.vis('{{ ikon.name }}', '{{ monstring.pl_id }}', '{{ ikon.ico }}', {{monstring.kommuner | json_encode()}} )">
+	                    <a onclick="kommuneValg.vis('kontaktperson', '{{ ikon.name }}', '{{ monstring.pl_id }}', '{{ ikon.ico }}', {{monstring.kommuner | json_encode()}} )">
 	                {% else %}
-	                    <a href="http://pamelding.ukm.no/quickstart.php?steg=kontaktperson&type={{ ikon.ico }}&kommune={{ monstring.kommuner[0].id }}&pl_id={{monstring.pl_id}}">
+	                    <a href="http://pamelding.ukm.no/quickstart.php?steg=kontaktperson&type={{ ikon.ico }}&kommune={{ monstring.kommuner[0].id }}&plid={{monstring.pl_id}}" target="_blank">
 	                {% endif %}
 	                <img src="{{ ikon.ico_url }}" alt="{{ ikon.name }}" style="width: 90%"> 
 	                <small>{{ ikon.name|raw }}</small>
@@ -65,9 +65,9 @@
             <li class="col-xs-3 col-sm-2 col-md-3 col-lg-2 centered">
                 {% if monstring.frist_2_aktiv %}
 	                {% if monstring.kommuner|length > 1 %}
-	                    <a onclick="kommuneValg.vis('{{ ikon.name }}', '{{ monstring.pl_id }}', '{{ ikon.ico }}', {{monstring.kommuner | json_encode()}} )">
+	                    <a onclick="kommuneValg.vis('profilside_enk', '{{ ikon.name }}', '{{ monstring.pl_id }}', '{{ ikon.ico }}', {{monstring.kommuner | json_encode()}} )">
 	                {% else %}
-	                    <a href="http://pamelding.ukm.no/quickstart.php?steg=kontaktperson&type={{ ikon.ico }}&kommune={{ monstring.kommuner[0].id }}&pl_id={{monstring.pl_id}}">
+	                    <a href="http://pamelding.ukm.no/quickstart.php?steg=profilside_enk&type={{ ikon.ico }}&kommune={{ monstring.kommuner[0].id }}&plid={{monstring.pl_id}}" target="_blank">
 	                {% endif %}
 	                <img src="{{ ikon.ico_url }}" alt="{{ ikon.name }}" style="width: 90%"> 
 	                <small>{{ ikon.name|raw }}</small>

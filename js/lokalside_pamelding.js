@@ -2,14 +2,14 @@ var kommuneValg = kommuneValg || {};
 
 kommuneValg.gammelHtml = "",
 kommuneValg.nyHtml =  "",
-kommuneValg.vis = function(kategori, pl_id, ico, kommuner ) {
+kommuneValg.vis = function(steg, kategori, pl_id, ico, kommuner ) {
     kommuneValg.gammelHtml = jQuery('#paamelding_container').html();
     
     kommuneValg.nyHtml = '<h4>Hvor vil du delta med '+kategori.toString().toLowerCase()+'?</h4>';
     kommuneValg.nyHtml += '<ul>';
     
     kommuner.forEach(function(kommune) {
-        kommuneValg.nyHtml += '<a href="http://pamelding.ukm.no/quickstart.php?steg=kontaktperson&type=' + ico + '&kommune=' + kommune.id + '&pl_id=' + pl_id + '"><li>'+ kommune.name +'</li></a>';
+        kommuneValg.nyHtml += '<a href="http://pamelding.ukm.no/quickstart.php?steg='+ steg +'&type=' + ico + '&kommune=' + kommune.id + '&plid=' + pl_id + '" target="_blank"><li>'+ kommune.name +'</li></a>';
     });
     
     kommuneValg.nyHtml += '</ul>';
