@@ -175,7 +175,7 @@ $DATA['breadcrumbs'] = $BC->get();
 	foreach( $DATA['breadcrumbs']->crumbs as $c ) {
 		$title = $c->title == 'artikkel' ?  $DATA['post']->title : $c->title;
 		
-		if ($c === end($DATA['breadcrumbs']))
+		if ($c === end($DATA['breadcrumbs']->crumbs))
 			$seoTitle .= $title;
 		else 
 			$seoTitle .= $title .' &raquo; ';
