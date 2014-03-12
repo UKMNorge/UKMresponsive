@@ -16,28 +16,18 @@
     	<p class="centered">Fra 1. desember kan du melde deg på med</p>
         <ul class="list-inline col-xs-12 pameldingsikoner">
         {% for ikon in ikoner_tittel %}
-            <li class="col-xs-3 col-sm-2 col-md-3 col-lg-3 ikon centered">
+            <li class="col-xs-4 col-sm-2 col-md-3 col-lg-3 ikon centered">
                 <div class="col-xs-10 col-xs-offset-1"><img src="{{ ikon.ico_url_gray }}" alt="{{ ikon.name }}" style="width: 95%"> </div>
                 <div class="centered"><small>{{ ikon.name|raw }}</small></div>
             </li>
-            {% if loop.index is divisibleby(4) %}
-                <li class="clearfix visible-xs hidden-sm visible-md visible-lg"></li>
-            {% elseif loop.index is divisibleby(6) %}
-                <li class="clearfix hidden-xs visible-sm hidden-md hidden-lg"></li>
-            {% endif %}
-			{% set firstIndex = loop.index %}
+            {% embed "element/monstring/pameldingsikoner_clearfix.twig.html" with {'currentIndex': loop.index} %}{% endembed %}
         {% endfor %}
         {% for ikon in ikoner_tittel_los %}
-            <li class="col-xs-3 col-sm-2 col-md-3 col-lg-3 ikon centered">
+            <li class="col-xs-4 col-sm-2 col-md-3 col-lg-3 ikon centered">
                 <div class="col-xs-10 col-xs-offset-1"><img src="{{ ikon.ico_url_gray }}" alt="{{ ikon.name }}" style="width: 95%"> </div>
                 <div class="centered"><small>{{ ikon.name|raw }}</small></div>
             </li>
-            {% if (firstIndex+loop.index) is divisibleby(4) %}
-                <li class="clearfix visible-xs hidden-sm visible-md visible-lg"></li>
-            {% elseif (firstIndex+loop.index) is divisibleby(6) %}
-                <li class="clearfix hidden-xs visible-sm hidden-md hidden-lg"></li>
-            {% endif %}
-
+            {% embed "element/monstring/pameldingsikoner_clearfix.twig.html" with {'currentIndex': (loop.index+ikoner_tittel|length)} %}{% endembed %}
         {% endfor %}
 
         </ul> 

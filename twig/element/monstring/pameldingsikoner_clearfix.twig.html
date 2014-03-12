@@ -1,0 +1,9 @@
+{% if currentIndex is divisibleby(3) %}
+    <li class="clearfix visible-xs hidden-sm hidden-md hidden-lg"></li>
+{% endif %}
+{% if currentIndex is divisibleby(4) %}
+    <li class="clearfix hidden-xs hidden-sm visible-md visible-lg"></li>
+{% endif %}
+{% if currentIndex is divisibleby(6) %}
+    <li class="clearfix hidden-xs visible-sm hidden-md hidden-lg"></li>
+{% endif %}

@@ -19,6 +19,8 @@
 {% endblock %}
 
 {% set posts_include_top_post_in_full_list = true %}
+{% block post_top_desktop_text %}{% endblock %}
+{% block post_top_mobile %}{% endblock %}
 
 {% block hovedfokus %}
     {# Registration #}
@@ -36,7 +38,7 @@
 	   	</li>
    		
         {% for ikon in ikoner_tittel %}
-            <li class="col-xs-3 col-sm-2 col-md-3 col-lg-2 centered">
+            <li class="col-xs-4 col-sm-2 col-md-2 col-lg-2 centered">
                 {% if monstring.frist_1_aktiv %}
 	                {% if monstring.kommuner|length > 1 %}
 	                    
@@ -52,17 +54,13 @@
 					<small>{{ ikon.name|raw }}</small>
 	            {% endif %}
             </li>
-            {% if loop.index is divisibleby(4) %}
-                <li class="clearfix visible-xs hidden-sm visible-md hidden-lg"></li>
-            {% endif %}
-            {% if loop.index is divisibleby(6) %}
-                <li class="clearfix hidden-xs visible-sm hidden-md visible-lg"></li>
-            {% endif %}
+
+            {% embed "element/monstring/pameldingsikoner_clearfix_large_container.twig.html" with {'currentIndex': loop.index} %}{% endembed %}
 
         {% endfor %}
    		
         {% for ikon in ikoner_tittel_los %}
-            <li class="col-xs-3 col-sm-2 col-md-3 col-lg-2 centered">
+            <li class="col-xs-4 col-sm-2 col-md-2 col-lg-2 centered">
                 {% if monstring.frist_2_aktiv %}
 	                {% if monstring.kommuner|length > 1 %}
 	                    <a onclick="kommuneValg.vis('profilside_enk', '{{ ikon.name }}', '{{ monstring.pl_id }}', '{{ ikon.ico }}', {{monstring.kommuner | json_encode()}} )">
@@ -77,13 +75,7 @@
 					<small>{{ ikon.name|raw }}</small>
 	            {% endif %}
             </li>
-            {% if loop.index is divisibleby(4) %}
-                <li class="clearfix visible-xs hidden-sm visible-md hidden-lg"></li>
-            {% endif %}
-            {% if loop.index is divisibleby(6) %}
-                <li class="clearfix hidden-xs visible-sm hidden-md visible-lg"></li>
-            {% endif %}
-
+            {% embed "element/monstring/pameldingsikoner_clearfix_large_container.twig.html" with {'currentIndex': (loop.index+ikoner_tittel|length)} %}{% endembed %}
         {% endfor %}
 
         </ul> 

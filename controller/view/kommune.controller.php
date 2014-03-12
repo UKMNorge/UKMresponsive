@@ -87,10 +87,6 @@ $DATA['kommune'] = get_option('kommune');
             $VIEW = 'kommune_post';
         }
     
-// DEBUG
-$VIEW = 'kommune_pamelding';
-
-
 // PÅMELDINGSIKONER
 $DATA = array_merge($DATA, $pl->pameldingsikoner());
 		
