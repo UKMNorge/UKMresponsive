@@ -61,6 +61,8 @@ $DATA['fylke'] = get_option('fylke');
 
 // INFO OM LOKALMØNSTRINGER
 	$kommuner_i_fylket = $pl->get('kommuner_i_fylket');
+	var_dump( $pl );
+	var_dump( $kommuner_i_fylket );
 	$forste = 0;
 	$siste = 0;
 	$siste_pamelding = 0;
