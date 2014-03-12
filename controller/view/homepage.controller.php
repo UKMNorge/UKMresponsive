@@ -5,7 +5,7 @@ $DATA['posts'] = array();
 the_post();
 $DATA['page'] = new WPOO_Post( $post );
 
-$paged = (get_query_var( 'page' ) ) ? get_query_var( 'page' ) : 1;
+$paged = (get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 
 $posts = query_posts('posts_per_page=7&paged='.$paged);
 
