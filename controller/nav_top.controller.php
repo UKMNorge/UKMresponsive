@@ -41,7 +41,7 @@ $DATA['nav_top'][] = (object) array('url' 		=> '//'.$_SERVER['HTTP_HOST'].'/amba
 								    'active'	=> $active == 'ambassadorer');
 */
 								    
-$DATA['nav_top_right'][] = (object) array('url' 		=> '//arrangor.ukm.no/',
+$DATA['nav_top_right'][] = (object) array('url' => '//ukm.no/wp-login.php',
 									'title' 	=> 'for arrangører',
 									'full_title'=> 'UKM for arrangører',
 								    'active'	=> $active == 'arrangorer');
