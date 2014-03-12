@@ -1,11 +1,9 @@
 <script>
 	console.group('PHP CONSOLE');
 	{% for group, logs in console %}
-		console.group( '{{group}}' );
 		{% for log in logs %}
-			console.log('{{log|raw}}');
+			console.log('{{group}}: {{log|raw}}');
 		{% endfor %}
-		console.groupEnd();
 	{% endfor %}
 	console.groupEnd();
 </script>

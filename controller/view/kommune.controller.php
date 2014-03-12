@@ -94,6 +94,11 @@ $DATA['kommune'] = get_option('kommune');
         }
     
 $DATA['console']['kommune_view'][] = $VIEW;
+foreach( $monstring as $key => $val ) {
+	if(!is_object( $val ) ) {
+		$DATA['console'][$key][] = (string) $val;
+	}
+}
 // PÅMELDINGSIKONER
 $DATA = array_merge($DATA, $pl->pameldingsikoner());
 		
