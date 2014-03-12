@@ -34,12 +34,3 @@ function registerUKMTV() {
 	wp_oembed_add_provider( 'http://tv.ukm.no/*', 'http://oembed.ukm.no/' );
 }
 wp_oembed_add_provider( 'http://tv.ukm.no/*', 'http://oembed.ukm.no/' );
-add_filter( 'redirect_canonical', 'my_disable_redirect_canonical' );
-
-function my_disable_redirect_canonical( $redirect_url ) {
-
-	if ( is_singular( 'client' ) )
-		$redirect_url = false;
-
-	return $redirect_url;
-}
