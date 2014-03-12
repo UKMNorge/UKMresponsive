@@ -3,7 +3,7 @@
 $pl = new monstring( get_option('pl_id') );
 
 $monstring = new stdClass();
-$monstring->navn = $pl->g('pl_name');
+$monstring->navn = str_replace('UKM','',$pl->g('pl_name'));
 $monstring->season = $pl->g('season');
 $monstring->start = $pl->starter();
 $monstring->slutt = $pl->slutter();
