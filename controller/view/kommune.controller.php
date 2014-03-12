@@ -45,6 +45,12 @@ $DATA['kommune'] = get_option('kommune');
     $monstring->frist_2 = $pl->get('pl_deadline2');
     $monstring->frist_2_aktiv = $pl->subscribable('pl_deadline2');
     $monstring->bandtypesdetails = $pl->getAllBandTypesDetailedNew();
+    
+    $fpl =  $pl->videresendTil(true);
+    $monstring->fylke = new stdClass();
+    $monstring->fylke->navn = $fpl->g('pl_name');
+    $monstring->fylke->link = $fpl->g('link');
+    
     $DATA['monstring'] = $monstring;
     
 	$kontaktpersoner = $pl->kontakter();
@@ -136,4 +142,10 @@ $DATA['page_nav'][] = (object) array( 'url' 			=> '#kontaktpersoner',
                                       'description' 	=> 'Har du spørsmål om UKM i '. $pl->get('pl_name').'? Disse kan hjelpe!',
 										   'id'			=> 'show_kontaktpersoner'
                                   );
+$DATA['page_nav'][] = (object) array( 'url' 			=> $monstring->fylke->link,
+                                      'title' 			=> 'UKM '. $monstring->fylke->navn,
+                                      'icon'  			=> 'maps',
+                                      'description' 	=> 'Info om UKM i '. $monstring->fylke->navn
+                                  );
+
 ?>
