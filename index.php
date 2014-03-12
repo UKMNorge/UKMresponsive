@@ -174,12 +174,16 @@ $DATA['breadcrumbs'] = $BC->get();
 	$seoTitle = '';
 	foreach( $DATA['breadcrumbs']->crumbs as $c ) {
 		$title = $c->title == 'artikkel' ?  $DATA['post']->title : $c->title;
+		
+		var_dump( $c );
+		var_dump( end( $DATA['breadcrumbs'] ));
 		if ($c === end($DATA['breadcrumbs']))
 			$seoTitle .= $title;
 		else 
 			$seoTitle .= $title .' &raquo; ';
 	}
 	$SEO->title( $seoTitle );
+
 $DATA['SEO'] = $SEO;
 echo TWIGrender('view/'.$VIEW, object_to_array($DATA),true);
 
