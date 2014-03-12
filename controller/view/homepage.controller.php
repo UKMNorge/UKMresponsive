@@ -14,6 +14,11 @@ if ( get_query_var('paged') ) {
 }
 $posts = query_posts('posts_per_page=7&paged='.$paged);
 
+if( $_SERVER['REMOTE_ADDR'] == '81.0.146.162') {
+	var_dump( $_SERVER );
+	die();
+}
+
 while(have_posts()) {
    the_post();
    $DATA['posts'][] = new WPOO_Post($post); 
