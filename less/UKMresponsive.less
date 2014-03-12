@@ -1,0 +1,137 @@
+
+@clr-ukm-green: #6dc6c1;
+@clr-ukm-green-l1: lighten(spin(@clr-ukm-green,5),5%);
+@clr-ukm-green-l2: lighten(spin(@clr-ukm-green,5),10%);
+@clr-ukm-green-l3: lighten(spin(@clr-ukm-green,5),30%);
+@clr-ukm-green-d1: darken(spin(@clr-ukm-green,5),5%);
+@clr-ukm-green-d2: darken(spin(@clr-ukm-green,5),10%);
+
+.btn-default,
+button.btn-default {
+	background: @clr-ukm-green-l3 !important;
+}
+.btn-success {
+	background: @clr-ukm-green !important;
+}
+
+.btn-default a, .btn-default a:visited,
+a.btn-default, a.btn-default:visited,
+.btn-success a, .btn-success a:visited,
+a.btn-success, a.btn-success:visited,
+button.btn-default {
+	font-weight: bold !important;
+	color: #1a1919 !important;
+}
+
+@color-clouds:			#ECF0F1;
+@color-silver: 			#BDC3C7;
+@color-concrete:		#95A5A6;
+@color-asbestos:	 	#7F8C8D;
+@color-wet-asphalt:		#34495E;
+@color-midnight-blue:	#2C3E50;
+@color-belize-hole:		#2980B9;
+
+@link-color: 			@clr-ukm-green;
+@link-color-hover:		@clr-ukm-green-d2;
+@link-color-active:		@clr-ukm-green-d2;
+
+
+@import "header.less";
+@import "base.less";
+@import "byline.less";
+@import "post.less";
+@import "wpshit.less";
+@import "internasjonalt.less";
+@import "infosquares.less";
+@import "flatui.less";
+@import "footer.less";
+@import "facebook.less";
+@import "ambassador.less";
+@import "monstring.less";
+@import "dinmonstring.less";
+@import "innslag.less";
+@import "breadcrumbs.less";
+@import "offcanvas.css";
+
+
+@media (max-width: 768px) {
+	body {
+		font-family: 'Open Sans', sans-serif;
+		font-size: 16px;
+		line-height: 25px;
+		color: #444;
+	}
+}
+
+.center {
+	text-align: center;
+}
+
+/* SLIDER */
+#slider {
+	margin-bottom: 10px;
+}
+
+/* NEWS */
+.news {
+	margin-top: 20px;
+}
+.news h2 {
+	margin-top: 0px;
+}
+.news img {
+	width: 100%;
+}
+
+/* FRAME */
+#logo {
+	margin-bottom: 20px;
+}
+#logo img {
+	width: 100%;
+}
+	
+#top {
+	margin: 0 auto;
+}
+
+#content {
+	margin: 0 auto;
+}
+
+.center {
+	text-align: center;
+}
+
+.clickable {
+	cursor: pointer;
+}
+
+a > h2 {
+	color: #333;
+	font-weight: 400;
+	font-size: 26px;
+	padding: 3px 0px 3px 0px;
+	margin: 0px;
+}
+
+a {
+	color: @link-color;
+}
+a:hover, a:active, a:visited {
+	color: @link-color-hover;
+	text-decoration: none;
+}
+
+#ico_international {
+	margin-top: 20px;
+}
+
+#ukm_page_post_content {
+	margin: 20px auto 20px auto;
+}
+
+.separator_line {
+	border-bottom: 1px solid #D8D8D8;
+	margin: 15px 0px 5px 0px;
+}
