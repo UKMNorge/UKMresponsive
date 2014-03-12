@@ -26,7 +26,7 @@ if( isset( $_GET['type'] ) ) {
 					WHERE `bt_id` = '#id'",
 				   array('id' => $_GET['type'])
 				  );
-	$DATA['active_filter'] = strtolower( SMAS_encoding($sql->run('field','bt_name')) );
+	$DATA['active_filter'] = strtolower( SMAS_encoding_pameldte($sql->run('field','bt_name')) );
 	$DATA['active_filter_id'] = $_GET['type'];
 	$DATA['list_filtered'] = true;
 	$SEO->set('description', 'Viser alle '. $DATA['active_filter'].'-innslag');
@@ -64,7 +64,7 @@ foreach( $alle_innslag as $innslag ) {
 $DATA['typer'] = $typer;
 
 
-function SMAS_encoding($content) {
+function SMAS_encoding_pameldte($content) {
 	$characterEncoding = mb_detect_encoding($content."a", 'UTF-8, UTF-16, ISO-8859-1, ISO-8859-15, Windows-1252, ASCII');
 	switch ($characterEncoding) {
 	 case "UTF-8":
