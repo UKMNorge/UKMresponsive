@@ -28,6 +28,8 @@ require_once('functions_theme.php');
 	$DATA['url']['blog']		= get_bloginfo('url').'/';
 	$DATA['url']['current']		= get_permalink();
 
+	$DATA['console'] = array();
+
 	$DATA['placeholder']['post'] = THEME_DEFAULT_IMAGE;
 	require_once('class/seo.class.php');
 	$SEO = new SEO( $DATA['url']['current'] );
@@ -178,6 +180,8 @@ $DATA['breadcrumbs'] = $BC->get();
 	$SEO->title( $seoTitle );
 $DATA['SEO'] = $SEO;
 echo TWIGrender('view/'.$VIEW, object_to_array($DATA),true);
+
+echo TWIGrender('console', $DATA, true);
 /*
 wp_footer();
 if(is_user_logged_in() ) {
