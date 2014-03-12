@@ -1,6 +1,8 @@
 {% extends "layout.twig.html" %}
 
 {% block content %}
+	{% embed "element/backtoUKM.twig.html" %}{% endembed %}
+
 	<h2>{{hendelse.navn}} <small>{{hendelse.start | dato('l d.M')}} kl.{{hendelse.start | dato('H:i' )}}</small></h2>
 	<p>{{hendelse.sted}}</p>
 	

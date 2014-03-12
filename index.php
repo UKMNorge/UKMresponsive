@@ -25,7 +25,7 @@ require_once('functions_theme.php');
 	$DATA = array();
 	$DATA['url']['base']		= 'http://'. $_SERVER['HTTP_HOST'];
 	$DATA['url']['theme_dir'] 	= get_stylesheet_directory_uri().'/';
-	$DATA['url']['blog']		= get_option('site_url');
+	$DATA['url']['blog']		= get_bloginfo('url').'/';
 	$DATA['url']['current']		= get_permalink();
 
 	require_once('class/seo.class.php');
