@@ -9,6 +9,7 @@ setlocale(LC_ALL, 'nb_NO', 'nb', 'no');
 
 
 define('THEME_PATH', get_theme_root().'/UKMresponsive/' );
+define('THEME_DEFAULT_IMAGE', 'http://grafikk.ukm.no/placeholder/post_placeholder.png');
 define('TWIG_PATH', __DIR__ );
 
 require_once('vendor/autoload.php');
