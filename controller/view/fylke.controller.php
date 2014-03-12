@@ -11,8 +11,13 @@ $DATA['fylke'] = get_option('fylke');
 	$DATA['page'] = new WPOO_Post( $post );
 	
 	// LOAD POSTS
-    $paged = (get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
-    
+	if ( get_query_var('paged') ) {
+	    $paged = get_query_var('paged');
+	} elseif ( get_query_var('page') ) {
+	    $paged = get_query_var('page');
+	} else {
+	    $paged = 1;
+	}
     $posts = query_posts('posts_per_page=7&paged='.$paged);
     while(have_posts()) {
        the_post();
@@ -120,16 +125,6 @@ $DATA['fylke'] = get_option('fylke');
 	}
 
 $SEO->title('UKM '. $monstring->navn);
-
-switch( $VIEW ) {
-	case 'fylke_lokal':
-		break;
-}
-
-// DEBUG
-$VIEW = 'fylke_pre';
-
-
 
 /*
     $DATA['page_nav'][] = (object) array( 'url' => 'bilder/',
