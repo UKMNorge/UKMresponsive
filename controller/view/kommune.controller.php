@@ -85,7 +85,7 @@ $DATA['kommune'] = get_option('kommune');
             $VIEW = 'kommune_pre_pamelding'; 
         } elseif( time() < $pl->get('pl_deadline') || time() < $pl->get('pl_start') ) {
             $VIEW = 'kommune_pamelding';
-        } elseif( time() > $pl->get('pl_deadline') && time() > $pl->get('pl_start') ) {
+        } elseif( time() > $pl->get('pl_deadline') && time() < $pl->get('pl_start') ) {
             $VIEW = 'kommune_pre';
         } elseif( time() > $pl->get('pl_start') && time() < $pl->get('pl_stop') ) {
             $VIEW = 'kommune_aktiv';
