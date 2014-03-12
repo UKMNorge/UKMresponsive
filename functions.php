@@ -35,6 +35,7 @@ function registerUKMTV() {
 }
 wp_oembed_add_provider( 'http://tv.ukm.no/*', 'http://oembed.ukm.no/' );
 
-update_option('posts_per_page', 5);
-update_option('show_on_front', 'posts');
-update_option('page_on_front',2);
+// SIKRE HOMEPAGE PAGINATION
+	update_option('posts_per_page', 5);
+	update_option('show_on_front', 'posts');
+	update_option('page_on_front',2);
