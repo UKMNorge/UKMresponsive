@@ -26,7 +26,7 @@ if( isset( $_GET['type'] ) ) {
 					WHERE `bt_id` = '#id'",
 				   array('id' => $_GET['type'])
 				  );
-	$DATA['active_filter'] = strtolower( $sql->run('field','bt_name') );
+	$DATA['active_filter'] =  $sql->run('field','bt_name');
 	$DATA['active_filter_id'] = $_GET['type'];
 	$DATA['list_filtered'] = true;
 	$SEO->set('description', 'Viser alle '. $DATA['active_filter'].'-innslag');
