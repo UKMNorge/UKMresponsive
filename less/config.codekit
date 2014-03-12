@@ -270,7 +270,7 @@
 		},
 	"\/UKMresponsive.less": {
 		"allowInsecureImports": 0,
-		"createSourceMap": 1,
+		"createSourceMap": 0,
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
@@ -305,6 +305,14 @@
 		"strictImports": 0,
 		"strictMath": 0,
 		"strictUnits": 0
+		},
+	"\/~\/WebServer\/ukm_local\/wp-content\/themes\/UKMresponsive\/css\/UKMresponsive.css": {
+		"fileType": 16,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/~\/WebServer\/ukm_local\/wp-content\/themes\/UKMresponsive\/css\/UKMresponsive.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsSetByUser": 0
 		}
 	},
 "hooks": [
