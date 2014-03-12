@@ -26,7 +26,7 @@
 	jQuery(document).on('change','#select_lokalmonstring', function(){
 	  selected = jQuery(this).val();
 	  if( selected != undefined && selected != null) {
-	    window.location.href = selected.replace('ukm.no','ukm.local');
+	    window.location.href = selected;
 	  }
 	});
 	

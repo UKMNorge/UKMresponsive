@@ -167,7 +167,7 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/UKMresponsive.js",
-		"outputAbbreviatedPath": "\/jsmin\/UKMresponsive-ck.js",
+		"outputAbbreviatedPath": "min\/UKMresponsive-ck.js",
 		"outputPathIsSetByUser": 1,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
