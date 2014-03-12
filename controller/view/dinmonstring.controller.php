@@ -37,6 +37,8 @@ class DinMonstringController {
             $data['findme'] = true;
         else 
             $data['findme'] = false;
+
+        $data['findme'] = false;
         
         return $data;
     }
