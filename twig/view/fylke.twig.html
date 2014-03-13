@@ -58,6 +58,12 @@
 					</ol>
 		    	</div>
 	    	{% endblock %}
+			{% if stat_pameldte is defined %}
+			<div class="centered pameldte visible-xs visible-sm">
+				<div class="over">{{stat_pameldte.tall}}</div>
+				<div class="under">Påmeldte til UKM {{stat_pameldte.til}}</div>
+			</div>
+			{% endif %}
     	</div>
 		{# END OF PRE_MENY, MENY, POST_MENY #}
 		<div class="clearfix"></div>
