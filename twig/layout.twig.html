@@ -11,7 +11,7 @@
 		<link rel="stylesheet" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600,700' type='text/css'>		
 		<link href="{{url.theme_dir}}/vendor/bootstrap/3.0.1/css/bootstrap.css" rel="stylesheet">
 
-		<link href="{{ url.theme_dir }}css/UKMresponsive.css" rel="stylesheet">
+		<link href="{{ url.theme_dir }}css/UKMresponsive.css?v2" rel="stylesheet">
 	
 		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 		<script type="text/javascript" src="{{ url.theme_dir }}jsmin/jquery.timeago-ck.js"></script>
@@ -109,6 +109,13 @@
 				{% block jumbo %}
 				<div class="ukm_page_jumbo">
 					<div class="container">
+						{% if stat_pameldte is defined %}
+						<div class="pull-right pameldte hidden-xs hidden-sm">
+							<div class="over">{{stat_pameldte.tall}}</div>
+							<div class="under">Påmeldte til UKM {{stat_pameldte.til}}</div>
+						</div>
+						{% endif %}
+
 						{% if jumbo.image is defined %}
 							<img class="img img-circle pull-left" src="{{jumbo.image}}" id="ukm_page_jumbo_image" />
 						{% endif %}

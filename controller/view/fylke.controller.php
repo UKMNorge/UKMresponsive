@@ -178,3 +178,11 @@ $SEO->description( $description );
 										   'description'	=> 'Har du spørsmål om UKM i '. $pl->get('pl_name').'? Disse kan hjelpe!',
 										   'id'				=> 'show_kontaktpersoner'
 										  );
+
+require_once('UKM/statistikk.class.php');
+$stat = $pl->statistikk();										  
+$total = $stat->getTotal(get_option('season'));
+$stat = new stdClass();
+$stat->tall 	= $total['persons'];
+$stat->til		= 'i '. $monstring->navn;
+$DATA['stat_pameldte'] = $stat; 

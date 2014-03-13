@@ -98,6 +98,9 @@ require_once('functions_theme.php');
 			require_once('controller/view/homepage.controller.php');
 			$VIEW = 'homepage';
 		}
+		if( get_option('ukm_top_page') == 'ungdom' ) {
+			require_once('controller/view/homepage_ungdom.controller.php');
+		}
 	} elseif( is_page() ) {
 		$viseng = get_post_meta($post->ID, 'UKMviseng', true);
 		switch ( $viseng ) {

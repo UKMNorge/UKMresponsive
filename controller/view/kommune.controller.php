@@ -160,4 +160,12 @@ if( $pl->registered() ) {
 	$description .= ' - '. $monstring->starter_tekst.', '. $monstring->sted;
 }
 $SEO->description( $description );
-?>
+
+
+require_once('UKM/statistikk.class.php');
+$stat = $pl->statistikk();										  
+$total = $stat->getTotal(get_option('season'));
+$stat = new stdClass();
+$stat->tall 	= $total['persons'];
+$stat->til		= $monstring->navn;
+$DATA['stat_pameldte'] = $stat; 

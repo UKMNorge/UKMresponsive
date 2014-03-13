@@ -16,6 +16,12 @@
 				{% endfor %}
 				</ol>
 			</div>
+			{% if stat_pameldte is defined %}
+			<div class="centered pameldte visible-xs visible-sm">
+				<div class="over">{{stat_pameldte.tall}}</div>
+				<div class="under">Påmeldte til UKM {{stat_pameldte.til}}</div>
+			</div>
+			{% endif %}
 		</div>
 		<div class="clearfix"></div>
 		<div class="col-xs-12 hidden-xs hidden-sm post_top">		
