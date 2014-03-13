@@ -27,7 +27,7 @@ function processPhotos(photos, containerSelector){
 	// divs to contain the images
 //	var d = $("div.picrow");
 	parent_container = jQuery( containerSelector );
-	parent_container.parents('div.removePadding').css('padding', '10px');
+	parent_container.parents('div.removePadding').css('padding', '5px');
 	var d = parent_container.find('.grid_load');
 		
 	// get row width - this is fixed.
@@ -92,7 +92,7 @@ function processPhotos(photos, containerSelector){
 			
 			var img = $('<img/>', {'class': "album_image clickable", 
 								   'src': photo.source,
-								   'width': wt,
+								   'width': 'auto',
 								   'height': ht,
 								   'data-link': photo.link}).css("margin", border + "px");
 			var link = $('<a/>', {'href': photo.link}).html(img);

@@ -7,3 +7,5 @@ vendor/composer
 vendor/mobiledetect
 
 less/~
+
+js/config.codekit

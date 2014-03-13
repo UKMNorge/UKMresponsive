@@ -142,6 +142,16 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+	"\/jsmin\/image_grid-ck.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/jsmin\/image_grid-ck.js",
+		"outputAbbreviatedPath": "\/jsmin\/min\/image_grid-ck-ck.js",
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
 	"\/less.min.js": {
 		"fileType": 64,
 		"ignore": 0,
