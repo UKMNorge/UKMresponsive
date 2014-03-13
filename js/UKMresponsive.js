@@ -45,7 +45,7 @@
 			});
 			innslag.trigger('showInnslag');
 		}
-		jQuery(function($) {$(".swipebox").swipebox();});
+		//jQuery(function($) {$(".swipebox").swipebox();});
 	});
 	
 	
