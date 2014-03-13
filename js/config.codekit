@@ -19,7 +19,7 @@
 		"inputAbbreviatedPath": "\/image_grid.js",
 		"outputAbbreviatedPath": "min\/image_grid-ck.js",
 		"outputPathIsSetByUser": 1,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/iview\/iview.js": {
@@ -159,6 +159,16 @@
 		"inputAbbreviatedPath": "\/lokalside_pamelding.js",
 		"outputAbbreviatedPath": "\/jsmin\/lokalside_pamelding-ck.js",
 		"outputPathIsSetByUser": 1,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/min\/image_grid-ck.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/min\/image_grid-ck.js",
+		"outputAbbreviatedPath": "\/min\/min\/image_grid-ck-ck.js",
+		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
