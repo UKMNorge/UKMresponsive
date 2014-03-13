@@ -79,15 +79,15 @@ require_once('functions_theme.php');
 		require('controller/element/jumbo.controller.php');
 */
 		
-		if( $_SERVER['REMOTE_ADDR'] == '81.0.146.162' || $_SERVER['REMOTE_ADDR'] == '127.0.0.1' ) {
-			$name			= get_bloginfo('name');
-			$description	= get_bloginfo('description');
-			
-			$SEO->title( $name );
-			$SEO->description( $description );
-			
-			$DATA['jumbo'] = (object) array('header' => $name, 'content' => $description);
-		}
+		#if( $_SERVER['REMOTE_ADDR'] == '81.0.146.162' || $_SERVER['REMOTE_ADDR'] == '127.0.0.1' ) {
+		$name			= get_bloginfo('name');
+		$description	= get_bloginfo('description');
+		
+		$SEO->title( $name );
+		$SEO->description( $description );
+		
+		$DATA['jumbo'] = (object) array('header' => $name, 'content' => $description);
+		#}
 
 		if( get_option('ukm_top_page') == 'ambassadorer' ) {
 			require_once('controller/view/homepage.controller.php');
