@@ -166,7 +166,7 @@ require_once('functions_theme.php');
 				require_once('controller/view/post.controller.php');
 				$VIEW = 'page';
 				$BC->add( $DATA['url']['current'], $DATA['post']->title);
-				$SEO->post( $post );
+				$SEO->post( $DATA['post'] );
 				break;
 		}
 		if(isset( $DATA['jumbo'] ) && $BC->addJumbo )
