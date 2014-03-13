@@ -112,13 +112,7 @@
 					{% if innslag.bilder.kommune is defined %}
 						<div class="clearfix"></div>
 						<h6>Lokalmønstringen</h6>
-						<div class="row">
-							{% for bilde in innslag.bilder.kommune %}
-							<a class="swipebox" href="{{bilde.full}}" rel="gallery-{{innslag.ID}}" title="{{ bilde.foto is not empty ? 'Foto: ' + bilde.foto : '' }}">
-								<img src="{{bilde.full}}" class="col-xs-6 col-sm-4 col-md-3 col-lg-2" />
-							</a>
-							{% endfor %}
-						</div>
+						{% embed "pre-render/image_album.twig.html" with{'photos': innslag.bilder.kommune, 'album_id': 'kommune'~innslag.ID, 'selector': 'innslag'} %}{% endembed %}
 					{% endif %}
 					
 					{% if innslag.bilder.fylke is defined %}
