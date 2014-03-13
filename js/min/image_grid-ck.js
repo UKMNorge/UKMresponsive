@@ -105,11 +105,9 @@ function processPhotos(photos, containerSelector){
 		// if total width is slightly smaller than 
 		// actual div width then add 1 to each 
 		// photo width till they match
-		console.log(photo.source);
-		console.log(tw);
-		console.log(w);
+		
 		i = 0;
-		while( tw < (w-(border*2)) ) {
+		while( tw < w ) {
 			var img1 = d_row.find("img:nth-child(" + (i + 1) + ")");
 			img1.width(img1.width() + 1);
 			i = (i + 1) % c;
