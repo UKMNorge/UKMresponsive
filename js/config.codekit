@@ -179,7 +179,7 @@
 		"inputAbbreviatedPath": "\/UKMresponsive.js",
 		"outputAbbreviatedPath": "min\/UKMresponsive-ck.js",
 		"outputPathIsSetByUser": 1,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		}
 	},

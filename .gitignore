@@ -9,3 +9,5 @@ vendor/mobiledetect
 less/~
 
 js/config.codekit
+
+*.codekit
