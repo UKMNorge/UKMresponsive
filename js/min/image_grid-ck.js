@@ -92,8 +92,7 @@ function processPhotos(photos, containerSelector){
 			
 			var img = $('<img/>', {'class': "album_image clickable", 
 								   'src': photo.source,
-								   'width': Math.floor(wt-border),
-								   'max-width': '100% !important',
+								   'width': wt,
 								   'height': ht,
 								   'data-link': photo.link}).css("margin", border + "px");
 			var link = $('<a/>', {'href': photo.link}).html(img);
@@ -108,7 +107,7 @@ function processPhotos(photos, containerSelector){
 		// photo width till they match
 		
 		i = 0;
-		while( tw < w ) {
+		while( tw < (w+5) ) {
 			var img1 = d_row.find("img:nth-child(" + (i + 1) + ")");
 			img1.width(img1.width() + 1);
 			i = (i + 1) % c;
