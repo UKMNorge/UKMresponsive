@@ -182,10 +182,7 @@ require_once('functions_theme.php');
 		if(isset( $DATA['jumbo'] ) && $BC->addJumbo ) {
 			$BC->add( $DATA['url']['current'], $DATA['jumbo']->header );
 		} else {
-			$BC->add( $DATA['url']['current'], $DATA['post']->title );
-			if( $_SERVER['REMOTE_ADDR'] == '81.0.146.162' ) {
-				var_dump( $DATA['post'] );
-			}
+			$BC->add( $DATA['url']['current'], $DATA['post']->raw->post_title );
 		}
 /*
 		elseif( isset( $DATA['post'] ) && isset( $DATA['post']->title ))
