@@ -2,10 +2,9 @@
 
 {% block content %}
 <article>
-        <div class="page">
-                <h1>{{post.title|raw}}</h1>
-                {{post.content|raw}}
-        </div>
+	<div class="page">
+		{{post.content|raw}}
+	</div>
 </article>
 <div class="pull-right lastupdated">
         Sist oppdatert for 
