@@ -181,6 +181,8 @@ require_once('functions_theme.php');
 		}
 		if(isset( $DATA['jumbo'] ) && $BC->addJumbo ) {
 			$BC->add( $DATA['url']['current'], $DATA['jumbo']->header );
+		} else {
+			$BC->add( $DATA['url']['current'], $DATA['post']->title );
 		}
 /*
 		elseif( isset( $DATA['post'] ) && isset( $DATA['post']->title ))
