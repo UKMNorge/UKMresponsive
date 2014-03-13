@@ -109,7 +109,7 @@ function processPhotos(photos, containerSelector){
 		console.log(tw);
 		console.log(w);
 		i = 0;
-		while( tw < w ) {
+		while( tw < (w-(border*2)) ) {
 			var img1 = d_row.find("img:nth-child(" + (i + 1) + ")");
 			img1.width(img1.width() + 1);
 			i = (i + 1) % c;
