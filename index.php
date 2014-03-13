@@ -76,6 +76,10 @@ require_once('functions_theme.php');
 		$SEO->jumbo( $post->ID );
 		$JUMBO_POST_ID = $post->ID;
 		require('controller/element/jumbo.controller.php');
+		
+		if( $_SERVER['REMOTE_ADDR'] == '81.0.146.162' ) {
+			var_dump( $JUMBO_POST_ID );
+		}
 
 		if( get_option('ukm_top_page') == 'ambassadorer' ) {
 			require_once('controller/view/homepage.controller.php');
