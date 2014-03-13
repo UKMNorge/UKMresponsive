@@ -165,12 +165,23 @@ require_once('functions_theme.php');
 			default:
 				require_once('controller/view/post.controller.php');
 				$VIEW = 'page';
-				$BC->add( $DATA['url']['current'], $DATA['post']->title);
-				$SEO->post( $DATA['post'] );
+				$JUMBO_POST_ID = $post->ID;
+				require('controller/element/jumbo.controller.php');
+				// Det er ikke lagt til et jumbo-felt
+				if(!isset( $DATA['jumbo'] )) {
+					$DATA['jumbo'] = (object) array('header' => $DATA['post']->title, 'content' => '');
+					// data jumbo isset && BC->addJumbo = true. Breadcrumbs blir oppdatert
+				// Det er lagt til et jumbo-felt
+				} else {
+					$BC->add( $DATA['url']['current'], $DATA['jumbo']->header);
+					$SEO->title( $DATA['jumbo']->header );
+					$BC->addJumbo = false;
+				}
 				break;
 		}
-		if(isset( $DATA['jumbo'] ) && $BC->addJumbo )
+		if(isset( $DATA['jumbo'] ) && $BC->addJumbo ) {
 			$BC->add( $DATA['url']['current'], $DATA['jumbo']->header );
+		}
 /*
 		elseif( isset( $DATA['post'] ) && isset( $DATA['post']->title ))
 			$BC->add( $DATA['url']['current'], $DATA['post']->title);
