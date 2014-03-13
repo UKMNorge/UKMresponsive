@@ -184,7 +184,7 @@ require_once('functions_theme.php');
 		} else {
 			$BC->add( $DATA['url']['current'], $DATA['post']->title );
 			if( $_SERVER['REMOTE_ADDR'] == '81.0.146.162' ) {
-				var_dump( $DATA );
+				var_dump( $DATA['post'] );
 			}
 		}
 /*
