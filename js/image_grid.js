@@ -92,7 +92,7 @@ function processPhotos(photos, containerSelector){
 			
 			var img = $('<img/>', {'class': "album_image clickable", 
 								   'src': photo.source,
-								   'width': 'auto',
+								   /* 'width': 'auto', */
 								   'height': ht,
 								   'data-link': photo.link}).css("margin", border + "px");
 			var link = $('<a/>', {'href': photo.link}).html(img);
