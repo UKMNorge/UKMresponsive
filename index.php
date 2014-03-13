@@ -73,12 +73,20 @@ require_once('functions_theme.php');
 	} elseif( is_front_page() ) {
 		wp_reset_query();
 		wp_reset_postdata();
+/*
 		$SEO->jumbo( $post->ID );
 		$JUMBO_POST_ID = $post->ID;
 		require('controller/element/jumbo.controller.php');
+*/
 		
-		if( $_SERVER['REMOTE_ADDR'] == '81.0.146.162' ) {
-			var_dump( $JUMBO_POST_ID );
+		if( $_SERVER['REMOTE_ADDR'] == '81.0.146.162' || $_SERVER['REMOTE_ADDR'] == '127.0.0.1' ) {
+			$name			= get_bloginfo('name');
+			$description	= get_bloginfo('description');
+			
+			$SEO->title( $name );
+			$SEO->description( $description );
+			
+			$DATA['jumbo'] = (object) array('header' => $name, 'content' => $description);
 		}
 
 		if( get_option('ukm_top_page') == 'ambassadorer' ) {
