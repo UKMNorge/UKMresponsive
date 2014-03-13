@@ -133,24 +133,24 @@ require_once('functions_theme.php');
 				require_once('controller/view/post.controller.php');
             	require_once('controller/view/urg.controller.php');
             	$VIEW = 'urg';
-				$SEO->jumbo( $post->ID );
+				$SEO->jumbo( $DATA['post']->ID );
             	break;
             case 'fylkeskontaktene':
 				require_once('controller/view/post.controller.php');
             	require_once('controller/view/fylkeskontaktene.controller.php');
             	$VIEW = 'fylkeskontaktene';
-				$SEO->jumbo( $post->ID );
+				$SEO->jumbo( $DATA['post']->ID );
             	break;
             case 'kontakt_start':
 				require_once('controller/view/post.controller.php');
             	$VIEW = 'kontakt_start';
-				$SEO->jumbo( $post->ID );
+				$SEO->jumbo( $DATA['post']->ID );
             	break;
             case 'kontakt':
 				require_once('controller/view/post.controller.php');
 				require_once('controller/view/kontakt.controller.php');
             	$VIEW = 'kontakt';
-				$SEO->jumbo( $post->ID );
+				$SEO->jumbo( $DATA['post']->ID );
 	        	break;
             case 'program':
 				require_once('controller/element/innslag.controller.php');
