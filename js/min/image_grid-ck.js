@@ -107,7 +107,7 @@ function processPhotos(photos, containerSelector){
 		// photo width till they match
 		
 		i = 0;
-		while( tw < (w+5) ) {
+		while( tw < w ) {
 			var img1 = d_row.find("img:nth-child(" + (i + 1) + ")");
 			img1.width(img1.width() + 1);
 			i = (i + 1) % c;
