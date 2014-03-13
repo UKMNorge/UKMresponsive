@@ -17,7 +17,7 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/image_grid.js",
-		"outputAbbreviatedPath": "\/jsmin\/image_grid-ck.js",
+		"outputAbbreviatedPath": "min\/image_grid-ck.js",
 		"outputPathIsSetByUser": 1,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
@@ -169,7 +169,7 @@
 		"inputAbbreviatedPath": "\/UKMresponsive.js",
 		"outputAbbreviatedPath": "min\/UKMresponsive-ck.js",
 		"outputPathIsSetByUser": 1,
-		"outputStyle": 0,
+		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		}
 	},
