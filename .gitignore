@@ -13,3 +13,5 @@ js/config.codekit
 *.codekit
 
 *.codekit
+
+less/config.codekit
