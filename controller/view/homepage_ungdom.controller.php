@@ -23,7 +23,7 @@ $finnmark = fylke(1214, 'Finnmark', 'http://ukm.no/finnmark/');
 	
 		// LIVESENDINGER AKKURAT NÅ?
 		$austagder->live->now			= false;
-		$finnmark->live->now			= false;
+		$finnmark->live->now			= true;
 		
 		// POSTS
 		$austagder->posts[] = 462;
