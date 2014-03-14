@@ -3,3 +3,11 @@
 {% block jumbo_content %}
 	Velkommen til fylkesmønstring {{monstring.starter | dato("l j. F") }} til {{monstring.slutter | dato("l j. F")}}, {{monstring.sted}}
 {% endblock %}
+
+{% block content_pre %}
+	{% if livelink is defined and livelink %}
+	<div class="liveLink" style="text-align:center;">
+		<a href="{{livelink}}" target="_blank">Vi sender direkte fra mønstringen, klikk her!</a>
+	</div>
+	{% endif %}
+{% endblock %}
