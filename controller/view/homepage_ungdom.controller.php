@@ -30,7 +30,7 @@ $finnmark = fylke(1214, 'Finnmark', 'http://ukm.no/finnmark/');
 		$austagder->posts[] = 204;
 		$austagder->posts[] = 258;
 		
-		$finnmark->posts[]	= 997;
+	#	$finnmark->posts[]	= 997;
 		$finnmark->posts[]	= 91;
 		$finnmark->posts[]	= 54;
 	
