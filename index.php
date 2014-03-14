@@ -216,6 +216,11 @@ $DATA['breadcrumbs'] = $BC->get();
 	$SEO->title( $seoTitle );
 
 $DATA['SEO'] = $SEO;
+
+
+if( $_SERVER['REMOTE_ADDR'] == '188.113.121.10' ) {
+	$DATA['drop_offcanvas'] = true;
+}
 echo TWIGrender('view/'.$VIEW, object_to_array($DATA),true);
 
 echo TWIGrender('console', $DATA, true);
