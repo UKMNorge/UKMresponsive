@@ -41,28 +41,28 @@ $finnmark = fylke(1214, 'Finnmark', 'http://ukm.no/finnmark/');
 ////////////////////////////////
 // JOHANNES SLUTT
 
-
-global $post_id;
-$PAGE_POST 	= $post;
-$POST_ID	= $post_id;
-
-foreach( $fylkesmonstringer as $fm ) {
-	switch_to_blog( $fm->ID );
-	foreach( $fm->posts as $post_id ) {
-		$post	= get_post( $post_id );
-		@$WPOO_post	= new WPOO_Post( $post );
-
-		$fm->postdata[] = $WPOO_post;
+if( $paged == 1 ) {
+	global $post_id;
+	$PAGE_POST 	= $post;
+	$POST_ID	= $post_id;
+	
+	foreach( $fylkesmonstringer as $fm ) {
+		switch_to_blog( $fm->ID );
+		foreach( $fm->posts as $post_id ) {
+			$post	= get_post( $post_id );
+			@$WPOO_post	= new WPOO_Post( $post );
+	
+			$fm->postdata[] = $WPOO_post;
+		}
+		restore_current_blog();
 	}
-	restore_current_blog();
+	
+	$post 		= $PAGE_POST;
+	$post_id	= $POST_ID;
+	
+	
+	$DATA['fylkesmonstringer'] = $fylkesmonstringer;
 }
-
-$post 		= $PAGE_POST;
-$post_id	= $POST_ID;
-
-
-$DATA['fylkesmonstringer'] = $fylkesmonstringer;
-
 
 
 require_once('UKM/statistikk.class.php');
