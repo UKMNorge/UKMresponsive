@@ -61,8 +61,7 @@ $post 		= $PAGE_POST;
 $post_id	= $POST_ID;
 
 
-if( $_SERVER['REMOTE_ADDR'] == '81.0.146.162')
-	$DATA['fylkesmonstringer'] = $fylkesmonstringer;
+$DATA['fylkesmonstringer'] = $fylkesmonstringer;
 
 
 
