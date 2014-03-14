@@ -1,0 +1,202 @@
+{% extends "view/homepage.twig.html" %}
+
+{% block post_content %}
+<style>
+.feature_block {
+	background: #FAFAFA;
+	border-top: 1px solid #d8d8d8;
+	border-bottom: 1px solid #d8d8d8;
+	height: 40%;
+	margin: 4% 0% 2% 0%;
+}
+
+.feature_cover {
+	text-align: right;
+	border-right: 1px solid #D8D8D8;
+	vertical-align: middle;
+	padding-top: 60px;
+	color: #fff;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position:center center;
+	height: 100%;
+}
+.feature_cover_landscape {
+	text-align: right;
+	border-right: 1px solid #D8D8D8;
+	vertical-align: middle;
+	padding-top: 60px;
+	color: #fff;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position:center center;
+	min-height: 40%;
+}
+.feature_cover > div.infos,
+.feature_cover_landscape > div.infos {
+	position: absolute;
+	bottom: 8%;
+	right: 0;
+	background: rgba(74, 74, 74,0.9);
+	width: 100%;
+	padding: 10px;
+}
+.feature_cover > div.infos > h2 {
+	font-size: 39px;
+}
+
+.feature_content {
+	padding: 10px 0px;
+}
+
+.feature_block .livenow {
+	text-align: center;
+	width: 100%;
+	background: #f37037;
+	color: #fff;
+	padding: 4px;
+	margin: 10px 0px 0px 0px;
+}
+.feature_block .livenow > a,
+.feature_block .livenow > a:hover,
+.feature_block .livenow > a:visited {
+	color:#fff;
+}
+
+@media (max-width: 1199px) {
+	.feature_cover > div.infos > h2 {
+		font-size: 30px;
+	}
+}
+@media (max-width: 991px) {
+	.feature_block {
+		height:auto;
+		min-height: 40%;
+	}
+	.feature_cover_landscape {
+		text-align: right;
+		border-right: 1px solid #D8D8D8;
+		vertical-align: middle;
+		padding-top: 160px;
+		color: #fff;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center center;
+		min-height: 400px;
+	}
+	.feature_cover_landscape > div.infos {
+		padding: 5px 20px 5px 20px;
+	}
+}
+@media (max-width: 768px) {
+	.feature_cover_landscape {
+		text-align: right;
+		border-right: 1px solid #D8D8D8;
+		vertical-align: middle;
+		padding-top: 160px;
+		color: #fff;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center center;
+		min-height: 300px;
+		margin: 0px -5px 0px -5px;
+		width: 104%;
+	}
+	.feature_cover_landscape > div.infos {
+		padding: 5px 20px 5px 20px;
+	}
+}
+</style>
+
+	{% for fm in fylkesmonstringer %}
+		{% if loop.index is not divisibleby(2) %}
+			{% embed "element/feature_left.twig.html" with {'feature': fm} %}{% endembed %}
+		{% else %}
+			{% embed "element/feature_right.twig.html" with {'feature': fm} %}{% endembed %}
+		{% endif %}
+	{% endfor %}
+	
+	{% if fylkesmonstringer | length > 0 %}
+		<h2>Nyheter fra UKM Norge</h2>
+	{% endif %}
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% block content %}
+	<div class="row post_top">
+		<div class="hidden-xs hidden-sm col-md-7">
+			<a href="{{posts[0].url}}">
+				<div class="grid_post_image" style="background-image: url('{{posts[0].image.url}}');"></div>
+			</a>
+		</div>
+				
+		<div id="infosquare" class="col-xs-12 col-md-5">
+			<div class="">
+	        	<ol>
+				{% for nav in page_nav %}
+					{% embed "element/nav_page.twig.html" %}{% endembed %}
+				{% endfor %}
+				</ol>
+			</div>
+			{% if stat_pameldte is defined %}
+			<div class="centered pameldte visible-xs visible-sm">
+				<div class="over">{{stat_pameldte.tall}}</div>
+				<div class="under">Påmeldte til UKM {{stat_pameldte.til}}</div>
+			</div>
+			{% endif %}
+		</div>
+		<div class="clearfix"></div>
+		<div class="col-xs-12 hidden-xs hidden-sm post_top">		
+			<a href="{{posts[0].url}}"><h2>{{posts[0].title|raw}}</h2></a>
+			<p class="lead">{{posts[0].lead|raw}}</p>
+			<a href="{{posts[0].url}}">les mer</a>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="visible-xs visible-sm hidden-md hidden-lg col-xs-12">
+			{% embed "element/post/grid_element.twig.html" with posts[0] %}{% endembed %}
+		</div>
+	</div>
+	
+	{# <div class="separator_line"></div> #}
+{% endblock %}
+
+
+{% block post_content_2 %}
+	<div class="row">
+		{% for post in posts|slice(1) %}
+			<div class="news col-xs-6 col-md-4">
+				{% embed "element/post/grid_element.twig.html" with post %}{% endembed %}
+			</div>
+			
+			{% if loop.index is divisibleby(3) %}
+				<div class="clearfix visible-md visible-lg"></div>
+			{% elseif loop.index is divisibleby(2) %}
+				<div class="clearfix visible-xs visible-sm"></div>
+			{% endif %}
+		{% endfor %}
+
+		{% embed "element/post/prev_next.twig.html" %}{% endembed %}
+	</div>
+{% endblock %}

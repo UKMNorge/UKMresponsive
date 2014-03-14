@@ -1,0 +1,40 @@
+<div class="feature_block">
+
+	<div class="feature_cover_landscape col-xs-12 visible-sm visible-xs" style="background-image: url('{{feature.cover.landscape}}');">
+		<div class="infos">
+			<h2>{{feature.title}}</h2>
+			<a href="{{feature.link}}">Les mer på fylkessiden</a>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+
+	<div class="clearfix visible-xs visible-sm"></div>
+	
+	<div class="feature_cover col-xs-12 col-md-4 hidden-sm hidden-xs" style="background-image: url('{{feature.cover.portrait}}');">
+		<div class="infos">
+			<h2>{{feature.title}}</h2>
+			<a href="{{feature.link}}">Les mer på fylkessiden</a>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+
+	<div class="feature_content col-xs-12 col-md-8">
+		{% for post in feature.postdata %}
+			<div class="col-xs-6 col-sm-4">
+				{% embed "element/post/grid_element.twig.html" with post %}{% endembed %}
+			</div>
+		{% endfor %}
+		{% if feature.liveNow %}
+			<div class="clearfix"></div>
+			<div class="livenow">
+				<a href="{{feature.live.link}}" target="_blank">Se UKM-TV direkte fra mønstringen nå!</a>
+			</div>
+		{% endif %}
+		<div class="clearfix"></div>
+	</div>
+	<div class="clearfix"></div>
+</div>
+
+<div class="clearfix"></div>
+<p>&nbsp;</p>
+<div class="clearfix"></div>
