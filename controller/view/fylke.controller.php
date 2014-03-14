@@ -111,6 +111,7 @@ $DATA['fylke'] = get_option('fylke');
 	else
 		$UKMTV = mysql_num_rows( $res ) > 0 ? $kategori : false;
 
+	$DATA['livelink'] = get_option('ukm_live_link');
 
 // HVILKEN PERIODE ER FYLKESSIDEN I?
 	$VIEW = 'fylke_pre_lokal';
