@@ -14,7 +14,7 @@ $finnmark = fylke(1214, 'Finnmark', 'http://ukm.no/finnmark/');
 		$austagder->cover->portrait		= 'http://ukm.no/aust-agder/files/2014/03/DSC_0012.jpg';
 		$austagder->cover->landscape	= 'http://ukm.no/aust-agder/files/2014/02/Sequence-01.Still0011.jpg';
 	
-		$finnmark->cover->portrait		= 'http://ukm.no/finnmark/files/2014/03/1092271_10201264623966354_668158392_o.jpg';
+		$finnmark->cover->portrait		= 'http://ukm.no/pl3123/files/2014/02/2014_3123_674-1024x682.jpg';
 		$finnmark->cover->landscape		= 'http://ukm.no/finnmark/files/2014/03/Uten-navn.png';
 	
 		// LENKE TIL LIVESENDINGER
