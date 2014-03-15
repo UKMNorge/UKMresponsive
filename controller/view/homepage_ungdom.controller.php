@@ -22,7 +22,7 @@ $finnmark = fylke(1214, 'Finnmark', 'http://ukm.no/finnmark/');
 		$finnmark->live->link			= 'https://new.livestream.com/accounts/183084/events/1946553';
 	
 		// LIVESENDINGER AKKURAT NÅ?
-		$austagder->live->now			= false;
+		$austagder->live->now			= true;
 		$finnmark->live->now			= true;
 		
 		// POSTS
@@ -30,7 +30,7 @@ $finnmark = fylke(1214, 'Finnmark', 'http://ukm.no/finnmark/');
 		$austagder->posts[] = 204;
 		$austagder->posts[] = 258;
 		
-	#	$finnmark->posts[]	= 997;
+		$finnmark->posts[]	= 248;
 		$finnmark->posts[]	= 91;
 		$finnmark->posts[]	= 54;
 	
