@@ -36,8 +36,8 @@ $finnmark = fylke(1214, 'Finnmark', 'http://ukm.no/finnmark/');
 	
 	
 		// FYLKESMONSTRINGER (REKKEFØLGE)
-		$fylkesmonstringer[] = $austagder;
 		$fylkesmonstringer[] = $finnmark;
+		$fylkesmonstringer[] = $austagder;
 ////////////////////////////////
 // JOHANNES SLUTT
 
