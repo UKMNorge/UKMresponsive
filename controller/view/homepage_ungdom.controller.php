@@ -31,8 +31,8 @@ $finnmark = fylke(1214, 'Finnmark', 'http://ukm.no/finnmark/');
 		$austagder->posts[] = 258;
 		
 		$finnmark->posts[]	= 248;
-		$finnmark->posts[]	= 91;
-		$finnmark->posts[]	= 54;
+		$finnmark->posts[]	= 288;
+		$finnmark->posts[]	= 246;
 	
 	
 		// FYLKESMONSTRINGER (REKKEFØLGE)
