@@ -22,7 +22,7 @@ $finnmark = fylke(1214, 'Finnmark', 'http://ukm.no/finnmark/');
 		$finnmark->live->link			= 'https://new.livestream.com/accounts/183084/events/1946553';
 	
 		// LIVESENDINGER AKKURAT NÅ?
-		$austagder->live->now			= true;
+		$austagder->live->now			= false;
 		$finnmark->live->now			= true;
 		
 		// POSTS
