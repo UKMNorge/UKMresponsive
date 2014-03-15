@@ -18,7 +18,7 @@ $finnmark = fylke(1214, 'Finnmark', 'http://ukm.no/finnmark/');
 		$finnmark->cover->landscape		= 'http://ukm.no/finnmark/files/2014/03/Uten-navn.png';
 	
 		// LENKE TIL LIVESENDINGER
-		$austagder->live->link			= '';
+		$austagder->live->link			= 'https://new.livestream.com/accounts/183084/events/2842026';
 		$finnmark->live->link			= 'https://new.livestream.com/accounts/183084/events/1946553';
 	
 		// LIVESENDINGER AKKURAT NÅ?
