@@ -1,5 +1,5 @@
 <?php
-$austagder = fylke(1168, 'Aust-Agder', 'http://ukm.no/austagder/');
+$austagder = fylke(1168, 'Aust-Agder', 'http://ukm.no/aust-agder/');
 $finnmark = fylke(1214, 'Finnmark', 'http://ukm.no/finnmark/');
 
 
