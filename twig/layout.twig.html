@@ -4,39 +4,20 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 		<meta name="apple-mobile-web-app-capable" content="yes" />
-		{% embed "element/seo.twig.html" %}{% endembed %}
-
 		<link rel="shortcut icon" href="http://grafikk.ukm.no/favicon.ico" />
+		{% embed "element/seo.twig.html" %}{% endembed %}
 		
 		<link rel="stylesheet" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600,700' type='text/css'>		
 		<link href="{{url.theme_dir}}vendor/bootstrap/3.0.1/css/bootstrap.css" rel="stylesheet">
-
-		<link href="{{ url.theme_dir }}css/offcanvas.css" rel="stylesheet">
-		<link href="{{ url.theme_dir }}css/UKMresponsive.css?v4" rel="stylesheet">
-	
-		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-		<script type="text/javascript" src="{{ url.theme_dir }}jsmin/jquery.timeago-ck.js"></script>
-		<script type="text/javascript" src="{{ url.theme_dir }}jsmin/jquery.fastlivefilter-ck.js"></script>
+		<link href="{{ url.theme_dir }}less/css/UKMresponsive.css?v4" rel="stylesheet">
+		<script type="text/javascript" src="{{ url.theme_dir }}js/min/jquery-1.11.0.min-ck.js"></script>
 		<script type="text/javascript" src="{{ url.theme_dir }}js/min/UKMresponsive-ck.js?v2"></script>
-		<script type="text/javascript" src="{{ url.theme_dir }}js/image_grid.js"></script>
 		<script type="text/javascript">	 
-		  var _gaq = _gaq || [];
-		  _gaq.push(['_setAccount', '{{SEO.analytics}}']);
-		  _gaq.push(['_trackPageview']);
-		 
-		  (function() {
+		  var _gaq = _gaq || [];_gaq.push(['_setAccount', '{{SEO.analytics}}']);_gaq.push(['_trackPageview']);(function() {
 		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
 		    ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
 		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 		  })();
-		</script>
-		<script>(function(d, s, id) {
-		  var js, fjs = d.getElementsByTagName(s)[0];
-		  if (d.getElementById(id)) return;
-		  js = d.createElement(s); js.id = id;
-		  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=123798094390466";
-		  fjs.parentNode.insertBefore(js, fjs);
-		}(document, 'script', 'facebook-jssdk'));
 		</script>
 	</head>
 	<body>
@@ -44,7 +25,7 @@
 	<div id="fb-root"></div>
 	<header class="navbar navbar-static-top navbar-default" id="top" role="banner">
 		<div class="container">
-			<button type="button" class="pull-right navbar-toggle hidden-md hidden-lg" data-toggle="offcanvas">
+			<button type="button" class="pull-right navbar-toggle hidden-md hidden-lg" data-action="show" data-toggle="#ukm_mobile_nav" data-toggletitle="Hovedmeny" data-toggleclose="Lukk hovedmeny" data-showJumboUKM="true" id="show_main_mobile_menu">
 				<span class="sr-only">Toggle navigation</span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
@@ -77,105 +58,96 @@
 		</div>
 	</header>
 	
-	<div style="height:100%">
-		<div class="row row-offcanvas row-offcanvas-right" style="height:100%">
-			<div class="col-xs-6 hidden-md hidden-lg sidebar-offcanvas" id="sidebar" role="navigation">
-				<div class="todo">
-					<h2>Gå til</h2>
-					<ol class="list-unstyled">
-						{% for nav in nav_top %}
-						<li>
-							<a href="{{nav.url}}" class="{{nav.active?'active':''}}">{{nav.full_title}}</a>
-						</li>
-						{% endfor %}
-						{% for nav in nav_top_right %}
-						<li>
-							<a href="{{nav.url}}" class="{{nav.active?'active':''}}">{{nav.full_title}}</a>
-						</li>
-						{% endfor %}
-	
-					</ol>
+	<div class="row" style="height:100%">
+		<div id="pagecontent" style="height:100%">
+			{# SIDEINNHOLD #}
+			{% block jumbo %}
+			<div class="ukm_page_jumbo">
+				<div class="container">
+					{% if stat_pameldte is defined %}
+					<div class="pull-right pameldte hidden-xs hidden-sm">
+						<div class="over">{{stat_pameldte.tall}}</div>
+						<div class="under">Påmeldte til UKM {{stat_pameldte.til}}</div>
+					</div>
+					{% endif %}
+
+					{% if jumbo.image is defined %}
+						<img class="img img-circle pull-left" src="{{jumbo.image}}" id="ukm_page_jumbo_image" />
+					{% endif %}
+					<h1 id="ukm_page_jumbo_header">	
+						{% block jumbo_header %}
+							{{ jumbo is defined ? jumbo.header : 'UKM' }}
+						{% endblock %}
+					</h1>
+					<h1 id="ukm_page_jumbo_header_temp" style="display:none;">UKM</h1>
+					<p id="ukm_page_jumbo_content">
+						{% block jumbo_content %}
+							{{ jumbo is defined ? jumbo.content : '400 festivaler hvor ungdom deltar med all slags kultur' }}
+						{% endblock %}
+					</p>
+					<p id="ukm_page_jumbo_temp" style="display:none;"></p>
 				</div>
 			</div>
-	
-			<div id="pagecontent" style="height:100%">
-				{# SIDEINNHOLD #}
-				{% block jumbo %}
-				<div class="ukm_page_jumbo">
-					<div class="container">
-						{% if stat_pameldte is defined %}
-						<div class="pull-right pameldte hidden-xs hidden-sm">
-							<div class="over">{{stat_pameldte.tall}}</div>
-							<div class="under">Påmeldte til UKM {{stat_pameldte.til}}</div>
-						</div>
-						{% endif %}
-
-						{% if jumbo.image is defined %}
-							<img class="img img-circle pull-left" src="{{jumbo.image}}" id="ukm_page_jumbo_image" />
-						{% endif %}
-						<h1>	
-							{% block jumbo_header %}
-								{{ jumbo is defined ? jumbo.header : 'UKM' }}
-							{% endblock %}
-						</h1>
-						<p id="ukm_page_jumbo_content">
-							{% block jumbo_content %}
-								{{ jumbo is defined ? jumbo.content : '400 festivaler hvor ungdom deltar med all slags kultur' }}
-							{% endblock %}
-						</p>
-						<p id="ukm_page_jumbo_temp" style="display:none;"></p>
-					</div>
-				</div>
+			{% endblock %}
+		
+			<div class="container hidden-xs hidden-sm">
+				{% block breadcrumbs_top %}
+					{% embed "element/breadcrumbs.twig.html" %}{% endembed %}
 				{% endblock %}
-			
-				<div class="container hidden-xs hidden-sm">
-					{% block breadcrumbs_top %}
-						{% embed "element/breadcrumbs.twig.html" %}{% endembed %}
-					{% endblock %}
-				</div>
-				<div class="clearfix"></div>
-
-			
-			  	<div id="ukm_page_pre_content" class="container" style="display:none"></div>
-			  	<div id="ukm_page_content" class="container" style="height:100%">
-				  	{% block content_pre %}{% endblock %}
-				  	{% block content %}{% endblock %}
-				  	{% block post_content %}{% endblock %}
-				  	<div class="clearfix"></div>
-			  	</div>
-			  	<div id="ukm_page_post_content" class="container" style="display:none">
-				  	<button id="pageDeFocus" class="btn btn-block btn-success"></button>
-			  	</div>
-			
-			
-			
-			
-			  	<div class="clearfix"></div>
-			
-			
-				<div id="footer" class="center">
-					<div class="container">
-						<a href="#top" class="pull-right btn-xs" style="margin-right:10px;">Til toppen</a>
-					</div>
-					<div class="clearfix"></div>
-					<div class="row">
-						<div class="col-xs-12 center">
-							<img src="http://grafikk.ukm.no/profil/logo/UKM_logo.png" id="footerlogo" />
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-xs-12 center">
-							<p>
-								<a href="//creativecommons.org/licenses/by-sa/3.0/deed.no">Alt innhold er CC-lisensiert (CC BY-SA 3.0)</a>
-								<br class="visible-xs" />
-								<a href="//om.ukm.no/kontakt/administrasjonen/">UKM Norge, Fjordgata 1, 7010 Trondheim</a>
-							</p>
-						</div>
-					</div>
-				</div>
-				<div class="clearfix"></div>
-				{# EO SIDEINNHOLD #}
 			</div>
+			<div class="clearfix"></div>
+
+		
+		  	<div id="ukm_page_pre_content" class="container" style="display:none"></div>
+		  	<div id="ukm_page_content" class="container" style="height:100%">
+			  	{% block content_pre %}{% endblock %}
+			  	{% block content %}{% endblock %}
+			  	{% block post_content %}{% endblock %}
+			  	<div class="clearfix"></div>
+		  	</div>
+		  	<div id="ukm_page_post_content" class="container" style="display:none">
+			  	<button id="pageDeFocus" class="btn btn-block btn-success"></button>
+		  	</div>
+		  	
+		  	<div id="ukm_mobile_nav" style="display:none">
+				{% for nav in nav_top %}
+				<a class="btn btn-block btn-default {{nav.active?'active':''}}" href="{{nav.url}}">UKM {{nav.title}}</a>
+				{% endfor %}
+				{% for nav in nav_top_right %}
+				<a class="btn btn-block btn-default {{nav.active?'active':''}}" href="{{nav.url}}">UKM {{nav.title}}</a>
+				{% endfor %}
+				<a class="btn btn-block btn-default {{nav.active?'active':''}}" href="//ukm.no/about">English</a>
+		  	</div>
+
+		
+		
+		
+		
+		  	<div class="clearfix"></div>
+		
+		
+			<div id="footer" class="center">
+				<div class="container">
+					<a href="#top" class="pull-right btn-xs" style="margin-right:10px;">Til toppen</a>
+				</div>
+				<div class="clearfix"></div>
+				<div class="row">
+					<div class="col-xs-12 center">
+						<img src="http://grafikk.ukm.no/profil/logo/UKM_logo.png" id="footerlogo" />
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12 center">
+						<p>
+							<a href="//creativecommons.org/licenses/by-sa/3.0/deed.no">Alt innhold er CC-lisensiert (CC BY-SA 3.0)</a>
+							<br class="visible-xs" />
+							<a href="//om.ukm.no/kontakt/administrasjonen/">UKM Norge, Fjordgata 1, 7010 Trondheim</a>
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="clearfix"></div>
+			{# EO SIDEINNHOLD #}
 		</div>
 	</div>
 

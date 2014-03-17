@@ -4,7 +4,7 @@
 "files": {
 	"\/facebook.js": {
 		"fileType": 64,
-		"ignore": 0,
+		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/facebook.js",
 		"outputAbbreviatedPath": "\/min\/facebook-ck.js",
@@ -14,7 +14,7 @@
 		},
 	"\/image_grid.js": {
 		"fileType": 64,
-		"ignore": 0,
+		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/image_grid.js",
 		"outputAbbreviatedPath": "min\/image_grid-ck.js",
@@ -82,6 +82,16 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+	"\/jquery-1.11.0.min.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/jquery-1.11.0.min.js",
+		"outputAbbreviatedPath": "\/min\/jquery-1.11.0.min-ck.js",
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 0
+		},
 	"\/jquery.autogrow.js": {
 		"fileType": 64,
 		"ignore": 0,
@@ -94,7 +104,7 @@
 		},
 	"\/jquery.fastlivefilter.js": {
 		"fileType": 64,
-		"ignore": 0,
+		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/jquery.fastlivefilter.js",
 		"outputAbbreviatedPath": "min\/jquery.fastlivefilter-ck.js",
@@ -134,7 +144,7 @@
 		},
 	"\/jquery.timeago.js": {
 		"fileType": 64,
-		"ignore": 0,
+		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/jquery.timeago.js",
 		"outputAbbreviatedPath": "\/jsmin\/jquery.timeago-ck.js",
@@ -162,12 +172,42 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+	"\/min\/facebook-ck.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/min\/facebook-ck.js",
+		"outputAbbreviatedPath": "\/min\/min\/facebook-ck-ck.js",
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
 	"\/min\/image_grid-ck.js": {
 		"fileType": 64,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/min\/image_grid-ck.js",
 		"outputAbbreviatedPath": "\/min\/min\/image_grid-ck-ck.js",
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/min\/jquery-1.11.0.min-ck.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/min\/jquery-1.11.0.min-ck.js",
+		"outputAbbreviatedPath": "\/min\/min\/jquery-1.11.0.min-ck-ck.js",
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/min\/UKMresponsive-ck.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/min\/UKMresponsive-ck.js",
+		"outputAbbreviatedPath": "\/min\/min\/UKMresponsive-ck-ck.js",
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
@@ -187,6 +227,34 @@
 	],
 "lastSavedByUser": "Marius Mandal",
 "manualImportLinks": {
+	"\/jquery-1.11.0.min.js": [
+		{
+			"followForSyntaxChecking": 1,
+			"linkedFileAbbreviatedPath": "\/jquery.fastlivefilter.js",
+			"position": 0,
+			"type": 1
+			},
+		{
+			"followForSyntaxChecking": 1,
+			"linkedFileAbbreviatedPath": "\/jquery.timeago.js",
+			"position": 1,
+			"type": 1
+			}
+		],
+	"\/UKMresponsive.js": [
+		{
+			"followForSyntaxChecking": 1,
+			"linkedFileAbbreviatedPath": "\/image_grid.js",
+			"position": 0,
+			"type": 0
+			},
+		{
+			"followForSyntaxChecking": 1,
+			"linkedFileAbbreviatedPath": "\/facebook.js",
+			"position": 1,
+			"type": 1
+			}
+		]
 	},
 "projectAttributes": {
 	"bowerAbbreviatedPath": "",
@@ -378,7 +446,7 @@
 			"flagValue": -1
 			},
 		"eqeqeq": {
-			"active": 1,
+			"active": 0,
 			"flagValue": -1
 			},
 		"eqnull": {
