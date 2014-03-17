@@ -6,6 +6,7 @@ $monstring = new stdClass();
 $monstring->navn = str_replace('UKM','',$pl->g('pl_name'));
 $monstring->season = $pl->g('season');
 $monstring->start = $pl->starter();
+$monstring->starter = $pl->g('pl_start');
 $monstring->slutt = $pl->slutter();
 $monstring->type_tekst = $pl->g('type') == 'kommune' ? 'lokal' : 'fylkes';
 

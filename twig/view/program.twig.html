@@ -33,6 +33,7 @@
 	{% else %}
 		<li class="">
 			<h2>Program ikke satt</h2>
+			<p>Mønstringen starter {{monstring.starter|dato('l. d. M')}} kl. {{monstring.starter|dato('H:i')}}
 			<p>Ta kontakt med {{monstring.type_tekst}}kontakten om du mener dette burde vært gjort.</p>
 		</li>
 	{% endfor %}
