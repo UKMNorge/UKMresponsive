@@ -58,8 +58,8 @@
 		</div>
 	</header>
 	
-	<div class="row" style="height:100%">
-		<div id="pagecontent" style="height:100%">
+	<div class="row">
+		<div id="pagecontent">
 			{# SIDEINNHOLD #}
 			{% block jumbo %}
 			<div class="ukm_page_jumbo">
@@ -99,15 +99,19 @@
 
 		
 		  	<div id="ukm_page_pre_content" class="container" style="display:none"></div>
-		  	<div id="ukm_page_content" class="container" style="height:100%">
+		  	<div class="clearfix"></div>
+		  	<div id="ukm_page_content" class="container">
 			  	{% block content_pre %}{% endblock %}
 			  	{% block content %}{% endblock %}
 			  	{% block post_content %}{% endblock %}
 			  	<div class="clearfix"></div>
 		  	</div>
+		  	<div class="clearfix"></div>
 		  	<div id="ukm_page_post_content" class="container" style="display:none">
 			  	<button id="pageDeFocus" class="btn btn-block btn-success"></button>
+			  	<div class="clearfix"></div>
 		  	</div>
+		  	<div class="clearfix"></div>
 		  	
 		  	<div id="ukm_mobile_nav" style="display:none">
 				{% for nav in nav_top %}
