@@ -210,6 +210,7 @@ if( !isset( $DATA['jumbo'] ) ) {
 $DATA['breadcrumbs'] = $BC->get();
 
 // Opprinnelig er title page-spesific, uten breadcrumbs. Overskriver dette her
+/*
 	$seoTitle = '';
 	foreach( $DATA['breadcrumbs']->crumbs as $c ) {
 		$title = $c->title == 'artikkel' ?  $DATA['post']->title : $c->title;
@@ -220,6 +221,7 @@ $DATA['breadcrumbs'] = $BC->get();
 			$seoTitle .= $title .' &raquo; ';
 	}
 	$SEO->title( $seoTitle );
+*/
 
 $DATA['SEO'] = $SEO;
 echo TWIGrender('view/'.$VIEW, object_to_array($DATA),true);
