@@ -32,6 +32,7 @@ require_once('functions_theme.php');
 
 	$DATA['blog']['url']		= get_bloginfo('url').'/';
 	$DATA['blog']['name']		= get_bloginfo('name');
+	$DATA['blog']['feed']		= get_bloginfo('rss_url');
 
 
 	$DATA['console'] = array();
@@ -178,6 +179,11 @@ require_once('functions_theme.php');
 					$SEO->title( $DATA['jumbo']->header );
 					$BC->addJumbo = false;
 				}
+				
+				if( file_exists('view/'. $viseng .'.twig.html') ) {
+					$VIEW = $viseng;
+				}
+				
 				break;
 		}
 		if(isset( $DATA['jumbo'] ) && $BC->addJumbo ) {
