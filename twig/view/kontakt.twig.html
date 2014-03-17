@@ -11,10 +11,10 @@
 			{% embed "element/kontakt.twig.html" %}{% endembed %}
 		</div>
 		{% if loop.index is divisibleby(2) %}
-			<div class="visible-sm visible-md clearfix"></div>
+			<div class="visible-sm clearfix"></div>
 		{% endif %}
 		{% if loop.index is divisibleby(3) %}
-			<div class="visible-lg clearfix"></div>
+			<div class="visible-md clearfix"></div>
 		{% endif %}
 	{% endfor %}
 {% endblock %}
