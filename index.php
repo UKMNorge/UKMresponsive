@@ -182,7 +182,7 @@ require_once('functions_theme.php');
 		}
 		if(isset( $DATA['jumbo'] ) && $BC->addJumbo ) {
 			$BC->add( $DATA['url']['current'], $DATA['jumbo']->header );
-		} else {
+		} elseif( isset($DATA['post'])) {
 			$BC->add( $DATA['url']['current'], $DATA['post']->raw->post_title );
 		}
 /*
