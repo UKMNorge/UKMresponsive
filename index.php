@@ -180,7 +180,7 @@ require_once('functions_theme.php');
 					$BC->addJumbo = false;
 				}
 				
-				if( file_exists('view/'. $viseng .'.twig.html') ) {
+				if( file_exists( 'twig/view/'. $viseng .'.twig.html') ) {
 					$VIEW = $viseng;
 				}
 				
