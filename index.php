@@ -99,6 +99,10 @@ require_once('functions_theme.php');
 		} elseif( get_option('ukm_top_page') == 'internasjonalt' ) {
 			require_once('controller/view/homepage.controller.php');
 			$VIEW = 'homepage_internasjonalt';
+		} elseif( get_option('site_type') == 'land' ) {
+            $VIEW = 'festivalen';
+			require_once('controller/element/kontakt.controller.php');
+			require_once('controller/view/festivalen.controller.php');
 		} elseif( get_option('site_type') == 'fylke' ) {
             $VIEW = 'fylke';
 			require_once('controller/element/kontakt.controller.php');

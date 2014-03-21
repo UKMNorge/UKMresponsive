@@ -1,0 +1,104 @@
+{% extends "layout.twig.html" %}
+
+{% block jumbo_header %}
+	{{monstring.navn|raw}}
+{% endblock %}
+
+{% block jumbo_content %}
+	{% if state == 'pre' %}
+		{% embed "element/monstring/monstring_beskrivelse.twig.html" with {"time_verb":"er"} %}{% endembed %}
+	{% else %}
+		{% embed "element/monstring/monstring_beskrivelse.twig.html" with {"time_verb":"var"} %}{% endembed %}	
+	{% endif %}
+{% endblock %}
+
+
+{% block content %}
+	<div class="row post_top">
+    	{% block hovedfokus_pre %}{% endblock %}
+
+    	<div class="col-xs-12 col-md-7 fylke_hovedartikkel">
+	    	{% block hovedfokus %}
+		    	<div style="display:none;" id="lokalmonstringer_slide">
+		            {% embed "element/monstring/lokalmonstringer_liste.twig.html" %}
+		            {% endembed %}
+		    	</div>
+		    	<div id="fokussak">
+					{# POST DESKTOP IMAGE #}
+					<div class="hidden-xs hidden-sm">
+						<a href="{{posts[0].url}}">
+							<div class="grid_post_image" style="background-image: url('{{posts[0].image.url}}');"></div>
+						</a>
+					</div>
+					{# END OF POST DESKTOP IMAGE #}
+		    	</div>
+	    	{% endblock %}
+    	</div>
+    	
+
+		{# PRE_MENY, MENY, POST_MENY #}
+		<div class="col-xs-12 col-md-5">
+    		{% block meny_pre %}{% endblock %}
+    		{% block meny %}
+	    		{% embed "element/monstring/monstring_navigasjon.twig.html" %}{% endembed %}
+	    	{% endblock %}
+
+			<div class="clearfix"></div>
+
+    		{% block meny_ekstra %}
+	    	{% endblock %}
+			{% if stat_pameldte is defined %}
+			<div class="centered pameldte visible-xs visible-sm">
+				<div class="over">{{stat_pameldte.tall}}</div>
+				<div class="under">Påmeldte til UKM {{stat_pameldte.til}}</div>
+			</div>
+			{% endif %}
+    	</div>
+		{# END OF PRE_MENY, MENY, POST_MENY #}
+		<div class="clearfix"></div>
+		
+		{% block post_top_desktop_text %}
+			{# TOPPSAK DESKTOP HEADER + LEAD #}
+			<div class="col-xs-12 hidden-xs hidden-sm post_top">		
+				<a href="{{posts[0].url}}"><h2>{{posts[0].title|raw}}</h2></a>
+				<p class="lead">{{posts[0].lead|raw}}</p>
+				<a href="{{posts[0].url}}">les mer</a>
+			</div>
+			{# END OF TOPPSAK DESKTOP HEADER + LEAD #}
+		{% endblock %}
+	</div>
+	
+	{% block post_top_mobile %}
+		{# TOPPSAK MOBIL #}	
+		<div class="row">
+			<div class="visible-xs visible-sm hidden-md hidden-lg col-xs-12">
+				{% embed "element/post/grid_element.twig.html" with posts[0] %}{% endembed %}
+			</div>
+		</div>
+		{# END OF TOPPSAK MOBIL #}		
+	{% endblock %}
+	<div class="separator_line"></div>
+
+    
+	<div class="row">
+		{% block innhold %}
+			{% if posts_include_top_post_in_full_list %}
+				{% embed "element/monstring/posts_include_top.twig.html" %}{% endembed %}
+			{% else %}
+				{% embed "element/monstring/posts_exclude_top.twig.html" %}{% endembed %}
+			{% endif %}
+	
+	        {% if nextpost|length > 0 or prevpost|length > 0 %}
+	            <div style="clear:both;"></div>
+	        {% endif %}
+	
+			{% embed "element/post/prev_next.twig.html" %}{% endembed %}
+
+		{% endblock %}
+	</div>
+    
+    <div id="monstring_kontaktpersoner" style="display:none">
+		{% embed "element/monstring/monstring_kontaktpersoner.twig.html" %}{% endembed %}
+    </div>
+    
+{% endblock %}
