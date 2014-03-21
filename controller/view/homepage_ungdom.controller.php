@@ -1,6 +1,7 @@
 <?php
 $austagder = fylke(1168, 'Aust-Agder', 'http://ukm.no/aust-agder/');
 $finnmark = fylke(1214, 'Finnmark', 'http://ukm.no/finnmark/');
+$rogaland = fylke(1398, 'Rogaland', 'http://ukm.no/rogaland/');
 
 
 ////////////////////////////////
@@ -17,13 +18,18 @@ $finnmark = fylke(1214, 'Finnmark', 'http://ukm.no/finnmark/');
 		$finnmark->cover->portrait		= 'http://ukm.no/pl3123/files/2014/02/2014_3123_674-1024x682.jpg';
 		$finnmark->cover->landscape		= 'http://ukm.no/finnmark/files/2014/03/Uten-navn.png';
 	
+		$rogaland->cover->portrait		= 'http://ukm.no/pl3123/files/2014/02/2014_3123_674-1024x682.jpg';
+		$rogaland->cover->landscape		= 'http://ukm.no/finnmark/files/2014/03/Uten-navn.png';
+	
 		// LENKE TIL LIVESENDINGER
 		$austagder->live->link			= 'https://new.livestream.com/accounts/183084/events/2842026';
 		$finnmark->live->link			= 'https://new.livestream.com/accounts/183084/events/1946553';
+		$rogaland->live->link			= 'https://new.livestream.com/accounts/183084/events/1946553';
 	
 		// LIVESENDINGER AKKURAT NÅ?
 		$austagder->live->now			= false;
 		$finnmark->live->now			= false;
+		$rogaland->live->now			= false;
 		
 		// POSTS
 		$austagder->posts[] = 462;
@@ -33,11 +39,16 @@ $finnmark = fylke(1214, 'Finnmark', 'http://ukm.no/finnmark/');
 		$finnmark->posts[]	= 248;
 		$finnmark->posts[]	= 288;
 		$finnmark->posts[]	= 246;
+
+		$rogaland->posts[]	= null;
+		$rogaland->posts[]	= null;
+		$rogaland->posts[]	= null;
 	
 	
 		// FYLKESMONSTRINGER (REKKEFØLGE)
 		$fylkesmonstringer[] = $finnmark;
 		$fylkesmonstringer[] = $austagder;
+#		$fylkesmonstringer[] = $rogaland;
 ////////////////////////////////
 // JOHANNES SLUTT
 
