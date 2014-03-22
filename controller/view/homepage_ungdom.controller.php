@@ -46,9 +46,10 @@ $rogaland = fylke(1398, 'Rogaland', 'http://ukm.no/rogaland/');
 	
 	
 		// FYLKESMONSTRINGER (REKKEFØLGE)
+		$fylkesmonstringer[] = $rogaland;
 		$fylkesmonstringer[] = $finnmark;
 		$fylkesmonstringer[] = $austagder;
-#		$fylkesmonstringer[] = $rogaland;
+
 ////////////////////////////////
 // JOHANNES SLUTT
 
