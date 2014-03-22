@@ -24,7 +24,7 @@ $rogaland = fylke(1398, 'Rogaland', 'http://ukm.no/rogaland/');
 		// LENKE TIL LIVESENDINGER
 		$austagder->live->link			= 'https://new.livestream.com/accounts/183084/events/2842026';
 		$finnmark->live->link			= 'https://new.livestream.com/accounts/183084/events/1946553';
-		$rogaland->live->link			= 'https://new.livestream.com/accounts/183084/events/1946553';
+		$rogaland->live->link			= 'https://new.livestream.com/accounts/183084/events/2857743';
 	
 		// LIVESENDINGER AKKURAT NÅ?
 		$austagder->live->now			= false;
