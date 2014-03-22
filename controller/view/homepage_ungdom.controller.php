@@ -40,9 +40,9 @@ $rogaland = fylke(1398, 'Rogaland', 'http://ukm.no/rogaland/');
 		$finnmark->posts[]	= 288;
 		$finnmark->posts[]	= 246;
 
-		$rogaland->posts[]	= null;
-		$rogaland->posts[]	= null;
-		$rogaland->posts[]	= null;
+		$rogaland->posts[]	= 24;
+#		$rogaland->posts[]	= null;
+#		$rogaland->posts[]	= null;
 	
 	
 		// FYLKESMONSTRINGER (REKKEFØLGE)
