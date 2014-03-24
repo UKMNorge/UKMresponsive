@@ -29,7 +29,7 @@ $rogaland = fylke(1398, 'Rogaland', 'http://ukm.no/rogaland/');
 		// LIVESENDINGER AKKURAT NÅ?
 		$austagder->live->now			= false;
 		$finnmark->live->now			= false;
-		$rogaland->live->now			= true;
+		$rogaland->live->now			= false;
 		
 		// POSTS
 		$austagder->posts[] = 462;
