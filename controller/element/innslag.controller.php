@@ -52,7 +52,7 @@ function generate_list_data( $innslag, $pl, $current_c_id=false ) {
 		$hendelser = $innslag->forestillinger( $pl->g('pl_id') );
 		$data->hendelser	= array();
 		foreach( $hendelser as $c_id => $nr ) {
-			if( $c_id == $current_c_id ) {
+			if( $c_id === $current_c_id ) {
 				continue;
 			}
 			$hendelse = new forestilling( $c_id );
