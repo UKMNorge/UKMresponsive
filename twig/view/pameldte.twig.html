@@ -57,7 +57,7 @@
 		<div class="col-xs-12 col-sm-9">
 			<ol class="list-unstyled" id="filter_this">
 				{% for innslag in rekkefolge %}
-					{% embed "element/innslag.twig.html" with {'showIndex': false} %}{% endembed %}
+					{% embed "element/innslag.twig.html" with {'showIndex': false, 'context':'pameldte'} %}{% endembed %}
 				{% else %}
 					<li class="alert">
 						<h4>Ingen innslag</h4>

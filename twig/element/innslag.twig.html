@@ -79,7 +79,11 @@
 							<p>{{hend.navn}} <small class="hidden-xs">{{ hend.start | dato('l H:i') }} - nr {{hend.nr}}</small></p>
 						</li>
 					{% endfor %}
-					{% if innslag.hendelser_kun_denne %}
+					{% if innslag.hendelser_kun_denne and context == 'pameldte' %}
+						<li>
+							<p>Er ikke satt opp i noen hendelser på denne mønstringen</p>
+						</li>
+					{% elseif innslag.hendelser_kun_denne %}
 						<li>
 							<p>Deltar kun i {{hendelse.navn}} på denne mønstringen</p>
 						</li>

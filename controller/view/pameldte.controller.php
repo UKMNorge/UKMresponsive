@@ -49,7 +49,7 @@ $BC->add( $DATA['url']['current'].'?type='.$DATA['active_filter_id'], ucfirst($D
 $DATA['typer'] = array();
 foreach( $alle_innslag as $innslag ) {
 	// Innslag data, add to list
-	$stdClass = generate_list_data( $innslag, $pl, false);
+	$stdClass = generate_list_data( $innslag, $pl, true);
 	// Innslag types
 	$typer[ $innslag['bt_id'] ] = $stdClass->kategori;
 
