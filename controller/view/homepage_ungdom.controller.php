@@ -3,6 +3,9 @@ $austagder = fylke(1168, 'Aust-Agder', 'http://ukm.no/aust-agder/');
 $finnmark = fylke(1214, 'Finnmark', 'http://ukm.no/finnmark/');
 $rogaland = fylke(1398, 'Rogaland', 'http://ukm.no/rogaland/');
 
+$nordtrondelag = fylke(1367, 'Nord-Trøndelag', 'http://ukm.no/nord-trondelag/');
+$moreogromsdal = fylke(1352, 'Møre og Romsdal', 'http://ukm.no/moreogromsdal/');
+
 
 ////////////////////////////////
 // JOHANNES START
@@ -20,16 +23,26 @@ $rogaland = fylke(1398, 'Rogaland', 'http://ukm.no/rogaland/');
 	
 		$rogaland->cover->portrait		= 'http://farm8.staticflickr.com/7298/9136822921_67bb31bd35_c_d.jpg';
 		$rogaland->cover->landscape		= 'http://farm6.staticflickr.com/5534/9147533122_93a51c4138_c_d.jpg';
+
+		$moreogromsdal->cover->portrait	= 'http://ukm.no/aust-agder/files/2014/03/DSC_0012.jpg';
+		$moreogromsdal->cover->landscape= 'http://ukm.no/aust-agder/files/2014/02/Sequence-01.Still0011.jpg';
+
+		$nordtrondelag->cover->portrait	= 'http://ukm.no/aust-agder/files/2014/03/DSC_0012.jpg';
+		$nordtrondelag->cover->landscape= 'http://ukm.no/aust-agder/files/2014/02/Sequence-01.Still0011.jpg';
 	
 		// LENKE TIL LIVESENDINGER
 		$austagder->live->link			= 'https://new.livestream.com/accounts/183084/events/2842026';
 		$finnmark->live->link			= 'https://new.livestream.com/accounts/183084/events/1946553';
 		$rogaland->live->link			= 'https://new.livestream.com/accounts/183084/events/2857743';
+		$moreogromsdal->live->link		= 'https://new.livestream.com/accounts/183084/events/2857743';
+		$nordtrondelag->live->link		= 'http://mediestudent.no/ukm2014_3/videostream/';
 	
 		// LIVESENDINGER AKKURAT NÅ?
 		$austagder->live->now			= false;
 		$finnmark->live->now			= false;
 		$rogaland->live->now			= false;
+		$moreogromsdal->live->now		= false;
+		$nordtrondelag->live->now		= false;
 		
 		// POSTS
 		$austagder->posts[] = 462;
@@ -41,11 +54,15 @@ $rogaland = fylke(1398, 'Rogaland', 'http://ukm.no/rogaland/');
 		$finnmark->posts[]	= 246;
 
 		$rogaland->posts[]	= 24;
-#		$rogaland->posts[]	= null;
-#		$rogaland->posts[]	= null;
+
+		$moreogromsdal->posts[]	= 24;
+
+		$nordtrondelag->posts[]	= 24;
 	
 	
 		// FYLKESMONSTRINGER (REKKEFØLGE)
+#		$fylkesmonstringer[] = $moreogromsdal;
+#		$fylkesmonstringer[] = $nordtrondelag;
 		$fylkesmonstringer[] = $rogaland;
 		$fylkesmonstringer[] = $finnmark;
 		$fylkesmonstringer[] = $austagder;
