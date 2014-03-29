@@ -55,7 +55,7 @@ $moreogromsdal = fylke(1352, 'Møre og Romsdal', 'http://ukm.no/moreogromsdal/')
 
 		$rogaland->posts[]	= 24;
 
-		$moreogromsdal->posts[]	= 91;
+		$moreogromsdal->posts[]	= 139;
 		$moreogromsdal->posts[]	= 164;
 		$moreogromsdal->posts[]	= 151;
 		
