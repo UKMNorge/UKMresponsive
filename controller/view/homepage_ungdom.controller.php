@@ -60,6 +60,7 @@ $moreogromsdal = fylke(1352, 'Møre og Romsdal', 'http://ukm.no/moreogromsdal/')
 		$moreogromsdal->posts[]	= 151;
 		
 		$nordtrondelag->posts[]	= 14;
+		$nordtrondelag->posts[]	= 31;
 	
 	
 		// FYLKESMONSTRINGER (REKKEFØLGE)
