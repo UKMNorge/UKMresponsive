@@ -41,8 +41,8 @@ $moreogromsdal = fylke(1352, 'Møre og Romsdal', 'http://ukm.no/moreogromsdal/')
 		$austagder->live->now			= false;
 		$finnmark->live->now			= false;
 		$rogaland->live->now			= false;
-		$moreogromsdal->live->now		= true;
-		$nordtrondelag->live->now		= true;
+		$moreogromsdal->live->now		= false;
+		$nordtrondelag->live->now		= false;
 		
 		// POSTS
 		$austagder->posts[] = 462;
