@@ -141,7 +141,7 @@ $sognogfjordane		= fylke(1433, 'Sogn og Fjordane', 'http://ukm.no/sognogfjordane
 		$rogaland->cover->portrait		= 'http://farm8.staticflickr.com/7298/9136822921_67bb31bd35_c_d.jpg';
 		$rogaland->cover->landscape		= 'http://farm6.staticflickr.com/5534/9147533122_93a51c4138_c_d.jpg';
 
-		$moreogromsdal->cover->portrait	= 'http://ukm.no/moreogromsdal/files/2014/03/2014_3225_1566-836x1024.jpg';
+		$moreogromsdal->cover->portrait	= 'http://ukm.no/moreogromsdal/files/2014/03/IMG_3309-1024x682.jpg';
 		$moreogromsdal->cover->landscape= 'http://ukm.no/pl3476/files/2014/02/2014_3476_767-1024x682.jpg';
 
 		$nordtrondelag->cover->portrait	= 'http://ukm.no/pl3439/files/2014/01/2014_3439_198-1024x682.jpg';
