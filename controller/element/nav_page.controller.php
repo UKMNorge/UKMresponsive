@@ -76,6 +76,12 @@ switch( get_option('ukm_top_page') ) {
 											   'icon'			=> 'maps',
 											   'description'	=> 'UKM har lokalmønstringer over hele landet'
 											  );
+		$DATA['page_nav'][] = (object) array( 'url' 			=> '//ukm.no/festivalen/',
+											   'title'		 	=> 'UKM-festivalen',
+											   'icon'			=> 'rocket',
+											   'description'	=> 'Info om UKM-årets høydepunkt!'
+											  );
+											  
 		$DATA['page_nav'][] = (object) array( 'url' 			=> '//ukm.no/hva-er-ukm/',
 											   'title'		 	=> 'Finn ut mer om UKM',
 											   'icon'			=> 'star',
