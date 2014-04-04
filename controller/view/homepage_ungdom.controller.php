@@ -29,7 +29,7 @@ $sognogfjordane		= fylke(1433, 'Sogn og Fjordane', 'http://ukm.no/sognogfjordane
 		// LENKE TIL LIVESENDINGER
 		$akershus->live->link			= 'https://new.livestream.com/accounts/183084/events/2891485';
 		// LIVESENDINGER AKKURAT NÅ?
-		$akershus->live->now			= true;		
+		$akershus->live->now			= false;		
 		// POSTS
 		$akershus->posts[] = 65;
 		
