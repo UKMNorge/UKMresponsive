@@ -79,8 +79,8 @@ $sognogfjordane		= fylke(1433, 'Sogn og Fjordane', 'http://ukm.no/sognogfjordane
 
 	//// TROMS
 		// COVER PHOTOS
-		$troms->cover->portrait			= 'http://ukm.no/aust-agder/files/2014/03/DSC_0012.jpg';
-		$troms->cover->landscape		= 'http://ukm.no/aust-agder/files/2014/02/Sequence-01.Still0011.jpg';
+		$troms->cover->portrait			= 'http://ukm.no/troms/files/2014/03/2014_3217_2595-1024x661.jpg';
+		$troms->cover->landscape		= 'http://ukm.no/troms/files/2014/04/2014_3217_2633-1024x683.jpg';
 		// LENKE TIL LIVESENDINGER
 		$troms->live->link				= 'https://new.livestream.com/accounts/183084/ukmtroms2014';
 		// LIVESENDINGER AKKURAT NÅ?
