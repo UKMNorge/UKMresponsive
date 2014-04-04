@@ -119,14 +119,14 @@ $sognogfjordane		= fylke(1433, 'Sogn og Fjordane', 'http://ukm.no/sognogfjordane
 
 
 	// FYLKESMONSTRINGER (REKKEFØLGE)
-		$fylkesmonstringer[] = $akershus;
+#		$fylkesmonstringer[] = $akershus;
 		$fylkesmonstringer[] = $troms;
 		$fylkesmonstringer[] = $nordland;
-		$fylkesmonstringer[] = $hordaland;
-		$fylkesmonstringer[] = $telemark;
-		$fylkesmonstringer[] = $oslo;
-		$fylkesmonstringer[] = $hedmark;
-		$fylkesmonstringer[] = $sognogfjordane;
+#		$fylkesmonstringer[] = $hordaland;
+#		$fylkesmonstringer[] = $telemark;
+#		$fylkesmonstringer[] = $oslo;
+#		$fylkesmonstringer[] = $hedmark;
+#		$fylkesmonstringer[] = $sognogfjordane;
 
 
 
