@@ -24,41 +24,41 @@ $sognogfjordane		= fylke(1433, 'Sogn og Fjordane', 'http://ukm.no/sognogfjordane
 
 	//// AKERSHUS
 		// COVER PHOTOS
-		$akershus->cover->portrait		= 'http://ukm.no/aust-agder/files/2014/03/DSC_0012.jpg';
-		$akershus->cover->landscape		= 'http://ukm.no/aust-agder/files/2014/02/Sequence-01.Still0011.jpg';
+		$akershus->cover->portrait		= 'http://ukm.no/akershus/files/2014/03/Zapp-On-2.jpg';
+		$akershus->cover->landscape		= 'http://ukm.no/akershus/files/2014/03/Zapp-On-2.jpg';
 		// LENKE TIL LIVESENDINGER
 		$akershus->live->link			= 'https://new.livestream.com/accounts/183084/events/2891485';
 		// LIVESENDINGER AKKURAT NÅ?
-		$akershus->live->now			= false;		
+		$akershus->live->now			= true;		
 		// POSTS
 #		$akershus->posts[] = null;
 		
 	//// NORDLAND
 		// COVER PHOTOS
-		$nordland->cover->portrait		= 'http://ukm.no/aust-agder/files/2014/03/DSC_0012.jpg';
-		$nordland->cover->landscape		= 'http://ukm.no/aust-agder/files/2014/02/Sequence-01.Still0011.jpg';
+		$nordland->cover->portrait		= 'http://ukm.no/pl3428/files/2014/02/2014_3428_690-1024x682.jpg';
+		$nordland->cover->landscape		= 'http://ukm.no/pl3428/files/2014/02/2014_3428_690-1024x682.jpg';
 		// LENKE TIL LIVESENDINGER
 		$nordland->live->link			= 'https://new.livestream.com/accounts/183084/events/2891505';
 		// LIVESENDINGER AKKURAT NÅ?
-		$nordland->live->now			= false;		
+		$nordland->live->now			= true;		
 		// POSTS
-#		$nordland->posts[] = null;
+		$nordland->posts[] = 46;
 		
 	//// HORDALAND
 		// COVER PHOTOS
-		$hordaland->cover->portrait		= 'http://ukm.no/aust-agder/files/2014/03/DSC_0012.jpg';
-		$hordaland->cover->landscape	= 'http://ukm.no/aust-agder/files/2014/02/Sequence-01.Still0011.jpg';
+		$hordaland->cover->portrait		= 'http://ukm.no/pl3493/files/2014/01/2014_3493_133-822x1024.jpg';
+		$hordaland->cover->landscape		= 'http://ukm.no/pl3493/files/2014/01/2014_3493_133-822x1024.jpg';
 		// LENKE TIL LIVESENDINGER
 		$hordaland->live->link			= 'https://new.livestream.com/accounts/183084/events/2891511';
 		// LIVESENDINGER AKKURAT NÅ?
-		$hordaland->live->now			= false;		
+		$hordaland->live->now			= true;		
 		// POSTS
 #		$hordaland->posts[] = null;
 
 	//// TELEMARK
 		// COVER PHOTOS
-		$telemark->cover->portrait		= 'http://ukm.no/aust-agder/files/2014/03/DSC_0012.jpg';
-		$telemark->cover->landscape		= 'http://ukm.no/aust-agder/files/2014/02/Sequence-01.Still0011.jpg';
+		$telemark->cover->portrait		= 'http://2013.ukm.no/ukm.no/festivalen/files/2013/06/5.EBAS_22321-1024x682.jpg';
+		$telemark->cover->landscape		= 'http://2013.ukm.no/ukm.no/festivalen/files/2013/06/6.eirillTigerguttJensen20130624_0365-1024x682.jpg';
 		// LENKE TIL LIVESENDINGER
 		$telemark->live->link			= 'https://new.livestream.com/accounts/183084/events/2891521';
 		// LIVESENDINGER AKKURAT NÅ?
@@ -68,8 +68,8 @@ $sognogfjordane		= fylke(1433, 'Sogn og Fjordane', 'http://ukm.no/sognogfjordane
 
 	//// OSLO
 		// COVER PHOTOS
-		$oslo->cover->portrait			= 'http://ukm.no/aust-agder/files/2014/03/DSC_0012.jpg';
-		$oslo->cover->landscape			= 'http://ukm.no/aust-agder/files/2014/02/Sequence-01.Still0011.jpg';
+		$oslo->cover->portrait			= 'http://2013.ukm.no/ukm.no/festivalen/files/2013/06/10.Sara_bf_2833_1-682x1024.jpg';
+		$oslo->cover->landscape			= 'http://2013.ukm.no/ukm.no/festivalen/files/2013/06/14.Magnus_og_Ayla_2891-1024x682.jpg';
 		// LENKE TIL LIVESENDINGER
 		$oslo->live->link				= 'https://new.livestream.com/accounts/183084/events/2891494';
 		// LIVESENDINGER AKKURAT NÅ?
@@ -92,8 +92,8 @@ $sognogfjordane		= fylke(1433, 'Sogn og Fjordane', 'http://ukm.no/sognogfjordane
 
 	//// HEDMARK
 		// COVER PHOTOS
-		$hedmark->cover->portrait		= 'http://ukm.no/aust-agder/files/2014/03/DSC_0012.jpg';
-		$hedmark->cover->landscape		= 'http://ukm.no/aust-agder/files/2014/02/Sequence-01.Still0011.jpg';
+		$hedmark->cover->portrait		= 'http://2013.ukm.no/ukm.no/festivalen/files/2013/06/11.Mathias_ditlefsen_18401-1024x682.jpg';
+		$hedmark->cover->landscape		= 'http://2013.ukm.no/ukm.no/festivalen/files/2013/06/11.Mathias_ditlefsen_18401-1024x682.jpg';
 		// LENKE TIL LIVESENDINGER
 		$hedmark->live->link			= 'https://new.livestream.com/accounts/183084/events/2891532';
 		// LIVESENDINGER AKKURAT NÅ?
@@ -103,8 +103,8 @@ $sognogfjordane		= fylke(1433, 'Sogn og Fjordane', 'http://ukm.no/sognogfjordane
 
 	//// SOGN OG FJORDANE
 		// COVER PHOTOS
-		$sognogfjordane->cover->portrait	= 'http://ukm.no/aust-agder/files/2014/03/DSC_0012.jpg';
-		$sognogfjordane->cover->landscape	= 'http://ukm.no/aust-agder/files/2014/02/Sequence-01.Still0011.jpg';
+		$sognogfjordane->cover->portrait	= 'http://ukm.no/pl3384/files/2014/03/2014_3384_2097-1024x679.jpg';
+		$sognogfjordane->cover->landscape	= 'http://ukm.no/pl3384/files/2014/03/2014_3384_2097-1024x679.jpg';
 		// LENKE TIL LIVESENDINGER (FINN NRK-lenke)
 		$sognogfjordane->live->link			= 'https://new.livestream.com/accounts/183084/events/2842026';
 		// LIVESENDINGER AKKURAT NÅ?
@@ -119,14 +119,14 @@ $sognogfjordane		= fylke(1433, 'Sogn og Fjordane', 'http://ukm.no/sognogfjordane
 
 
 	// FYLKESMONSTRINGER (REKKEFØLGE)
-#		$fylkesmonstringer[] = $akershus;
-#		$fylkesmonstringer[] = $nordland;
-#		$fylkesmonstringer[] = $hordaland;
-#		$fylkesmonstringer[] = $telemark;
-#		$fylkesmonstringer[] = $oslo;
-#		$fylkesmonstringer[] = $troms;
-#		$fylkesmonstringer[] = $hedmark;
-#		$fylkesmonstringer[] = $sognogfjordane;
+		$fylkesmonstringer[] = $akershus;
+		$fylkesmonstringer[] = $troms;
+		$fylkesmonstringer[] = $nordland;
+		$fylkesmonstringer[] = $hordaland;
+		$fylkesmonstringer[] = $telemark;
+		$fylkesmonstringer[] = $oslo;
+		$fylkesmonstringer[] = $hedmark;
+		$fylkesmonstringer[] = $sognogfjordane;
 
 
 
@@ -183,7 +183,6 @@ $sognogfjordane		= fylke(1433, 'Sogn og Fjordane', 'http://ukm.no/sognogfjordane
 	
 	
 		// FYLKESMONSTRINGER (REKKEFØLGE)
-		$fylkesmonstringer[] = $troms;
 		$fylkesmonstringer[] = $moreogromsdal;
 		$fylkesmonstringer[] = $nordtrondelag;
 		$fylkesmonstringer[] = $rogaland;
