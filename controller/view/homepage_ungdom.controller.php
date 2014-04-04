@@ -87,6 +87,8 @@ $sognogfjordane		= fylke(1433, 'Sogn og Fjordane', 'http://ukm.no/sognogfjordane
 		$troms->live->now				= true;		
 		// POSTS
 		$troms->posts[] = 107;
+		$troms->posts[] = 188;
+		$troms->posts[] = 198;
 
 	//// HEDMARK
 		// COVER PHOTOS
