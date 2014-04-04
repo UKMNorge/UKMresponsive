@@ -102,7 +102,7 @@ $sognogfjordane		= fylke(1433, 'Sogn og Fjordane', 'http://ukm.no/sognogfjordane
 		$sognogfjordane->cover->portrait	= 'http://ukm.no/pl3384/files/2014/03/2014_3384_2097-1024x679.jpg';
 		$sognogfjordane->cover->landscape	= 'http://ukm.no/pl3384/files/2014/03/2014_3384_2097-1024x679.jpg';
 		// LENKE TIL LIVESENDINGER (FINN NRK-lenke)
-		$sognogfjordane->live->link			= 'https://new.livestream.com/accounts/183084/events/2842026';
+		$sognogfjordane->live->link			= 'http://www.nrk.no/sognogfjordane/folg-ukm-direkte-i-nett-tv-1.11649073';
 		// LIVESENDINGER AKKURAT NÅ?
 		$sognogfjordane->live->now			= false;		
 		// POSTS
@@ -122,7 +122,7 @@ $sognogfjordane		= fylke(1433, 'Sogn og Fjordane', 'http://ukm.no/sognogfjordane
 		$fylkesmonstringer[] = $telemark;
 #		$fylkesmonstringer[] = $oslo;
 		$fylkesmonstringer[] = $hedmark;
-		$fylkesmonstringer[] = $sognogfjordane;
+#		$fylkesmonstringer[] = $sognogfjordane;
 
 
 
