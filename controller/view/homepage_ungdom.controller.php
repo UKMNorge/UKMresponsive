@@ -31,7 +31,7 @@ $sognogfjordane		= fylke(1433, 'Sogn og Fjordane', 'http://ukm.no/sognogfjordane
 		// LIVESENDINGER AKKURAT NÅ?
 		$akershus->live->now			= true;		
 		// POSTS
-#		$akershus->posts[] = null;
+		$akershus->posts[] = 65;
 		
 	//// NORDLAND
 		// COVER PHOTOS
@@ -53,7 +53,7 @@ $sognogfjordane		= fylke(1433, 'Sogn og Fjordane', 'http://ukm.no/sognogfjordane
 		// LIVESENDINGER AKKURAT NÅ?
 		$hordaland->live->now			= true;		
 		// POSTS
-#		$hordaland->posts[] = null;
+		$hordaland->posts[] = 33;
 
 	//// TELEMARK
 		// COVER PHOTOS
@@ -62,18 +62,14 @@ $sognogfjordane		= fylke(1433, 'Sogn og Fjordane', 'http://ukm.no/sognogfjordane
 		// LENKE TIL LIVESENDINGER
 		$telemark->live->link			= 'https://new.livestream.com/accounts/183084/events/2891521';
 		// LIVESENDINGER AKKURAT NÅ?
-		$telemark->live->now			= false;		
+		$telemark->live->now			= true;		
 		// POSTS
-#		$telemark->posts[] = null;
+		$telemark->posts[] = 1;
 
 	//// OSLO
 		// COVER PHOTOS
 		$oslo->cover->portrait			= 'http://2013.ukm.no/ukm.no/festivalen/files/2013/06/10.Sara_bf_2833_1-682x1024.jpg';
 		$oslo->cover->landscape			= 'http://2013.ukm.no/ukm.no/festivalen/files/2013/06/14.Magnus_og_Ayla_2891-1024x682.jpg';
-		// LENKE TIL LIVESENDINGER
-		$oslo->live->link				= 'https://new.livestream.com/accounts/183084/events/2891494';
-		// LIVESENDINGER AKKURAT NÅ?
-		$oslo->live->now				= false;		
 		// POSTS
 #		$oslo->posts[] = null;
 
@@ -97,9 +93,9 @@ $sognogfjordane		= fylke(1433, 'Sogn og Fjordane', 'http://ukm.no/sognogfjordane
 		// LENKE TIL LIVESENDINGER
 		$hedmark->live->link			= 'https://new.livestream.com/accounts/183084/events/2891532';
 		// LIVESENDINGER AKKURAT NÅ?
-		$hedmark->live->now				= false;		
+		$hedmark->live->now				= true;		
 		// POSTS
-#		$hedmark->posts[] = null;
+		$hedmark->posts[] = 342;
 
 	//// SOGN OG FJORDANE
 		// COVER PHOTOS
@@ -119,14 +115,14 @@ $sognogfjordane		= fylke(1433, 'Sogn og Fjordane', 'http://ukm.no/sognogfjordane
 
 
 	// FYLKESMONSTRINGER (REKKEFØLGE)
-#		$fylkesmonstringer[] = $akershus;
+		$fylkesmonstringer[] = $akershus;
 		$fylkesmonstringer[] = $troms;
 		$fylkesmonstringer[] = $nordland;
-#		$fylkesmonstringer[] = $hordaland;
-#		$fylkesmonstringer[] = $telemark;
+		$fylkesmonstringer[] = $hordaland;
+		$fylkesmonstringer[] = $telemark;
 #		$fylkesmonstringer[] = $oslo;
-#		$fylkesmonstringer[] = $hedmark;
-#		$fylkesmonstringer[] = $sognogfjordane;
+		$fylkesmonstringer[] = $hedmark;
+		$fylkesmonstringer[] = $sognogfjordane;
 
 
 
