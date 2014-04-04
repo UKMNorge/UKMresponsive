@@ -2,9 +2,6 @@
 require_once('UKM/innslag.class.php');
 require_once('UKM/tittel.class.php');
 
-error_reporting( E_ALL );
-ini_set('display_errors', true);
-
 $pl = new monstring( get_option('pl_id') );
 
 $monstring = new stdClass();
