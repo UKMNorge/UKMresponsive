@@ -32,6 +32,7 @@ $sognogfjordane		= fylke(1433, 'Sogn og Fjordane', 'http://ukm.no/sognogfjordane
 		$akershus->live->now			= false;		
 		// POSTS
 		$akershus->posts[] = 65;
+		$akershus->posts[] = 129;
 		
 	//// NORDLAND
 		// COVER PHOTOS
@@ -43,6 +44,7 @@ $sognogfjordane		= fylke(1433, 'Sogn og Fjordane', 'http://ukm.no/sognogfjordane
 		$nordland->live->now			= true;		
 		// POSTS
 		$nordland->posts[] = 46;
+		$nordland->posts[] = 93;
 		
 	//// HORDALAND
 		// COVER PHOTOS
@@ -84,7 +86,7 @@ $sognogfjordane		= fylke(1433, 'Sogn og Fjordane', 'http://ukm.no/sognogfjordane
 		// POSTS
 		$troms->posts[] = 263;
 		$troms->posts[] = 261;
-		$troms->posts[] = 242;
+		$troms->posts[] = 296;
 
 	//// HEDMARK
 		// COVER PHOTOS
@@ -96,6 +98,8 @@ $sognogfjordane		= fylke(1433, 'Sogn og Fjordane', 'http://ukm.no/sognogfjordane
 		$hedmark->live->now				= true;		
 		// POSTS
 		$hedmark->posts[] = 342;
+		$hedmark->posts[] = 353;
+		$hedmark->posts[] = 394;
 
 	//// SOGN OG FJORDANE
 		// COVER PHOTOS
