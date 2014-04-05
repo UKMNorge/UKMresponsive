@@ -2,6 +2,7 @@
 	$pl_id = get_blog_option( $fylke->ID, 'pl_id' );
 	
 	$pl = new monstring( $pl_id );
+	var_dump( $pl );
 	if( time() > $pl->get('pl_start') && time() < $pl->get('pl_stop') ) {
 		
 		$perioder = get_blog_option($fylke->ID, 'ukm_hendelser_perioder');
