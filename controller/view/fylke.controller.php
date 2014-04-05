@@ -134,6 +134,27 @@ if( $pl->registered() ) {
 }
 $SEO->description( $description );
 
+
+
+if( $VIEW == 'fylke_aktiv' && $_SERVER['REMOTE_ADDR'] == '195.204.59.106' ) {
+	$perioder = get_option('ukm_hendelser_perioder');
+	$embedcode = get_option('ukm_live_embedcode');
+	
+	$show_embed = false;
+	
+	if( $embedcode ) {
+		foreach( $perioder as $p ) {
+			if( $p->start < time() && $p->stop > time() {
+				$show_embed = true;
+				break;
+			}
+		}
+	}
+	
+	if( $show_embed ) {
+		$DATA['embedcode'] = $embedcode;
+	}
+}
 /*
     $DATA['page_nav'][] = (object) array( 'url' => 'bilder/',
                                           'title' => 'Bilder',
