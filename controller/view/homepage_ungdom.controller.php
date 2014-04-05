@@ -31,7 +31,7 @@ $sognogfjordane		= fylke(1433, 'Sogn og Fjordane', 'http://ukm.no/sognogfjordane
 		// LIVESENDINGER AKKURAT NÅ?
 		$akershus->live->now			= true;		
 		// POSTS
-		$akershus->posts[] = 65;
+		$akershus->posts[] = 27;
 		$akershus->posts[] = 129;
 		$akershus->posts[] = 260;
 		
