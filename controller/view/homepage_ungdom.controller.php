@@ -57,6 +57,7 @@ $sognogfjordane		= fylke(1433, 'Sogn og Fjordane', 'http://ukm.no/sognogfjordane
 		$hordaland->live->now			= true;		
 		// POSTS
 		$hordaland->posts[] = 33;
+		$hordaland->posts[] = 85;
 
 	//// TELEMARK
 		// COVER PHOTOS
