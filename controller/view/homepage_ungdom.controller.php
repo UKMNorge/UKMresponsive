@@ -29,7 +29,7 @@ $sognogfjordane		= fylke(1433, 'Sogn og Fjordane', 'http://ukm.no/sognogfjordane
 		// LENKE TIL LIVESENDINGER
 		$akershus->live->link			= 'https://new.livestream.com/accounts/183084/events/2891485';
 		// LIVESENDINGER AKKURAT NÅ?
-		$akershus->live->now			= false;		
+		$akershus->live->now			= true;		
 		// POSTS
 		$akershus->posts[] = 65;
 		$akershus->posts[] = 129;
@@ -108,7 +108,7 @@ $sognogfjordane		= fylke(1433, 'Sogn og Fjordane', 'http://ukm.no/sognogfjordane
 		// LENKE TIL LIVESENDINGER (FINN NRK-lenke)
 		$sognogfjordane->live->link			= 'http://www.nrk.no/sognogfjordane/folg-ukm-direkte-i-nett-tv-1.11649073';
 		// LIVESENDINGER AKKURAT NÅ?
-		$sognogfjordane->live->now			= false;		
+		$sognogfjordane->live->now			= true;		
 		// POSTS
 #		$sognogfjordane->posts[] = null;
 
