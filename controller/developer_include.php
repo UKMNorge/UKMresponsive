@@ -1,5 +1,5 @@
 <?php
-
+	echo 'beregn noe';
 	$pl_id = get_blog_option( $fylke->ID, 'pl_id' );
 	
 	$pl = new monstring( $pl_id );

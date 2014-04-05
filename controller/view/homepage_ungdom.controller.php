@@ -245,7 +245,7 @@ function fylke( $blog_id, $fylkenavn, $link ) {
 	if( $_SERVER['REMOTE_ADDR'] == '195.159.198.178' ) {
 		error_reporting( E_ALL );
 		ini_set('display_errors', true);
-		require_once(THEME_PATH . 'controller/developer_include.php');
+		require(THEME_PATH . 'controller/developer_include.php');
 	}
 	return $fylke;
 }
