@@ -16,6 +16,4 @@
 	if( $show_embed ) {
 		$DATA['embedcode'] = $embedcode;
 	}
-	
-	var_dump( $DATA );
 ?>
