@@ -11,6 +11,6 @@
 	</div>
 	{% endif %}
 	{% if embedcode is defined %}
-		{{ embedcode }}
+		{{ embedcode|raw }}
 	{% endif %}
 {% endblock %}
