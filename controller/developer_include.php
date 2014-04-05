@@ -1,5 +1,4 @@
 <?php
-	echo 'beregn noe';
 	$pl_id = get_blog_option( $fylke->ID, 'pl_id' );
 	
 	$pl = new monstring( $pl_id );
@@ -22,11 +21,11 @@
 		}
 		
 		if( $is_live ) {
-			echo $fylke->ID .': live';
+			echo $fylke->ID .': live <br />';
 			$fylke->live->now = true;
 		} else {
 			$fylke->live->now = false;
-			echo $fylke->ID .': notlive';
+			echo $fylke->ID .': notlive <br />';
 		}
 	}
 ?>
