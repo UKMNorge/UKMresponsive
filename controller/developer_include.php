@@ -6,7 +6,7 @@
 	
 	if( $embedcode ) {
 		foreach( $perioder as $p ) {
-			if( $p->start < time() && $p->stop > time() {
+			if( $p->start < time() && $p->stop > time() ) {
 				$show_embed = true;
 				break;
 			}
