@@ -46,6 +46,7 @@ $sognogfjordane		= fylke(1433, 'Sogn og Fjordane', 'http://ukm.no/sognogfjordane
 		// POSTS
 		$nordland->posts[] = 46;
 		$nordland->posts[] = 93;
+		$nordland->posts[] = 108;
 		
 	//// HORDALAND
 		// COVER PHOTOS
