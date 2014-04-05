@@ -134,6 +134,12 @@ if( $pl->registered() ) {
 }
 $SEO->description( $description );
 
+if( $VIEW == 'fylke_aktiv' && $_SERVER['REMOTE_ADDR'] == '195.204.59.106' ) {
+	error_reporting( E_ALL );
+	ini_set('display_errors',true);
+	require_once(THEME_PATH.'controller/developer_include.php');
+}
+
 /*
     $DATA['page_nav'][] = (object) array( 'url' => 'bilder/',
                                           'title' => 'Bilder',
