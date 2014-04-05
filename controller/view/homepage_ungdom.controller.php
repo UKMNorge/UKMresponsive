@@ -28,8 +28,6 @@ $sognogfjordane		= fylke(1433, 'Sogn og Fjordane', 'http://ukm.no/sognogfjordane
 		$akershus->cover->landscape		= 'http://ukm.no/akershus/files/2014/03/Zapp-On-2.jpg';
 		// LENKE TIL LIVESENDINGER
 		$akershus->live->link			= 'https://new.livestream.com/accounts/183084/events/2891485';
-		// LIVESENDINGER AKKURAT NÅ?
-		$akershus->live->now			= true;		
 		// POSTS
 		$akershus->posts[] = 27;
 		$akershus->posts[] = 129;
@@ -41,8 +39,6 @@ $sognogfjordane		= fylke(1433, 'Sogn og Fjordane', 'http://ukm.no/sognogfjordane
 		$nordland->cover->landscape		= 'http://ukm.no/pl3428/files/2014/02/2014_3428_690-1024x682.jpg';
 		// LENKE TIL LIVESENDINGER
 		$nordland->live->link			= 'https://new.livestream.com/accounts/183084/events/2891505';
-		// LIVESENDINGER AKKURAT NÅ?
-		$nordland->live->now			= true;		
 		// POSTS
 		$nordland->posts[] = 46;
 		$nordland->posts[] = 93;
@@ -54,8 +50,6 @@ $sognogfjordane		= fylke(1433, 'Sogn og Fjordane', 'http://ukm.no/sognogfjordane
 		$hordaland->cover->landscape		= 'http://ukm.no/pl3493/files/2014/01/2014_3493_133-822x1024.jpg';
 		// LENKE TIL LIVESENDINGER
 		$hordaland->live->link			= 'https://new.livestream.com/accounts/183084/events/2891511';
-		// LIVESENDINGER AKKURAT NÅ?
-		$hordaland->live->now			= true;		
 		// POSTS
 		$hordaland->posts[] = 33;
 		$hordaland->posts[] = 85;
@@ -66,8 +60,6 @@ $sognogfjordane		= fylke(1433, 'Sogn og Fjordane', 'http://ukm.no/sognogfjordane
 		$telemark->cover->landscape		= 'http://2013.ukm.no/ukm.no/festivalen/files/2013/06/6.eirillTigerguttJensen20130624_0365-1024x682.jpg';
 		// LENKE TIL LIVESENDINGER
 		$telemark->live->link			= 'https://new.livestream.com/accounts/183084/events/2891521';
-		// LIVESENDINGER AKKURAT NÅ?
-		$telemark->live->now			= true;		
 		// POSTS
 		$telemark->posts[] = 1;
 
@@ -84,8 +76,6 @@ $sognogfjordane		= fylke(1433, 'Sogn og Fjordane', 'http://ukm.no/sognogfjordane
 		$troms->cover->landscape		= 'http://ukm.no/troms/files/2014/04/2014_3217_2633-1024x683.jpg';
 		// LENKE TIL LIVESENDINGER
 		$troms->live->link				= 'https://new.livestream.com/accounts/183084/ukmtroms2014';
-		// LIVESENDINGER AKKURAT NÅ?
-		$troms->live->now				= true;		
 		// POSTS
 		$troms->posts[] = 263;
 		$troms->posts[] = 261;
@@ -97,8 +87,6 @@ $sognogfjordane		= fylke(1433, 'Sogn og Fjordane', 'http://ukm.no/sognogfjordane
 		$hedmark->cover->landscape		= 'http://2013.ukm.no/ukm.no/festivalen/files/2013/06/11.Mathias_ditlefsen_18401-1024x682.jpg';
 		// LENKE TIL LIVESENDINGER
 		$hedmark->live->link			= 'https://new.livestream.com/accounts/183084/events/2891532';
-		// LIVESENDINGER AKKURAT NÅ?
-		$hedmark->live->now				= true;		
 		// POSTS
 		$hedmark->posts[] = 342;
 		$hedmark->posts[] = 353;
@@ -110,8 +98,6 @@ $sognogfjordane		= fylke(1433, 'Sogn og Fjordane', 'http://ukm.no/sognogfjordane
 		$sognogfjordane->cover->landscape	= 'http://ukm.no/pl3384/files/2014/03/2014_3384_2097-1024x679.jpg';
 		// LENKE TIL LIVESENDINGER (FINN NRK-lenke)
 		$sognogfjordane->live->link			= 'http://www.nrk.no/sognogfjordane/folg-ukm-direkte-i-nett-tv-1.11649073';
-		// LIVESENDINGER AKKURAT NÅ?
-		$sognogfjordane->live->now			= true;		
 		// POSTS
 #		$sognogfjordane->posts[] = null;
 
@@ -241,11 +227,33 @@ function fylke( $blog_id, $fylkenavn, $link ) {
 	$fylke->posts	= array();
 	$fylke->cover 	= new stdClass();
 	$fylke->live	= new stdClass();
+	$fylke->live->now = false;
+
 	
-	if( $_SERVER['REMOTE_ADDR'] == '195.159.198.178' ) {
-		error_reporting( E_ALL );
-		ini_set('display_errors', true);
-		require(THEME_PATH . 'controller/developer_include.php');
+	$pl_id = get_blog_option( $fylke->ID, 'pl_id' );
+	
+	$pl = new monstring( $pl_id );
+	if( time() > $pl->get('pl_start') && time() < $pl->get('pl_stop') ) {
+		
+		$perioder = get_blog_option($fylke->ID, 'ukm_hendelser_perioder');
+		$embedcode = get_blog_option($fylke->ID, 'ukm_live_embedcode');
+		
+		$is_live = false;
+		
+		if( $embedcode ) {
+			if(is_array( $perioder ) ) {
+				foreach( $perioder as $p ) {
+					if( $p->start < time() && $p->stop > time() ) {
+						$is_live = true;
+						break;
+					}
+				}
+			}
+		}
+		
+		if( $is_live ) {
+			$fylke->live->now = true;
+		}
 	}
 	return $fylke;
 }
