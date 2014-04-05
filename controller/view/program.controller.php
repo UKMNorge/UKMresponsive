@@ -37,7 +37,7 @@ if( isset($_GET['hendelse'] ) ) {
 
 	$DATA['hendelse'] = $hendelse;
    	$SEO->set('title', $hendelse->navn .' @ UKM '. $monstring->navn );
-   	$SEO->set('description', 'Detaljprogram for '. $hendelse->navn .'. '. date('d.m.Y H:i', $hendelse->start) 
+   	$SEO->set('description', 'Program for '. $hendelse->navn .'. '. date('d.m.Y H:i', $hendelse->start) 
    							. ( empty($hendelse->sted) ? '' : ' @ '. $hendelse->sted) 
    			  );
    	$SEO->set('canonical', $DATA['url']['current'].'?hendelse='.$_GET['hendelse'] );
@@ -54,7 +54,7 @@ if( isset($_GET['hendelse'] ) ) {
 	}
 } else {
    	$SEO->set('title', 'Program UKM ' . $monstring->navn );
-   	$SEO->set('description', 'Rammeprogram for UKM '. $monstring->navn .' ('.$monstring->start.' - '.$monstring->slutt.')');
+   	$SEO->set('description', 'Program for UKM '. $monstring->navn .' ('.$monstring->start.' - '.$monstring->slutt.')');
 
 	$VIEW = 'program'; 
 
