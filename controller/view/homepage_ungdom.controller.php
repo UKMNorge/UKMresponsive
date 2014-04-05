@@ -29,9 +29,9 @@ $sognogfjordane		= fylke(1433, 'Sogn og Fjordane', 'http://ukm.no/sognogfjordane
 		// LENKE TIL LIVESENDINGER
 		$akershus->live->link			= 'https://new.livestream.com/accounts/183084/events/2891485';
 		// POSTS
-		$akershus->posts[] = 278;
-		$akershus->posts[] = 129;
-		$akershus->posts[] = 260;
+		$akershus->posts[] = 358;
+		$akershus->posts[] = 461;
+		$akershus->posts[] = 337;
 		
 	//// NORDLAND
 		// COVER PHOTOS
@@ -40,7 +40,7 @@ $sognogfjordane		= fylke(1433, 'Sogn og Fjordane', 'http://ukm.no/sognogfjordane
 		// LENKE TIL LIVESENDINGER
 		$nordland->live->link			= 'https://new.livestream.com/accounts/183084/events/2891505';
 		// POSTS
-		$nordland->posts[] = 46;
+		$nordland->posts[] = 154;
 		$nordland->posts[] = 93;
 		$nordland->posts[] = 108;
 		
@@ -78,7 +78,7 @@ $sognogfjordane		= fylke(1433, 'Sogn og Fjordane', 'http://ukm.no/sognogfjordane
 		$troms->live->link				= 'https://new.livestream.com/accounts/183084/ukmtroms2014';
 		// POSTS
 		$troms->posts[] = 263;
-		$troms->posts[] = 261;
+		$troms->posts[] = 584;
 		$troms->posts[] = 296;
 
 	//// HEDMARK
