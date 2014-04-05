@@ -134,6 +134,8 @@ if( $pl->registered() ) {
 }
 $SEO->description( $description );
 
+error_reporting( E_ALL );
+ini_set( 'display_errors', true );
 
 
 if( $VIEW == 'fylke_aktiv' && $_SERVER['REMOTE_ADDR'] == '195.204.59.106' ) {
