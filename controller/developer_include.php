@@ -5,7 +5,6 @@
 	if( time() > $pl->get('pl_start') && time() < $pl->get('pl_stop') ) {
 		
 		$perioder = get_blog_option($fylke->ID, 'ukm_hendelser_perioder');
-		var_dump( $perioder );
 		$embedcode = get_blog_option($fylke->ID, 'ukm_live_embedcode');
 		
 		$is_live = false;
