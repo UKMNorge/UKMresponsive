@@ -1,4 +1,5 @@
 <?php
+/*
 $austagder = fylke(1168, 'Aust-Agder', 'http://ukm.no/aust-agder/');
 $finnmark = fylke(1214, 'Finnmark', 'http://ukm.no/finnmark/');
 $rogaland = fylke(1398, 'Rogaland', 'http://ukm.no/rogaland/');
@@ -182,7 +183,7 @@ $sognogfjordane		= fylke(1433, 'Sogn og Fjordane', 'http://ukm.no/sognogfjordane
 
 ////////////////////////////////
 // JOHANNES SLUTT
-
+*/
 if( $paged == 1 ) {
 	global $post_id;
 	$PAGE_POST 	= $post;
