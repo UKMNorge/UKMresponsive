@@ -29,9 +29,9 @@ $sognogfjordane		= fylke(1433, 'Sogn og Fjordane', 'http://ukm.no/sognogfjordane
 		// LENKE TIL LIVESENDINGER
 		$akershus->live->link			= 'https://new.livestream.com/accounts/183084/events/2891485';
 		// POSTS
-		$akershus->posts[] = 358;
-		$akershus->posts[] = 461;
-		$akershus->posts[] = 337;
+		$akershus->posts[] = 906;
+		$akershus->posts[] = 1022;
+		$akershus->posts[] = 788;
 		
 	//// NORDLAND
 		// COVER PHOTOS
@@ -51,8 +51,9 @@ $sognogfjordane		= fylke(1433, 'Sogn og Fjordane', 'http://ukm.no/sognogfjordane
 		// LENKE TIL LIVESENDINGER
 		$hordaland->live->link			= 'https://new.livestream.com/accounts/183084/events/2891511';
 		// POSTS
-		$hordaland->posts[] = 33;
-		$hordaland->posts[] = 85;
+		$hordaland->posts[] = 166;
+		$hordaland->posts[] = 131;
+		$hordaland->posts[] = 111;
 
 	//// TELEMARK
 		// COVER PHOTOS
@@ -68,18 +69,19 @@ $sognogfjordane		= fylke(1433, 'Sogn og Fjordane', 'http://ukm.no/sognogfjordane
 		$oslo->cover->portrait			= 'http://2013.ukm.no/ukm.no/festivalen/files/2013/06/10.Sara_bf_2833_1-682x1024.jpg';
 		$oslo->cover->landscape			= 'http://2013.ukm.no/ukm.no/festivalen/files/2013/06/14.Magnus_og_Ayla_2891-1024x682.jpg';
 		// POSTS
-#		$oslo->posts[] = null;
+		$oslo->posts[] = 52;
+		$oslo->posts[] = 60;
 
 	//// TROMS
 		// COVER PHOTOS
 		$troms->cover->portrait			= 'http://ukm.no/troms/files/2014/03/2014_3217_2595-1024x661.jpg';
 		$troms->cover->landscape		= 'http://ukm.no/troms/files/2014/04/2014_3217_2633-1024x683.jpg';
 		// LENKE TIL LIVESENDINGER
-		$troms->live->link				= 'https://new.livestream.com/accounts/183084/ukmtroms2014';
+		$troms->live->link			= 'https://new.livestream.com/accounts/183084/ukmtroms2014';
 		// POSTS
-		$troms->posts[] = 263;
-		$troms->posts[] = 584;
-		$troms->posts[] = 296;
+		$troms->posts[] = 902;
+		$troms->posts[] = 901;
+		$troms->posts[] = 782;
 
 	//// HEDMARK
 		// COVER PHOTOS
@@ -88,8 +90,8 @@ $sognogfjordane		= fylke(1433, 'Sogn og Fjordane', 'http://ukm.no/sognogfjordane
 		// LENKE TIL LIVESENDINGER
 		$hedmark->live->link			= 'https://new.livestream.com/accounts/183084/events/2891532';
 		// POSTS
-		$hedmark->posts[] = 342;
-		$hedmark->posts[] = 353;
+		$hedmark->posts[] = 504;
+		$hedmark->posts[] = 429;
 		$hedmark->posts[] = 394;
 
 	//// SOGN OG FJORDANE
@@ -113,7 +115,7 @@ $sognogfjordane		= fylke(1433, 'Sogn og Fjordane', 'http://ukm.no/sognogfjordane
 		$fylkesmonstringer[] = $nordland;
 		$fylkesmonstringer[] = $hordaland;
 		$fylkesmonstringer[] = $telemark;
-#		$fylkesmonstringer[] = $oslo;
+		$fylkesmonstringer[] = $oslo;
 		$fylkesmonstringer[] = $hedmark;
 #		$fylkesmonstringer[] = $sognogfjordane;
 
