@@ -15,7 +15,7 @@ define('THEME_PATH', get_theme_root().'/UKMresponsive/' );
 define('THEME_DEFAULT_IMAGE', 'http://grafikk.ukm.no/placeholder/post_placeholder.png');
 define('TWIG_PATH', __DIR__ );
 if($_SERVER['REMOTE_ADDR']=='81.0.146.162') {
-	define('TWIG_CACHE_PATH', __DIR__ .'cache_twig/');
+	define('TWIG_CACHE_PATH', __DIR__ .'/cache_twig/');
 echo TWIG_CACHE_PATH;
 }
 require_once('vendor/autoload.php');
