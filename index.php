@@ -1,7 +1,8 @@
 <?php
 header('Content-Type: text/html; charset=utf-8');
 
-error_reporting(E_ALL ^ E_DEPRECATED);
+#error_reporting(E_ALL ^ E_DEPRECATED);
+error_reporting(E_NONE);
 if( $_SERVER['HTTP_HOST'] == 'ukm.no' )
 	ini_set('display_errors',0);
 else
