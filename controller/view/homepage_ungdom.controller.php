@@ -38,6 +38,7 @@ $oppland			= fylke(1381, 'Oppland', 'http://ukm.no/oppland/');
 		$oppland->posts[] = 116;
 		$oppland->posts[] = 130;
 		
+		$fylkesmonstringer[] = $sortrondelag;
 		$fylkesmonstringer[] = $oppland;
 
 
