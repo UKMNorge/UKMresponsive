@@ -16,13 +16,30 @@ $troms				= fylke(1477, 'Troms', 'http://ukm.no/troms/');
 $hedmark			= fylke(1266, 'Hedmark', 'http://ukm.no/hedmark/');
 $sognogfjordane		= fylke(1433, 'Sogn og Fjordane', 'http://ukm.no/sognogfjordane/');
 
+*/
+$sortrondelag		= fylke(1464, 'Sør-Trøndelag', 'http://ukm.no/sor-trondelag/');
+
 ////////////////////////////////
 // JOHANNES START
+
+
+		// COVER PHOTOS
+		$sortrondelag->cover->portrait		= 'http://ukm.no/sor-trondelag/files/2014/02/YZ8W1427IN-PROGRESS-1024x682.jpg';
+		$sortrondelag->cover->landscape		= 'http://ukm.no/sor-trondelag/files/2014/02/YZ8W1427IN-PROGRESS-1024x682.jpg';
+		// LENKE TIL LIVESENDINGER
+		$sortrondelag->live->link			= 'https://new.livestream.com/accounts/183084/events/2891532';
+		// POSTS
+		$sortrondelag->posts[] = 85;
+		$sortrondelag->posts[] = 82;
+
+
+		$fylkesmonstringer[] = $sortrondelag;
+
 
 	//////////////////////////////////////////////////////
 	// 3. HELG
 	//////////////////////////////////////////////////////
-
+/*
 	//// AKERSHUS
 		// COVER PHOTOS
 		$akershus->cover->portrait		= 'http://ukm.no/akershus/files/2014/03/Zapp-On-2.jpg';
