@@ -26,8 +26,6 @@ $sortrondelag		= fylke(1464, 'Sør-Trøndelag', 'http://ukm.no/sor-trondelag/');
 		// COVER PHOTOS
 		$sortrondelag->cover->portrait		= 'http://ukm.no/sor-trondelag/files/2014/02/YZ8W1427IN-PROGRESS-1024x682.jpg';
 		$sortrondelag->cover->landscape		= 'http://ukm.no/sor-trondelag/files/2014/02/YZ8W1427IN-PROGRESS-1024x682.jpg';
-		// LENKE TIL LIVESENDINGER
-		$sortrondelag->live->link			= 'https://new.livestream.com/accounts/183084/events/2891532';
 		// POSTS
 		$sortrondelag->posts[] = 82;
 		$sortrondelag->posts[] = 85;
