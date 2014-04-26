@@ -19,6 +19,7 @@ $sognogfjordane		= fylke(1433, 'Sogn og Fjordane', 'http://ukm.no/sognogfjordane
 */
 $sortrondelag		= fylke(1464, 'Sør-Trøndelag', 'http://ukm.no/sor-trondelag/');
 $oppland			= fylke(1381, 'Oppland', 'http://ukm.no/oppland/');
+$buskerud			= fylke(1186, 'Buskerud', 'http://ukm.no/buskerud/');
 
 ////////////////////////////////
 // JOHANNES START
@@ -37,9 +38,17 @@ $oppland			= fylke(1381, 'Oppland', 'http://ukm.no/oppland/');
 		// POSTS
 		$oppland->posts[] = 116;
 		$oppland->posts[] = 130;
+
+		// COVER PHOTOS
+		$buskerud->cover->portrait		= 'http://ukm.no/buskerud/files/2013/09/603631_525540980825976_1177824421_n-640x960.jpg';
+		$buskerud->cover->landscape		= 'http://ukm.no/buskerud/files/2013/09/603631_525540980825976_1177824421_n-640x960.jpg';
+		// POSTS
+		$buskerud->posts[] = 34;
+
 		
 		$fylkesmonstringer[] = $sortrondelag;
 		$fylkesmonstringer[] = $oppland;
+		$fylkesmonstringer[] = $buskerud;
 
 
 	//////////////////////////////////////////////////////
