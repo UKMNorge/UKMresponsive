@@ -40,8 +40,8 @@ $buskerud			= fylke(1186, 'Buskerud', 'http://ukm.no/buskerud/');
 		$oppland->posts[] = 130;
 
 		// COVER PHOTOS
-		$buskerud->cover->portrait		= 'http://ukm.no/buskerud/files/2013/09/603631_525540980825976_1177824421_n-640x960.jpg';
-		$buskerud->cover->landscape		= 'http://ukm.no/buskerud/files/2013/09/603631_525540980825976_1177824421_n-640x960.jpg';
+		$buskerud->cover->portrait		= 'http://ukm.no/wp-content/blogs.dir/1186/files/2013/09/603631_525540980825976_1177824421_n.jpg';
+		$buskerud->cover->landscape		= 'http://ukm.no/wp-content/blogs.dir/1186/files/2013/09/603631_525540980825976_1177824421_n.jpg';
 		// POSTS
 		$buskerud->posts[] = 34;
 
