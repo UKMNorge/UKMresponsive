@@ -18,6 +18,7 @@ $sognogfjordane		= fylke(1433, 'Sogn og Fjordane', 'http://ukm.no/sognogfjordane
 
 */
 $sortrondelag		= fylke(1464, 'Sør-Trøndelag', 'http://ukm.no/sor-trondelag/');
+$oppland			= fylke(1381, 'Oppland', 'http://ukm.no/oppland/');
 
 ////////////////////////////////
 // JOHANNES START
@@ -30,8 +31,14 @@ $sortrondelag		= fylke(1464, 'Sør-Trøndelag', 'http://ukm.no/sor-trondelag/');
 		$sortrondelag->posts[] = 82;
 		$sortrondelag->posts[] = 85;
 
-
-		$fylkesmonstringer[] = $sortrondelag;
+		// COVER PHOTOS
+		$oppland->cover->portrait		= 'http://ukm.no/oppland/files/2014/04/Cellister-1024x682.jpg';
+		$oppland->cover->landscape		= 'http://ukm.no/oppland/files/2014/04/Cellister-1024x682.jpg';
+		// POSTS
+		$oppland->posts[] = 116;
+		$oppland->posts[] = 130;
+		
+		$fylkesmonstringer[] = $oppland;
 
 
 	//////////////////////////////////////////////////////
