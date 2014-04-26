@@ -29,8 +29,8 @@ $sortrondelag		= fylke(1464, 'Sør-Trøndelag', 'http://ukm.no/sor-trondelag/');
 		// LENKE TIL LIVESENDINGER
 		$sortrondelag->live->link			= 'https://new.livestream.com/accounts/183084/events/2891532';
 		// POSTS
-		$sortrondelag->posts[] = 85;
 		$sortrondelag->posts[] = 82;
+		$sortrondelag->posts[] = 85;
 
 
 		$fylkesmonstringer[] = $sortrondelag;
