@@ -17,9 +17,11 @@ $hedmark			= fylke(1266, 'Hedmark', 'http://ukm.no/hedmark/');
 $sognogfjordane		= fylke(1433, 'Sogn og Fjordane', 'http://ukm.no/sognogfjordane/');
 
 */
+/*
 $sortrondelag		= fylke(1464, 'Sør-Trøndelag', 'http://ukm.no/sor-trondelag/');
 $oppland			= fylke(1381, 'Oppland', 'http://ukm.no/oppland/');
 $buskerud			= fylke(1186, 'Buskerud', 'http://ukm.no/buskerud/');
+*/
 
 
 $vestagder		= fylke(1517, 'Vest-Agder', 'http://ukm.no/vest-agder/');
