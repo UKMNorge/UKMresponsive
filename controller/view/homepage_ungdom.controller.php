@@ -21,10 +21,33 @@ $sortrondelag		= fylke(1464, 'Sør-Trøndelag', 'http://ukm.no/sor-trondelag/');
 $oppland			= fylke(1381, 'Oppland', 'http://ukm.no/oppland/');
 $buskerud			= fylke(1186, 'Buskerud', 'http://ukm.no/buskerud/');
 
+
+$vestagder		= fylke(1517, 'Vest-Agder', 'http://ukm.no/vest-agder/');
+$vestfold		= fylke(1519, 'Vestfold', 'http://ukm.no/vestfold/');
+
 ////////////////////////////////
 // JOHANNES START
 
 
+		// COVER PHOTOS
+		$vestagder->cover->portrait		= 'http://ukm.no/vest-agder/files/2014/05/IMG_5151-1024x682.jpg';
+		$vestagder->cover->landscape	= 'http://ukm.no/vest-agder/files/2014/05/IMG_5151-1024x682.jpg';
+		// POSTS
+		$vestagder->posts[] = 93;
+		$vestagder->posts[] = 135;
+
+		// COVER PHOTOS
+		$vestfold->cover->portrait		= 'https://farm2.staticflickr.com/1170/4720844503_9b926e937e_b.jpg';
+		$vestfold->cover->landscape		= 'https://farm2.staticflickr.com/1170/4720844503_9b926e937e_b.jpg';
+		// POSTS
+		$vestfold->posts[] = 25;
+		$vestfold->posts[] = 31;
+
+		$fylkesmonstringer[] = $vestagder;
+		$fylkesmonstringer[] = $vestfold;
+
+
+/*
 		// COVER PHOTOS
 		$sortrondelag->cover->portrait		= 'http://ukm.no/sor-trondelag/files/2014/02/YZ8W1427IN-PROGRESS-1024x682.jpg';
 		$sortrondelag->cover->landscape		= 'http://ukm.no/sor-trondelag/files/2014/02/YZ8W1427IN-PROGRESS-1024x682.jpg';
@@ -50,6 +73,7 @@ $buskerud			= fylke(1186, 'Buskerud', 'http://ukm.no/buskerud/');
 		$fylkesmonstringer[] = $oppland;
 		$fylkesmonstringer[] = $buskerud;
 
+*/
 
 	//////////////////////////////////////////////////////
 	// 3. HELG
