@@ -24,14 +24,15 @@ $buskerud			= fylke(1186, 'Buskerud', 'http://ukm.no/buskerud/');
 */
 
 
+/*
 $vestagder		= fylke(1517, 'Vest-Agder', 'http://ukm.no/vest-agder/');
 $vestfold		= fylke(1519, 'Vestfold', 'http://ukm.no/vestfold/');
-
+*/
 ////////////////////////////////
 // JOHANNES START
 
 
-		// COVER PHOTOS
+/*		// COVER PHOTOS
 		$vestagder->cover->portrait		= 'http://ukm.no/vest-agder/files/2014/05/IMG_5151-1024x682.jpg';
 		$vestagder->cover->landscape	= 'http://ukm.no/vest-agder/files/2014/05/IMG_5151-1024x682.jpg';
 		// POSTS
@@ -47,7 +48,7 @@ $vestfold		= fylke(1519, 'Vestfold', 'http://ukm.no/vestfold/');
 
 		$fylkesmonstringer[] = $vestagder;
 		$fylkesmonstringer[] = $vestfold;
-
+*/
 
 /*
 		// COVER PHOTOS
