@@ -1,7 +1,20 @@
 <?php
+log_time( 'Controller init' );
+function log_time($logpoint) {
+	if( $_SERVER['REMOTE_ADDR'] == '81.0.146.162' ) {
+ 		$t = microtime(true);
+		$micro = sprintf("%06d",($t - floor($t)) * 1000000);
+		$d = new DateTime( date('Y-m-d H:i:s.'.$micro,$t) );
+
+		$log = $d->format("Y-m-d H:i:s.u"); // note at point on "u"
+		
+		error_log('PAMELDTE: '. $log .' => '. $logpoint);
+	}
+}
 require_once('UKM/innslag.class.php');
 require_once('UKM/tittel.class.php');
 
+log_time( 'Init monstring' );
 $pl = new monstring( get_option('pl_id') );
 
 $monstring = new stdClass();
@@ -14,9 +27,9 @@ $DATA['monstring'] = $monstring;
 $DATA['jumbo'] = (object) array('header' => 'Påmeldte',
 								'content' => 'UKM ' . $pl->g('pl_name')
 								);
-
+log_time( 'Load innslag' );
 $alle_innslag = $pl->innslag();
-
+log_time( 'Loaded innslag' );
 if(isset( $_GET['type'] ) && $_GET['type'] == 'false')
 	unset( $_GET['type'] );
 
@@ -47,9 +60,12 @@ $BC->add( $DATA['url']['current'].'?type='.$DATA['active_filter_id'], ucfirst($D
 
 
 $DATA['typer'] = array();
+log_time( 'LOOP innslag' );
 foreach( $alle_innslag as $innslag ) {
 	// Innslag data, add to list
+	log_time( 'Innslag: gen list data' );
 	$stdClass = generate_list_data( $innslag, $pl, true);
+	log_time( 'Innslag: generated list data' );
 	// Innslag types
 	$typer[ $innslag['bt_id'] ] = $stdClass->kategori;
 
@@ -62,3 +78,4 @@ foreach( $alle_innslag as $innslag ) {
 }
 
 $DATA['typer'] = $typer;
+log_time( 'Controller end' );
