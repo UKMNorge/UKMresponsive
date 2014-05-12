@@ -15,3 +15,5 @@ js/config.codekit
 *.codekit
 
 less/config.codekit
+
+cache_twig/*
