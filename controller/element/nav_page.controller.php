@@ -2,13 +2,13 @@
 switch( get_option('ukm_top_page') ) {
 
 	###############################################
-	## MENU OF internsjonalt.UKM.no FRONTPAGE
+	## MENU OF internsjonalt.ukm.no FRONTPAGE
 	case 'internasjonalt':
 		$DATA['page_nav'] = array();
 		break;
 
 	###############################################
-	## MENU OF om.UKM.no FRONTPAGE
+	## MENU OF om.ukm.no FRONTPAGE
 	case 'ambassadorer':
 		$DATA['page_nav'][] = (object) array( 'url' 			=> 'materiell/',
 											   'title'		 	=> 'Materiell',
@@ -30,24 +30,24 @@ switch( get_option('ukm_top_page') ) {
 		break;
 
 	###############################################
-	## MENU OF om.UKM.no FRONTPAGE
+	## MENU OF om.ukm.no FRONTPAGE
 	case 'voksneogpresse':
-		$DATA['page_nav'][] = (object) array( 'url' 			=> '//om.ukm.no/kontakt/',
+		$DATA['page_nav'][] = (object) array( 'url' 			=> '//om.'.CURRENT_UKM_DOMAIN.'/kontakt/',
 											   'title'		 	=> 'Kontakt',
 											   'icon'			=> 'i',
 											   'description'	=> 'Kontaktpersoner i UKM-nettverket'
 											  );
-		$DATA['page_nav'][] = (object) array( 'url' 			=> '//om.ukm.no/om/',
+		$DATA['page_nav'][] = (object) array( 'url' 			=> '//om.'.CURRENT_UKM_DOMAIN.'/om/',
 											   'title'		 	=> 'Finn ut mer om UKM',
 											   'icon'			=> 'star',
 											   'description'	=> 'Bakgrunnsstoff, verdier og historikk'
 											  );
-		$DATA['page_nav'][] = (object) array( 'url' 			=> '//om.ukm.no/grafisk-profil/',
+		$DATA['page_nav'][] = (object) array( 'url' 			=> '//om.'.CURRENT_UKM_DOMAIN.'/grafisk-profil/',
 											   'title'		 	=> 'Grafisk profil',
 											   'icon'			=> 'palette',
 											   'description'	=> 'UKM-logo, skrifter og farger'
 											  );
-		$DATA['page_nav'][] = (object) array( 'url' 			=> '//om.ukm.no/presse/',
+		$DATA['page_nav'][] = (object) array( 'url' 			=> '//om.'.CURRENT_UKM_DOMAIN.'/presse/',
 											   'title'		 	=> 'PRESSE',
 											   'icon'			=> 'pencil',
 											   'description'	=> 'Informasjon, bilder med mer'
@@ -59,7 +59,7 @@ switch( get_option('ukm_top_page') ) {
 											   'description'	=> 'Nasjonale prosjekter og satsninger'
 											  );
 */
-		$DATA['page_nav'][] = (object) array( 'url' 			=> '//internasjonalt.ukm.no/',
+		$DATA['page_nav'][] = (object) array( 'url' 			=> '//internasjonalt.'.CURRENT_UKM_DOMAIN.'/',
 											   'title'		 	=> 'Internasjonalt',
 											   'icon'			=> 'globe',
 											   'description'	=> 'Alt om UKMs internasjonale utvekslinger'
@@ -69,48 +69,48 @@ switch( get_option('ukm_top_page') ) {
 
 	
 	###############################################
-	## MENU OF UKM.no FRONTPAGE
+	## MENU OF ukm.no FRONTPAGE
 	default: 
-		$DATA['page_nav'][] = (object) array( 'url' 			=> '//ukm.no/din_monstring/',
+		$DATA['page_nav'][] = (object) array( 'url' 			=> '//'.CURRENT_UKM_DOMAIN.'/din_monstring/',
 											   'title'		 	=> 'Finn din mønstring',
 											   'icon'			=> 'maps',
 											   'description'	=> 'UKM har lokalmønstringer over hele landet'
 											  );
-		$DATA['page_nav'][] = (object) array( 'url' 			=> '//ukm.no/festivalen/',
+		$DATA['page_nav'][] = (object) array( 'url' 			=> '//'.CURRENT_UKM_DOMAIN.'/festivalen/',
 											   'title'		 	=> 'UKM-festivalen',
 											   'icon'			=> 'rocket',
 											   'description'	=> 'Info om UKM-årets høydepunkt!'
 											  );
 											  
-		$DATA['page_nav'][] = (object) array( 'url' 			=> '//ukm.no/hva-er-ukm/',
+		$DATA['page_nav'][] = (object) array( 'url' 			=> '//'.CURRENT_UKM_DOMAIN.'/hva-er-ukm/',
 											   'title'		 	=> 'Finn ut mer om UKM',
 											   'icon'			=> 'star',
 											   'description'	=> 'Hvem kan delta? Hva kan du gjøre?'
 											  );
 /*
-		$DATA['page_nav'][] = (object) array( 'url' 			=> 'http://tv.ukm.no',
+		$DATA['page_nav'][] = (object) array( 'url' 			=> 'http://tv.'.CURRENT_UKM_DOMAIN.'',
 											   'title'		 	=> 'UKM-TV',
 											   'icon'			=> 'ukmtv_black',
 											   'description'	=> 'UKM består av én lokalmønstring for hver kommune. Finn din her.',
 											   'target'			=> '_blank'
 											  );
 */
-		$DATA['page_nav'][] = (object) array( 'url' 			=> '//ukm.no/urg/',
+		$DATA['page_nav'][] = (object) array( 'url' 			=> '//'.CURRENT_UKM_DOMAIN.'/urg/',
 											   'title'		 	=> 'URG - Ung ressursgruppe',
 											   'icon'			=> 'kanin',
 											   'description'	=> 'Si din mening'
 											  );
-		$DATA['page_nav'][] = (object) array( 'url' 			=> '//ukm.no/ambassador/',
+		$DATA['page_nav'][] = (object) array( 'url' 			=> '//'.CURRENT_UKM_DOMAIN.'/ambassador/',
 											   'title'		 	=> 'Ambassadører',
 											   'icon'			=> 'heart',
 											   'description'	=> 'For deg som vil spre ordet om UKM'
 											  );
-		$DATA['page_nav'][] = (object) array( 'url' 			=> '//internasjonalt.ukm.no/',
+		$DATA['page_nav'][] = (object) array( 'url' 			=> '//internasjonalt.'.CURRENT_UKM_DOMAIN.'/',
 											   'title'		 	=> 'Internasjonalt',
 											   'icon'			=> 'globe',
 											   'description'	=> 'Alt om UKMs internasjonale utvekslinger'
 											  );
-		$DATA['page_nav'][] = (object) array( 'url' 			=> '//ukm.no/tidligere-ar/',
+		$DATA['page_nav'][] = (object) array( 'url' 			=> '//'.CURRENT_UKM_DOMAIN.'/tidligere-ar/',
 											   'title'		 	=> 'UKM tidligere år',
 											   'icon'			=> 'monitor',
 											   'description'	=> 'Bilder, video og info'
