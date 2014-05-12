@@ -78,4 +78,7 @@ foreach( $alle_innslag as $innslag ) {
 }
 
 $DATA['typer'] = $typer;
+if(isset($_GET['q'])) {
+	$DATA['filter_value'] = $_GET['q'];
+}
 log_time( 'Controller end' );

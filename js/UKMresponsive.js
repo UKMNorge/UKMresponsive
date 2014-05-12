@@ -143,7 +143,7 @@ function pageFocus(clicked) {
 														}
 													}
 												});
-
+		jQuery('#filter_search').change();
 	});
 
 /* ON CLICK OF TOGGLE-CLASS ELEMENTS */
