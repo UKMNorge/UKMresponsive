@@ -1,12 +1,16 @@
 <?php
 header('Content-Type: text/html; charset=utf-8');
 
-#error_reporting(E_ALL ^ E_DEPRECATED);
-error_reporting(E_NONE);
-if( $_SERVER['HTTP_HOST'] == 'ukm.no' )
+if( $_SERVER['HTTP_HOST'] == 'ukm.no' ) {
+	error_reporting(E_NONE);
 	ini_set('display_errors',0);
-else
+	define('TWIG_CACHE_PATH', __DIR__ .'/cache_twig/');
+	define('CURRENT_UKM_DOMAIN', 'ukm.no');
+} else {
+	error_reporting(E_ALL ^ E_DEPRECATED);
 	ini_set('display_errors',1);
+	define('CURRENT_UKM_DOMAIN', 'ukm.dev');
+}	
 
 setlocale(LC_ALL, 'nb_NO', 'nb', 'no');
 
@@ -14,7 +18,6 @@ setlocale(LC_ALL, 'nb_NO', 'nb', 'no');
 define('THEME_PATH', get_theme_root().'/UKMresponsive/' );
 define('THEME_DEFAULT_IMAGE', 'http://grafikk.ukm.no/placeholder/post_placeholder.png');
 define('TWIG_PATH', __DIR__ );
-define('TWIG_CACHE_PATH', __DIR__ .'/cache_twig/');
 
 require_once('vendor/autoload.php');
 require_once('WPOO/WPOO/Post.php');
@@ -28,6 +31,7 @@ require_once('functions_theme.php');
 **********************************/
 	$DATA = array();
 	$DATA['url']['base']		= 'http://'. $_SERVER['HTTP_HOST'];
+	$DATA['url']['ukmno']		= CURRENT_UKM_DOMAIN;
 	$DATA['url']['theme_dir'] 	= get_stylesheet_directory_uri().'/';
 	$DATA['url']['blog']		= get_bloginfo('url').'/';
 	$DATA['url']['current']		= get_permalink();
@@ -102,7 +106,7 @@ require_once('functions_theme.php');
 			require_once('controller/view/homepage.controller.php');
 			$VIEW = 'homepage_internasjonalt';
 		} elseif( get_option('site_type') == 'land' ) {
-            $VIEW = 'festivalen';
+            $VIEW = 'festival/homepage_large';
 			require_once('controller/element/kontakt.controller.php');
 			require_once('controller/view/festivalen.controller.php');
 		} elseif( get_option('site_type') == 'fylke' ) {
