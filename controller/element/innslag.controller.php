@@ -96,12 +96,12 @@ function generate_list_data( $innslag, $pl, $current_c_id=false ) {
 				$photo = new stdClass();
 				$photo->url 	= new stdClass();
 
-				if( isset( $item['post_meta']['sizes']['large']) ) {
+				if( isset( $item['post_meta']['sizes']['large']) && isset( $item['post_meta']['sizes']['large']['width'] ) ) {
 					$photo->width = $item['post_meta']['sizes']['large']['width'];					
 					$photo->height = $item['post_meta']['sizes']['large']['height'];					
 				} else {
 					#$data = @getimagesize( $large );
-					if($data) {
+					if($data && is_array( $data ) ) {
 						list($width, $height, $type, $attr) = $data;
 						$photo->width = $width;
 						$photo->height = $height;
