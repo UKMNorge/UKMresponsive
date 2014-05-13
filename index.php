@@ -25,7 +25,6 @@ require_once('WPOO/WPOO/Author.php');
 require_once('UKM/inc/twig-admin.inc.php');
 require_once('functions_theme.php');
 
-
 /**********************************
 * INITIATE TEMPLATE
 **********************************/
@@ -39,8 +38,8 @@ require_once('functions_theme.php');
 	$DATA['blog']['url']		= get_bloginfo('url').'/';
 	$DATA['blog']['name']		= get_bloginfo('name');
 	$DATA['blog']['feed']		= get_bloginfo('rss_url');
-
-
+	$DATA['blog']['css_extra']	= explode(';',get_option('ukmresponsive_css_files'));
+	
 	$DATA['console'] = array();
 	
 	$DATA['placeholder']['post'] = THEME_DEFAULT_IMAGE;
