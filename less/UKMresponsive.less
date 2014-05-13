@@ -1,16 +1,4 @@
-
-@clr-ukm-green: #6dc6c1;
-@clr-ukm-green-l1: lighten(spin(@clr-ukm-green,5),5%);
-@clr-ukm-green-l2: lighten(spin(@clr-ukm-green,5),10%);
-@clr-ukm-green-l3: lighten(spin(@clr-ukm-green,5),30%);
-@clr-ukm-green-d1: darken(spin(@clr-ukm-green,5),5%);
-@clr-ukm-green-d2: darken(spin(@clr-ukm-green,5),10%);
-
-@clr-ukm-orange: #f37037;
-
-
-@clr-grey-light: #D8D8D8;
-@clr-grey-lighter: #FAFAFA;
+@import "colors.less";
 
 .btn-default,
 button.btn-default {
@@ -29,18 +17,6 @@ button.btn-default {
 	color: #1a1919 !important;
 }
 
-@color-clouds:			#ECF0F1;
-@color-silver: 			#BDC3C7;
-@color-concrete:		#95A5A6;
-@color-asbestos:	 	#7F8C8D;
-@color-wet-asphalt:		#34495E;
-@color-midnight-blue:	#2C3E50;
-@color-belize-hole:		#2980B9;
-
-@link-color: 			@clr-ukm-green;
-@link-color-hover:		@clr-ukm-green-d2;
-@link-color-active:		@clr-ukm-green-d2;
-
 
 @import "header.less";
 @import "base.less";
@@ -58,6 +34,7 @@ button.btn-default {
 @import "breadcrumbs.less";
 @import "feature.less";
 @import "cc.less";
+@import "googlemaps.less";
 
 body {
 	margin: 0;
@@ -65,6 +42,7 @@ body {
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 400;
 	color: #444;
+	height: 100%;
 }
 @media (max-width: 768px) {
 	body {
