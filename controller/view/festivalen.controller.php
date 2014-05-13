@@ -43,6 +43,11 @@ $DATA['fylke'] = get_option('fylke');
 	$monstring->slutter = $pl->get('pl_stop');
 	$monstring->sted = $pl->get('pl_place'); // info['pl_place']; //
     $monstring->navn = $pl->get('pl_name'); // info['pl_name'];  //
+    
+    $remaining = $monstring->starter - time();
+    $monstring->lengetil = new stdClass();
+    $monstring->lengetil->dager = floor($remaining / 86400);
+    $monstring->lengetil->timer = floor(($remaining % 86400) / 3600);
 	$DATA['monstring'] = $monstring;
 	
 	$kontaktpersoner = $pl->kontakter();
