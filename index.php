@@ -1,17 +1,16 @@
 <?php
 header('Content-Type: text/html; charset=utf-8');
 
-if( $_SERVER['HTTP_HOST'] == 'ukm.no' ) {
+if( $_SERVER['HTTP_HOST'] == 'ukm.dev' ) {
+	error_reporting(E_ALL ^ E_DEPRECATED);
+	ini_set('display_errors',1);
+	define('CURRENT_UKM_DOMAIN', 'ukm.dev');
+} else {
 	error_reporting(E_NONE);
 	ini_set('display_errors',0);
 	define('TWIG_CACHE_PATH', __DIR__ .'/cache_twig/');
 	define('CURRENT_UKM_DOMAIN', 'ukm.no');
-} else {
-	error_reporting(E_ALL ^ E_DEPRECATED);
-	ini_set('display_errors',1);
-	define('CURRENT_UKM_DOMAIN', 'ukm.dev');
-}	
-
+}
 setlocale(LC_ALL, 'nb_NO', 'nb', 'no');
 
 
