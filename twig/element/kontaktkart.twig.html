@@ -11,6 +11,9 @@
 </script>
 <div class="hidden-xs">
 	<h2>Klikk på et hode for å se kontaktinfo</h2>
+	{% if excel is defined %}
+	<p><a href="{{kontaktkart.excel}}">Last ned alle kontakter i excel-format</a></p>
+	{% endif %}
 	<div class="col-xs-12 col-md-12 col-lg-4">
 		{% for kontakt in kontakter %}
 		<div class="automap_contact" style="display:none;" id="automap_contact_{{kontakt.fylke.id}}">
