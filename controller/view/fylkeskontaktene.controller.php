@@ -1,4 +1,8 @@
 <?php
+if( $_SERVER['REMOTE_ADDR'] == '81.0.146.162'){
+	ini_set('display_errors',true);
+	error_reporting(E_ALL);
+}
 $MAPNAME = 'fylkeskontaktene';
 $mailfilter = 'ukm.no';
 
