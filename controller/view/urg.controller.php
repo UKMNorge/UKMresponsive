@@ -37,5 +37,6 @@ if( is_array( $DATA['kontaktkart']['kontakter'])) {
 		excell('D'.$rad, $kontakt->epost);
 		excell('E'.$rad, $kontakt->bilde_ikkesirkel);
 	}
+}
 $DATA['kontaktkart']['kart_url'] = str_replace('ukm.local','ukm.no', $DATA['kontaktkart']['kart_url'] );
 $DATA['kontaktkart']['excel'] = exWrite($objPHPExcel,'UKM_URGrepresentanter'.get_option('season'));
