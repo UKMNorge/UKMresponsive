@@ -11,7 +11,13 @@ if( !isset( $DATA['jumbo'] ) ) {
 the_post();
 $DATA['page'] = new WPOO_Post($post);
 
-$posts = query_posts('posts_per_page=12&paged='.$paged);
+$category = get_queried_object();
+$per_page = get_option( 'category_'. $category->term_id .'_posts_per_page' );
+if( !$per_page ) {
+	$per_page = 12;
+}
+
+$posts = query_posts('posts_per_page='.$per_page.'&paged='.$paged);
 
 while(have_posts()) {
    the_post();
