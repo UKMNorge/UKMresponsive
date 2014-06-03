@@ -17,7 +17,7 @@ if( !$per_page ) {
 	$per_page = 12;
 }
 
-$posts = query_posts('posts_per_page='.$per_page.'&paged='.$paged);
+$posts = query_posts('posts_per_page='.$per_page.'&paged='.$paged.'&cat='.$category->term_id);
 
 while(have_posts()) {
    the_post();
