@@ -46,6 +46,9 @@
 				</div>
 			</div>
 		</div>
+		{% if post.meta.workshop_rom is defined or post.meta.workshop_rom is defined %}
+			{% embed "element/post_meta/workshop.twig.html" %}{% endembed %}
+		{% endif %}
 		<div class="row">
 			<div class="col-xs-12">
 		        <div class="post_byline_wrapper col-sm-5 pull-right hidden-xs">
