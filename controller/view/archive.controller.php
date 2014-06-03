@@ -20,8 +20,15 @@ if( !$per_page ) {
 $posts = query_posts('posts_per_page='.$per_page.'&paged='.$paged.'&cat='.$category->term_id);
 
 while(have_posts()) {
-   the_post();
-   $DATA['posts'][] = new WPOO_Post($post); 
+	the_post();
+	$posten = new WPOO_Post($post);
+	$metadata = get_post_custom($post->ID);
+	if( is_array( $metadata ) ) {
+		foreach( $metadata as $key => $val ) {
+			$posten->meta[$key] = $val[0];
+		}
+	}
+	$DATA['posts'][] = $posten;
 }
 
 $npl = get_next_posts_link();

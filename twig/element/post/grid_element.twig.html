@@ -3,5 +3,8 @@
 </a>
 	
 <a href="{{url}}"><h2>{{title|raw}}</h2></a>
+{% if post.meta.workshop_rom is defined or post.meta.workshop_rom is defined %}
+	{% embed "element/post_meta/workshop_grid_element.twig.html" %}{% endembed %}
+{% endif %}
 <p>{{lead|raw}}</p>
 <a href="{{url}}">les mer</a>
