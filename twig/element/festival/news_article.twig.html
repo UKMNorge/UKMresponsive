@@ -62,7 +62,7 @@
     {% elseif onecolimage is defined %}
         {% if imagealign == "right" %}
         <div class="col-md-4">
-            <a href="{{post.url}}"><div class="image" style="background:url({{ onecolimage|raw }})"></div></a>
+            <a href="{{post.url}}"><div class="image" style="background-image:url({{ onecolimage|raw }})"></div></a>
         </div>
         {% endif %}
     {% endif %}
