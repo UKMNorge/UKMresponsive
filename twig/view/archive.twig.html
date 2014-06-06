@@ -3,9 +3,9 @@
 {% block content %}
 {% embed "element/backtoUKM.twig.html" %}{% endembed %}
 
-{% if post.description is defined %}
-	<div class="description">
-	{{post.description}}
+{% if page.description is defined %}
+	<div class="container" style="margin-top:20px;">
+	<p class="lead">{{page.description}}</p>
 	</div>
 {% endif %}
 
