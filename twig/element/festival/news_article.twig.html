@@ -7,10 +7,10 @@
 {% endif %}
 
 {% if post.meta.list_view_image_columns is defined %}
-    {% if post.meta.list_view_image_columns == "1" and post.image.url is defined %}
-        {% set onecolimage = post.image.url %}
-    {% elseif post.meta.list_view_image_columns == "2" and post.image.url is defined %}
+    {% if post.meta.list_view_image_columns == "2" and post.image.url is defined %}
         {% set twocolimage = post.image.url %}
+    {% elseif post.image.url is defined %}
+        {% set onecolimage = post.image.url %}
     {% endif %}
 {% endif %}
 
@@ -34,7 +34,7 @@
         <div class="news-article-three-col">
     {% endif %}
             <div class="news-article-content">
-                <h3><a href="{{post.url}}">{% if post.title|length > 33 %}{{post.title|raw|slice(0,30) ~ '...'}}{%else%}{{post.title|raw}}{%endif%}</a></h3>
+                <h3><a href="{{post.url}}">{% if post.title|raw|length > 33 %}{{post.title|slice(0,30)|raw ~ '...'}}{%else%}{{post.title|raw}}{%endif%}</a></h3>
                 <div class="infos">
                     <div class="date">
                         <img src="{{url.theme_dir}}img/nav/nav-calendar.png" class="icon" style="max-width: 100%;height:auto"/>
