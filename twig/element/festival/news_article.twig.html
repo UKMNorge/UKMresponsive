@@ -3,7 +3,7 @@
 {% if post.meta.list_view_image_align is defined %}
     {% set imagealign = post.meta.list_view_image_align %}
 {% else %}
-    {% set imagealign = "left" %}
+    {% set imagealign = "right" %}
 {% endif %}
 
 {% if post.image.url is defined %}
@@ -20,7 +20,7 @@
     <div class="news-article-body">
         <div class="col-md-4 news-article-one-col">
     {% elseif onecolimage is defined %}
-    {% if articletext|length > 760 %}{% set articletext = articletext|slice(0,757)|trim ~ '...' %}{% endif %}
+    {% if articletext|length > 720 %}{% set articletext = articletext|slice(0,717)|trim ~ '...' %}{% endif %}
     <div class="news-article-body">
         {% if imagealign == "left" %}
         <div class="col-md-4">
@@ -29,7 +29,7 @@
         {% endif %}
         <div class="col-md-8 news-article-two-col">
     {% else %}
-    {% if articletext|length > 1160 %}{% set articletext = articletext|slice(0,1157)|trim ~ '...' %}{% endif %}
+    {% if articletext|length > 1120 %}{% set articletext = articletext|slice(0,1117)|trim ~ '...' %}{% endif %}
     <div class="news-article-body">
         <div class="news-article-three-col">
     {% endif %}
