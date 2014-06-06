@@ -12,6 +12,8 @@ the_post();
 $DATA['page'] = new WPOO_Post($post);
 
 $category = get_queried_object();
+$DATA['page']->description = $category->description;
+
 $per_page = get_option( 'category_'. $category->term_id .'_posts_per_page' );
 if( !$per_page ) {
 	$per_page = 12;

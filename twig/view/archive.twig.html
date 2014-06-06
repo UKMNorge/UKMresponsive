@@ -3,6 +3,12 @@
 {% block content %}
 {% embed "element/backtoUKM.twig.html" %}{% endembed %}
 
+{% if post.description is defined %}
+	<div class="description">
+	{{post.description}}
+	</div>
+{% endif %}
+
 {% for post in posts %}
     <div class="news col-xs-6 col-md-4">
         {% embed "element/post/grid_element.twig.html" with post %}{% endembed %}
