@@ -6,10 +6,10 @@
     {% set imagealign = "left" %}
 {% endif %}
 
-{% if post.meta.list_view_image_columns is defined %}
-    {% if post.meta.list_view_image_columns == "2" and post.image.url is defined %}
+{% if post.image.url is defined %}
+    {% if post.meta.list_view_image_columns is defined and post.meta.list_view_image_columns == "2" %}
         {% set twocolimage = post.image.url %}
-    {% elseif post.image.url is defined %}
+    {% else %}
         {% set onecolimage = post.image.url %}
     {% endif %}
 {% endif %}
