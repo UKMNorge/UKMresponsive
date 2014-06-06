@@ -34,7 +34,7 @@
         <div class="news-article-three-col">
     {% endif %}
             <div class="news-article-content">
-                <h3><a href="{{post.url}}">{% if post.title|raw|length > 33 %}{{post.title|slice(0,30)|raw}}...{%else%}{{post.title|raw}}{%endif%}</a></h3>
+                <h3><a href="{{post.url}}">{{post.title|raw}}</a></h3>
                 <div class="infos">
                     <div class="date">
                         <img src="{{url.theme_dir}}img/nav/nav-calendar.png" class="icon" style="max-width: 100%;height:auto"/>
@@ -52,7 +52,7 @@
                         <a href="{{post.blog.link}}">{{post.blog.name}}</a>
                     </div>
                 </div>
-                <p>{{ articletext }}{% if sliced %}...{% endif %} <span class="readmore"><a href="{{post.url}}">Les hele saken</a></span></p>
+                <p>{{ articletext|raw }}{% if sliced %}...{% endif %} <span class="readmore"><a href="{{post.url}}">Les hele saken</a></span></p>
             </div>        
         </div>
     {% if twocolimage is defined %}
