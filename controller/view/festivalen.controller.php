@@ -23,6 +23,7 @@ $DATA['fylke'] = get_option('fylke');
         the_post();
         $wpoopost = new WPOO_Post($post);
         $metadata = get_post_custom($post->id);
+        $wpoopost->blog = new stdClass();
         $wpoopost->blog->link = get_bloginfo('url');
         $wpoopost->blog->name = get_bloginfo('name');
         if( is_array( $metadata ) ) {
