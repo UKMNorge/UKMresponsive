@@ -2,7 +2,7 @@
 <html lang="en">
   	<head>
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+		<meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=1.0, initial-scale=1.0, user-scalable=no">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<link rel="shortcut icon" href="http://grafikk.ukm.no/favicon.ico" />
@@ -16,6 +16,7 @@
 			<link href="{{ url.theme_dir }}{{cssfile}}" rel="stylesheet">
 		{% endfor %}
 		<script type="text/javascript" src="{{ url.theme_dir }}js/min/jquery-1.11.0.min-ck.js"></script>
+		<script type="text/javascript" src="{{ url.theme_dir }}vendor/bootstrap/3.0.1/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="{{ url.theme_dir }}js/min/UKMresponsive-ck.js?v13052014"></script>
 		<script type="text/javascript">	 
 		  var _gaq = _gaq || [];_gaq.push(['_setAccount', '{{SEO.analytics}}']);_gaq.push(['_trackPageview']);(function() {
@@ -24,10 +25,41 @@
 		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 		  })();
 		</script>
+		{% if isMobile is defined and isMobile == true %}
+		<script type="text/javascript" src="{{ url.theme_dir }}js/scrollable.js"></script>
+		<script type="text/javascript">
+            addEventListener('DOMContentLoaded', function() {
+                var container = document.getElementById('container');
+                var page = document.getElementById('page');
+                for (var i = 0; i < names.length*5; ++i) {
+                    var item = document.createElement('div');
+                    item.className = 'item';
+                    item.innerHTML = names[i%names.length];
+                    page.appendChild(item);
+                    if (page.offsetHeight > container.offsetHeight*7) {
+                        break;
+                    }
+                }
+            });
+            
+            document.addEventListener('touchstart', function(event) {
+                // Prevent text selection
+                //event.preventDefault();
+            }, false);
+            
+            document.addEventListener('mousedown', function(event) {
+                // Prevent text selection
+                event.preventDefault();
+            }, false);
+		</script>
+        {% endif %}
 		<style type="text/css">{% block additional_css %}{% endblock %}</style>
 		<script type="text/javascript">{% block additional_js %}{% endblock %}</script>
 	</head>
 	<body>
+	{% if isMobile %}
+	<div class="scrollable vertical">
+	{% endif %}
 	{# FACEBOOK #}
 	<div id="fb-root"></div>
 
@@ -220,5 +252,8 @@
 		</div>
 		<div class="clearfix"></div>
 	</div>
+	{% if isMobile is defined and isMobile == true %}
+	</div>
+	{% endif %}
   </body>
 </html>

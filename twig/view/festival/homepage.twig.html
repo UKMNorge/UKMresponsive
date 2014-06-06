@@ -1,0 +1,122 @@
+{% extends "layout.twig.html" %}
+
+{% block header_pre %}
+{% endblock %}
+
+{% block navbar %}
+	<div class="navbar-header">
+		<a href="/" class="navbar-brand">
+			<img src="http://grafikk.ukm.no/profil/logo/UKM_logo.png" width="70" />
+		</a>
+	</div>
+	<ul class="nav navbar-nav navbar-right">
+		<li><a href="http://ukm.no">tilbake til UKM.no</a></li>
+	</ul>
+{% endblock %}
+
+{% block content_container %}
+    {% block highlight %}
+        {#<div class="row">
+            <div class="container">
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                
+                    <!-- Wrapper for slides -->
+                    <div style="width:100%">
+                        <div class="carousel-inner" style="float:left; width:auto;">
+                            <div class="item active" style="height:350px;background:#a2a2a2;">
+                                <img src="" alt="" style="min-width:750px;">
+                                <div class="carousel-caption">
+                                    <h2>Slide1</h2>
+                                    <p>Info</p>
+                                </div>
+                            </div>
+                            <div class="item" style="height:350px;background:#a2a2a2;">
+                                <img src="" alt="" style="min-width:750px;">
+                                <div class="carousel-caption">
+                                    <h2>Slide2</h2>
+                                    <p>Info</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div style="float:left; width:350px;" class="carousel-nav">
+                            <ul class="nav nav-pills nav-stacked">
+                                <li class="active" onclick="$('.carousel-nav li.active').removeClass('active');$(this).addClass('active')" data-target="#carousel-example-generic" data-slide-to="0">
+                                    <a href="#">Test</a>
+                                </li>
+                                <li data-target="#carousel-example-generic" onclick="$('.carousel-nav li.active').removeClass('active');$(this).addClass('active')" data-slide-to="1">
+                                    <a href="#">Test2</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <script type="text/javascript">
+            $('#carousel-example-generic').carousel({
+              interval: false
+            })
+        </script> #}
+    {% endblock %}
+    {#% block nav %}
+        <div class="row">
+            <div class="navbar navbar-default" role="navigation">
+                <div class="container">
+                <ol class="nav navbar-nav navbar-justified">
+                    <li style="padding-left:25px;padding-right:25px;">
+                        <a href="/">
+                            <div class="centered">
+                                <span><img src="http://ukm.dev/wp-content/themes/UKMresponsive/img/nav/nav-maps.png" width="45"/></span>                            
+                            </div>
+                            <span>Info til deltakere</span>
+                        </a>
+                    </li>
+                    <li style="padding-left:25px;padding-right:25px;">
+                        <a href="/">
+                            <div class="centered">
+                                <span><img src="http://ukm.dev/wp-content/themes/UKMresponsive/img/nav/nav-maps.png" width="45"/></span>                            
+                            </div>
+                            <span>Workshops</span>
+                        </a>
+                    </li>
+                    <li style="padding-left:25px;padding-right:25px;">
+                        <a href="/">
+                            <div class="centered">
+                                <span><img src="http://ukm.dev/wp-content/themes/UKMresponsive/img/nav/nav-maps.png" width="45"/></span>                            
+                            </div>
+                            <span>Program</span>
+                        </a>
+                    </li>
+                    <li style="padding-left:25px;padding-right:25px;">
+                        <a href="/">
+                            <div class="centered">
+                                <span><img src="http://ukm.dev/wp-content/themes/UKMresponsive/img/nav/nav-maps.png" width="45"/></span>                            
+                            </div>
+                            <span>Redaksjonen</span>
+                        </a>
+                    </li>
+                </ol>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    {% endblock %#}
+
+    {% block content %}
+        <div class="row">
+            <div class="container">
+                <div class="news-article-list">
+                    {% for post in posts %}
+                        {% embed "element/festival/news_article.twig.html" with {'post':post,'url':url} %}{% endembed %}
+                        {#% embed "element/festival/news_article.twig.html" with{'onecolimage' : 'http://examplesof.com/photography/nature/trees-of-colours.jpg'} %}{% endembed %}
+                        {% embed "element/festival/news_article.twig.html" %}{% endembed %}
+                        {% embed "element/festival/news_article.twig.html" with{'imagealign' : 'right', 'onecolimage' : 'http://t.wallpaperweb.org/wallpaper/3d_landscape/1680x1050/nature_balloon_ridewide.jpg'} %}{% endembed %}
+                        {% embed "element/festival/news_article.twig.html" with{'twocolimage' : 'http://ymmural.com/wp-content/uploads/2011/08/Wide_Nature_Slide_2.jpg' } %}{% endembed %#}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    {% endblock %}
+{% endblock %}

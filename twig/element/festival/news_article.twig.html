@@ -1,0 +1,71 @@
+{% set articletext = post.content|striptags|raw %}
+
+{% if post.meta.list_view_image_align is defined %}
+    {% set imagealign = post.meta.list_view_image_align %}
+{% else %}
+    {% set imagealign = "left" %}
+{% endif %}
+
+{% if post.meta.list_view_image_columns is defined %}
+    {% if post.meta.list_view_image_columns == "1" and post.image.url is defined %}
+        {% set onecolimage = post.image.url %}
+    {% elseif post.meta.list_view_image_columns == "2" and post.image.url is defined %}
+        {% set twocolimage = post.image.url %}
+    {% endif %}
+{% endif %}
+
+<div class="news-article">
+    {% if twocolimage is defined %}
+    {% if articletext|length > 320 %}{% set articletext = articletext|slice(0,317) ~ '...' %}{% endif %}
+    <div class="news-article-body">
+        <div class="col-md-4 news-article-one-col">
+    {% elseif onecolimage is defined %}
+    {% if articletext|length > 760 %}{% set articletext = articletext|slice(0,757) ~ '...' %}{% endif %}
+    <div class="news-article-body">
+        {% if imagealign == "left" %}
+        <div class="col-md-4">
+            <a href="{{post.url}}"><div class="image" style="background:url({{ onecolimage|raw }})"></div></a>
+        </div>
+        {% endif %}
+        <div class="col-md-8 news-article-two-col">
+    {% else %}
+    {% if articletext|length > 1160 %}{% set articletext = articletext|slice(0,1157) ~ ' ...' %}{% endif %}
+    <div class="news-article-body">
+        <div class="news-article-three-col">
+    {% endif %}
+            <div class="news-article-content">
+                <h3><a href="{{post.url}}">{% if post.title|length > 33 %}{{post.title|raw|slice(0,30) ~ '...'}}{%else%}{{post.title|raw}}{%endif%}</a></h3>
+                <div class="infos">
+                    <div class="date">
+                        <img src="{{url.theme_dir}}img/nav/nav-calendar.png" class="icon" style="max-width: 100%;height:auto"/>
+                        <span class="timeago" title="{{post.date|date('Y-m-d H:i')}}">{{post.date|date('d.m.Y H:i')}}</span>
+                    </div>
+                    <div class="categories">
+                        <img src="{{url.theme_dir}}img/nav/nav-tag.png" class="icon" style="max-width: 100%;height:auto"/>
+						{% for category in post.categories %}
+						<a href="{{category.url_w_blog}}">{{category.name}}</a>
+						{% if loop.last != true %}, {% endif %}
+						{% endfor %}
+                    </div>
+                    <div class="date" style="float:none;">
+                        <img src="{{url.theme_dir}}img/nav/nav-maps.png" class="icon" style="max-width: 100%;height:auto"/>
+                        <a href="{{post.blog.link}}">{{post.blog.name}}</a>
+                    </div>
+                </div>
+                <p>{{ articletext }} <a href="{{post.url}}">Les hele saken</a></p>
+            </div>        
+        </div>
+    {% if twocolimage is defined %}
+        <div class="col-md-8">
+            <a href="{{post.url}}"><div class="image" style="background-image:url({{ twocolimage|raw }})"></div></a>
+        </div>
+    {% elseif onecolimage is defined %}
+        {% if imagealign == "right" %}
+        <div class="col-md-4">
+            <a href="{{post.url}}"><div class="image" style="background:url({{ onecolimage|raw }})"></div></a>
+        </div>
+        {% endif %}
+    {% endif %}
+        <div style="clear:both;"></div>
+    </div>
+</div>
