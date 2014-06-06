@@ -135,11 +135,32 @@ a:hover, a:active, a:visited {
 .top30 {
     margin-top: 30px;
 }
+li.navbar-link {
+    text-align:center;
+    @media only screen and (min-width : 1023px) {   
+        padding-left: 25px;
+        padding-right:25px;     
+        &:first-child {
+            padding-left: 0px;
+        }
+        &:last-child {
+            padding-right: 0px;
+        }
+    }
+    @media only screen and (max-width : 1023px) {  
+        padding-left: 15px;
+        padding-right:15px;
+        float:none;
+        width: 120px;
+    }
+}
 .navbar-nav.navbar-justified{
+    @media only screen and (min-width : 1023px) {
     margin: 0 auto;
     display: table;
     table-layout: fixed;
     float:none;
+    }
 }
 .news-article-list {  
     .news-article {
