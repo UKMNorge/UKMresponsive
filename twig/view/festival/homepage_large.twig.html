@@ -61,6 +61,17 @@
 </div>
 
 <div class="row">
+    <div class="container">
+        <h1>Nyheter</h1>
+        <div class="news-article-list">
+            {% for post in posts %}
+                {% embed "element/festival/news_article.twig.html" with {'post':post,'url':url} %}{% endembed %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<div class="row">
 	<div class="container">
 		<div class="page_box">
 			<div class="embed-container">

@@ -16,11 +16,11 @@
 
 <div class="news-article">
     {% if twocolimage is defined %}
-    {% if articletext|length > 320 %}{% set articletext = articletext|slice(0,317) ~ '...' %}{% endif %}
+    {% if articletext|length > 290 %}{% set articletext = articletext|slice(0,287)|trim ~ '...' %}{% endif %}
     <div class="news-article-body">
         <div class="col-md-4 news-article-one-col">
     {% elseif onecolimage is defined %}
-    {% if articletext|length > 760 %}{% set articletext = articletext|slice(0,757) ~ '...' %}{% endif %}
+    {% if articletext|length > 760 %}{% set articletext = articletext|slice(0,757)|trim ~ '...' %}{% endif %}
     <div class="news-article-body">
         {% if imagealign == "left" %}
         <div class="col-md-4">
@@ -29,7 +29,7 @@
         {% endif %}
         <div class="col-md-8 news-article-two-col">
     {% else %}
-    {% if articletext|length > 1160 %}{% set articletext = articletext|slice(0,1157) ~ ' ...' %}{% endif %}
+    {% if articletext|length > 1160 %}{% set articletext = articletext|slice(0,1157)|trim ~ '...' %}{% endif %}
     <div class="news-article-body">
         <div class="news-article-three-col">
     {% endif %}
@@ -52,7 +52,7 @@
                         <a href="{{post.blog.link}}">{{post.blog.name}}</a>
                     </div>
                 </div>
-                <p>{{ articletext }} <a href="{{post.url}}">Les hele saken</a></p>
+                <p>{{ articletext }} <span class="readmore"><a href="{{post.url}}">Les hele saken</a></span></p>
             </div>        
         </div>
     {% if twocolimage is defined %}

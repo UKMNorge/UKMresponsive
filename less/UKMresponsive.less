@@ -144,6 +144,7 @@ a:hover, a:active, a:visited {
 .news-article-list {  
     .news-article {
         padding: 20px;
+        padding-left: 0px;
         background: #fff;
         .news-article-body {
             @media only screen and (max-width : 1023px) { height:auto!important; } 
@@ -174,8 +175,9 @@ a:hover, a:active, a:visited {
         .news-article-content {
             padding-top: 5px;
             p {
-                font-size: 13px;
+                font-size: 14px;
                 line-height: 1.6;
+                word-wrap: break-word;
                 
             }
             .infos {
@@ -189,6 +191,9 @@ a:hover, a:active, a:visited {
             h3 {
                 margin-top: 0px;
                 margin-bottom: 8px;
+            }
+            span.readmore {
+                white-space:nowrap;
             }
         }
         
