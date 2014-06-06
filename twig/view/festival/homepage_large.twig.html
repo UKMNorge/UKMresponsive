@@ -1,26 +1,16 @@
 {% extends "layout.twig.html" %}
 
-{% block header_pre %}
-	<div class="page_cover">
-		<div class="container">
-			<div class="page_cover_jumbo">
-				<img src="http://grafikk.ukm.no/profil/logo/UKM_logo_hvit_0500.png" />
-				<h1>Festivalen 2014</h1>
-				<p>Onsdag 25. til mandag 30. juni</p>
-			</div>
-		</div>
-	</div>
-{% endblock %}
-
 {% block navbar %}
+	<div class="navbar-header">
+		<a href="/" class="navbar-brand">
+			<img src="http://grafikk.ukm.no/profil/logo/UKM_logo.png" width="70" />
+		</a>
+	</div>
+
 	<ul class="nav navbar-nav navbar-right">
 		<li><a href="http://ukm.no">tilbake til UKM.no</a></li>
 	</ul>
 {% endblock %}
-
-{% block jumbo %}
-{% endblock %}
-
 
 {% block content_container %}
 <div class="row">
@@ -33,29 +23,15 @@
 <div class="row box_grey">
 	<div class="container">
 		<div class="page_box">
-			{% embed "element/festival/homepage_program.twig.html" %}{% endembed %}
-			<div class="clearfix"></div>
-			{% embed "element/festival/homepage_workshops.twig.html" %}{% endembed %}
-			<div class="clearfix"></div>
-			{% embed "element/festival/homepage_billetter.twig.html" %}{% endembed %}
-		</div>
-	</div>
-</div>
-
-<div class="row cover_image_left h50 w30">
-	<div class="cover_image" style="background-image: url('http://grafikk.ukm.no/festivalen/2014/ukmf13_crop_liten.jpg');"></div>
-	<div class="cover_content">
-		<div class="page_box">
-			{% embed "element/festival/homepage_deltakerinfo.twig.html" %}{% endembed %}
-		</div>
-	</div>
-</div>
-<div class="clearfix"></div>
-<div class="arrow_box"></div>
-<div class="row box_grey">
-	<div class="container">
-		<div class="page_box" align="center">
-			{% embed "element/festival/homepage_find.twig.html" %}{% endembed %}
+			PROGRAM
+			
+			WORKSHOPS
+			
+			KART
+			
+			KONTAKT
+			
+			DELTAKERINFO
 		</div>
 	</div>
 </div>
@@ -64,31 +40,11 @@
     <div class="container">
         <h1>Nyheter</h1>
         <div class="news-article-list">
-            {% for post in posts %}
+            {% for post in posts|slice(0,3) %}
                 {% embed "element/festival/news_article.twig.html" with {'post':post,'url':url} %}{% endembed %}
             {% endfor %}
         </div>
     </div>
-</div>
-
-<div class="row">
-	<div class="container">
-		<div class="page_box">
-			<div class="embed-container">
-				<iframe src="https://mapsengine.google.com/map/embed?mid=z1-avl4RFCcQ.kE2c46EItUBg" width="640" height="480" id="googlemaps"></iframe>
-			</div>
-		</div>
-	</div>
-</div>
-
-<div class="row">
-	<div class="container">
-		<div class="col-xs-12 col-sm-6">
-			<div class="page_box">
-				{% embed "element/festival/homepage_kontakt.twig.html" %}{% endembed %}
-			</div>
-		</div>
-	</div>
 </div>
 
 <div class="arrow_box"></div>
