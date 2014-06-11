@@ -44,6 +44,50 @@ $DATA['fylke'] = get_option('fylke');
         $ppl = explode('"',$ppl); 
         $DATA['prevpost']=$ppl[1];
     }
+
+
+// HENT ALLE POSTS FRA VI MØTER-KATEGORIEN
+	$DATA['meet'] = array();
+	
+	// LOAD PAGE DATA
+	the_post();
+	$DATA['page'] = new WPOO_Post( $post );
+	
+	// LOAD POSTS
+	if ( get_query_var('paged') ) {
+	    $paged = get_query_var('paged');
+	} elseif ( get_query_var('page') ) {
+	    $paged = get_query_var('page');
+	} else {
+	    $paged = 1;
+	}
+    $posts = query_posts('posts_per_page=4&cat=3&paged='.$paged);
+    while(have_posts()) {
+        the_post();
+        $wpoopost = new WPOO_Post($post);
+        $metadata = get_post_custom($post->id);
+        $wpoopost->blog = new stdClass();
+        $wpoopost->blog->link = get_bloginfo('url');
+        $wpoopost->blog->name = get_bloginfo('name');
+        if( is_array( $metadata ) ) {
+        	foreach( $metadata as $key => $val ) {
+        		$wpoopost->meta[$key] = $val[0];
+        	}
+        }
+        $DATA['meet'][] = $wpoopost; 
+    }
+    
+    $npl = get_next_posts_link();
+    if($npl) {
+        $npl = explode('"',get_next_posts_link()); 
+        $DATA['nextpost']=$npl[1];
+    }
+    $ppl = get_previous_posts_link();
+    if($ppl) {
+        $ppl = explode('"',$ppl); 
+        $DATA['prevpost']=$ppl[1];
+    }
+
 	
 // INFO OM MØNSTRINGEN
 	$pl = new monstring( get_option('pl_id') );

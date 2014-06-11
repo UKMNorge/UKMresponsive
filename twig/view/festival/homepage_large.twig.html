@@ -89,6 +89,17 @@
     </div>
 </div>
 
+<div class="row">
+    <div class="container">
+        <h1>UKM-TV: Vi møter</h1>
+        <p class="lead">Hver dag frem til UKM-festivalen presenterer vi en gruppe, artist eller kunstner som du kan møte i Trondheim.</p>
+        <div class="news-article-list">
+            {% for post in meet %}
+                {% embed "element/festival/news_article.twig.html" with {'post':post,'url':url} %}{% endembed %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
 <div class="arrow_box"></div>
 <div class="row box_grey">
 	<div class="container">
