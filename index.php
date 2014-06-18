@@ -71,6 +71,9 @@ require_once('functions_theme.php');
 		require_once('controller/view/post.controller.php');
 		require_once('controller/element/comments.controller.php');
 		$VIEW = 'post';
+		if(get_option('site_type') == 'land') {
+    		$VIEW = 'festival/post';
+		}
 		$BC->add( $DATA['url']['current'], 'artikkel' );
 		$SEO->post( $DATA['post'] );
 		$SEO->article( $DATA['post'] );
