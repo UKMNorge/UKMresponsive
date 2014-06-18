@@ -67,7 +67,13 @@
 		<div class="row">
 			<div class="col-xs-12">
 		        <div class="post_byline_wrapper col-sm-5 pull-right hidden-xs">
-		        	{% embed "element/post/byline.twig.html" %}{% endembed %}
+		            {% if coauthors is defined and coauthors|length > 0 %}
+		                {% for author in coauthors %}
+		                    {% embed "element/post/byline.twig.html" with { 'author' : author } %}{% endembed %}
+		                {% endfor %}
+		            {% else %}
+		        	    {% embed "element/post/byline.twig.html" %}{% endembed %}
+		        	{% endif %}
 		        </div>
 		        <div class="post_content">
 					{{post.content_wo_lead|raw}}

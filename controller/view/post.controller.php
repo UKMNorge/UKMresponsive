@@ -5,6 +5,15 @@ add_shortcode('gallery', 'image_gallery');
 the_post();
 $DATA['post'] = new WPOO_Post( $post );
 
+if ( function_exists( 'get_coauthors' ) ) {
+    $coauthors = get_coauthors($post->id);
+    $wpoo_authors = array();
+    foreach($coauthors as $author) {
+        $wpoo_authors[] = new WPOO_Author($author);
+    }
+    $DATA['coauthors'] = $wpoo_authors;
+}
+
 
 $DATA['post']->blog = new stdClass();
 $DATA['post']->blog->link = get_bloginfo('url');
