@@ -1,0 +1,85 @@
+{% extends "layout.twig.html" %}
+{% block navbar %}
+	<div class="navbar-header">
+		<a href="/" class="navbar-brand">
+			<img src="http://grafikk.ukm.no/profil/logo/UKM_logo.png" width="70" />
+		</a>
+	</div>
+	<ul class="nav navbar-nav navbar-right">
+		<li><a href="http://ukm.no">tilbake til UKM.no</a></li>
+	</ul>
+{% endblock %}
+{% block jumbo %}
+	{% embed "element/no_jumbo.twig.html" %}{% endembed %}
+{% endblock %}
+
+{% block breadcrumbs_top %}{% endblock %}
+
+{% block content %}
+	 <div class="col-xs-12 col-md-10 col-md-offset-1 post">
+		<div class="row">
+		 	<div class="col-xs-12 hidden-xs hidden-sm" style="text-align:right">
+			{% embed "element/breadcrumbs.twig.html" %}{% endembed %}
+		 	</div>
+			<h2 class="col-xs-12 visible-xs centered">{{post.title|raw}}</h2>
+			
+			{% if post.meta.videourl is defined and post.meta.videourl|length > 1 %}
+			    {% set videoembed = post.meta.videourl|replace({ 'tv.ukm' : 'embed.ukm' }) %}
+			    <iframe src="{{ videoembed }}" style="width:930px; height:523px;" class="ukmtv" border="0" frameborder="0" mozallowfullscreen="true" webkitallowfullscreen="true" allowfullscreen="true"></iframe>
+			{% else  %}
+    			{% if post.image.url != placeholder.post %}
+    			<img class="col-xs-12" src="{{post.image.url}}" />
+    			{% endif %}
+			{% endif %}
+			<h2 class="col-xs-12 hidden-xs">{{post.title|raw}}</h2>
+			<p class="visible-xs"></p>
+			<p class="col-xs-12 lead">{{post.lead|raw}}</p>
+			<div class="col-xs-12">
+				<div class="infos">
+					<div class="date">
+						<img src="{{url.theme_dir}}img/nav/nav-calendar.png" class="icon" />&nbsp;
+						<span class="timeago" title="{{post.date|date('Y-m-d H:i')}}">{{post.date|date('d.m.Y H:i')}}</span>
+					</div>
+					<div class="categories">
+						<img src="{{url.theme_dir}}img/nav/nav-tag.png" class="icon" />&nbsp;
+						{% for category in post.categories %}
+						<a href="{{category.url_w_blog}}">{{category.name}}</a>
+						{% if loop.last != true %}, {% endif %}
+						{% endfor %}
+					</div>
+					<div class="date">
+						<img src="{{url.theme_dir}}img/nav/nav-maps.png" class="icon" />&nbsp;
+						<a href="{{post.blog.link}}">{{post.blog.name}}</a>
+					</div>
+					<div class="hidden-xs pull-right">
+						<div class="fb-like" data-href="{{post.url}}" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="visible-xs col-xs-12 facebookinfos" align="center">
+					<div class="fb-like" data-href="{{post.url}}" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+				</div>
+			</div>
+		</div>
+		{% if post.meta.workshop_rom is defined or post.meta.workshop_rom is defined %}
+			{% embed "element/post_meta/workshop.twig.html" %}{% endembed %}
+		{% endif %}
+		<div class="row">
+			<div class="col-xs-12">
+		        <div class="post_byline_wrapper col-sm-5 pull-right hidden-xs">
+		        	{% embed "element/post/byline.twig.html" %}{% endembed %}
+		        </div>
+		        <div class="post_content">
+					{{post.content_wo_lead|raw}}
+		        </div>
+			</div>
+		</div>
+		
+		<div class="row">
+	        <div class="post_byline_wrapper col-xs-12 visible-xs">
+	        	<h3>Skrevet av</h3>
+	        	{% embed "element/post/byline.twig.html" %}{% endembed %}
+	        </div>
+		</div>
+	</div>
+{% endblock %}
