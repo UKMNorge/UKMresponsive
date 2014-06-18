@@ -183,3 +183,82 @@ $DATA['fylke'] = get_option('fylke');
 										   'description'	=> 'Har du spørsmål om UKM-festivalen? Disse kan hjelpe!',
 										   'id'				=> 'show_kontaktpersoner'
 										  );
+
+
+// Timeline sendeskjema
+
+$schedule = array();
+$count = 0;
+$keys = array();
+
+$days = array(
+    'Monday',
+    'Tuesday',
+    'Wednesday',
+    'Thursday',
+    'Friday',
+    'Saturday',
+    'Sunday'
+);
+
+$transDays = array(
+    'Mandag',
+    'Tirsdag',
+    'Onsdag',
+    'Torsdag',
+    'Fredag',
+    'Lørdag',
+    'Søndag'
+);
+
+$handle = fopen(THEME_PATH . '/config/sendeskjema.csv', "r");
+if ($handle) {
+    while (($line = fgets($handle)) !== false) {
+        if($count == 0) {
+            $keys = explode(',', $line);
+        }
+        else {
+            $data = explode(',', $line);
+            $dataArr = array();
+            $c = 0;
+            foreach($keys as $key) {
+                $dataArr[$key] = $data[$c];
+                ++$c;
+            }
+            $schedule[] = $dataArr;
+        }
+        ++$count;
+    }
+} else {
+    // error opening the file.
+} 
+fclose($handle);
+
+$today = date("d.m.Y");
+$tomorrow = date("d.m.Y", strtotime('+1 day', strtotime($today)));
+$aftertomorrow = date("d.m.Y", strtotime('+2 day', strtotime($today)));
+$currentTime = date("hi");
+
+$timeline = array();
+
+foreach($schedule as $item) {
+    if($item['dato'] == $today) {
+        $time = str_replace(':', '', $item['slutttid']);
+        if($time >= $currentTime) {
+            $item['dag'] = 'I dag';
+            $timeline[] = $item;
+        }
+    }
+    if($item['dato'] == $tomorrow || $item['dato'] == $aftertomorrow) {
+        if($item['dato'] == $tomorrow) {
+            $item['dag'] = 'I morgen';
+        }
+        else {
+            $item['dag'] = str_replace($days, $transDays, strftime("%A"));
+        }
+        $timeline[] = $item;
+    }
+}
+
+$DATA['timeline'] = $timeline;
+$DATA['schedule'] = $schedule;
