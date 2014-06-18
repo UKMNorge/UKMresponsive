@@ -1,6 +1,13 @@
 <?php
 require_once('UKM/monstring.class.php');
 
+//BRUKERGENERERING
+//if($_GET['generateusers'] == '1234') {
+//  include('wp-content/plugins/UKMfestivalen/users.php');
+//  UKMFestivalen_brukere_opprett();
+//  die();
+//}
+
 $DATA['fylke'] = get_option('fylke');
 
 // HENT ALLE POSTS
