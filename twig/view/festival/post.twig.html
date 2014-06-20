@@ -44,7 +44,7 @@
 					<div class="categories">
 						<img src="{{url.theme_dir}}img/nav/nav-tag.png" class="icon" />&nbsp;
 						{% for category in post.categories %}
-						<a href="{{category.url_w_blog}}">{{category.name}}</a>
+						<a href="{{category.url}}">{{category.name}}</a>
 						{% if loop.last != true %}, {% endif %}
 						{% endfor %}
 					</div>
