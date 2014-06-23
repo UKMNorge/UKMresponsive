@@ -3,39 +3,50 @@
 
 {% block content %}
 	{% embed "element/backtoUKM.twig.html" %}{% endembed %}
-	<ul class="list-unstyled">
-	{% for dag, hendelser in program %}
-		<li class="col-xs-12 col-sm-6 col-md-{{12/dag_max_col}}">
-			<div class="">
-				<h3 class="">{{dag | dato('l') | capitalize }} <small>{{ dag | dato('d.M') }}</small></h3>
-					<ol class="list-unstyled">
-						{% for hendelse in hendelser %}
-							<li class="container">
-								{# {% if hendelse.offentlig %} #}
-								<a href="?hendelse={{hendelse.ID}}">
-								{# {% endif %} #}
-								<div class="row">
-									<div class="col-xs-2 col-sm-1">{{hendelse.start | dato('H:i' )}}</div>
-									<div class="col-xs-10 col-sm-11">
-										<div class="">{{ hendelse.navn }}</div>
-										<div class="hidden-xs hidden-sm"><small>{{hendelse.sted}}</small></div>
-										<div class="clearfix"></div>
-									</div>
-								</div>
-								{# {% if hendelse.offentlig %} #}
-								</a>
-								{# {% endif %} #}
-							</li>
-						{% endfor %}
-					</ol>
-			</div>
-		</li>
-	{% else %}
-		<li class="">
-			<h2>Program ikke satt</h2>
-			<p>Mønstringen starter {{monstring.starter|dato('l. d. M')}} kl. {{monstring.starter|dato('H:i')}}
-			<p>Ta kontakt med {{monstring.type_tekst}}kontakten om du mener dette burde vært gjort.</p>
-		</li>
-	{% endfor %}
-	</ul>
+	<div class="row">
+	    <div class="col-xs-12 col-sm-3 pull-right" id="rightnav">
+	        <div class="row">
+	        
+	        </div>
+	        
+	    </div>
+    
+        <div class="col-xs-12 col-sm-9">
+        	<ul class="list-unstyled">
+        	{% for dag, hendelser in program %}
+        		<li class="col-xs-12 col-sm-6 col-md-{{12/dag_max_col}}">
+        			<div class="">
+        				<h3 class="">{{dag | dato('l') | capitalize }} <small>{{ dag | dato('d.M') }}</small></h3>
+        					<ol class="list-unstyled">
+        						{% for hendelse in hendelser %}
+        							<li class="container">
+        								{# {% if hendelse.offentlig %} #}
+        								<a href="?hendelse={{hendelse.ID}}">
+        								{# {% endif %} #}
+        								<div class="row">
+        									<div class="col-xs-2 col-sm-1">{{hendelse.start | dato('H:i' )}}</div>
+        									<div class="col-xs-10 col-sm-11">
+        										<div class="">{{ hendelse.navn }}</div>
+        										<div class="hidden-xs hidden-sm"><small>{{hendelse.sted}}</small></div>
+        										<div class="clearfix"></div>
+        									</div>
+        								</div>
+        								{# {% if hendelse.offentlig %} #}
+        								</a>
+        								{# {% endif %} #}
+        							</li>
+        						{% endfor %}
+        					</ol>
+        			</div>
+        		</li>
+        	{% else %}
+        		<li class="">
+        			<h2>Program ikke satt</h2>
+        			<p>Mønstringen starter {{monstring.starter|dato('l. d. M')}} kl. {{monstring.starter|dato('H:i')}}
+        			<p>Ta kontakt med {{monstring.type_tekst}}kontakten om du mener dette burde vært gjort.</p>
+        		</li>
+        	{% endfor %}
+        	</ul>
+        </div>
+    </div>
 {% endblock %}
