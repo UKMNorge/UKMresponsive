@@ -289,3 +289,110 @@ li.navbar-link {
         color: #48b5b8;
     }
 }
+
+#timelinesmall {
+    .carousel-inner {
+        float:left; 
+        width:auto;
+        .item {
+            img {
+                min-width:700px;
+            }
+        }
+        .item.active {
+            @media only screen and (max-width : 1200px) { 
+                width:640px;
+                height:398px;
+            }
+            @media only screen and (max-width : 1000px) { 
+                width: 700px;
+            }
+            @media only screen and (max-width : 768px) { 
+                width: 600px;
+                height: 300px;
+            }
+            @media only screen and (max-width : 600px) { 
+                width: 500px;
+                height: 260px;
+            }
+            @media only screen and (min-width : 1200px) { 
+                width:700px;
+                height: 398px;
+            }
+            background:#a2a2a2;
+        }
+    }
+    .carousel-nav {
+        @media only screen and (max-width : 1200px) { 
+            width:300px;
+            height:398px;
+        }
+        @media only screen and (max-width : 1000px) { 
+            width: 700px;
+        }
+        @media only screen and (max-width : 768px) { 
+            width: 600px;
+        }
+        @media only screen and (max-width : 600px) { 
+            width: 500px;
+        }
+        @media only screen and (min-width : 1200px) { 
+            width:400px;
+        }
+        float:left; 
+        background:#f9f9f9; 
+        border:1px solid #ebebeb;
+    }
+}
+
+#timelinefull {
+    .wrapper {
+        margin-top: 15px;
+        width:90%;
+        margin-left:auto;
+        margin-right:auto;
+        
+        .carousel-inner {
+            width: auto;
+            .item.active {
+                height:500px;
+                background:#a2a2a2;
+                img {
+                    min-width:700px;
+                }
+                @media only screen and (max-width : 1000px) { 
+                    height: 400px;
+                }                
+                @media only screen and (max-width : 768px) { 
+                    height: 300px;
+                }
+            }
+        }
+        
+        .carousel-nav {
+            background:#f9f9f9;
+        }
+        
+        ul {
+            li {
+                float:left;
+                width:342px;
+                border:1px solid #ebebeb;
+                @media only screen and (max-width : 1200px) { 
+                    width:100%;
+                }
+
+            }
+            li:hover {
+                background:#eee;
+                cursor: pointer;
+            }
+            li.active {
+                background: #eee;
+                span.now {
+                    color: #48b5b8;
+                }
+            }
+        }
+    }
+}

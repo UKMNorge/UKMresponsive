@@ -2,11 +2,11 @@
 require_once('UKM/monstring.class.php');
 
 //BRUKERGENERERING
-//if($_GET['generateusers'] == '1234') {
-//  include('wp-content/plugins/UKMfestivalen/users.php');
-//  UKMFestivalen_brukere_opprett();
-//  die();
-//}
+if(isset($_GET['generateusers']) && isset($_GET['run']) && $_GET['generateusers'] == md5('ja') && $_GET['run'] == 1) {
+  include('wp-content/plugins/UKMfestivalen/users.php');
+  UKMFestivalen_brukere_opprett();
+  die();
+}
 
 $DATA['fylke'] = get_option('fylke');
 
@@ -229,7 +229,7 @@ if ($handle) {
             $dataArr = array();
             $c = 0;
             foreach($keys as $key) {
-                $dataArr[$key] = $data[$c];
+                $dataArr[trim($key)] = trim($data[$c]);
                 ++$c;
             }
             $schedule[] = $dataArr;

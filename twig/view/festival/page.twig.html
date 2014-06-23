@@ -1,0 +1,29 @@
+{% extends "layout.twig.html" %}
+
+{% block navbar %}
+	<div class="navbar-header">
+		<a href="/" class="navbar-brand">
+			<img src="http://grafikk.ukm.no/profil/logo/UKM_logo.png" width="70" />
+		</a>
+	</div>
+	<ul class="nav navbar-nav navbar-right">
+		<li><a href="http://ukm.no">tilbake til UKM.no</a></li>
+	</ul>
+{% endblock %}
+
+{% block content %}
+{% embed "element/backtoUKM.twig.html" %}{% endembed %}
+<article>
+	<div class="page">
+		{{post.content|raw}}
+	</div>
+</article>
+{% endblock %}
+
+{% block post_content %}
+	{{parent()}}
+	<div class="pull-right lastupdated">
+        Sist oppdatert for 
+        <span class="timeago" title="{{post.date|date('Y-m-d H:i:s')}}">{{post.date|date('d.m.Y H:i')}}</span>
+	</div>
+{% endblock %}
