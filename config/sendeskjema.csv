@@ -1,7 +1,11 @@
 dato,starttid,slutttid,hendelsenavn,videoid
-26.06.2014,12:00,13:00,Forestilling A,ID
-16.06.2014,00:00,01:00,Forestilling B,ID
-16.06.2014,13:00,14:00,Forestilling A,ID
-16.06.2014,14:00,15:00,Forestilling A,ID
-17.06.2014,15:00,16:00,Forestilling A,ID
-19.06.2014,19:00,21:00,Test,ID
+25.06.2014,21:30,23:00,Åpningsforestilling,ID
+26.06.2014,12:30,13:00,Festivalstudio,ID
+26.06.2014,13:00,14:30,Forestilling A,ID
+26.06.2014,14:30,17:00,Festivalstudio,ID
+26.06.2014,17:00,18:30,Gullsekken,ID
+26.06.2014,17:45,18:00,Festivalstudio,ID
+26.06.2014,18:00,19:30,Forestilling B,ID
+26.06.2014,19:30,20:00,Festivalstudio,ID
+26.06.2014,20:00,23:30,Festivalstudio,ID
+26.06.2014,18:00,19:30,Forestilling B,ID
