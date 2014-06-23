@@ -34,6 +34,13 @@ if( isset($_GET['hendelse'] ) ) {
 	$BC->add( $DATA['url']['current'].'?hendelse='.$_GET['hendelse'], $hendelse->navn );
 
 
+    if(isset($_GET['dev'])) {
+        echo '<pre>';
+        var_dump($con);
+        echo '<br /><br />';
+        var_dump($hendelse);
+        echo '<br /><br />';
+    }
 
 	$DATA['hendelse'] = $hendelse;
    	$SEO->set('title', $hendelse->navn .' @ UKM '. $monstring->navn );
@@ -52,6 +59,10 @@ if( isset($_GET['hendelse'] ) ) {
 	} else {
 		$VIEW = 'program_nodetail';
 	}
+    if(isset($_GET['dev'])) {
+        var_dump($DATA);
+    }
+	
 } else {
    	$SEO->set('title', 'Program UKM ' . $monstring->navn );
    	$SEO->set('description', 'Program for UKM '. $monstring->navn .' ('.$monstring->start.' - '.$monstring->slutt.')');
