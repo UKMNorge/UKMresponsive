@@ -107,7 +107,7 @@ require_once('functions_theme.php');
 			require_once('controller/view/homepage.controller.php');
 			$VIEW = 'homepage_internasjonalt';
 		} elseif( get_option('site_type') == 'land' ) {
-            $VIEW = 'festival/homepage_juni';
+            $VIEW = 'festival/homepage_festival';
 			require_once('controller/element/kontakt.controller.php');
 			require_once('controller/view/festivalen.controller.php');
 		} elseif( get_option('site_type') == 'fylke' ) {

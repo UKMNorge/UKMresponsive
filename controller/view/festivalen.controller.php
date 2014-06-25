@@ -245,6 +245,8 @@ $today = date("d.m.Y");
 $tomorrow = date("d.m.Y", strtotime('+1 day', strtotime($today)));
 $aftertomorrow = date("d.m.Y", strtotime('+2 day', strtotime($today)));
 $currentTime = date("hi");
+$startToday = array();
+$endToday = array();
 
 $timeline = array();
 
@@ -254,6 +256,8 @@ foreach($schedule as $item) {
         if($time >= $currentTime) {
             $item['dag'] = 'I dag';
             $timeline[] = $item;
+            $startToday[] = $item['starttid'];
+            $endToday[] = $item['slutttid'];
         }
     }
     if($item['dato'] == $tomorrow || $item['dato'] == $aftertomorrow) {

@@ -5,7 +5,7 @@
         <div style="width:100%">
             <div class="carousel-inner">
                 <div class="item active">
-                    <img src="" alt="">
+                    <iframe src="http://new.livestream.com/accounts/183084/events/3113736/player?width=700&height=398&autoPlay=true&mute=false" width="100%" height="100%" frameborder="0" scrolling="no"></iframe>
                 </div>
             </div>
             
@@ -45,14 +45,14 @@
         <div class="wrapper">
             <div class="carousel-inner">
                 <div class="item active">
-                    <img src="" alt="">
+                    <iframe src="http://new.livestream.com/accounts/183084/events/3113736/player?width=969&height=500&autoPlay=true&mute=false" width="100%" height="100%" frameborder="0" scrolling="no"></iframe>
                 </div>
             </div>
             <div class="carousel-nav">
                 <ul class="nav timeline-nav">
                     {% for item in schedule %}
                         {% if item.videoid is defined and item.videoid|length > 0 %}
-                            <li class="tlfull" data-videoid="{{ item.videoid }}">
+                            <li class="tlfull {% if loop.index == 1 %}active{% endif %}" data-videoid="{{ item.videoid }}">
                                 <span class="now">{{ item.dato }} {{ item.starttid }} - {{ item.slutttid }}</span>
                                 <span>{{ item.hendelsenavn }}</span>
                             </li>
