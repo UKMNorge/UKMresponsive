@@ -14,7 +14,7 @@
                     {% for i in 0..3 %}
                         {% if attribute(timeline, i) is defined %}
                             {% if i == 0 %}
-                                {% if "now"|date("hi") >= attribute(timeline, i).starttid|replace({':':''}) and "now"|date("hi") <= attribute(timeline, i).slutttid|replace({':':''}) %}
+                                {% if "now"|date("Hi") >= attribute(timeline, i).starttid|replace({':':''}) and "now"|date("Hi") <= attribute(timeline, i).slutttid|replace({':':''}) %}
                                 <li class="active">
                                     <span class="now">Akkurat nå</span>
                                 {% else %}
