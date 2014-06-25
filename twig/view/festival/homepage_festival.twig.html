@@ -67,6 +67,32 @@
         </div>
     </div>
     
+    <div class="row">
+        <div class="container">
+
+		{% for post in posts %}
+			<div class="news col-xs-6 col-md-4">
+				{% embed "element/post/grid_element.twig.html" with post %}{% endembed %}
+			</div>
+			
+			{% if loop.index is divisibleby(3) %}
+				<div class="clearfix visible-md visible-lg"></div>
+			{% elseif loop.index is divisibleby(2) %}
+				<div class="clearfix visible-xs visible-sm"></div>
+			{% endif %}
+		{% endfor %}
+
+		{% embed "element/post/prev_next.twig.html" %}{% endembed %}
+            {# listevisning
+            <h1>Nyheter</h1>
+            <div class="news-article-list">
+                {% for post in posts %}
+                    {% embed "element/festival/news_article.twig.html" with {'post':post,'url':url} %}{% endembed %}
+                {% endfor %}
+            </div>#}
+        </div>
+    </div>
+    
     <div class="clearfix"></div>
     <div class="row">
     	<div class="container">
@@ -76,16 +102,6 @@
     	</div>
     </div>
     
-    <div class="row">
-        <div class="container">
-            <h1>Nyheter</h1>
-            <div class="news-article-list">
-                {% for post in posts %}
-                    {% embed "element/festival/news_article.twig.html" with {'post':post,'url':url} %}{% endembed %}
-                {% endfor %}
-            </div>
-        </div>
-    </div>
     
     <div class="arrow_box"></div>
     <div class="row box_grey">
