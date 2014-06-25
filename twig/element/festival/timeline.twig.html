@@ -5,7 +5,7 @@
         <div style="width:100%">
             <div class="carousel-inner">
                 <div class="item active">
-                    <iframe src="http://new.livestream.com/accounts/183084/events/3113736/player?width=700&height=398&autoPlay=true&mute=false" width="100%" height="100%" frameborder="0" scrolling="no"></iframe>
+                    <iframe src="http://new.livestream.com/accounts/183084/events/3113529/player?width=700&height=398&autoPlay=true&mute=false" width="100%" height="100%" frameborder="0" scrolling="no"></iframe>
                 </div>
             </div>
             
@@ -14,8 +14,13 @@
                     {% for i in 0..3 %}
                         {% if attribute(timeline, i) is defined %}
                             {% if i == 0 %}
+                                {% if "now"|date("hi") >= attribute(timeline, i).starttid|replace({':':''}) and "now"|date("hi") <= attribute(timeline, i).slutttid|replace({':':''}) %}
                                 <li class="active">
                                     <span class="now">Akkurat nå</span>
+                                {% else %}
+                                <li>
+                                    <span class="now">{{ attribute(timeline, i).dag }} kl. {{ attribute(timeline, i).starttid }}</span>                                
+                                {% endif %}
                             {% else %}
                                 <li>
                                     <span class="now">{{ attribute(timeline, i).dag }} kl. {{ attribute(timeline, i).starttid }}</span>
@@ -45,7 +50,7 @@
         <div class="wrapper">
             <div class="carousel-inner">
                 <div class="item active">
-                    <iframe src="http://new.livestream.com/accounts/183084/events/3113736/player?width=969&height=500&autoPlay=true&mute=false" width="100%" height="100%" frameborder="0" scrolling="no"></iframe>
+                    <iframe src="http://new.livestream.com/accounts/183084/events/3113529/player?width=969&height=500&autoPlay=true&mute=false" width="100%" height="100%" frameborder="0" scrolling="no"></iframe>
                 </div>
             </div>
             <div class="carousel-nav">
