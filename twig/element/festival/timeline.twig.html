@@ -55,8 +55,9 @@
             </div>
             <div class="carousel-nav">
                 <ul class="nav timeline-nav">
+                    <h3>Tilgjengelige hendelser</h3>
                     {% for item in schedule %}
-                        {% if item.videoid is defined and item.videoid|length > 0 %}
+                        {% if item.videoid is defined and item.videoid > 0 %}
                             <li class="tlfull {% if loop.index == 1 %}active{% endif %}" data-videoid="{{ item.videoid }}">
                                 <span class="now">{{ item.dato }} {{ item.starttid }} - {{ item.slutttid }}</span>
                                 <span>{{ item.hendelsenavn }}</span>
