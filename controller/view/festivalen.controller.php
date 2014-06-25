@@ -25,7 +25,7 @@ $DATA['fylke'] = get_option('fylke');
 	} else {
 	    $paged = 1;
 	}
-    $posts = query_posts('posts_per_page=4&cat=1&paged='.$paged);
+    $posts = query_posts('posts_per_page=9&cat=1&paged='.$paged);
     while(have_posts()) {
         the_post();
         $wpoopost = new WPOO_Post($post);
