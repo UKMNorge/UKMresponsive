@@ -4612,6 +4612,24 @@ li.navbar-link {
     height: 260px;
   }
 }
+@media only screen and (max-width: 500px) {
+  #timelinesmall .carousel-inner .item.active {
+    width: 420px;
+    height: 230px;
+  }
+  #timelinesmall .carousel-inner .item.active #streamframe {
+    height: 230px;
+  }
+}
+@media only screen and (max-width: 420px) {
+  #timelinesmall .carousel-inner .item.active {
+    width: 320px;
+    height: 170px;
+  }
+  #timelinesmall .carousel-inner .item.active #streamframe {
+    height: 170px;
+  }
+}
 @media only screen and (min-width: 1200px) {
   #timelinesmall .carousel-inner .item.active {
     width: 700px;
