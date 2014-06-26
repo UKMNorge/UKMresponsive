@@ -14,6 +14,9 @@
                     {% for i in 0..3 %}
                         {% if attribute(timeline, i) is defined %}
                             {% if i == 0 %}
+                                {% if attribute(timeline, i).videoid > 0%}
+                                    <input type="hidden" id="videoid" value="{{ attribute(timeline, i).videoid }}" />
+                                {% endif %}
                                 {% if "now"|date("Hi") >= attribute(timeline, i).starttid|replace({':':''}) and "now"|date("Hi") <= attribute(timeline, i).slutttid|replace({':':''}) %}
                                 <li class="active">
                                     <span class="now">Akkurat nå</span>
@@ -83,6 +86,10 @@
         
     });
     $(document).ready(function(){
-        $('#streamcontainer').html('<iframe src="http://new.livestream.com/accounts/183084/events/3113529/player?width=700&height=398&autoPlay=false&mute=false" width="100%" frameborder="0" scrolling="no" height="100%" id="streamframe"></iframe>')
+        var videoid = 3113529;
+        if($('#videoid').val()) {
+            videoid = $('#videoid').val();
+        }
+        $('#streamcontainer').html('<iframe src="http://new.livestream.com/accounts/183084/events/'+videoid+'/player?width=700&height=398&autoPlay=false&mute=false" width="100%" frameborder="0" scrolling="no" height="100%" id="streamframe"></iframe>')
     });
 </script>
