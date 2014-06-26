@@ -4665,6 +4665,16 @@ li.navbar-link {
     width: 500px;
   }
 }
+@media only screen and (max-width: 500px) {
+  #timelinesmall .carousel-nav {
+    width: 420px;
+  }
+}
+@media only screen and (max-width: 420px) {
+  #timelinesmall .carousel-nav {
+    width: 320px;
+  }
+}
 @media only screen and (min-width: 1200px) {
   #timelinesmall .carousel-nav {
     width: 400px;
