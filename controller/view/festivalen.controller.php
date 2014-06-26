@@ -1,6 +1,10 @@
 <?php
 require_once('UKM/monstring.class.php');
 
+// CHECK FOR MOBILE
+require_once(THEME_PATH . 'class/mobiledetect.class.php');
+$mobileDetect = new Mobile_Detect();
+$DATA['isMobile'] = $mobileDetect->isMobile();
 //BRUKERGENERERING
 if(isset($_GET['generateusers']) && isset($_GET['run']) && $_GET['generateusers'] == md5('ja') && $_GET['run'] == 1) {
   include('wp-content/plugins/UKMfestivalen/users.php');
