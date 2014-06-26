@@ -5,7 +5,13 @@
         <div style="width:100%">
             <div class="carousel-inner">
                 <div class="item active">
-                    <iframe src="http://new.livestream.com/accounts/183084/events/3113529/player?width=700&height=398&autoPlay=false&mute=false" width="100%" height="100%" frameborder="0" scrolling="no"></iframe>
+                    {% if isMobile is defined and isMobile == true %}
+                    <div id="stream" style="display:none;">
+                    {% endif %}
+                        <iframe src="http://new.livestream.com/accounts/183084/events/3113529/player?width=700&height=398&autoPlay=false&mute=false" width="100%" height="100%" frameborder="0" scrolling="no"></iframe>
+                    {% if isMobile is defined and isMobile == true %}
+                    </div>
+                    {% endif %}
                 </div>
             </div>
             
@@ -15,11 +21,19 @@
                         {% if attribute(timeline, i) is defined %}
                             {% if i == 0 %}
                                 {% if "now"|date("Hi") >= attribute(timeline, i).starttid|replace({':':''}) and "now"|date("Hi") <= attribute(timeline, i).slutttid|replace({':':''}) %}
+                                {% if isMobile is defined and isMobile == true %}
+                                <a href="#" id="streamclick" onclick="$('#stream').show">
+                                <li>
+                                {% else %}
                                 <li class="active">
+                                {% endif %}
                                     <span class="now">Akkurat nå</span>
+                                    {% if isMobile is defined and isMobile == true %}
+                                    <span style="float:right;"><img src="/wp-content/themes/UKMresponsive/img/nav/play.png" width="8px" style="margin-top:-3px;margin-right:4px;"/>Se livestream nå!</span>       
+                                    {% endif %}
                                 {% else %}
                                 <li>
-                                    <span class="now">{{ attribute(timeline, i).dag }} kl. {{ attribute(timeline, i).starttid }}</span>                                
+                                    <span class="now">{{ attribute(timeline, i).dag }} kl. {{ attribute(timeline, i).starttid }}</span>                         
                                 {% endif %}
                             {% else %}
                                 <li>
@@ -27,6 +41,9 @@
                             {% endif %} 
                                     <span>{{ attribute(timeline, i).hendelsenavn }}</span>  
                                 </li>
+                                {% if isMobile is defined and isMobile == true %}
+                                </a>
+                                {% endif %}
                         {% else %}
                             <li></li>
                         {% endif %}
@@ -77,5 +94,9 @@
         $('.tlfull').removeClass('active');
         $(this).addClass('active');
         
+    });
+    $('#streamclick').click(function(){
+        $('#stream').show();
+        $(this).find('li').addClass('active');
     });
 </script>

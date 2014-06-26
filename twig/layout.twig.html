@@ -25,7 +25,7 @@
 		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 		  })();
 		</script>
-		{% if isMobile is defined and isMobile == true %}
+		{#% if isMobile is defined and isMobile == true %}
 		<script type="text/javascript" src="{{ url.theme_dir }}js/scrollable.min.js"></script>
 		<script type="text/javascript">
             addEventListener('DOMContentLoaded', function() {
@@ -52,7 +52,7 @@
                 event.preventDefault();
             }, false);
 		</script>
-        {% endif %}
+        {% endif %#}
 		<style type="text/css">{% block additional_css %}{% endblock %}</style>
 		<script type="text/javascript">{% block additional_js %}{% endblock %}</script>
 	</head>
