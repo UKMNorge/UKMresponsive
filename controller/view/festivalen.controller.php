@@ -248,7 +248,7 @@ fclose($handle);
 $today = date("d.m.Y");
 $tomorrow = date("d.m.Y", strtotime('+1 day', strtotime($today)));
 $aftertomorrow = date("d.m.Y", strtotime('+2 day', strtotime($today)));
-$currentTime = date("hi");
+$currentTime = date("Hi");
 $startToday = array();
 $endToday = array();
 
