@@ -177,6 +177,9 @@ require_once('functions_theme.php');
             case 'gullsekken':
                 $VIEW = 'gullsekken';
                 break;
+            case 'streams':
+                $VIEW = 'streams';
+                break;
 
 			default:
 				require_once('controller/view/post.controller.php');
