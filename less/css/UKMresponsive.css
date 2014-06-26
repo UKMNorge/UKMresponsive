@@ -4585,6 +4585,9 @@ li.navbar-link {
     width: 640px;
     height: 398px;
   }
+  #timelinesmall .carousel-inner .item.active #streamframe {
+    height: 398px;
+  }
 }
 @media only screen and (max-width: 1000px) {
   #timelinesmall .carousel-inner .item.active {
@@ -4596,16 +4599,25 @@ li.navbar-link {
     width: 600px;
     height: 300px;
   }
+  #timelinesmall .carousel-inner .item.active #streamframe {
+    height: 300px;
+  }
 }
 @media only screen and (max-width: 600px) {
   #timelinesmall .carousel-inner .item.active {
     width: 500px;
     height: 260px;
   }
+  #timelinesmall .carousel-inner .item.active #streamframe {
+    height: 260px;
+  }
 }
 @media only screen and (min-width: 1200px) {
   #timelinesmall .carousel-inner .item.active {
     width: 700px;
+    height: 398px;
+  }
+  #timelinesmall .carousel-inner .item.active #streamframe {
     height: 398px;
   }
 }
