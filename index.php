@@ -174,6 +174,9 @@ require_once('functions_theme.php');
             	require_once('controller/view/pameldte.controller.php');
             	$VIEW = 'pameldte';
             	break;
+            case 'gullsekken':
+                $VIEW = 'gullsekken';
+                break;
 
 			default:
 				require_once('controller/view/post.controller.php');
