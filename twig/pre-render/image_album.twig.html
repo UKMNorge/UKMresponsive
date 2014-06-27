@@ -11,3 +11,24 @@
 	<div class="clearfix"></div>
 </div>
 <div class="clearfix"></div>
+
+{#	<div id="container">
+	    {% for photo in photos %}
+	        <div class="item" style="width:220px;margin:10px;float:left;">
+	            <img src="{{photo.url.thumb}}" />
+	        </div>
+	    {% endfor %}
+	</div>
+</div>
+<div class="clearfix"></div>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  $('#container').masonry({
+   columnWidth: 230,
+   itemSelector: '.item'
+  }).imagesLoaded(function() {
+   $('#container').masonry('reload');
+  });
+});
+</script>#}

@@ -71,6 +71,7 @@
 		            {% if coauthors is defined and coauthors|length > 0 %}
 		                {% for author in coauthors %}
 		                    {% embed "element/post/byline.twig.html" with { 'author' : author } %}{% endembed %}
+		                    <div class="clearfix"></div>
 		                {% endfor %}
 		            {% else %}
 		        	    {% embed "element/post/byline.twig.html" %}{% endembed %}
