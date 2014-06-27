@@ -13,10 +13,10 @@
 </div>
 <div class="clearfix"></div>
 #}
-	<div id="container" style="width:100%;">
+	<div id="container" class="image_album" style="width:100%;">
 	    {% for photo in photos %}
 	        <div class="masonryImage" style="float:left;">
-	            <img src="{{photo.url.thumb}}" />
+	            <img src="{{photo.url.thumb}}" data-width="{{photo.width}}" data-height="{{photo.height}}" data-source="{{photo.url.full}}" data-id="{{photo.id}}" id="photo_{{photo.id}}" />
 	        </div>
 	    {% endfor %}
 	</div>
