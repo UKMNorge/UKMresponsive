@@ -1,5 +1,6 @@
 <div class="clearfix"></div>
 <div class="col-xs-12 removePadding">
+{#
 	<div class="image_album{{selector is defined ? '_'~selector : ''}}" id="image_album_{{album_id}}">
 		<div class="stupid_load" id="stupid_load_{{album_id}}">
 			{% for photo in photos %}
@@ -11,24 +12,28 @@
 	<div class="clearfix"></div>
 </div>
 <div class="clearfix"></div>
-
-{#	<div id="container">
+#}
+	<div id="container" style="width:100%;">
 	    {% for photo in photos %}
-	        <div class="item" style="width:220px;margin:10px;float:left;">
+	        <div class="masonryImage" style="float:left;">
 	            <img src="{{photo.url.thumb}}" />
 	        </div>
 	    {% endfor %}
 	</div>
+	<div class="clearfix"></div>
 </div>
 <div class="clearfix"></div>
 
 <script type="text/javascript">
-$(document).ready(function() {
-  $('#container').masonry({
-   columnWidth: 230,
-   itemSelector: '.item'
-  }).imagesLoaded(function() {
-   $('#container').masonry('reload');
-  });
-});
-</script>#}
+     $(function(){
+   
+       var $container = $('#container');
+     
+       $container.imagesLoaded( function(){
+         $container.masonry({
+           itemSelector : '.masonryImage'
+         });
+       });
+     
+     });
+</script>
