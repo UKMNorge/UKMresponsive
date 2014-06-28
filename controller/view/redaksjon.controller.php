@@ -9,7 +9,7 @@ $args = array(
     'meta_query'   => array(),
     'include'      => array(),
     'exclude'      => array(),
-    'orderby'      => 'login',
+    'orderby'      => 'title',
     'order'        => 'ASC',
     'offset'       => '',
     'search'       => '',
@@ -26,3 +26,5 @@ foreach($wpUsers as $wpUser) {
 }
 
 $DATA['users'] = $users;
+$DATA['groups'] = array('journalist', 'fotograf', 'flerkamera', 'videorepotasje');
+$DATA['ledere'] = array('redaktør', 'bildefikser', 'bildesorterer', 'teknisk ansvarlig', 'tekstansvarlig', 'fotoansvarlig', 'oppgaveansvarlig', 'nyhetsbrev-ansvarlig');
