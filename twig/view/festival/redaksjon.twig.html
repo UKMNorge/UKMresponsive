@@ -50,6 +50,7 @@
                 <tr>
                     <th></th>
                     <th style="min-width:200px;">Navn</th>
+                    <th>Tittel</th>
                     <th>Beskrivelse</th>
                 </tr>
             </thead>
@@ -66,6 +67,9 @@
                             {% else %}
                                 {{ user.display_name }}
                             {% endif %}
+                        </td>
+                        <td>
+                            {{ user.title }}
                         </td>
                         <td style="font-size:13px;">
                             {{ user.description }}
