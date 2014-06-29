@@ -180,6 +180,9 @@ require_once('functions_theme.php');
             case 'streams':
                 $VIEW = 'streams';
                 break;
+            case 'samfundet':
+                $VIEW = 'samfundet';
+                break;
             case 'redaksjonen':
                 require_once('controller/view/redaksjon.controller.php');
                 $VIEW = 'festival/redaksjon';
