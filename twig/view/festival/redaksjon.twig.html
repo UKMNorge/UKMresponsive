@@ -29,11 +29,12 @@
                         <img src="{{ user.image }}" height="50" />
                     </td>
                     <td>
-                        {% if user.firstname and user.lastname %}
+                        <a href="{{ user.link }}">{% if user.firstname and user.lastname %}
                             {{ user.firstname }} {{ user.lastname }}
                         {% else %}
                             {{ user.display_name }}
                         {% endif %}
+                        </a>
                     </td>
                     <td style="font-size:13px;">
                         {{ user.description }}
