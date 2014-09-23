@@ -3,7 +3,7 @@
 #}
 
 {% if time_verb is not defined %}
-    Mønstringen er ikke klargjort
+    Mønstringsinfo er ikke registrert
 {% else %}
     {% if monstring.starter|dato("l j") != monstring.slutter|dato("l j") %}
        {% if type is defined %}
