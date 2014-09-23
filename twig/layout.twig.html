@@ -133,10 +133,15 @@
 		{% block jumbo %}
 		<div class="ukm_page_jumbo">
 			<div class="container">
-				{% if stat_pameldte is defined %}
+				{% if stat_pameldte is defined and stat_pameldte.tall > 0 %}
 				<div class="pull-right pameldte hidden-xs hidden-sm">
 					<div class="over">{{stat_pameldte.tall}}</div>
 					<div class="under">Påmeldte til UKM {{stat_pameldte.til}}</div>
+				</div>
+				{% else %}
+				<div class="pull-right pameldte hidden-xs hidden-sm">
+					<div class="over">1. des</div>
+					<div class="under">Åpner påmeldingen</div>
 				</div>
 				{% endif %}
 
