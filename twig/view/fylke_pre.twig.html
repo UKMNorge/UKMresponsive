@@ -1,5 +1,5 @@
 {% extends "view/fylke.twig.html" %}
 
 {% block jumbo_content %}
-	TEST:{% embed "element/monstring/monstring_beskrivelse.twig.html" with {'type': 'Fylkes'} %}{% endembed %}
+	{% embed "element/monstring/monstring_beskrivelse.twig.html" with {'time_verb': 'er', 'type': 'Fylkes'} %}{% endembed %}
 {% endblock %}
