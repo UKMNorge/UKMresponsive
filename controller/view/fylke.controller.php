@@ -69,6 +69,11 @@ $DATA['fylke'] = get_option('fylke');
 		$lokalmonstring = new kommune_monstring( $kommune_id, get_option('season') );
 		$lokalmonstring = $lokalmonstring->monstring_get();
 		
+		// Hopp over gjeste-kommuner for fylket (kun for test og arrangørsystem-funksjonalitet)
+		if( $lokalmonstring->get('pl_name') == 'Gjester' ) {
+    		continue;
+		}
+		
 		if($forste == 0) {
 			$forste = $lokalmonstring->get('pl_start');
 			$siste = $lokalmonstring->get('pl_stop');
