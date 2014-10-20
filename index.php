@@ -6,7 +6,7 @@ if( $_SERVER['HTTP_HOST'] == 'ukm.dev' ) {
 	ini_set('display_errors',1);
 	define('CURRENT_UKM_DOMAIN', 'ukm.dev');
 } else {
-	error_reporting(E_NONE);
+	error_reporting(0);
 	ini_set('display_errors',0);
 	define('TWIG_CACHE_PATH', __DIR__ .'/cache_twig/');
 	define('CURRENT_UKM_DOMAIN', 'ukm.no');
@@ -187,7 +187,11 @@ require_once('functions_theme.php');
                 require_once('controller/view/redaksjon.controller.php');
                 $VIEW = 'festival/redaksjon';
                 break;
-
+			case 'ambassador/velkommen':
+				require_once('controlller/view/ambassador/velkommen.controller.php');
+				$VIEW = 'ambassador/velkommen';
+				break;
+				
 			default:
 				require_once('controller/view/post.controller.php');
 				$VIEW = 'page';
