@@ -1,3 +1,6 @@
 <?php
 require_once('UKM/facebook.class.php');
-#$DATA['ambassador']['loginLink'] = $FB->loginLink( 'http://'. UKM_HOSTNAME .'/ambassador/' );
+error_reporting(E_ALL);
+ini_set('display_errors', true);
+
+$DATA['ambassador']['loginLink'] = $FACEBOOK_v4->loginLink( 'http://'. UKM_HOSTNAME .'/ambassador/' );
