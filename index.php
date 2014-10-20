@@ -188,7 +188,7 @@ require_once('functions_theme.php');
                 $VIEW = 'festival/redaksjon';
                 break;
 			case 'ambassador/velkommen':
-				require_once('controller/ambassador/velkommen.controller.php');
+#				require_once('controller/ambassador/velkommen.controller.php');
 				$VIEW = 'ambassador/velkommen';
 				break;
 				
