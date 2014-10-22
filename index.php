@@ -252,11 +252,17 @@ $DATA['breadcrumbs'] = $BC->get();
 */
 
 $DATA['SEO'] = $SEO;
-echo TWIGrender('view/'.$VIEW, object_to_array($DATA),true);
+$DATA = object_to_array($DATA);
 
-echo TWIGrender('console', $DATA, true);
-wp_footer();
-if(is_user_logged_in() ) {
-	echo '<style>body {margin-top: 33px;}</style>';
+if( isset($_GET['exportContent']) ) {
+	echo TWIGrender('export_content',$DATA,true);
+} else {
+	echo TWIGrender('view/'.$VIEW, $DATA,true);
+	
+	#echo TWIGrender('console', $DATA, true);
+	wp_footer();
+	if(is_user_logged_in() ) {
+		echo '<style>body {margin-top: 33px;}</style>';
+	}
 }
 die();
