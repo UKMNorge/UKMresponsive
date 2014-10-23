@@ -1,5 +1,5 @@
 <li class="btn btn-block nav_page">
-	<a href="{{nav.url}}" id="{{nav.id}}">
+	<a href="{{nav.url}}" id="{{nav.id}}" {% if nav.target is defined %}target="{{ nav.target }}"{% endif %}>
 		<div class="todo-icon fui-list centered"><span><img src="{{url.theme_dir}}img/nav/nav-{{nav.icon}}.png" width="25" /></span></div>
 		<div class="todo-content">
 			<h4 class="todo-name">
