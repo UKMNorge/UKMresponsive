@@ -98,8 +98,9 @@ require_once('functions_theme.php');
 		#}
 
 		if( get_option('ukm_top_page') == 'ambassadorer' ) {
-			require_once('controller/view/homepage.controller.php');
-			$VIEW = 'homepage_ambassador';      
+			header("Location: http://ambassador.ukm.no");
+			#require_once('controller/view/homepage.controller.php');
+			#$VIEW = 'homepage_ambassador';      
 		} elseif( get_option('ukm_top_page') == 'arrangorer' ) {
 			require_once('controller/view/arrangorlogon.controller.php');
 			$VIEW = 'homepage_arrangorer';
@@ -186,12 +187,7 @@ require_once('functions_theme.php');
             case 'redaksjonen':
                 require_once('controller/view/redaksjon.controller.php');
                 $VIEW = 'festival/redaksjon';
-                break;
-			case 'ambassador/velkommen':
-                require_once('controller/ambassador/velkommen.controller.php');
-				$VIEW = 'ambassador/velkommen';
-				break;
-				
+                break;			
 			default:
 				require_once('controller/view/post.controller.php');
 				$VIEW = 'page';
