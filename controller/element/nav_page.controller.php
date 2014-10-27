@@ -100,7 +100,7 @@ switch( get_option('ukm_top_page') ) {
 											   'icon'			=> 'kanin',
 											   'description'	=> 'Si din mening'
 											  );
-		$DATA['page_nav'][] = (object) array( 'url' 			=> '//'.CURRENT_UKM_DOMAIN.'/ambassador/',
+		$DATA['page_nav'][] = (object) array( 'url' 			=> '//ambassador.'.CURRENT_UKM_DOMAIN.'/',
 											   'title'		 	=> 'Ambassadører',
 											   'icon'			=> 'heart',
 											   'description'	=> 'For deg som vil spre ordet om UKM'
