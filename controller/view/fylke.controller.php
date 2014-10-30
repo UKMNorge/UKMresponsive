@@ -121,7 +121,7 @@ $DATA['fylke'] = get_option('fylke');
 // HVILKEN PERIODE ER FYLKESSIDEN I?
 	$VIEW = 'fylke_pre_lokal';
 	if ( date('m') > 8 && date('m') < 12 ) {
-		$VIEW = 'fylke_pre_lokal';
+		$VIEW = 'fylke';
 	} elseif (!$pl->registered()) {
         	$VIEW = 'fylke_ikke_klar';
 	} elseif( time() > $siste_pamelding && time() < $siste ) {
