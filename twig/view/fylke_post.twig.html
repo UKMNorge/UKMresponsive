@@ -1,1 +1,5 @@
 {% extends "view/fylke.twig.html" %}
+
+{% block jumbo_content %}
+	{% embed "element/monstring/monstring_beskrivelse.twig.html" with {"time_verb":"var"} %}{% endembed %}
+{% endblock %}
