@@ -74,6 +74,11 @@ $DATA['fylke'] = get_option('fylke');
     		continue;
 		}
 		
+		// Hopp over kommuner som ikke er tilknyttet noen mønstring
+		if( $lokalmonstring->get('pl_id') == 0 ) {
+			continue;
+		}
+			
 		if($forste == 0) {
 			$forste = $lokalmonstring->get('pl_start');
 			$siste = $lokalmonstring->get('pl_stop');
