@@ -251,7 +251,7 @@ $DATA['SEO'] = $SEO;
 $DATA = object_to_array($DATA);
 
 if( $_SERVER['REMOTE_ADDR'] == '81.0.146.162' ) {
-	$DEBUG = false;
+	$DEBUG = true;
 } else {
 	$DEBUG = true;
 }
