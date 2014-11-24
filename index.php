@@ -8,7 +8,6 @@ if( $_SERVER['HTTP_HOST'] == 'ukm.dev' || isset($_GET['debug']) ) {
 } else {
 	error_reporting(0);
 	ini_set('display_errors',0);
-	define('TWIG_CACHE_PATH', __DIR__ .'/cache_twig/');
 	define('CURRENT_UKM_DOMAIN', 'ukm.no');
 }
 setlocale(LC_ALL, 'nb_NO', 'nb', 'no');
@@ -16,7 +15,8 @@ setlocale(LC_ALL, 'nb_NO', 'nb', 'no');
 
 define('THEME_PATH', get_theme_root().'/UKMresponsive/' );
 define('THEME_DEFAULT_IMAGE', 'http://grafikk.ukm.no/placeholder/post_placeholder.png');
-define('TWIG_PATH', '/home/ukmno/public_html/cache_twig/' );
+define('TWIG_PATH', __DIR__ );
+define('TWIG_CACHE_PATH', __DIR__ .'/cache_twig/');
 
 require_once('vendor/autoload.php');
 require_once('WPOO/WPOO/Post.php');
