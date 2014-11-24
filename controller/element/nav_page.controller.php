@@ -47,10 +47,12 @@ switch( get_option('ukm_top_page') ) {
 											   'icon'			=> 'palette',
 											   'description'	=> 'UKM-logo, skrifter og farger'
 											  );
-		$DATA['page_nav'][] = (object) array( 'url' 			=> '//om.'.CURRENT_UKM_DOMAIN.'/presse/',
-											   'title'		 	=> 'PRESSE',
+		$DATA['page_nav'][] = (object) array( 'url' 			=> 'http://www.flickr.com/photos/ukm/',
+											   'title'		 	=> 'Pressebilder',
 											   'icon'			=> 'pencil',
-											   'description'	=> 'Informasjon, bilder med mer'
+											   'description'	=> 'UKM Norges bilder på flickr',
+   											   'target'			=> '_blank'
+
 											  );
 /*
 		$DATA['page_nav'][] = (object) array( 'url' 			=> 'prosjekter/',
