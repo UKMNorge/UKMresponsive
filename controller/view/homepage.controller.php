@@ -16,7 +16,14 @@ if ( get_query_var('paged') ) {
 } else {
     $paged = 1;
 }
-$posts = query_posts('posts_per_page=7&paged='.$paged);
+
+$post_query = 'posts_per_page=7&paged='.$paged;
+
+if( $blog_id == 1 ) {
+	$posts = query_posts($post_query.'&cat=-12'); # Fjern UKM-kjendiser fra forsiden av UKM.no
+} else {
+	$posts = query_posts($post_query);
+}
 
 while(have_posts()) {
     the_post();
