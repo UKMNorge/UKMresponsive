@@ -253,7 +253,7 @@ $DATA = object_to_array($DATA);
 if( $_SERVER['REMOTE_ADDR'] == '81.0.146.162' ) {
 	$DEBUG = false;
 } else {
-	$DEBUG = true;
+	$DEBUG = false;
 }
 if( isset($_GET['exportContent']) ) {
 	echo TWIGrender('export_content',$DATA,$DEBUG);
