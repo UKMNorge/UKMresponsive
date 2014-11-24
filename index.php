@@ -16,7 +16,7 @@ setlocale(LC_ALL, 'nb_NO', 'nb', 'no');
 
 define('THEME_PATH', get_theme_root().'/UKMresponsive/' );
 define('THEME_DEFAULT_IMAGE', 'http://grafikk.ukm.no/placeholder/post_placeholder.png');
-define('TWIG_PATH', __DIR__ );
+define('TWIG_PATH', '/home/ukmno/public_html/cache_twig/' );
 
 require_once('vendor/autoload.php');
 require_once('WPOO/WPOO/Post.php');
@@ -250,12 +250,17 @@ $DATA['breadcrumbs'] = $BC->get();
 $DATA['SEO'] = $SEO;
 $DATA = object_to_array($DATA);
 
-if( isset($_GET['exportContent']) ) {
-	echo TWIGrender('export_content',$DATA,true);
+if( $_SERVER['REMOTE_ADDR'] == '81.0.146.162' ) {
+	$DEBUG = false;
 } else {
-	echo TWIGrender('view/'.$VIEW, $DATA,true);
+	$DEBUG = true;
+}
+if( isset($_GET['exportContent']) ) {
+	echo TWIGrender('export_content',$DATA,$DEBUG);
+} else {
+	echo TWIGrender('view/'.$VIEW, $DATA,$DEBUG);
 	
-	#echo TWIGrender('console', $DATA, true);
+	#echo TWIGrender('console', $DATA, $DEBUG);
 	wp_footer();
 	if(is_user_logged_in() ) {
 		echo '<style>body {margin-top: 33px;}</style>';
