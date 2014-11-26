@@ -162,3 +162,7 @@ jQuery(document).on('click','.toggle', function(){
 jQuery(document).on('click','#pageDeFocus',function(){
 	jQuery( '#' + jQuery(this).attr('data-clicker') ).click();
 });
+/* Gjør hele lokalmønstringsknappen klikkbar */
+jQuery(document).on('click','li.lokalmonstring', function(e) {
+	window.location.href = jQuery(this).find('a').attr('href');
+});
