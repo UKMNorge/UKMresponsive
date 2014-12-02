@@ -5,7 +5,7 @@ kommuneValg.nyHtml =  "",
 kommuneValg.vis = function(steg, kategori, pl_id, ico, kommuner ) {
     kommuneValg.gammelHtml = jQuery('#paamelding_container').html();
     
-    kommuneValg.nyHtml = '<h4>Hvor vil du delta med '+kategori.toString().toLowerCase()+'?</h4>';
+    kommuneValg.nyHtml = '<h4>Hvilken kommune/bydel representerer du?</h4>';
     kommuneValg.nyHtml += '<ul>';
     
     kommuner.forEach(function(kommune) {
