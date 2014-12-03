@@ -8,8 +8,9 @@ if( !isset( $DATA['jumbo'] ) ) {
 								   );
 }
 
-the_post();
-$DATA['page'] = new WPOO_Post($post);
+#the_post();
+#$DATA['page'] = new WPOO_Post( $post );
+$DATA['page'] = [];
 
 $category = get_queried_object();
 $DATA['page']->description = $category->description;

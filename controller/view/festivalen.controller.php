@@ -18,8 +18,9 @@ $DATA['fylke'] = get_option('fylke');
 	$DATA['posts'] = array();
 	
 	// LOAD PAGE DATA
-	the_post();
-	$DATA['page'] = new WPOO_Post( $post );
+	#the_post();
+	#$DATA['page'] = new WPOO_Post( $post );
+	$DATA['page'] = [];
 	
 	// LOAD POSTS
 	if ( get_query_var('paged') ) {

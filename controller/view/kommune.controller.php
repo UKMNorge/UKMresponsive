@@ -7,8 +7,9 @@ $DATA['kommune'] = get_option('kommune');
 	$DATA['posts'] = array();
 	
 	// LOAD PAGE DATA
-	the_post();
-	$DATA['page'] = new WPOO_Post( $post );
+	#the_post();
+	#$DATA['page'] = new WPOO_Post( $post );
+	$DATA['page'] = [];
 	
 // INFO OM MØNSTRINGEN
     $pl = new monstring( get_option('pl_id') );

@@ -6,9 +6,9 @@ require_once(THEME_PATH . 'class/mobiledetect.class.php');
 $mobileDetect = new Mobile_Detect();
 $DATA['isMobile'] = $mobileDetect->isMobile();
 // LOAD PAGE DATA
-the_post();
-$DATA['page'] = new WPOO_Post( $post );
-
+#the_post();
+#$DATA['page'] = new WPOO_Post( $post );
+$DATA['page'] = [];
 if ( get_query_var('paged') ) {
     $paged = get_query_var('paged');
 } elseif ( get_query_var('page') ) {
