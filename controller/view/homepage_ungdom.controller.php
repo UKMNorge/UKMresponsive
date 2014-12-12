@@ -1,4 +1,5 @@
 <?php
+$fylkesmonstringer = array();
 /*
 $austagder = fylke(1168, 'Aust-Agder', 'http://ukm.no/aust-agder/');
 $finnmark = fylke(1214, 'Finnmark', 'http://ukm.no/finnmark/');
@@ -248,17 +249,18 @@ if( $paged == 1 ) {
 	$PAGE_POST 	= $post;
 	$POST_ID	= $post_id;
 	
-	foreach( $fylkesmonstringer as $fm ) {
-		switch_to_blog( $fm->ID );
-		foreach( $fm->posts as $post_id ) {
-			$post	= get_post( $post_id );
-			@$WPOO_post	= new WPOO_Post( $post );
-	
-			$fm->postdata[] = $WPOO_post;
+	if( is_array( $fylkesmonstringer ) ) {
+		foreach( $fylkesmonstringer as $fm ) {
+			switch_to_blog( $fm->ID );
+			foreach( $fm->posts as $post_id ) {
+				$post	= get_post( $post_id );
+				@$WPOO_post	= new WPOO_Post( $post );
+		
+				$fm->postdata[] = $WPOO_post;
+			}
+			restore_current_blog();
 		}
-		restore_current_blog();
-	}
-	
+	}	
 	$post 		= $PAGE_POST;
 	$post_id	= $POST_ID;
 	
