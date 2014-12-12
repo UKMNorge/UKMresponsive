@@ -1,6 +1,11 @@
 {% extends "view/homepage.twig.html" %}
 
 {% block content %}
+	{% if now|date('m') in 1..4 or now|date('m') == 12 %}
+	<p>
+		<a href="/din_monstring/" class="btn btn-success btn-block btn-sm">Påmeldingen er åpen: start påmelding!</a>
+	</p>
+	{% endif %}
 	<div class="row post_top">
 		<div class="hidden-xs hidden-sm col-md-7">
 			<a href="{{posts[0].url}}">
