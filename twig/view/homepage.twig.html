@@ -1,6 +1,12 @@
 {% extends "layout.twig.html" %}
 
 {% block content %}
+	{% if now|date('m') in 1..4 or now|date('m') == 12 %}
+	<p>
+		<a href="/din_monstring/" class="btn btn-success btn-block btn-sm">Påmeldingen er åpen: start påmelding!</a>
+	</p>
+	{% endif %}
+
 	<div class="row post_top">
 		<div class="hidden-xs hidden-sm col-md-7">
 			<a href="{{posts[0].url}}">
@@ -16,7 +22,7 @@
 				{% endfor %}
 				</ol>
 			</div>
-			{% if stat_pameldte is defined and stat_pameldte.tall > 0 %}
+			{% if stat_pameldte is defined and now|date('m') not in 9..11 %}
 			<div class="centered pameldte visible-xs visible-sm">
 				<div class="over">{{stat_pameldte.tall}}</div>
 				<div class="under">Påmeldte til UKM</div>
