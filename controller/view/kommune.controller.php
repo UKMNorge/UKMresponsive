@@ -14,8 +14,8 @@ $DATA['kommune'] = get_option('kommune');
 // INFO OM MØNSTRINGEN
     $pl = new monstring( get_option('pl_id') );
     $monstring = new StdClass();
-    $monstring->pl_id = $pl->get('pl_id'); 
-	$monstring->navn = str_replace('UKM','',$pl->g('pl_name'));
+    $monstring->pl_id = $pl->get('pl_id');
+    $monstring->navn = str_replace('UKM','',$pl->g('pl_name'));
     $monstring->starter = $pl->get('pl_start');
     $monstring->slutter = $pl->get('pl_stop');
     $monstring->sted = $pl->get('pl_place');
@@ -26,27 +26,30 @@ $DATA['kommune'] = get_option('kommune');
     $monstring->frist_2_aktiv = $pl->subscribable('pl_deadline2');
     $monstring->bandtypesdetails = $pl->getAllBandTypesDetailedNew();
     $monstring->starter_tekst = $pl->starter();
-    
+
     $fpl =  $pl->videresendTil(true);
     $monstring->fylke = new stdClass();
     $monstring->fylke->navn = $fpl->g('pl_name');
     $monstring->fylke->link = $fpl->g('link');
-    
+
     $DATA['monstring'] = $monstring;
-    
-	$kontaktpersoner = $pl->kontakter();
-	foreach( $kontaktpersoner as $kontakt ) {
-		$k = new stdClass();
-		$k->navn 	= $kontakt->get('name');
-		$k->tittel	= $kontakt->get('title');
-		$k->bilde	= $kontakt->get('image');
-		$k->mobil	= $kontakt->get('tlf');
-		$k->epost	= $kontakt->get('email');
-		$k->facebook= $kontakt->get('facebook');
-		
-		$kontakter[] = $k;
-	}
-	$DATA['kontaktpersoner'] = $kontakter;
+
+    $kontaktpersoner = $pl->kontakter();
+    if (is_array($kontaktpersoner)) {
+        foreach ( $kontaktpersoner as $kontakt ) {
+            $k           = new stdClass();
+            $k->navn     = $kontakt->get( 'name' );
+            $k->tittel   = $kontakt->get( 'title' );
+            $k->bilde    = $kontakt->get( 'image' );
+            $k->mobil    = $kontakt->get( 'tlf' );
+            $k->epost    = $kontakt->get( 'email' );
+            $k->facebook = $kontakt->get( 'facebook' );
+
+            $kontakter[] = $k;
+
+            $DATA['kontaktpersoner'] = $kontakter;
+        }
+    }
     
     
 // HAR UKM-TV-SIDE? (opplastede videoer?)
