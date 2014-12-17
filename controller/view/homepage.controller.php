@@ -62,7 +62,18 @@ $projects = get_pages( $args );
 if($projects) {
     foreach($projects as $project) {
         $DATA['projects'][] = new WPOO_Post($project);
-    } 
+    }
 }
+
+require_once('UKM/statistikk.class.php');
+
+$stat = new statistikk();
+$stat->setLand();
+
+$total = $stat->getTotal(get_option('season'));
+$stat = new stdClass();
+$stat->tall 	= $total['persons'];
+$stat->til		= get_option('season');
+$DATA['stat_pameldte'] = $stat;
 
 require_once(THEME_PATH . 'controller/element/nav_page.controller.php');

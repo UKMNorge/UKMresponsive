@@ -27,6 +27,20 @@ if( is_array( $metadata ) ) {
 	}
 }
 
+if (get_option("site_type") != "kommune" && get_option("site_type") != "fylke") {
+
+	require_once('UKM/statistikk.class.php');
+
+	$stat = new statistikk();
+	$stat->setLand();
+
+	$total = $stat->getTotal(get_option('season'));
+	$stat = new stdClass();
+	$stat->tall 	= $total['persons'];
+	$stat->til		= get_option('season');
+	$DATA['stat_pameldte'] = $stat;
+}
+
 $DATA['post']->author->company_name = 'UKM Norge';
 
 function image_gallery( $attr ) {
