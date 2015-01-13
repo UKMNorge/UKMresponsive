@@ -19,7 +19,7 @@ if ( get_query_var('paged') ) {
 
 $post_query = 'posts_per_page=7&paged='.$paged;
 
-if( $blog_id == 1 ) {
+if( false ) { #$blog_id == 1 ) { Midlertidig fjernet, da vi dobbelt-publiserer til begge kategorier
 	$posts = query_posts($post_query.'&cat=-12'); # Fjern UKM-kjendiser fra forsiden av UKM.no
 } else {
 	$posts = query_posts($post_query);
