@@ -217,7 +217,7 @@ if( $VIEW == 'fylke_aktiv' ) {
 
 require_once('UKM/statistikk.class.php');
 $stat = $pl->statistikk();										  
-$total = $stat->getTotal(get_option('season'));
+$total = $stat->getTotal($pl->get('season'));
 $stat = new stdClass();
 $stat->tall 	= $total['persons'];
 $stat->til		= 'i '. $monstring->navn;
