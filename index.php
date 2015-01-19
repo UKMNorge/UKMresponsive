@@ -5,13 +5,21 @@ if( $_SERVER['HTTP_HOST'] == 'ukm.dev' || isset($_GET['debug']) ) {
 	error_reporting(E_ALL ^ E_DEPRECATED);
 	ini_set('display_errors',1);
 	define('CURRENT_UKM_DOMAIN', 'ukm.dev');
+	define('IN_PRODUCTION_ENVIRONMENT', false);
 } else {
 	error_reporting(0);
 	ini_set('display_errors',0);
 	define('CURRENT_UKM_DOMAIN', 'ukm.no');
+	define('IN_PRODUCTION_ENVIRONMENT',true);
 }
 setlocale(LC_ALL, 'nb_NO', 'nb', 'no');
 
+// BØR HOOKES INN I WP PÅ ENDA TIDLIGERE TIDSPUNKT (ENN TEMPLATE RENDER)!
+if ( IN_PRODUCTION_ENVIRONMENT && is_user_logged_in() ) {
+	do_action( 'UKMcache_clean_url', $_SERVER['REQUEST_URI'] );
+} else {
+	do_action( 'UKMcache_exists', $_SERVER['REQUEST_URI'] );
+}
 
 define('THEME_PATH', get_theme_root().'/UKMresponsive/' );
 define('THEME_DEFAULT_IMAGE', 'http://grafikk.ukm.no/placeholder/post_placeholder.png');
@@ -255,6 +263,7 @@ if( $_SERVER['REMOTE_ADDR'] == '81.0.146.162' ) {
 } else {
 	$DEBUG = false;
 }
+ob_start();
 if( isset($_GET['exportContent']) ) {
 	echo TWIGrender('export_content',$DATA,$DEBUG);
 } else {
@@ -266,4 +275,15 @@ if( isset($_GET['exportContent']) ) {
 		echo '<style>body {margin-top: 33px;}</style>';
 	}
 }
+$output = ob_get_clean();
+$cacheData = array( 'pl_id' => get_option('pl_id'),
+					'post_id' => $post->ID,
+					'view' => $VIEW,
+					'url' => $_SERVER['REQUEST_URI']
+				 );
+
+if( !IN_PRODUCTION_ENVIRONMENT || ($VIEW != '404' && !is_user_logged_in()) ) {
+	do_action('UKMcache_create', $post->ID, get_option('pl_id'), $VIEW, $_SERVER['REQUEST_URI'], $output );
+}
+echo $output;
 die();
