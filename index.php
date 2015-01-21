@@ -1,7 +1,7 @@
 <?php
 header('Content-Type: text/html; charset=utf-8');
 
-if( $_SERVER['HTTP_HOST'] == 'ukm.dev' || isset($_GET['debug']) ) {
+if( strpos( $_SERVER['HTTP_HOST'], 'ukm.dev' ) !== false || isset($_GET['debug']) ) {
 	error_reporting(E_ALL ^ E_DEPRECATED);
 	ini_set('display_errors',1);
 	define('CURRENT_UKM_DOMAIN', 'ukm.dev');
