@@ -16,9 +16,9 @@ setlocale(LC_ALL, 'nb_NO', 'nb', 'no');
 
 // BØR HOOKES INN I WP PÅ ENDA TIDLIGERE TIDSPUNKT (ENN TEMPLATE RENDER)!
 if ( IN_PRODUCTION_ENVIRONMENT && is_user_logged_in() ) {
-	do_action( 'UKMcache_clean_url', $_SERVER['REQUEST_URI'] );
+	do_action( 'UKMcache_clean_url', $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'] );
 } else {
-	do_action( 'UKMcache_exists', $_SERVER['REQUEST_URI'] );
+	do_action( 'UKMcache_exists', $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'] );
 }
 
 define('THEME_PATH', get_theme_root().'/UKMresponsive/' );
@@ -282,8 +282,8 @@ $cacheData = array( 'pl_id' => get_option('pl_id'),
 					'url' => $_SERVER['REQUEST_URI']
 				 );
 
-if( !IN_PRODUCTION_ENVIRONMENT || ($VIEW != '404' && !is_user_logged_in()) ) {
-	do_action('UKMcache_create', $post->ID, get_option('pl_id'), $VIEW, $_SERVER['REQUEST_URI'], $output );
+if( IN_PRODUCTION_ENVIRONMENT && $VIEW != '404' && !is_user_logged_in() ) {
+	do_action('UKMcache_create', $post->ID, get_option('pl_id'), $VIEW, $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'], $output );
 }
 echo $output;
 die();
