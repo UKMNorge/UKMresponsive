@@ -42,10 +42,11 @@ switch( get_option('ukm_top_page') ) {
 											   'icon'			=> 'star',
 											   'description'	=> 'Bakgrunnsstoff, verdier og historikk'
 											  );
-		$DATA['page_nav'][] = (object) array( 'url' 			=> '//om.'.CURRENT_UKM_DOMAIN.'/grafisk-profil/',
+		$DATA['page_nav'][] = (object) array( 'url' 			=> 'http://instrato.no/direct.php?id=213a83aeffd508fd';#'//om.'.CURRENT_UKM_DOMAIN.'/grafisk-profil/',
 											   'title'		 	=> 'Grafisk profil',
 											   'icon'			=> 'palette',
-											   'description'	=> 'UKM-logo, skrifter og farger'
+											   'description'	=> 'UKM-logo, skrifter og farger',
+											   'target'			=> '_blank'
 											  );
 		$DATA['page_nav'][] = (object) array( 'url' 			=> 'http://www.flickr.com/photos/ukm/',
 											   'title'		 	=> 'Pressebilder',
