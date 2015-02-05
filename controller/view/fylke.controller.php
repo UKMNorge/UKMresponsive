@@ -1,4 +1,5 @@
 <?php
+require_once('UKMconfig.inc.php');
 require_once('UKM/monstring.class.php');
 
 $DATA['fylke'] = get_option('fylke');
