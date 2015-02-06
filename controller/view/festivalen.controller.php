@@ -12,7 +12,7 @@ if(isset($_GET['generateusers']) && isset($_GET['run']) && $_GET['generateusers'
   die();
 }
 
-$DATA['fylke'] = get_option('fylke');
+	$DATA['blog']['css_extra'][] = 'less/css/festival14.css';
 
 // HENT ALLE POSTS
 	$DATA['posts'] = array();
@@ -110,6 +110,9 @@ $DATA['fylke'] = get_option('fylke');
 	$monstring->sted = $pl->get('pl_place'); // info['pl_place']; //
     $monstring->navn = $pl->get('pl_name'); // info['pl_name'];  //
     
+    $monstring->varer = new stdClass();
+    $monstring->varer->dager = $pl->dager();
+    
     $remaining = $monstring->starter - time();
     $monstring->lengetil = new stdClass();
     $monstring->lengetil->dager = floor($remaining / 86400);
@@ -130,8 +133,9 @@ $DATA['fylke'] = get_option('fylke');
 	}
 	$DATA['kontaktpersoner'] = $kontakter;
 
+	$UKMTV = false;
 
-// HVILKEN PERIODE ER FYLKESSIDEN I?
+// HVILKEN PERIODE ER SSIDEN I?
 	$DATA['state'] = 'pre';
 	if( time() > $pl->get('pl_start') && time() < $pl->get('pl_stop') ) {
 		$DATA['state'] = 'active';
@@ -139,23 +143,27 @@ $DATA['fylke'] = get_option('fylke');
 		$DATA['state'] = 'post';
 	}
 
+	$DATA['state'] = 'pre';
 
 
-// HAR UKM-TV-SIDE? (opplastede videoer?)
-	$kategori = 'Fylkesmønstringen i '. $pl->g('pl_name').' '.$pl->g('season');
-	$sql = new SQL("SELECT `tv_id` FROM `ukm_tv_files`
-					WHERE `tv_category` LIKE '#kategori%'",
-					array('kategori' => $kategori) );
-	$res = $sql->run();
-	if( !$res )
-		$UKMTV = false;
-	else
-		$UKMTV = mysql_num_rows( $res ) > 0 ? $kategori : false;
-
-// HAR LIVESTREAM
-	$DATA['livelink'] = get_option('ukm_live_link');
-
-
+	// FØR MØNSTRINGEN
+	if( $DATA['state'] == 'pre' ) {
+		$VIEW = 'festival/homepage_pre';
+	} else {
+		// HAR UKM-TV-SIDE? (opplastede videoer?)
+		$kategori = 'UKM-Festivalen '.$pl->g('season');
+		$sql = new SQL("SELECT `tv_id` FROM `ukm_tv_files`
+						WHERE `tv_category` LIKE '#kategori%'",
+						array('kategori' => $kategori) );
+		$res = $sql->run();
+		if( !$res )
+			$UKMTV = false;
+		else
+			$UKMTV = mysql_num_rows( $res ) > 0 ? $kategori : false;
+	
+		// HAR LIVESTREAM
+		$DATA['livelink'] = get_option('ukm_live_link');
+	}
 
 	// HAR UKM-TV SIDE
 	if( $UKMTV ) {
@@ -166,7 +174,7 @@ $DATA['fylke'] = get_option('fylke');
                                       );
     }
     // HAR PROGRAM
-	if( in_array( $VIEW, array('fylke_pre','fylke_aktiv','fylke_post')) || $pl->har_program() ) {
+	if( $pl->har_program() ) {
 		$DATA['page_nav'][] = (object) array( 'url' 			=> 'program/',
 											   'title'		 	=> 'Program',
 											   'icon'			=> 'calendar',
@@ -175,25 +183,21 @@ $DATA['fylke'] = get_option('fylke');
 	}
 	// HAR INNSLAG
 	$innslag = $pl->innslag();
-	if( sizeof( $innslag ) > 0 && $VIEW == 'kommune_post' ) {
+	if( sizeof( $innslag ) > 0 ) {
+		$DATA['har_pameldte'] = true;
 	    $DATA['page_nav'][] = (object) array( 'url'			=> 'pameldte/',
-	                                          'title'		=> 'Hvem deltok?',
+	                                          'title'		=> 'Hvem delt'. ( $DATA['state']=='post' ? 'ok' : 'ar' ) .'?',
 	                                          'icon'		=> 'people',
-	                                          'description' => 'Se alle som deltok på festivalen.'
+	                                          'description' => 'Se alle som delt'. ( $DATA['state']=='post' ? 'ok' : 'ar' ) .' på festivalen.'
 	                                      );
-	} elseif( sizeof( $innslag ) > 0 ) {
-	    $DATA['page_nav'][] = (object) array( 'url'			=> 'pameldte/',
-	                                          'title'		=> 'Hvem deltar?',
-	                                          'icon'		=> 'people',
-	                                          'description' => 'Se alle som deltar på festivalen.'
-	                                      );
+	} else {
+		$DATA['har_pameldte'] = false;
 	}
 	
-	$DATA['page_nav'][] = (object) array( 'url' 			=> '#kontaktpersoner',
+	$DATA['page_nav'][] = (object) array( 'url' 			=> 'kontakt/',
 										   'title'		 	=> 'Kontaktpersoner',
 										   'icon'			=> 'i',
 										   'description'	=> 'Har du spørsmål om UKM-festivalen? Disse kan hjelpe!',
-										   'id'				=> 'show_kontaktpersoner'
 										  );
 
 
