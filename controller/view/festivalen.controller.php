@@ -194,7 +194,7 @@ if(isset($_GET['generateusers']) && isset($_GET['run']) && $_GET['generateusers'
 		$DATA['har_pameldte'] = false;
 	}
 	
-	$DATA['page_nav'][] = (object) array( 'url' 			=> 'kontakt/',
+	$DATA['page_nav'][] = (object) array( 'url' 			=> '//om.'. UKM_HOSTNAME .'/kontakt/administrasjonen/',
 										   'title'		 	=> 'Kontaktpersoner',
 										   'icon'			=> 'i',
 										   'description'	=> 'Har du spørsmål om UKM-festivalen? Disse kan hjelpe!',
