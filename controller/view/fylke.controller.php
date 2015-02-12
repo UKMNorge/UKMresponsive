@@ -123,8 +123,6 @@ $DATA['fylke'] = get_option('fylke');
 	else
 		$UKMTV = mysql_num_rows( $res ) > 0 ? $kategori : false;
 
-	$DATA['livelink'] = get_option('ukm_live_link');
-
 // HVILKEN PERIODE ER FYLKESSIDEN I?
 	$VIEW = 'fylke_pre_lokal';
 	if ( date('m') > 8 && date('m') < 12 ) {
@@ -150,6 +148,7 @@ if( $pl->registered() ) {
 }
 $SEO->description( $description );
 
+$DATA['livelink'] = get_option('ukm_live_link');
 if( $VIEW == 'fylke_aktiv' ) {
 	$perioder = get_option('ukm_hendelser_perioder');
 	$embedcode = get_option('ukm_live_embedcode');

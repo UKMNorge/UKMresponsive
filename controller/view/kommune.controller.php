@@ -84,6 +84,28 @@ foreach( $monstring as $key => $val ) {
 		$DATA['console'][$key][] = @(string) $val;
 	}
 }
+
+$DATA['livelink'] = get_option('ukm_live_link');
+if( $VIEW == 'kommune_aktiv' ) {
+	$perioder = get_option('ukm_hendelser_perioder');
+	$embedcode = get_option('ukm_live_embedcode');
+	
+	$show_embed = false;
+	
+	if( $embedcode ) {
+		foreach( $perioder as $p ) {
+			if( $p->start < time() && $p->stop > time() ) {
+				$show_embed = true;
+				break;
+			}
+		}
+	}
+	
+	if( $show_embed ) {
+		$DATA['embedcode'] = $embedcode;
+	}
+}
+
 // PÅMELDINGSIKONER
 $DATA = array_merge($DATA, $pl->pameldingsikoner());
 		
