@@ -47,19 +47,31 @@
 		</div>
 	</div>
 	
-	{# <div class="separator_line"></div> #}
-
-
-	{% for fm in fylkesmonstringer %}
-		{% if loop.index is not divisibleby(2) %}
-			{% embed "element/feature_left.twig.html" with {'feature': fm} %}{% endembed %}
-		{% else %}
-			{% embed "element/feature_right.twig.html" with {'feature': fm} %}{% endembed %}
+	{% if fylkesmonstringer_denne_uken|length > 0 or fylkesmonstringer_forrige_uke|length > 0 %}
+		
+		{% if fylkesmonstringer_denne_uken|length > 0 %}
+			<h2 align="center">Ukas fylkesmønstringer</h2>
+			{% for fm in fylkesmonstringer_denne_uken %}
+				{% if loop.index is not divisibleby(2) %}
+					{% embed "element/feature_left.twig.html" with {'feature': fm} %}{% endembed %}
+				{% else %}
+					{% embed "element/feature_right.twig.html" with {'feature': fm} %}{% endembed %}
+				{% endif %}
+			{% endfor %}
 		{% endif %}
-	{% endfor %}
+
+		{% if fylkesmonstringer_forrige_uke|length > 0 %}
+			<h2 align="center">Forrige ukes fylkesmønstringer</h2>
+			{% for fm in fylkesmonstringer_forrige_uke %}
+				{% if loop.index is not divisibleby(2) %}
+					{% embed "element/feature_left.twig.html" with {'feature': fm} %}{% endembed %}
+				{% else %}
+					{% embed "element/feature_right.twig.html" with {'feature': fm} %}{% endembed %}
+				{% endif %}
+			{% endfor %}
+		{% endif %}
 	
-	{% if fylkesmonstringer | length > 0 %}
-		<h2>Nyheter fra UKM Norge</h2>
+		<h2 align="center">Nyheter fra UKM Norge</h2>
 	{% endif %}
 
 	<style>

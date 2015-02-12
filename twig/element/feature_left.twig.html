@@ -29,12 +29,23 @@
 			{% endif %}
 				{% embed "element/post/grid_element.twig.html" with post %}{% endembed %}
 			</div>
-		{% endfor %}
-		{% if feature.live.now %}
-			<div class="clearfix"></div>
-			<div class="livenow">
-				<a href="{{feature.live.link}}" target="_blank">Se UKM-TV direkte fra mønstringen nå!</a>
+		{% else %}
+			<div class="center">
+				<h3>Fylkesmønstringen er snart i gang!</h3>
+				<p class="lead">Vi starter {{ feature.start|dato('d.F') }} kl. {{ feature.start|dato('H:i') }}, {{ feature.place }}</p>
+				<p><a href="{{feature.link}}">Se program og hvem som deltar på fylkessiden</a></p>
 			</div>
+		{% endfor %}
+
+		<div class="clearfix"></div>
+		{% if feature.live.now %}
+			<div class="livenow">
+				<a href="{{feature.link}}" target="_blank">Se UKM-TV direkte fra mønstringen nå!</a>
+			</div>
+		{% elseif feature.live.link %}
+			<div class="livenow">
+				<a href="{{feature.link}}" target="_blank">{{feature.title}} kommer til å sende UKM-TV direkte</a>
+			</div>		
 		{% endif %}
 		<div class="clearfix"></div>
 	</div>
