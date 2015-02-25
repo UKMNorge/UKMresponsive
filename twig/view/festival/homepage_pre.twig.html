@@ -37,45 +37,12 @@
 	                </a>
 	            </li>
 			{% endfor %}
-{#
-            <li class="navbar-link">
-                <a href="/festivalen/category/workshop/">
-                    <div class="centered">
-                        <span><img src="/wp-content/themes/UKMresponsive/img/nav/nav-people.png" width="45"/></span>                            
-                    </div>
-                    <span>Workshops</span>
-                </a>
-            </li>
-            <li class="navbar-link">
-                <a href="/festivalen/kart/">
-                    <div class="centered">
-                        <span><img src="/wp-content/themes/UKMresponsive/img/nav/nav-maps.png" width="45"/></span>                            
-                    </div>
-                    <span>Kart</span>
-                </a>
-            </li>
-            <li class="navbar-link">
-                <a href="/festivalen/kontakt/">
-                    <div class="centered">
-                        <span><img src="/wp-content/themes/UKMresponsive/img/nav/nav-contact.png" width="45"/></span>                            
-                    </div>
-                    <span>Kontakt</span>
-                </a>
-            </li>
-            <li class="navbar-link">
-                <a href="/festivalen/internprogram/">
-                    <div class="centered">
-                        <span><img src="/wp-content/themes/UKMresponsive/img/nav/nav-i.png" width="45"/></span>                            
-                    </div>
-                    <span>Deltakerinfo</span>
-                </a>
-            </li>
-#}
         </ol>
         </div>
     </div>
 </div>
 
+{% if har_pameldte %}
 <div class="clearfix"></div>
 <div class="row">
 	<div class="container">
@@ -84,6 +51,7 @@
 		</div>
 	</div>
 </div>
+{% endif %}
 
 {% if posts|length > 1 %}
 <div class="row">
@@ -110,16 +78,6 @@
         </div>
     </div>
 
-</div>
-#}
-{#
-<div class="arrow_box"></div>
-<div class="row box_grey">
-	<div class="container">
-		<div class="page_box">
-			{% embed "element/festival/homepage_partnere.twig.html" %}{% endembed %}
-		</div>
-	</div>
 </div>
 #}
 {% endblock %}
