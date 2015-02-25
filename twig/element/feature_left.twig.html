@@ -1,6 +1,6 @@
 <div class="feature_block">
 
-	<div class="feature_cover_landscape col-xs-12 visible-sm visible-xs" style="background-image: url('{{feature.cover.landscape}}');">
+	<div class="feature_cover_landscape col-xs-12 visible-sm visible-xs" style="background-image: url('{{feature.cover.landscape.url}}');">
 		<div class="infos">
 			<h2>{{feature.title}}</h2>
 			<a href="{{feature.link}}">Les mer på fylkessiden</a>
@@ -10,7 +10,7 @@
 
 	<div class="clearfix visible-xs visible-sm"></div>
 	
-	<div class="feature_cover col-xs-12 col-md-4 hidden-sm hidden-xs" style="background-image: url('{{feature.cover.portrait}}');">
+	<div class="feature_cover col-xs-12 col-md-4 hidden-sm hidden-xs" style="background-image: url('{{feature.cover.portrait.url}}');">
 		<div class="infos">
 			<h2>{{feature.title}}</h2>
 			<a href="{{feature.link}}">Les mer på fylkessiden</a>
@@ -27,7 +27,7 @@
 			{% else %}
 				<div class="col-xs-6 col-sm-4">
 			{% endif %}
-				{% embed "element/post/grid_element.twig.html" with post %}{% endembed %}
+			{% embed "/element/post/grid_element.twig.html" with post %}{% endembed %}
 			</div>
 		{% else %}
 			<div class="center">
