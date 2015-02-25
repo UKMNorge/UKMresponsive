@@ -8,6 +8,7 @@ if( function_exists('UKMpush_to_front_load_all_fm_data') ) {
 	if( (int) date('m') > 2 && (int) date('m') < 6 ) {
 		$year = date('Y');
 		$week = (int) date('W');
+		$day = (int) date('N');
 		
 		// Vis denne ukes fylkesmønstringer
 		$fylkesmonstringer_denne_uken = UKMpush_to_front_load_all_fm_data( $year, $week );
@@ -21,7 +22,6 @@ if( function_exists('UKMpush_to_front_load_all_fm_data') ) {
 	}
 	$DATA['fylkesmonstringer_denne_uken'] = $fylkesmonstringer_denne_uken;
 	$DATA['fylkesmonstringer_forrige_uke'] = $fylkesmonstringer_forrige_uke;
-	var_dump( $DATA['fylkesmonstringer_denne_uken']);
 	}
 }
 
