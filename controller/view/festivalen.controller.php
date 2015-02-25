@@ -13,7 +13,7 @@ if(isset($_GET['generateusers']) && isset($_GET['run']) && $_GET['generateusers'
 }
 
 	$DATA['blog']['css_extra'][] = 'less/css/festival14.css';
-
+	$DATA['hide_stat'] = true; // Skjuler påmeldte-tall oppe til høyre
 // HENT ALLE POSTS
 	$DATA['posts'] = array();
 	
