@@ -5,7 +5,9 @@ require_once('WPOO/WPOO/Author.php');
 if( function_exists('UKMpush_to_front_load_all_fm_data') ) {	
 	if( $_SERVER['REMOTE_ADDR'] == '81.0.146.162' ) {
 	$fylkesmonstringer = array();
-	if( (int) date('m') > 2 && (int) date('m') < 6 ) {
+	$fylkesmonstringer_denne_uken = array();
+	$fylkesmonstringer_forrige_uke = array();
+	if( true || (int) date('m') > 2 && (int) date('m') < 6 ) {
 		$year = date('Y');
 		$week = (int) date('W');
 		$day = (int) date('N');
@@ -16,8 +18,6 @@ if( function_exists('UKMpush_to_front_load_all_fm_data') ) {
 		// Vis forrige ukes fylkesmønstringer frem til onsdag
 		if( $day < 4 ) {
 			$fylkesmonstringer_forrige_uke = UKMpush_to_front_load_all_fm_data( $year, $week-1 );	
-		} else {
-			$fylkesmonstringer_forrige_uke = array();
 		}
 	}
 	$DATA['fylkesmonstringer_denne_uken'] = $fylkesmonstringer_denne_uken;
