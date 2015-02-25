@@ -4,11 +4,11 @@ require_once('WPOO/WPOO/Author.php');
 
 if( function_exists('UKMpush_to_front_load_all_fm_data') ) {	
 	if( $_SERVER['REMOTE_ADDR'] == '81.0.146.162' ) {
+		echo 'test';
 	$fylkesmonstringer = array();
 	if( (int) date('m') > 2 && (int) date('m') < 6 ) {
 		$year = date('Y');
 		$week = (int) date('W');
-		$day = (int) date('N');
 		
 		// Vis denne ukes fylkesmønstringer
 		$fylkesmonstringer_denne_uken = UKMpush_to_front_load_all_fm_data( $year, $week );
