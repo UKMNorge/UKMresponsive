@@ -1,15 +1,21 @@
 <?php
-
-
-
-
-
-
 // FUNCTIONS FILE USED BY WORDPRESS TO REGISTER HOOKS ++
 // USE functions_theme FOR FUNCTIONS RELATED TO THEME WHICH WP DOES NOT NEED TO EXEC ON-THE-FLY
 
+if( function_exists('is_admin') ) {
+	if( is_admin() && !in_array(get_option('site_type'), array('kommune','fylke','land')) ) {
+		add_action('admin_menu', 'UKMresponsive_menu');
+	}
+}
+
+function UKMresponsive_menu() {
+	$page = add_menu_page('Oppsett', 'Oppsett', 'administrator', 'UKMresponsive_layout', 'UKMresponsive_layout', 'http://ico.ukm.no/art-supplies-menu.png',40);
+}
 
 
+function UKMresponsive_layout() {
+	require_once('wp-admin/layout.php');
+}
 
 add_theme_support( 'post-thumbnails' );
 
