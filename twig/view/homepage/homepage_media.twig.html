@@ -1,15 +1,12 @@
 {% extends "layout.twig.html" %}
 
 {% block navbar %}
+	<div class="pull-right" id="mediaGoBack"><a href="http://ukm.no">gå til UKM.no</a></div>
 	<div class="navbar-header">
 		<a href="/" class="navbar-brand">
 			<img src="http://grafikk.ukm.no/profil/media/UKMmedia_logo.png" width="70" />
 		</a>
 	</div>
-
-	<ul class="nav navbar-nav navbar-right">
-		<li><a href="http://ukm.no">gå til UKM.no</a></li>
-	</ul>
 {% endblock %}
 
 {% block jumbo %}
@@ -25,3 +22,16 @@
 	</div>
 {% endblock %}
 
+{% block additional_css %}
+	{{ parent() }}
+	#mediaGoBack {
+		color: #526476;
+		font-weight: 600 !important;
+		font-size: 14px !important;
+		line-height: 16px !important;
+		padding: 21px 20px 16px 20px !important;
+	}
+	#mediaGoBack a {
+		color: #526476;
+	}
+{% endblock %}
