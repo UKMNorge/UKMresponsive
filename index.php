@@ -119,6 +119,9 @@ require_once('functions_theme.php');
             $VIEW = 'kommune';
 			require_once('controller/element/kontakt.controller.php');
 			require_once('controller/view/kommune.controller.php');
+		} elseif( get_option('site_type') == 'media' ) {
+			$VIEW = 'homepage/homepage_media';
+			require_once('controller/view/homepage.controller.php');
         } else {
 			require_once('controller/view/homepage.controller.php');
 			$VIEW = 'homepage';

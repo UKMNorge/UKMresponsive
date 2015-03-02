@@ -10,6 +10,12 @@ if( function_exists('is_admin') ) {
 
 function UKMresponsive_menu() {
 	$page = add_menu_page('Oppsett', 'Oppsett', 'administrator', 'UKMresponsive_layout', 'UKMresponsive_layout', 'http://ico.ukm.no/art-supplies-menu.png',40);
+	add_action( 'admin_print_styles-' . $page, 'UKMresponsive_sns' );	
+
+}
+function UKMresponsive_sns() {
+	wp_enqueue_script('WPbootstrap3_js');
+	wp_enqueue_style('WPbootstrap3_css');
 }
 
 

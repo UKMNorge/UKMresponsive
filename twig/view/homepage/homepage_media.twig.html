@@ -1,0 +1,27 @@
+{% extends "layout.twig.html" %}
+
+{% block navbar %}
+	<div class="navbar-header">
+		<a href="/" class="navbar-brand">
+			<img src="http://grafikk.ukm.no/profil/media/UKMmedia_logo.png" width="70" />
+		</a>
+	</div>
+
+	<ul class="nav navbar-nav navbar-right">
+		<li><a href="http://ukm.no">gå til UKM.no</a></li>
+	</ul>
+{% endblock %}
+
+{% block jumbo %}
+
+{% endblock %}
+
+{% block content_container %}
+	{% embed "block/jumbo_image.twig.html" %}{% endembed %}
+	
+	<div class="container">
+	<h1>Siden kommer straks!</h1>
+	<p class="lead">Denne nettsiden blir lansert innen 6. mars!</p>
+	</div>
+{% endblock %}
+
