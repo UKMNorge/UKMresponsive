@@ -89,13 +89,6 @@ require_once('functions_theme.php');
 	} elseif( is_front_page() ) {
 		wp_reset_query();
 		wp_reset_postdata();
-/*
-		$SEO->jumbo( $post->ID );
-		$JUMBO_POST_ID = $post->ID;
-		require('controller/element/jumbo.controller.php');
-*/
-		
-		#if( $_SERVER['REMOTE_ADDR'] == '81.0.146.162' || $_SERVER['REMOTE_ADDR'] == '127.0.0.1' ) {
 		$name			= get_bloginfo('name');
 		$description	= get_bloginfo('description');
 		
@@ -103,7 +96,6 @@ require_once('functions_theme.php');
 		$SEO->description( $description );
 		
 		$DATA['jumbo'] = (object) array('header' => $name, 'content' => $description);
-		#}
 
 		if( get_option('ukm_top_page') == 'ambassadorer' ) {
 			header("Location: http://ambassador.ukm.no");
@@ -145,12 +137,6 @@ require_once('functions_theme.php');
 				$SEO->jumbo( $post->ID );
 				$SEO->setImage( 'http://ukm.no/wp-content/uploads/2011/08/kart1.jpg' );
 				break;
-/*
-            case 'styrerommet':
-                require_once('controller/view/styrerommet.controller.php');
-                $VIEW = 'styrerommet';
-                break;
-*/
             case 'urg':
 				require_once('controller/view/post.controller.php');
             	require_once('controller/view/urg.controller.php');
@@ -241,35 +227,16 @@ if( !isset( $DATA['jumbo'] ) ) {
 
 $DATA['breadcrumbs'] = $BC->get();
 
-// Opprinnelig er title page-spesific, uten breadcrumbs. Overskriver dette her
-/*
-	$seoTitle = '';
-	foreach( $DATA['breadcrumbs']->crumbs as $c ) {
-		$title = $c->title == 'artikkel' ?  $DATA['post']->title : $c->title;
-		
-		if ($c === end($DATA['breadcrumbs']->crumbs))
-			$seoTitle .= $title;
-		else 
-			$seoTitle .= $title .' &raquo; ';
-	}
-	$SEO->title( $seoTitle );
-*/
-
 $DATA['SEO'] = $SEO;
 $DATA = object_to_array($DATA);
 
-if( $_SERVER['REMOTE_ADDR'] == '81.0.146.162' ) {
-	$DEBUG = false;
-} else {
-	$DEBUG = false;
-}
+$DEBUG = false;
+
 ob_start();
 if( isset($_GET['exportContent']) ) {
 	echo TWIGrender('export_content',$DATA,$DEBUG);
 } else {
 	echo TWIGrender('view/'.$VIEW, $DATA,$DEBUG);
-	
-	#echo TWIGrender('console', $DATA, $DEBUG);
 	wp_footer();
 	if(is_user_logged_in() ) {
 		echo '<style>body {margin-top: 33px;}</style>';
