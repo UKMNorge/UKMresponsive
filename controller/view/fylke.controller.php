@@ -124,19 +124,19 @@ $DATA['fylke'] = get_option('fylke');
 		$UKMTV = mysql_num_rows( $res ) > 0 ? $kategori : false;
 
 // HVILKEN PERIODE ER FYLKESSIDEN I?
-	$VIEW = 'fylke_pre_lokal';
+	$VIEW = 'fylke/fylke_pre_lokal';
 	if ( date('m') > 8 && date('m') < 12 ) {
-		$VIEW = 'fylke';
+		$VIEW = 'fylke/fylke';
 	} elseif (!$pl->registered()) {
-        	$VIEW = 'fylke_ikke_klar';
+        	$VIEW = 'fylke/fylke_ikke_klar';
 	} elseif( time() > $siste_pamelding && time() < $siste ) {
-		$VIEW = 'fylke_lokal';
+		$VIEW = 'fylke/fylke_lokal';
 	} elseif( time() > $siste && time() < $pl->get('pl_start') ) {
-		$VIEW = 'fylke_pre';
+		$VIEW = 'fylke/fylke_pre';
 	} elseif( time() > $pl->get('pl_start') && time() < $pl->get('pl_stop') ) {
-		$VIEW = 'fylke_aktiv';
+		$VIEW = 'fylke/fylke_aktiv';
 	} elseif( time() > $pl->get('pl_stop') ) {
-		$VIEW = 'fylke_post';
+		$VIEW = 'fylke/fylke_post';
 	}
 	
 $DATA['console']['fm_view'][] = $VIEW;
@@ -149,7 +149,7 @@ if( $pl->registered() ) {
 $SEO->description( $description );
 
 $DATA['livelink'] = get_option('ukm_live_link');
-if( $VIEW == 'fylke_aktiv' ) {
+if( $VIEW == 'fylke/fylke_aktiv' ) {
 	$perioder = get_option('ukm_hendelser_perioder');
 	$embedcode = get_option('ukm_live_embedcode');
 	
@@ -185,7 +185,7 @@ if( $VIEW == 'fylke_aktiv' ) {
                                       );
     }
     // HAR PROGRAM
-	if( in_array( $VIEW, array('fylke_pre','fylke_aktiv','fylke_post')) || $pl->har_program() ) {
+	if( in_array( $VIEW, array('fylke/fylke_pre','fylke/fylke_aktiv','fylke/fylke_post')) || $pl->har_program() ) {
 		$DATA['page_nav'][] = (object) array( 'url' 			=> 'program/',
 											   'title'		 	=> 'Program',
 											   'icon'			=> 'calendar',
@@ -194,7 +194,7 @@ if( $VIEW == 'fylke_aktiv' ) {
 	}
 	// HAR INNSLAG
 	$innslag = $pl->innslag();
-	if( sizeof( $innslag ) > 0 && $VIEW == 'kommune_post' ) {
+	if( sizeof( $innslag ) > 0 && $VIEW == 'fylke/kommune_post' ) {
 	    $DATA['page_nav'][] = (object) array( 'url'			=> 'pameldte/',
 	                                          'title'		=> 'Hvem deltok?',
 	                                          'icon'		=> 'people',

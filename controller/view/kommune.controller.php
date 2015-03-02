@@ -64,18 +64,18 @@ $posts_per_page = 7;
 // HVILKEN PERIODE ER KOMMUNESIDEN I?      
         $utenforsesong = mktime(0,0,0,12,1,get_option('season')-1)>time();
         if (!$pl->registered()) {
-            $VIEW = 'kommune_ikke_klar';
+            $VIEW = 'kommune/kommune_ikke_klar';
         } else if ($utenforsesong) {
-            $VIEW = 'kommune_pre_pamelding'; 
+            $VIEW = 'kommune/kommune_pre_pamelding'; 
         } elseif( time() < $pl->get('pl_deadline') || time() < $pl->get('pl_deadline2') ) {
-            $VIEW = 'kommune_pamelding';
+            $VIEW = 'kommune/kommune_pamelding';
             $posts_per_page = 6;
         } elseif( time() > $pl->get('pl_deadline') && time() < $pl->get('pl_start') ) {
-            $VIEW = 'kommune_pre';
+            $VIEW = 'kommune/kommune_pre';
         } elseif( time() > $pl->get('pl_start') && time() < $pl->get('pl_stop') ) {
-            $VIEW = 'kommune_aktiv';
+            $VIEW = 'kommune/kommune_aktiv';
         } else {
-            $VIEW = 'kommune_post';
+            $VIEW = 'kommune/kommune_post';
         }
     
 $DATA['console']['kommune_view'][] = $VIEW;
@@ -86,7 +86,7 @@ foreach( $monstring as $key => $val ) {
 }
 
 $DATA['livelink'] = get_option('ukm_live_link');
-if( $VIEW == 'kommune_aktiv' ) {
+if( $VIEW == 'kommune/kommune_aktiv' ) {
 	$perioder = get_option('ukm_hendelser_perioder');
 	$embedcode = get_option('ukm_live_embedcode');
 	
@@ -147,7 +147,7 @@ if( $UKMTV ) {
                                       );
 }
 
-if( in_array( $VIEW, array('kommune_pre','kommune_aktiv','kommune_post')) || $pl->har_program() ) {
+if( in_array( $VIEW, array('kommune/kommune_pre','kommune/kommune_aktiv','kommune/kommune_post')) || $pl->har_program() ) {
 $DATA['page_nav'][] = (object) array( 'url' 			=> 'program/',
 									   'title'		 	=> 'Program',
 									   'icon'			=> 'calendar',
@@ -155,7 +155,7 @@ $DATA['page_nav'][] = (object) array( 'url' 			=> 'program/',
                                        );
 }
 $innslag = $pl->innslag();
-if( sizeof( $innslag ) > 0 && $VIEW == 'kommune_post' ) {
+if( sizeof( $innslag ) > 0 && $VIEW == 'kommune/kommune_post' ) {
     $DATA['page_nav'][] = (object) array( 'url'			=> 'pameldte/',
                                           'title'		=> 'Hvem deltok?',
                                           'icon'		=> 'people',

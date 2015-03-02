@@ -1,7 +1,7 @@
-{% extends "view/kommune.twig.html" %}
+{% extends "view/fylke/fylke.twig.html" %}
 
 {% block jumbo_content %}
-	Velkommen til UKM {{monstring.starter | dato("l j. F") | capitalize }} til {{monstring.slutter | dato("l j. F")}}, {{monstring.sted}}
+	Velkommen til fylkesmønstring {{monstring.starter | dato("l j. F") }} til {{monstring.slutter | dato("l j. F")}}, {{monstring.sted}}
 {% endblock %}
 
 {% block content_pre %}
