@@ -25,12 +25,12 @@ $posts = query_posts('posts_per_page='.$per_page.'&paged='.$paged.'&cat='.$categ
 while(have_posts()) {
 	the_post();
 	$posten = new WPOO_Post($post);
-	$metadata = get_post_custom($post->ID);
+/*	$metadata = get_post_custom($post->ID);
 	if( is_array( $metadata ) ) {
 		foreach( $metadata as $key => $val ) {
 			$posten->meta[$key] = $val[0];
 		}
-	}
+	}*/
 	$DATA['posts'][] = $posten;
 }
 

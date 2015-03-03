@@ -19,13 +19,14 @@ $DATA['post']->blog = new stdClass();
 $DATA['post']->blog->link = get_bloginfo('url');
 $DATA['post']->blog->name = get_bloginfo('name');
 
-$metadata = get_post_custom($post->id);
-
+/*
+	$metadata = get_post_custom($post->id);
 if( is_array( $metadata ) ) {
 	foreach( $metadata as $key => $val ) {
 		$DATA['post']->meta[$key] = $val[0];
 	}
 }
+*/
 
 if (get_option("site_type") != "kommune" && get_option("site_type") != "fylke") {
 

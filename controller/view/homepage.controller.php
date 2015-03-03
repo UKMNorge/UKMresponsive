@@ -28,12 +28,12 @@ if( false ) { #$blog_id == 1 ) { Midlertidig fjernet, da vi dobbelt-publiserer t
 while(have_posts()) {
     the_post();
     $wpoopost = new WPOO_Post($post);
-    $metadata = get_post_custom($post->id);
+/*    $metadata = get_post_custom($post->id);
     if( is_array( $metadata ) ) {
     	foreach( $metadata as $key => $val ) {
     		$wpoopost->meta[$key] = $val[0];
     	}
-    }
+    }*/
     $DATA['posts'][] = $wpoopost; 
 }
 

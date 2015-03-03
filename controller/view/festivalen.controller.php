@@ -77,15 +77,16 @@ if(isset($_GET['generateusers']) && isset($_GET['run']) && $_GET['generateusers'
     while(have_posts()) {
         the_post();
         $wpoopost = new WPOO_Post($post);
-        $metadata = get_post_custom($post->id);
+#        $metadata = get_post_custom($post->id);
         $wpoopost->blog = new stdClass();
         $wpoopost->blog->link = get_bloginfo('url');
         $wpoopost->blog->name = get_bloginfo('name');
-        if( is_array( $metadata ) ) {
+/*        if( is_array( $metadata ) ) {
         	foreach( $metadata as $key => $val ) {
         		$wpoopost->meta[$key] = $val[0];
         	}
         }
+        */
         $DATA['meet'][] = $wpoopost; 
     }
     
