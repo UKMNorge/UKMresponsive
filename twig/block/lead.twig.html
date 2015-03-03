@@ -1,0 +1,16 @@
+<div class="jumbo_lead container">
+	<h1>{{ block.title|raw }}</h1>
+	
+	<p class="lead">{{ block.lead }}</p>
+	
+	{% if block.content is defined and block.content is not empty %}
+	<p>{{ block.content|raw }}</p>
+	{% endif %}
+</div>
+</div>
+
+<style>
+.jumbo_lead {
+	padding:7vh 0px;
+}
+</style>

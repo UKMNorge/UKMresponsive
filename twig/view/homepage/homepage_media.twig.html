@@ -14,12 +14,13 @@
 {% endblock %}
 
 {% block content_container %}
-	{% embed "block/jumbo_image.twig.html" %}{% endembed %}
-	
-	<div class="container">
-	<h1>Siden kommer straks!</h1>
-	<p class="lead">Denne nettsiden blir lansert innen 6. mars!</p>
-	</div>
+	{% for block in blocks %}
+		{% if block.type == 'container' %}
+			{% embed "block/container_"~ container.container ~".twig.html" with {'container': block, 'block': container.contained } %}{% endembed %}		
+		{% else %}
+			{% embed "block/"~ block.type ~".twig.html" with {'block': block} %}{% endembed %}
+		{% endif %}
+	{% endfor %}
 {% endblock %}
 
 {% block additional_css %}

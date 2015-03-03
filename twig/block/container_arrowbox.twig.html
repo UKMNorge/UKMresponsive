@@ -1,0 +1,6 @@
+<div class="arrow_box"></div>
+<div class="row box_grey" style="padding-bottom:0px;">
+    <div class="container">
+	    {% embed "block/"~ container.contained.type ~".twig.html" with{'block': container.contained} %}{% endembed %}
+    </div>
+</div>

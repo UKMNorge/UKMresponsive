@@ -122,6 +122,7 @@ require_once('functions_theme.php');
 		} elseif( get_option('site_type') == 'media' ) {
 			$VIEW = 'homepage/homepage_media';
 			require_once('controller/view/homepage.controller.php');
+			require_once('controller/view/homepage_media.controller.php');
         } else {
 			require_once('controller/view/homepage.controller.php');
 			$VIEW = 'homepage';
