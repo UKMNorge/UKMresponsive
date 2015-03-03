@@ -1,6 +1,9 @@
 <?php
 $blocks = array();
 $DATA['blog']['css_extra'][] = 'less/css/festival14.css';
+
+$backstagefoto = IN_PRODUCTION_ENVIRONMENT ? 3 : 9;
+
 	// JUMBO TOP IMAGE	
 	$blocks[] = block_jumbo_image('top',
 								  'UKM Media', 
@@ -11,9 +14,22 @@ $DATA['blog']['css_extra'][] = 'less/css/festival14.css';
 								  'https://farm4.staticflickr.com/3839/14564592764_9f6c78dc01_k.jpg'
 								   );
 	// LEAD TEXT (FROM PAGE)
-	$blocks[] = block_lead( 'lead', IN_PRODUCTION_ENVIRONMENT ? 5 : 3);
+	$blocks[] = block_lead( 'lead', 5);
 
 if( !IN_PRODUCTION_ENVIRONMENT ) {
+	$blocks[] = block_image_oob_left('backstagefoto',
+									 $backstagefoto,
+									 'https://farm4.staticflickr.com/3840/14533175723_732541e923_c.jpg',
+									 'https://farm4.staticflickr.com/3840/14533175723_732541e923_b.jpg',
+									 'https://farm4.staticflickr.com/3840/14533175723_025ebd9485_h.jpg',
+									 'https://farm4.staticflickr.com/3840/14533175723_0bf9a226c8_k.jpg'
+									);
+
+
+
+
+
+
 	// ICONS FOR MORE INFO
 	$icons = array();
 	$icons[] = media_icon( '#journalist', 'Tekst', 'http://ico.ukm.no/media_illustrations/tekst.jpg' );
@@ -26,20 +42,12 @@ if( !IN_PRODUCTION_ENVIRONMENT ) {
 				);
 
 
-	$blocks[] = block_lead( 'lead', 3);
+	$blocks[] = block_lead( 'lead', 5);
 
-	$blocks[] = block_image_oob_left('journalist',
-									 6,
-									 'https://farm4.staticflickr.com/3839/14564592764_30baef7413_c.jpg',
-									 'https://farm4.staticflickr.com/3839/14564592764_e8386105bf_h.jpg',
-									 'https://farm4.staticflickr.com/3839/14564592764_e8386105bf_h.jpg',
-									 'https://farm4.staticflickr.com/3839/14564592764_9f6c78dc01_k.jpg'
-									);
-
-	$blocks[] = block_lead_center( 'lead', 3);
+	$blocks[] = block_lead_center( 'lead', 5);
  	
 	$blocks[] = block_image_oob_left('flerkamera',
-									 8,
+									 5,
 									 'https://farm8.staticflickr.com/7344/9293764007_9171a80bd3_z.jpg',
 									 'https://farm8.staticflickr.com/7344/9293764007_9171a80bd3_b.jpg',
 									 'https://farm8.staticflickr.com/7344/9293764007_181b381064_h.jpg',
