@@ -11,7 +11,9 @@ $DATA['blog']['css_extra'][] = 'less/css/festival14.css';
 								  'https://farm4.staticflickr.com/3839/14564592764_9f6c78dc01_k.jpg'
 								   );
 	// LEAD TEXT (FROM PAGE)
-	$blocks[] = block_lead( 'lead', 3);
+	$blocks[] = block_lead( 'lead', IN_PRODUCTION_ENVIRONMENT ? 5 : 3);
+
+if( !IN_PRODUCTION_ENVIRONMENT ) {
 	// ICONS FOR MORE INFO
 	$icons = array();
 	$icons[] = media_icon( '#journalist', 'Tekst', 'http://ico.ukm.no/media_illustrations/tekst.jpg' );
@@ -43,7 +45,7 @@ $DATA['blog']['css_extra'][] = 'less/css/festival14.css';
 									 'https://farm8.staticflickr.com/7344/9293764007_181b381064_h.jpg',
 									 'https://farm8.staticflickr.com/7344/9293764007_181b381064_h.jpg'
 									);
-	
+}
 // SEND TO TWIG	
 	$DATA['blocks'] = $blocks;
 
