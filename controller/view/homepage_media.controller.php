@@ -11,24 +11,24 @@ $DATA['blog']['css_extra'][] = 'less/css/festival14.css';
 								  'https://farm4.staticflickr.com/3839/14564592764_e8386105bf_h.jpg',
 								  'https://farm4.staticflickr.com/3839/14564592764_9f6c78dc01_k.jpg'
 								   );
-	// LEAD TEXT (FROM PAGE)
-	$blocks[] = block_lead( 'lead', 5);
 
 if( !IN_PRODUCTION_ENVIRONMENT ) {
+	$blocks[] = block_lead( 'lead', IN_PRODUCTION_ENVIRONMENT ? 2 : 5);
+
 	$blocks[] = block_image_oob_left('kun_ungdom',
-									 IN_PRODUCTION_ENVIRONMENT ? 3 : 13,
-									 'https://farm4.staticflickr.com/3840/14533175723_732541e923_c.jpg',
-									 'https://farm4.staticflickr.com/3840/14533175723_732541e923_b.jpg',
-									 'https://farm4.staticflickr.com/3840/14533175723_025ebd9485_h.jpg',
-									 'https://farm4.staticflickr.com/3840/14533175723_0bf9a226c8_k.jpg'
+									 IN_PRODUCTION_ENVIRONMENT ? 13 : 18,
+									 'https://farm9.staticflickr.com/8451/8021270983_c4e3a3a7f6_c.jpg',
+									 'https://farm9.staticflickr.com/8451/8021270983_c4e3a3a7f6_b.jpg',
+									 'https://farm9.staticflickr.com/8451/8021270983_c4e3a3a7f6_b.jpg',
+									 'https://farm9.staticflickr.com/8451/8021270983_639215e84e_h.jpg'
 									);
 
-	$blocks[] = block_lead_center( 'ung_kultur_vises_frem', IN_PRODUCTION_ENVIRONMENT ? 3 : 13);
+	$blocks[] = block_lead_center( 'ung_kultur_vises_frem', IN_PRODUCTION_ENVIRONMENT ? 11 : 13);
 	
-	$blocks[] = block_lead( 'luftmadrass', IN_PRODUCTION_ENVIRONMENT ? 3 : 18);
+	$blocks[] = block_lead( 'lead', IN_PRODUCTION_ENVIRONMENT ? 2 : 5);
 
 	$blocks[] = block_image_oob_left('backstagefoto',
-									 IN_PRODUCTION_ENVIRONMENT ? 3 : 9,
+									 IN_PRODUCTION_ENVIRONMENT ? 17 : 9,
 									 'https://farm4.staticflickr.com/3840/14533175723_732541e923_c.jpg',
 									 'https://farm4.staticflickr.com/3840/14533175723_732541e923_b.jpg',
 									 'https://farm4.staticflickr.com/3840/14533175723_025ebd9485_h.jpg',
@@ -49,7 +49,7 @@ if( !IN_PRODUCTION_ENVIRONMENT ) {
 				);
 
 
-	$blocks[] = block_lead( 'lead', 3 );
+/*	$blocks[] = block_lead( 'lead', 3 );
 
  	
 	$blocks[] = block_image_oob_left('flerkamera',
@@ -59,6 +59,10 @@ if( !IN_PRODUCTION_ENVIRONMENT ) {
 									 'https://farm8.staticflickr.com/7344/9293764007_181b381064_h.jpg',
 									 'https://farm8.staticflickr.com/7344/9293764007_181b381064_h.jpg'
 									);
+*/
+} else {
+	// LEAD TEXT (FROM PAGE)
+	$blocks[] = block_lead( 'lead', 5);
 }
 // SEND TO TWIG	
 	$DATA['blocks'] = $blocks;
@@ -118,7 +122,10 @@ function setup_block_post( &$block, $post_id ) {
 	$block->post->ID = $post_id;
 	$block->post->data = new WPOO_Post( $post );
 	$block->title = $block->post->data->title;
-	$block->lead = $block->post->data->meta->lead;
+	if( isset( $block->post->data->meta->lead ) )
+		$block->lead = $block->post->data->meta->lead;
+	else		
+		$block->lead = null;
 	$block->content = $block->post->data->content;
 }
 function block_image_oob_left( $anchor, $post_id, $image_xs, $image_sm, $image_md, $image_lg ) {
