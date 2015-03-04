@@ -42,6 +42,8 @@ if( !IN_PRODUCTION_ENVIRONMENT ) {
 
 	$blocks[] = block_lead( 'tekst', UKM_HOSTNAME=='ukm.no' ? 37 : 5);
 
+	$blocks[] = block_lead_center( 'promo', UKM_HOSTNAME=='ukm.no' ? 40 : 5);
+
 /*
 	// ICONS FOR MORE INFO
 	$icons = array();
