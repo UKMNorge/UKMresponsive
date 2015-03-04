@@ -2,8 +2,6 @@
 $blocks = array();
 $DATA['blog']['css_extra'][] = 'less/css/festival14.css';
 
-$backstagefoto = IN_PRODUCTION_ENVIRONMENT ? 3 : 9;
-
 	// JUMBO TOP IMAGE	
 	$blocks[] = block_jumbo_image('top',
 								  'UKM Media', 
@@ -17,16 +15,25 @@ $backstagefoto = IN_PRODUCTION_ENVIRONMENT ? 3 : 9;
 	$blocks[] = block_lead( 'lead', 5);
 
 if( !IN_PRODUCTION_ENVIRONMENT ) {
-	$blocks[] = block_image_oob_left('backstagefoto',
-									 $backstagefoto,
+	$blocks[] = block_image_oob_left('kun_ungdom',
+									 IN_PRODUCTION_ENVIRONMENT ? 3 : 13,
 									 'https://farm4.staticflickr.com/3840/14533175723_732541e923_c.jpg',
 									 'https://farm4.staticflickr.com/3840/14533175723_732541e923_b.jpg',
 									 'https://farm4.staticflickr.com/3840/14533175723_025ebd9485_h.jpg',
 									 'https://farm4.staticflickr.com/3840/14533175723_0bf9a226c8_k.jpg'
 									);
 
+	$blocks[] = block_lead_center( 'ung_kultur_vises_frem', IN_PRODUCTION_ENVIRONMENT ? 3 : 13);
+	
+	$blocks[] = block_lead( 'luftmadrass', IN_PRODUCTION_ENVIRONMENT ? 3 : 18);
 
-
+	$blocks[] = block_image_oob_left('backstagefoto',
+									 IN_PRODUCTION_ENVIRONMENT ? 3 : 9,
+									 'https://farm4.staticflickr.com/3840/14533175723_732541e923_c.jpg',
+									 'https://farm4.staticflickr.com/3840/14533175723_732541e923_b.jpg',
+									 'https://farm4.staticflickr.com/3840/14533175723_025ebd9485_h.jpg',
+									 'https://farm4.staticflickr.com/3840/14533175723_0bf9a226c8_k.jpg'
+									);
 
 
 
@@ -42,9 +49,8 @@ if( !IN_PRODUCTION_ENVIRONMENT ) {
 				);
 
 
-	$blocks[] = block_lead( 'lead', 5);
+	$blocks[] = block_lead( 'lead', 3 );
 
-	$blocks[] = block_lead_center( 'lead', 5);
  	
 	$blocks[] = block_image_oob_left('flerkamera',
 									 5,

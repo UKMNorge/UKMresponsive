@@ -42,10 +42,10 @@ if ( ! isset( $content_width ) )
 	$content_width = 1200;
 
 add_action('wp_head', 'registerUKMTV');
+registerUKMTV();
 function registerUKMTV() {
 	wp_oembed_add_provider( 'http://tv.ukm.no/*', 'http://oembed.ukm.no/' );
 }
-wp_oembed_add_provider( 'http://tv.ukm.no/*', 'http://oembed.ukm.no/' );
 
 // SIKRE HOMEPAGE PAGINATION
 	update_option('posts_per_page', 5);
