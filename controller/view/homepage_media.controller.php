@@ -13,22 +13,22 @@ $DATA['blog']['css_extra'][] = 'less/css/festival14.css';
 								   );
 
 if( !IN_PRODUCTION_ENVIRONMENT ) {
-	$blocks[] = block_lead( 'lead', IN_PRODUCTION_ENVIRONMENT ? 2 : 5);
+	$blocks[] = block_lead( 'lead', UKM_HOSTNAME=='ukm.no' ? 2 : 5);
 
 	$blocks[] = block_image_oob_left('seriost_konsept',
-									 IN_PRODUCTION_ENVIRONMENT ? 13 : 18,
+									 UKM_HOSTNAME=='ukm.no' ? 13 : 18,
 									 'https://farm9.staticflickr.com/8451/8021270983_c4e3a3a7f6_c.jpg',
 									 'https://farm9.staticflickr.com/8451/8021270983_c4e3a3a7f6_b.jpg',
 									 'https://farm9.staticflickr.com/8451/8021270983_c4e3a3a7f6_b.jpg',
 									 'https://farm9.staticflickr.com/8451/8021270983_639215e84e_h.jpg'
 									);
 
-	$blocks[] = block_lead_center( 'ung_kultur_vises_frem', IN_PRODUCTION_ENVIRONMENT ? 11 : 13);
+	$blocks[] = block_lead_center( 'ung_kultur_vises_frem', UKM_HOSTNAME=='ukm.no' ? 11 : 13);
 	
-	$blocks[] = block_lead( 'lead', IN_PRODUCTION_ENVIRONMENT ? 2 : 5);
+	$blocks[] = block_lead( 'lead', UKM_HOSTNAME=='ukm.no' ? 2 : 5);
 
 	$blocks[] = block_image_oob_right('backstagefoto',
-									 IN_PRODUCTION_ENVIRONMENT ? 17 : 9,
+									 UKM_HOSTNAME=='ukm.no' ? 17 : 9,
 									 'https://farm4.staticflickr.com/3840/14533175723_732541e923_c.jpg',
 									 'https://farm4.staticflickr.com/3840/14533175723_732541e923_b.jpg',
 									 'https://farm4.staticflickr.com/3840/14533175723_025ebd9485_h.jpg',
