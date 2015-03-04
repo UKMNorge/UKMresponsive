@@ -15,7 +15,7 @@ $DATA['blog']['css_extra'][] = 'less/css/festival14.css';
 if( !IN_PRODUCTION_ENVIRONMENT ) {
 	$blocks[] = block_lead( 'lead', IN_PRODUCTION_ENVIRONMENT ? 2 : 5);
 
-	$blocks[] = block_image_oob_left('kun_ungdom',
+	$blocks[] = block_image_oob_left('seriost_konsept',
 									 IN_PRODUCTION_ENVIRONMENT ? 13 : 18,
 									 'https://farm9.staticflickr.com/8451/8021270983_c4e3a3a7f6_c.jpg',
 									 'https://farm9.staticflickr.com/8451/8021270983_c4e3a3a7f6_b.jpg',
@@ -27,7 +27,7 @@ if( !IN_PRODUCTION_ENVIRONMENT ) {
 	
 	$blocks[] = block_lead( 'lead', IN_PRODUCTION_ENVIRONMENT ? 2 : 5);
 
-	$blocks[] = block_image_oob_left('backstagefoto',
+	$blocks[] = block_image_oob_right('backstagefoto',
 									 IN_PRODUCTION_ENVIRONMENT ? 17 : 9,
 									 'https://farm4.staticflickr.com/3840/14533175723_732541e923_c.jpg',
 									 'https://farm4.staticflickr.com/3840/14533175723_732541e923_b.jpg',
@@ -132,6 +132,13 @@ function block_image_oob_left( $anchor, $post_id, $image_xs, $image_sm, $image_m
 	$block = block_jumbo_image($anchor, '', '', $image_xs, $image_sm, $image_md, $image_lg);
 	setup_block_post( $block, $post_id );
 	$block->type = 'oob_left';
+	return $block;
+}
+
+function block_image_oob_right( $anchor, $post_id, $image_xs, $image_sm, $image_md, $image_lg ) {
+	$block = block_jumbo_image($anchor, '', '', $image_xs, $image_sm, $image_md, $image_lg);
+	setup_block_post( $block, $post_id );
+	$block->type = 'oob_right';
 	return $block;
 }
 

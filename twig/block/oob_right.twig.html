@@ -1,4 +1,5 @@
-<div class="oob_left" id="{{ block.anchor }}">
+<div class="right" id="{{ block.anchor }}">
+	<div class="image"></div>
 	<div class="container content">
 		<h1>{{ block.title|raw }}</h1>
 		
@@ -8,45 +9,53 @@
 		<p>{{ block.content|raw }}</p>
 		{% endif %}
 	</div>
-	<div class="image"></div>
-
 	<div class="clearfix"></div>
 </div>
 
 <style>
-.oob_left#{{block.anchor}} {
+.right#{{block.anchor}} {
 	min-height: 62vh;
-	background: #ccc;
+	background: #f4f4f4;
 }
-.oob_left#{{block.anchor}} > .content {
+.right#{{block.anchor}} > .content {
 	float:right;
 }
-.oob_left#{{block.anchor}} > .image {
+.right#{{block.anchor}} > .image {
 	background-image: url('{{block.image.xs}}');
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
-	min-height: 62vh;
+	width: 100%;
+	height: 62vh;
 	float:right;
 }
-.oob_left#{{block.anchor}} .content {
+.right#{{block.anchor}} .content {
 	min-height: 62vh;
 }
 @media( min-width: 768px ) {
-	.oob_left#{{block.anchor}} > .image {
+	.right#{{block.anchor}} > .image {
 		background-image: url('{{block.image.sm}}');
 	}
 }
 
 @media( min-width: 992px ) {
-	.oob_left#{{block.anchor}} > .image {
+	.right#{{block.anchor}} > .image {
 		background-image: url('{{block.image.md}}');
+		width: 25%;
+	}
+	.right#{{block.anchor}} > .container {
+		width: 75%;
 	}
 }
 @media( min-width: 1200px ) {
-	.oob_left#{{block.anchor}} > .image {
+	.right#{{block.anchor}} > .image {
 		background-image: url('{{block.image.lg}}');
+	width: 35%;
 	}
+	.right#{{block.anchor}} > .container {
+		width: 65%;
+	}
+
 }
 
 </style>
