@@ -165,7 +165,7 @@ if( $VIEW == 'fylke/fylke_aktiv' ) {
 	}
 	
 	if( $show_embed ) {
-		$DATA['embedcode'] = $embedcode;
+		$DATA['embedcode'] = str_replace('\"','"', $embedcode);
 	}
 }
 
