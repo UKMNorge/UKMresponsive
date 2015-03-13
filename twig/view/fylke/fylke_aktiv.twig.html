@@ -12,7 +12,7 @@
 	{% endif %}
 	{% if embedcode is defined %}
 		<div align="center">
-		{{ embedcode|replace('\"', '"')|raw }}
+		{{ embedcode|replace({'\"': '"'})|raw }}
 		</div>
 	{% endif %}
 {% endblock %}
