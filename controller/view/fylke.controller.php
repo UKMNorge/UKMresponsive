@@ -113,15 +113,8 @@ $DATA['fylke'] = get_option('fylke');
 	$DATA['lokalmonstringer']['second_half'] = array_slice( $lokalmonstringer, $half_lokalmonstringer);
 
 // HAR UKM-TV-SIDE? (opplastede videoer?)
-	$kategori = 'Fylkesmønstringen i '. $pl->g('pl_name').' '.$pl->g('season');
-	$sql = new SQL("SELECT `tv_id` FROM `ukm_tv_files`
-					WHERE `tv_category` LIKE '#kategori%'",
-					array('kategori' => $kategori) );
-	$res = $sql->run();
-	if( !$res )
-		$UKMTV = false;
-	else
-		$UKMTV = mysql_num_rows( $res ) > 0 ? $kategori : false;
+	$UKMTV = $pl->har_ukmtv() ? $pl->get('url') .'/'. $pl->get('season') .'/' : false;
+
 
 // HVILKEN PERIODE ER FYLKESSIDEN I?
 	$VIEW = 'fylke/fylke_pre_lokal';
@@ -178,7 +171,7 @@ if( $VIEW == 'fylke/fylke_aktiv' ) {
 */
 	// HAR UKM-TV SIDE
 	if( $UKMTV ) {
-	    $DATA['page_nav'][] = (object) array( 'url' => '//tv.ukm.no/samling/'. urlencode($UKMTV),
+	    $DATA['page_nav'][] = (object) array( 'url' => '//tv.'. UKM_HOSTNAME .'/fylke/'. $UKMTV,
                                           'title' => 'Film',
                                           'icon'  => 'ukmtv_black',
                                           'description' => 'Film fra fra '. $pl->get('pl_name').' i UKM-TV'
