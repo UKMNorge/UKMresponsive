@@ -143,7 +143,7 @@ if( $UKMTV ) {
     $DATA['page_nav'][] = (object) array( 'url'			=> '//tv.ukm.no',
                                           'title'		=> 'Film',
                                           'icon' 		=> 'ukmtv_black',
-                                          'description' => 'Film fra fra '. $pl->get('pl_name').' i UKM-TV'
+                                          'description' => 'Film fra '. $pl->get('pl_name').' i UKM-TV'
                                       );
 }
 
