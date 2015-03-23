@@ -174,7 +174,8 @@ if( $VIEW == 'fylke/fylke_aktiv' ) {
 	    $DATA['page_nav'][] = (object) array( 'url' => '//tv.'. UKM_HOSTNAME .'/fylke/'. $UKMTV,
                                           'title' => 'Film',
                                           'icon'  => 'ukmtv_black',
-                                          'description' => 'Film fra '. $pl->get('pl_name').' i UKM-TV'
+                                          'description' => 'Film fra '. $pl->get('pl_name').' i UKM-TV',
+                                          'target'		=> '_blank'
                                       );
     }
     // HAR PROGRAM
