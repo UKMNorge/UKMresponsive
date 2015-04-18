@@ -22,7 +22,12 @@ foreach( $hendelser as $hendelsen ) {
         $data_hendelse->navn = $hendelse->g('c_name');
         $data_hendelse->innslag = array();
 
+		if( strpos( strtolower($data_hendelse->navn), 'tekniske pr' ) !== false ) {
+			continue;
+		}
+
         foreach( $alle_innslag as $innslaget ) {
+	        	$count_bilder = 0;
                 $innslag = new innslag( $innslaget['b_id'] );
                 $media = $innslag->related_items();
 
@@ -46,11 +51,14 @@ foreach( $hendelser as $hendelsen ) {
                                 $data_bilde->foto       = $image['post_meta']['author'];
 
                                 $data_innslag->bilder[] = $data_bilde;
+                                $count_bilder++;
                         }
                         $data_hendelse->innslag[] = $data_innslag;
                 }
         }
-        $data[] = $data_hendelse;
+        if( $count_bilder > 0 ) {
+	        $data[] = $data_hendelse;
+        }
 }
 
 $DATA['hendelser'] = $data;

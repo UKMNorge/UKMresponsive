@@ -28,13 +28,13 @@
 						{% set active = loop.first %}
 
 						{% for bilde in innslag.bilder %}
-							<div class="item {{ active ? 'active' : '' }}" style="background-image:url({{ bilde.link }})">
+							<div class="item {{ active ? 'active' : '' }}" style="background-image:url({{ bilde.link }});">
 								<div class="carousel-caption">
 									<p>
 										{{ innslag.navn }}
 										<br />
 										<small>
-											Foto: {{ bilde.foto }} | <a href="{{ bilde.link }}">Vis stor utgave</a>
+											Foto: {{ bilde.foto }} | <a href="{{ bilde.link }}" target="_blank">Vis stor utgave</a>
 										</small>
 									</p>
 								</div>
