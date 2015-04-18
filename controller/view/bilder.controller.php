@@ -64,7 +64,7 @@ foreach( $hendelser as $hendelsen ) {
 $DATA['hendelser'] = $data;
 $DATA['blog']['css_extra'][] = 'css/carousel.css';
 
-$DATA['jumbo'] = (object) array('header' => 'Bilder fra forstillinger',
+$DATA['jumbo'] = (object) array('header' => 'Bilder fra forestillinger',
 								'content' => 'UKM ' . $pl->g('pl_name')
 								);
 $BC->addJumbo = false;
