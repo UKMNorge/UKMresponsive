@@ -171,7 +171,7 @@ if( $VIEW == 'fylke/fylke_aktiv' ) {
 					array('plid' => $pl->g('pl_id'))
 				);
 	$res = $SQL->run();
-	$har_bilder = mysql_num_rows( $res ) > 1;
+	$har_bilder = mysql_num_rows( $res ) > 0;
 
 	if( $har_bilder ) {
 	    $DATA['page_nav'][] = (object) array( 'url' => 'bilder/',
