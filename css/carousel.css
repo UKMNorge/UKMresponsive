@@ -3,7 +3,7 @@
 
 /* Carousel base class */
 .carousel {
-  height: 370px;
+  height: 70vh;
   margin-bottom: 60px;
 }
 /* Since positioning the image, we need to help out the caption */
@@ -21,11 +21,11 @@
 
 /* Declare heights because of positioning of img element */
 .carousel .item {
-    height: 370px;
+    height: 70vh;
     background-color: #000;
     background-size: contain;
     background-repeat: no-repeat;
-    background-position: 0 70%;
+    background-position: center center;
 }
 .carousel-inner > .item > img {
   position: absolute;
