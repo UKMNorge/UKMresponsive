@@ -185,7 +185,11 @@ require_once('functions_theme.php');
             case 'redaksjonen':
                 require_once('controller/view/redaksjon.controller.php');
                 $VIEW = 'festival/redaksjon';
-                break;			
+                break;
+            case 'bilder':
+            	require_once('controller/view/bilder.controller.php');
+            	$VIEW = 'bilder';
+            	break;		
 			default:
 				require_once('controller/view/post.controller.php');
 				$VIEW = 'page';

@@ -1,0 +1,24 @@
+{% extends "layout.twig.html" %}
+{% block content %}
+	<div class="container">
+		{% for hendelse in hendelser %}
+		<div class="row">
+			<div class="col-xs-12">
+				<h2>{{ hendelse.navn }}</h2>
+			</div>
+			
+			{% for innslag in hendelse.innslag %}
+			<div class="col-xs-12">
+				<h4>{{ innslag.navn }}</h4>
+				{% for bilde inninnslag.bilder %}
+				<div class="thumbnail">
+					<a href="{{ bilde.link }}"><img src="{{ bilde.thumbnail }}" /></a> 
+					{{ bilde.foto }}
+				</div>
+				{% endfor %}
+			</div>
+			{% endfor %}
+		</div>	
+		{% endfor %}
+	</div>
+{% endblock %}
