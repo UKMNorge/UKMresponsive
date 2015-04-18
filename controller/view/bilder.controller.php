@@ -54,4 +54,4 @@ foreach( $hendelser as $hendelsen ) {
 }
 
 $DATA['hendelser'] = $data;
-$DATA['blog']['css_extra'][] = '/wp-content/themes/UKMresponsive/css/carousel.css';
+$DATA['blog']['css_extra'][] = 'css/carousel.css';
