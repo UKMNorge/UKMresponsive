@@ -22,8 +22,8 @@
 /* Declare heights because of positioning of img element */
 .carousel .item {
     height: 370px;
-    background-color: #fff;
-    background-size: cover;
+    background-color: #000;
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: 0 70%;
 }
