@@ -7,18 +7,36 @@
 				<h2>{{ hendelse.navn }}</h2>
 			</div>
 			
-			{% for innslag in hendelse.innslag %}
-			<div class="col-xs-12">
-				<h4>{{ innslag.navn }}</h4>
-				{% for bilde inninnslag.bilder %}
-				<div class="thumbnail">
-					<a href="{{ bilde.link }}"><img src="{{ bilde.thumbnail }}" /></a> 
-					{{ bilde.foto }}
-				</div>
+			
+			
+			
+			<div id="slider_{{hendelse.ID}}" class="carousel slide" data-ride="carousel">
+				<ol class="carousel-indicators">
+				{% for innslag in hendelse.innslag %}
+					{% for bilde in innslag.bilder %}
+					<li data-target="#myCarousel" data-slide-to="{{loop.index-1}}" {{ loop.first ? 'class="active"' : '' }}></li>
+					{% endfor %}
 				{% endfor %}
-			</div>
-			{% endfor %}
-		</div>	
+				</ol>
+				
+				<div class="carousel-inner">
+				{% for innslag in hendelse.innslag %}
+					{% for bilde in innslag.bilder %}
+
+					<div class="item {{ loop.first ? 'active' : '' }}" style="background-image:url({{ bilde.link }})">
+		                <div class="container">
+		                    <div class="carousel-caption">
+		                        <p>{{ innslag.navn }}</p>
+		                    </div>
+		                </div>
+		            </div>
+					{% endfor %}
+				{% endfor %}
+				</div>
+			    <a class="left carousel-control" href="#{slider_{{hendelse.ID}}" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+				<a class="right carousel-control" href="#{slider_{{hendelse.ID}}" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+			</div>			
+		</div>
 		{% endfor %}
 	</div>
 {% endblock %}
