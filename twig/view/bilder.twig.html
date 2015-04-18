@@ -1,42 +1,53 @@
 {% extends "layout.twig.html" %}
+
 {% block content %}
-	<div class="container">
-		{% for hendelse in hendelser %}
+<div class="container">
+	{% for hendelse in hendelser %}
 		<div class="row">
-			<div class="col-xs-12">
+			<div class="col-xs-12 col-sm-3 col-md-5">
 				<h2>{{ hendelse.navn }}</h2>
 			</div>
-			
-			
-			
-			
-			<div id="slider_{{hendelse.ID}}" class="carousel slide" data-ride="carousel">
-				<ol class="carousel-indicators">
-				{% for innslag in hendelse.innslag %}
-					{% for bilde in innslag.bilder %}
-					<li data-target="#myCarousel" data-slide-to="{{loop.index-1}}" {{ loop.first ? 'class="active"' : '' }}></li>
-					{% endfor %}
-				{% endfor %}
-				</ol>
-				
-				<div class="carousel-inner">
-				{% for innslag in hendelse.innslag %}
-					{% for bilde in innslag.bilder %}
 
-					<div class="item {{ loop.first ? 'active' : '' }}" style="background-image:url({{ bilde.link }})">
-		                <div class="container">
-		                    <div class="carousel-caption">
-		                        <p>{{ innslag.navn }}</p>
-		                    </div>
-		                </div>
-		            </div>
+
+			<div id="slider_{{hendelse.ID}}" class="col-xs-12 col-sm-9 col-md-7 carousel slide" data-ride="carousel">
+				<ol class="carousel-indicators">
+					{% for innslag in hendelse.innslag %}
+						{% set active = loop.first %}
+						{% set slide_to = loop.index %}
+
+						{% for bilde in innslag.bilder %}
+							{% if not loop.first %}
+								{% set slide_to = slide_to + 1 %}
+							{% endif %}
+							<li data-target="#slider_{{hendelse.ID}}" data-slide-to="{{ slide_to }}" {{ active ? 'class="active"' : '' }}></li>
+						{% endfor %}
 					{% endfor %}
-				{% endfor %}
+				</ol>
+				<div class="carousel-inner">
+					{% for innslag in hendelse.innslag %}
+						{% set active = loop.first %}
+
+						{% for bilde in innslag.bilder %}
+							<div class="item {{ active ? 'active' : '' }}" style="background-image:url({{ bilde.link }})">
+								<div class="carousel-caption">
+									<p>
+										{{ innslag.navn }}
+										<br />
+										<small>
+											Foto: {{ bilde.foto }} | <a href="{{ bilde.link }}">Vis stor utgave</a>
+										</small>
+									</p>
+								</div>
+							</div>
+						{% endfor %}
+					{% endfor %}
 				</div>
-			    <a class="left carousel-control" href="#{slider_{{hendelse.ID}}" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
-				<a class="right carousel-control" href="#{slider_{{hendelse.ID}}" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
-			</div>			
+				<a class="left carousel-control" href="#slider_{{hendelse.ID}}" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+				<a class="right carousel-control" href="#slider_{{hendelse.ID}}" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+			</div>
+			<div class="clearfix"></div>
 		</div>
-		{% endfor %}
-	</div>
+		<div class="clearfix"></div>
+	{% endfor %}
+</div>
 {% endblock %}
