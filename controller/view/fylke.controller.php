@@ -162,13 +162,24 @@ if( $VIEW == 'fylke/fylke_aktiv' ) {
 	}
 }
 
-/*
-    $DATA['page_nav'][] = (object) array( 'url' => 'bilder/',
-                                          'title' => 'Bilder',
-                                          'icon'  => 'kamera',
-                                          'description' => 'Bilder fra '. $pl->get('pl_name').''
-                                      );
-*/
+
+
+	$SQL = new SQL("SELECT `id`
+					FROM `ukm_bilder`
+					WHERE `pl_id` = '#plid'
+					LIMIT 1",
+					array('plid' => $pl->g('pl_id'))
+				);
+	$res = $SQL->run();
+	$har_bilder = mysql_num_rows( $res ) > 1;
+
+	if( $har_bilder ) {
+	    $DATA['page_nav'][] = (object) array( 'url' => 'bilder/',
+	                                          'title' => 'Bilder',
+	                                          'icon'  => 'kamera',
+	                                          'description' => 'Bilder fra '. $pl->get('pl_name').''
+	                                      );
+	}
 	// HAR UKM-TV SIDE
 	if( $UKMTV ) {
 	    $DATA['page_nav'][] = (object) array( 'url' => '//tv.'. UKM_HOSTNAME .'/fylke/'. $UKMTV,
