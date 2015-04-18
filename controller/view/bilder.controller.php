@@ -67,3 +67,4 @@ $DATA['blog']['css_extra'][] = 'css/carousel.css';
 $DATA['jumbo'] = (object) array('header' => 'Bilder',
 								'content' => 'UKM ' . $pl->g('pl_name')
 								);
+$BC->addJumbo = false;
