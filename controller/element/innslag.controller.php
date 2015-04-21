@@ -56,6 +56,9 @@ function generate_list_data( $innslag, $pl, $current_c_id=false ) {
 				continue;
 			}
 			$hendelse = new forestilling( $c_id );
+			if( !$hendelse->synlig() ) {
+				continue;
+			}
 			$h = new stdClass();
 			$h->navn 		= $hendelse->g('c_name');
 			$h->start		= $hendelse->g('c_start');
