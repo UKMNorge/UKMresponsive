@@ -55,6 +55,11 @@ switch( get_option('ukm_top_page') ) {
    											   'target'			=> '_blank'
 
 											  );
+		$DATA['page_nav'][] = (object) array( 'url' 			=> '//om.'.CURRENT_UKM_DOMAIN.'/category/om-ukm/ukm-kjendiser/',
+											   'title'		 	=> 'Kjente UKM-ere',
+											   'icon'			=> 'kanin',
+											   'description'	=> 'Tidligere deltakere'
+											  );
 /*
 		$DATA['page_nav'][] = (object) array( 'url' 			=> 'prosjekter/',
 											   'title'		 	=> 'Prosjekter',
@@ -67,6 +72,7 @@ switch( get_option('ukm_top_page') ) {
 											   'icon'			=> 'globe',
 											   'description'	=> 'Alt om UKMs internasjonale utvekslinger'
 											  );
+											  
 
 		break;
 
