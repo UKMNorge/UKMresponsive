@@ -1,7 +1,7 @@
 {% extends "view/homepage.twig.html" %}
 
 {% block content %}
-	{% if now|date('m') in 1..4 or now|date('m') == 12 %}
+	{% if now|date('m') in 1..3 or now|date('m') == 12 %}
 	<p>
 		<a href="/din_monstring/" class="btn btn-success btn-block btn-sm">Påmeldingen er åpen: start påmelding!</a>
 	</p>
