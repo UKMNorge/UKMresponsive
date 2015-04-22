@@ -1,4 +1,5 @@
 <?php
+require_once(THEME_PATH.'functions/blocks.inc.php');
 require_once('UKM/monstring.class.php');
 
 // CHECK FOR MOBILE
@@ -134,7 +135,7 @@ $DATA['isMobile'] = $mobileDetect->isMobile();
 
 	$UKMTV = false;
 
-// HVILKEN PERIODE ER SSIDEN I?
+// HVILKEN PERIODE ER SIDEN I?
 	$DATA['state'] = 'pre';
 	if( time() > $pl->get('pl_start') && time() < $pl->get('pl_stop') ) {
 		$DATA['state'] = 'active';
@@ -180,6 +181,17 @@ $DATA['isMobile'] = $mobileDetect->isMobile();
 											   'description'	=> 'Se program for festivalen'
 											  );
 	}
+	
+	// SKAL DELTAKERINFO VISES
+	if( get_option('vis_deltakerinfo_mode_pre') ) {
+		$DATA['page_nav'][] = (object) array( 'url' 			=> 'deltakerinfo/',
+											   'title'		 	=> 'Deltakerinfo',
+											   'icon'			=> 'info',
+											   'description'	=> 'Viktig informasjon til alle deltakere'
+											  );
+	}
+	
+	
 	// HAR INNSLAG
 	$innslag = $pl->innslag();
 	if( sizeof( $innslag ) > 0 ) {
@@ -198,8 +210,26 @@ $DATA['isMobile'] = $mobileDetect->isMobile();
 										   'icon'			=> 'i',
 										   'description'	=> 'Har du spørsmål om UKM-festivalen? Disse kan hjelpe!',
 										  );
+										  
+										  
+if( $DATA['state'] == 'pre' ) {
+	// JUMBO-IMAGE
+	$description = $monstring->sted .', '
+				 . date('d.', $monstring->starter) .' - '
+				 . date('d.', $monstring->slutter) .' '
+				 . (date('M', $monstring->slutter ) == 'Jun' ? 'Juni' : date('M', $monstring->slutter ));
+	$DATA['ukmfestivalen_jumboimage'] = block_jumbo_image('top',
+										  'UKM-festivalen', 
+										  $description, 
+										  'https://farm4.staticflickr.com/3857/14566213135_5faa5b154d_z.jpg',
+										  'https://farm4.staticflickr.com/3857/14566213135_5faa5b154d_b.jpg',
+										  'https://farm4.staticflickr.com/3857/14566213135_6495f5efc2_h.jpg',
+										  'https://farm4.staticflickr.com/3857/14566213135_6495f5efc2_h.jpg'
+										   );
 
+}
 
+/*
 // Timeline sendeskjema
 
 $schedule = array();
@@ -281,3 +311,4 @@ foreach($schedule as $item) {
 
 $DATA['timeline'] = $timeline;
 $DATA['schedule'] = $schedule;
+*/

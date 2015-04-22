@@ -12,11 +12,14 @@
 	</ul>
 {% endblock %}
 
-{% block jumbo_content %}
-	{% embed "element/monstring/monstring_beskrivelse.twig.html" with {'time_verb': 'er', 'type': 'Land'} %}{% endembed %}
+{% block jumbo %}
+
 {% endblock %}
 
 {% block content_container %}
+<a name="{{block.anchor}}"></a>
+{% embed "block/"~ ukmfestivalen_jumboimage.type ~".twig.html" with {'block': ukmfestivalen_jumboimage} %}{% endembed %}
+
 <div class="row">
 	<div class="container">
 		{% embed "element/festival/homepage_lead.twig.html" %}{% endembed %}
