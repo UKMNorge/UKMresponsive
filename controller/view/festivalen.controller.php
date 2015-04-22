@@ -5,12 +5,6 @@ require_once('UKM/monstring.class.php');
 require_once(THEME_PATH . 'class/mobiledetect.class.php');
 $mobileDetect = new Mobile_Detect();
 $DATA['isMobile'] = $mobileDetect->isMobile();
-//BRUKERGENERERING
-if(isset($_GET['generateusers']) && isset($_GET['run']) && $_GET['generateusers'] == md5('ja') && $_GET['run'] == 1) {
-  include('wp-content/plugins/UKMfestivalen/users.php');
-  UKMFestivalen_brukere_opprett();
-  die();
-}
 
 	$DATA['blog']['css_extra'][] = 'less/css/festival14.css';
 	$DATA['hide_stat'] = true; // Skjuler påmeldte-tall oppe til høyre
