@@ -34,7 +34,11 @@ $DATA['isMobile'] = $mobileDetect->isMobile();
         $wpoopost->blog->name = get_bloginfo('name');
         if( is_array( $metadata ) ) {
         	foreach( $metadata as $key => $val ) {
-        		$wpoopost->meta[$key] = $val[0];
+	        	if( is_array( $wpoopost->meta ) ) {
+	        		$wpoopost->meta[$key] = $val[0];
+	        	} elseif( is_object( $wpoopost->meta ) ) {
+		        	$wpoopost->meta->$key = $val[0];
+	        	}
         	}
         }
         $DATA['posts'][] = $wpoopost; 
