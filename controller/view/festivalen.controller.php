@@ -191,6 +191,15 @@ $DATA['isMobile'] = $mobileDetect->isMobile();
 											  );
 	}
 	
+	// SKAL FESTIVALINFO VISES
+	if( get_option('vis_festivalinfo_meny_mode_pre') ) {
+		$DATA['page_nav'][] = (object) array( 'url' 			=> 'om-ukm-festivalen/',
+											   'title'		 	=> 'Om UKM-festivalen',
+											   'icon'			=> 'star',
+											   'description'	=> 'Hva er egentlig UKM-festivalen?'
+											  );
+	}
+	
 	
 	// HAR INNSLAG
 	$innslag = $pl->innslag();
@@ -227,6 +236,11 @@ if( $DATA['state'] == 'pre' ) {
 										  'https://farm4.staticflickr.com/3857/14566213135_6495f5efc2_h.jpg'
 										   );
 
+	if( get_option('vis_festivalinfo_forside_mode_pre') ) {
+		$hva_er_side = get_page_by_path( 'om-ukm-festivalen' );
+		setup_postdata( $hva_er_side );
+        $DATA['hva_er_side'] = new WPOO_Post( $hva_er_side );
+	}
 }
 
 /*
