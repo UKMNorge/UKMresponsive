@@ -119,6 +119,11 @@ switch( get_option('ukm_top_page') ) {
 											   'icon'			=> 'globe',
 											   'description'	=> 'Alt om UKMs internasjonale utvekslinger'
 											  );
+		$DATA['page_nav'][] = (object) array( 'url' 			=> '//'.CURRENT_UKM_DOMAIN.'/blog/category/kjente-ukmere/',
+											   'title'		 	=> 'Kjente UKM-ere',
+											   'icon'			=> 'people',
+											   'description'	=> 'Tidligere deltakere'
+											  );
 		$DATA['page_nav'][] = (object) array( 'url' 			=> '//'.CURRENT_UKM_DOMAIN.'/tidligere-ar/',
 											   'title'		 	=> 'UKM tidligere år',
 											   'icon'			=> 'monitor',
