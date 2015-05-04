@@ -46,8 +46,8 @@ foreach( $hendelser as $hendelsen ) {
                                         continue;
 
                                 $data_bilde = new stdClass();
-                                $data_bilde->link       = $image['blog_url'].'/files/'.$image['post_meta']['sizes']['large']['file'];
-                                $data_bilde->thumbnail  = $image['blog_url'].'/files/'.$image['post_meta']['sizes']['thumbnail']['file'];
+#                               $data_bilde->link       = $image['blog_url'].'/files/'.$image['post_meta']['sizes']['large']['file'];
+                                $data_bilde->link	= $image['blog_url'].'/files/'. $image['post_meta']['file'];                                $data_bilde->thumbnail  = $image['blog_url'].'/files/'.$image['post_meta']['sizes']['thumbnail']['file'];
                                 $data_bilde->foto       = $image['post_meta']['author'];
 
                                 $data_innslag->bilder[] = $data_bilde;
