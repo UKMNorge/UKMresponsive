@@ -75,13 +75,14 @@ function generate_list_data( $innslag, $pl, $current_c_id=false ) {
 	$media = $innslag->related_items();
 
 	// FILMER
+	/*
 	if( isset( $media['tv'] ) && sizeof( $media['tv'] ) > 0) {
 		foreach( $media['tv'] as $tv_id => $tv ) {
 			$tv->iframe('1100px');
 			$media['tv'][ $tv_id ] = $tv;
 		}
 		$data->UKMTV = $media['tv'];
-	}
+	}*/
 
 	// BILDER
 	if(isset($media['image']) && is_array($media['image'])) {

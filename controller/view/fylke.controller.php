@@ -114,6 +114,7 @@ $DATA['fylke'] = get_option('fylke');
 
 // HAR UKM-TV-SIDE? (opplastede videoer?)
 	$UKMTV = $pl->har_ukmtv() ? $pl->get('url') .'/'. $pl->get('season') .'/' : false;
+	$UKMTV = false;
 
 
 // HVILKEN PERIODE ER FYLKESSIDEN I?

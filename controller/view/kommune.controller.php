@@ -59,6 +59,7 @@ $DATA['kommune'] = get_option('kommune');
 					array('kategori' => $kategori) );
 	$res = $sql->run();
 	$UKMTV = mysql_num_rows( $res ) > 0 ? $kategori : false;
+	$UKMTV = false;
 
 $posts_per_page = 7;
 // HVILKEN PERIODE ER KOMMUNESIDEN I?      
