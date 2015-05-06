@@ -124,11 +124,11 @@ switch( get_option('ukm_top_page') ) {
 											   'icon'			=> 'people',
 											   'description'	=> 'Tidligere deltakere'
 											  );
-		$DATA['page_nav'][] = (object) array( 'url' 			=> '//'.CURRENT_UKM_DOMAIN.'/tidligere-ar/',
+/*		$DATA['page_nav'][] = (object) array( 'url' 			=> '//'.CURRENT_UKM_DOMAIN.'/tidligere-ar/',
 											   'title'		 	=> 'UKM tidligere år',
 											   'icon'			=> 'monitor',
 											   'description'	=> 'Bilder, video og info'
 											  );
-
+*/
 	break;											   
 }
