@@ -199,7 +199,17 @@ $DATA['isMobile'] = $mobileDetect->isMobile();
 											   'description'	=> 'Hva er egentlig UKM-festivalen?'
 											  );
 	}
-	
+
+	// SKAL WORKSHOPS VISES
+	if( get_option('vis_workshops_meny_mode_pre') ) {
+		$category_ws = get_category_by_slug('workshop');
+
+		$DATA['page_nav'][] = (object) array( 'url' 			=> 'category/workshop/',
+											   'title'		 	=> 'Workshops',
+											   'icon'			=> 'rocket',
+											   'description'	=> 'Info om UKM-festivalens '. $category_ws->category_count .'workshops'
+											  );
+	}	
 	
 	// HAR INNSLAG
 	$innslag = $pl->innslag();
