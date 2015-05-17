@@ -241,6 +241,34 @@ if( $DATA['state'] == 'pre' ) {
 		setup_postdata( $hva_er_side );
         $DATA['hva_er_side'] = new WPOO_Post( $hva_er_side );
 	}
+	
+	if( get_option('vis_workshopsinfo_forside_mode_pre') ) {
+		$category_ws = get_category_by_slug('workshop');
+		$category_ws_description = category_description( $category_ws->term_id );
+		$DATA['workshops_info'] = true;
+		$DATA['workshops_info_count'] = $category_ws->category_count;
+		$DATA['workshops_info_description'] = $category_ws_description;
+	}
+
+	if( get_option('vis_workshops_forside_mode_pre') ) {
+		$category_ws = get_category_by_slug('workshop');
+
+	    $posts = query_posts('posts_per_page=3&cat='. $category_ws->term_id.'&orderby=rand');
+	    while(have_posts()) {
+	        the_post();
+	        $wpoopost = new WPOO_Post($post);
+	        $metadata = get_post_custom($post->id);
+	        $wpoopost->blog = new stdClass();
+	        $wpoopost->blog->link = get_bloginfo('url');
+	        $wpoopost->blog->name = get_bloginfo('name');
+	        $DATA['workshops'][] = $wpoopost; 
+	    }
+	    $npl = get_next_posts_link();
+	    if($npl) {
+	        $npl = explode('"',get_next_posts_link()); 
+	        $DATA['workshops_nextpost']=$npl[1];
+	    }
+	}
 }
 
 /*

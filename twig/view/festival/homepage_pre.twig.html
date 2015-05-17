@@ -68,7 +68,19 @@
 	</div>
 {% endif %}
 
-{% if posts|length > 1 %}
+{% if workshops_info %}
+<div class="arrow_box"></div>
+<div class="row box_grey">
+	<div class="container">
+		<div class="page_box">
+			{% embed "element/festival/homepage_workshops.twig.html" %}{% endembed %}
+			<div class="clearfix"></div>
+		</div>
+	</div>
+</div>
+{% endif %}
+
+{% if posts|length > 0 %}
 <div class="row">
     <div class="container">
         <h1>Nyheter</h1>
@@ -80,6 +92,31 @@
     </div>
 </div>
 {% endif %}
+
+{% if workshops|length > 0 %}
+<div class="row">
+    <div class="container">
+        <h1>3 av UKM-festivalens {{ workshops_info_count }} workshops</h1>
+        <div class="news-article-list">
+            {% for post in workshops %}
+				<div class="news col-xs-6 col-md-4">
+					{% embed "element/post/grid_element.twig.html" with post %}{% endembed %}
+				</div>
+				
+				{% if loop.index is divisibleby(3) %}
+					<div class="clearfix visible-md visible-lg"></div>
+				{% elseif loop.index is divisibleby(2) %}
+					<div class="clearfix visible-xs visible-sm"></div>
+				{% endif %}
+            {% endfor %}
+        </div>
+        <div class="clearfix"></div>
+        <p>&nbsp;</p>
+        <a href="category/workshop/" class="btn btn-success">Vis alle workshops</a>
+    </div>
+</div>
+{% endif %}
+
 
 {#
 <div class="row">
