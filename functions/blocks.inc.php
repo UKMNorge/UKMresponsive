@@ -1,4 +1,37 @@
 <?php
+	
+function setup_block_from_post( $post ) {
+    $block_type = get_post_meta( $post->ID, 'UKM_block', true );
+    $post->type = $block_type;
+    if( !$block_type ) {
+	    return false;
+    }
+    
+    switch( $block_type ) {
+	    case 'lead_center':
+	    	$block = block_lead_center( $post->raw->post_name, $post->ID );
+			break;
+		case 'lead':
+			$block = block_lead( $post->raw->post_name, $post->ID );
+			break;
+		case 'oob_left':
+			$image_xs = get_post_meta( $post->ID, 'block_image_xs', true);
+			$image_sm = get_post_meta( $post->ID, 'block_image_sm', true);
+			$image_md = get_post_meta( $post->ID, 'block_image_md', true);
+			$image_lg = get_post_meta( $post->ID, 'block_image_lg', true);
+			$block = block_image_oob_left( $post->raw->post_name, $post->ID, $image_xs, $image_sm, $image_md, $image_lg );
+			break;
+		case 'oob_right':
+			$image_xs = get_post_meta( $post->ID, 'block_image_xs', true);
+			$image_sm = get_post_meta( $post->ID, 'block_image_sm', true);
+			$image_md = get_post_meta( $post->ID, 'block_image_md', true);
+			$image_lg = get_post_meta( $post->ID, 'block_image_lg', true);
+			$block = block_image_oob_right( $post->raw->post_name, $post->ID, $image_xs, $image_sm, $image_md, $image_lg );
+			break;
+    }
+
+	return $block;
+}
 function container_arrowbox( $content_block ) {
 	$block = new stdClass();
 	$block->type = 'container';
