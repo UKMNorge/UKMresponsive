@@ -1,7 +1,7 @@
 <?php
 function setup_blocks_from_subpages( $page_id ) {
 	$blocks = array();
-	$subpages = get_pages( array('child_of' => $page_id ) );
+	$subpages = get_pages( array('child_of' => $page_id, 'sort_column' => 'menu_order' ) );
 	foreach( $subpages as $page ) {
 		$block_type = get_post_meta( $page->ID, 'UKM_block', true );
 		if( !$block_type ) {
