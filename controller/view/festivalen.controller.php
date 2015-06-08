@@ -186,7 +186,7 @@ $DATA['isMobile'] = $mobileDetect->isMobile();
 	if( get_option('vis_deltakerinfo_mode_pre') ) {
 		$DATA['page_nav'][] = (object) array( 'url' 			=> 'deltakerinfo/',
 											   'title'		 	=> 'Deltakerinfo',
-											   'icon'			=> 'info',
+											   'icon'			=> 'i',
 											   'description'	=> 'Viktig informasjon til alle deltakere'
 											  );
 	}
@@ -250,18 +250,7 @@ if( $DATA['state'] == 'pre' ) {
 		$hva_er_side = get_page_by_path( 'om-ukm-festivalen' );
 		setup_postdata( $hva_er_side );
         $DATA['hva_er_side'] = new WPOO_Post( $hva_er_side );
-        $DATA['hva_er_side']->blocks = array();
-        
-        $subpages = get_pages( array('child_of' => $hva_er_side->ID ) );
-        foreach( $subpages as $page ) {
-	        $block_type = get_post_meta( $page->ID, 'UKM_block', true );
-	        if( !$block_type ) {
-		        continue;
-	        }
-	        $page = new WPOO_Post( $page );
-	        $DATA['hva_er_side']->blocks[] = setup_block_from_post( $page );
-        }
-        
+        $DATA['hva_er_side']->blocks = setup_blocks_from_subpages( $hva_er_side->ID );
 	}
 	
 	if( get_option('vis_workshopsinfo_forside_mode_pre') ) {

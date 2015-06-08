@@ -1,0 +1,9 @@
+{% for block in blocks %}
+	{% if block.type == 'container' %}
+		<a name="{{block.contained.anchor}}"></a>
+		{% embed "block/container_"~ container.container ~".twig.html" with {'container': block, 'block': container.contained } %}{% endembed %}		
+	{% else %}
+		<a name="{{block.anchor}}"></a>
+		{% embed "block/"~ block.type ~".twig.html" with {'block': block} %}{% endembed %}
+	{% endif %}
+{% endfor %}

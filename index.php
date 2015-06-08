@@ -192,6 +192,7 @@ require_once('functions_theme.php');
             	break;		
 			default:
 				require_once('controller/view/post.controller.php');
+				require_once('controller/view/page.controller.php');
 				$VIEW = 'page';
 				$JUMBO_POST_ID = $post->ID;
 				require('controller/element/jumbo.controller.php');

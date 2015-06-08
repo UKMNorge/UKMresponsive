@@ -19,32 +19,60 @@
 {% block content_container %}
 <a name="{{block.anchor}}"></a>
 {% embed "block/"~ ukmfestivalen_jumboimage.type ~".twig.html" with {'block': ukmfestivalen_jumboimage} %}{% endembed %}
-
-<div class="row">
+<style>
+/* centered columns styles */
+.row-centered {
+    text-align:center;
+}
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:left;
+    /* inline-block space fix */
+    margin-right:-4px;
+}
+#navbar-background {
+	background: #F5F5F5;
+	border-bottom: 2px solid #D8D8D8;
+}
+</style>
+<div id="navbar-background">
+	<p>&nbsp;</p>
 	<div class="container">
-		{% embed "element/festival/homepage_lead.twig.html" %}{% endembed %}
+		<div class="row row-centered">
+	    {% for nav in page_nav %}
+	        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 col-centered" style="text-align: center; min-height: 100px">
+	            <a href="{{nav.url}}">
+	                <div class="centered">
+	                    <span><img src="{{url.theme_dir}}img/nav/nav-{{nav.icon}}.png" width="45"/></span>                            
+	                </div>
+	                <span>{{nav.title}}</span>
+	            </a>
+	        </div>
+		{% endfor %}
+		</div>
 	</div>
 </div>
 
+<div class="row">
+	<div class="container">
+		<div class="centered">
+		{% embed "element/festival/homepage_lead.twig.html" %}{% endembed %}
+		</div>
+	</div>
+</div>
+
+{#
 <div class="arrow_box"></div>
     <div class="row box_grey" style="padding-bottom:0px;">
-        <div class="container">
-        <ol class="nav navbar-nav navbar-justified" style="margin-top:28px;">
-	        {% for nav in page_nav %}
-	            <li class="navbar-link">
-	                <a href="{{nav.url}}">
-	                    <div class="centered">
-	                        <span><img src="{{url.theme_dir}}img/nav/nav-{{nav.icon}}.png" width="45"/></span>                            
-	                    </div>
-	                    <span>{{nav.title}}</span>
-	                </a>
-	            </li>
-			{% endfor %}
-        </ol>
-        </div>
+
     </div>
 </div>
 
+#}
+
+{#
 {% if har_pameldte %}
 <div class="clearfix"></div>
 <div class="row">
@@ -55,6 +83,7 @@
 	</div>
 </div>
 {% endif %}
+#}
 
 {% if hva_er_side is defined %}
 	<div class="row">
@@ -66,15 +95,7 @@
 			</article>
 		</div>
 	</div>
-	{% for block in hva_er_side.blocks %}
-		{% if block.type == 'container' %}
-			<a name="{{block.contained.anchor}}"></a>
-			{% embed "block/container_"~ container.container ~".twig.html" with {'container': block, 'block': container.contained } %}{% endembed %}		
-		{% else %}
-			<a name="{{block.anchor}}"></a>
-			{% embed "block/"~ block.type ~".twig.html" with {'block': block} %}{% endembed %}
-		{% endif %}
-	{% endfor %}
+	{% embed "element/blocks.twig.html" with { blocks: hva_er_side.blocks } %}{% endembed %}
 {% endif %}
 
 {% if workshops_info %}
