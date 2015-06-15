@@ -1,5 +1,11 @@
 <?php
 header('Content-Type: text/html; charset=utf-8');
+session_start();
+if( date('m') == 6 && !isset( $_SESSION['festival_redirect'] ) ) {
+	$_SESSION['festival_redirect'] = true;
+	header("Location: http://ukm.no/festivalen/");
+	exit();
+}
 
 if( strpos( $_SERVER['HTTP_HOST'], 'ukm.dev' ) !== false || isset($_GET['debug']) ) {
 	error_reporting(E_ALL ^ E_DEPRECATED);
