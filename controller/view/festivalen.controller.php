@@ -230,6 +230,12 @@ $DATA['isMobile'] = $mobileDetect->isMobile();
 										   'description'	=> 'Har du spørsmål om UKM-festivalen? Disse kan hjelpe!',
 										  );
 										  
+	$DATA['page_nav'][] = (object) array( 'url' 			=> (date('m') == 6 ? '/festivalen/kontakt/' : '//om.'. UKM_HOSTNAME .'/kontakt/administrasjonen/'),
+										   'title'		 	=> 'Kontaktpersoner',
+										   'icon'			=> 'i',
+										   'description'	=> 'Har du spørsmål om UKM-festivalen? Disse kan hjelpe!',
+										  );
+										  
 										  
 if( $DATA['state'] == 'pre' ) {
 	// JUMBO-IMAGE
