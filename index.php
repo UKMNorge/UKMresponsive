@@ -192,10 +192,14 @@ require_once('functions_theme.php');
                 require_once('controller/view/redaksjon.controller.php');
                 $VIEW = 'festival/redaksjon';
                 break;
+            case 'monstring_kontaktpersoner':
+            	require_once('controller/view/monstring_kontaktpersoner.controller.php');
+            	$VIEW = 'monstring_kontaktpersoner';
+            	break;
             case 'bilder':
             	require_once('controller/view/bilder.controller.php');
             	$VIEW = 'bilder';
-            	break;		
+            	break;
 			default:
 				require_once('controller/view/post.controller.php');
 				require_once('controller/view/page.controller.php');
