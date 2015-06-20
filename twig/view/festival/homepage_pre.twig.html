@@ -71,6 +71,14 @@
 
 #}
 
+
+<div class="row">
+	<div class="container">
+		<h1>Livestream</h1>
+		{% embed "element/festival/timeline.twig.html" with { 'timeline':timeline, 'schedule': schedule } %}{% endembed %}
+	</div>
+</div>
+
 {#
 {% if har_pameldte %}
 <div class="clearfix"></div>
@@ -96,12 +104,6 @@
 	</div>
 	{% embed "element/blocks.twig.html" with { blocks: hva_er_side.blocks } %}{% endembed %}
 {% endif %}
-
-<div class="row">
-	<div class="container">
-		{% embed "element/festival/timeline.twig.html" with { 'timeline':timeline, 'schedule': schedule } %}{% endembed %}
-	</div>
-</div>
 
 {% if workshops_info %}
 <div class="arrow_box"></div>
