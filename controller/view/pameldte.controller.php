@@ -25,7 +25,7 @@ $monstring->type_tekst = $pl->g('type') == 'kommune' ? 'lokal' : 'fylkes';
 $DATA['monstring'] = $monstring;
 	
 $DATA['jumbo'] = (object) array('header' => 'Påmeldte',
-								'content' => 'UKM ' . $pl->g('pl_name')
+								'content' => $pl->g('pl_name')
 								);
 log_time( 'Load innslag' );
 $alle_innslag = $pl->innslag();
