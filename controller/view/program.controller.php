@@ -14,7 +14,7 @@ $monstring->type_tekst = $pl->g('type') == 'kommune' ? 'lokal' : 'fylkes';
 $DATA['monstring'] = $monstring;
 	
 $DATA['jumbo'] = (object) array('header' => 'Program',
-								'content' => 'UKM ' . $pl->g('pl_name')
+								'content' => $pl->g('pl_name')
 								);
 								
 if( isset($_GET['hendelse'] ) ) {
