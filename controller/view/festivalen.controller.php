@@ -293,9 +293,9 @@ $DATA['latest_images'] = array();
 $sql = new SQL("SELECT blog_url, post_meta FROM ukmno_wp_related WHERE blog_id = '#blog_id' AND post_type = 'image' ORDER BY rel_id DESC LIMIT 20", array('blog_id' => $blog_id));
 $res = $sql->run();
 
-while($r = $sql->fetch()) {
-	$DATA['latest_images'][] = $r;
-}
+//while($r = $sql->fetch()) {
+//	$DATA['latest_images'][] = $r;
+//}
 
 
 /*
