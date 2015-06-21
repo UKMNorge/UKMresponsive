@@ -291,15 +291,18 @@ if( $DATA['state'] == 'pre' ) {
 // Hent siste bilder
 $DATA['daniel'] = $_SERVER["HTTP_CF_CONNECTING_IP"] ? '129.241.8.171';
 
-$DATA['latest_images'] = array();
-$sql = new SQL("SELECT blog_url, post_meta FROM ukmno_wp_related WHERE blog_id = '#blog_id' AND post_type = 'image' ORDER BY rel_id DESC LIMIT 20", array('blog_id' => $blog_id));
-$res = $sql->run();
+if($DATA['daniel']) {
 
-while($r = mysql_fetch_assoc($res)) {
-	$DATA['latest_images'][] = array(
-		'blog_url' => $r['blog_url'],
-		'post_meta' => unserialize($r['post_meta'])
-	);
+	$DATA['latest_images'] = array();
+	$sql = new SQL("SELECT blog_url, post_meta FROM ukmno_wp_related WHERE blog_id = '#blog_id' AND post_type = 'image' ORDER BY rel_id DESC LIMIT 20", array('blog_id' => $blog_id));
+	$res = $sql->run();
+
+	while($r = mysql_fetch_assoc($res)) {
+		$DATA['latest_images'][] = array(
+//			'blog_url' => $r['blog_url'],
+//			'post_meta' => unserialize($r['post_meta'])
+		);
+	}
 }
 
 
