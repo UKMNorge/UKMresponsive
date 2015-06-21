@@ -57,6 +57,19 @@
 
 <div id="homepagecontent">
 
+	{% if hva_er_side is defined %}
+		<div class="row">
+			<div class="container">
+				<article>
+					<div class="page">
+						{{hva_er_side.content|raw}}
+					</div>
+				</article>
+			</div>
+		</div>
+		{% embed "element/blocks.twig.html" with { blocks: hva_er_side.blocks } %}{% endembed %}
+	{% endif %}
+
 	{#<div class="row">
 		<div class="container">
 			<h1>Livestream</h1>
