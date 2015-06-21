@@ -243,8 +243,8 @@ if( $DATA['state'] == 'pre' ) {
 	$DATA['ukmfestivalen_jumboimage'] = block_jumbo_image('top',
 										  'UKM-festivalen', 
 										  $description, 
-										  'https://farm4.staticflickr.com/3857/14566213135_5faa5b154d_z.jpg',
-										  'https://farm4.staticflickr.com/3857/14566213135_5faa5b154d_b.jpg',
+										  '/festivalen/wp-content/themes/UKMresponsive/img/jumbofestival.jpg',
+										  '/festivalen/wp-content/themes/UKMresponsive/img/jumbofestival.jpg',
 										  '/festivalen/wp-content/themes/UKMresponsive/img/jumbofestival.jpg',
 										  '/festivalen/wp-content/themes/UKMresponsive/img/jumbofestival.jpg'
 										   );
