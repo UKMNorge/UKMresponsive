@@ -5,19 +5,20 @@
 <div class="container">
 	{% for hendelse in hendelser %}
 
-	<div class="row">
-		<h2>{{ hendelse.navn }}</h2>
+		<div class="row">
+			<h2>{{ hendelse.navn }}</h2>
 
-		<div class="gallery">
-			{% for innslag in hendelse.innslag %}
-				{% for bilde in innslag.bilder %}
-					<a href="{{ bilde.original }}">
-						<img alt="{{ innslag.navn }} | Foto: {{ bilde.foto }}" src="{{ bilde.original }}" />
-					</a>
+			<div class="gallery">
+				{% for innslag in hendelse.innslag %}
+					{% set active = loop.first %}
+					{% for bilde in innslag.bilder %}
+						<a href="{{ bilde.original }}">
+							<img alt="{{ innslag.navn }} | Foto: {{ bilde.foto }}" src="{{ bilde.original }}" />
+						</a>
+					{% endfor %}
 				{% endfor %}
-			{% endfor %}
+			</div>
 		</div>
-	</div>
 
 
 	{#
