@@ -58,15 +58,7 @@
 <div id="homepagecontent">
 
 	{% if livestream_info is defined %}
-		<div class="row">
-			<div class="container">
-				<article>
-					<div class="page">
-						{{livestream_info.content|raw}}
-					</div>
-				</article>
-			</div>
-		</div>
+		{% embed "element/blocks.twig.html" with { blocks: livestream_info } %}{% endembed %}
 	{% endif %}
 
 	{#<div class="row">
