@@ -13,66 +13,45 @@
 {% endblock %}
 
 {% block content_container %}
-<div class="row">
+<a name="{{block.anchor}}"></a>
+{% embed "block/"~ ukmfestivalen_jumboimage.type ~".twig.html" with {'block': ukmfestivalen_jumboimage} %}{% endembed %}
+<style>
+/* centered columns styles */
+.row-centered {
+    text-align:center;
+}
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:left;
+    /* inline-block space fix */
+    margin-right:-4px;
+}
+#navbar-background {
+	background: #F5F5F5;
+	border-bottom: 2px solid #D8D8D8;
+}
+</style>
+<div id="navbar-background">
+	<p>&nbsp;</p>
 	<div class="container">
-		{#% embed "element/festival/timeline.twig.html" with { 'timeline':timeline, 'schedule': schedule } %}{% endembed %#}
+		<div class="row row-centered">
+	    {% for nav in page_nav %}
+	        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 col-centered" style="text-align: center; min-height: 100px">
+	            <a href="{{nav.url}}">
+	                <div class="centered">
+	                    <span><img src="{{url.theme_dir}}img/nav/nav-{{nav.icon}}.png" width="45"/></span>                            
+	                </div>
+	                <span>{{nav.title}}</span>
+	            </a>
+	        </div>
+		{% endfor %}
+		</div>
 	</div>
 </div>
-{#<div class="row" style="margin-top:15px;">
-    <div class="container">
-        <div class="col-xs-12 col-md-12" style="padding-left:0px;">
-            <a href="/festivalen/samfundet">
-                <img src="/wp-content/themes/UKMresponsive/img/720_weareback.jpg" class="img-responsive" style="width:1100px;"/>
-            </a>
-        </div>
-    </div>
-</div>#}
+
 <div id="homepagecontent">
-    <div class="arrow_box" style="margin-top:24px;"></div>
-    <div class="row box_grey" style="padding-bottom: 22px;">
-	    <div class="container" style="margin-top:45px;">	
-	    	<div class="row">
-	    	    <div class="col-xs-4 col-sm-2 centered homepagelink">
-	                <a href="/festivalen/program/">
-                        <img src="/wp-content/themes/UKMresponsive/img/nav/nav-calendar.png" width="45"/>
-	                    <div>Program</div>
-	                    <div class="clearfix"></div>
-	                </a>
-	    	    </div>
-	    	    <div class="col-xs-4 col-sm-2 centered homepagelink">
-	                <a href="/festivalen/category/workshop/">
-	                    <img src="/wp-content/themes/UKMresponsive/img/nav/nav-people.png" width="45"/>
-	                    <div>Workshops</div>
-	                </a>
-	    	    </div>
-	    	    <div class="col-xs-4 col-sm-2 centered homepagelink">
-	                <a href="/festivalen/kart/">
-	                    <img src="/wp-content/themes/UKMresponsive/img/nav/nav-maps.png" width="45"/>
-	                    <div>Kart</div>
-	                </a>
-	    	    </div>
-	    	    <div class="col-xs-4 col-sm-2 centered homepagelink">
-	                <a href="/festivalen/kontakt/">
-	                    <img src="/wp-content/themes/UKMresponsive/img/nav/nav-contact.png" width="45"/>
-	                    <div>Kontakt</div>
-	                </a>
-	    	    </div>
-	    	    <div class="col-xs-4 col-sm-2 centered homepagelink">
-	                <a href="/festivalen/internprogram/">
-	                    <img src="/wp-content/themes/UKMresponsive/img/nav/nav-i.png" width="45"/>
-	                    <div>Deltakerinfo</div>
-	                </a>
-	    	    </div>
-	    	    <div class="col-xs-4 col-sm-2 centered homepagelink">
-	                <a href="/festivalen/redaksjonen/">
-	                    <img src="/wp-content/themes/UKMresponsive/img/nav/nav-rocket.png" width="45"/>
-	                    <div>Redaksjonen</div>
-	                </a>
-	    	    </div>
-	    	</div>
-	    </div>
-	</div>
-    
     <div class="row">
         <div class="container">
 
