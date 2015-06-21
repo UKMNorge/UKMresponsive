@@ -294,7 +294,10 @@ $sql = new SQL("SELECT blog_url, post_meta FROM ukmno_wp_related WHERE blog_id =
 $res = $sql->run();
 
 while($r = mysql_fetch_assoc($res)) {
-	$DATA['latest_images'][] = $r;
+	$DATA['latest_images'][] = array(
+		'blog_url' => $r->blog_url,
+		'post_meta' => unserialize($r->post_meta)
+	);
 }
 
 
