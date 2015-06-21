@@ -48,6 +48,7 @@ foreach( $hendelser as $hendelsen ) {
                                 $data_bilde = new stdClass();
                                 $data_bilde->link       = $image['blog_url'].'/files/'.$image['post_meta']['sizes']['large']['file'];
                                 $data_bilde->large      = $image['blog_url'].'/files/'.$image['post_meta']['sizes']['large']['file'];
+                                $data_bilde->medium      = $image['blog_url'].'/files/'.$image['post_meta']['sizes']['medium']['file'];
                                 $data_bilde->original	= $image['blog_url'].'/files/'. $image['post_meta']['file'];
                                 $data_bilde->foto       = $image['post_meta']['author'];
 
