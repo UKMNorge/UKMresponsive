@@ -88,12 +88,13 @@
     </div>
     
 
+    {% if daniel %}
     <div class="row">
 	    <div class="container">
 	    	<div id="justified-gallery">
 		    {% for image in latest_images %}
-		    	<a href="{{ image.blog_url }}{{ image.sizes.medium.file }}">
-		    		<img alt="" src="{{ image.blog_url }}{{ image.sizes.medium.file }}" />
+		    	<a href="{{ image.blog_url }}{{ image.post_meta.sizes.medium.file }}">
+		    		<img alt="" src="{{ image.blog_url }}{{ image.post_meta.sizes.medium.file }}" />
 		    	</a>
 		    {% endfor %}
 		    <script type="text/javascript">
@@ -105,6 +106,7 @@
 		    </div>
 	    </div>
     </div>
+    {% endif %}
 
     <div class="clearfix"></div>
     <div class="row">
