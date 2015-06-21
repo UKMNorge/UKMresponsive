@@ -88,15 +88,13 @@
     </div>
     
     <div class="row">
-	    <div class="container">
-	    	<h1>&nbsp;</h1>
-	    	<div id="jf">
-		    {% for image in latest_images %}
-		    	<a href="#">
-		    		<img src="/festivalen/files/{{ image.post_meta.sizes.medium.file }}" />
-		    	</a>
-		    {% endfor %}
-		    </div>
+    	<h1>&nbsp;</h1>
+    	<div id="jf">
+	    {% for image in latest_images %}
+	    	<a href="#">
+	    		<img src="/festivalen/files/{{ image.post_meta.sizes.medium.file }}" />
+	    	</a>
+	    {% endfor %}
 	    </div>
     </div>
 
