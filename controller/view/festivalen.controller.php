@@ -243,10 +243,10 @@ if( $DATA['state'] == 'pre' ) {
 	$DATA['ukmfestivalen_jumboimage'] = block_jumbo_image('top',
 										  'UKM-festivalen', 
 										  $description, 
-										  '/festivalen/wp-content/themes/UKMresponsive/img/jumbofestival.jpg',
-										  '/festivalen/wp-content/themes/UKMresponsive/img/jumbofestival.jpg',
-										  '/festivalen/wp-content/themes/UKMresponsive/img/jumbofestival.jpg',
-										  '/festivalen/wp-content/themes/UKMresponsive/img/jumbofestival.jpg',
+										  'https://farm4.staticflickr.com/3857/14566213135_5faa5b154d_z.jpg',
+										  'https://farm4.staticflickr.com/3857/14566213135_5faa5b154d_b.jpg',
+										  '/festivalen/wp-content/themes/UKMresponsive/img/jumbofesti',
+										  'https://c1.staticflickr.com/1/469/18367057654_afdc311fb9_k.jpg'
 										   );
 
 	if( get_option('vis_festivalinfo_forside_mode_pre') ) {
