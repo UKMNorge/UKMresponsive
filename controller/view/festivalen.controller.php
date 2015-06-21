@@ -1,6 +1,9 @@
 <?php
 require_once(THEME_PATH.'functions/blocks.inc.php');
 require_once('UKM/monstring.class.php');
+require_once('UKM/sql.class.php');
+
+global $blog_id;
 
 // CHECK FOR MOBILE
 require_once(THEME_PATH . 'class/mobiledetect.class.php');
@@ -284,6 +287,16 @@ if( $DATA['state'] == 'pre' ) {
 	    }
 	}
 }
+
+// Hent siste bilder
+$DATA['latest_images'] = array();
+$sql = new SQL("SELECT blog_url, post_meta WHERE blog_id = '#blog_id' AND post_type = 'image' ORDER BY rel_id DESC LIMIT 20", array('blog_id' => $blog_id));
+$res = $sql->run();
+
+while($r = $sql->fetch()) {
+	$DATA['latest_images'][] = $r;
+}
+
 
 /*
 // Timeline sendeskjema
