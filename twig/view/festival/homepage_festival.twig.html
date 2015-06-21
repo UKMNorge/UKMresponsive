@@ -12,6 +12,10 @@
 	</ul>
 {% endblock %}
 
+{% block jumbo %}
+
+{% endblock %}
+
 {% block content_container %}
 <a name="{{block.anchor}}"></a>
 {% embed "block/"~ ukmfestivalen_jumboimage.type ~".twig.html" with {'block': ukmfestivalen_jumboimage} %}{% endembed %}
@@ -68,13 +72,6 @@
 		{% endfor %}
 
 		{% embed "element/post/prev_next.twig.html" %}{% endembed %}
-            {# listevisning
-            <h1>Nyheter</h1>
-            <div class="news-article-list">
-                {% for post in posts %}
-                    {% embed "element/festival/news_article.twig.html" with {'post':post,'url':url} %}{% endembed %}
-                {% endfor %}
-            </div>#}
         </div>
     </div>
     

@@ -143,11 +143,11 @@ $DATA['isMobile'] = $mobileDetect->isMobile();
 		$DATA['state'] = 'post';
 	}
 
-	$DATA['state'] = 'live';
+	$DATA['state'] = 'pre';
 
 
 	// FØR MØNSTRINGEN
-	if( $DATA['state'] == 'live' ) {
+	if( $DATA['state'] == 'pre' ) {
 		$VIEW = 'festival/homepage_pre';
 	} else {
 		// HAR UKM-TV-SIDE? (opplastede videoer?)
