@@ -25,7 +25,7 @@ $DATA['isMobile'] = $mobileDetect->isMobile();
 	} else {
 	    $paged = 1;
 	}
-    $posts = query_posts('posts_per_page=18&cat=1&paged='.$paged);
+    $posts = query_posts('posts_per_page=12&cat=1&paged='.$paged);
     while(have_posts()) {
         the_post();
         $wpoopost = new WPOO_Post($post);
