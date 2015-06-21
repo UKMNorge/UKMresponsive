@@ -289,7 +289,7 @@ if( $DATA['state'] == 'pre' ) {
 }
 
 // Hent siste bilder
-$DATA['daniel'] = $_SERVER["HTTP_CF_CONNECTING_IP"] ? '129.241.8.171';
+$DATA['daniel'] = $_SERVER["HTTP_CF_CONNECTING_IP"] == '129.241.8.171';
 
 if($DATA['daniel']) {
 
@@ -299,8 +299,8 @@ if($DATA['daniel']) {
 
 	while($r = mysql_fetch_assoc($res)) {
 		$DATA['latest_images'][] = array(
-//			'blog_url' => $r['blog_url'],
-//			'post_meta' => unserialize($r['post_meta'])
+			'blog_url' => $r['blog_url'],
+			'post_meta' => unserialize($r['post_meta'])
 		);
 	}
 }
