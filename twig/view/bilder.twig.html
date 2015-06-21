@@ -13,7 +13,7 @@
 					{% set active = loop.first %}
 					{% for bilde in innslag.bilder %}
 						<a href="{{ bilde.original }}">
-							<img alt="{{ innslag.navn }} | Foto: {{ bilde.foto }}" src="{{ bilde.original }}" />
+							<img alt="{{ innslag.navn }} | Foto: {{ bilde.foto }}" src="{{ bilde.large }}" />
 						</a>
 					{% endfor %}
 				{% endfor %}
