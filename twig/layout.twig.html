@@ -64,10 +64,6 @@
         {% endif %}
 		<style type="text/css">{% block additional_css %}{% endblock %}</style>
 		<script type="text/javascript">{% block additional_js %}{% endblock %}</script>
-	    <script type="text/javascript">
-			$('#jf').justifiedGallery();
-			console.log("1");
-	    </script>
 	</head>
 	<body>
 	{% if isMobile %}
@@ -277,5 +273,10 @@
 	{% if isMobile is defined and isMobile == true %}
 	</div>
 	{% endif %}
+	    <script type="text/javascript">
+	    console.log("1");
+			$('#jf').justifiedGallery();
+			
+	    </script>
   </body>
 </html>
