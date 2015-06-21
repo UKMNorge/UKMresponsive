@@ -253,6 +253,9 @@ if( $DATA['state'] == 'pre' ) {
         $DATA['hva_er_side']->blocks = setup_blocks_from_subpages( $hva_er_side->ID );
 	}
 	
+	$livestream_info = get_page_by_path( 'livestream' );
+	$DATA['livestream_info'] = new WPOO_Post($livestream_info);
+
 	if( get_option('vis_workshopsinfo_forside_mode_pre') ) {
 		$category_ws = get_category_by_slug('workshop');
 		$category_ws_description = category_description( $category_ws->term_id );
