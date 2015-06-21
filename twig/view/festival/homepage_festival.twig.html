@@ -90,9 +90,19 @@
 
     {#<div class="row">
 	    <div class="container">
-	    {% for image in latest_images %}
-
-	    {% endfor %}
+	    	<div id="justified-gallery">
+		    {% for image in latest_images %}
+		    	<a href="{{ image.blog_url }}{{ image.sizes.medium.file }}">
+		    		<img alt="" src="{{ image.blog_url }}{{ image.sizes.medium.file }}" />
+		    	</a>
+		    {% endfor %}
+		    <script type="text/javascript">
+				$('#justified-gallery').justifiedGallery({
+				    rowHeight : 100,
+				    margins : 3
+				});
+		    </script>
+		    </div>
 	    </div>
     </div>#}
 
