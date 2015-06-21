@@ -245,7 +245,7 @@ if( $DATA['state'] == 'pre' ) {
 										  $description, 
 										  'https://farm4.staticflickr.com/3857/14566213135_5faa5b154d_z.jpg',
 										  'https://farm4.staticflickr.com/3857/14566213135_5faa5b154d_b.jpg',
-										  'https://farm4.staticflickr.com/3857/14566213135_6495f5efc2_h.jpg',
+										  'https://c1.staticflickr.com/1/469/18367057654_afdc311fb9_k.jpg',
 										  'https://c1.staticflickr.com/1/469/18367057654_afdc311fb9_k.jpg'
 										   );
 
