@@ -76,6 +76,27 @@ switch( get_option('ukm_top_page') ) {
 
 		break;
 
+	###############################################
+	## MENU OF UKM META BLOG + UKM MEDIA
+	
+	case 'media':
+		$DATA['page_nav'][] = (object) array( 'url' 			=> '//media.'.CURRENT_UKM_DOMAIN.'/',
+											   'title'		 	=> 'UKM Media',
+											   'icon'			=> 'rocket',
+											   'description'	=> 'UKM Media-forsiden'
+											  );
+		$DATA['page_nav'][] = (object) array( 'url' 			=> '//meta.'.CURRENT_UKM_DOMAIN.'/',
+											   'title'		 	=> 'Meta-bloggen',
+											   'icon'			=> 'star',
+											   'description'	=> 'Hva skjer i UKM Media-kulissene?'
+											  );
+/*		$DATA['page_nav'][] = (object) array( 'url' 			=> '//media.'.CURRENT_UKM_DOMAIN.'/HD-bussene/',
+											   'title'		 	=> 'HD-bussene',
+											   'icon'			=> 'buss',
+											   'description'	=> 'Alt om våre HD-busser'
+											  );
+*/
+		break;
 	
 	###############################################
 	## MENU OF ukm.no FRONTPAGE

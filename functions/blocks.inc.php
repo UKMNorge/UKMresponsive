@@ -85,6 +85,10 @@ function block_lead( $anchor, $post_id ) {
 function setup_block_post( &$block, $post_id ) {
 	$post = get_post( $post_id );		
 
+	if( !is_object( $post ) ) {
+		return;
+	}
+
 	$block->post = new stdClass();
 	$block->post->ID = $post_id;
 	$block->post->data = new WPOO_Post( $post );
