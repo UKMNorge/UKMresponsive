@@ -1,5 +1,15 @@
 {% extends "view/homepage.twig.html" %}
 
+{% block navbar %}
+	<div class="pull-right" id="mediaGoBack"><a href="http://ukm.no">gå til UKM.no</a></div>
+	<div class="navbar-header">
+		<a href="//media.{{ url.ukmno }}" class="navbar-brand">
+			<img src="http://grafikk.ukm.no/profil/media/UKMmedia_logo.png" width="70" />
+		</a>
+	</div>
+{% endblock %}
+
+
 {% block content %}
 	<div class="row post_top">
 		<div class="hidden-xs hidden-sm col-md-7">
