@@ -1,7 +1,7 @@
 <?php
 require_once(THEME_PATH.'functions/blocks.inc.php');
 $blocks = array();
-$DATA['blog']['css_extra'][] = 'less/css/festival14.css';
+#$DATA['blog']['css_extra'][] = 'less/css/festival14.css';
 
 	// JUMBO TOP IMAGE	
 	$blocks[] = block_jumbo_image('top',
