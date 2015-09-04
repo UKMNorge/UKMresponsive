@@ -44,6 +44,8 @@ if (get_option("site_type") != "kommune" && get_option("site_type") != "fylke") 
 
 $DATA['post']->author->company_name = 'UKM Norge';
 
+require_once( THEME_PATH . 'controller/comments.controller.php');
+
 function image_gallery( $attr ) {
 	$linkto = $attr['link'];
 	$ids	= explode(',', $attr['ids'] );
