@@ -6,7 +6,7 @@
 
 $blogs_with_comments = array(1,2175,2174);
 
-if( (UKM_HOSTNAME == 'ukm.no' && in_array($blog_id, $blogs_with_comments)) && comments_open() ) {
+if( (UKM_HOSTNAME == 'ukm.no' && in_array($blog_id, $blogs_with_comments) && comments_open() ) || (UKM_HOSTNAME != 'ukm.no' && comments_open()) ) {
 #if( comments_open() ) {
 	require_once('WPOO/WPOO/Comment.php');
 	if( $user_ID ) {
