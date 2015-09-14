@@ -132,6 +132,7 @@ require_once('functions_theme.php');
 			require_once('controller/view/homepage.controller.php');
 			require_once('controller/view/homepage_media.controller.php');
 		} elseif( get_option('site_type') == 'meta' ) {
+			$SEO->set('analytics', 'UA-46216680-10');
 			$VIEW = 'homepage/homepage_media_meta';
 			require_once('controller/view/homepage.controller.php');
 			require_once('controller/view/homepage_media.controller.php');
