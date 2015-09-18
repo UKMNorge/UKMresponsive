@@ -54,43 +54,7 @@
 		</div>
 	</div>
 </div>
-{#<div class="row">
-	<div class="container">
-		<div class="centered">
-		{% embed "element/festival/homepage_lead.twig.html" %}{% endembed %}
-		</div>
-	</div>
-</div>#}
 
-{#
-<div class="arrow_box"></div>
-    <div class="row box_grey" style="padding-bottom:0px;">
-
-    </div>
-</div>
-
-#}
-
-
-{#<div class="row">
-	<div class="container">
-		<h1>Livestream</h1>
-		<iframe src="http://livestream.com/accounts/183084/events/4139517/player?width=960&height=540&autoPlay=true&mute=false" width="100%" height="540" frameborder="0" scrolling="no"></iframe>
-	</div>
-</div>#}
-
-{#
-{% if har_pameldte %}
-<div class="clearfix"></div>
-<div class="row">
-	<div class="container">
-		<div class="page_box" align="center">
-			{% embed "element/festival/homepage_find.twig.html" %}{% endembed %}
-		</div>
-	</div>
-</div>
-{% endif %}
-#}
 
 {% if hva_er_side is defined %}
 	<div class="row">
@@ -163,18 +127,5 @@
 {% endif %}
 
 
-{#
-<div class="row">
-    <div class="container">
-        <h1>UKM-TV: Vi møter</h1>
-        <p class="lead">Hver dag frem til UKM-festivalen presenterer vi en gruppe, artist eller kunstner som du kan møte i Trondheim.</p>
-        <div class="news-article-list">
-            {% for post in meet %}
-                {% embed "element/festival/news_article.twig.html" with {'post':post,'url':url} %}{% endembed %}
-            {% endfor %}
-        </div>
-    </div>
 
-</div>
-#}
 {% endblock %}
