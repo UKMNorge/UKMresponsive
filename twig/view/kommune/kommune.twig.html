@@ -9,6 +9,9 @@
 {% endblock %}
 
 {% block content %}
+	{% if "now"|date('m') < 12 and "now"|date('m') > 8 %}
+		{% embed "element/new_season.twig.html" %}{% endembed %}
+	{% endif %}
     <div class="row post_top">
     	{% block hovedfokus_pre %}{% endblock %}
 
