@@ -56,6 +56,7 @@
 </div>
 
 <div id="homepagecontent">
+		{% embed "element/new_season.twig.html" %}{% endembed %}
 
 	{#% if livestream_info is defined %}
 		{% embed "element/blocks.twig.html" with { blocks: livestream_info } %}{% endembed %}
