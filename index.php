@@ -120,10 +120,13 @@ require_once('functions_theme.php');
 			require_once('controller/element/kontakt.controller.php');
 			require_once('controller/view/festivalen.controller.php');
 		} elseif( get_option('site_type') == 'fylke' ) {
+			$DATA['site_type'] = 'fylke';
+			$DATA['fylke_url'] = $pl->get('url');
             $VIEW = 'fylke';
 			require_once('controller/element/kontakt.controller.php');
 			require_once('controller/view/fylke.controller.php');
 		} elseif( get_option('site_type') == 'kommune' ) {
+			$DATA['site_type'] = 'kommune';
             $VIEW = 'kommune';
 			require_once('controller/element/kontakt.controller.php');
 			require_once('controller/view/kommune.controller.php');
