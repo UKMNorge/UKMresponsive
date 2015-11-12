@@ -135,11 +135,13 @@ switch( get_option('ukm_top_page') ) {
 											   'icon'			=> 'heart',
 											   'description'	=> 'For deg som vil spre ordet om UKM'
 											  );
+/*
 		$DATA['page_nav'][] = (object) array( 'url' 			=> '//internasjonalt.'.CURRENT_UKM_DOMAIN.'/',
 											   'title'		 	=> 'Internasjonalt',
 											   'icon'			=> 'globe',
 											   'description'	=> 'Alt om UKMs internasjonale utvekslinger'
 											  );
+*/
 		$DATA['page_nav'][] = (object) array( 'url' 			=> '//'.CURRENT_UKM_DOMAIN.'/blog/category/kjente-ukmere/',
 											   'title'		 	=> 'Kjente UKM-ere',
 											   'icon'			=> 'people',
