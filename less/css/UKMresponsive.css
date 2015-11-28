@@ -1,22 +1,43 @@
+/* BUTTONS FROM UKMDELTA */
+.btn-success,
+.btn-success:link,
+.btn-success:visited,
+.btn-primary,
+.btn-primary:link,
+.btn-primary:visited,
 .btn-default,
-button.btn-default {
-  background: #dbf0f1 !important;
-}
-.btn-success {
+.btn-default:link,
+.btn-default:visited {
+  border-color: #48b5b8 !important;
   background: #6dc6c1 !important;
+  color: #fff !important;
 }
-.btn-default a,
-.btn-default a:visited,
-a.btn-default,
-a.btn-default:visited,
-.btn-success a,
-.btn-success a:visited,
-a.btn-success,
-a.btn-success:visited,
-button.btn-default {
+.btn-primary:hover,
+.btn-default:hover,
+.btn-success:hover {
+  border-color: #6dc6c1 !important;
+  background: #48b5b8 !important;
+  color: #000 !important;
+}
+.btn-primary:active,
+.btn-default:active,
+.btn-success:active {
+  border-color: #6dc6c1 !important;
+  background: #92d3d4 !important;
+  color: #000 !important;
+}
+.btn-xs {
   font-weight: bold !important;
-  color: #1a1919 !important;
 }
+
+/*** Rød farge på fare-knapp */
+.btn-delta.btn-danger {
+  /** TODO: Importere disse fra bootstrap.css? */
+  color: #ffffff;
+  background-color: #d9534f;
+  border-color: #d43f3a;
+}
+/* EO BUTTONS FROM DELTA */
 #top {
   background: #fff;
 }
@@ -121,24 +142,21 @@ ul.nav li.active a {
 }
 /* Page headers */
 .ukm_page_jumbo {
-  position: relative;
-  padding: 30px 15px;
-  color: #fff;
-  text-align: center;
-  /*   text-shadow: 0 1px 0 rgba(0,0,0,.1); */
-  background-color: #7fcbcd;
-  background-image: -webkit-linear-gradient(top, #6dc6c1 0%, #7fcbcd 100%);
-  background-image: linear-gradient(to bottom, #6dc6c1 0%, #7fcbcd 100%);
-  background-repeat: repeat-x;
-  /* filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@clr-ukm-green', endColorstr='@clr-ukm-green-l1', GradientType=0); */
+	position: relative;
+	padding: 30px 15px;
+	color: #000;
+	text-align: center;
+    border-bottom: 13px solid #b89dcc;
 }
+
 .ukm_page_jumbo {
   margin-bottom: 15px;
   font-size: 20px;
 }
 .ukm_page_jumbo h1 {
   margin-top: 0;
-  color: #fff;
+  color: #000;
+  opacity: 0.65;
 }
 .ukm_page_jumbo p {
   margin-bottom: 0;
