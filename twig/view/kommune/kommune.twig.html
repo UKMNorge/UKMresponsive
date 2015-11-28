@@ -1,7 +1,7 @@
 {% extends "layout.twig.html" %}
 
 {% block jumbo_header %}
-	UKM {{monstring.navn|raw}}
+	{{monstring.navn|raw}}
 {% endblock %}
 
 {% block jumbo_content %}
@@ -9,7 +9,7 @@
 {% endblock %}
 
 {% block content %}
-	{% if "now"|date('m') < 12 and "now"|date('m') > 8 %}
+	{% if tidligereArAdvarsel is defined and tidligereArAdvarsel %}
 		{% embed "element/new_season.twig.html" %}{% endembed %}
 	{% endif %}
     <div class="row post_top">
