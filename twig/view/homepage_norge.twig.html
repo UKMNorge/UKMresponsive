@@ -2,45 +2,54 @@
 
 {% block content %}
 	{% if now|date('m') in 1..3 or now|date('m') == 12 %}
-	<p>
-		<a href="/din_monstring/" class="btn btn-success btn-block btn-sm">Påmeldingen er åpen: start påmelding!</a>
-	</p>
-	{% endif %}
+		<div class="centered pameldte visible-xs col-xs-12">
+			<a href="//delta.ukm.no/" class="btn btn-success btn-block">Påmeldingen er åpen: start påmelding!</a>
+			<p>&nbsp;</p>
+		</div>
+	{% endif %}	
+	
 	<div class="row post_top">
 		<div class="hidden-xs hidden-sm col-md-7">
 			<a href="{{posts[0].url}}">
 				<div class="grid_post_image" style="background-image: url('{{posts[0].image.url}}');"></div>
 			</a>
-		</div>
-				
-		<div id="infosquare" class="col-xs-12 col-md-5">
-			<div class="">
-	        	<ol>
-				{% for nav in page_nav %}
-					{% embed "element/nav_page.twig.html" %}{% endembed %}
-				{% endfor %}
-				</ol>
-			</div>
-			{% if stat_pameldte is defined and stat_pameldte.tall > 30 %}
-			<div class="centered pameldte visible-xs visible-sm">
-				<div class="over">{{stat_pameldte.tall}}</div>
-				<div class="under">Påmeldte til UKM {{stat_pameldte.til}}</div>
-			</div>
-			{% else %}
-			<div class="centered pameldte visible-xs visible-sm">
-				<div class="over">1. desember</div>
-				<div class="under">Åpner påmeldingen</div>
-			</div>
-			{% endif %}
-		</div>
-		<div class="clearfix"></div>
-		<div class="col-xs-12 hidden-xs hidden-sm post_top">		
 			<a href="{{posts[0].url}}"><h2>{{posts[0].title|raw}}</h2></a>
 			<p class="lead">{{posts[0].lead|raw}}</p>
 			<a href="{{posts[0].url}}">les mer</a>
 		</div>
+				
+		<div id="infosquare" class="col-xs-12 col-md-5">
+			<div class="row">				
+				<div class="col-xs-12 col-sm-7 col-md-12">
+		        	<ol>
+					{% for nav in page_nav %}
+						{% embed "element/nav_page.twig.html" %}{% endembed %}
+					{% endfor %}
+					</ol>
+				</div>
+				
+				{% if stat_pameldte is defined and now|date('m') not in 9..11 %}
+					<div class="centered pameldte col-xs-12 col-sm-5 col-md-12">
+						<p class="visible-sm">&nbsp;</p>
+						<p class="visible-sm">&nbsp;</p>
+
+						<div class="over">{{stat_pameldte.tall}}</div>
+						<div class="under">Påmeldte til UKM {{stat_pameldte.til}}.</div>
+						<p class="hidden-xs">&nbsp;</p>
+						<p class="hidden-xs">
+							<a href="//delta.ukm.no/" class="btn btn-success btn-block">Meld deg på UKM</a>
+						</p>
+					</div>
+				{% else %}
+					<div class="centered pameldte col-xs-12 col-sm-5 col-md-12">
+						<div class="over">1. desember</div>
+						<div class="under">Åpner påmeldingen</div>
+					</div>
+				{% endif %}
+			</div>
+		</div>
 	</div>
-	
+	<div class="clearfix"></div>
 	<div class="row">
 		<div class="visible-xs visible-sm hidden-md hidden-lg col-xs-12">
 			{% embed "element/post/grid_element.twig.html" with posts[0] %}{% endembed %}
