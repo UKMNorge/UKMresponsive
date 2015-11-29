@@ -13,9 +13,6 @@
 {% endblock %}
 
 {% block hovedfokus_pre %}
-	<div class="col-xs-12">
-        <h2>Meld deg på i dag!</h2>
-	</div>
 {% endblock %}
 
 {% set posts_include_top_post_in_full_list = true %}
@@ -26,64 +23,25 @@
     {# Registration #}
     <script type="text/javascript" src="{{ url.theme_dir }}js/lokalside_pamelding.js"></script>
     <div id="paamelding_container">
-       <ul class="list-inline pameldingsikoner">
-   		<li class="col-xs-12">
-   			Påmeldingsfrist: 
+	    <div class="row">
+	        <a href="//delta.{{ url.ukmno }}"><img src="http://grafikk.ukm.no/pamelding/startpamelding.png" class="col-xs-12" /></a>
+	    </div>
+	    <div class="row">
+	   		<div class="col-xs-12">
+	   			Påmeldingsfrist: 
+	            {% if monstring.frist_1_aktiv %}
+		   			{{monstring.frist_1 | dato('l j.M') }} kl. {{monstring.frist_1 | dato('H:i')}}
+		   		{% else %}
+		   			{{monstring.frist_2 | dato('l j.M') }} kl. {{monstring.frist_2 | dato('H:i')}}
+		   		{% endif %}
+	   		</div>
+	   	</div>
 
-            {% if monstring.frist_1_aktiv %}
-	   			{{monstring.frist_1 | dato('l j.M') }} kl. {{monstring.frist_1 | dato('H:i')}}
-	   		{% else %}
-	   			{{monstring.frist_2 | dato('l j.M') }} kl. {{monstring.frist_2 | dato('H:i')}}
-	   		{% endif %}
-	   	</li>
-   		
-        {% for ikon in ikoner_tittel %}
-            <li class="col-xs-4 col-sm-2 col-md-2 col-lg-2 centered">
-                {% if monstring.frist_1_aktiv %}
-	                {% if monstring.kommuner|length > 1 %}
-	                    
-	                    <a href="#" onclick="kommuneValg.vis('kontaktperson', '{{ ikon.name }}', '{{ monstring.pl_id }}', '{{ ikon.ico }}', {{monstring.kommuner | json_encode()}} )">
-	                {% else %}
-	                    <a href="http://pamelding.ukm.no/quickstart.php?steg=kontaktperson&type={{ ikon.ico }}&kommune={{ monstring.kommuner[0].id }}&plid={{monstring.pl_id}}" target="_blank">
-	                {% endif %}
-	                <img src="{{ ikon.ico_url }}" alt="{{ ikon.name }}" style="width: 90%"> 
-	                <small>{{ ikon.name|raw }}</small>
-	                </a>
-	            {% else %}
-					<img src="{{ ikon.ico_url_gray }}" alt="{{ ikon.name }}" alt="Fristen er ute" title="Fristen er ute" style="width: 90%"> 
-					<small>{{ ikon.name|raw }}</small>
-	            {% endif %}
-            </li>
 
-            {% embed "element/monstring/pameldingsikoner_clearfix_large_container.twig.html" with {'currentIndex': loop.index} %}{% endembed %}
-
-        {% endfor %}
-   		
-        {% for ikon in ikoner_tittel_los %}
-            <li class="col-xs-4 col-sm-2 col-md-2 col-lg-2 centered">
-                {% if monstring.frist_2_aktiv %}
-	                {% if monstring.kommuner|length > 1 %}
-	                    <a href="#" onclick="kommuneValg.vis('profilside_enk', '{{ ikon.name }}', '{{ monstring.pl_id }}', '{{ ikon.ico }}', {{monstring.kommuner | json_encode()}} )">
-	                {% else %}
-	                    <a href="http://pamelding.ukm.no/quickstart.php?steg=profilside_enk&type={{ ikon.ico }}&kommune={{ monstring.kommuner[0].id }}&plid={{monstring.pl_id}}" target="_blank">
-	                {% endif %}
-	                <img src="{{ ikon.ico_url }}" alt="{{ ikon.name }}" style="width: 90%"> 
-	                <small>{{ ikon.name|raw }}</small>
-	                </a>
-	            {% else %}
-					<img src="{{ ikon.ico_url_gray }}" alt="{{ ikon.name }}" alt="Fristen er ute" title="Fristen er ute" style="width: 90%"> 
-					<small>{{ ikon.name|raw }}</small>
-	            {% endif %}
-            </li>
-            {% embed "element/monstring/pameldingsikoner_clearfix_large_container.twig.html" with {'currentIndex': (loop.index+ikoner_tittel|length)} %}{% endembed %}
-        {% endfor %}
-
-        </ul> 
         <div class="clearfix"></div>
         <p>
         	Ønsker du å fortsette en påmelding du har startet på?
-        	<br />
-        	<a href="http://pamelding.ukm.no/?steg=dinside">Logg inn til din side her</a>
+        	<a href="http://delta.{{ url.ukmno }}/login">Logg inn her</a>
         </p>
     </div>
     <div class="clearfix"></div>

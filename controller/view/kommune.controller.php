@@ -293,7 +293,7 @@ class lokalside extends page {
 
 
 
-$DATA = array_merge($DATA, $pl->pameldingsikoner());
+#$DATA = array_merge($DATA, $pl->pameldingsikoner());
 
 
 
