@@ -24,7 +24,7 @@ class lokalside extends page {
 				$this->_loadTidligereArAdvarsel();
 				break;
 			case 'pre_pamelding':
-#				$this->_loadTidligereArAdvarsel();
+				$this->_loadTidligereArAdvarsel();
 				break;
 			case 'pamelding':
             	$this->posts_per_page = 6;

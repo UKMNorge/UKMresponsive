@@ -9,7 +9,7 @@
 {% endblock %}
 
 {% block content %}
-	{% if tidligereArAdvarsel is defined and tidligereArAdvarsel %}
+	{% if tidligereArAdvarsel is defined and tidligereArAdvarsel and "now"|date('m') != 11 %}
 		{% embed "element/new_season.twig.html" %}{% endembed %}
 	{% endif %}
     <div class="row post_top">
@@ -89,6 +89,16 @@
 
 		{% endblock %}
 	</div>
+	
+	<p>&nbsp;</p>
+	<div class="row">
+		<div class="col-xs-12">
+			{% if tidligereArAdvarsel is defined and tidligereArAdvarsel and "now"|date('m') == 11 %}
+				{% embed "element/new_season.twig.html" %}{% endembed %}
+			{% endif %}
+		</div>
+	</div>
+
     
     <div id="monstring_kontaktpersoner" style="display:none">
 		{% embed "element/monstring/monstring_kontaktpersoner.twig.html" %}{% endembed %}
