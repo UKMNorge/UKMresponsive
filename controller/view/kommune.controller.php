@@ -52,6 +52,7 @@ class lokalside extends page {
 		}
 		$this->_loadPosts();
 		$this->_baseNav();
+		$this->_loadKontaktpersoner();
 	}
 			
 	/**
@@ -127,22 +128,24 @@ class lokalside extends page {
 		$this->kontaktpersoner = array();
 		$this->_requireMonstring();
 				
-	    $kontaktpersoner = $pl->kontakter();
+	    $kontaktpersoner = $this->pl->kontakter();
 	    if (is_array($kontaktpersoner)) {
 	        foreach ( $kontaktpersoner as $kontakt ) {
 	            $k           = new stdClass();
 	            $k->navn     = $kontakt->get( 'name' );
 	            $k->tittel   = $kontakt->get( 'title' );
+	            if( empty( $k->tittel ) ) {
+		            $k->tittel = 'Lokalkontakt';
+	            }
 	            $k->bilde    = $kontakt->get( 'image' );
 	            $k->mobil    = $kontakt->get( 'tlf' );
 	            $k->epost    = $kontakt->get( 'email' );
 	            $k->facebook = $kontakt->get( 'facebook' );
 	
 	            $kontakter[] = $k;
-	
-	            $this->kontaktpersoner = $kontakter;
 	        }
 	    }
+        $this->kontaktpersoner = $kontakter;
 	}
 	
 	/**
