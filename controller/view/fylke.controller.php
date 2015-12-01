@@ -98,11 +98,19 @@ $DATA['fylke'] = get_option('fylke');
 			$siste_pamelding = $lokalmonstring->get('pl_deadline');
 		}
 		
-	    $lm = new StdClass();
-	    $lm->starter = $lokalmonstring->get('pl_start');
-	    $lm->slutter = $lokalmonstring->get('pl_stop');
-	    $lm->url = $lokalmonstring->get('link');
-	    $lm->navn = $kommune_navn;
+		if( $pl->get('fylke_id') == 3 && $lokalmonstring->fellesmonstring() ) {
+			$fellesmonstring = new stdClass();
+			$fellesmonstring->navn = $lokalmonstring->get('pl_name');
+			$fellesmonstring->url = $lokalmonstring->get('link');
+			$fellesmonstring->kommuner = $lokalmonstring->kommuneArray();
+			$DATA['lokalmonstringer']['felles'][ $fellesmonstring->navn ] = $fellesmonstring;
+		} else {
+		    $lm = new StdClass();
+		    $lm->starter = $lokalmonstring->get('pl_start');
+		    $lm->slutter = $lokalmonstring->get('pl_stop');
+		    $lm->url = $lokalmonstring->get('link');
+		    $lm->navn = $kommune_navn;
+		}
 	    
 		$lokalmonstringer[] = $lm;
 	}
