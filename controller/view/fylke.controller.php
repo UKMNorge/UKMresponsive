@@ -66,6 +66,7 @@ $DATA['fylke'] = get_option('fylke');
 	$forste = 0;
 	$siste = 0;
 	$siste_pamelding = 0;
+	$fellesmonstringer = array();
 	
 	foreach( $kommuner_i_fylket as $kommune_id => $kommune_navn ) {
 		$lokalmonstring = new kommune_monstring( $kommune_id, get_option('season') );
@@ -104,6 +105,7 @@ $DATA['fylke'] = get_option('fylke');
 			$fellesmonstring->url = $lokalmonstring->get('link');
 			$fellesmonstring->kommuner = $lokalmonstring->kommuneArray();
 			$DATA['lokalmonstringer']['felles'][ $fellesmonstring->navn ] = $fellesmonstring;
+			$fellesmonstringer[] = $fellesmonstring;
 		} else {
 		    $lm = new StdClass();
 		    $lm->starter = $lokalmonstring->get('pl_start');
@@ -116,7 +118,7 @@ $DATA['fylke'] = get_option('fylke');
 	}
 	$half_lokalmonstringer = ceil( sizeof( $lokalmonstringer ) / 2);
 	
-	$DATA['lokalmonstringer']['alle'] = $lokalmonstringer;
+	$DATA['lokalmonstringer']['alle'] = array_merge($lokalmonstringer, $fellesmonstringer);
 	$DATA['lokalmonstringer']['first_half'] = array_slice( $lokalmonstringer, 0, $half_lokalmonstringer);
 	$DATA['lokalmonstringer']['second_half'] = array_slice( $lokalmonstringer, $half_lokalmonstringer);
 
