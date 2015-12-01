@@ -4,7 +4,7 @@
 			{% for monstring in lokalmonstringer.felles %}
 				<li class="lokalmonstring" style="padding-top: 2px; padding-bottom: 2px;">
 					<a href="{{monstring.url}}" class="btn btn-block btn-default">
-						{{ monstring.navn }}
+						{{ monstring.pl_name }}
 						<br />
 						<small>
 							({% for kommune in monstring.kommuner %}

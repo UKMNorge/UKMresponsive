@@ -101,7 +101,8 @@ $DATA['fylke'] = get_option('fylke');
 		
 		if( $pl->get('fylke_id') == 3 && $lokalmonstring->fellesmonstring() ) {
 			$fellesmonstring = new stdClass();
-			$fellesmonstring->navn = $lokalmonstring->get('pl_name');
+			$fellesmonstring->navn = $kommune_navn;
+			$fellesmonstring->pl_name = $lokalmonstring->get('pl_name');
 			$fellesmonstring->url = $lokalmonstring->get('link');
 			$fellesmonstring->kommuner = $lokalmonstring->kommuneArray();
 			$DATA['lokalmonstringer']['felles'][ $fellesmonstring->navn ] = $fellesmonstring;

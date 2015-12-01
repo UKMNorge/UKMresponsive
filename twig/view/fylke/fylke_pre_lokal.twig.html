@@ -33,10 +33,7 @@
 		Gå til din lokalside ved å velge fra listen	
 		<select name="lokalmonstring" class="form-control" id="select_lokalmonstring">
 			<option selected="selected">Velg lokalmønstring</option>
-		{% for monstring in lokalmonstringer.first_half %}
-			<option value="{{monstring.url}}">{{ monstring.navn }}</option>
-		{% endfor %}
-		{% for monstring in lokalmonstringer.second_half %}
+		{% for monstring in lokalmonstringer.alle %}
 			<option value="{{monstring.url}}">{{ monstring.navn }}</option>
 		{% endfor %}
 		</select>
