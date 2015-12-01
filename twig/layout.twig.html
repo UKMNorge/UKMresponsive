@@ -140,19 +140,6 @@
 			<img src="/wp-content/themes/UKMresponsive/img/skygge.png" class="visible-sm visible-md visible-lg" style="position: absolute;right: 10vw; top: 13px;" />
 			
 			<div class="container">
-				{% if stat_pameldte is defined and now|date('m') not in 9..11 %}
-				<div class="pull-right pameldte hidden-xs hidden-sm">
-					<div class="over">{{stat_pameldte.tall}}</div>
-					<div class="under">Påmeldte til UKM {{stat_pameldte.til}}</div>
-				</div>
-				{% elseif hide_stat is defined %}
-				{% else %}
-				{#<div class="pull-right pameldte hidden-xs hidden-sm">
-					<div class="over">1. des</div>
-					<div class="under">Åpner påmeldingen</div>
-				</div>#}
-				{% endif %}
-
 				{% if jumbo.image is defined %}
 					<img class="img img-circle pull-left" src="{{jumbo.image}}" id="ukm_page_jumbo_image" />
 				{% endif %}

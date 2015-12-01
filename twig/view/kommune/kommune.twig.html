@@ -39,11 +39,12 @@
 
     		{% block meny_ekstra %}
 	    	{% endblock %}
+
 			{% if stat_pameldte is defined and now|date('m') not in 9..11 %}
-			<div class="centered pameldte visible-xs visible-sm">
-				<div class="over">{{stat_pameldte.tall}}</div>
-				<div class="under">Påmeldte til UKM {{stat_pameldte.til}}</div>
-			</div>
+				<div class="centered pameldte col-xs-12">
+					<div class="over">{{stat_pameldte.tall}}</div>
+					<div class="under">Påmeldte til UKM {{stat_pameldte.til}}.</div>
+				</div>
 			{% endif %}
     	</div>
 
