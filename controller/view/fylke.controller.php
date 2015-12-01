@@ -105,7 +105,7 @@ $DATA['fylke'] = get_option('fylke');
 			$fellesmonstring->pl_name = $lokalmonstring->get('pl_name');
 			$fellesmonstring->url = $lokalmonstring->get('link');
 			$fellesmonstring->kommuner = $lokalmonstring->kommuneArray();
-			$DATA['lokalmonstringer']['felles'][ $fellesmonstring->navn ] = $fellesmonstring;
+			$DATA['lokalmonstringer']['felles'][ $fellesmonstring->pl_name ] = $fellesmonstring;
 			$fellesmonstringer[] = $fellesmonstring;
 		} else {
 		    $lm = new StdClass();
