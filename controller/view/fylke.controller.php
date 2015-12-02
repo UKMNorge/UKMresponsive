@@ -230,6 +230,12 @@ if( $VIEW == 'fylke/fylke_aktiv' ) {
 										   'description'	=> 'Har du spørsmål om UKM i '. $pl->get('pl_name').'? Disse kan hjelpe!',
 										   'id'				=> 'show_kontaktpersoner'
 										  );
+	// Inkluder tidligere år her
+	$DATA['page_nav'][] = (object) array( 'url' 			=> '//'.CURRENT_UKM_DOMAIN.'/tidligere-ar/',
+											   'title'		 	=> 'UKM tidligere år',
+											   'icon'			=> 'monitor',
+											   'description'	=> 'Bilder, video og info'
+											  );
 
 require_once('UKM/statistikk.class.php');
 $stat = $pl->statistikk();										  
