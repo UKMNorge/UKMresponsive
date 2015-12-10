@@ -20,22 +20,14 @@
 				
 		<div id="infosquare" class="col-xs-12 col-md-5">
 			<div class="row">				
-				<div class="col-xs-12 col-sm-7 col-md-12">
-		        	<ol>
-					{% for nav in page_nav %}
-						{% embed "element/nav_page.twig.html" %}{% endembed %}
-					{% endfor %}
-					</ol>
-				</div>
-				
 				{% if stat_pameldte is defined and now|date('m') not in 9..11 %}
-					<div class="centered pameldte col-xs-12 col-sm-5 col-md-12">
+					<div class="centered pameldte col-xs-12 col-sm-5 col-md-9 col-md-offset-1">
 						<p class="visible-sm">&nbsp;</p>
 						<p class="visible-sm">&nbsp;</p>
 
 						<div class="over">{{stat_pameldte.tall}}</div>
 						<div class="under">Påmeldte til UKM {{stat_pameldte.til}}.</div>
-						<p class="hidden-xs">&nbsp;</p>
+						<p class="hidden-xs" style="height: 0;">&nbsp;</p>
 						<p class="hidden-xs">
 							<a href="//delta.ukm.no/" class="btn btn-success btn-block">Meld deg på UKM</a>
 						</p>
@@ -46,6 +38,16 @@
 						<div class="under">Åpner påmeldingen</div>
 					</div>
 				{% endif %}
+
+				<div class="col-xs-12 col-sm-7 col-md-12">
+		        	<ol>
+					{% for nav in page_nav %}
+						{% embed "element/nav_page.twig.html" %}{% endembed %}
+					{% endfor %}
+					</ol>
+				</div>
+				
+				
 			</div>
 		</div>
 	</div>
