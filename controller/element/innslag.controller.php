@@ -41,7 +41,8 @@ function generate_list_data( $innslag, $pl, $current_c_id=false ) {
 		$person = new person( $person['p_id'], $innslag->g('b_id') );
 		$p = new stdClass();
 		$p->navn		= $person->g('p_firstname') .' '. $person->g('p_lastname');
-		$p->alder		= $person->getAge( $pl );
+		#$p->alder		= $person->getAge( $pl )
+		$p->alder		= $person->getAge();
 		$p->rolle		= $person->g('instrument');
 		
 		$data->personer[]= $p;
