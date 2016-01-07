@@ -112,7 +112,7 @@ $DATA['isMobile'] = $mobileDetect->isMobile();
 	$monstring->slutter = $pl->get('pl_stop');
 	$monstring->sted = $pl->get('pl_place'); // info['pl_place']; //
     $monstring->navn = $pl->get('pl_name'); // info['pl_name'];  //
-    
+
     $monstring->varer = new stdClass();
     $monstring->varer->dager = $pl->dager();
     
