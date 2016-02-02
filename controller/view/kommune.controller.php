@@ -10,7 +10,8 @@ class lokalside extends page {
 							'ukmtv',
 							'program',
 							'pameldte',
-							'fylke',					
+							'fylke',
+							'pamelding',
 						);
 
 
@@ -30,6 +31,7 @@ class lokalside extends page {
             	$this->posts_per_page = 6;
 				$this->_loadProgram();
 				$this->_loadPameldte();
+				$this->_loadPamelding();
 				$this->_loadStatistikk();
 				break;
 			case 'pre':
@@ -257,6 +259,20 @@ class lokalside extends page {
 		    
 		}
 	}	
+
+	/**
+	 * Vis menyelement for påmelding
+	 */
+	private function _loadPamelding () {
+		$this->_requireMonstring();
+
+		$nav = new stdClass();
+		$nav->url 				= 'http://delta.' . UKM_HOSTNAME;
+		$nav->title 			= 'Meld deg på UKM';
+		$nav->icon 				= 'star';
+		$nav->description 		= 'Bli med på UKM i '. $this->monstring->navn;
+		$this->registerNav('pamelding', $nav);
+	}
 	
 	/**
 	 * Basis-navigasjon (er med på alle sider)

@@ -5,9 +5,16 @@
 {% endblock %}
 
 {% block meny_ekstra %}
-    <div class="col-xs-12">
+{% endblock %}
+
+{% block meny_post %}
+	<div class="col-xs-12">
     	<p class="centered">
-			<strong></strong>
+			Påmeldingsfrist {% if monstring.frist_1_aktiv %}
+		   			{{monstring.frist_1 | dato('l j. F') }} kl. {{monstring.frist_1 | dato('H:i')}}
+		   		{% else %}
+		   			{{monstring.frist_2 | dato('l j. F') }} kl. {{monstring.frist_2 | dato('H:i')}}
+		   		{% endif %}
     	</p>
     </div>
 {% endblock %}
@@ -46,3 +53,4 @@
     </div>
     <div class="clearfix"></div>
 {% endblock %}
+
