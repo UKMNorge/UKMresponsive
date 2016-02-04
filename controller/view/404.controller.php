@@ -1,6 +1,6 @@
 <?php
 
-$requested = $_SERVER['REDIRECT_URL'];
+$requested = rtrim($_SERVER['REDIRECT_URL'], '/').'/';
 
 $local_url = explode( '/', $requested );
 array_splice( $local_url, 3 );
