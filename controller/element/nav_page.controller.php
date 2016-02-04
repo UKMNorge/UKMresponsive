@@ -48,7 +48,7 @@ switch( get_option('ukm_top_page') ) {
 											   'description'	=> 'UKM-logo, skrifter og farger',
 											   'target'			=> '_blank'
 											  );
-		$DATA['page_nav'][] = (object) array( 'url' 			=> 'http://www.flickr.com/photos/ukm/',
+		$DATA['page_nav'][] = (object) array( 'url' 			=> 'http://www.flickr.com/photos/ukm/albums',
 											   'title'		 	=> 'Pressebilder',
 											   'icon'			=> 'pencil',
 											   'description'	=> 'UKM Norges bilder på flickr',
