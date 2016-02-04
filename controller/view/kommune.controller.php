@@ -260,6 +260,12 @@ class lokalside extends page {
 		}
 	}	
 
+	private function _loadFrist( ) {
+		$this->_requireMonstring();
+
+		
+	}
+
 	/**
 	 * Vis menyelement for påmelding
 	 */

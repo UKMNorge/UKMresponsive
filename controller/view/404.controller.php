@@ -10,6 +10,6 @@ $local_real_url = $wpdb->get_var($wpdb->prepare("SELECT `realpath` FROM `ukm_uri
 
 if( !is_null( $local_real_url ) && $local_real_url != $local_url ) {
 #	 echo ("Location: http://". UKM_HOSTNAME . str_replace( $local_url, $local_real_url, $requested ));
-#	header("Location: http://". UKM_HOSTNAME . str_replace( $local_url, $local_real_url, $requested ));
+	header("Location: http://". UKM_HOSTNAME . str_replace( $local_url, $local_real_url, $requested ));
 
 }
