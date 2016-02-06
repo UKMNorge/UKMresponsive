@@ -55,7 +55,9 @@
 	</div>
 </div>
 
-{% embed "element/new_season.twig.html" %}{% endembed %}
+{% if "now"|date('m') < 2 or "now"|date('m') > 9 %}
+	{% embed "element/new_season.twig.html" %}{% endembed %}
+{% endif %}
 
 
 {% if hva_er_side is defined %}
