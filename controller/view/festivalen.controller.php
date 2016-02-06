@@ -384,3 +384,4 @@ foreach($schedule as $item) {
 $DATA['timeline'] = $timeline;
 $DATA['schedule'] = $schedule;
 */
+var_dump($DATA['view']);
