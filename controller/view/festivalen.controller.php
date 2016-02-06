@@ -151,7 +151,7 @@ $DATA['isMobile'] = $mobileDetect->isMobile();
 
 	// FØR MØNSTRINGEN
 	if( $DATA['state'] == 'pre' ) {
-		$VIEW = 'festival/homepage_festival';
+		$VIEW = 'festival/homepage_pre';
 	} else {
 		// HAR UKM-TV-SIDE? (opplastede videoer?)
 		$kategori = 'UKM-Festivalen '.$pl->g('season');
@@ -384,4 +384,3 @@ foreach($schedule as $item) {
 $DATA['timeline'] = $timeline;
 $DATA['schedule'] = $schedule;
 */
-var_dump($VIEW);
