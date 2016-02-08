@@ -27,6 +27,14 @@ if( is_array( $metadata ) ) {
 	}
 }
 */
+#var_dump(get_post_meta($post->ID, 'video_on_top'));
+if (get_post_meta($post->ID, 'video_on_top', true)) {
+	require_once('UKM/tv.class.php');
+	// Finn tv-objektet.
+	$tv = new TV(get_post_meta($post->ID, 'video_on_top', true));
+	$DATA['featured_video'] = $tv->embedcode();
+
+}
 
 if (get_option("site_type") != "kommune" && get_option("site_type") != "fylke") {
 

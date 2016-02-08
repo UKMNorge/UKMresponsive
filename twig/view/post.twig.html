@@ -13,8 +13,12 @@
 			{% embed "element/breadcrumbs.twig.html" %}{% endembed %}
 		 	</div>
 			<h2 class="col-xs-12 visible-xs centered">{{post.title|raw}}</h2>
-			{% if post.image.url != placeholder.post %}
-			<img class="col-xs-12" src="{{post.image.url}}" />
+			{% if featured_video is defined %}
+				{{ featured_video|raw }}
+			{% else %}
+				{% if post.image.url != placeholder.post %}
+					<img class="col-xs-12" src="{{post.image.url}}" />
+				{% endif %}
 			{% endif %}
 			<h2 class="col-xs-12 hidden-xs">{{post.title|raw}}</h2>
 			<p class="visible-xs"></p>
