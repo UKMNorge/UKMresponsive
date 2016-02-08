@@ -151,7 +151,7 @@ $DATA['isMobile'] = $mobileDetect->isMobile();
 
 	// FØR MØNSTRINGEN
 	if( $DATA['state'] == 'pre' ) {
-		$VIEW = 'festival/homepage_festival';
+		$VIEW = 'festival/homepage_pre';
 	} else {
 		// HAR UKM-TV-SIDE? (opplastede videoer?)
 		$kategori = 'UKM-Festivalen '.$pl->g('season');
@@ -239,7 +239,8 @@ if( $DATA['state'] == 'pre' ) {
 	$description = $monstring->sted .', '
 				 . date('d.', $monstring->starter) .' - '
 				 . date('d.', $monstring->slutter) .' '
-				 . (date('M', $monstring->slutter ) == 'Jun' ? 'Juni' : date('M', $monstring->slutter ));
+				 . (date('M', $monstring->slutter ) == 'Jun' ? 'Juni' : date('M', $monstring->slutter ))
+				 . ' '. date('Y');
 	$DATA['ukmfestivalen_jumboimage'] = block_jumbo_image('top',
 										  'UKM-festivalen', 
 										  $description, 
