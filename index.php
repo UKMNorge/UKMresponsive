@@ -32,7 +32,8 @@ if ( IN_PRODUCTION_ENVIRONMENT && is_user_logged_in() ) {
 define('THEME_PATH', get_theme_root().'/UKMresponsive/' );
 define('THEME_DEFAULT_IMAGE', 'http://grafikk.ukm.no/placeholder/post_placeholder.png');
 define('TWIG_PATH', __DIR__ );
-define('TWIG_CACHE_PATH', '/home/ukmno/public_html/cache_twig/');
+#define('TWIG_CACHE_PATH', '/home/ukmno/public_html/cache_twig/');
+define('TWIG_CACHE_PATH', sys_get_temp_dir().'/cache_twig/');
 
 require_once('vendor/autoload.php');
 require_once('WPOO/WPOO/Post.php');
