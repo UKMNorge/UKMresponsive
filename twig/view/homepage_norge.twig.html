@@ -58,7 +58,7 @@
 	
 	{% if fylkesmonstringer_denne_uken|length > 0 or fylkesmonstringer_forrige_uke|length > 0 %}
 		
-		{% if fylkesmonstringer_forrige_uke|length > 0 and "now"|date('j') < 3 %}
+		{% if fylkesmonstringer_forrige_uke|length > 0 and "now"|date('N') < 3 %}
 			<h2 align="center">Forrige ukes fylkesmønstringer</h2>
 			{% for fm in fylkesmonstringer_forrige_uke %}
 				{% if loop.index is not divisibleby(2) %}
@@ -80,7 +80,7 @@
 			{% endfor %}
 		{% endif %}
 
-		{% if fylkesmonstringer_forrige_uke|length > 0 and "now"|date('j') > 2 %}
+		{% if fylkesmonstringer_forrige_uke|length > 0 and "now"|date('N') > 2 %}
 			<h2 align="center">Forrige ukes fylkesmønstringer</h2>
 			{% for fm in fylkesmonstringer_forrige_uke %}
 				{% if loop.index is not divisibleby(2) %}
