@@ -58,6 +58,17 @@
 	
 	{% if fylkesmonstringer_denne_uken|length > 0 or fylkesmonstringer_forrige_uke|length > 0 %}
 		
+		{% if fylkesmonstringer_forrige_uke|length > 0 and "now"|date('j') < 3 %}
+			<h2 align="center">Forrige ukes fylkesmønstringer</h2>
+			{% for fm in fylkesmonstringer_forrige_uke %}
+				{% if loop.index is not divisibleby(2) %}
+					{% embed "element/feature_left.twig.html" with {'feature': fm} %}{% endembed %}
+				{% else %}
+					{% embed "element/feature_right.twig.html" with {'feature': fm} %}{% endembed %}
+				{% endif %}
+			{% endfor %}
+		{% endif %}
+
 		{% if fylkesmonstringer_denne_uken|length > 0 %}
 			<h2 align="center">Ukas fylkesmønstringer</h2>
 			{% for fm in fylkesmonstringer_denne_uken %}
@@ -69,7 +80,7 @@
 			{% endfor %}
 		{% endif %}
 
-		{% if fylkesmonstringer_forrige_uke|length > 0 %}
+		{% if fylkesmonstringer_forrige_uke|length > 0 and "now"|date('j') > 2 %}
 			<h2 align="center">Forrige ukes fylkesmønstringer</h2>
 			{% for fm in fylkesmonstringer_forrige_uke %}
 				{% if loop.index is not divisibleby(2) %}
