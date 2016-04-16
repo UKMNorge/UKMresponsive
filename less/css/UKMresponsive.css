@@ -203,9 +203,11 @@ body {
 .centered {
   text-align: center;
 }
+/* fjernet for at safari ikke skal skvise bildene sammen ved resize
 img {
   max-height: 100%;
 }
+*/
 h3 {
   color: #000000;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;

@@ -36,16 +36,6 @@
                 overflow-y: scroll; /* has to be scroll, not auto */
                 -webkit-overflow-scrolling: touch;
             }
-			img {
-			    /* Fills image into the parent element so it's fully covered. Contains aspect-ratio. */
-			    object-fit: cover;
-			
-			    /* Fills image into the parent element so the img is fully shown. Can create letterboxes. */
-			    object-fit: contain;
-			
-			    /* Fills image into the parent element so it's fully covered. Shrinks image, not respecting aspect-ratio. */
-			    object-fit: fill;
-			}
         </style>
 		{#<script type="text/javascript" src="{{ url.theme_dir }}js/scrollable.min.js"></script>
 		<script type="text/javascript">
@@ -147,7 +137,7 @@
 		{% block jumbo %}
 		<div class="ukm_page_jumbo">
 
-			<img src="/wp-content/themes/UKMresponsive/img/skygge.png" class="visible-sm visible-md visible-lg" style="position: absolute;right: 10vw; top: 13px;" />
+			<img src="/wp-content/themes/UKMresponsive/img/skygge.png" class="visible-sm visible-md visible-lg" style="position: absolute;right: 10vw;top: 13px;max-height: 100%;" />
 			
 			<div class="container">
 				{% if jumbo.image is defined %}
