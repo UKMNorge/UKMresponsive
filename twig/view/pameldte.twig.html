@@ -54,7 +54,7 @@
 				<p>
 					<a href="?" class="btn btn-{{active_filter_id=='false'?'success':'default'}} btn-block">Alle innslag</a>
 					{% for bt_id, type in typer %}
-						<a href="?type={{bt_id}}" class="btn btn-{{active_filter_id==bt_id?'success':'default'}} btn-block">{{type}}</a>
+						<a href="?type={{bt_id}}" class="btn btn-{{active_filter_id==bt_id?'success':'default'}} btn-block">{{type|replace({'Nettredaksjon':'UKM Media'})}}</a>
 					{% endfor %}
 				</p>
 			</div>

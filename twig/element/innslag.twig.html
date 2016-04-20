@@ -43,7 +43,7 @@
 			<div class="clicktosee col-xs-1 col-sm-4">
 				<img class="moreicon pull-right" src="//ico.ukm.no/more-32.png">
 				<p class="type hidden-xs pull-right">
-					{{ innslag.sjanger is not empty ? innslag.sjanger|capitalize : innslag.kategori|capitalize }}
+					{{ innslag.sjanger is not empty ? innslag.sjanger|capitalize : innslag.kategori|replace({'Nettredaksjon':'UKM Media'}) }}
 				</p>
 			</div>
 			<div class="clearfix"></div>
