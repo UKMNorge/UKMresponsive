@@ -16,7 +16,11 @@
 	<div class="row">
 		<div class="container">
 			<div class="page_box" align="center">
-				{% embed "element/festival/homepage_find.twig.html" %}{% endembed %}
+				{% if monstring['type_tekst'] == 'land' %}
+					{% embed "element/festival/homepage_find.twig.html" %}{% endembed %}
+				{% elseif monstring['type_tekst'] == 'fylkes' %}
+					{% embed "element/monstring/monstring_finn.twig.html" %}{% endembed %}
+				{% endif %}
 			</div>
 		</div>
 	</div>
