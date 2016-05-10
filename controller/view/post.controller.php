@@ -14,6 +14,22 @@ if ( function_exists( 'get_coauthors' ) ) {
     $DATA['coauthors'] = $wpoo_authors;
 }
 
+if (get_post_meta($post->ID, 'ukm_ma', true)) {
+	$list = get_post_meta($post->ID, 'ukm_ma', true);
+	$list = json_decode($list, true);
+	$authors = array();
+
+	foreach ($list as $user_login => $role) {
+		$user = get_user_by('login', $user_login);
+		if ($user) {
+			#var_dump($user); echo '<br><br>';
+			$authors[$user_login] = $user;
+			$authors[$user_login]->role = $role;
+		}
+	}
+	$DATA['ukm_ma_authors'] = $authors;
+}
+
 
 $DATA['post']->blog = new stdClass();
 $DATA['post']->blog->link = get_bloginfo('url');
