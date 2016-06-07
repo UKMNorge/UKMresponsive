@@ -205,9 +205,9 @@ $DATA['isMobile'] = $mobileDetect->isMobile();
 
 	// SKAL WORKSHOPS VISES
 	if( get_option('vis_workshops_meny_mode_pre') ) {
-		$category_ws = get_category_by_slug('workshop');
+		$category_ws = get_category_by_slug('workshops');
 
-		$DATA['page_nav'][] = (object) array( 'url' 			=> 'category/workshop/',
+		$DATA['page_nav'][] = (object) array( 'url' 			=> 'category/workshops/',
 											   'title'		 	=> 'Workshops',
 											   'icon'			=> 'rocket',
 											   'description'	=> 'Info om UKM-festivalens '. $category_ws->category_count .'workshops'
@@ -261,7 +261,7 @@ if( $DATA['state'] == 'pre' ) {
 	$DATA['livestream_info'] = array(block_lead_center('livestream-info', $livestream_info));
 
 	if( get_option('vis_workshopsinfo_forside_mode_pre') ) {
-		$category_ws = get_category_by_slug('workshop');
+		$category_ws = get_category_by_slug('workshops');
 		$category_ws_description = category_description( $category_ws->term_id );
 		$DATA['workshops_info'] = true;
 		$DATA['workshops_info_count'] = $category_ws->category_count;
@@ -269,7 +269,7 @@ if( $DATA['state'] == 'pre' ) {
 	}
 
 	if( get_option('vis_workshops_forside_mode_pre') ) {
-		$category_ws = get_category_by_slug('workshop');
+		$category_ws = get_category_by_slug('workshops');
 
 	    $posts = query_posts('posts_per_page=3&cat='. $category_ws->term_id.'&orderby=rand');
 	    while(have_posts()) {
