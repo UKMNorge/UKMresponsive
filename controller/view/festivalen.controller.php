@@ -247,7 +247,7 @@ if( $DATA['state'] == 'pre' ) {
 										  '//grafikk.ukm.no/festivalen/2016/festival2016_xs.jpg',
 										  '//grafikk.ukm.no/festivalen/2016/festival2016_sm.jpg',
 										  '//grafikk.ukm.no/festivalen/2016/festival2016_md.jpg',
-										  '//grafikk.ukm.no/festivalen/2016/festival2016_lg.jpg',
+										  '//grafikk.ukm.no/festivalen/2016/festival2016_lg.jpg'
 										   );
 
 	if( get_option('vis_festivalinfo_forside_mode_pre') ) {
