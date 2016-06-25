@@ -301,6 +301,10 @@ while($r = mysql_fetch_assoc($res)) {
 	);
 }
 
+if( isset( $_GET['debug'] ) ) {
+	var_dump( $DATA );
+}
+
 
 /*
 // Timeline sendeskjema
