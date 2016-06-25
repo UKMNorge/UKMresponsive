@@ -45,7 +45,7 @@
 	        <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 col-centered" style="text-align: center; min-height: 100px">
 	            <a href="{{nav.url}}">
 	                <div class="centered">
-	                    <span><img src="{{url.theme_dir}}img/nav/nav-{{nav.icon}}.png" width="45"/></span>                            
+	                    <span><img src="{{url.theme_dir}}img/nav/nav-{{nav.icon}}.png" width="45"/></span>
 	                </div>
 	                <span>{{nav.title}}</span>
 	            </a>
@@ -56,10 +56,15 @@
 </div>
 
 
-{% if develop and livestream_info is defined %}
+{% if livestream_info is defined %}
 	{% embed "element/blocks.twig.html" with { blocks: livestream_info } %}{% endembed %}
 {% endif %}
 
+{% if livelink is defined and livelink %}
+<div class="liveLink" style="text-align:center;">
+	<a href="{{livelink}}" target="_blank">Vi sender direkte fra mønstringen, klikk her!</a>
+</div>
+{% endif %}
 
 {% if "now"|date('m') < 2 or "now"|date('m') > 9 %}
 	{% embed "element/new_season.twig.html" %}{% endembed %}
