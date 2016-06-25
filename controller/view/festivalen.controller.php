@@ -170,7 +170,7 @@ $DATA['isMobile'] = $mobileDetect->isMobile();
 
 	// HAR UKM-TV SIDE
 	if( $UKMTV ) {
-	    $DATA['page_nav'][] = (object) array( 'url' => '//tv.ukm.no/samling/'. urlencode($UKMTV),
+	    $DATA['page_nav'][] = (object) array( 'url' => '//tv.ukm.no/festivalen/'. date('Y', $monstring->starter),
                                           'title' => 'Film',
                                           'icon'  => 'ukmtv_black',
                                           'description' => 'Film fra fra '. $pl->get('pl_name').' i UKM-TV'
