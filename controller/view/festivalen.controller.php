@@ -258,7 +258,7 @@ if( $DATA['state'] == 'pre' ) {
 	}
 	
 	$livestream_info = get_page_by_path( 'livestream' );
-	$DATA['livestream_info'] = array(block_lead_center('livestream-info', $livestream_info));
+	$DATA['livestream_info'] = block_lead_center('livestream-info', $livestream_info);
 
 	if( get_option('vis_workshopsinfo_forside_mode_pre') ) {
 		$category_ws = get_category_by_slug('workshops');
