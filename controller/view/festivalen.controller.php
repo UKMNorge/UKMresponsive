@@ -159,9 +159,6 @@ $DATA['isMobile'] = $mobileDetect->isMobile();
 	else
 		$UKMTV = mysql_num_rows( $res ) > 0 ? $kategori : false;
 
-	// HAR LIVESTREAM
-	$DATA['livelink'] = get_option('ukm_live_link');
-
 	// HAR UKM-TV SIDE
 	if( $UKMTV ) {
 	    $DATA['page_nav'][] = (object) array( 'url' => '//tv.ukm.no/festivalen/'. date('Y', $monstring->starter) .'/',
@@ -251,8 +248,12 @@ if( $DATA['state'] == 'pre' ) {
         $DATA['hva_er_side']->blocks = setup_blocks_from_subpages( $hva_er_side->ID );
 	}
 	
-	$livestream_info = get_page_by_path( 'livestream' );
-	$DATA['livestream_info'] = array(block_lead_center('livestream-info', $livestream_info));
+	if( in_array( date('h'), array(12, 13, 14, 18, 19, 20 ) ) && date('m') == 6 && date('d') < 28 ) {
+		$livestream_info = get_page_by_path( 'livestream' );
+		$DATA['livestream_info'] = array( block_lead_center( 'livestream-info', $livestream_info ) );
+	} else {
+		$DATA['livelink'] = get_option('ukm_live_link');
+	}
 
 	if( get_option('vis_workshopsinfo_forside_mode_pre') ) {
 		$category_ws = get_category_by_slug('workshops');
