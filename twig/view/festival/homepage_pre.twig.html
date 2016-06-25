@@ -117,6 +117,19 @@
 </div>
 {% endif %}
 
+{% if develop and latest_images|length > 0 %}
+    <div class="row">
+    	<h1>&nbsp;</h1>
+    	<div id="jf">
+	    {% for image in latest_images %}
+	    	<a href="/festivalen/files/{{ image.post_meta.sizes.large.file }}" target="_blank">
+	    		<img src="/festivalen/files/{{ image.post_meta.sizes.medium.file }}" />
+	    	</a>
+	    {% endfor %}
+	    </div>
+    </div>
+{% endif %}
+
 {% if workshops|length > 0 %}
 <div class="row">
     <div class="container">
