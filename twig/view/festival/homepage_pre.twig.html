@@ -55,6 +55,12 @@
 	</div>
 </div>
 
+
+{#% if livestream_info is defined %}
+	{% embed "element/blocks.twig.html" with { blocks: livestream_info } %}{% endembed %}
+{% endif %#}
+
+
 {% if "now"|date('m') < 2 or "now"|date('m') > 9 %}
 	{% embed "element/new_season.twig.html" %}{% endembed %}
 {% endif %}

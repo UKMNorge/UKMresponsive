@@ -61,7 +61,7 @@ $DATA['isMobile'] = $mobileDetect->isMobile();
 
 
 // HENT ALLE POSTS FRA VI MØTER-KATEGORIEN
-	$DATA['meet'] = array();
+/*	$DATA['meet'] = array();
 	
 	// LOAD PAGE DATA
 	the_post();
@@ -83,12 +83,11 @@ $DATA['isMobile'] = $mobileDetect->isMobile();
         $wpoopost->blog = new stdClass();
         $wpoopost->blog->link = get_bloginfo('url');
         $wpoopost->blog->name = get_bloginfo('name');
-/*        if( is_array( $metadata ) ) {
-        	foreach( $metadata as $key => $val ) {
-        		$wpoopost->meta[$key] = $val[0];
-        	}
-        }
-        */
+#        if( is_array( $metadata ) ) {
+#        	foreach( $metadata as $key => $val ) {
+#        		$wpoopost->meta[$key] = $val[0];
+#        	}
+#        }
         $DATA['meet'][] = $wpoopost; 
     }
     
@@ -102,7 +101,7 @@ $DATA['isMobile'] = $mobileDetect->isMobile();
         $ppl = explode('"',$ppl); 
         $DATA['prevpost']=$ppl[1];
     }
-
+*/
 	
 // INFO OM MØNSTRINGEN
 	$pl = new monstring( get_option('pl_id') );
@@ -153,20 +152,21 @@ $DATA['isMobile'] = $mobileDetect->isMobile();
 	if( $DATA['state'] == 'pre' ) {
 		$VIEW = 'festival/homepage_pre';
 	} else {
-		// HAR UKM-TV-SIDE? (opplastede videoer?)
-		$kategori = 'UKM-Festivalen '.$pl->g('season');
-		$sql = new SQL("SELECT `tv_id` FROM `ukm_tv_files`
-						WHERE `tv_category` LIKE '#kategori%'",
-						array('kategori' => $kategori) );
-		$res = $sql->run();
-		if( !$res )
-			$UKMTV = false;
-		else
-			$UKMTV = mysql_num_rows( $res ) > 0 ? $kategori : false;
-	
-		// HAR LIVESTREAM
-		$DATA['livelink'] = get_option('ukm_live_link');
 	}
+
+	// HAR UKM-TV-SIDE? (opplastede videoer?)
+	$kategori = 'UKM-Festivalen '.$pl->g('season');
+	$sql = new SQL("SELECT `tv_id` FROM `ukm_tv_files`
+					WHERE `tv_category` LIKE '#kategori%'",
+					array('kategori' => $kategori) );
+	$res = $sql->run();
+	if( !$res )
+		$UKMTV = false;
+	else
+		$UKMTV = mysql_num_rows( $res ) > 0 ? $kategori : false;
+
+	// HAR LIVESTREAM
+	$DATA['livelink'] = get_option('ukm_live_link');
 
 	// HAR UKM-TV SIDE
 	if( $UKMTV ) {
