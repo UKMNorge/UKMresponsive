@@ -100,7 +100,7 @@
 <div class="row">
     <div class="container">
         <h1>Nyheter</h1>
-		{% for post in posts|slice(0,3) %}
+		{% for post in posts|slice(0,9) %}
 			<div class="news col-xs-6 col-md-4">
 				{% embed "element/post/grid_element.twig.html" with post %}{% endembed %}
 			</div>
@@ -159,7 +159,7 @@
 <div class="row">
     <div class="container">
         <h1>Nyheter</h1>
-		{% for post in posts|slice(3,18) %}
+		{% for post in posts|slice(9,18) %}
 			<div class="news col-xs-6 col-md-4">
 				{% embed "element/post/grid_element.twig.html" with post %}{% endembed %}
 			</div>
