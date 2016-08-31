@@ -12,7 +12,9 @@ switch( $site_type ) {
 
 		$BC->home('derdubor');
 		$SEO->section('derdubor');
-		$BC->add( $fpl->g('link'), 'UKM '. $fpl->g('pl_name') );
+		if( is_object( $fpl ) ) {
+			$BC->add( $fpl->g('link'), 'UKM '. $fpl->g('pl_name') ) ;
+		}
 		$BC->add( $pl->g('link'), 'UKM '. $pl->g('pl_name') );
 	break;
 
