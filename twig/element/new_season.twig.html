@@ -1,5 +1,5 @@
-{% if monstring.starter is defined %}
-	{% set tmp_season = monstring.starter|date('Y') %}
+{% if monstring.season is defined %}
+	{% set tmp_season = monstring.season %}
 {% elseif "now"|date('m') > 7 %}	
 	{% set tmp_season = "now"|date('Y') %}
 {% else %}

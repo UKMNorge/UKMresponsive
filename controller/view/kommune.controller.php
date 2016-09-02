@@ -103,6 +103,7 @@ class lokalside extends page {
 	    $this->monstring = new StdClass();
 	    $this->monstring->pl_id = $pl->get('pl_id');
 	    $this->monstring->navn = str_replace('UKM','',$pl->g('pl_name'));
+	    $this->monstring->season = $pl->get('season');
 	    $this->monstring->starter = $pl->get('pl_start');
 	    $this->monstring->slutter = $pl->get('pl_stop');
 	    $this->monstring->sted = $pl->get('pl_place');
