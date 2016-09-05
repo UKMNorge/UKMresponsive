@@ -106,6 +106,7 @@ $DATA['isMobile'] = $mobileDetect->isMobile();
 // INFO OM MØNSTRINGEN
 	$pl = new monstring( get_option('pl_id') );
 	$monstring = new StdClass();
+	$monstring->season = $pl->get('season');
 	$monstring->starter = $pl->get('pl_start');
 	$monstring->starter_tekst = $pl->starter();
 	$monstring->slutter = $pl->get('pl_stop');
