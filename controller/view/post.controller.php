@@ -46,8 +46,20 @@ if( is_array( $metadata ) ) {
 #var_dump(get_post_meta($post->ID, 'video_on_top'));
 if (get_post_meta($post->ID, 'video_on_top', true)) {
 	require_once('UKM/tv.class.php');
+	$selected = get_post_meta($post->ID, 'video_on_top', true);
+	if($selected == 'egendefinert') {
+		$url = get_post_meta($post->ID, 'video_on_top_URL', true);
+		// Find ID from URL
+		$url = rtrim($url, '/').'/';
+		$url = explode ('/', $url);
+		$url = $url[count($url)-2];
+		$url = explode ('-', $url);
+		$selected = $url[0]; 
+	}
+	#var_dump($selected);
 	// Finn tv-objektet.
-	$tv = new TV(get_post_meta($post->ID, 'video_on_top', true));
+	$tv = new TV($selected);
+	#var_dump($tv);
 	$DATA['featured_video'] = $tv->embedcode();
 
 }
