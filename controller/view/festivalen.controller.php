@@ -232,7 +232,7 @@ if( $DATA['state'] == 'pre' ) {
 				 . date('d.', $monstring->starter) .' - '
 				 . date('d.', $monstring->slutter) .' '
 				 . (date('M', $monstring->slutter ) == 'Jun' ? 'Juni' : date('M', $monstring->slutter ))
-				 . ' '. date('Y');
+				 . ' '. date('Y', $monstring->starter);
 	$DATA['ukmfestivalen_jumboimage'] = block_jumbo_image('top',
 										  'UKM-festivalen', 
 										  $description, 
