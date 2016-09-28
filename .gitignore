@@ -1,11 +1,6 @@
 .DS_Store
 
-vendor/autoload.php
-
-vendor/composer
-
-vendor/mobiledetect
-
+vendor/*
 less/~
 
 js/config.codekit

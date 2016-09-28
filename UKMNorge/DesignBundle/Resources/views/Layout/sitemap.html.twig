@@ -1,0 +1,26 @@
+<div class="container" id="UKMDesign_sitemap" {{ visible is defined and visible ? '' : ' style="display:none;"' }}>
+	<div class="row sitemap">
+		{% for menu in view.getNav().build() %}
+			<div class="col-xs-12 col-sm-6 col-md-4 section">
+				<h1>
+					<a href="{{ menu.getUrl() }}">{{ menu.getTitle() }}</a>
+				</h1>
+				<ul class="list-unstyled pages">
+				{% for submenu in menu.build() %}
+					<li>
+						<a href="{{ submenu.getUrl() }}" {{ submenu.getTargetProperty() }}>
+							{{ submenu.getTitle() }}
+						</a>
+					</li>
+				{% endfor %}
+				</ul>
+			</div>
+			
+			{% if loop.index is divisibleby(2) %}
+				<div class="clearfix hidden col-md-visible"></div>
+				<h2>CLEAR {{ loop.index }}</h2>
+				<div class="clearfix hidden col-md-visible"></div>
+			{% endif %}
+		{% endfor %}
+	</div>
+</div>

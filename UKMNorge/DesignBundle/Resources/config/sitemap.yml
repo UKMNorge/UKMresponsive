@@ -1,0 +1,41 @@
+UKM:
+    url: /
+    title: UKM
+    pages:
+        - forsiden:
+            url: /
+            title: Forsiden
+            description: Ung kultur møtes
+        - omoss:
+            url: /om-oss/
+            title: Om oss
+            description: Hva er UKM?
+        - ukmere:
+            url: /ukmere/
+            title: UKMere
+            description: Bli kjent med oss
+        -
+            url: /
+hvaer:
+    url: /om-oss/
+    title: Hva er UKM?
+    pages:
+        - omoss:
+            url: /om-oss/
+derdubor:
+    url: /hvor-bor-du/
+    title: Hvor bor du?
+    pages:
+        - akershus:
+            url: /akershus/
+            title: Akershus
+   
+presse:
+    url: /om.ukm.no/
+    title: presse og informasjon'
+    pages:
+        - forsiden:
+            url: /om.ukm.no/
+            title: presse og informasjon
+            description: Informasjon om UKM
+           

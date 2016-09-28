@@ -1,0 +1,16 @@
+{% block header %}
+<div class="ukm_page_jumbo">
+	<img src="/wp-content/themes/UKMresponsive/img/skygge.png" class="visible-sm visible-md visible-lg" style="position: absolute;right: 10vw; top: 13px;" />
+	
+	<div class="container">
+		<a href="{{ view.getPaths().get('blog') }}"><h1 id="ukm_page_jumbo_header">	
+			{% block jumbo_header %}
+				{{ view.getBlog().getTitle() }}
+			{% endblock %}
+		</h1>
+		</a>
+		<h1 id="ukm_page_jumbo_header_temp" style="display:none;">UKM</h1>
+		<p id="ukm_page_jumbo_temp" style="display:none;"></p>
+	</div>
+</div>
+{% endblock %}

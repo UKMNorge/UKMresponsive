@@ -1,0 +1,37 @@
+<style>
+#main_menu_button {
+    margin: 7px 0px 0px 0px;
+}
+.navbar-brand {
+    float: left;
+    padding: 6px 15px 10px 15px;
+}
+	
+.navbar-separator {
+    margin-top: -4px;
+    border-bottom: 5px solid #b89dcc;
+}
+</style>
+
+{% block navbar %}
+	<header class="container">
+		{% block navbar_button %}
+			<div class="pull-right">
+				<a href="{{ view.getPath().getBlog() }}hovedmeny/">
+					<button type="button" class="pull-right btn-primary btn-outline" id="main_menu_button">MENY</button>
+				</a>
+			</div>
+		{% endblock %}
+	
+		{# BRAND ICON #}
+		<div class="navbar-header">
+			<a href="/" class="navbar-brand">
+				<img src="http://grafikk.ukm.no/profil/logo/UKM_logo.png" width="70" />
+			</a>
+		</div>
+
+		<div class="clearfix"></div>
+		<div class="navbar-separator"></div>
+	</header>
+
+{% endblock %}	

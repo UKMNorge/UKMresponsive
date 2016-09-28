@@ -2,42 +2,34 @@
 
 class SEO {
 
-	var $debug = true;
-	var $site_name = 'UKM.no';
-	var $section = 'for ungdom';
+	var $site_name = false;
+	var $section = false;
 	var $type = 'webpage';# : 'article';
-	var $image = 'http://grafikk.ukm.no/profil/logo/UKM-logo_stor.png';
-	var $author = 'http://ukm.no/blog/author/ukm-norge/';
-	var $title = 'UKM.no';
-	var $description = '400 festivaler hvor ungdom deltar med all slags kultur. Norges viktigste visningsarena for unge talenter';
+	var $image = false;
+	var $author = false;
+	var $title = false;
+	var $description = false;
 	
 	public function __construct( $canonical ) {
 		$this->canonical = $canonical;
 		
+		$this->_loadDefaultConfig();
 	}
 	
-	public function set( $key, $val ) {
-		$this->$key = $val;
-	}
-	
-	public function title( $val ) {
-		$this->set('title', $val);
-	}
-	public function description( $val ) {
-		$this->set('description', $val);
-	}
-	
-	public function setImage( $data ) {
-		if( is_object( $data ) ) {
-			foreach( $data as $key => $val ) {
-				$this->{'image_'.$key} = $val;
+	private function _loadDefaultConfig() {
+		require(THEME_PATH .'config/seo.config.php');
+		foreach( $SEO as $key => $val ) {
+			$functionName = 'set'.ucfirst($key);
+			if( method_exists( $this, $functionName ) ) {
+				$this->$functionName( $val );
 			}
-		} else {
-			$this->image = $data;
 		}
+		unset( $SEO );
 	}
-	
-	public function jumbo( $post_id ) {	
+			
+/*
+	MOVE TO LAYOUT ? 
+		public function jumbo( $post_id ) {	
 		$jumboheader = get_post_meta($post_id, 'UKMjumbo_header', true);
 		$jumbocontent = get_post_meta($post_id, 'UKMjumbo_content', true);
 		
@@ -51,39 +43,71 @@ class SEO {
 			$this->set('description', $jumbocontent );
 		}
 	}
-	
+*/
+
+/*
+	MOVE TO POST-CONTROLLER
 	public function post( $WPOO_post ) {
-		$this->set('title', $WPOO_post->title );
-		$this->set('description', $WPOO_post->lead );
+		$this->SEO->setTitle( $WPOO_post->title );
+		$this->SEO->setDescription( $WPOO_post->lead );
 		if( isset( $WPOO_post->og_image ) )
 			$this->setImage( $WPOO_post->og_image );
 	}
-	
-	public function section( $home ) {
-		switch( $home ) {
-			case 'arrangorer':
-				$this->set( 'section', 'UKM for arrangører' );
-				$this->set( 'analytics', 'UA-46216680-3');
-				break;
-			case 'voksneogpresse':
-				$this->set( 'section', 'UKM for voksne og presse' );
-				$this->set( 'analytics', 'UA-46216680-2');
-				break;
-			case 'derdubor':
-				$this->set( 'section', 'UKM der du bor' );
-				$this->set( 'analytics', 'UA-46216680-1');
-				break;
-			default:
-				$this->set( 'section', 'UKM for ungdom' );
-				$this->set( 'analytics', 'UA-46216680-1');
-				break;
-		}
-	}
-	
+		
 	public function article( $WPOO_post ) {
-		$this->set('type', 'article');
+		$this->setType('type', 'article');
 		$this->set('author', $WPOO_post->author->link);
 		$this->set('published_time', $WPOO_post->date);
 		$this->set('modified_time', $WPOO_post->raw->post_modified_gmt);
 	}
-}
+*/	
+	
+	public function setSitename( $sitename ) {
+		$this->sitename = $sitename;
+	}
+	public function getSitename() {
+		return $this->sitename;
+	}
+	
+	public function setAuthor( $author ) {
+		$this->author = $author;
+	}
+	public function getAuthor() {
+		return $this->author;
+	}
+	
+	public function setSection( $section ) {
+		$this->section = $section;
+	}
+	public function getSection() {
+		return $this->section;
+	}
+	
+	public function setTitle( $title ) {
+		$this->title = $title;
+	}
+	public function getTitle() {
+		return $this->title;
+	}
+	
+	public function setImage( $image ) {
+		if( is_object( $image ) ) {
+			foreach( $image as $key => $val ) {
+				$this->{'image_'.$key} = $val;
+			}
+		} else {
+			$this->image = $image;
+		}
+
+	}
+	public function getImage( $image ) {
+		return $this->image;
+	}
+	
+	public function setDescription( $description ) {
+		$this->description = $description;
+	}
+	public function getDescription() {
+		return $this->description;
+	}
+}	

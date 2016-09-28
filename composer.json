@@ -1,5 +1,5 @@
 {
     "require": {
-        "mobiledetect/mobiledetectlib": "dev-master"
+        "symfony/yaml": "^3.1"
     }
 }

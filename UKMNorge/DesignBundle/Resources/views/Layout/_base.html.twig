@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		{# CHARSET AND VIEWPORT #}
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=1.0, initial-scale=1.0, user-scalable=no">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		
+		<title>{{ view.getBlog().getTitle() }}</title>
+		<link rel="shortcut icon" href="http://grafikk.ukm.no/favicon.ico" />
+		<link rel="alternate" type="application/rss+xml" href="{{blog.feed}}" title="{{blog.name}} RSS-feed" />
+		<link href="{{ "UKMresponsiveV2.css"|UKMgrafikk }}" rel="stylesheet" />
+		<link rel="stylesheet" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600,700,300' type='text/css' />
+
+		{# SCRIPTS #}
+		<script type="text/javascript" src="{{ view.getPaths().get('theme_dir') }}public/js/jquery-1.12.2.min.js"></script>
+		<script type="text/javascript" src="{{ view.getPaths().get('theme_dir') }}public/js/javascript.js"></script>
+	</head>
+</html>
+
+<body>
+	<div id="fb-root"></div>{# FACEBOOK #}
+	{% embed "UKMDesignBundle:Layout:sitenav.html.twig"|UKMpath %}{% endembed %}	
+{#
+	{% embed TWIG_PATH_LAYOUT ~ "sitemap.html.twig" %}{% endembed %}
+#}	
+	<div id="UKMDesign_content">
+		{% block content %}Designfil mangler content-block.{% endblock %}
+	</div>
+{#	{% embed TWIG_PATH_LAYOUT ~ "footer.html.twig" %}{% endembed %}#}
+</body>

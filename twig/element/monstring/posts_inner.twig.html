@@ -1,9 +1,0 @@
-<div class="news col-xs-6 col-md-4">
-	{% embed "element/post/grid_element.twig.html" with post %}{% endembed %}
-</div>
-
-{% if loop.index is divisibleby(3) %}
-	<div class="clearfix visible-md visible-lg"></div>
-{% elseif loop.index is divisibleby(2) %}
-	<div class="clearfix visible-xs visible-sm"></div>
-{% endif %}
