@@ -1,0 +1,25 @@
+{% extends "layout.twig.html" %}
+
+{% block content %}
+{% embed "element/backtoUKM.twig.html" %}{% endembed %}<br />
+
+<article>
+	<div class="page">
+		{{post.content|raw}}
+	</div>
+</article>
+{% endblock %}
+
+{% block content_container_post %}
+	{% embed "element/blocks.twig.html" with { blocks: blocks } %}{% endembed %}
+{% endblock %}
+
+{#
+{% block post_content %}
+	{{parent()}}
+	<div class="pull-right lastupdated">
+        Sist oppdatert for 
+        <span class="timeago" title="{{post.date|date('Y-m-d H:i:s')}}">{{post.date|date('d.m.Y H:i')}}</span>
+	</div>
+{% endblock %}
+#}

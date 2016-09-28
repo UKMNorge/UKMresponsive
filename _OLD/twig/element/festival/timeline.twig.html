@@ -1,0 +1,95 @@
+<div id="timeline-small">
+    <div id="timelinesmall" class="carousel slide" data-ride="carousel">
+    
+        <!-- Wrapper for slides -->
+        <div style="width:100%">
+            <div class="carousel-inner">
+                <div class="item active" id="streamcontainer">
+                    
+                </div>
+            </div>
+            
+            <div class="carousel-nav">
+                <ul class="nav timeline-nav">
+                    {% for i in 0..3 %}
+                        {% if attribute(timeline, i) is defined %}
+                            {% if i == 0 %}
+                                {% if attribute(timeline, i).videoid > 0%}
+                                    <input type="hidden" id="videoid" value="{{ attribute(timeline, i).videoid }}" />
+                                {% endif %}
+                                {% if "now"|date("Hi") >= attribute(timeline, i).starttid|replace({':':''}) and "now"|date("Hi") <= attribute(timeline, i).slutttid|replace({':':''}) %}
+                                <li class="active">
+                                    <span class="now">Akkurat nå</span>
+                                {% else %}
+                                <li>
+                                    <span class="now">{{ attribute(timeline, i).dag }} kl. {{ attribute(timeline, i).starttid }}</span>                                
+                                {% endif %}
+                            {% else %}
+                                <li>
+                                    <span class="now">{{ attribute(timeline, i).dag }} kl. {{ attribute(timeline, i).starttid }}</span>
+                            {% endif %} 
+                                    <span>{{ attribute(timeline, i).hendelsenavn }}</span>  
+                                </li>
+                        {% else %}
+                            <li></li>
+                        {% endif %}
+                    {% endfor %}
+                    <a href="/festivalen/streams"><li>
+                        <span class="now">Alle streams</span>
+                        <span>Trykk her for å se alle streams!</span>
+                    </li></a>
+                </ul>
+                {#<div class="full-timeline">
+                    <a href="#" onclick="$('#timeline-small').hide();$('#homepagecontent').hide();$('#timeline-full').slideDown();">&raquo; Se tidligere hendelser</a>
+                </div>
+                <div class="full-timeline">
+                    <a href="/festivalen/program/">&raquo; S</a>
+                </div>#}
+            </div>
+        </div>
+    </div>
+</div>
+<div id="timeline-full" style="display:none;">
+    <div id="timelinefull" class="carousel slide" data-ride="carousel">
+    
+        <!-- Wrapper for slides -->
+        {% embed "element/backtoUKM.twig.html" %}{% endembed %}
+        <div class="wrapper">
+            <div class="carousel-inner">
+                <div class="item active">
+                    {#<iframe src="http://new.livestream.com/accounts/183084/events/3113529/player?width=969&height=500&autoPlay=true&mute=false" width="100%" height="100%" frameborder="0" scrolling="no"></iframe>#}
+                </div>
+            </div>
+            <div class="carousel-nav">
+                <ul class="nav timeline-nav">
+                    <h3>Tilgjengelige hendelser</h3>
+                    {% for item in schedule %}
+                        {% if item.videoid is defined and item.videoid > 0 %}
+                            <li class="tlfull {% if loop.index == 1 %}active{% endif %}" data-videoid="{{ item.videoid }}">
+                                <span class="now">{{ item.dato }} {{ item.starttid }} - {{ item.slutttid }}</span>
+                                <span>{{ item.hendelsenavn }}</span>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <br />
+        {% embed "element/backtoUKM.twig.html" %}{% endembed %}
+    </div>
+</div>
+
+<script type="text/javascript">
+    $('.tlfull').click(function(){
+        $('.tlfull').removeClass('active');
+        $(this).addClass('active');
+        
+    });
+    $(document).ready(function(){
+        var videoid = 3113529;
+        if($('#videoid').val()) {
+            videoid = $('#videoid').val();
+        }
+        $('#streamcontainer').html('<iframe src="http://new.livestream.com/accounts/183084/events/'+videoid+'/player?width=700&height=398&autoPlay=false&mute=false" width="100%" frameborder="0" scrolling="no" height="100%" id="streamframe"></iframe>')
+    });
+</script>

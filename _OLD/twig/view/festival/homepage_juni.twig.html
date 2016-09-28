@@ -1,0 +1,109 @@
+{% extends "layout.twig.html" %}
+
+{% block navbar %}
+	<div class="navbar-header">
+		<a href="/" class="navbar-brand">
+			<img src="http://grafikk.ukm.no/profil/logo/UKM_logo.png" width="70" />
+		</a>
+	</div>
+
+	<ul class="nav navbar-nav navbar-right">
+		<li><a href="http://ukm.no">tilbake til UKM.no</a></li>
+	</ul>
+{% endblock %}
+
+{% block content_container %}
+<div class="row">
+	<div class="container">
+		{% embed "element/festival/homepage_lead.twig.html" %}{% endembed %}
+	</div>
+</div>
+
+<div class="arrow_box"></div>
+    <div class="row box_grey" style="padding-bottom:0px;">
+        <div class="container">
+        <ol class="nav navbar-nav navbar-justified" style="margin-top:30px;">
+            <li class="navbar-link">
+                <a href="/festivalen/program/">
+                    <div class="centered">
+                        <span><img src="/wp-content/themes/UKMresponsive/img/nav/nav-calendar.png" width="45"/></span>                            
+                    </div>
+                    <span>Program</span>
+                </a>
+            </li>
+            <li class="navbar-link">
+                <a href="/festivalen/category/workshop/">
+                    <div class="centered">
+                        <span><img src="/wp-content/themes/UKMresponsive/img/nav/nav-people.png" width="45"/></span>                            
+                    </div>
+                    <span>Workshops</span>
+                </a>
+            </li>
+            <li class="navbar-link">
+                <a href="/festivalen/kart/">
+                    <div class="centered">
+                        <span><img src="/wp-content/themes/UKMresponsive/img/nav/nav-maps.png" width="45"/></span>                            
+                    </div>
+                    <span>Kart</span>
+                </a>
+            </li>
+            <li class="navbar-link">
+                <a href="/festivalen/kontakt/">
+                    <div class="centered">
+                        <span><img src="/wp-content/themes/UKMresponsive/img/nav/nav-contact.png" width="45"/></span>                            
+                    </div>
+                    <span>Kontakt</span>
+                </a>
+            </li>
+            <li class="navbar-link">
+                <a href="/festivalen/internprogram/">
+                    <div class="centered">
+                        <span><img src="/wp-content/themes/UKMresponsive/img/nav/nav-i.png" width="45"/></span>                            
+                    </div>
+                    <span>Deltakerinfo</span>
+                </a>
+            </li>
+        </ol>
+        </div>
+    </div>
+</div>
+
+<div class="clearfix"></div>
+<div class="row">
+	<div class="container">
+		<div class="page_box" align="center">
+			{% embed "element/festival/homepage_find.twig.html" %}{% endembed %}
+		</div>
+	</div>
+</div>
+
+<div class="row">
+    <div class="container">
+        <h1>Nyheter</h1>
+        <div class="news-article-list">
+            {% for post in posts %}
+                {% embed "element/festival/news_article.twig.html" with {'post':post,'url':url} %}{% endembed %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="container">
+        <h1>UKM-TV: Vi møter</h1>
+        <p class="lead">Hver dag frem til UKM-festivalen presenterer vi en gruppe, artist eller kunstner som du kan møte i Trondheim.</p>
+        <div class="news-article-list">
+        {% for post in meet %}
+            {% embed "element/festival/news_article.twig.html" with {'post':post,'url':url} %}{% endembed %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<div class="arrow_box"></div>
+<div class="row box_grey">
+	<div class="container">
+		<div class="page_box">
+			{% embed "element/festival/homepage_partnere.twig.html" %}{% endembed %}
+		</div>
+	</div>
+</div>
+{% endblock %}

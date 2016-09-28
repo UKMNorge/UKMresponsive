@@ -1,0 +1,50 @@
+{% extends "view/fylke/fylke_pre.twig.html" %}
+
+{% block jumbo_header %}
+	UKM Østfold
+{% endblock %}
+{% block jumbo_content %}
+	Lokalmønstringene er i gang!
+{% endblock %}
+
+{% block content %}
+    {# Tittel #}
+    {% embed "element/monstring/monstring_tittel.twig.html" with {"monstring_type":"fylke"} %}
+    {% endembed %}
+
+    <div class="col-xs-12 col-md-5 pull-right">
+        <div>
+            <p>Fylkesmønstringen var {{monstring.starter | dato("l j. F")}} til {{monstring.slutter | dato("l j. F")}} i {{monstring.sted}}</p>
+        </div>
+    
+        <div>
+            {% embed "element/monstring/monstring_navigasjon.twig.html" %}
+            {% endembed %}
+        </div>
+    </div>
+
+    <div class="col-xs-12 col-md-7">
+        {% embed "element/monstring/monstring_hovedartikkel.twig.html" %}
+        {% endembed %}
+    </div>
+
+    <div class="col-xs-12 col-md-3 pull-right">
+        
+        <h3>Lokalmønstringer</h3>
+        <div class="hidden-lg hidden-md">
+            <button class="btn btn-medium btn-primary toggle" data-action="show" data-toggle="#lokalmonstringer_slide">Vis lokalmønstringer</button>
+        </div>
+        <div class="visible-lg visible-md" style="display:none" id="lokalmonstringer_slide">
+            {% embed "element/monstring/lokalmonstringer_liste.twig.html" %}
+            {% endembed %}
+        </div>
+    </div>
+    <div class="visible-xs visible-sm clearfix"></div>
+        
+    <div class="col-xs-12 col-md-9">
+        {% embed "element/monstring/monstring_flere_artikler.twig.html" %}
+        {% endembed %}
+    </div>
+
+
+{% endblock %}

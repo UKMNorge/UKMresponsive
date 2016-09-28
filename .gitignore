@@ -1,14 +1,9 @@
 .DS_Store
-
-vendor/*
-less/~
-
+/vendor/*
+/less/~
 js/config.codekit
-
 *.codekit
-
 *.codekit
-
 less/config.codekit
-
 cache_twig/*
+_OLD/vendor/*

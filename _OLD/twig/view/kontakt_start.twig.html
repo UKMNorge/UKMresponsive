@@ -1,0 +1,49 @@
+{% extends "layout.twig.html" %}
+{% block content %}
+<div class="row">
+	<div class="col-xs-12 col-sm-6">
+		<a href="//om.{{url.ukmno}}/kontakt/fylkeskontaktene/">
+			<h2>Fylkeskontaktene</h2>
+		</a>
+		<p>
+			UKM har én ansvarlig i hvert fylke (fylkeskontakten).
+			<br />Fylkeskontaktene vet alt om UKM i sitt fylke
+		</p>
+		<a class="btn btn-default" href="//om.{{url.ukmno}}/kontakt/fylkeskontaktene/">Vis kontaktinfo</a>
+		<div class="clearfix"></div>
+	</div>
+	<div class="visible-xs"><p>&nbsp;</p></div>
+	<div class="col-xs-12 col-sm-6">
+		<a href="http://ukm.no/din_monstring/">
+			<h2>Din lokalkontakt</h2>
+		</a>
+		<p>
+			Alle UKM-mønstringer har en lokalkontakt.<br />
+			Lokalkontakten vet alt om sin mønstring (frister, sted, program, oppmøte osv)
+		</p>
+		<a class="btn btn-default" href="http://{{url.ukmno}}/din_monstring/">Vis kontaktinfo</a>
+		<div class="clearfix"></div>
+	</div>
+</div>
+<p>&nbsp;</p>
+<div class="row">
+	<div class="col-xs-12 col-sm-6">
+		<a href="/om.{{url.ukmno}}/kontakt/administrasjonen/">
+			<h2>UKM Norge</h2>
+		</a>
+		<p>UKM Norge har kontorer i Trondheim og svarer på generelle henvendelser om UKM</p>
+		<a class="btn btn-default" href="//om.{{url.ukmno}}/kontakt/administrasjonen/">Vis kontaktinfo</a>
+		<div class="clearfix"></div>
+	</div>
+	<div class="visible-xs"><p>&nbsp;</p></div>
+	<div class="col-xs-12 col-sm-6">
+		<a href="//om.{{url.ukmno}}/kontakt/styret/">
+			<h2>Styret</h2>
+		</a>
+		<p>Her finner du kontaktinfo til alle som sitter i UKM Norges styre</p>
+		<a class="btn btn-default" href="//om.{{url.ukmno}}/kontakt/styret/">Vis kontaktinfo</a>
+		<div class="clearfix"></div>
+	</div>
+</div>
+
+{% endblock %}

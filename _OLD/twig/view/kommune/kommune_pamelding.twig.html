@@ -1,0 +1,56 @@
+{% extends "view/kommune/kommune.twig.html" %}
+
+{% block jumbo_content %}
+	{% embed "element/monstring/monstring_beskrivelse.twig.html" with {"time_verb":"er"} %}{% endembed %}
+{% endblock %}
+
+{% block meny_ekstra %}
+{% endblock %}
+
+{% block meny_post %}
+	<div class="col-xs-12">
+    	<p class="centered">
+			Påmeldingsfrist {% if monstring.frist_1_aktiv %}
+		   			{{monstring.frist_1 | dato('l j. F') }} kl. {{monstring.frist_1 | dato('H:i')}}
+		   		{% else %}
+		   			{{monstring.frist_2 | dato('l j. F') }} kl. {{monstring.frist_2 | dato('H:i')}}
+		   		{% endif %}
+    	</p>
+    </div>
+{% endblock %}
+
+{% block hovedfokus_pre %}
+{% endblock %}
+
+{% set posts_include_top_post_in_full_list = true %}
+{% block post_top_desktop_text %}{% endblock %}
+{% block post_top_mobile %}{% endblock %}
+
+{% block hovedfokus %}
+    {# Registration #}
+    <script type="text/javascript" src="{{ url.theme_dir }}js/lokalside_pamelding.js"></script>
+    <div id="paamelding_container">
+	    <div class="row">
+	        <a href="//delta.{{ url.ukmno }}"><img src="http://grafikk.ukm.no/pamelding/startpamelding.png" class="col-xs-12" /></a>
+	    </div>
+	    <div class="row">
+	   		<div class="col-xs-12">
+	   			Påmeldingsfrist: 
+	            {% if monstring.frist_1_aktiv %}
+		   			{{monstring.frist_1 | dato('l j.M') }} kl. {{monstring.frist_1 | dato('H:i')}}
+		   		{% else %}
+		   			{{monstring.frist_2 | dato('l j.M') }} kl. {{monstring.frist_2 | dato('H:i')}}
+		   		{% endif %}
+	   		</div>
+	   	</div>
+
+
+        <div class="clearfix"></div>
+        <p>
+        	Ønsker du å fortsette en påmelding du har startet på?
+        	<a href="http://delta.{{ url.ukmno }}/login">Logg inn her</a>
+        </p>
+    </div>
+    <div class="clearfix"></div>
+{% endblock %}
+

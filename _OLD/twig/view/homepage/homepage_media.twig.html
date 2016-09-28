@@ -1,0 +1,40 @@
+{% extends "layout.twig.html" %}
+
+{% block navbar %}
+	<div class="pull-right" id="mediaGoBack"><a href="http://ukm.no">gå til UKM.no</a></div>
+	<div class="navbar-header">
+	<a href="//media.{{ url.ukmno }}" class="navbar-brand">
+		<img src="http://grafikk.ukm.no/profil/media/UKMmedia_logo.png" width="70" />
+	</a>
+	</div>
+{% endblock %}
+
+{% block jumbo %}
+
+{% endblock %}
+
+{% block content_container %}
+	{% for block in blocks %}
+		{% if block.type == 'container' %}
+			<a name="{{block.contained.anchor}}"></a>
+			{% embed "block/container_"~ container.container ~".twig.html" with {'container': block, 'block': container.contained } %}{% endembed %}		
+		{% else %}
+			<a name="{{block.anchor}}"></a>
+			{% embed "block/"~ block.type ~".twig.html" with {'block': block} %}{% endembed %}
+		{% endif %}
+	{% endfor %}
+{% endblock %}
+
+{% block additional_css %}
+	{{ parent() }}
+	#mediaGoBack {
+		color: #526476;
+		font-weight: 600 !important;
+		font-size: 14px !important;
+		line-height: 16px !important;
+		padding: 21px 20px 16px 20px !important;
+	}
+	#mediaGoBack a {
+		color: #526476;
+	}
+{% endblock %}

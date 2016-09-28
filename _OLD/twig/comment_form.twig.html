@@ -1,0 +1,35 @@
+<div id="comment-form-container">
+	<form action="{{url.base}}/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+		<div class="row">
+			<div class="form-group col-xs-12">
+				<textarea class="form-control" id="comment-text" name="comment" aria-required="true" placeholder="Skriv din kommentar her"></textarea>
+			</div>
+		</div>
+			
+		{% if comments.user == false %}
+		<div class="row" style="display:none;" id="comment-form-author">
+			<div class="form-group col-xs-12 col-sm-6">
+				<label for="comment-name">Navn</label>
+				<input type="text" name="author" class="form-control" id="comment-name" placeholder="Ditt fulle navn">
+			</div>
+			
+			<div class="form-group col-xs-12 col-sm-6">
+				<label for="comment-email">E-post</label>
+				<input type="email" name="email" class="form-control" id="comment-email" placeholder="Din e-postadresse">
+				<small>(E-postadressen blir ikke vist til noen)</small>
+			</div>
+		</div>
+		{% else %}
+		<div class="row">
+			<div class="col-xs-12">Kommenterer nå som {{comments.user.name}}</div>
+		</div>
+		{% endif %}
+			
+		<div class="row col-xs-12" id="comment-form-submit">
+			<button class="btn btn-primary" name="submit" type="submit" id="submit">Publiser kommentar</button>
+		</div>
+	
+		<input type='hidden' name='comment_post_ID' value='{{post.ID}}' id='comment_post_ID' />
+		<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+	</form>
+</div>

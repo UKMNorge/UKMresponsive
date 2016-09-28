@@ -1,0 +1,40 @@
+{% extends "layout.twig.html" %}
+
+{% block content %}
+	{% embed "element/backtoUKM.twig.html" %}{% endembed %}
+	<div class="row">
+	    <div class="col-xs-12 col-sm-3 pull-right" id="rightnav">
+	        <div class="row">
+	            {% if konfransier is defined and konfransier|length > 0 %}
+	            <div class="pull-right hidden-xs pameldteFilter">Konfransier</div>
+	            
+	            {% endif %}
+	        </div>        
+	    </div>
+    
+        <div class="col-xs-12 col-md-11 col-lg-10">
+        	<h2>{{hendelse.navn}} <small>{{hendelse.start | dato('l d.M')}} kl.{{hendelse.start | dato('H:i' )}}</small></h2>
+        	<p>{{hendelse.sted}}</p>
+        	
+        	<div class="alert visible-xs">
+        		<h4>Klikk på innslaget for mer info, artikler, bilder og film</h4>
+        	</div>
+        	
+        	<ol class="list-unstyled">
+        		{% for innslag in rekkefolge %}
+        			{% embed "element/innslag.twig.html" with {'showIndex': true} %}{% endembed %}
+        		{% else %}
+        			<li class="">
+        				<p>&nbsp;</p>
+        				<p><strong>Det er ikke satt opp noen innslag i denne hendelsen</strong></p>
+        				<p>&nbsp;</p>
+        			</li>				
+        		{% endfor %}
+        	</ol>
+	
+        	<div class="row">
+        		<a href="{{url.blog}}program/"><button class="btn btn-block btn-success">Tilbake til rammeprogrammet</button></a>
+        	</div>
+        </div>
+	</div>
+{% endblock %}

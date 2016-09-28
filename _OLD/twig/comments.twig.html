@@ -1,0 +1,82 @@
+{% if comments is defined and comments != false %}
+<script type="text/javascript" language="javascript">
+	///////////////////////////////////////
+	// COMMENTS SHOW MORE IF COMMENT STARTED
+	jQuery(document).on('keyup', '#comment-text', function(){
+		if(jQuery(this).val().length > 0) {
+			jQuery('#comment-form-author').fadeIn();
+			jQuery('#comment-form-submit').fadeIn();
+		} else {
+			jQuery('#comment-form-author').fadeOut();
+			jQuery('#comment-form-submit').fadeOut();
+		}
+	});
+	jQuery(document).ready(function(){
+		if(jQuery('#comment-text').val().length > 0) {
+			jQuery('#comment-form-author').fadeIn();
+			jQuery('#comment-form-submit').fadeIn();
+		}
+	});
+</script>
+<style>
+/*
+Description: Comments layout
+Version: 0.1
+Author: Marius Mandal
+Author URI: http://mariusmandal.no
+Theme Name: MariusMandal
+Theme URI: https://github.com/mariusmandal/WPT_mariusmandal
+*/
+
+ol.comments li {
+	margin-bottom: 30px;
+	padding: 0px;
+}
+ol.comments li div.timeago {
+	float: right;
+	font-size: 11px;
+	color: @color-concrete;
+} 
+div.comment {
+	border: 1px solid @color-clouds;
+	background: #fff;
+	border-radius: 5px;
+	padding: 5px;
+}
+div.comment img {
+	max-height: 50px;
+	display: block;
+	margin: 0px auto;
+}
+div.comment .author {
+	font-size: 11px;
+	text-align: center;
+	padding: 0px;
+}
+#comment-form-container {
+	margin-bottom: 20px;
+}
+</style>
+<div class="">
+	<h3>Kommentarer</h3>
+	{% embed "comment_form.twig.html" %}{% endembed %}
+	
+	<ol class="list-unstyled comments">
+	{% for comment in post.comments %}
+		<li class="col-xs-12">
+			<div class="comment">
+				<div class="author col-xs-2">
+					<img src="{{comment.avatar_url|raw}}" class="img-circle" alt="avatar" />
+					{{comment.author}}
+				</div>
+				<div class="content col-xs-10">
+					{{comment.content}}
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="timeago" title="{{comment.date|date('Y-m-d H:i')}}">{{comment.date|date('d.m.Y H:i')}}</div>
+		</li>
+		<hr noshade="" />
+	{% endfor %}
+</div>
+{% endif %}

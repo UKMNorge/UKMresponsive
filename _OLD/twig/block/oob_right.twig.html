@@ -1,0 +1,61 @@
+<div class="right" id="{{ block.anchor }}">
+	<div class="image"></div>
+	<div class="container content">
+		<h1>{{ block.title|raw }}</h1>
+		
+		<p class="lead">{{ block.lead }}</p>
+		
+		{% if block.content is defined and block.content is not empty %}
+		<p>{{ block.content|raw }}</p>
+		{% endif %}
+	</div>
+	<div class="clearfix"></div>
+</div>
+
+<style>
+.right#{{block.anchor}} {
+	min-height: 62vh;
+	background: #f4f4f4;
+}
+.right#{{block.anchor}} > .content {
+	float:right;
+}
+.right#{{block.anchor}} > .image {
+	background-image: url('{{block.image.xs}}');
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	width: 100%;
+	height: 62vh;
+	float:right;
+}
+.right#{{block.anchor}} .content {
+	min-height: 62vh;
+}
+@media( min-width: 768px ) {
+	.right#{{block.anchor}} > .image {
+		background-image: url('{{block.image.sm}}');
+	}
+}
+
+@media( min-width: 992px ) {
+	.right#{{block.anchor}} > .image {
+		background-image: url('{{block.image.md}}');
+		width: 25%;
+	}
+	.right#{{block.anchor}} > .container {
+		width: 75%;
+	}
+}
+@media( min-width: 1200px ) {
+	.right#{{block.anchor}} > .image {
+		background-image: url('{{block.image.lg}}');
+	width: 35%;
+	}
+	.right#{{block.anchor}} > .container {
+		width: 65%;
+	}
+
+}
+
+</style>

@@ -1,0 +1,102 @@
+{% extends "layout.twig.html" %}
+
+{% block header_pre %}
+	<div class="page_cover">
+		<div class="container">
+			<div class="page_cover_jumbo">
+				<img src="http://grafikk.ukm.no/profil/logo/UKM_logo_hvit_0500.png" />
+				<h1>Festivalen 2014</h1>
+				<p>{{monstring.starter|dato('l d')}} til {{monstring.slutter|dato('l d. F')}}</p>
+			</div>
+		</div>
+	</div>
+{% endblock %}
+
+{% block navbar %}
+	<ul class="nav navbar-nav navbar-right">
+		<li><a href="http://ukm.no">tilbake til UKM.no</a></li>
+	</ul>
+{% endblock %}
+
+{% block jumbo %}
+{% endblock %}
+
+
+{% block content_container %}
+<div class="row">
+	<div class="container">
+		{% embed "element/festival/homepage_lead.twig.html" %}{% endembed %}
+	</div>
+</div>
+
+<div class="arrow_box"></div>
+<div class="row box_grey">
+	<div class="container">
+		<div class="page_box">
+			{% embed "element/festival/homepage_program.twig.html" %}{% endembed %}
+			<div class="clearfix"></div>
+			{% embed "element/festival/homepage_workshops.twig.html" %}{% endembed %}
+			<div class="clearfix"></div>
+			{% embed "element/festival/homepage_billetter.twig.html" %}{% endembed %}
+		</div>
+	</div>
+</div>
+
+<div class="row cover_image_left h50 w30">
+	<div class="cover_image" style="background-image: url('http://grafikk.ukm.no/festivalen/2014/ukmf13_crop_liten.jpg');"></div>
+	<div class="cover_content">
+		<div class="page_box">
+			{% embed "element/festival/homepage_deltakerinfo.twig.html" %}{% endembed %}
+		</div>
+	</div>
+</div>
+<div class="clearfix"></div>
+<div class="arrow_box"></div>
+<div class="row box_grey">
+	<div class="container">
+		<div class="page_box" align="center">
+			{% embed "element/festival/homepage_find.twig.html" %}{% endembed %}
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="container">
+		<div class="page_box">
+			<div class="embed-container">
+				<iframe src="https://mapsengine.google.com/map/embed?mid=z1-avl4RFCcQ.kE2c46EItUBg" width="640" height="480" id="googlemaps"></iframe>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="container">
+		<div class="col-xs-12 col-sm-6">
+			<div class="page_box">
+				{% embed "element/festival/homepage_kontakt.twig.html" %}{% endembed %}
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+    <div class="container">
+        <h1>UKM-TV: Vi møter</h1>
+        <p class="lead">Hver dag frem til UKM-festivalen presenterer vi en gruppe, artist eller kunstner som du kan møte i Trondheim.</p>
+        <div class="news-article-list">
+            {% for post in meet %}
+                {% embed "element/festival/news_article.twig.html" with {'post':post,'url':url} %}{% endembed %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<div class="arrow_box"></div>
+<div class="row box_grey">
+	<div class="container">
+		<div class="page_box">
+			{% embed "element/festival/homepage_partnere.twig.html" %}{% endembed %}
+		</div>
+	</div>
+</div>
+{% endblock %}

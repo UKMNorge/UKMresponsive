@@ -1,0 +1,49 @@
+{% if author is not defined %}
+    {% set author = post.author %}
+{% endif %}
+
+{% if ukm_ma_authors is defined %}
+    {# <div class="post_byline"> #}
+    {% for author in ukm_ma_authors %}
+        <div class="post_byline">
+            {% if author.data.image is not empty %}
+                <img src="{{author.data.image}}" class="author_image" />
+            {% endif %}
+        {#  <span><p>{{post.author.company_name}}</p></span> #}
+            <span><a href="{{ author.data.link }}"><h4 style="margin-bottom:0px;text-transform:capitalize;">{{author.data.display_name|capitalize}}</h4></a></span>
+            {% if author.data.title %}
+                <span style="font-size:12px;">{{ author.data.title }}</span>
+            {% endif %}
+            {% if author.data.role %}
+                <span style="font-size:12px;">{{ author.data.role }}</span>
+            {% endif %}
+            <hr />
+           {#  {% if author.data.user_email %}
+                <span><a href="mailto:{{author.data.user_email}}">E-post</a></span>
+            {% endif %} #}
+                
+            {% if author.data.facebook_url %}
+               | <span><a href="{{author.data.facebook_url}}">Facebook</a></span>
+            {% endif %}
+            <div class="clearfix"></div>
+        </div>
+    {% endfor %}
+{% else %}
+    <div class="post_byline">
+        <img src="{{author.image}}" class="author_image" />
+    {#  <span><p>{{post.author.company_name}}</p></span> #}
+        <span><a href="{{ author.link }}"><h4 style="margin-bottom:0px;text-transform:capitalize;">{{author.display_name|capitalize}}</h4></a></span>
+        {% if author.title %}
+            <span style="font-size:12px;">{{ author.title }}</span>
+        {% endif %}
+        <hr />
+        {% if author.user_email %}
+            <span><a href="mailto:{{author.user_email}}">E-post</a></span>
+        {% endif %}
+            
+        {% if author.facebook_url %}
+           | <span><a href="{{author.facebook_url}}">Facebook</a></span>
+        {% endif %}
+         <div class="clearfix"></div>
+    </div>
+{% endif %}

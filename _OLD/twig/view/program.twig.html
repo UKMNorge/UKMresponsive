@@ -1,0 +1,68 @@
+{% extends "layout.twig.html" %}
+
+{% block content %}
+<style>
+.program .well {
+	padding: 9px;
+    border-radius: 2px;
+    background-color: #fff;
+    box-shadow: #dddddd 2px 1px;
+    border: 1px solid #eeeeee;
+}
+</style>
+	{% embed "element/backtoUKM.twig.html" %}{% endembed %}
+	
+	<div class="clearfix"></div>
+	<div class="row">
+		<div class="container">
+			<div class="page_box" align="center">
+				{% if monstring['type_tekst'] == 'land' %}
+					{% embed "element/festival/homepage_find.twig.html" %}{% endembed %}
+				{% elseif monstring['type_tekst'] == 'fylkes' %}
+					{% embed "element/monstring/monstring_finn.twig.html" %}{% endembed %}
+				{% endif %}
+			</div>
+		</div>
+	</div>
+	<ul class="list-unstyled program">
+	{% for dag, hendelser in program %}
+		<li class="col-xs-12 col-sm-6 col-md-{{12/dag_max_col}}">
+			<div class="">
+				<h3 class="">{{dag | dato('l') | capitalize }} <small>{{ dag | dato('d.M') }}</small></h3>
+					<ol class="list-unstyled">
+						{% for hendelse in hendelser %}
+							<li class="well">
+								{# {% if hendelse.offentlig %} #}
+								<a href="?hendelse={{hendelse.ID}}">
+								{# {% endif %} #}
+								<div class="row">
+									<div class="col-xs-2 col-sm-2">{{hendelse.start | dato('H:i' )}}</div>
+									<div class="col-xs-10 col-sm-10">
+										<div class="">{{ hendelse.navn }}</div>
+										<div class="hidden-xs"><small>{{hendelse.sted}}</small></div>
+										<div class="clearfix"></div>
+									</div>
+								</div>
+								{# {% if hendelse.offentlig %} #}
+								</a>
+								{# {% endif %} #}
+							</li>
+						{% endfor %}
+					</ol>
+			</div>
+		</li>
+		{% if loop.index is divisible by(3) %}
+			<div class="clearfix visible-lg visible-md"></div>
+		{% endif %}
+		{% if loop.index is divisible by(2) %}
+			<div class="clearfix visible-sm"></div>
+		{% endif %}
+	{% else %}
+		<li class="">
+			<h2>Program ikke satt</h2>
+			<p>Mønstringen starter {{monstring.starter|dato('l. d. M')}} kl. {{monstring.starter|dato('H:i')}}
+			<p>Ta kontakt med {{monstring.type_tekst}}kontakten om du mener dette burde vært gjort.</p>
+		</li>
+	{% endfor %}
+	</ul>
+{% endblock %}

@@ -1,0 +1,167 @@
+<style>
+.innslag .well {
+	padding: 9px;
+    border-radius: 2px;
+    background-color: #fff;
+    box-shadow: #dddddd 2px 1px;
+    border: 1px solid #eeeeee;
+}
+
+.innslag .well .header h2.number {
+	float: left;
+    padding: 0px;
+    margin: 0px 10px 0px 4px;
+    color: #555555;
+    /* opacity: .55; */
+}
+.innslag .well .header h3.name {
+	padding: 0px;
+    margin: 4px 0px 0px 0px;
+    font-size: 24px;
+}
+.innslag .well .header img.moreicon {
+	float:right;
+	height: 31px;
+	margin-left: 18px;
+}
+.innslag .well .header .type {
+	color: #555555;
+    margin: 0px;
+    text-align: right;
+    line-height: 30px;
+}
+
+</style>
+
+<li class="innslag" id="innslag_{{innslag.ID}}" data-filter="{{innslag.navn}} {% for p in innslag.personer %}{{p.navn}} {% endfor %}{% for t in innslag.titler %}{{t.tittel}} {% endfor %}">
+	<div class="well well-sm">
+		<div class="row header clickable">
+			<div class="col-xs-11 col-sm-8">
+				<h2 class="number">{% if showIndex is defined and showIndex %}{{loop.index}}. {% endif %}</h2>
+				<h3 class="name">{{innslag.navn}} <small><span class="visible-xs" style="height:1px;"><br /></span>fra {{innslag.sted}}</small></h3>
+			</div>
+			<div class="clicktosee col-xs-1 col-sm-4">
+				<img class="moreicon pull-right" src="//ico.ukm.no/more-32.png">
+				<p class="type hidden-xs pull-right">
+					{{ innslag.sjanger is not empty ? innslag.sjanger|capitalize : innslag.kategori|replace({'Nettredaksjon':'UKM Media'}) }}
+				</p>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+
+		<div class="row data" style="display:none;">
+			{# =============== BESKRIVELSE =============== #}
+			<div class="col-xs-12">
+				<p>{{innslag.beskrivelse}}</p>
+			</div>
+			
+			
+			{# =============== TITLER =============== #}
+			<div class="col-xs-12 col-sm-6 col-md-4">
+				<h5>Titler</h5>
+				<ol class="list-unstyled">
+					{% for tittel in innslag.titler %}
+						<li>
+							<p>{{tittel.tittel}} <small class="hidden-xs"><br />{{tittel.parentes|raw}}</small></p>
+						</li>
+					{% endfor %}
+				</ol>
+			</div>
+
+			{# =============== PERSONER =============== #}
+			<div class="col-xs-12 col-sm-6 col-md-4">
+				<h5>Personer</h5>
+				<ol class="list-unstyled">
+					{% for person in innslag.personer %}
+						<li>
+							<p>{{person.navn}} <small><br />{{person.rolle}}</small><small class="hidden-xs">{{person.alder}} år</small></p>
+						</li>
+					{% endfor %}
+				</ol>
+			</div>
+			
+			{# =============== HENDELSER =============== #}
+			{% if innslag.hendelser is defined or innslag.hendelser_kun_denne %}
+			<div class="col-xs-12 col-sm-6 col-md-4">
+				<h5>Hendelser</h5>
+				<ol class="list-unstyled">
+					{% for hend in innslag.hendelser %}
+						<li>
+							<p>{{hend.navn}} <small class="hidden-xs">{{ hend.start | dato('l H:i') }} - nr {{hend.nr}}</small></p>
+						</li>
+					{% endfor %}
+					{% if innslag.hendelser_kun_denne and context == 'pameldte' %}
+						<li>
+							<p><small>Er ikke satt opp i noen forestillinger/hendelser på denne mønstringen</small></p>
+						</li>
+					{% elseif innslag.hendelser_kun_denne %}
+						<li>
+							<p><small>Deltar kun i {{hendelse.navn}} på denne mønstringen</small></p>
+						</li>
+					{% endif %}
+				</ol>
+			</div>
+			{% endif %}
+			
+			{# =============== ARTIKLER =============== #}
+			{% if innslag.artikler is defined and innslag.artikler|length > 0 %}
+				<div class="clearfix"></div>
+				<div class="col-xs-12">
+					<h5>Artikler</h5>
+					<ol class="list-unstyled">
+						{% for artikkel in innslag.artikler %}
+							<li>
+								<a href="{{artikkel.url}}" target="_blank"><strong>{{artikkel.tittel}}</strong></a>
+							</li>
+						{% endfor %}
+					</ol>
+				</div>
+			{% endif %}
+			
+			{# =============== BILDER =============== #}
+			{% if innslag.bilder is defined and innslag.bilder|length > 0 %}
+				<div class="clearfix"></div>
+				<div class="col-xs-12">
+					<h5>Bilder</h5>
+					
+					{% if innslag.bilder.kommune is defined %}
+						<div class="clearfix"></div>
+						<h6>Lokalmønstringen</h6>
+						{% embed "pre-render/image_album.twig.html" with{'photos': innslag.bilder.kommune, 'album_id': 'kommune'~innslag.ID, 'selector': 'innslag'} %}{% endembed %}
+						<div class="clearfix"></div>
+					{% endif %}
+					
+					{% if innslag.bilder.fylke is defined %}
+						<div class="clearfix"></div>
+						<h6>Fylkesmønstringen</h6>
+						{% embed "pre-render/image_album.twig.html" with{'photos': innslag.bilder.fylke, 'album_id': 'fylke_'~innslag.ID, 'selector': 'innslag'} %}{% endembed %}
+						<div class="clearfix"></div>
+					{% endif %}
+					
+					{% if innslag.bilder.land is defined %}
+						<div class="clearfix"></div>
+						<h6>UKM-festivalen</h6>
+						{% embed "pre-render/image_album.twig.html" with{'photos': innslag.bilder.land, 'album_id': 'land'~innslag.ID, 'selector': 'innslag'} %}{% endembed %}
+						<div class="clearfix"></div>
+					{% endif %}
+				</div>
+			{% endif %}
+
+			{# =============== UKM-TV =============== #}
+			{% if innslag.UKMTV is defined and innslag.UKMTV|length > 0 %}
+				<div class="clearfix"></div>
+				<div class="col-xs-12">
+					<h5>{{innslag.navn}} i UKM-TV</h5>
+					<ol class="list-unstyled">
+						{% for tv in innslag.UKMTV %}
+							<li class="UKMTV clickable">
+								<div class="image"><img src="{{tv.image_url}}" style="max-width:100%;" /></div>
+								<div class="embedcontainer" style="display:none;" data-framesource="{{tv.embed_url}}"></div>
+							</li>
+						{% endfor %}
+					</ol>
+				</div>
+			{% endif %}
+		</div>	
+	</div>
+</li>
