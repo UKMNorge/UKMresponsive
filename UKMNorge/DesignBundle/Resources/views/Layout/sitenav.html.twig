@@ -1,37 +1,34 @@
-<style>
-#main_menu_button {
-    margin: 7px 0px 0px 0px;
-}
-.navbar-brand {
-    float: left;
-    padding: 6px 15px 10px 15px;
-}
-	
-.navbar-separator {
-    margin-top: -4px;
-    border-bottom: 5px solid #b89dcc;
-}
-</style>
-
 {% block navbar %}
-	<header class="container">
+	<header>
 		{% block navbar_button %}
-			<div class="pull-right">
+			<div class="pull-xs-right">
 				<a href="{{ view.getPath().getBlog() }}hovedmeny/">
-					<button type="button" class="pull-right btn-primary btn-outline" id="main_menu_button">MENY</button>
+					<button type="button" class="btn btn-sm btn-outline-primary m-x-1 m-y-1" id="main_menu_button">MENY</button>
 				</a>
 			</div>
 		{% endblock %}
 	
 		{# BRAND ICON #}
 		<div class="navbar-header">
-			<a href="/" class="navbar-brand">
+			<a href="/" class="m-x-1">
 				<img src="http://grafikk.ukm.no/profil/logo/UKM_logo.png" width="70" />
 			</a>
 		</div>
 
 		<div class="clearfix"></div>
-		<div class="navbar-separator"></div>
 	</header>
-
+	<div class="container" id="UKMslogan_container">
+		<div class="row">
+			<div class="col-xs-12 col-sm-8 col-md-6 offset-md-1">
+				{% block jumbo_xs %}
+			    	<p class="lead center" id="UKMslogan">Når vi møtes, inspirerer, utfordrer og skaper sammen – det er da magien skjer </p>
+				{% endblock %}
+			</div>
+			<div class="col-sm-4 col-md-3 hidden-xs-down">
+				<img src="{{ UKMasset('img/skygge.png') }}" width="350" />
+			</div>
+		</div>
+	</div>
+	<div class="navbar-separator">
+	</div>
 {% endblock %}	

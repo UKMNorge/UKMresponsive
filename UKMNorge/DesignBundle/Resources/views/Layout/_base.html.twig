@@ -10,18 +10,21 @@
 		<title>{{ view.getBlog().getTitle() }}</title>
 		<link rel="shortcut icon" href="http://grafikk.ukm.no/favicon.ico" />
 		<link rel="alternate" type="application/rss+xml" href="{{blog.feed}}" title="{{blog.name}} RSS-feed" />
-		<link href="{{ "UKMresponsiveV2.css"|UKMgrafikk }}" rel="stylesheet" />
-		<link rel="stylesheet" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600,700,300' type='text/css' />
+
+		{# STYLES #}
+		<link href="{{ UKMasset("css/bootstrap.min.css") }}" rel="stylesheet" />
+		<link href="{{ UKMasset("css/UKMresponsive.css") }}" rel="stylesheet" />
 
 		{# SCRIPTS #}
-		<script type="text/javascript" src="{{ view.getPaths().get('theme_dir') }}public/js/jquery-1.12.2.min.js"></script>
-		<script type="text/javascript" src="{{ view.getPaths().get('theme_dir') }}public/js/javascript.js"></script>
+		<script type="text/javascript" src="{{ UKMasset("js/jquery-2.2.4.min.js") }}"></script>
+		<script type="text/javascript" src="{{ UKMasset("js/UKMresponsive.js") }}"></script>
 	</head>
 </html>
 
 <body>
 	<div id="fb-root"></div>{# FACEBOOK #}
-	{% embed "UKMDesignBundle:Layout:sitenav.html.twig"|UKMpath %}{% endembed %}	
+	{% embed "UKMDesignBundle:Layout:sitenav.html.twig"|UKMpath %}{% endembed %}
+	{% embed "UKMDesignBundle:Layout:jumbo.html.twig"|UKMpath %}{% endembed %}
 {#
 	{% embed TWIG_PATH_LAYOUT ~ "sitemap.html.twig" %}{% endembed %}
 #}	
