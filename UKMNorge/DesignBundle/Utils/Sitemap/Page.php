@@ -9,8 +9,8 @@ class Page {
 	var $description = null;
 	var $target = false;
 	
-	public function __construct( $id, $data ) {
-		$this->id = $id;
+	public function __construct( $data ) {
+		$this->id = $data['id'];
 		$this->url = $data['url'];
 		$this->title = $data['title'];
 		$this->description = $data['description'];
@@ -33,5 +33,8 @@ class Page {
 	}
 	public function getTarget() {
 		return $this->target;
+	}
+	public function getTargetProperty() {
+		return $this->target == false ? '' : 'target="'. $this->target .'"' ;
 	}
 }

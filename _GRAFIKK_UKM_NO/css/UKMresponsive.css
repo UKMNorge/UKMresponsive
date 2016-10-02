@@ -14,6 +14,7 @@
 }
 .navbar-separator {
   border-bottom: 5px solid #b89dcc;
+  margin-bottom: 1rem;
 }
 #UKMslogan {
   font-size: 1.5rem;
@@ -23,6 +24,14 @@
   #UKMslogan_container {
     margin-top: -3rem;
   }
+}
+.sitemap .section .header {
+  color: #b89dcc;
+  border-bottom: 4px solid #b89dcc;
+}
+.sitemap .section .header a {
+  color: #b89dcc;
+  text-decoration: none;
 }
 .btn-primary,
 .btn-primary:hover,

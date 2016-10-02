@@ -23,11 +23,11 @@
 
 <body>
 	<div id="fb-root"></div>{# FACEBOOK #}
-	{% embed "UKMDesignBundle:Layout:sitenav.html.twig"|UKMpath %}{% endembed %}
-	{% embed "UKMDesignBundle:Layout:jumbo.html.twig"|UKMpath %}{% endembed %}
-{#
-	{% embed TWIG_PATH_LAYOUT ~ "sitemap.html.twig" %}{% endembed %}
-#}	
+	{% embed "UKMDesignBundle:Layout:header.html.twig"|UKMpath %}{% endembed %}
+
+	<div class="container-fluid" id="UKMDesign_sitemap" style="display:none;">
+		{% embed "UKMDesignBundle:Layout:nav.html.twig"|UKMpath with {'hidden': true} %}{% endembed %}
+	</div>
 	<div id="UKMDesign_content">
 		{% block content %}Designfil mangler content-block.{% endblock %}
 	</div>

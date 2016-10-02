@@ -1,6 +1,7 @@
 <?php
 	
 use UKMNorge\DesignBundle\Utils\Sitemap;
+use UKMNorge\DesignBundle\Services\UKMResponsive;
 
 header('Content-Type: text/html; charset=utf-8');
 session_start();
@@ -22,9 +23,14 @@ require_once( PATH_DESIGNBUNDLE . 'Utils/Sitemap/Section.php');
 require_once( PATH_DESIGNBUNDLE . 'Utils/Sitemap.php');
 require_once( PATH_DESIGNBUNDLE . 'Utils/MetaTags.php');
 
+require_once( PATH_DESIGNBUNDLE . 'Services/UKMResponsive.php');
+
 
 WP_TWIG::setTemplateDir( PATH_DESIGNBUNDLE .'Resources/views/' );
 WP_TWIG::setDebug( WP_ENV == 'dev' );
 $WP_TWIG_DATA = [];
 
 Sitemap::loadFromYamlFile( PATH_DESIGNBUNDLE . 'Resources/config/sitemap.yml' );
+UKMResponsive::setNav( Sitemap );
+
+$WP_TWIG_DATA['nav'] = Sitemap::getSections();

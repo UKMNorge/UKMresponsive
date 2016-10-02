@@ -1,16 +1,34 @@
-{% block header %}
-<div class="ukm_page_jumbo">
-	<img src="/wp-content/themes/UKMresponsive/img/skygge.png" class="visible-sm visible-md visible-lg" style="position: absolute;right: 10vw; top: 13px;" />
+{% block navbar %}
+	<header>
+		{% block navbar_button %}
+			<div class="pull-xs-right">
+				<a href="{{ view.getPath().getBlog() }}hovedmeny/">
+					<button type="button" class="btn btn-sm btn-outline-primary m-x-1 m-y-1" id="main_menu_button" data-status="hidden">MENY</button>
+				</a>
+			</div>
+		{% endblock %}
 	
-	<div class="container">
-		<a href="{{ view.getPaths().get('blog') }}"><h1 id="ukm_page_jumbo_header">	
-			{% block jumbo_header %}
-				{{ view.getBlog().getTitle() }}
-			{% endblock %}
-		</h1>
-		</a>
-		<h1 id="ukm_page_jumbo_header_temp" style="display:none;">UKM</h1>
-		<p id="ukm_page_jumbo_temp" style="display:none;"></p>
+		{# BRAND ICON #}
+		<div class="navbar-header">
+			<a href="/" class="m-x-1">
+				<img src="http://grafikk.ukm.no/profil/logo/UKM_logo.png" width="70" />
+			</a>
+		</div>
+
+		<div class="clearfix"></div>
+	</header>
+	<div class="container" id="UKMslogan_container">
+		<div class="row">
+			<div class="col-xs-12 col-sm-8 col-md-6 offset-md-1">
+				{% block jumbo_xs %}
+			    	<p class="lead center" id="UKMslogan">Når vi møtes, inspirerer, utfordrer og skaper sammen – det er da magien skjer </p>
+				{% endblock %}
+			</div>
+			<div class="col-sm-4 col-md-3 hidden-xs-down">
+				<img src="{{ UKMasset('img/skygge.png') }}" width="350" />
+			</div>
+		</div>
 	</div>
-</div>
-{% endblock %}
+	<div class="navbar-separator">
+	</div>
+{% endblock %}	

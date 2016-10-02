@@ -1,41 +1,47 @@
 UKM:
     url: /
     title: UKM
+    #color: d4c8e4
     pages:
-        - forsiden:
+        - 
+            id: forsiden
             url: /
             title: Forsiden
             description: Ung kultur møtes
-        - omoss:
+        - 
+            id: omoss
             url: /om-oss/
             title: Om oss
             description: Hva er UKM?
-        - ukmere:
+        - 
+            id: ukmere
             url: /ukmere/
             title: UKMere
             description: Bli kjent med oss
-        -
-            url: /
 hvaer:
     url: /om-oss/
     title: Hva er UKM?
     pages:
-        - omoss:
+        - 
+            id: omoss
             url: /om-oss/
+            title: Om oss
+            description: Test
 derdubor:
     url: /hvor-bor-du/
     title: Hvor bor du?
     pages:
-        - akershus:
+        - 
+            id: akershus
             url: /akershus/
             title: Akershus
    
 presse:
     url: /om.ukm.no/
-    title: presse og informasjon'
+    title: Presse og informasjon
     pages:
-        - forsiden:
+        - 
+            id: forsiden
             url: /om.ukm.no/
             title: presse og informasjon
             description: Informasjon om UKM
-           
