@@ -11,4 +11,4 @@ $WP_TWIG_DATA['page'] = $page;
 
 
 #echo Sitemap::getSections();
-echo WP_TWIG::render( 'Page/homepage', $WP_TWIG_DATA );
+echo WP_TWIG::render( 'Page/home_norge', $WP_TWIG_DATA );
