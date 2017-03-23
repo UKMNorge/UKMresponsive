@@ -35,6 +35,10 @@
 			<div class="livenow">
 				<a href="{{feature.link}}" target="_blank">Se UKM-TV direkte fra mønstringen nå!</a>
 			</div>
+		{% elseif feature.live.link and feature.stopp is defined and date(feature.stopp) < date() %}
+			<div class="livenow">
+				<a href="{{ feature.live.archive }}" target="_blank">{{feature.title}} sendte UKM-TV direkte</a>
+			</div>
 		{% elseif feature.live.link %}
 			<div class="livenow">
 				<a href="{{feature.link}}" target="_blank">{{feature.title}} kommer til å sende UKM-TV direkte</a>

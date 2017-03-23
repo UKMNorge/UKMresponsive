@@ -1,5 +1,4 @@
 <div class="feature_block">
-
 	<div class="feature_cover_landscape col-xs-12 visible-sm visible-xs" style="background-image: url('{{feature.cover.landscape.url}}');">
 		<div class="infos">
 			<h2>{{feature.title}}</h2>
@@ -38,9 +37,14 @@
 		{% endfor %}
 
 		<div class="clearfix"></div>
+
 		{% if feature.live.now %}
 			<div class="livenow">
 				<a href="{{feature.link}}" target="_blank">Se UKM-TV direkte fra mønstringen nå!</a>
+			</div>
+		{% elseif feature.live.link and feature.stopp is defined and date(feature.stopp) < date() %}
+			<div class="livenow">
+				<a href="{{ feature.live.archive }}" target="_blank">{{feature.title}} sendte UKM-TV direkte</a>
 			</div>
 		{% elseif feature.live.link %}
 			<div class="livenow">
