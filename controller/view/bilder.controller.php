@@ -42,7 +42,7 @@ foreach( $hendelser as $hendelsen ) {
                         foreach( $images as $image ) {
                                 if(!is_array($image['post_meta']['sizes']['large']))
                                         continue;
-                                if($blog_id !== $image['blog_id'])
+                                if((int) $blog_id !== (int)$image['blog_id'])
                                         continue;
 
                                 $data_bilde = new stdClass();
