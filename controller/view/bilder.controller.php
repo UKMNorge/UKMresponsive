@@ -14,7 +14,9 @@ $hendelser = $monstringen->forestillinger();
 $data = array();
 
 foreach( $hendelser as $hendelsen ) {
-        $hendelse = new forestilling( $hendelsen['c_id'] );
+       	$count_bilder = 0;
+
+	$hendelse = new forestilling( $hendelsen['c_id'] );
         $alle_innslag = $hendelse->innslag();
 
         $data_hendelse = new stdClass();
@@ -27,7 +29,6 @@ foreach( $hendelser as $hendelsen ) {
 		}
 
         foreach( $alle_innslag as $innslaget ) {
-	        	$count_bilder = 0;
                 $innslag = new innslag( $innslaget['b_id'] );
                 $media = $innslag->related_items();
 
