@@ -236,10 +236,10 @@ if( $DATA['state'] == 'pre' ) {
 	$DATA['ukmfestivalen_jumboimage'] = block_jumbo_image('top',
 										  'UKM-festivalen', 
 										  $description, 
-										  '//grafikk.ukm.no/festivalen/2016/festival2016_xs.jpg',
-										  '//grafikk.ukm.no/festivalen/2016/festival2016_sm.jpg',
-										  '//grafikk.ukm.no/festivalen/2016/festival2016_md.jpg',
-										  '//grafikk.ukm.no/festivalen/2016/festival2016_lg.jpg'
+										  '//grafikk.ukm.no/festivalen/2017/festival_xs.jpg',
+										  '//grafikk.ukm.no/festivalen/2017/festival_sm.jpg',
+										  '//grafikk.ukm.no/festivalen/2017/festival_md.jpg',
+										  '//grafikk.ukm.no/festivalen/2017/festival_lg.jpg'
 										   );
 
 	if( get_option('vis_festivalinfo_forside_mode_pre') ) {
