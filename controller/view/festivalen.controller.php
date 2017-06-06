@@ -251,7 +251,9 @@ if( $DATA['state'] == 'pre' ) {
 	
 	if( in_array( date('H'), array(12, 13, 14, 18, 19, 20 ) ) && date('m') == 6 && date('d') < 28 ) {
 		$livestream_info = get_page_by_path( 'livestream' );
-		$DATA['livestream_info'] = array( block_lead_center( 'livestream-info', $livestream_info ) );
+		if( null != $livestream_info ) {
+			$DATA['livestream_info'] = array( block_lead_center( 'livestream-info', $livestream_info ) );
+		}
 	} else {
 		$DATA['livelink'] = get_option('ukm_live_link');
 	}
