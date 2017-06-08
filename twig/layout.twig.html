@@ -145,7 +145,7 @@
 				{% endif %}
 				<h1 id="ukm_page_jumbo_header">	
 					{% block jumbo_header %}
-						{{ jumbo is defined ? jumbo.header : 'UKM' }}
+						{{ jumbo is defined ? jumbo.header|raw : 'UKM' }}
 					{% endblock %}
 				</h1>
 				<h1 id="ukm_page_jumbo_header_temp" style="display:none;">UKM</h1>
