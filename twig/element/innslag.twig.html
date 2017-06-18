@@ -40,7 +40,7 @@
 				<h2 class="number">{% if showIndex is defined and showIndex %}{{loop.index}}. {% endif %}</h2>
 				<h3 class="name">{{innslag.navn}} <small><span class="visible-xs" style="height:1px;"><br /></span>fra {{innslag.sted}}</small></h3>
 			</div>
-			<div class="clicktosee col-xs-1 col-sm-4">
+			<div class="clicktosee col-xs-1 col-sm-4 {% if hideHamburgerXs is defined and hideHamburgerXs %}hidden-xs{% endif %}">
 				<img class="moreicon pull-right" src="//ico.ukm.no/more-32.png">
 				<p class="type hidden-xs pull-right">
 					{{ innslag.sjanger is not empty ? innslag.sjanger|capitalize : innslag.kategori|replace({'Nettredaksjon':'UKM Media'}) }}

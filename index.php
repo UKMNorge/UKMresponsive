@@ -186,6 +186,10 @@ require_once('functions_theme.php');
 				require_once('controller/element/innslag.controller.php');
             	require_once('controller/view/program.controller.php');
             	break;
+            case 'duoprogram':
+				require_once('controller/element/innslag.controller.php');
+            	require_once('controller/view/duoprogram.controller.php');
+            	break;
             case 'pameldte':
 				require_once('controller/element/innslag.controller.php');
             	require_once('controller/view/pameldte.controller.php');
