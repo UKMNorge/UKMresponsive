@@ -41,6 +41,7 @@ $hendelse->start		= $con->g('c_start');
 $hendelse->sted			= $con->g('c_place');
 $hendelse->offentlig	= $con->g('c_visible_detail')=='true';
 $hendelse->embed 		= get_post_meta( get_the_ID(), 'embed-left', true );
+$hendelse->link 		= get_post_meta( get_the_ID(), 'link-left', true );
 $hendelse->rekkefolge	= [];
 $DATA['hendelse_left'] = $hendelse;
 
@@ -62,6 +63,7 @@ $hendelse->start		= $con->g('c_start');
 $hendelse->sted			= $con->g('c_place');
 $hendelse->offentlig	= $con->g('c_visible_detail')=='true';
 $hendelse->embed 		= get_post_meta( get_the_ID(), 'embed-right', true );
+$hendelse->link 		= get_post_meta( get_the_ID(), 'link-right', true );
 $hendelse->rekkefolge	= [];
 
 if( $hendelse->offentlig ) {
