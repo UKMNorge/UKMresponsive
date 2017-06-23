@@ -176,6 +176,14 @@ $DATA['isMobile'] = $mobileDetect->isMobile();
 											   'description'	=> 'Se program for festivalen'
 											  );
 	}
+
+	if( true ) { // FUNKSJON FINNES IKKE: $pl->har_bilder() ) {
+		$DATA['page_nav'][] = (object) array( 'url' 			=> 'bilder/',
+											   'title'		 	=> 'Bilder',
+											   'icon'			=> 'kamera',
+											   'description'	=> 'Se bilder fra festivalen'
+											  );
+	}
 	
 	// SKAL DELTAKERINFO VISES
 	if( get_option('vis_deltakerinfo_mode_pre') ) {
