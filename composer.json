@@ -1,5 +1,6 @@
 {
     "require": {
-        "symfony/yaml": "^3.1"
+        "symfony/yaml": "^3.1",
+        "mariusmandal/wpoo": "dev-master"
     }
 }

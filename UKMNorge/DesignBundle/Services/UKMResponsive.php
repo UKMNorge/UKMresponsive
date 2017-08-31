@@ -2,7 +2,7 @@
 	
 namespace UKMNorge\DesignBundle\Services;
 
-class UKMResponsive {
+class UKMResponsiveService {
 	static $nav = [];
 	
 	public static function setNav( $nav ) {

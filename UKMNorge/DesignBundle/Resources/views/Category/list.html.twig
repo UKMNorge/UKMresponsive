@@ -1,0 +1,19 @@
+{% extends "Layout/_layout.html.twig"|UKMpath %}
+
+{% block content %}
+	<div class="container-fluid">
+		<h1>{{ category.name }}</h1>
+		<div class="row">			
+			{% for post in posts %}
+				<div class="col-6 col-sm-4 col-lg-3">
+					{% embed "Post:grid-default.html.twig"|UKMpath %}{% endembed %}
+				</div>
+			{% else %}
+				<div class="col-12">
+					Ingen artikler i denne kategorien.
+				</div>
+			{% endfor %}
+		</div>
+		
+		{% embed "Category:next_prev_links.html.twig"|UKMpath %}{% endembed %}
+{% endblock %}

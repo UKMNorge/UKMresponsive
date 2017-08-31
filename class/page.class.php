@@ -1,12 +1,9 @@
 <?php
-require_once(THEME_PATH . 'class/blocks.class.php');
-require_once(THEME_PATH . 'class/UKMresponsive.class.php');
+require_once(PATH_THEME . 'class/blocks.class.php');
 
-class page extends UKMresponsive {
+class page {
 	
-	public function __construct( $view ) {
-		parent::__construct( $view );
-		
+	public function __construct() {
 		global $post, $post_id;
 		$this->page = new WPOO_Post( $post );
 		

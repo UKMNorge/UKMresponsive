@@ -1,68 +1,68 @@
-{% extends "Layout/_layout.html.twig" %}
+{% extends "Layout/_layout.html.twig"|UKMpath %}
 
 
 {% block content %}
 	<div class="container-fluid">
-		<div class="row hidden-lg-up">
-			<div class="col-xs-7">
-				<h4>Hva er UKM?</h4>
-				<p>
-					Målet med UKM er å ha det gøy, møte nye mennesker og bli inspirert til nye samarbeid og videre utvikling.
-					Du får verdifull erfaring, uansett om du er proff eller fersk; UKM er for alle.
-				</p>
-			</div>
-			<div class="col-xs-5">
-				<div class="small" align="right">
-					Siste nyhet
-				</div>
-				{% embed "Post:grid-default.html.twig"|UKMpath %}{% endembed %}
+		<div class="row" style="margin-bottom: 1em">
+			<div class="col right">
+				<a href="//delta.ukm.no" class="mx-1 btn btn-primary">Meld deg på</a>
+				<a href="/derdubor/" class="mx-1 btn btn-outline-primary">Finn nærmeste UKM</a>
 			</div>
 		</div>
-
-		<div class="row visible-lg-up hidden-md-down">
-			<div class="col-lg-6">
-				<h4>Hva er UKM?</h4>
+	
+		{# ===== KUN SYNLIG XS ===== #}
+		<div class="row d-flex d-md-none">
+			<div class="col-7">
+				<h4>{{ page.getPage().title|raw }}</h4>
 				<p class="lead">
-					Målet med UKM er å ha det gøy, møte nye mennesker og bli inspirert til nye samarbeid og videre utvikling.
-					Du får verdifull erfaring, uansett om du er proff eller fersk; UKM er for alle.
+					{{ page.getPage().lead|raw }}
+					<br />
+					<a href="#" class="UKMtoggleShow phoneReadMoreUKM" data-target="phoneReadMoreUKM">Les mer om UKM</a>
 				</p>
-				<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec magna velit. Nullam et lobortis augue. Sed a efficitur purus, id malesuada orci. Ut lacinia eget lectus vel venenatis. Phasellus tincidunt faucibus lacus, eu lobortis risus consectetur ac. Nullam ut lectus non nibh venenatis convallis. Vivamus ipsum nulla, bibendum a semper non, eleifend at mauris. Ut non risus quis diam luctus vestibulum. Mauris ut est eu ante faucibus eleifend sed sit amet orci. Maecenas at nisi faucibus, lacinia erat et, bibendum orci. Duis aliquam elit id finibus rutrum. Duis at gravida eros.
-				</p>
-				<p>
-Donec convallis nisl eget viverra feugiat. Mauris vel volutpat nibh, sed dapibus augue. Curabitur lacinia mauris eget magna varius, eget varius justo maximus. Maecenas vitae commodo nulla, vitae rutrum lacus. Cras id nisl vitae odio suscipit ultricies. Vestibulum egestas est a dignissim lobortis. Fusce vulputate ullamcorper nunc sit amet pretium. Maecenas vehicula ut orci at porta. Donec vitae odio gravida velit tempor sagittis quis pretium mauris. Aenean molestie euismod ipsum, quis rhoncus risus ornare id. Phasellus quis imperdiet orci. Donec eget iaculis mauris, ac accumsan tortor.
-				</p>
-				<p>
-Quisque nibh velit, ultrices id diam vel, scelerisque pellentesque odio. Nam rhoncus ipsum sit amet lectus auctor scelerisque. Etiam porta vulputate arcu sed hendrerit. Cras sed neque ante. Suspendisse libero arcu, facilisis eu ultrices ac, luctus eget turpis. Fusce et elit et elit feugiat volutpat id non eros. Duis molestie metus id sem viverra varius. Proin vel ipsum non nibh consectetur tincidunt. In sem ligula, sodales nec ante ut, ultricies laoreet nunc. </p>
 			</div>
-			<div class="col-lg-6">
-				<div class="p-y-0">
-					<div class="post">
-						{% embed "Post:grid-pretty.html.twig"|UKMpath with {'lead': 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'} %}{% endembed %}
-					</div>
-					<div class="post">
-						{% embed "Post:grid-pretty.html.twig"|UKMpath with {'lead': 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'} %}{% endembed %}
-					</div>
-					<div class="post">
-						{% embed "Post:grid-pretty.html.twig"|UKMpath with {'lead': 'Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'} %}{% endembed %}
-					</div>
-					<div class="post">
-						{% embed "Post:grid-pretty.html.twig"|UKMpath with {'lead': 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'} %}{% endembed %}
-					</div>
-					<div class="post">
-						{% embed "Post:grid-pretty.html.twig"|UKMpath with {'lead': 'Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'} %}{% endembed %}
-					</div>
-					<div class="post">
-						{% embed "Post:grid-pretty.html.twig"|UKMpath with {'lead': 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'} %}{% endembed %}
-					</div>
+			<div class="col-5">
+				<div class="small float-right badge badge-square badge-primary">
+					siste nyhet
+				</div>
+				{% embed "Post:grid-default.html.twig"|UKMpath with { post: posts.getFirst() } %}{% endembed %}
+			</div>
 
+			<div class="clearfix"></div>
+			<div class="col-12 UKMtoggleContent" style="display:none" id="phoneReadMoreUKM">
+				{{ page.getPage().content_wo_lead|raw }}
+				<a href="#" class="mx-1 btn btn-outline-primary UKMtoggleHide phoneReadMoreUKM" data-target="phoneReadMoreUKM">Lukk</a>
+			</div>
+		</div>
+		<div class="row d-flex d-md-none">
+			{% for post in posts.getAll() %}
+				{% if not loop.first %}
+					<div class="col-6">
+						{% embed "Post:grid-default.html.twig"|UKMpath with { post: post } %}{% endembed %}
+					</div>
+				{% endif %}
+			{% endfor %}
+		</div>
+
+		{# ==== KUN SYNLIG SM-UP ==== #}
+		<div class="row d-none d-md-flex">
+			<div class="col-6 col-xl-5">
+				<h4>{{ page.getPage().title|raw }}</h4>
+				<p class="lead">
+					{{ page.getPage().lead|raw }}
+				</p>
+				{{ page.getPage().content_wo_lead|raw }}
+			</div>
+			<div class="col-6 col-xl-7">
+				<div class="row">
+					{% for post in posts.getAll() %}
+						<div class="col-12 col-lg-6">
+							{% embed "Post:grid-pretty.html.twig"|UKMpath %}{% endembed %}
+						</div>
+					{% endfor %}
 				</div>
 			</div>
 		</div>
 
-
-		<div class="row">
-			<hr class="col-xs-12" />
-		</div>
+		{% embed "Category:next_prev_links.html.twig"|UKMpath %}{% endembed %}
 	</div>
 {% endblock %}

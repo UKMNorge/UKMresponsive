@@ -4,30 +4,79 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "faea626b9105b2c5a098f0d327e807fa",
-    "content-hash": "cf9801ff3fb8c9f0ff60268019990d29",
+    "hash": "966c26c7ee29184fb4a2e44eb10213b7",
+    "content-hash": "37e101e355c64482c4cb2bc9e024213e",
     "packages": [
         {
-            "name": "symfony/yaml",
-            "version": "v3.1.4",
+            "name": "mariusmandal/wpoo",
+            "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/symfony/yaml.git",
-                "reference": "f291ed25eb1435bddbe8a96caaef16469c2a092d"
+                "url": "https://github.com/mariusmandal/WPOO.git",
+                "reference": "f22a53bf98f25eecbb9aa9f6199d0b0a2c7ad4f7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/f291ed25eb1435bddbe8a96caaef16469c2a092d",
-                "reference": "f291ed25eb1435bddbe8a96caaef16469c2a092d",
+                "url": "https://api.github.com/repos/mariusmandal/WPOO/zipball/f22a53bf98f25eecbb9aa9f6199d0b0a2c7ad4f7",
+                "reference": "f22a53bf98f25eecbb9aa9f6199d0b0a2c7ad4f7",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.5.9"
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "WPOO_": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Marius Mandal",
+                    "email": "mariusmandal@gmail.com",
+                    "homepage": "http://mariusmandal.no",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Helper classes for object-oriented wordpress themes",
+            "homepage": "https://github.com/mariusmandal/WPOO",
+            "keywords": [
+                "themes",
+                "wordpress"
+            ],
+            "time": "2016-03-01 19:07:01"
+        },
+        {
+            "name": "symfony/yaml",
+            "version": "v3.3.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/yaml.git",
+                "reference": "1d8c2a99c80862bdc3af94c1781bf70f86bccac0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/1d8c2a99c80862bdc3af94c1781bf70f86bccac0",
+                "reference": "1d8c2a99c80862bdc3af94c1781bf70f86bccac0",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.5.9|>=7.0.8"
+            },
+            "require-dev": {
+                "symfony/console": "~2.8|~3.0"
+            },
+            "suggest": {
+                "symfony/console": "For validating YAML files using the lint command"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.1-dev"
+                    "dev-master": "3.3-dev"
                 }
             },
             "autoload": {
@@ -54,13 +103,15 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2016-09-02 02:12:52"
+            "time": "2017-07-29 21:54:42"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "mariusmandal/wpoo": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

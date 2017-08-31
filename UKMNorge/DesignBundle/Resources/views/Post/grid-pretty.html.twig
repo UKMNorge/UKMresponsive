@@ -1,8 +1,10 @@
-<div class="module">
-  <header>
-    <h1>
-      Overskriften
-    </h1>
-    <p>{{ lead }}</p>
-  </header>
-</div>
+<a href="{{post.url}}">
+	<div class="post-grid-pretty" style="background-image: url('{{post.image.medium.src}}');">
+		<header>
+			<h1>
+				{{ post.title|raw }}
+			</h1>
+			<p>{{ post.lead|raw }}</p>
+		</header>
+	</div>
+</a>

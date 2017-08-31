@@ -2,29 +2,29 @@
 
 <meta name="description" content="{{ SEO.description }}">
 <meta name="author" content="{{ SEO.author }}">
-<meta property="fb:app_id" content="141016739323676" />
+<meta property="og:locale" content="nb_NO" />
+<meta property="fb:app_id" content="{{ SEO.fb_app_id }}" />
+<meta property="fb:admins" content="{{ SEO.fb_admins }}" />
+<meta name="google-site-verification" content="{{ SEO.google_site_verification }}" />
 <meta property="og:site_name" content="{{SEO.site_name}}" />
 <meta property="og:type" content="{{SEO.type}}" />
 <meta property="og:title" content="{{SEO.title|raw}}"/>
 <meta property="article:section" content="{{SEO.section}}" />
-
-{% if SEO.image_url is defined %}
-	<meta property="og:image" content="{{SEO.image_url}}" />
-	<meta property="og:width" content="{{SEO.image_width}}" />
-	<meta property="og:height" content="{{SEO.image_height}}" />
+{% if SEO.image.width is defined > 0 and SEO.image.height > 0 %}
+<meta property="og:image" content="{{SEO.image.url}}" />
+<meta property="og:image:width" content="{{SEO.image.width}}" />
+<meta property="og:image:height" content="{{SEO.image.height}}" />
 {% elseif SEO.image is defined %}
-	<meta property="og:image" content="{{SEO.image}}" />
+<meta property="og:image" content="{{SEO.image.url}}" />
 {% endif %}
-
+{% if SEO.image.type is defined and SEO.image.type is not empty %}
+<meta property="og:image:type" content="{{SEO.image.type}}" />
+{% endif %}
 <meta property="og:url" content="{{SEO.canonical}}" />
 <meta property="og:description" content="{{SEO.description}}" />
-
-{% if SEO.type == 'article' %}
-	<meta property="article:published_time" content="{{SEO.published_time}}" />
-	<meta property="article:modified_time" content="{{SEO.modified_time}}" />
-	<meta property="article:author" content="{{SEO.author}}" />
-{% endif %}
-
 <meta property="og:locale" content="nb_NO" />
-<meta property="fb:admins" content="597605662" />
-<meta name="google-site-verification" content="dD8sAwp7X8mpu2PN1iu4C3VWEDS8sMxYUavoVBrmnek" />
+{% if SEO.type == 'article' %}
+<meta property="article:published_time" content="{{SEO.published_time}}" />
+<meta property="article:modified_time" content="{{SEO.modified_time}}" />
+<meta property="article:author" content="{{SEO.author}}" />
+{% endif %}

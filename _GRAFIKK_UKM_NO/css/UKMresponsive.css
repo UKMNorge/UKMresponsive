@@ -12,12 +12,18 @@
 /* LINKS */
 a {
   color: #b89dcc;
+  cursor: hand;
 }
 a:visited,
 a:focus,
 a:active,
 a:hover {
   color: #946bb2;
+}
+.wp-caption,
+img {
+  max-width: 100% !important;
+  height: auto;
 }
 /* FILE: navbar.less */
 /*#main_menu_button {
@@ -42,6 +48,24 @@ a:hover {
     margin-top: -3rem;
   }
 }
+#UKMslogan {
+  background: rgba(255, 255, 255, 0.4);
+}
+#UKMlogo {
+  margin-top: -0.4em;
+}
+.navbar-separator #skygge {
+  height: 15vh;
+  float: right;
+  margin-top: -15vh;
+  margin-right: 4vw;
+}
+.sectionTitle {
+  font-size: 1.5em;
+  font-weight: 100;
+  color: #b89dcc;
+  padding-top: 0.35rem;
+}
 .sitemap .section .header {
   color: #b89dcc;
   border-bottom: 4px solid #b89dcc;
@@ -50,6 +74,11 @@ a:hover {
   color: #b89dcc;
   text-decoration: none;
 }
+a.btn-primary,
+a.btn-primary:hover,
+a.btn-primary:active,
+a.btn-primary:visited,
+a.btn-primary:focus,
 .btn-primary,
 .btn-primary:hover,
 .btn-primary:active,
@@ -57,6 +86,7 @@ a:hover {
 .btn-primary:focus {
   background-color: #b89dcc;
   border-color: #b89dcc;
+  color: #fff !important;
 }
 .btn-outline-primary,
 .btn-outline-primary:visited {
@@ -74,37 +104,50 @@ a:hover {
 .btn-outline-primary:active:focus {
   background-color: #b89dcc !important;
 }
+.btn-outline-primary:focus,
+.btn-outline-primary:active {
+  color: #fff !important;
+}
+.badge-square {
+  border-radius: 0;
+}
+.badge-primary {
+  background-color: #b89dcc;
+  border-color: #b89dcc;
+}
 /* FILE: post.less */
+/* GRID VIEW: PRETTY */
 .post {
-  width: 50%;
-  float: left;
   padding: 0;
   margin: 0;
   margin-bottom: 6px;
 }
-.module {
-  background: url('https://farm8.staticflickr.com/7507/15791167900_2deac5851e_z_d.jpg');
+.post-grid-pretty {
+  background: #dccfe6;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  width: 400px;
-  height: 300px;
+  width: 100%;
+  height: 15em;
   position: relative;
   overflow: hidden;
   padding: 0;
   margin: 0;
+  margin-bottom: 1em;
 }
-.module > header > p {
+.post-grid-pretty > header > p {
+  font-size: 0.8em;
   color: white;
+  margin-bottom: 0;
 }
-.module > header {
+.post-grid-pretty > header {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  padding: 20px 10px;
+  padding: .5em 10px;
 }
-.module > header::before {
+.post-grid-pretty > header::before {
   content: "";
   position: absolute;
   top: 0;
@@ -112,7 +155,8 @@ a:hover {
   width: 100%;
   height: 100%;
 }
-.module > header > h1 {
+.post-grid-pretty > header > h1 {
+  font-size: 1.5em;
   margin: 0;
   color: white;
   position: relative;
@@ -120,6 +164,100 @@ a:hover {
 }
 * {
   box-sizing: border-box;
+}
+@media (min-width: 1200px) {
+  .post-grid-pretty {
+    height: 20em;
+  }
+  .post-grid-pretty > header > p {
+    font-size: 1em;
+  }
+  .post-grid-pretty > header > h1 {
+    font-size: 2em;
+  }
+}
+/* GRID VIEW: DEFAULT */
+.post-grid-default {
+  margin-bottom: 1em;
+}
+.post-grid-default .image {
+  background: #dccfe6;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  padding-bottom: 66%;
+  margin: 0;
+  margin-bottom: 0.1em;
+}
+/* SINGLE POST */
+#the_post_image {
+  margin: 0;
+  margin-top: -1em;
+  margin-bottom: 1em;
+  height: 40vh;
+  width: 100vw;
+  background: #dccfe6;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+@media (min-width: 576px) {
+  #the_post_image {
+    height: 50vh;
+  }
+}
+@media (min-width: 768px) {
+  #the_post_image {
+    height: 70vh;
+  }
+}
+.postmeta {
+  font-size: .9em;
+  border-top: 1px solid #dccfe6;
+  border-bottom: 1px solid #dccfe6;
+  margin-bottom: 1em;
+}
+@media (min-width: 768px) {
+  .madeby {
+    text-align: right;
+  }
+  .madeby .contact {
+    margin-bottom: 1em !important;
+  }
+  .madeby .contact .image {
+    float: right !important;
+    margin-right: 0 !important;
+    margin-left: 1em !important;
+  }
+}
+.madeby {
+  font-size: .9rem;
+}
+.madeby .contact {
+  margin: .3em;
+}
+.madeby .contact .image {
+  float: left;
+  margin-right: 1em;
+}
+.madeby .contact .image img {
+  height: 2.5em;
+}
+.madeby .contact .info .name {
+  text-transform: capitalize;
+  font-weight: bold;
+  line-height: 1.1em;
+  color: #b89dcc;
+  margin: 0;
+  margin-bottom: .2em;
+}
+.madeby .contact .info .title {
+  font-size: .9em;
+  line-height: 1em;
+}
+.card-primary-light {
+  background-color: #f5f1f8;
 }
 /* FILE: open-sans.less */
 /* FROM http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600,700,300 */

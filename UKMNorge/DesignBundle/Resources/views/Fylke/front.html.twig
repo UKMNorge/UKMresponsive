@@ -1,0 +1,42 @@
+{% extends "UKMDesignBundle:Layout:_base.html.twig"|UKMpath %}
+
+{% set sectionTitle = fylke.getNavn() %}
+
+
+{% block content %}
+	<div class="container-fluid">
+		<div class="row-flex">
+
+			<div class="col-12 col-md-4 col-lg-3 col-xl-2 float-right">
+				<div class="card card-primary-light mb-3">
+					<div class="card-body">	
+						<p class="lead">
+							Vil du ha en gratis sms når påmeldingen åpner?
+						</p>
+						{% embed "UKMDesignBundle:Husk:Form.html.twig"|UKMpath %}{% endembed %}
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-12 col-md-8 col-lg-9 col-xl-10 float-left">
+				<h2>UKM lokalt i {{ fylke.getNavn() }}</h2>
+				
+				<div class="row">
+				{% for lokalmonstring in lokalt %}
+					<div class="col-6 col-sm-4 col-md-6 col-lg-4 col-xl-3 my-1">
+						<button class="btn btn-block btn-outline-primary">
+							{{ lokalmonstring.getNavn() }}
+							{% if lokalmonstring.erFellesmonstring() %}
+							<small><br />{{ lokalmonstring.getKommuner() }}</small>
+						</button>
+					{% endif %}
+					</div>
+				{% endfor %}
+				</div>
+			</div>
+		
+
+		</div>
+
+	</div>
+{% endblock %}

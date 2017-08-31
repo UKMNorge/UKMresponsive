@@ -1,0 +1,21 @@
+pamelding:
+    starter: 01.10.YYYY
+slogan: 'Når vi møtes, inspirerer, utfordrer og skaper sammen – det er da magien skjer.'
+facebook:
+    app_id: 141016739323676
+    admins: 597605662
+google:
+    site_verification: 'dD8sAwp7X8mpu2PN1iu4C3VWEDS8sMxYUavoVBrmnek'
+SEOdefaults:
+    author: UKM
+    site_name: UKM.no
+    title: Ung Kultur Møtes
+    image:
+        url: 'http://grafikk.ukm.no/festivalen/2017/festival_pre_lg.jpg'
+        type: 'image/jpeg'
+        width: 1500
+        height: 628
+firenullfire:
+    title: 'Siden finnes ikke! (404)'
+    text: 'Siden du søker har enten blitt flyttet eller aldri eksistert (spooky)'
+    

@@ -55,6 +55,9 @@ class WP_TWIG {
 		}
 		$environment['cache'] = self::getCacheDir();
 		$environment['auto_reload'] = true;
+		if( self::getDebug() ) {
+			$environment['cache'] = false;
+		}
 
 		$twig = new Twig_Environment($loader, $environment);
 		
@@ -72,6 +75,12 @@ class WP_TWIG {
 		});
 		$twig->addFunction($function);
 	
+		// Add asset-function
+		$function = new Twig_SimpleFunction('THEME_CONFIG', function( $key ) {
+			return WP_CONFIG::get( $key );
+		});
+		$twig->addFunction($function);
+			
 		// Debug
 		if( self::getDebug() ) {
 			$twig->addExtension( new Twig_Extension_Debug() );

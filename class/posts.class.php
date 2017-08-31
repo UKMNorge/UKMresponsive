@@ -1,23 +1,52 @@
 <?php
 class posts {
-	public function __construct() {
-		$this->_loadPosts();	
+	var $posts_per_page = 12;
+	var $paged = 1;
+	var $nextpage = false;
+	var $prevpage = false;
+	
+	public function __construct( $posts_per_page=null ) {
+		$this->paged = (get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+		
+		if( $posts_per_page ) {
+			$this->setPostsPerPage( $posts_per_page );
+		}
+
+		$this->_loadPosts();
+	}
+	
+	public function setPostsPerPage( $posts_per_page ) {
+		$this->posts_per_page = $posts_per_page;
+	}
+	public function getPostsPerPage() {
+		return $this->posts_per_page;
+	}
+	
+	public function getPaged() {
+		return $this->paged;
+	}
+	
+	public function getPageNext() {
+		return $this->nextpage;
+	}
+	public function getPagePrev() {
+		return $this->prevpage;
 	}
 	
 	public function getFirst() {
 		return $this->posts[0];
 	}
 	
+	public function getAll() {
+		return $this->posts;
+	}
+	
 	private function _loadPosts() {
 		global $post;
-		
 		$this->posts = array();
 		$this->page = array();
-		
-	    $paged = (get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
-	    
-	    $posts = query_posts('posts_per_page='.$this->posts_per_page.'&paged='.$paged);
-	    var_dump( $posts );
+			    
+	    $posts = query_posts('posts_per_page='.$this->getPostsPerPage().'&paged='.$this->getPaged());
 	    while(have_posts()) {
 	       the_post();
 	       $this->posts[] = new WPOO_Post($post); 
@@ -26,14 +55,13 @@ class posts {
 	    $npl = get_next_posts_link();
 	    if($npl) {
 	        $npl = explode('"',get_next_posts_link()); 
-	        $this->nextpost = $npl[1];
-			$this->renderData['nextpost'] = 'nextpost';	
+	        $this->nextpage = $npl[1];
 	    }
 	    $ppl = get_previous_posts_link();
 	    if($ppl) {
 	        $ppl = explode('"',$ppl); 
-	        $this->prevpost = $ppl[1];
-			$this->renderData['prevpost'] = 'prevpost';	
+	        $this->prevpage = $ppl[1];
 	    }
+	    wp_reset_postdata(); 
 	}
 }
