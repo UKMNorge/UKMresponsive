@@ -1,5 +1,6 @@
 /* FILE: base.less */
 /* TEXT-ALIGN */
+@import "icomoon-entypo.css";
 .center {
   text-align: center;
 }
