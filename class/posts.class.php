@@ -23,6 +23,10 @@ class posts {
 	}
 	
 	public function getPaged() {
+		return $this->paged > 1;
+	}
+	
+	public function getPage() {
 		return $this->paged;
 	}
 	
@@ -46,7 +50,7 @@ class posts {
 		$this->posts = array();
 		$this->page = array();
 			    
-	    $posts = query_posts('posts_per_page='.$this->getPostsPerPage().'&paged='.$this->getPaged());
+	    $posts = query_posts('posts_per_page='.$this->getPostsPerPage().'&paged='.$this->getPage());
 	    while(have_posts()) {
 	       the_post();
 	       $this->posts[] = new WPOO_Post($post); 

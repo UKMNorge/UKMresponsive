@@ -1,0 +1,19 @@
+<div class="d-block d-md-none">
+	<button class="btn btn-outline-primary btn-block UKMtoggleShow UKMtoggleLokal" data-target="UKMtoggleLokal">Velg lokalmønstring</button>
+	<button class="btn btn-outline-primary btn-block UKMtoggleHide UKMtoggleLokal mt-0" data-target="UKMtoggleLokal" style="display:none">Lukk listen</button>
+</div>
+<div class="UKMtoggleContent" id="UKMtoggleLokal">
+	<div class="row">
+	{% for lokalmonstring in lokalt %}
+		<div class="col-6 col-sm-4 col-md-6 col-lg-4 col-xl-3 my-1">
+			<button class="btn btn-block btn-outline-primary mx-0">
+				{{ lokalmonstring.getNavn() }}
+				{% if lokalmonstring.erFellesmonstring() %}
+				<small><br />{{ lokalmonstring.getKommuner() }}</small>
+			</button>
+		{% endif %}
+		</div>
+	{% endfor %}
+	</div>
+	<button class="btn btn-outline-primary btn-block UKMtoggleHide UKMtoggleLokal" data-target="UKMtoggleLokal" style="display:none">Lukk listen</button>
+</div>

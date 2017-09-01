@@ -1,6 +1,11 @@
 <?php
 function WP_TWIG_date($time, $format='d.M Y H:i') {
-	if( is_string( $time ) && !is_numeric( $time ) ) {
+	if( get_class( $time ) == 'DateTime' ) 
+	{
+		$time = $time->getTimestamp();
+	}
+	elseif( is_string( $time ) && !is_numeric( $time ) ) 
+	{
 		$time = strtotime($time);
 	}
 	$date = date($format, $time);

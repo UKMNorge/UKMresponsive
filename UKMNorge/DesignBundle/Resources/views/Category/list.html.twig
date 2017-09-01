@@ -1,8 +1,11 @@
-{% extends "Layout/_layout.html.twig"|UKMpath %}
+{% extends "Layout/_"~ (singleMode is not defined ? 'layout' : 'singleMode' ) ~".html.twig"|UKMpath %}
 
 {% block content %}
 	<div class="container-fluid">
-		<h1>{{ category.name }}</h1>
+		{% if category is defined %}
+			<h1>{{ category.name }}</h1>
+			<p>{{ category.description|raw }}</p>
+		{% endif %}
 		<div class="row">			
 			{% for post in posts %}
 				<div class="col-6 col-sm-4 col-lg-3">
@@ -14,6 +17,5 @@
 				</div>
 			{% endfor %}
 		</div>
-		
 		{% embed "Category:next_prev_links.html.twig"|UKMpath %}{% endembed %}
 {% endblock %}

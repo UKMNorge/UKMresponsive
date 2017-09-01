@@ -10,10 +10,17 @@
 .left {
   text-align: left;
 }
+.bold {
+  font-weight: bold;
+}
+/* BUTTONS */
+button {
+  cursor: pointer;
+}
 /* LINKS */
 a {
-  color: #b89dcc;
-  cursor: hand;
+  color: #946bb2;
+  cursor: pointer;
 }
 a:visited,
 a:focus,
@@ -75,16 +82,17 @@ img {
   color: #b89dcc;
   text-decoration: none;
 }
-a.btn-primary,
-a.btn-primary:hover,
-a.btn-primary:active,
-a.btn-primary:visited,
-a.btn-primary:focus,
+/* PRIMARY BUTTONS */
 .btn-primary,
+a.btn-primary,
 .btn-primary:hover,
+a.btn-primary:hover,
 .btn-primary:active,
+a.btn-primary:active,
 .btn-primary:visited,
-.btn-primary:focus {
+a.btn-primary:visited,
+.btn-primary:focus,
+a.btn-primary:focus {
   background-color: #b89dcc;
   border-color: #b89dcc;
   color: #fff !important;
@@ -109,12 +117,52 @@ a.btn-primary:focus,
 .btn-outline-primary:active {
   color: #fff !important;
 }
+/* SECONDARY BUTTONS */
+.btn-secondary,
+a.btn-secondary,
+.btn-secondary:hover,
+a.btn-secondary:hover,
+.btn-secondary:active,
+a.btn-secondary:active,
+.btn-secondary:visited,
+a.btn-secondary:visited,
+.btn-secondary:focus,
+a.btn-secondary:focus {
+  background-color: #2dccd3;
+  border-color: #2dccd3;
+  color: #fff !important;
+}
+.btn-outline-secondary,
+.btn-outline-secondary:visited {
+  background-color: transparent;
+  border-color: #2dccd3 !important;
+  color: #2dccd3 !important;
+}
+.btn-outline-secondary:hover {
+  background-color: transparent;
+  border-color: #1f8f94 !important;
+  color: #1f8f94 !important;
+}
+.btn-outline-secondary:active,
+.btn-outline-secondary:focus,
+.btn-outline-secondary:active:focus {
+  background-color: #2dccd3 !important;
+}
+.btn-outline-secondary:focus,
+.btn-outline-secondary:active {
+  color: #fff !important;
+}
 .badge-square {
   border-radius: 0;
 }
 .badge-primary {
   background-color: #b89dcc;
   border-color: #b89dcc;
+}
+.alert-primary {
+  background-color: #f5f1f8;
+  border-color: #946bb2;
+  color: #946bb2 !important;
 }
 /* FILE: post.less */
 /* GRID VIEW: PRETTY */
@@ -259,6 +307,15 @@ a.btn-primary:focus,
 }
 .card-primary-light {
   background-color: #f5f1f8;
+}
+.UKMtoggleContent#UKMtoggleLokal {
+  display: none;
+}
+@media (min-width: 768px) {
+  .UKMtoggleContent#UKMtoggleLokal {
+    display: block;
+    display: flex;
+  }
 }
 /* FILE: open-sans.less */
 /* FROM http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600,700,300 */

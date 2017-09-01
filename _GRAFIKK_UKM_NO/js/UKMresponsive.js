@@ -24,11 +24,11 @@ jQuery( document ).on('click', '#main_menu_button', function(e){
 
 /* UKM-toggle
 KNAPPER FOR Å VISE KREVER:
- - data-attr="id-på-div-som-skal-toggles"
+ - data-target="id-på-div-som-skal-toggles"
  - class="UKMtoggleShow id-på-div-som-skal-toggles
  
 KNAPPER FOR Å SKJULE KREVER:
- - data-attr="id-på-div-som-skal-toggles"
+ - data-target="id-på-div-som-skal-toggles"
  - class="UKMtoggleShow id-på-div-som-skal-toggles
 
 CONTAINER SOM SKAL TOGGLES KREVER:

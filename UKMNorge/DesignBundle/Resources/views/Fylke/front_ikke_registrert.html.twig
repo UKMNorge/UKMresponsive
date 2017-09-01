@@ -2,7 +2,6 @@
 
 {% set sectionTitle = fylke.getNavn() %}
 
-
 {% block content %}
 	<div class="container-fluid">
 		<div class="row-flex">
@@ -19,20 +18,16 @@
 			</div>
 			
 			<div class="col-12 col-md-8 col-lg-9 col-xl-10 float-left">
-				<h2>UKM lokalt i {{ fylke.getNavn() }}</h2>
-				
-				<div class="row">
-				{% for lokalmonstring in lokalt %}
-					<div class="col-6 col-sm-4 col-md-6 col-lg-4 col-xl-3 my-1">
-						<button class="btn btn-block btn-outline-primary">
-							{{ lokalmonstring.getNavn() }}
-							{% if lokalmonstring.erFellesmonstring() %}
-							<small><br />{{ lokalmonstring.getKommuner() }}</small>
-						</button>
-					{% endif %}
-					</div>
-				{% endfor %}
-				</div>
+				{% embed "UKMDesignBundle:Fylke:velg_lokalmonstring.html.twig"|UKMpath %}{% endembed %}
+			</div>
+			
+			<div class="col-12 col-md-4 col-lg-3 col-xl-10 float-right float-xl-left">
+				{% embed "UKMDesignBundle:Layout:alert_icon.html.twig"|UKMpath with {level: 'primary', icon: 'info-with-circle'} %}
+					{% block content %}
+						Dato for {{ fylke.getNavn() }} er ikke satt, men dette vil bli gjort snart. 
+						I mellomtiden kan du sjekke om det er lagt inn info om ditt lokale UKM ved å velge din lokalmønstring.
+					{% endblock %}
+				{% endembed %}
 			</div>
 		
 

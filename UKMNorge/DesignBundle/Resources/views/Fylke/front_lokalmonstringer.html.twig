@@ -1,0 +1,43 @@
+{% extends "UKMDesignBundle:Layout:_base.html.twig"|UKMpath %}
+
+{% set sectionTitle = fylke.getNavn() %}
+
+{% block content %}
+	<div class="container-fluid">
+		<div class="row-flex">
+			<div class="col-12 col-md-4 col-lg-3 col-xl-2 float-right">
+				<h1>UKM lokalt er i gang!</h1>
+				<p class="lead">
+					Akkurat nå er vi i full gang med de lokale arrangementene. {{ fylke.getNavn() }} starter {{ fylke.getStart()|dato('d.F') }} 
+					<span class="d-none d-md-block">Les mer om UKM der du bor ved å velge din lokalmønstring i listen til venstre.</span>
+					<span class="d-block d-md-none">Les mer om UKM der du bor ved å velge din lokalmønstring nedenfor.</span>
+				</p>
+			</div>
+			
+			<div class="col-12 col-md-8 col-lg-9 col-xl-10 float-left">
+				{% embed "UKMDesignBundle:Fylke:velg_lokalmonstring.html.twig"|UKMpath %}{% endembed %}
+			</div>
+
+			<div class="col-12 col-md-4 col-lg-3 col-xl-2 float-right">
+				{% embed "UKMDesignBundle:Layout:alert.html.twig"|UKMpath with {level: 'primary'} %}
+					{% block content %}
+						<h4>{{ fylke.getNavn() }}</h4>
+						{{ fylke.getStart()|dato('D d.M')|capitalize }} til {{ fylke.getStop()|dato('D d.M')}}, {{ fylke.getSted() }}.
+						
+						<p class="mt-3 mb-0">
+							{% if harFylkeInfo %}
+								<a href="info/" class="bold">Mer info</a>
+								| 
+							{% endif %}
+							<a href="kontaktpersoner/" class="bold">Kontakt {% if not harFylkeInfo %} {{ fylke.getNavn() }}{% endif %}</a>
+						</p>
+
+					{% endblock %}
+				{% endembed %}
+			</div>
+		</div>
+		<div class="clearfix my-3"></div>
+		{% set singleMode = true %}
+		{% embed "UKMDesignBundle:Category:list.html.twig"|UKMpath with {posts: posts.getAll()} %}{% endembed %}
+	</div>
+{% endblock %}

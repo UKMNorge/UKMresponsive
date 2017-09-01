@@ -41,6 +41,9 @@ $WP_TWIG_DATA = [];
 Sitemap::loadFromYamlFile( PATH_DESIGNBUNDLE . 'Resources/config/sitemap.yml' );
 $WP_TWIG_DATA['nav'] = Sitemap::getSections();
 
+// Set blog link
+$WP_TWIG_DATA['blog_url'] = get_bloginfo('url');
+
 // SEO INIT
 $SEOImage = new SEOImage( WP_CONFIG::get('SEOdefaults')['image']['url'], 
 						  WP_CONFIG::get('SEOdefaults')['image']['width'],

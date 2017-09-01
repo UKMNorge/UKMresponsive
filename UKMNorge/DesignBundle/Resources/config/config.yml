@@ -16,6 +16,6 @@ SEOdefaults:
         width: 1500
         height: 628
 firenullfire:
-    title: 'Siden finnes ikke! (404)'
+    title: 'Siden finnes ikke!'
     text: 'Siden du søker har enten blitt flyttet eller aldri eksistert (spooky)'
     
