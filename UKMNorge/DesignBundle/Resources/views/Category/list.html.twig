@@ -12,9 +12,11 @@
 					{% embed "Post:grid-default.html.twig"|UKMpath %}{% endembed %}
 				</div>
 			{% else %}
-				<div class="col-12">
-					Ingen artikler i denne kategorien.
-				</div>
+				{% if hideNoneFound is not defined %}
+					<div class="col-12">
+						Ingen artikler i denne kategorien.
+					</div>
+				{% endif %}
 			{% endfor %}
 		</div>
 		{% embed "Category:next_prev_links.html.twig"|UKMpath %}{% endembed %}

@@ -38,6 +38,6 @@
 		</div>
 		<div class="clearfix my-3"></div>
 		{% set singleMode = true %}
-		{% embed "UKMDesignBundle:Category:list.html.twig"|UKMpath with {posts: posts.getAll()} %}{% endembed %}
+		{% embed "UKMDesignBundle:Category:list.html.twig"|UKMpath with {posts: posts.getAll(), hideNoneFound: true} %}{% endembed %}
 	</div>
 {% endblock %}
