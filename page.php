@@ -29,6 +29,10 @@ switch( $page_template ) {
 		$view_template = 'Monstring/deltakere';
 		require_once('controller/monstring/deltakere.controller.php');
 		break;
+	case 'kontaktpersoner':
+		$view_template = 'Fylke/kontaktpersoner';
+		require_once('controller/kontaktpersoner.controller.php');
+		break;
 	default:
 		$view_template = 'Page/meny';
 		break;

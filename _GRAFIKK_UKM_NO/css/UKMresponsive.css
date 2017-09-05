@@ -348,6 +348,12 @@ h6,
     display: flex;
   }
 }
+.kontaktperson-bilde {
+  padding-bottom: 66%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
 /* FILE: open-sans.less */
 /* FROM http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600,700,300 */
 /* cyrillic-ext */

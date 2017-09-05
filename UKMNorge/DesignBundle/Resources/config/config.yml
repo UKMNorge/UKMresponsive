@@ -1,6 +1,8 @@
 pamelding:
     starter: 01.10.YYYY
     startdato: '1. oktober'
+standardbilder:
+    person: 'http://grafikk.ukm.no/placeholder/person.jpg'
 slogan: 'Når vi møtes, inspirerer, utfordrer og skaper sammen – det er da magien skjer.'
 facebook:
     app_id: 141016739323676
