@@ -1,3 +1,12 @@
+/* FORMS */
+.form-control:focus {
+	border-color: @color-secondary;
+	transition-duration: 0.20s;
+	transition-timing-function: ease-in;
+	transition-property: border-color;
+}
+
+
 /* PRIMARY BUTTONS */
 .btn-primary, a.btn-primary,
 .btn-primary:hover, a.btn-primary:hover,
@@ -70,9 +79,12 @@
 	color: #fff !important;
 }
 
-
-
-
+/* HEADERS */
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight: 500;
+	opacity: .85;
+}
 
 
 .badge-square {

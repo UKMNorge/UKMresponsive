@@ -74,6 +74,13 @@ img {
   color: #b89dcc;
   padding-top: 0.35rem;
 }
+footer {
+  padding-top: 2rem !important;
+  padding-bottom: 2rem;
+  border-top: 1px solid #e0e0e0;
+  background: #f9f9f9;
+  margin-bottom: 0px !important;
+}
 .sitemap .section .header {
   color: #b89dcc;
   border-bottom: 4px solid #b89dcc;
@@ -81,6 +88,13 @@ img {
 .sitemap .section .header a {
   color: #b89dcc;
   text-decoration: none;
+}
+/* FORMS */
+.form-control:focus {
+  border-color: #2dccd3;
+  transition-duration: 0.20s;
+  transition-timing-function: ease-in;
+  transition-property: border-color;
 }
 /* PRIMARY BUTTONS */
 .btn-primary,
@@ -151,6 +165,23 @@ a.btn-secondary:focus {
 .btn-outline-secondary:focus,
 .btn-outline-secondary:active {
   color: #fff !important;
+}
+/* HEADERS */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  opacity: .85;
 }
 .badge-square {
   border-radius: 0;
