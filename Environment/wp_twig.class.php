@@ -68,7 +68,11 @@ class WP_TWIG {
 		// Add path-filter
 		$filter = new Twig_SimpleFilter('UKMpath', 'UKMpath');
 		$twig->addFilter($filter);
-	
+
+		// Add telefon-filter
+		$filter_telefon = new Twig_SimpleFilter('telefon', 'UKMtelefon');
+		$twig->addFilter($filter_telefon);
+			
 		// Add asset-function
 		$function = new Twig_SimpleFunction('UKMasset', function( $path ) {
 			return '//ukm.dev/wp-content/themes/UKMresponsive/_GRAFIKK_UKM_NO/'. $path;
