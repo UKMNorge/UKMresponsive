@@ -5,24 +5,27 @@
 {% block content %}
 	<div class="container-fluid">
 		<div class="row-flex">
-			<div class="col-12 col-md-4 col-lg-3 col-xl-2 float-right">
-				<h1>Påmeldingen er åpen!</h1>
+			<div class="col-12 col-md-4 col-lg-3 col-xl-3 float-right">
+				<h3>Påmeldingen er åpen!</h3>
 				<p class="lead">
-					{{ fylke.getNavn() }} starter {{ fylke.getStart()|dato('d.F') }}, men først er det UKM lokalt. 
-					<span class="d-none d-md-block">Start påmelding ved å velge din lokalmønstring i listen til venstre.</span>
-					<span class="d-block d-md-none">Start påmelding ved å velge din lokalmønstring nedenfor.</span>
+					<span class="d-none d-md-block">Meld deg på ved å velge din {{ fylke.getFylke().getId() == 3 ? 'bydel' : 'kommune' }} i listen til venstre.</span>
+					<span class="d-block d-md-none">Meld deg på ved å velge din {{ fylke.getFylke().getId() == 3 ? 'bydel' : 'kommune' }} i listen nedenfor.</span>
 				</p>
 				<div class="d-none d-md-block">
-					<a href="kontaktpersoner/" class="btn btn-sm btn-block btn-outline-secondary">Kontakt UKM {{ fylke.getFylke().getNavn() }}</a>
+					<a href="kontaktpersoner/" class="btn btn-sm btn-block btn-outline-secondary" style="line-height: 1.5em">
+						<div class="autoshrink">Kontakt UKM {{ fylke.getFylke().getNavn() }}</div>
+					</a>
 					<a href="info/" class="btn btn-sm btn-block btn-outline-secondary">Info om fylkesfestivalen</a>
 				</div>
 			</div>
 			
-			<div class="col-12 col-md-8 col-lg-9 col-xl-10 float-left">
+			<div class="col-12 col-md-8 col-lg-9 col-xl-9 float-left">
 				{% embed "UKMDesignBundle:Fylke:velg_lokalmonstring.html.twig"|UKMpath %}{% endembed %}
 				
 				<div class="d-block d-md-none my-3">
-					<a href="kontaktpersoner/" class="btn btn-sm btn-block btn-outline-secondary">Kontakt UKM {{ fylke.getFylke().getNavn() }}</a>
+					<a href="kontaktpersoner/" class="btn btn-sm btn-block btn-outline-secondary">
+						<div class="autoshrink">Kontakt UKM {{ fylke.getFylke().getNavn() }}</div>
+					</a>
 					<a href="info/" class="btn btn-sm btn-block btn-outline-secondary">Info om fylkesfestivalen</a>
 				</div>
 			</div>
