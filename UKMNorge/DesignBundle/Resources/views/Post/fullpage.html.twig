@@ -1,7 +1,5 @@
 {% extends "Layout/_layout.html.twig"|UKMpath %}
 
-{% set hideSlogan = true %}
-
 {% block content %}
 {% if post.image.large.src is defined and post.image.large.src is not empty %}
 	<div id="the_post_image" style="background-image: url('{{ post.image.large.src }}');"></div>

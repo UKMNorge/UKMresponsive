@@ -1,42 +1,36 @@
 {% block navbar %}
-	<div class="container-fluid">
+	<div class="container-fluid {{ showSlogan is defined ? 'navbar-with-slogan' : '' }}">
 		<header>
-			{% block navbar_button %}
-				<div class="float-right">
-					<a href="{{ view.getPath().getBlog() }}hovedmeny/">
-						<button type="button" class="btn btn-sm btn-outline-primary my-2" id="main_menu_button" data-status="hidden">MENY</button>
-					</a>
-				</div>
-			{% endblock %}
+			<div class="float-right">
+				<a href="{{ view.getPath().getBlog() }}hovedmeny/">
+					<button type="button" class="btn btn-sm my-2 {{ showSlogan is defined ? 'btn-outline-light' : 'btn-outline-primary' }}" id="main_menu_button" data-status="hidden">MENY</button>
+				</a>
+			</div>
 		
 			{# BRAND ICON #}
 			<div class="navbar-header float-left">
 				<a href="/">
-					<img src="http://grafikk.ukm.no/profil/logo/UKM_logo.png" id="UKMlogo" width="70" />
+					<img src="http://grafikk.ukm.no/profil/logo/UKM_logo{{ showSlogan is defined ? '_helhvit_0100' : '' }}.png" id="UKMlogo" width="70" />
 				</a>
 			</div>
-
+			
 			{% if sectionTitle is defined %}
-				{% set hideSlogan = true %}
 				<div class="sectionTitle center">{{ sectionTitle }}</div>
 			{% endif %}
 	
 			<div class="clearfix"></div>
 		</header>
-		{% if hideSlogan is not defined %}
-		<div class="container" id="UKMslogan_container">
-			<div class="row">
-				<div class="col-12 col-sm-8 col-md-6 offset-md-1">
-			    	<p class="lead center" id="UKMslogan">{% block slogan %}Når vi møtes, inspirerer, utfordrer og skaper sammen – det er da magien skjer{% endblock %}</p>
+		{% if showSlogan is defined %}
+			<div class="container" id="UKMslogan_container">
+				<div class="row">
+					<div class="col-12">
+				    	<p class="lead center" id="UKMslogan">{% block slogan %}{{ THEME_CONFIG('slogan') }}{% endblock %}</p>
+					</div>
 				</div>
 			</div>
-		</div>
 		{% endif %}
 	</div>
 	
-	<div class="navbar-separator">
-		{% if hideSlogan is not defined %}
-			<img src="{{ UKMasset('img/skygge.png') }}" id="skygge" />
-		{% endif %}
-	</div>
+	<div class="navbar-separator"></div>
 {% endblock %}	
+
