@@ -1,50 +1,6 @@
-UKM:
-    url: /
-    title: UKM
-    #color: d4c8e4
-    pages:
-        - 
-            id: forsiden
-            url: /
-            title: Forsiden
-            description: Ung kultur møtes
-        - 
-            id: hvaer
-            url: /hva-er/
-            title: Hva er UKM?
-            description: Alt om Ung Kultur Møtes
-        - 
-            id: hvameldepa
-            url: /hva-kan-jeg-delta-med/
-            title: Hva kan du delta med?
-            description: 
-        - 
-            id: ua
-            url: /unge-arrangører/
-            title: Unge arrangører
-            description: 
-        - 
-            id: ambassadorer
-            url: //ambassador.ukm.no/
-            title: Ambassadører
-            description: Bli kjent med oss
-        - 
-            id: urg
-            url: /urg/
-            title: URG (ung ressursgruppe)
-            description: 
-        - 
-            id: ukmere
-            url: /ukmere/
-            title: Kjente UKMere
-            description: 
-
-
-
-            
 derdubor:
     url: /derdubor/
-    title: UKM der du bor
+    title: Der du bor
     pages:
         - 
             id: akershus
@@ -118,6 +74,48 @@ derdubor:
             id: ostfold
             url: /ostfold/
             title: Østfold
+
+
+UKM:
+    url: /
+    title: UKM
+    #color: d4c8e4
+    pages:
+        - 
+            id: forsiden
+            url: /
+            title: Forsiden
+            description: Ung kultur møtes
+        - 
+            id: hvaer
+            url: /hva-er/
+            title: Hva er UKM?
+            description: Alt om Ung Kultur Møtes
+        - 
+            id: hvameldepa
+            url: /hva-kan-jeg-delta-med/
+            title: Hva kan du delta med?
+            description: 
+        - 
+            id: ua
+            url: /unge-arrangører/
+            title: Unge arrangører
+            description: 
+        - 
+            id: ambassadorer
+            url: //ambassador.ukm.no/
+            title: Ambassadører
+            description: Bli kjent med oss
+        - 
+            id: urg
+            url: /urg/
+            title: URG (ung ressursgruppe)
+            description: 
+        - 
+            id: ukmere
+            url: /ukmere/
+            title: Kjente UKMere
+            description: 
 
 
 ukmtv:
