@@ -14,7 +14,7 @@
 	
 		{# ===== KUN SYNLIG XS ===== #}
 		<div class="row d-flex d-md-none">
-			<div class="col-7">
+			<div class="col-12">
 				<h4>{{ page.getPage().title|raw }}</h4>
 				<p class="lead">
 					{{ page.getPage().lead|raw }}
@@ -22,14 +22,8 @@
 					<a href="#" class="UKMtoggleShow phoneReadMoreUKM" data-target="phoneReadMoreUKM">Les mer om UKM</a>
 				</p>
 			</div>
-			<div class="col-5">
-				<div class="small float-right badge badge-square badge-primary">
-					siste nyhet
-				</div>
-				{% embed "Post:grid-default.html.twig"|UKMpath with { post: posts.getFirst() } %}{% endembed %}
-			</div>
 
-			<div class="clearfix"></div>
+			<div class="clearfix my-3"></div>
 			<div class="col-12 UKMtoggleContent" style="display:none" id="phoneReadMoreUKM">
 				{{ page.getPage().content_wo_lead|raw }}
 				<a href="#" class="mx-1 btn btn-outline-primary UKMtoggleHide phoneReadMoreUKM" data-target="phoneReadMoreUKM">Lukk</a>
@@ -37,11 +31,9 @@
 		</div>
 		<div class="row d-flex d-md-none">
 			{% for post in posts.getAll() %}
-				{% if not loop.first %}
-					<div class="col-6">
-						{% embed "Post:grid-default.html.twig"|UKMpath with { post: post } %}{% endembed %}
-					</div>
-				{% endif %}
+				<div class="col-6">
+					{% embed "Post:grid-default.html.twig"|UKMpath with { post: post } %}{% endembed %}
+				</div>
 			{% endfor %}
 		</div>
 
