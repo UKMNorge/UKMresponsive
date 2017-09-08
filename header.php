@@ -66,3 +66,11 @@ $SEO->setGoogleSiteVerification( WP_CONFIG::get('google')['site_verification'] )
 $SEO->setImage( $SEOImage );
 
 $WP_TWIG_DATA['SEO'] = $SEO;
+
+
+// THEME SETTINGS
+if( get_current_blog_id() == 1 ) {
+	$WP_TWIG_DATA['THEME'] = 'cherry';
+} else {
+	$WP_TWIG_DATA['THEME'] = '';
+}
