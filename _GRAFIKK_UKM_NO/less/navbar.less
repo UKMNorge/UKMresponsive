@@ -7,13 +7,15 @@
 	padding-top: 0.5rem;
 	padding-bottom: 0rem;
 	margin-bottom: 0rem;
-}	
+}
+
 .navbar-separator {
-    border-bottom: 5px solid @color-primary;
 	margin-bottom: 1rem;
+	border-bottom: 5px solid @color-primary;
 }
 
 #UKMslogan {
+	color: #ffffff;
     font-size: 1.5rem;
     padding-top: 1rem;
 }
@@ -24,8 +26,16 @@
 	}
 }
 
+@media( min-width: 1200px) {
+	#UKMslogan {
+	    padding-bottom: 3.5rem;
+	    padding-top: 3.5rem;
+	    font-size: 3rem;
+	}
+}
+
 #UKMslogan {
-	background: rgba(255,255,255,0.4);
+/*	background: rgba(255,255,255,0.4);*/
 }
 
 #UKMlogo {
@@ -41,7 +51,15 @@
 
 
 .sectionTitle {
-    font-size: 1.5em;
-    font-weight: 100;
-    color: @color-primary;
-    padding-top: 0.35rem;}
+	font-size: 1.5em;
+	font-weight: 100;
+	color: @color-primary;
+	padding-top: 0.35rem;
+}
+
+.navbar-with-slogan {
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-image: url('//ukm.dev/wp-content/themes/UKMresponsive/_GRAFIKK_UKM_NO/img/banner-test.jpg');
+	background-size: cover;
+}

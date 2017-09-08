@@ -14,7 +14,7 @@
 
 		{# STYLES #}
 		<link href="{{ UKMasset("css/bootstrap.min.css") }}" rel="stylesheet" />
-		<link href="{{ UKMasset("css/UKMresponsive.css") }}" rel="stylesheet" />
+		<link href="{{ UKMasset("css/UKMresponsive"~ (THEME is defined ? '-'~THEME : '') ~".css") }}" rel="stylesheet" />
 
 		{# SCRIPTS #}
 		<script type="text/javascript" src="{{ UKMasset("js/jquery-2.2.4.min.js") }}"></script>
