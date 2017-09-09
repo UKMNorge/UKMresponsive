@@ -16,7 +16,7 @@ class Section {
 		$this->id = $id;
 		$this->url = $data['url'];
 		$this->title = $data['title'];
-		$this->color = (isset( $data['color'] ) && !empty( $data['color'] )) ? $data['color'] : 'b89dcc';
+		$this->color = (isset( $data['color'] ) && !empty( $data['color'] )) ? $data['color'] : false;
 		
 		$this->pages = new Pages();
 		$this->_loadPages( $data );
