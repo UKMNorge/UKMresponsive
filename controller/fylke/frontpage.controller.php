@@ -5,15 +5,13 @@ require_once('UKM/monstringer.class.php');
 $WP_TWIG_DATA['page_next'] = $WP_TWIG_DATA['posts']->getPageNext();
 $WP_TWIG_DATA['page_prev'] = $WP_TWIG_DATA['posts']->getPagePrev();
 
-	
-fylkeFrontpageController::init( get_option('pl_id') );
 
+fylkeFrontpageController::init( get_option('pl_id') );
 $FYLKE = fylkeFrontpageController::getMonstring();
 $LOKALT = fylkeFrontpageController::getLokalmonstringer();
 
 // NÅR STARTER PÅMELDINGEN
-$configDatePameldingStarter = str_replace('YYYY', $FYLKE->getSesong(), WP_CONFIG::get('pamelding')['starter'] );
-$pameldingStarter = DateTime::createFromFormat( 'd.m.Y H:i:s', $configDatePameldingStarter .' 00:00:00' );
+fylkeFrontpageController::setPameldingStarter( $FYLKE );
 $now = new DateTime('now');
 $omToUker = new DateTime('now + 2 weeks');
 
@@ -23,18 +21,18 @@ if( $WP_TWIG_DATA['posts']->getPaged() ) {
 	fylkeFrontpageController::setState('arkiv');
 }
 // Påmeldingen har ikke åpnet
-elseif( $pameldingStarter > $now ) {
+elseif( $now < fylkeFrontpageController::getPameldingStarter() ) {
 	fylkeFrontpageController::setState('pre_pamelding');
 }
 // Fylkesmønstringen starter i løpet av 2 uker
-elseif( $omToUker < $FYLKE->getStart() ) {	// DEV KROKODILLE FEIL VEI
+elseif( $omToUker > $FYLKE->getStart() ) {
 	fylkeFrontpageController::setState('fylkesmonstring');
 }
 // Vi er i perioden mellom åpen påmelding og 2 uker før fylkesmønstring
 else {
-	$forste_monstring	= $pameldingStarter;
-	$siste_monstring	= $pameldingStarter;
-	$siste_pamelding 	= $pameldingStarter;
+	$forste_monstring	= fylkeFrontpageController::getPameldingStarter();
+	$siste_monstring	= fylkeFrontpageController::getPameldingStarter();
+	$siste_pamelding 	= fylkeFrontpageController::getPameldingStarter();
 	// Loop alle lokalmønstringer i fylket
 	foreach( $LOKALT as $lokalmonstring ) {
 		if( $lokalmonstring->getStart() < $forste_monstring ) {
@@ -61,7 +59,6 @@ else {
 	$WP_TWIG_DATA['lokalt_start'] = $forste_monstring;
 	$WP_TWIG_DATA['lokalt_stopp'] = $siste_monstring;
 	$WP_TWIG_DATA['lokalt_siste_pamelding'] = $siste_pamelding;
-	$WP_TWIG_DATA['pamelding_apen'] = fylkeFrontpageController::getPameldingApen();
 }
 
 // DEV SETTINGS FOR ALLE STATES I RIKTIG REKKEFØLGE
@@ -76,6 +73,7 @@ $view_template 			= fylkeFrontpageController::getTemplate();
 $WP_TWIG_DATA['fylke'] 	= $FYLKE;
 $WP_TWIG_DATA['lokalt'] = $LOKALT;
 $WP_TWIG_DATA['harFylkeInfo'] = fylkeFrontpageController::getHarFylkeInfo();
+$WP_TWIG_DATA['pamelding_apen'] = fylkeFrontpageController::getPameldingApen();
 
 
 class fylkeFrontpageController {
@@ -84,6 +82,7 @@ class fylkeFrontpageController {
 	static $template = 'Fylke/front';
 	static $state = 'pre_pamelding';
 	static $pameldingApen = false;
+	static $pameldingStarter = null;
 	static $monstring;
 	
 	
@@ -110,6 +109,14 @@ class fylkeFrontpageController {
 				self::$template = 'Fylke/front_fylkesfestival';
 				break;		}
 		self::$state = $state;
+	}
+	
+	public static function setPameldingStarter( $fylke ) {
+		$configDatePameldingStarter = str_replace('YYYY', $fylke->getSesong(), WP_CONFIG::get('pamelding')['starter'] );
+		self::$pameldingStarter = DateTime::createFromFormat( 'd.m.Y H:i:s', $configDatePameldingStarter .' 00:00:00' );
+	}
+	public static function getPameldingStarter() {
+		return self::$pameldingStarter;
 	}
 	
 	public static function getTemplate() {
