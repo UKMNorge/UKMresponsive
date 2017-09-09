@@ -4,7 +4,7 @@ $(document).on('UKMtoggleShow#UKMtoggleLokal', function() {
 });
 </script>
 <div class="d-block d-md-none">
-	<button class="btn btn-outline-primary btn-block UKMtoggleShow UKMtoggleLokal" data-target="UKMtoggleLokal">Velg din {{ fylke.getFylke().getId() == 3 ? 'bydel' : 'kommune' }}</button>
+	<button class="btn btn-outline-primary btn-block UKMtoggleShow UKMtoggleLokal" data-target="UKMtoggleLokal">Velg din {{ fylke.erOslo() ? 'bydel' : 'kommune' }}</button>
 	<button class="btn btn-outline-primary btn-block UKMtoggleHide UKMtoggleLokal mt-0" data-target="UKMtoggleLokal" style="display:none">Lukk listen</button>
 </div>
 <div class="UKMtoggleContent" id="UKMtoggleLokal">

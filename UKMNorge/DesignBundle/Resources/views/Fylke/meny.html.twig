@@ -1,0 +1,7 @@
+{% if harFylkeInfo %}
+	<a href="info/" class="btn btn-sm btn-block btn-outline-secondary">Info om fylkesfestivalen</a>
+{% endif %}
+
+<a href="kontaktpersoner/" class="btn btn-sm btn-block btn-outline-secondary" style="line-height: 1.5em">
+	<div class="autoshrink">Kontakt UKM {{ fylke.getFylke().getNavn() }}</div>
+</a>

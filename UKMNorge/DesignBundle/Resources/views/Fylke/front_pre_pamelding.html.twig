@@ -5,23 +5,36 @@
 {% block content %}
 	<div class="container-fluid">
 		<div class="row-flex">
-			<div class="col-12 col-md-4 col-lg-3 col-xl-3 float-right">
-				<h3 class="d-none d-md-block">&nbsp;</h3>
-				<h3>Påmeldingen åpner {{ THEME_CONFIG('pamelding').startdato }}</h3>
+
+			<div class="col-12 col-md-4 col-lg-3 col-xl-2 float-right mb-4">
 				<p class="lead">
-					Vil du ha en gratis sms når påmeldingen åpner?
+					Vil du ha en gratis sms-påminnelse når påmeldingen åpner {{ THEME_CONFIG('pamelding').startdato }}?
 				</p>
 				{% embed "UKMDesignBundle:Husk:Form.html.twig"|UKMpath %}{% endembed %}
 			</div>
-
-			<div class="col-12 col-md-8 col-lg-9 col-xl-9 float-left">
-				<div class="d-block d-sm-none mt-3"></div>
-				<h3>Mer om UKM der du bor</h3>
+			
+			<div class="col-12 col-md-8 col-lg-9 col-xl-10 float-left mb-4">
+				<h3>Velg hvor du bor</h3>
 				{% embed "UKMDesignBundle:Fylke:velg_lokalmonstring.html.twig"|UKMpath %}{% endembed %}
 			</div>
+
+			{% if not fylke.erRegistrert() %}
+				<div class="col-12 col-md-4 col-lg-3 col-xl-10 float-right float-xl-left">
+					{% embed "UKMDesignBundle:Layout:alert_icon.html.twig"|UKMpath with {level: 'primary', icon: 'info-with-circle'} %}
+						{% block content %}
+							Dato for UKM-festivalen i {{ fylke.getNavn() }} er ikke bestemt, men dette vil bli gjort snart. 
+							I mellomtiden kan du sjekke om det er lagt inn info om ditt lokale UKM ved å velge din {{ fylke.erOslo() ? 'bydel' : 'kommune' }}.
+						{% endblock %}
+					{% endembed %}
+				</div>
+			{% endif %}
 		</div>
-		<div class="clearfix my-3"></div>
-		{% set singleMode = true %}
-		{% embed "UKMDesignBundle:Category:list.html.twig"|UKMpath with {posts: posts.getAll(), hideNoneFound: true} %}{% endembed %}
 	</div>
+	{% if fylke.erRegistrert() %}
+		<div class="clearfix my-3"></div>
+		<div class="container-fluid">
+			{% set singleMode = true %}
+			{% embed "UKMDesignBundle:Category:list.html.twig"|UKMpath with {posts: posts.getAll(), hideNoneFound: true} %}{% endembed %}
+		</div>
+	{% endif %}
 {% endblock %}

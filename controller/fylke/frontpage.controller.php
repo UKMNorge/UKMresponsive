@@ -22,10 +22,6 @@ $omToUker = new DateTime('now + 2 weeks');
 if( $WP_TWIG_DATA['posts']->getPaged() ) {
 	fylkeFrontpageController::setState('arkiv');
 }
-// Fylkesmønstringen er ikke registrert
-elseif( !$FYLKE->erRegistrert() ) {
-	fylkeFrontpageController::setState('ikke_registrert');
-}
 // Påmeldingen har ikke åpnet
 elseif( $pameldingStarter > $now ) {
 	fylkeFrontpageController::setState('pre_pamelding');
@@ -65,10 +61,10 @@ else {
 	$WP_TWIG_DATA['lokalt_start'] = $forste_monstring;
 	$WP_TWIG_DATA['lokalt_stopp'] = $siste_monstring;
 	$WP_TWIG_DATA['lokalt_siste_pamelding'] = $siste_pamelding;
+	$WP_TWIG_DATA['pamelding_apen'] = fylkeFrontpageController::getPameldingApen();
 }
 
 // DEV SETTINGS FOR ALLE STATES I RIKTIG REKKEFØLGE
-#fylkeFrontpageController::setState('ikke_registrert'); // DEV
 #fylkeFrontpageController::setState('pre_pamelding'); // DEV
 #fylkeFrontpageController::setState('pamelding'); // DEV
 fylkeFrontpageController::setState('lokalmonstringer'); // DEV
@@ -83,10 +79,11 @@ $WP_TWIG_DATA['harFylkeInfo'] = fylkeFrontpageController::getHarFylkeInfo();
 
 
 class fylkeFrontpageController {
-	static $harFylkeInfo = false;
+	static $harFylkeInfo = null;
 	static $pl_id = false;
 	static $template = 'Fylke/front';
-	static $state = 'ikke_registrert';
+	static $state = 'pre_pamelding';
+	static $pameldingApen = false;
 	static $monstring;
 	
 	
@@ -100,20 +97,18 @@ class fylkeFrontpageController {
 			case 'arkiv':
 				self::$template = 'Fylke/front_arkiv';
 				break;
-			case 'ikke_registrert':
-				self::$template = 'Fylke/front_ikke_registrert';
-				break;
 			case 'pre_pamelding':
 				self::$template = 'Fylke/front_pre_pamelding';
 				break;
 			case 'pamelding':
-				self::$template = 'Fylke/front_pamelding';
-				break;
+				self::$pameldingApen = true;
 			case 'lokalmonstringer':
-				self::$template = 'Fylke/front_lokalmonstringer';
 				self::_loadHarFylkeInfo();
+				self::$template = 'Fylke/front_lokalmonstringer';
 				break;
-		}
+			case 'fylkesmonstring':
+				self::$template = 'Fylke/front_fylkesfestival';
+				break;		}
 		self::$state = $state;
 	}
 	
@@ -125,12 +120,20 @@ class fylkeFrontpageController {
 		return self::$monstring;
 	}
 	
+	public static function getPameldingApen() {
+		return self::$pameldingApen;
+	}
+	
 	public static function getHarFylkeInfo() {
+		if( null === self::$harFylkeInfo ) {
+			self::_loadHarFylkeInfo();
+		}
 		return self::$harFylkeInfo;
 	}
 	
 	public static function _loadHarFylkeInfo() {
-		self::$harFylkeInfo = rand(0,1);		// TODO: KANSKJE IKKE RANDOM?
+		$page = get_page_by_path('info');
+		self::$harFylkeInfo = ( is_object( $page ) && $page->post_status == 'publish' );
 		return self;
 	}
 	
