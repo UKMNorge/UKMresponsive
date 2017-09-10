@@ -22,15 +22,17 @@
 		            {% embed "element/monstring/lokalmonstringer_liste.twig.html" %}
 		            {% endembed %}
 		    	</div>
-		    	<div id="fokussak">
-					{# POST DESKTOP IMAGE #}
-					<div class="hidden-xs hidden-sm">
-						<a href="{{posts[0].url}}">
-							<div class="grid_post_image" style="background-image: url('{{posts[0].image.url}}');"></div>
-						</a>
-					</div>
-					{# END OF POST DESKTOP IMAGE #}
-		    	</div>
+    			{% if posts|length > 0 %}
+			    	<div id="fokussak">
+						{# POST DESKTOP IMAGE #}
+						<div class="hidden-xs hidden-sm">
+							<a href="{{posts[0].url}}">
+								<div class="grid_post_image" style="background-image: url('{{posts[0].image.url}}');"></div>
+							</a>
+						</div>
+						{# END OF POST DESKTOP IMAGE #}
+			    	</div>
+			    {% endif %}
 	    	{% endblock %}
     	</div>
     	
@@ -82,13 +84,15 @@
 	</div>
 	
 	{% block post_top_mobile %}
-		{# TOPPSAK MOBIL #}	
-		<div class="row">
-			<div class="visible-xs visible-sm hidden-md hidden-lg col-xs-12">
-				{% embed "element/post/grid_element.twig.html" with posts[0] %}{% endembed %}
+		{% if posts|length > 0 %}
+			{# TOPPSAK MOBIL #}
+			<div class="row">
+				<div class="visible-xs visible-sm hidden-md hidden-lg col-xs-12">
+					{% embed "element/post/grid_element.twig.html" with posts[0] %}{% endembed %}
+				</div>
 			</div>
-		</div>
-		{# END OF TOPPSAK MOBIL #}		
+			{# END OF TOPPSAK MOBIL #}		
+		{% endif %}
 	{% endblock %}
 	<div class="separator_line"></div>
 

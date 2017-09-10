@@ -279,7 +279,7 @@ if( isset($_GET['exportContent']) ) {
 }
 $output = ob_get_clean();
 $cacheData = array( 'pl_id' => get_option('pl_id'),
-					'post_id' => $post->ID,
+					'post_id' => (is_object($post) ? $post->ID : null),
 					'view' => $VIEW,
 					'url' => $_SERVER['REQUEST_URI']
 				 );
