@@ -112,7 +112,7 @@ $DATA['fylke'] = get_option('fylke');
 		    $lm = new StdClass();
 		    $lm->starter = $lokalmonstring->get('pl_start');
 		    $lm->slutter = $lokalmonstring->get('pl_stop');
-		    $lm->url = $lokalmonstring->get('pl_link');
+		    $lm->url = '/'. $lokalmonstring->get('pl_link');
 		    $lm->navn = $kommune_navn;
 			$lokalmonstringer[] = $lm;
 		}
