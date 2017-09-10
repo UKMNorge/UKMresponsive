@@ -17,3 +17,6 @@ js/config.codekit
 less/config.codekit
 
 cache_twig/*
+vendor/mariusmandal/wpoo/
+
+vendor/symfony/yaml/
