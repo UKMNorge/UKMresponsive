@@ -75,7 +75,7 @@ class WP_TWIG {
 			
 		// Add asset-function
 		$function = new Twig_SimpleFunction('UKMasset', function( $path ) {
-			return '//ukm.dev/wp-content/themes/UKMresponsive/_GRAFIKK_UKM_NO/'. $path;
+			return '//'. UKM_HOSTNAME .'/wp-content/themes/UKMresponsive/_GRAFIKK_UKM_NO/'. $path;
 		});
 		$twig->addFunction($function);
 	
