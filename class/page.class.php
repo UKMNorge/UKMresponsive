@@ -3,8 +3,12 @@ require_once(PATH_THEME . 'class/blocks.class.php');
 
 class page {
 	
-	public function __construct() {
-		global $post, $post_id;
+	public function __construct( $page=null) {
+		if( null === $page ) {
+			global $post, $post_id;
+		} else {
+			$post = $page;
+		}
 		$this->page = new WPOO_Post( $post );
 		
 		$this->_setup_blocks();
