@@ -45,6 +45,10 @@ class posts {
 		return $this->posts;
 	}
 	
+	public function getAntall() {
+		return sizeof( $this->getAll() );
+	}
+	
 	private function _loadPosts() {
 		global $post;
 		$this->posts = array();
