@@ -1,7 +1,5 @@
 {% extends "UKMDesignBundle:Layout:_base.html.twig"|UKMpath %}
 
-{% set sectionTitle = fylke.getNavn() %}
-
 {% set daysUntil = date( fylke.getStart() ).diff( date(now) ).days %}
 
 {% block content %}

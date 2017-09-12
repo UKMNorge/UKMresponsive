@@ -14,8 +14,10 @@
 				</a>
 			</div>
 			
-			{% if sectionTitle is defined %}
-				<div class="sectionTitle center">{{ sectionTitle }}</div>
+			{% if section is defined %}
+				<div class="sectionTitle center">
+					<a href="{{ section.url }}">{{ section.title }}</a>
+				</div>
 			{% endif %}
 	
 			<div class="clearfix"></div>

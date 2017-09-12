@@ -42,7 +42,13 @@ $WP_TWIG_DATA = [];
 Sitemap::loadFromYamlFile( PATH_DESIGNBUNDLE . 'Resources/config/sitemap.yml' );
 $WP_TWIG_DATA['nav'] = Sitemap::getSections();
 
-// Set blog link
+// SET SECTION INFOS
+if( get_option('site_type') == 'fylke' ) {
+	$section = new stdClass();
+	$section->title = get_bloginfo('name');
+	$section->url = get_bloginfo('url');
+	$WP_TWIG_DATA['section'] = $section;
+}
 $WP_TWIG_DATA['blog_url'] = get_bloginfo('url');
 
 // SEO INIT
