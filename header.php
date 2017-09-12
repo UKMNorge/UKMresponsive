@@ -10,6 +10,7 @@ setlocale(LC_ALL, 'nb_NO', 'nb', 'no');
 
 define('PATH_THEME', TEMPLATEPATH . '/');
 define('PATH_DESIGNBUNDLE', PATH_THEME .'UKMNorge/DesignBundle/');
+define('URL_THEME', get_stylesheet_directory_uri() );
 
 define( 'WP_ENV', (strpos( $_SERVER['HTTP_HOST'], 'ukm.dev' ) !== false || isset($_GET['debug'])) ? 'dev' : 'prod' );
 
