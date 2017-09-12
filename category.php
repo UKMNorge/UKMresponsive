@@ -3,7 +3,7 @@
 use UKMNorge\DesignBundle\Utils\Sitemap;
 
 require_once('header.php');
-require_once('class/posts.class.php');
+require_once('UKMNorge/Wordpress/Utils/posts.class.php');
 
 // FETCH CATEGORY INFOS
 $category = get_queried_object();

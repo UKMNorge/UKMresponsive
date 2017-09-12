@@ -19,8 +19,8 @@ require_once('cache.php');
 
 // AUTOLOAD AND SYMFONY EXISTING FILES
 require_once('vendor/autoload.php');
-require_once('Environment/wp_twig.class.php');
-require_once('Environment/wp_config.class.php');
+require_once('UKMNorge/Wordpress/Environment/wp_twig.class.php');
+require_once('UKMNorge/Wordpress/Environment/wp_config.class.php');
 
 // MANUALLY LOAD FILES SYMFONY WOULD LOAD BY NAMESPACE
 require_once( PATH_DESIGNBUNDLE . 'Utils/Sitemap/Page.php');

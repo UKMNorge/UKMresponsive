@@ -1,5 +1,5 @@
 <?php
-require_once(PATH_THEME . 'class/blocks.class.php');
+require_once(PATH_THEME . 'UKMNorge/Wordpress/Utils/blocks.class.php');
 
 class page {
 	

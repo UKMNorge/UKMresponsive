@@ -4,7 +4,7 @@ use UKMNorge\DesignBundle\Utils\Sitemap;
 
 require_once('header.php');
 
-require_once('class/page.class.php');
+require_once('UKMNorge/Wordpress/Utils/page.class.php');
 $WP_TWIG_DATA['page'] = new page();
 
 // SET OPENGRAPH AND SEARCH OPTIMIZATION INFOS

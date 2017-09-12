@@ -3,8 +3,8 @@
 use UKMNorge\DesignBundle\Utils\Sitemap;
 
 require_once('header.php');
-require_once('class/page.class.php');
-require_once('class/posts.class.php');
+require_once('UKMNorge/Wordpress/Utils/page.class.php');
+require_once('UKMNorge/Wordpress/Utils/posts.class.php');
 
 $WP_TWIG_DATA['page'] = new page();
 $WP_TWIG_DATA['posts'] = new posts(6);
@@ -13,10 +13,10 @@ $WP_TWIG_DATA['page_next'] = get_permalink( get_option( 'page_for_posts' ) );
 
 switch( get_option('site_type') ) {
 	case 'fylke':
-		require_once('controller/fylke/frontpage.controller.php');
+		require_once('UKMNorge/Wordpress/Controller/fylke/frontpage.controller.php');
 		break;
 	case 'kommune':
-#		require_once('controller/fylke/frontpage.controller.php');
+#		require_once('UKMNorge/Wordpress/Controller/fylke/frontpage.controller.php');
 		break;
 	case 'land':
 		$view_template = 'Page/home_norge';

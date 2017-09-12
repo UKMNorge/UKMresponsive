@@ -4,7 +4,7 @@ use UKMNorge\DesignBundle\Utils\Sitemap;
 
 require_once('header.php');
 
-require_once('class/page.class.php');
+require_once('UKMNorge/Wordpress/Utils/page.class.php');
 $WP_TWIG_DATA['page'] = new page();
 
 // SET OPENGRAPH AND SEARCH OPTIMIZATION INFOS
@@ -25,18 +25,18 @@ switch( $page_template ) {
 	## TILHØRENDE MØNSTRINGEN
 	# Lokalmønstringer i fylket
 	case 'lokalmonstringer':
-		require_once('controller/fylke/lokalmonstringer.controller.php');
+		require_once('UKMNorge/Wordpress/Controller/fylke/lokalmonstringer.controller.php');
 		$view_template = 'Fylke/lokalmonstringer_fullpage';
 		break;
 	# Påmeldte til mønstringen
 	case 'pameldte':
 		$view_template = 'Monstring/deltakere';
-		require_once('controller/monstring/deltakere.controller.php');
+		require_once('UKMNorge/Wordpress/Controller/monstring/deltakere.controller.php');
 		break;
 	# Kontaktpersoner på mønstringen
 	case 'kontaktpersoner':
 		$view_template = 'Fylke/kontaktpersoner';
-		require_once('controller/kontaktpersoner.controller.php');
+		require_once('UKMNorge/Wordpress/Controller/kontaktpersoner.controller.php');
 		break;
 
 	## HOVEDSIDER
