@@ -26,7 +26,7 @@ switch( $page_template ) {
 	# Lokalmønstringer i fylket
 	case 'lokalmonstringer':
 		require_once('controller/fylke/lokalmonstringer.controller.php');
-		$view_template = 'Fylke/lokalmonstringer';
+		$view_template = 'Fylke/lokalmonstringer_fullpage';
 		break;
 	# Påmeldte til mønstringen
 	case 'pameldte':
