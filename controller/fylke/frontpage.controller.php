@@ -1,34 +1,48 @@
 <?php
 require_once('UKM/monstring.class.php');
 require_once('UKM/monstringer.class.php');
+require_once('frontpage.class.php');
 
-$WP_TWIG_DATA['page_next'] = $WP_TWIG_DATA['posts']->getPageNext();
-$WP_TWIG_DATA['page_prev'] = $WP_TWIG_DATA['posts']->getPagePrev();
-
-
+// Init helper class
 fylkeFrontpageController::init( get_option('pl_id') );
+
+// Hent mønstringsobjekt og lokalmønstringer
 $FYLKE = fylkeFrontpageController::getMonstring();
 $LOKALT = fylkeFrontpageController::getLokalmonstringer();
 
 // NÅR STARTER PÅMELDINGEN
-fylkeFrontpageController::setPameldingStarter( $FYLKE );
 $now = new DateTime('now');
 $omToUker = new DateTime('now + 2 weeks');
 
-// SET STATE
-// pagination is active
+/**
+ * SET STATE
+ * Switcher mellom fylkesmønstringens forskjellige states.
+ * Forbereder hjelpeklassen slik at det alltid kan kjøres
+ * get-funksjoner for å laste informasjon over i WP_TWIG_DATA
+ *
+ *
+ * 1:	Hvis siden er paginert, vis kun arkivsiden
+ * 2:	Påmeldingen har ikke startet
+ * 3:	Det er mindre enn 2 uker til fylkesmønstringen, eller
+ *   	fylkesmønstringen er over
+ * 4:	Vi er mellom ny sesong og fylkesmønstring (høst/vinter)
+ * 4.1:	Påmeldingen er åpen (siste frist har ikke passert)
+ * 4.2: Påmeldingen er over, men det er mer enn 2 uker til fylkesmønstring (se pkt 3)
+ *		vis derfor info om lokalmønstringer 
+**/
+// 1: pagination is active
 if( $WP_TWIG_DATA['posts']->getPaged() ) {
 	fylkeFrontpageController::setState('arkiv');
 }
-// Påmeldingen har ikke åpnet
+// 2: Påmeldingen har ikke åpnet
 elseif( $now < fylkeFrontpageController::getPameldingStarter() ) {
 	fylkeFrontpageController::setState('pre_pamelding');
 }
-// Fylkesmønstringen starter i løpet av 2 uker
+// 3: Fylkesmønstringen starter i løpet av 2 uker
 elseif( $omToUker > $FYLKE->getStart() ) {
 	fylkeFrontpageController::setState('fylkesmonstring');
 }
-// Vi er i perioden mellom åpen påmelding og 2 uker før fylkesmønstring
+// 4: Vi er i perioden mellom åpen påmelding og 2 uker før fylkesmønstring
 else {
 	$forste_monstring	= fylkeFrontpageController::getPameldingStarter();
 	$siste_monstring	= fylkeFrontpageController::getPameldingStarter();
@@ -48,11 +62,11 @@ else {
 			$siste_pamelding = $lokalmonstring->getFrist2();
 		}
 	}
-	// Påmeldingen er åpen
+	// 4.1: Påmeldingen er åpen
 	if( true || $now < $siste_pamelding ) {
 		fylkeFrontpageController::setState('pamelding');
 	}
-	// Påmeldingen er lukket - fokus på lokalmønstringer (publikum)
+	// 4.2: Påmeldingen er lukket - fokus på lokalmønstringer (publikum)
 	 else {
 		fylkeFrontpageController::setState('lokalmonstringer');
 	}
@@ -61,14 +75,23 @@ else {
 	$WP_TWIG_DATA['lokalt_siste_pamelding'] = $siste_pamelding;
 }
 
-// DEV SETTINGS FOR ALLE STATES I RIKTIG REKKEFØLGE
-#fylkeFrontpageController::setState('pre_pamelding'); // DEV
-#fylkeFrontpageController::setState('pamelding'); // DEV
-fylkeFrontpageController::setState('lokalmonstringer'); // DEV
-#fylkeFrontpageController::setState('fylkesmonstring'); // DEV
+/**
+ * DEBUG OVERRIDES
+ *
+ * Brukes til å overstyre selectoren over, og vil alltid laste all relevant data
+ *
+**/
+	// DEV SETTINGS FOR ALLE STATES I RIKTIG REKKEFØLGE
+	#fylkeFrontpageController::setState('pre_pamelding'); // DEV
+	#fylkeFrontpageController::setState('pamelding'); // DEV
+	fylkeFrontpageController::setState('lokalmonstringer'); // DEV
+	#fylkeFrontpageController::setState('fylkesmonstring'); // DEV
 
 
 
+/**
+ * OVERFØR DATA TIL $WP_TWIG_DATA
+**/
 $view_template 			= fylkeFrontpageController::getTemplate();
 $WP_TWIG_DATA['fylke'] 	= $FYLKE;
 $WP_TWIG_DATA['lokalt'] = $LOKALT;
@@ -79,109 +102,5 @@ $WP_TWIG_DATA['fylkeInfo'] = fylkeFrontpageController::getFylkeInfo();
 $WP_TWIG_DATA['harFylkeInfo'] = fylkeFrontpageController::harFylkeInfo();
 $WP_TWIG_DATA['harProgram'] = fylkeFrontpageController::harProgram();
 
-class fylkeFrontpageController {
-	static $pl_id = false;
-	static $monstring;
-
-	static $template = 'Fylke/front';
-	static $state = 'pre_pamelding';
-
-	static $pameldingApen = false;
-	static $pameldingStarter = null;
-
-	static $harFylkeInfo = null;
-	static $fylkeInfo = null;
-	
-	static $harProgram = null;
-
-	public static function init( $pl_id ) {
-		self::$pl_id = $pl_id;
-		self::_loadMonstring();
-	}
-	
-	public static function setState( $state ) {
-		// Vil ikke overstyre state hvis vi er i arkiv-visning (har hentet inn nyheter side 2)
-		if( self::$state == 'arkiv' ) {
-			return false;
-		}
-		switch( $state ) {
-			case 'arkiv':
-				self::$template = 'Fylke/front_arkiv';
-				break;
-			case 'pre_pamelding':
-				self::$template = 'Fylke/front_pre_pamelding';
-				break;
-			case 'pamelding':
-				self::$pameldingApen = true;
-			case 'lokalmonstringer':
-				self::_loadFylkeInfo();
-				self::$template = 'Fylke/front_lokalmonstringer';
-				break;
-			case 'fylkesmonstring':
-				self::$template = 'Fylke/front_fylkesfestival';
-				break;
-		}
-		self::$state = $state;
-	}
-	
-	public static function setPameldingStarter( $fylke ) {
-		$configDatePameldingStarter = str_replace('YYYY', $fylke->getSesong(), WP_CONFIG::get('pamelding')['starter'] );
-		self::$pameldingStarter = DateTime::createFromFormat( 'd.m.Y H:i:s', $configDatePameldingStarter .' 00:00:00' );
-	}
-	public static function getPameldingStarter() {
-		return self::$pameldingStarter;
-	}
-	
-	public static function getTemplate() {
-		return self::$template;
-	}
-	
-	public static function getMonstring() {
-		return self::$monstring;
-	}
-	
-	public static function getPameldingApen() {
-		return self::$pameldingApen;
-	}
-	
-	public static function getFylkeInfo() {
-		if( null === self::$harFylkeInfo ) {
-			self::_loadFylkeInfo();
-		}
-		return self::$fylkeInfo;
-	}
-	public static function harFylkeInfo() {
-		if( null === self::$harFylkeInfo ) {
-			self::_loadFylkeInfo();
-		}
-		return self::$harFylkeInfo;
-	}
-	
-	public static function harProgram() {
-		self::_loadProgram();
-		return self::$harProgram;
-	}
-	
-	private static function _loadProgram() {
-		if( null === self::$harProgram ) {
-			self::$harProgram = self::getMonstring()->getProgram()->getAntall() > 0;
-		}
-		return self;
-	}
-	
-	public static function _loadFylkeInfo() {
-		$page = get_page_by_path('info');
-		self::$fylkeInfo = new page( $page );
-		self::$harFylkeInfo = ( is_object( $page ) && $page->post_status == 'publish' );
-		return self;
-	}
-	
-	private static function _loadMonstring() {
-		self::$monstring = new monstring_v2( self::$pl_id );
-	}
-
-	public static function getLokalmonstringer() {
-		$monstringer = new monstringer_v2( self::getMonstring()->getSesong() );
-		return $monstringer->getAllByFylke( self::getMonstring()->getFylke()->getId() );
-	}
-}
+$WP_TWIG_DATA['page_next'] = $WP_TWIG_DATA['posts']->getPageNext();
+$WP_TWIG_DATA['page_prev'] = $WP_TWIG_DATA['posts']->getPagePrev();
