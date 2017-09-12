@@ -22,19 +22,35 @@ if( isset( $WP_TWIG_DATA['page']->getPage()->meta->UKMviseng ) ) {
 
 // SELECT CORRECT TEMPLATE, INCLUDE AND RUN CONTROLLER
 switch( $page_template ) {
-	case 'dinmonstring': # NORGESKARTET
-		$view_template = 'Kart/fullpage';
+	## TILHØRENDE MØNSTRINGEN
+	# Lokalmønstringer i fylket
+	case 'lokalmonstringer':
+		require_once('controller/fylke/lokalmonstringer.controller.php');
+		$view_template = 'Fylke/lokalmonstringer';
 		break;
+	# Påmeldte til mønstringen
 	case 'pameldte':
 		$view_template = 'Monstring/deltakere';
 		require_once('controller/monstring/deltakere.controller.php');
 		break;
+	# Kontaktpersoner på mønstringen
 	case 'kontaktpersoner':
 		$view_template = 'Fylke/kontaktpersoner';
 		require_once('controller/kontaktpersoner.controller.php');
 		break;
-	default:
+
+	## HOVEDSIDER
+	# Norgeskartet
+	case 'dinmonstring':
+		$view_template = 'Kart/fullpage';
+		break;
+	# Vis menyen som side
+	case 'hovedmeny':
 		$view_template = 'Page/meny';
+		break;
+	# Standard wordpress-side
+	default:
+		$view_template = 'Page/fullpage';
 		break;
 }
 
