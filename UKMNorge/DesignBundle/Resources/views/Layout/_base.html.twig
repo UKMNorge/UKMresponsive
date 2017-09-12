@@ -7,7 +7,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		
-		<title>{{ view.getBlog().getTitle() }}</title>
+		<title>{{ SEO.getTitle() }}</title>
 		<link rel="shortcut icon" href="//grafikk.ukm.no/favicon.ico" />
 		<link rel="alternate" type="application/rss+xml" href="{{blog.feed}}" title="{{blog.name}} RSS-feed" />
 		{% embed "UKMDesignBundle:Layout:seo.html.twig"|UKMpath %}{% endembed %}
