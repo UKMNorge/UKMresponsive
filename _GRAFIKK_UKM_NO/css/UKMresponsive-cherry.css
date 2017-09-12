@@ -25,6 +25,9 @@ a {
   color: #500c35;
   cursor: pointer;
 }
+a .nocolor {
+  color: rgba(0, 0, 0, 0.85);
+}
 a:visited,
 a:focus,
 a:active,
@@ -35,6 +38,20 @@ a:hover {
 img {
   max-width: 100% !important;
   height: auto;
+}
+.menu-item {
+  text-align: center;
+}
+.menu-item:hover,
+.menu-item a:visited,
+.menu-item a:focus,
+.menu-item a:active,
+.menu-item a:hover {
+  text-decoration: none;
+  color: #0e0209 !important;
+}
+.menu-item .icon {
+  font-size: 1.5em;
 }
 /* FILE: navbar.less */
 /*#main_menu_button {
@@ -378,6 +395,19 @@ h6,
 .fylkesfestival .title {
   font-size: 1.5rem;
   font-weight: 100;
+}
+.calendar {
+  border: 3px solid #500c35;
+  box-shadow: 5px 5px #0e0209;
+}
+.month {
+  background: #500c35;
+}
+.day {
+  font-size: x-small;
+}
+.date {
+  font-size: 2em;
 }
 /* FILE: open-sans.less */
 /* FROM http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600,700,300 */

@@ -24,6 +24,9 @@ a {
 	color: @color-primary-dark;
 	cursor: pointer;
 }
+a .nocolor {
+	color: rgba(0, 0, 0, 0.85);
+}
 
 a:visited,
 a:focus,
@@ -35,4 +38,19 @@ a:hover {
 .wp-caption, img {
 	max-width: 100% !important;
 	height: auto;
+}
+
+.menu-item {
+	.center
+}
+.menu-item:hover,
+.menu-item a:visited,
+.menu-item a:focus,
+.menu-item a:active,
+.menu-item a:hover {
+	text-decoration: none;
+	color: @color-primary-dark-dark !important;
+}
+.menu-item .icon {
+	font-size:1.5em;
 }
