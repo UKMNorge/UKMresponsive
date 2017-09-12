@@ -33,6 +33,10 @@ switch( $page_template ) {
 		$view_template = 'Monstring/deltakere';
 		require_once('UKMNorge/Wordpress/Controller/monstring/deltakere.controller.php');
 		break;
+	# Mønstringens program
+	case 'program':
+		require_once('UKMNorge/Wordpress/Controller/program.controller.php');
+		break;
 	# Kontaktpersoner på mønstringen
 	case 'kontaktpersoner':
 		$view_template = 'Fylke/kontaktpersoner';

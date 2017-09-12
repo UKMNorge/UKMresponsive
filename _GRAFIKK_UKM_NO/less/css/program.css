@@ -1,0 +1,10 @@
+.hendelse {
+  border: 1px solid #b89dcc;
+  padding: .5em;
+  margin: .5em 0;
+  background: rgba(184, 157, 204, 0.15);
+  /* color: #fff; */
+}
+.hendelse > .tittel {
+  font-weight: bold;
+}
