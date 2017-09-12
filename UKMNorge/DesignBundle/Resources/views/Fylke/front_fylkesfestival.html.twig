@@ -1,4 +1,4 @@
-{% extends "UKMDesignBundle:Layout:_base.html.twig"|UKMpath %}
+{% extends "Layout/_"~ (singleMode is defined and singleMode ? 'singleMode' : 'base' ) ~".html.twig"|UKMpath %}
 
 {% set daysUntil = date( fylke.getStart() ).diff( date(now) ).days %}
 

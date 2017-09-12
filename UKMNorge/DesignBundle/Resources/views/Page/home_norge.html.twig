@@ -1,4 +1,4 @@
-{% extends "Layout/_layout.html.twig"|UKMpath %}
+{% extends "Layout/_"~ (singleMode is defined and singleMode ? 'singleMode' : 'base' ) ~".html.twig"|UKMpath %}
 
 {% set showSlogan = true %}
 
