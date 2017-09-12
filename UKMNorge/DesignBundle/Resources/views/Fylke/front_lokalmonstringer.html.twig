@@ -41,10 +41,10 @@
 		<div class="clearfix mt-4"></div>
 		<div class="container-fluid">
 			<div class="row align-items-center fylkesfestival-banner py-3 px-3">
-				<div class="col-8 title">
+				<div class="col-7 title">
 					UKM-festivalen i {{ fylke.getNavn() }}
 				</div>
-				<div class="col-4 date right small">
+				<div class="col-5 date right small">
 					{% if fylke.getStart()|dato('m') == fylke.getStop()|dato('m') %}
 						{% if fylke.getStart()|dato('j') == fylke.getStop()|dato('j') %}
 							{{ fylke.getStop()|dato('j. F') }}
@@ -52,7 +52,7 @@
 							{{ fylke.getStart()|dato('j') }} - {{ fylke.getStop()|dato('j. F') }}
 						{% endif %}
 					{% else %}
-						{{ fylke.getStart()|dato('j.m') }} - {{ fylke.getStop()|dato('j.M') }}
+						{{ fylke.getStart()|dato('j.M') }} - {{ fylke.getStop()|dato('j.M') }}
 					{% endif %}
 					<br />
 					{{ fylke.getSted() }}
@@ -69,9 +69,13 @@
 		<div class="container-fluid">
 			<div class="row-flex">
 				<div class="col-12 col-lg-9 float-lg-left float-xl-left mt-4">
-					<div class="row">
-						{% embed "UKMDesignBundle:Category:list.html.twig"|UKMpath with {singleMode: true, posts: posts.getAll(), hideNoneFound: true} %}{% endembed %}
-					</div>
+					{% if posts.getAntall() == 0 and harFylkeInfo %}
+						{{ fylkeInfo.getPage().content|raw }}
+					{% else %}
+						<div class="row">
+							{% embed "UKMDesignBundle:Category:list.html.twig"|UKMpath with {singleMode: true, posts: posts.getAll(), hideNoneFound: true} %}{% endembed %}
+						</div>
+					{% endif %}
 				</div>
 			</div>
 		</div>

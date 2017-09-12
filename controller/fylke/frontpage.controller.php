@@ -84,8 +84,8 @@ else {
 	// DEV SETTINGS FOR ALLE STATES I RIKTIG REKKEFØLGE
 	#fylkeFrontpageController::setState('pre_pamelding'); // DEV
 	#fylkeFrontpageController::setState('pamelding'); // DEV
-	fylkeFrontpageController::setState('lokalmonstringer'); // DEV
-	#fylkeFrontpageController::setState('fylkesmonstring'); // DEV
+	#fylkeFrontpageController::setState('lokalmonstringer'); // DEV
+	fylkeFrontpageController::setState('fylkesmonstring'); // DEV
 
 
 
