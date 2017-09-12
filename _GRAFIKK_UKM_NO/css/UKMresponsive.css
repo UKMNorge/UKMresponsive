@@ -41,6 +41,8 @@ img {
 }
 .menu-item {
   text-align: center;
+  margin-top: 1.5em;
+  margin-bottom: .5em;
 }
 .menu-item:hover,
 .menu-item a:visited,
@@ -392,9 +394,32 @@ h6,
   background: #b89dcc;
   color: #fff;
 }
-.fylkesfestival .title {
+.fylkesfestival-banner {
+  background: #b89dcc;
+  color: #fff;
+}
+.fylkesfestival-banner .title {
   font-size: 1.5rem;
   font-weight: 100;
+}
+.fylkesfestival-banner-menu-container {
+  margin-left: -15px !important;
+  margin-right: -15px !important;
+}
+.fylkesfestival-banner-menu {
+  background: rgba(184, 157, 204, 0.17);
+  border: none;
+  border-bottom: 2px solid #b89dcc;
+  border-top: none;
+  margin-top: -1px !important;
+  padding-top: 0.5em;
+  padding-bottom: 1.5em;
+}
+@media (min-width: 992px) {
+  .fylkesfestival-banner-menu {
+    border-left: 2px solid #b89dcc;
+    border-right: 2px solid #b89dcc;
+  }
 }
 .calendar {
   border: 3px solid #946bb2;
@@ -406,7 +431,7 @@ h6,
 .day {
   font-size: x-small;
 }
-.date {
+.dato {
   font-size: 2em;
 }
 /* FILE: open-sans.less */

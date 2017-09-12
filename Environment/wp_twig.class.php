@@ -62,28 +62,28 @@ class WP_TWIG {
 		$twig = new Twig_Environment($loader, $environment);
 		
 		// Add dato-filter
-		$filter = new Twig_SimpleFilter('dato', 'WP_TWIG_date');
-		$twig->addFilter($filter);
+		$filter_dato = new Twig_SimpleFilter('dato', 'WP_TWIG_date');
+		$twig->addFilter($filter_dato);
 		
 		// Add path-filter
-		$filter = new Twig_SimpleFilter('UKMpath', 'UKMpath');
-		$twig->addFilter($filter);
+		$filter_path = new Twig_SimpleFilter('UKMpath', 'UKMpath');
+		$twig->addFilter($filter_path);
 
 		// Add telefon-filter
 		$filter_telefon = new Twig_SimpleFilter('telefon', 'UKMtelefon');
 		$twig->addFilter($filter_telefon);
 			
 		// Add asset-function
-		$function = new Twig_SimpleFunction('UKMasset', function( $path ) {
+		$function_ukmasset = new Twig_SimpleFunction('UKMasset', function( $path ) {
 			return URL_THEME . '/_GRAFIKK_UKM_NO/'. $path;
 		});
-		$twig->addFunction($function);
+		$twig->addFunction($function_ukmasset);
 	
 		// Add asset-function
-		$function = new Twig_SimpleFunction('THEME_CONFIG', function( $key ) {
+		$function_theme_config = new Twig_SimpleFunction('THEME_CONFIG', function( $key ) {
 			return WP_CONFIG::get( $key );
 		});
-		$twig->addFunction($function);
+		$twig->addFunction($function_theme_config);
 			
 		// Debug
 		if( self::getDebug() ) {

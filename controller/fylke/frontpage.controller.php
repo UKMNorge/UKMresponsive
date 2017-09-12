@@ -64,17 +64,20 @@ else {
 // DEV SETTINGS FOR ALLE STATES I RIKTIG REKKEFØLGE
 #fylkeFrontpageController::setState('pre_pamelding'); // DEV
 #fylkeFrontpageController::setState('pamelding'); // DEV
-#fylkeFrontpageController::setState('lokalmonstringer'); // DEV
-fylkeFrontpageController::setState('fylkesmonstring'); // DEV		TODO: NEXT STEP FIX FYLKESMØNSTRINGSSIDEN I ALLE TILSTANDER
+fylkeFrontpageController::setState('lokalmonstringer'); // DEV
+#fylkeFrontpageController::setState('fylkesmonstring'); // DEV
 
 
 
 $view_template 			= fylkeFrontpageController::getTemplate();
 $WP_TWIG_DATA['fylke'] 	= $FYLKE;
 $WP_TWIG_DATA['lokalt'] = $LOKALT;
-$WP_TWIG_DATA['harFylkeInfo'] = fylkeFrontpageController::harFylkeInfo();
-$WP_TWIG_DATA['fylkeInfo'] = fylkeFrontpageController::getFylkeInfo();
+
 $WP_TWIG_DATA['pamelding_apen'] = fylkeFrontpageController::getPameldingApen();
+$WP_TWIG_DATA['fylkeInfo'] = fylkeFrontpageController::getFylkeInfo();
+
+$WP_TWIG_DATA['harFylkeInfo'] = fylkeFrontpageController::harFylkeInfo();
+$WP_TWIG_DATA['harProgram'] = fylkeFrontpageController::harProgram();
 
 class fylkeFrontpageController {
 	static $pl_id = false;
@@ -88,9 +91,9 @@ class fylkeFrontpageController {
 
 	static $harFylkeInfo = null;
 	static $fylkeInfo = null;
+	
+	static $harProgram = null;
 
-	
-	
 	public static function init( $pl_id ) {
 		self::$pl_id = $pl_id;
 		self::_loadMonstring();
@@ -112,7 +115,8 @@ class fylkeFrontpageController {
 				break;
 			case 'fylkesmonstring':
 				self::$template = 'Fylke/front_fylkesfestival';
-				break;		}
+				break;
+		}
 		self::$state = $state;
 	}
 	
@@ -147,6 +151,18 @@ class fylkeFrontpageController {
 			self::_loadFylkeInfo();
 		}
 		return self::$harFylkeInfo;
+	}
+	
+	public static function harProgram() {
+		self::_loadProgram();
+		return self::$harProgram;
+	}
+	
+	private static function _loadProgram() {
+		if( null === self::$harProgram ) {
+			self::$harProgram = self::getMonstring()->getProgram()->getAntall() > 0;
+		}
+		return self;
 	}
 	
 	public static function _loadFylkeInfo() {

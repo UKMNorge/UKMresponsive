@@ -14,8 +14,8 @@
 				</p>
 			{% else %}
 				<p class="lead">
-					<span class="d-none d-md-block">Les mer om UKM der du bor ved å velge din {{ fylke.erOslo() ? 'bydel' : 'kommune' }} i listen til venstre.</span>
-					<span class="d-block d-md-none">Les mer om UKM der du bor ved å velge din {{ fylke.erOslo() ? 'bydel' : 'kommune' }} nedenfor.</span>
+					<span class="d-none d-md-block">Les mer om UKM i din {{ fylke.erOslo() ? 'bydel' : 'kommune' }} ved å velge {{ fylke.erOslo() ? 'bydel' : 'kommune' }} i listen til venstre.</span>
+					<span class="d-block d-md-none">Les mer om UKM i din {{ fylke.erOslo() ? 'bydel' : 'kommune' }} ved å velge {{ fylke.erOslo() ? 'bydel' : 'kommune' }} nedenfor.</span>
 				</p>
 			{% endif %}
 			</div>
@@ -37,10 +37,10 @@
 		</div>
 	</div>
 	
-	{% if true or fylke.erRegistrert() %}
+	{% if fylke.erRegistrert() %}
 		<div class="clearfix mt-4"></div>
 		<div class="container-fluid">
-			<div class="row align-items-center fylkesfestival py-3 px-3">
+			<div class="row align-items-center fylkesfestival-banner py-3 px-3">
 				<div class="col-8 title">
 					UKM-festivalen i {{ fylke.getNavn() }}
 				</div>
@@ -59,12 +59,16 @@
 				</div>
 			</div>
 
-			<div class="row-flex">
-				<div class="col-12 col-lg-3 float-lg-right float-xl-right mt-4">
+			<div class="row-flex fylkesfestival-banner-menu-container">
+				<div class="col-12 col-lg-3 float-lg-right float-xl-right mt-4 fylkesfestival-banner-menu">
 					{% embed "UKMDesignBundle:Fylke:meny.html.twig"|UKMpath %}{% endembed %}
 				</div>
-
-				<div class="col-12 col-lg-8 float-lg-left float-xl-left mt-4">
+			</div>
+		</div>
+		
+		<div class="container-fluid">
+			<div class="row-flex">
+				<div class="col-12 col-lg-9 float-lg-left float-xl-left mt-4">
 					<div class="row">
 						{% embed "UKMDesignBundle:Category:list.html.twig"|UKMpath with {singleMode: true, posts: posts.getAll(), hideNoneFound: true} %}{% endembed %}
 					</div>
