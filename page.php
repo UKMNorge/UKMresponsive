@@ -30,7 +30,7 @@ switch( $page_template ) {
 		break;
 	# Påmeldte til mønstringen
 	case 'pameldte':
-		$view_template = 'Monstring/deltakere';
+		$view_template = 'Monstring/pameldte';
 		require_once('UKMNorge/Wordpress/Controller/monstring/deltakere.controller.php');
 		break;
 	# Mønstringens program
