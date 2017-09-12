@@ -25,6 +25,24 @@ jQuery( document ).on('click', '#main_menu_button', function(e){
 	}
 });
 
+/**
+ * SCROLL TO ID
+**/
+function scrollToId( id ) {
+//	console.log('SCROLL TO ID: ' + id);
+
+	var animateToPosition = $('#' + id ).offset().top - 50;
+	if( animateToPosition < 0 ) {
+		animateToPosition = 0;
+	}
+	scrollToPosition( animateToPosition );
+}
+function scrollToPosition( targetPosition ) {
+//	console.log('SCROLL TO POS: ' + targetPosition);
+	$('html, body').animate({
+		scrollTop: targetPosition
+	}, 300);
+}
 
 /** 
  * AUTOSHRINK FOR ALLE .autoshrink
@@ -53,6 +71,7 @@ $(document).on('click', '.UKMtoggleShow', function(e){
 	e.preventDefault();
 	
 	var target = $(this).attr('data-target');
+	$(document).trigger('pre_UKMtoggleShow#'+ target);
 	$('#' + target + '.UKMtoggleContent').slideDown(function(){$(document).trigger('UKMtoggleShow#'+ target);});
 	$('.' + target + '.UKMtoggleShow').hide();
 	$('.' + target + '.UKMtoggleHide').fadeIn();
@@ -62,8 +81,27 @@ $(document).on('click', '.UKMtoggleHide', function(e){
 	e.preventDefault();
 	
 	var target = $(this).attr('data-target');
+	$(document).trigger('pre_UKMtoggleHide#'+ target);
 	$('#' + target + '.UKMtoggleContent').slideUp(function(){$(document).trigger('UKMtoggleHide#'+ target);});
 	$('.' + target + '.UKMtoggleHide').hide();
 	$('.' + target + '.UKMtoggleShow').fadeIn();
-	$(document).trigger('UKMtoggleHide#'+ target);
+});
+
+
+/**
+ * FYLKESSIDE
+ *
+ * Resize knappetekst for lokalmønstring når listen vises
+**/
+var fylkePositionAtToggleLokalTriggered = 0;
+
+// Når listen vises, resize knappetekst og lagre scroll-position
+$(document).on('UKMtoggleShow#UKMtoggleLokal', function() {
+	$(window).trigger('resize');
+	fylkePositionAtToggleLokalTriggered = $(window).scrollTop();
+});
+
+// Når listen lukkes, returner til tidligere scroll-position
+$(document).on('pre_UKMtoggleHide#UKMtoggleLokal', function(){
+	scrollToPosition( fylkePositionAtToggleLokalTriggered );
 });
