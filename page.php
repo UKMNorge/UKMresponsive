@@ -54,6 +54,7 @@ switch( $page_template ) {
 		break;
 	# Standard wordpress-side
 	default:
+		require_once('UKMNorge/Wordpress/Controller/page.controller.php');
 		$view_template = 'Page/fullpage';
 		break;
 }
