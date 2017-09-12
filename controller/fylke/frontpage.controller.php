@@ -100,6 +100,10 @@ class fylkeFrontpageController {
 	}
 	
 	public static function setState( $state ) {
+		// Vil ikke overstyre state hvis vi er i arkiv-visning (har hentet inn nyheter side 2)
+		if( self::$state == 'arkiv' ) {
+			return false;
+		}
 		switch( $state ) {
 			case 'arkiv':
 				self::$template = 'Fylke/front_arkiv';
