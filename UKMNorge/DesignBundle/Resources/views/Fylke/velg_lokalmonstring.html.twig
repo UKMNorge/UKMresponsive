@@ -5,15 +5,7 @@
 <a id="liste_lokalmonstringer"></a>
 <div class="UKMtoggleContent" id="UKMtoggleLokal" style="min-height: 20vh; width: calc(100% + 30px)">
 	<div class="row" style="width:100%">
-		{% for lokalmonstring in lokalt %}
-			<div class="col-6 col-sm-4 col-md-6 col-lg-4 col-xl-3 my-1">
-				<a href="{{ lokalmonstring.getLink() }}" class="btn btn-block btn-outline-primary mx-0" style="line-height: 1.25em;">
-					<div class="autoshrink">
-						{{ lokalmonstring.getNavn() }}
-					</div>
-				</a>
-			</div>
-		{% endfor %}
+		{% embed "UKMDesignBundle:Fylke:liste_lokalmonstringer.html.twig"|UKMpath %}{% endembed %}
 		<div class="col-12">
 			<button class="btn btn-outline-primary btn-block UKMtoggleHide UKMtoggleLokal" data-target="UKMtoggleLokal" style="display:none">Lukk listen</button>
 		</div>

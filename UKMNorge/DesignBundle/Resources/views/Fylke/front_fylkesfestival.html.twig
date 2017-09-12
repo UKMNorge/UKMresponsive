@@ -1,0 +1,94 @@
+{% extends "UKMDesignBundle:Layout:_base.html.twig"|UKMpath %}
+
+{% set sectionTitle = fylke.getNavn() %}
+
+{% set daysUntil = date( fylke.getStart() ).diff( date(now) ).days %}
+
+{% block content %}
+	<div class="fylkesfestival">
+		<div class="container mb-4" style="margin-top:-1em;">
+			<div class="row align-items-center py-3">
+				<div class="col-8 col-sm-9 col-md-10 title">
+					{{ fylke.getSted()|upper }}
+				</div>
+				
+				<div class="col-4 col-sm-3 col-md-2 center">
+					<div class="calendar">
+						<div class="month autoshrink">
+							{{ fylke.getStart()|dato('F') }}
+						</div>
+						<div class="date">
+							{{ fylke.getStart()|dato('j.') }}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="container-fluid">
+		<div class="row-flex">
+			<div class="col-12 col-lg-4 float-right mb-4">
+				<div class="center small mb-4">
+					<p>
+						Bare {{ daysUntil }} dag{{ daysUntil > 1 ? 'er' }} til fylkesfestivalen i {{ fylke.getNavn() }}!
+					</p>
+				</div>
+				<div class="page-menu">
+					<div class="row">
+						<div class="col menu-item">
+							<a href="program/">
+								<div class="icon icon-calendar"></div>
+								<div class="text">program</div>
+							</a>
+						</div>
+						<div class="col menu-item">
+							<a href="pameldte/">
+								<div class="icon icon-users"></div>
+								<div class="text">påmeldte</div>
+							</a>
+						</div>
+						{% if harFylkeInfo and posts.getAntall() > 0 %}
+							<div class="col menu-item">
+								<a href="info/">
+									<div class="icon icon-info"></div>
+									<div class="text">info</div>
+								</a>
+							</div>
+						{% endif %}
+						<div class="col menu-item">
+							<a href="kontaktpersoner/">
+								<div class="icon icon-mobile"></div>
+								<div class="text">kontakt</div>
+							</a>
+						</div>
+					</div>
+				</div>
+				
+				<p class="mt-3 center small">
+					<a href="ukm-lokalt/">Info om UKM i din {{ fylke.erOslo() ? 'bydel' : 'kommune' }}</a>
+				</p>
+
+			</div>
+		
+			<div class="col-12 col-lg-8 float-left">
+				{% if posts.getAntall() == 0 and harFylkeInfo %}
+					{{ fylkeInfo.getPage().content|raw }}
+				{% else %}
+					<div class="row">
+						{% embed "UKMDesignBundle:Category:list.html.twig"|UKMpath with {singleMode: true, posts: posts.getAll(), hideNoneFound: true} %}{% endembed %}
+					</div>
+				{% endif %}
+			</div>
+			
+		</div>
+	</div>
+
+{% endblock %}
+
+{% block saveIt %}
+				<a href="#" class="btn btn-outline-primary btn-block">Program</a>
+				<a href="#" class="btn btn-outline-primary btn-block">Påmeldte</a>
+				<a href="#" class="btn btn-outline-primary btn-block">Praktisk informasjon</a>
+				<a href="#" class="btn btn-outline-primary btn-block">Kontakt</a>
+{% endblock %}

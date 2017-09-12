@@ -64,26 +64,31 @@ else {
 // DEV SETTINGS FOR ALLE STATES I RIKTIG REKKEFØLGE
 #fylkeFrontpageController::setState('pre_pamelding'); // DEV
 #fylkeFrontpageController::setState('pamelding'); // DEV
-fylkeFrontpageController::setState('lokalmonstringer'); // DEV
-#fylkeFrontpageController::setState('fylkesmonstring'); // DEV		TODO: NEXT STEP FIX FYLKESMØNSTRINGSSIDEN I ALLE TILSTANDER
+#fylkeFrontpageController::setState('lokalmonstringer'); // DEV
+fylkeFrontpageController::setState('fylkesmonstring'); // DEV		TODO: NEXT STEP FIX FYLKESMØNSTRINGSSIDEN I ALLE TILSTANDER
 
 
 
 $view_template 			= fylkeFrontpageController::getTemplate();
 $WP_TWIG_DATA['fylke'] 	= $FYLKE;
 $WP_TWIG_DATA['lokalt'] = $LOKALT;
-$WP_TWIG_DATA['harFylkeInfo'] = fylkeFrontpageController::getHarFylkeInfo();
+$WP_TWIG_DATA['harFylkeInfo'] = fylkeFrontpageController::harFylkeInfo();
+$WP_TWIG_DATA['fylkeInfo'] = fylkeFrontpageController::getFylkeInfo();
 $WP_TWIG_DATA['pamelding_apen'] = fylkeFrontpageController::getPameldingApen();
 
-
 class fylkeFrontpageController {
-	static $harFylkeInfo = null;
 	static $pl_id = false;
+	static $monstring;
+
 	static $template = 'Fylke/front';
 	static $state = 'pre_pamelding';
+
 	static $pameldingApen = false;
 	static $pameldingStarter = null;
-	static $monstring;
+
+	static $harFylkeInfo = null;
+	static $fylkeInfo = null;
+
 	
 	
 	public static function init( $pl_id ) {
@@ -102,7 +107,7 @@ class fylkeFrontpageController {
 			case 'pamelding':
 				self::$pameldingApen = true;
 			case 'lokalmonstringer':
-				self::_loadHarFylkeInfo();
+				self::_loadFylkeInfo();
 				self::$template = 'Fylke/front_lokalmonstringer';
 				break;
 			case 'fylkesmonstring':
@@ -131,15 +136,22 @@ class fylkeFrontpageController {
 		return self::$pameldingApen;
 	}
 	
-	public static function getHarFylkeInfo() {
+	public static function getFylkeInfo() {
 		if( null === self::$harFylkeInfo ) {
-			self::_loadHarFylkeInfo();
+			self::_loadFylkeInfo();
+		}
+		return self::$fylkeInfo;
+	}
+	public static function harFylkeInfo() {
+		if( null === self::$harFylkeInfo ) {
+			self::_loadFylkeInfo();
 		}
 		return self::$harFylkeInfo;
 	}
 	
-	public static function _loadHarFylkeInfo() {
+	public static function _loadFylkeInfo() {
 		$page = get_page_by_path('info');
+		self::$fylkeInfo = new page( $page );
 		self::$harFylkeInfo = ( is_object( $page ) && $page->post_status == 'publish' );
 		return self;
 	}
