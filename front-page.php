@@ -21,6 +21,9 @@ switch( get_option('site_type') ) {
 	case 'land':
 		$view_template = 'Page/home_norge';
 		break;
+	case 'ego':
+		$view_template = 'Ego/home';
+		break;
 	default:
 		$view_template = 'Page/home_norge';
 		break;

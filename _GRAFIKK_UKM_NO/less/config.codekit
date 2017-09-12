@@ -91,6 +91,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/css\/UKMresponsive-ego.css": {
+		"fileType": 16,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/css\/UKMresponsive-ego.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/files.less": {
 		"allowInsecureImports": 0,
 		"createSourceMap": 0,
@@ -261,6 +270,26 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/UKMresponsive-cherry.less",
 		"outputAbbreviatedPath": "\/Users\/mariusmandal\/Dev\/ukm.no\/server_data\/themes\/UKMresponsive\/_GRAFIKK_UKM_NO\/css\/UKMresponsive-cherry.css",
+		"outputPathIsOutsideProject": 1,
+		"outputPathIsSetByUser": 1,
+		"outputStyle": 0,
+		"relativeURLS": 0,
+		"shouldRunAutoprefixer": 0,
+		"shouldRunBless": 0,
+		"strictImports": 0,
+		"strictMath": 0,
+		"strictUnits": 0
+		},
+	"\/UKMresponsive-ego.less": {
+		"allowInsecureImports": 0,
+		"createSourceMap": 0,
+		"disableJavascript": 0,
+		"fileType": 1,
+		"ieCompatibility": 1,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/UKMresponsive-ego.less",
+		"outputAbbreviatedPath": "\/Users\/mariusmandal\/Dev\/ukm.no\/server_data\/themes\/UKMresponsive\/_GRAFIKK_UKM_NO\/css\/UKMresponsive-ego.css",
 		"outputPathIsOutsideProject": 1,
 		"outputPathIsSetByUser": 1,
 		"outputStyle": 0,

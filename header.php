@@ -42,13 +42,6 @@ $WP_TWIG_DATA = [];
 Sitemap::loadFromYamlFile( PATH_DESIGNBUNDLE . 'Resources/config/sitemap.yml' );
 $WP_TWIG_DATA['nav'] = Sitemap::getSections();
 
-// SET SECTION INFOS
-if( get_option('site_type') == 'fylke' ) {
-	$section = new stdClass();
-	$section->title = get_bloginfo('name');
-	$section->url = get_bloginfo('url');
-	$WP_TWIG_DATA['section'] = $section;
-}
 $WP_TWIG_DATA['blog_url'] = get_bloginfo('url');
 
 // SEO INIT
@@ -75,9 +68,34 @@ $SEO->setImage( $SEOImage );
 $WP_TWIG_DATA['SEO'] = $SEO;
 
 
-// THEME SETTINGS
+/**
+ * TEMA-INNSTILLINGER
+ *
+ * 1: UKM.no hovedside
+ * 2: Fylkesside eller lokalside
+ * 3: EGO
+**/
+// 1: UKM.no hovedside
 if( get_current_blog_id() == 1 ) {
 	$WP_TWIG_DATA['THEME'] = 'cherry';
-} else {
+}
+// 2: Fylkesside eller lokalside
+elseif( get_option('site_type') == 'fylke' || get_option('site_type') == 'kommune' ) {
+	$section = new stdClass();
+	$section->title = get_bloginfo('name');
+	$section->url = get_bloginfo('url');
+	$WP_TWIG_DATA['section'] = $section;
+}
+// 3: EGO
+elseif( get_option('site_type') == 'ego' ) {
+	$header = new stdClass();
+	$header->logo = 'EGO';
+	$header->config = 'hvaerego';
+	$WP_TWIG_DATA['header'] = $header;
+	
+	$WP_TWIG_DATA['THEME'] = 'ego';
+}
+// Alle andre sider
+else {
 	$WP_TWIG_DATA['THEME'] = '';
 }

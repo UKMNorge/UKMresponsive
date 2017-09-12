@@ -10,7 +10,11 @@
 			{# BRAND ICON #}
 			<div class="navbar-header float-left">
 				<a href="/">
-					<img src="http://grafikk.ukm.no/profil/logo/UKM_logo{{ showSlogan is defined ? '_helhvit_0100' : '' }}.png" id="UKMlogo" width="70" />
+					{% if header is defined and header.logo == 'EGO' %}
+						<img src="http://grafikk.ukm.no/profil/ego/EGO_logo{{ showSlogan is defined ? '_helhvit_0100' : '' }}.png" id="EGOlogo" width="70" />
+					{% else %}
+						<img src="http://grafikk.ukm.no/profil/logo/UKM_logo{{ showSlogan is defined ? '_helhvit_0100' : '' }}.png" id="UKMlogo" width="70" />
+					{% endif %}
 				</a>
 			</div>
 			
