@@ -13,7 +13,7 @@ $WP_TWIG_DATA['page_next'] = get_permalink( get_option( 'page_for_posts' ) );
 
 switch( get_option('site_type') ) {
 	case 'fylke':
-		require_once('UKMNorge/Wordpress/Controller/fylke/frontpage.controller.php');
+		require_once('UKMNorge/Wordpress/Controller/monstring/fylke.controller.php');
 		break;
 	case 'kommune':
 #		require_once('UKMNorge/Wordpress/Controller/fylke/frontpage.controller.php');
