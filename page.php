@@ -39,8 +39,8 @@ switch( $page_template ) {
 		break;
 	# Kontaktpersoner på mønstringen
 	case 'kontaktpersoner':
-		$view_template = 'Fylke/kontaktpersoner';
-		require_once('UKMNorge/Wordpress/Controller/kontaktpersoner.controller.php');
+		$view_template = 'Monstring/kontaktpersoner';
+		require_once('UKMNorge/Wordpress/Controller/monstring/kontaktpersoner.controller.php');
 		break;
 
 	## HOVEDSIDER

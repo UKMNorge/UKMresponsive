@@ -1,0 +1,24 @@
+{% extends "Layout/_"~ (singleMode is defined and singleMode ? 'singleMode' : 'base' ) ~".html.twig"|UKMpath %}
+
+{% block content %}
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-12">
+				<h3>Kontaktpersoner for {{ monstring.getNavn() }}</h3>
+				<p>
+					Lurer du på noe om UKM i din {{ monstring.getFylke().getId() == 3 ? 'bydel' : 'kommune' }},
+					 må du ta kontakt med lokalkontakten din. 
+					 Kontaktinformasjon finner du ved å 
+					 <a href="{{ monstring.getLink() }}ukm-lokalt/">
+					 	velge din {{ monstring.getFylke().getId() == 3 ? 'bydel' : 'kommune' }}
+					 </a>.
+				</p>
+			</div>
+			{% for kontakt in monstring.getKontaktpersoner().getAll() %}
+				<div class="col-6 col-sm-4 col-lg-3 col-xl-2">
+					{% embed "UKMDesignBundle:Kontaktpersoner:grid.html.twig"|UKMpath %}{% endembed %}
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+{% endblock %}
