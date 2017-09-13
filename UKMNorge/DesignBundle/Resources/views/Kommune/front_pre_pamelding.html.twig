@@ -1,0 +1,75 @@
+{% extends "Layout/_"~ (singleMode is defined and singleMode ? 'singleMode' : 'base' ) ~".html.twig"|UKMpath %}
+
+{% block content %}
+	{% if monstring.erRegistrert() %}
+		{% embed "UKMDesignBundle:Monstring:banner.html.twig"|UKMpath %}{% endembed %}
+	{% endif %}
+	<div class="container-fluid">
+		<div class="row-flex vertical-align-top">
+			<div class="col-12 col-md-8 float-left">
+				{% if pamelding_apen %}
+					{% if monstring.erRegistrert() %}
+						<h2>Påmeldingen er åpen</h2>
+					{% else %}
+						<p class="lead">
+							{{ monstring.getNavn() }} har ikke lagt inn dato eller påmeldingsfrist,
+							men vi har likevel åpnet forhåndspåmeldingen.
+						</p>
+					{% endif %}
+
+					<p class="my-3">
+						<a href="//delta.{{ UKM_HOSTNAME }}" class="btn btn-block btn-primary">Start påmelding</a>
+					</p>
+				{% else %}
+					<p class="lead">
+						Vil du ha en gratis sms-påminnelse når påmeldingen åpner {{ THEME_CONFIG('pamelding').startdato }}?
+					</p>
+					{% embed "UKMDesignBundle:Husk:Form.html.twig"|UKMpath %}{% endembed %}
+				{% endif %}
+			</div>
+
+			<div class="col-12 col-md-4 float-right">
+				{% if not monstring.erRegistrert() %}
+					{% embed "UKMDesignBundle:Layout:alert_icon.html.twig"|UKMpath with {level: 'primary', icon: 'info-with-circle'} %}
+						{% block content %}
+							{{ monstring.getNavn() }} har ikke bestemt dato enda, men det vil bli gjort snart. 
+							Synes du det burde vært gjort nå kan du <a href="kontaktpersoner/">ta kontakt med lokalkontakten</a>.
+						{% endblock %}
+					{% endembed %}
+				{% else %}
+					{% if monstring.erPameldingApen() %}
+						{% embed "UKMDesignBundle:Kommune:frister.html.twig"|UKMpath %}{% endembed %}
+					{% endif %}
+					<div class="mb-3">
+						{% embed "UKMDesignBundle:Kommune:meny.html.twig"|UKMpath %}{% endembed %}
+					</div>
+				{% endif %}
+			</div>
+			
+			<div class="col-12 col-md-8 float-left">
+				{% if harInfoPage %}
+					<div class="mb-3">
+						{{ infoPage.getPage().content|raw }}
+					</div>
+				{% endif %}
+			
+				{% if monstring.erRegistrert() %}
+					<div class="row mb-4">
+						{% set singleMode = true %}
+						{% embed "UKMDesignBundle:Category:list.html.twig"|UKMpath with {posts: posts.getAll(), hideNoneFound: false} %}
+						{% endembed %}
+					</div>
+				{% endif %}
+
+				<div class="mb-4">
+					<h3>Hva er UKM?</h3>
+					<p>{{ THEME_CONFIG('hvaerukm').kort }} 
+						<br />
+						<a href="{{ THEME_CONFIG('hvaerukm').lesmer }}" >Les mer</a>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

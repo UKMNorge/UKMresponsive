@@ -38,11 +38,12 @@ WP_TWIG::setTemplateDir( PATH_DESIGNBUNDLE .'Resources/views/' );
 WP_TWIG::setDebug( WP_ENV == 'dev' );
 $WP_TWIG_DATA = [];
 
+$WP_TWIG_DATA['UKM_HOSTNAME'] = UKM_HOSTNAME;
+$WP_TWIG_DATA['blog_url'] = get_bloginfo('url');
+
 // SITEMAP / MENU
 Sitemap::loadFromYamlFile( PATH_DESIGNBUNDLE . 'Resources/config/sitemap.yml' );
 $WP_TWIG_DATA['nav'] = Sitemap::getSections();
-
-$WP_TWIG_DATA['blog_url'] = get_bloginfo('url');
 
 // SEO INIT
 $SEOImage = new SEOImage( WP_CONFIG::get('SEOdefaults')['image']['url'], 

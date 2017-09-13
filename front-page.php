@@ -16,7 +16,7 @@ switch( get_option('site_type') ) {
 		require_once('UKMNorge/Wordpress/Controller/monstring/fylke.controller.php');
 		break;
 	case 'kommune':
-#		require_once('UKMNorge/Wordpress/Controller/fylke/frontpage.controller.php');
+		require_once('UKMNorge/Wordpress/Controller/monstring/kommune.controller.php');
 		break;
 	case 'land':
 		$view_template = 'Page/home_norge';

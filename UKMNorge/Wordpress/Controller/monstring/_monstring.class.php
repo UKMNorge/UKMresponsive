@@ -37,6 +37,10 @@ abstract class monstringController {
 	public static function getPameldingStarter() {
 		return self::$pameldingStarter;
 	}
+	public static function erPameldingStartet() {
+		$now = new DateTime('now');
+		return self::getPameldingStarter() < $now;
+	}
 	
 	public static function getTemplate() {
 		return self::$template;
@@ -69,7 +73,7 @@ abstract class monstringController {
 	
 	public static function getInfoPage() {
 		if( null === self::$harInfoPage ) {
-			self::_loadFylkeInfo();
+			self::_loadInfoPage();
 		}
 		return self::$infoPage;
 	}

@@ -1,0 +1,20 @@
+<div class="fylkesfestival">
+	<div class="container mb-4" style="margin-top:-1em;">
+		<div class="row align-items-center py-3">
+			<div class="col-8 col-sm-9 col-md-10 title">
+				{{ monstring.getSted()|upper }}
+			</div>
+			
+			<div class="col-4 col-sm-3 col-md-2 center">
+				<div class="calendar">
+					<div class="month autoshrink">
+						{{ monstring.getStart()|dato('F') }}
+					</div>
+					<div class="dato">
+						{{ monstring.getStart()|dato('j.') }}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

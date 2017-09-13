@@ -35,7 +35,7 @@ if( $WP_TWIG_DATA['posts']->getPaged() ) {
 	fylkeController::setState('arkiv');
 }
 // 2: Påmeldingen har ikke åpnet
-elseif( $now < fylkeController::getPameldingStarter() ) {
+elseif( fylkeController::erPameldingStartet() ) {
 	fylkeController::setState('pre_pamelding');
 }
 // 3: Fylkesmønstringen starter i løpet av 2 uker
@@ -97,9 +97,9 @@ $WP_TWIG_DATA['fylke'] 	= $FYLKE;
 $WP_TWIG_DATA['lokalt'] = $LOKALT;
 
 $WP_TWIG_DATA['pamelding_apen'] = fylkeController::getPameldingApen();
-$WP_TWIG_DATA['fylkeInfo'] = fylkeController::getFylkeInfo();
+$WP_TWIG_DATA['infoPage'] = fylkeController::getInfoPage();
 
-$WP_TWIG_DATA['harFylkeInfo'] = fylkeController::harFylkeInfo();
+$WP_TWIG_DATA['harInfoPage'] = fylkeController::harInfoPage();
 $WP_TWIG_DATA['harProgram'] = fylkeController::harProgram();
 
 $WP_TWIG_DATA['page_next'] = $WP_TWIG_DATA['posts']->getPageNext();
