@@ -5,9 +5,7 @@ require_once('_monstring.class.php');
 	STATIC HELPER CLASS FOR frontpage.controller.php
 **/
 class fylkeController extends monstringController {
-	static $harFylkeInfo = null;
-	static $fylkeInfo = null;
-	
+		
 	public static function setState( $state ) {
 		// Vil ikke overstyre state hvis vi er i arkiv-visning (har hentet inn nyheter side 2)
 		if( self::$state == 'arkiv' ) {
@@ -23,7 +21,7 @@ class fylkeController extends monstringController {
 			case 'pamelding':
 				self::$pameldingApen = true;
 			case 'lokalmonstringer':
-				self::_loadFylkeInfo();
+				self::_loadInfoPage();
 				self::$template = 'Fylke/front_lokalmonstringer';
 				break;
 			case 'fylkesmonstring':
@@ -31,26 +29,6 @@ class fylkeController extends monstringController {
 				break;
 		}
 		self::$state = $state;
-	}
-
-	public static function getFylkeInfo() {
-		if( null === self::$harFylkeInfo ) {
-			self::_loadFylkeInfo();
-		}
-		return self::$fylkeInfo;
-	}
-	public static function harFylkeInfo() {
-		if( null === self::$harFylkeInfo ) {
-			self::_loadFylkeInfo();
-		}
-		return self::$harFylkeInfo;
-	}
-
-	public static function _loadFylkeInfo() {
-		$page = get_page_by_path('info');
-		self::$fylkeInfo = new page( $page );
-		self::$harFylkeInfo = ( is_object( $page ) && $page->post_status == 'publish' );
-		return self;
 	}
 
 	public static function getLokalmonstringer() {

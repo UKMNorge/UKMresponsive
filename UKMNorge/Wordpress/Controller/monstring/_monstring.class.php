@@ -14,6 +14,10 @@ abstract class monstringController {
 	
 	static $harProgram = null;
 
+	static $harInfoPage = null;
+	static $infoPage = null;
+
+
 	abstract public static function setState( $state );
 #	abstract public static function _loadPameldingApen();
 
@@ -61,5 +65,25 @@ abstract class monstringController {
 	
 	private static function _loadMonstring() {
 		self::$monstring = new monstring_v2( self::$pl_id );
+	}
+	
+	public static function getInfoPage() {
+		if( null === self::$harInfoPage ) {
+			self::_loadFylkeInfo();
+		}
+		return self::$infoPage;
+	}
+	public static function harInfoPage() {
+		if( null === self::$harInfoPage ) {
+			self::_loadInfoPage();
+		}
+		return self::$harInfoPage;
+	}
+
+	public static function _loadInfoPage() {
+		$page = get_page_by_path('info');
+		self::$infoPage = new page( $page );
+		self::$harInfoPage = ( is_object( $page ) && $page->post_status == 'publish' );
+		return self;
 	}
 }

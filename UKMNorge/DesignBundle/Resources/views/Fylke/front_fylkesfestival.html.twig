@@ -52,8 +52,8 @@
 			</div>
 		
 			<div class="col-12 col-lg-8 float-left">
-				{% if posts.getAntall() == 0 and harFylkeInfo %}
-					{{ fylkeInfo.getPage().content|raw }}
+				{% if posts.getAntall() == 0 and harInfoPage %}
+					{{ infoPage.getPage().content|raw }}
 				{% else %}
 					<div class="row">
 						{% embed "UKMDesignBundle:Category:list.html.twig"|UKMpath with {singleMode: true, posts: posts.getAll(), hideNoneFound: true} %}{% endembed %}

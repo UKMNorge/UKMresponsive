@@ -67,8 +67,8 @@
 		<div class="container-fluid">
 			<div class="row-flex">
 				<div class="col-12 col-lg-9 float-lg-left float-xl-left mt-4">
-					{% if posts.getAntall() == 0 and harFylkeInfo %}
-						{{ fylkeInfo.getPage().content|raw }}
+					{% if posts.getAntall() == 0 and harInfoPage %}
+						{{ infoPage.getPage().content|raw }}
 					{% else %}
 						<div class="row">
 							{% embed "UKMDesignBundle:Category:list.html.twig"|UKMpath with {singleMode: true, posts: posts.getAll(), hideNoneFound: true} %}{% endembed %}
