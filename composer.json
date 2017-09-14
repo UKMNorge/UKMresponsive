@@ -16,7 +16,7 @@
 	],
 	"autoload": {
 		"psr-4": {
-			"UKMNorge\\DesignBundle\\": ""
+			"UKMNorge\\DesignBundle\\": "UKMNorge\\DesignBundle"
 		}
 	},
     "require": {
