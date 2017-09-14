@@ -59,6 +59,37 @@ img {
   border-bottom: 2px solid #a65ea5;
   color: #a65ea5;
   margin-bottom: .5em;
+  text-transform: uppercase;
+}
+.text-color-primary {
+  color: #a65ea5;
+}
+.text-color-primary-dark {
+  color: #764175;
+}
+.text-color-primary-dark-dark {
+  color: #452644;
+}
+.text-color-primary-light {
+  color: #c18fc1;
+}
+.text-color-primary-light-light {
+  color: #d3b0d3;
+}
+.background-color-primary {
+  background-color: #a65ea5;
+}
+.background-color-primary-dark {
+  background-color: #764175;
+}
+.background-color-primary-dark-dark {
+  background-color: #452644;
+}
+.background-color-primary-light {
+  background-color: #c18fc1;
+}
+.background-color-primary-light-light {
+  background-color: #d3b0d3;
 }
 /* FILE: navbar.less */
 /*#main_menu_button {
