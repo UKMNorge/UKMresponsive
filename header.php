@@ -31,7 +31,7 @@ require_once( PATH_DESIGNBUNDLE . 'Utils/SEO.php');
 require_once( PATH_DESIGNBUNDLE . 'Utils/SEOImage.php');
 
 // LOAD CONFIG
-WP_CONFIG::setConfigPath( PATH_DESIGNBUNDLE . 'Resources/config/config.yml' );
+WP_CONFIG::setConfigPath( PATH_DESIGNBUNDLE . 'Resources/config/parameters.yml' );
 
 // TWIG INIT
 WP_TWIG::setTemplateDir( PATH_DESIGNBUNDLE .'Resources/views/' );
