@@ -6,10 +6,6 @@ require_once('_fylke.class.php');
 // Init helper class
 fylkeController::init( get_option('pl_id') );
 
-// Hent mønstringsobjekt og lokalmønstringer
-$FYLKE = fylkeController::getMonstring();
-$LOKALT = fylkeController::getLokalmonstringer();
-
 // NÅR STARTER PÅMELDINGEN
 $now = new DateTime('now');
 $omToUker = new DateTime('now + 2 weeks');
@@ -39,7 +35,7 @@ elseif( fylkeController::erPameldingStartet() ) {
 	fylkeController::setState('pre_pamelding');
 }
 // 3: Fylkesmønstringen starter i løpet av 2 uker
-elseif( $omToUker > $FYLKE->getStart() ) {
+elseif( $omToUker > fylkeController::getMonstring()->getStart() ) {
 	fylkeController::setState('fylkesmonstring');
 }
 // 4: Vi er i perioden mellom åpen påmelding og 2 uker før fylkesmønstring
@@ -48,7 +44,7 @@ else {
 	$siste_monstring	= fylkeController::getPameldingStarter();
 	$siste_pamelding 	= fylkeController::getPameldingStarter();
 	// Loop alle lokalmønstringer i fylket
-	foreach( $LOKALT as $lokalmonstring ) {
+	foreach( fylkeController::getLokalmonstringer() as $lokalmonstring ) {
 		if( $lokalmonstring->getStart() < $forste_monstring ) {
 			$forste_monstring = $lokalmonstring->getStart();
 		}
@@ -82,9 +78,9 @@ else {
  *
 **/
 	// DEV SETTINGS FOR ALLE STATES I RIKTIG REKKEFØLGE
-	fylkeController::setState('pre_pamelding'); // DEV
+	#fylkeController::setState('pre_pamelding'); // DEV
 	#fylkeController::setState('pamelding'); // DEV
-	fylkeController::setState('lokalmonstringer'); // DEV
+	#fylkeController::setState('lokalmonstringer'); // DEV
 	#fylkeController::setState('fylkesmonstring'); // DEV
 
 
@@ -92,15 +88,15 @@ else {
 /**
  * OVERFØR DATA TIL $WP_TWIG_DATA
 **/
-$view_template 			= fylkeController::getTemplate();
-$WP_TWIG_DATA['fylke'] 	= $FYLKE;
-$WP_TWIG_DATA['lokalt'] = $LOKALT;
+$view_template 					= fylkeController::getTemplate();
+$WP_TWIG_DATA['fylke']		 	= fylkeController::getMonstring();
+$WP_TWIG_DATA['lokalt'] 		= fylkeController::getLokalmonstringer();
 
 $WP_TWIG_DATA['pamelding_apen'] = fylkeController::getPameldingApen();
-$WP_TWIG_DATA['infoPage'] = fylkeController::getInfoPage();
+$WP_TWIG_DATA['infoPage'] 		= fylkeController::getInfoPage();
 
-$WP_TWIG_DATA['harInfoPage'] = fylkeController::harInfoPage();
-$WP_TWIG_DATA['harProgram'] = fylkeController::harProgram();
+$WP_TWIG_DATA['harInfoPage'] 	= fylkeController::harInfoPage();
+$WP_TWIG_DATA['harProgram'] 	= fylkeController::harProgram();
 
-$WP_TWIG_DATA['page_next'] = $WP_TWIG_DATA['posts']->getPageNext();
-$WP_TWIG_DATA['page_prev'] = $WP_TWIG_DATA['posts']->getPagePrev();
+$WP_TWIG_DATA['page_next'] 		= $WP_TWIG_DATA['posts']->getPageNext();
+$WP_TWIG_DATA['page_prev']		= $WP_TWIG_DATA['posts']->getPagePrev();
