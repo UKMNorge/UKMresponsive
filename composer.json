@@ -20,7 +20,7 @@
 		}
 	},
     "require": {
-        "symfony/yaml": "^3.1",
+        "symfony/yaml": "^2.*",
         "mariusmandal/wpoo": "^1.0"
     }
 }
