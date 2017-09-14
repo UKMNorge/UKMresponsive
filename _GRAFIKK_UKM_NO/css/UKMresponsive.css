@@ -55,6 +55,11 @@ img {
 .menu-item .icon {
   font-size: 1.5em;
 }
+.header-line {
+  border-bottom: 2px solid #b89dcc;
+  color: #b89dcc;
+  margin-bottom: .5em;
+}
 /* FILE: navbar.less */
 /*#main_menu_button {
     margin: 7px 0px 0px 0px;
