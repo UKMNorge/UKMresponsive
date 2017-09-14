@@ -57,6 +57,11 @@ switch( $page_template ) {
 		require_once('UKMNorge/Wordpress/Controller/page.controller.php');
 		$view_template = 'Page/fullpage';
 		break;
+		
+	## ORGANISASJONEN
+	case 'org/logoer':
+		$view_template = 'GrafiskProfil/logoer';
+		break;
 }
 
 // RENDER

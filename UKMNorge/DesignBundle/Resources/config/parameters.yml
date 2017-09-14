@@ -28,3 +28,340 @@ SEOdefaults:
 firenullfire:
     title: Siden finnes ikke!
     text: Siden du søker har enten blitt flyttet eller aldri eksistert (spooky)
+
+logoer:
+    ukm:
+        navn: UKM-logo
+        utgaver:
+            primar:
+                url: '//grafikk.ukm.no/profil/logoer/UKM_logo_primar_0300.png'
+                class: 
+                navn: Primærfarger
+                filer:
+                    - 
+                        url: '//grafikk.ukm.no/profil/logoer/UKM_logo_primar.pdf'
+                        navn: PDF (vektorbasert)
+                    -
+                        url: '//grafikk.ukm.no/profil/logoer/UKM_logo_primar_2500.png'
+                        navn: PNG (2500px)
+                    - 
+                        url: '//grafikk.ukm.no/profil/logoer/UKM_logo_primar_1500.png'
+                        navn: PNG (1500px)
+                    - 
+                        url: '//grafikk.ukm.no/profil/logoer/UKM_logo_primar_0500.png'
+                        navn: PNG (500px)
+                    - 
+                        url: '//grafikk.ukm.no/profil/logoer/UKM_logo_primar_0300.png'
+                        navn: PNG (300px)
+                    - 
+                        url: '//grafikk.ukm.no/profil/logoer/UKM_logo_primar_0100.png'
+                        navn: PNG (100px)
+            sekundar:
+                url: '//grafikk.ukm.no/profil/logoer/UKM_logo_sekundar_0300.png'
+                navn: Sekundærfarger
+                class: background-color-primary-light
+                filer:
+                    - 
+                        url: '//grafikk.ukm.no/profil/logoer/UKM_logo_sekundar.pdf'
+                        navn: PDF (vektorbasert)
+                    -
+                        url: '//grafikk.ukm.no/profil/logoer/UKM_logo_sekundar_2500.png'
+                        navn: PNG (2500px)
+                    - 
+                        url: '//grafikk.ukm.no/profil/logoer/UKM_logo_sekundar_1500.png'
+                        navn: PNG (1500px)
+                    - 
+                        url: '//grafikk.ukm.no/profil/logoer/UKM_logo_sekundar_0500.png'
+                        navn: PNG (500px)
+                    - 
+                        url: '//grafikk.ukm.no/profil/logoer/UKM_logo_sekundar_0300.png'
+                        navn: PNG (300px)
+                    - 
+                        url: '//grafikk.ukm.no/profil/logoer/UKM_logo_sekundar_0100.png'
+                        navn: PNG (100px)
+            hvit:
+                url: '//grafikk.ukm.no/profil/logoer/UKM_logo_hvit_0300.png'
+                navn: Helhvit
+                class: background-color-primary-light
+                filer:
+                    - 
+                        url: '//grafikk.ukm.no/profil/logoer/UKM_logo_hvit.pdf'
+                        navn: PDF (vektorbasert)
+                    -
+                        url: '//grafikk.ukm.no/profil/logoer/UKM_logo_hvit_2500.png'
+                        navn: PNG (2500px)
+                    - 
+                        url: '//grafikk.ukm.no/profil/logoer/UKM_logo_hvit_1500.png'
+                        navn: PNG (1500px)
+                    - 
+                        url: '//grafikk.ukm.no/profil/logoer/UKM_logo_hvit_0500.png'
+                        navn: PNG (500px)
+                    - 
+                        url: '//grafikk.ukm.no/profil/logoer/UKM_logo_hvit_0300.png'
+                        navn: PNG (300px)
+                    - 
+                        url: '//grafikk.ukm.no/profil/logoer/UKM_logo_hvit_0100.png'
+                        navn: PNG (100px)
+            sort:
+                url: '//grafikk.ukm.no/profil/logoer/UKM_logo_sort_0300.png'
+                navn: Helsort
+                class:
+                filer:
+                    - 
+                        url: '//grafikk.ukm.no/profil/logoer/UKM_logo_sort.pdf'
+                        navn: PDF (vektorbasert)
+                    -
+                        url: '//grafikk.ukm.no/profil/logoer/UKM_logo_sort_2500.png'
+                        navn: PNG (2500px)
+                    - 
+                        url: '//grafikk.ukm.no/profil/logoer/UKM_logo_sort_1500.png'
+                        navn: PNG (1500px)
+                    - 
+                        url: '//grafikk.ukm.no/profil/logoer/UKM_logo_sort_0500.png'
+                        navn: PNG (500px)
+                    - 
+                        url: '//grafikk.ukm.no/profil/logoer/UKM_logo_sort_0300.png'
+                        navn: PNG (300px)
+                    - 
+                        url: '//grafikk.ukm.no/profil/logoer/UKM_logo_sort_0100.png'
+                        navn: PNG (100px)
+    ukmmedia:
+        navn: UKM Media-logo
+        utgaver:
+            primar:
+                url: '//grafikk.ukm.no/profil/logoer/media/UKM_Media_logo_primar_0300.png'
+                class: 
+                navn: Primærfarger
+                filer:
+                    - 
+                        url: '//grafikk.ukm.no/profil/logoer/media/UKM_Media_logo_primar.pdf'
+                        navn: PDF (vektorbasert)
+                    -
+                        url: '//grafikk.ukm.no/profil/logoer/media/UKM_Media_logo_primar_2500.png'
+                        navn: PNG (2500px)
+                    - 
+                        url: '//grafikk.ukm.no/profil/logoer/media/UKM_Media_logo_primar_1500.png'
+                        navn: PNG (1500px)
+                    - 
+                        url: '//grafikk.ukm.no/profil/logoer/media/UKM_Media_logo_primar_0500.png'
+                        navn: PNG (500px)
+                    - 
+                        url: '//grafikk.ukm.no/profil/logoer/media/UKM_Media_logo_primar_0300.png'
+                        navn: PNG (300px)
+                    - 
+                        url: '//grafikk.ukm.no/profil/logoer/media/UKM_Media_logo_primar_0100.png'
+                        navn: PNG (100px)
+            sekundar:
+                url: '//grafikk.ukm.no/profil/logoer/media/UKM_Media_logo_sekundar_0300.png'
+                navn: Sekundærfarger
+                class: background-color-primary-light
+                filer:
+                    - 
+                        url: '//grafikk.ukm.no/profil/logoer/media/UKM_Media_logo_sekundar.pdf'
+                        navn: PDF (vektorbasert)
+                    -
+                        url: '//grafikk.ukm.no/profil/logoer/media/UKM_Media_logo_sekundar_2500.png'
+                        navn: PNG (2500px)
+                    - 
+                        url: '//grafikk.ukm.no/profil/logoer/media/UKM_Media_logo_sekundar_1500.png'
+                        navn: PNG (1500px)
+                    - 
+                        url: '//grafikk.ukm.no/profil/logoer/media/UKM_Media_logo_sekundar_0500.png'
+                        navn: PNG (500px)
+                    - 
+                        url: '//grafikk.ukm.no/profil/logoer/media/UKM_Media_logo_sekundar_0300.png'
+                        navn: PNG (300px)
+                    - 
+                        url: '//grafikk.ukm.no/profil/logoer/media/UKM_Media_logo_sekundar_0100.png'
+                        navn: PNG (100px)
+            hvit:
+                url: '//grafikk.ukm.no/profil/logoer/media/UKM_Media_logo_hvit_0300.png'
+                navn: Helhvit
+                class: background-color-primary-light
+                filer:
+                    - 
+                        url: '//grafikk.ukm.no/profil/logoer/media/UKM_Media_logo_hvit.pdf'
+                        navn: PDF (vektorbasert)
+                    -
+                        url: '//grafikk.ukm.no/profil/logoer/media/UKM_Media_logo_hvit_2500.png'
+                        navn: PNG (2500px)
+                    - 
+                        url: '//grafikk.ukm.no/profil/logoer/media/UKM_Media_logo_hvit_1500.png'
+                        navn: PNG (1500px)
+                    - 
+                        url: '//grafikk.ukm.no/profil/logoer/media/UKM_Media_logo_hvit_0500.png'
+                        navn: PNG (500px)
+                    - 
+                        url: '//grafikk.ukm.no/profil/logoer/media/UKM_Media_logo_hvit_0300.png'
+                        navn: PNG (300px)
+                    - 
+                        url: '//grafikk.ukm.no/profil/logoer/media/UKM_Media_logo_hvit_0100.png'
+                        navn: PNG (100px)
+            sort:
+                url: '//grafikk.ukm.no/profil/logoer/media/UKM_Media_logo_sort_0300.png'
+                navn: Helsort
+                class:
+                filer:
+                    - 
+                        url: '//grafikk.ukm.no/profil/logoer/media/UKM_Media_logo_sort.pdf'
+                        navn: PDF (vektorbasert)
+                    -
+                        url: '//grafikk.ukm.no/profil/logoer/media/UKM_Media_logo_sort_2500.png'
+                        navn: PNG (2500px)
+                    - 
+                        url: '//grafikk.ukm.no/profil/logoer/media/UKM_Media_logo_sort_1500.png'
+                        navn: PNG (1500px)
+                    - 
+                        url: '//grafikk.ukm.no/profil/logoer/media/UKM_Media_logo_sort_0500.png'
+                        navn: PNG (500px)
+                    - 
+                        url: '//grafikk.ukm.no/profil/logoer/media/UKM_Media_logo_sort_0300.png'
+                        navn: PNG (300px)
+                    - 
+                        url: '//grafikk.ukm.no/profil/logoer/media/UKM_Media_logo_sort_0100.png'
+                        navn: PNG (100px)
+    
+    ukmressurs:
+        navn: UKM-ressurslogo
+        utgaver:
+            primar:
+                url: '//grafikk.ukm.no/profil/logoer/ressurs/UKM-ressurs_primar_0300.png'
+                class: 
+                navn: Primærfarger
+                filer:
+                    - 
+                        url: '//grafikk.ukm.no/profil/logoer/ressurs/UKM-ressurs_primar.pdf'
+                        navn: PDF (vektorbasert)
+                    -
+                        url: '//grafikk.ukm.no/profil/logoer/ressurs/UKM-ressurs_primar_2500.png'
+                        navn: PNG (2500px)
+                    - 
+                        url: '//grafikk.ukm.no/profil/logoer/ressurs/UKM-ressurs_primar_1500.png'
+                        navn: PNG (1500px)
+                    - 
+                        url: '//grafikk.ukm.no/profil/logoer/ressurs/UKM-ressurs_primar_0500.png'
+                        navn: PNG (500px)
+                    - 
+                        url: '//grafikk.ukm.no/profil/logoer/ressurs/UKM-ressurs_primar_0300.png'
+                        navn: PNG (300px)
+                    - 
+                        url: '//grafikk.ukm.no/profil/logoer/ressurs/UKM-ressurs_primar_0100.png'
+                        navn: PNG (100px)
+            sekundar:
+                url: '//grafikk.ukm.no/profil/logoer/ressurs/UKM-ressurs_sekundar_0300.png'
+                navn: Sekundærfarger
+                class: background-color-primary-light
+                filer:
+                    - 
+                        url: '//grafikk.ukm.no/profil/logoer/ressurs/UKM-ressurs_sekundar.pdf'
+                        navn: PDF (vektorbasert)
+                    -
+                        url: '//grafikk.ukm.no/profil/logoer/ressurs/UKM-ressurs_sekundar_2500.png'
+                        navn: PNG (2500px)
+                    - 
+                        url: '//grafikk.ukm.no/profil/logoer/ressurs/UKM-ressurs_sekundar_1500.png'
+                        navn: PNG (1500px)
+                    - 
+                        url: '//grafikk.ukm.no/profil/logoer/ressurs/UKM-ressurs_sekundar_0500.png'
+                        navn: PNG (500px)
+                    - 
+                        url: '//grafikk.ukm.no/profil/logoer/ressurs/UKM-ressurs_sekundar_0300.png'
+                        navn: PNG (300px)
+                    - 
+                        url: '//grafikk.ukm.no/profil/logoer/ressurs/UKM-ressurs_sekundar_0100.png'
+                        navn: PNG (100px)
+            hvit:
+                url: '//grafikk.ukm.no/profil/logoer/ressurs/UKM-ressurs_hvit_0300.png'
+                navn: Helhvit
+                class: background-color-primary-light
+                filer:
+                    - 
+                        url: '//grafikk.ukm.no/profil/logoer/ressurs/UKM-ressurs_hvit.pdf'
+                        navn: PDF (vektorbasert)
+                    -
+                        url: '//grafikk.ukm.no/profil/logoer/ressurs/UKM-ressurs_hvit_2500.png'
+                        navn: PNG (2500px)
+                    - 
+                        url: '//grafikk.ukm.no/profil/logoer/ressurs/UKM-ressurs_hvit_1500.png'
+                        navn: PNG (1500px)
+                    - 
+                        url: '//grafikk.ukm.no/profil/logoer/ressurs/UKM-ressurs_hvit_0500.png'
+                        navn: PNG (500px)
+                    - 
+                        url: '//grafikk.ukm.no/profil/logoer/ressurs/UKM-ressurs_hvit_0300.png'
+                        navn: PNG (300px)
+                    - 
+                        url: '//grafikk.ukm.no/profil/logoer/ressurs/UKM-ressurs_hvit_0100.png'
+                        navn: PNG (100px)
+            sort:
+                url: '//grafikk.ukm.no/profil/logoer/ressurs/UKM-ressurs_sort_0300.png'
+                navn: Helsort
+                class:
+                filer:
+                    - 
+                        url: '//grafikk.ukm.no/profil/logoer/ressurs/UKM-ressurs_sort.pdf'
+                        navn: PDF (vektorbasert)
+                    -
+                        url: '//grafikk.ukm.no/profil/logoer/ressurs/UKM-ressurs_sort_2500.png'
+                        navn: PNG (2500px)
+                    - 
+                        url: '//grafikk.ukm.no/profil/logoer/ressurs/UKM-ressurs_sort_1500.png'
+                        navn: PNG (1500px)
+                    - 
+                        url: '//grafikk.ukm.no/profil/logoer/ressurs/UKM-ressurs_sort_0500.png'
+                        navn: PNG (500px)
+                    - 
+                        url: '//grafikk.ukm.no/profil/logoer/ressurs/UKM-ressurs_sort_0300.png'
+                        navn: PNG (300px)
+                    - 
+                        url: '//grafikk.ukm.no/profil/logoer/ressurs/UKM-ressurs_sort_0100.png'
+                        navn: PNG (100px)
+    ego:
+        navn: ego
+        utgaver:
+            sort:
+                url: '//grafikk.ukm.no/profil/logoer/ego/ego-logo_sort_0300.png'
+                navn: Sort (standard)
+                class:
+                filer:
+                    - 
+                        url: '//grafikk.ukm.no/profil/logoer/ego/ego-logo_sort.pdf'
+                        navn: PDF (vektorbasert)
+                    -
+                        url: '//grafikk.ukm.no/profil/logoer/ego/ego-logo_sort_2500.png'
+                        navn: PNG (2500px)
+                    - 
+                        url: '//grafikk.ukm.no/profil/logoer/ego/ego-logo_sort_1500.png'
+                        navn: PNG (1500px)
+                    - 
+                        url: '//grafikk.ukm.no/profil/logoer/ego/ego-logo_sort_0500.png'
+                        navn: PNG (500px)
+                    - 
+                        url: '//grafikk.ukm.no/profil/logoer/ego/ego-logo_sort_0300.png'
+                        navn: PNG (300px)
+                    - 
+                        url: '//grafikk.ukm.no/profil/logoer/ego/ego-logo_sort_0100.png'
+                        navn: PNG (100px)
+            hvit:
+                url: '//grafikk.ukm.no/profil/logoer/ego/ego-logo_hvit_0300.png'
+                navn: Hvit
+                class: background-color-primary-light
+                filer:
+                    - 
+                        url: '//grafikk.ukm.no/profil/logoer/ego/ego-logo_hvit.pdf'
+                        navn: PDF (vektorbasert)
+                    -
+                        url: '//grafikk.ukm.no/profil/logoer/ego/ego-logo_hvit_2500.png'
+                        navn: PNG (2500px)
+                    - 
+                        url: '//grafikk.ukm.no/profil/logoer/ego/ego-logo_hvit_1500.png'
+                        navn: PNG (1500px)
+                    - 
+                        url: '//grafikk.ukm.no/profil/logoer/ego/ego-logo_hvit_0500.png'
+                        navn: PNG (500px)
+                    - 
+                        url: '//grafikk.ukm.no/profil/logoer/ego/ego-logo_hvit_0300.png'
+                        navn: PNG (300px)
+                    - 
+                        url: '//grafikk.ukm.no/profil/logoer/ego/ego-logo_hvit_0100.png'
+                        navn: PNG (100px)
