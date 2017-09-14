@@ -46,12 +46,15 @@ abstract class monstringController {
 		return self::$template;
 	}
 	
+	public static function getState() {
+		return self::$state;
+	}
+	
 	public static function getMonstring() {
 		return self::$monstring;
 	}
 	
 	public static function getPameldingApen() {
-#		self::_loadPameldingApen();
 		return self::$pameldingApen;
 	}
 		

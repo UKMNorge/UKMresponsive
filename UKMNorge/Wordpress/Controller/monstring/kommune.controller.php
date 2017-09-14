@@ -6,27 +6,38 @@ require_once('_kommune.class.php');
 // Init helper class
 kommuneController::init( get_option('pl_id') );
 
-$MONSTRING = kommuneController::getMonstring();
-
 /**
  * SET STATE
- * Switcher mellom fylkesmønstringens forskjellige states.
+ * Switcher mellom lokalmønstringens forskjellige states.
  * Forbereder hjelpeklassen slik at det alltid kan kjøres
  * get-funksjoner for å laste informasjon over i WP_TWIG_DATA
  *
  *
  * 1:	Hvis siden er paginert, vis kun arkivsiden
- * 2:	Påmeldingen har ikke startet, eller er åpen (mønstringen er / er ikke registrert)
- * 3:	Lokalmønstring
- * 5:	Mønstringen er over (helårig / tilbakeblikk)
+ * 2:	Påmeldingen har ikke åpnet enda (1.okt eller hva det er)
+ * 3:	Påmeldingen er åpen helt eller delvis (frist1/frist2/begge)
+ * 4:	Fokus på mønstringen. Påmeldingen er stengt
+ * 5:	Mønstringen er over (helårig / tilbakeblikk, nyheter i fokus)
 **/
 // 1: pagination is active
 if( $WP_TWIG_DATA['posts']->getPaged() ) {
 	kommuneController::setState('arkiv');
 }
-// 2: Påmeldingen er ikke stengt (pre_pamelding, pre_registrering, pamelding)
-elseif( !$MONSTRING->erPameldingApen() ) {
+// 2: Påmeldingen har ikke åpnet enda (dato for systemåpning)
+elseif( !kommuneController::getPameldingApen() ) {
+	kommuneController::setState('pre_pamelding');
+}
+// 3: Påmeldingen er ikke stengt (registrert dato by default eller user), (pre_registrering, pamelding)
+elseif( kommuneController::getMonstring()->erPameldingApen() ) {
 	kommuneController::setState('pamelding');
+}
+// 4: Mønstringen er ikke over, ergo er påmeldingen stengt (by default eller user)
+elseif( !kommuneController::getMonstring()->erFerdig() ) {
+	kommuneController::setState('lokalmonstring');
+}
+// 5: Mønstringen er over
+else {
+	kommuneController::setState('ferdig');
 }
 
 /**
@@ -36,20 +47,22 @@ elseif( !$MONSTRING->erPameldingApen() ) {
  *
 **/
 	// DEV SETTINGS FOR ALLE STATES I RIKTIG REKKEFØLGE
-	kommuneController::setState('pre_pamelding'); // DEV
-
+#	kommuneController::setState('pre_pamelding'); // DEV
+#	kommuneController::setState('pamelding'); // DEV
+#	kommuneController::setState('lokalmonstring'); // DEV
+#	kommuneController::setState('ferdig'); // DEV
 
 
 /**
  * OVERFØR DATA TIL $WP_TWIG_DATA
 **/
-$view_template 					= kommuneController::getTemplate();
-$WP_TWIG_DATA['monstring'] 		= $MONSTRING;
-$WP_TWIG_DATA['pamelding_apen'] = true;//kommuneController::getPameldingApen();
-$WP_TWIG_DATA['harProgram'] 	= kommuneController::harProgram();
+$view_template 						= kommuneController::getTemplate();
+$WP_TWIG_DATA['state']				= kommuneController::getState();
+$WP_TWIG_DATA['monstring'] 			= kommuneController::getMonstring();
+$WP_TWIG_DATA['harProgram']	 		= kommuneController::harProgram();
 
-$WP_TWIG_DATA['infoPage'] 		= kommuneController::getInfoPage();
-$WP_TWIG_DATA['harInfoPage'] 	= kommuneController::harInfoPage();
+$WP_TWIG_DATA['infoPage']	 		= kommuneController::getInfoPage();
+$WP_TWIG_DATA['harInfoPage']	 	= kommuneController::harInfoPage();
 
-$WP_TWIG_DATA['page_next'] 		= $WP_TWIG_DATA['posts']->getPageNext();
-$WP_TWIG_DATA['page_prev']		= $WP_TWIG_DATA['posts']->getPagePrev();
+$WP_TWIG_DATA['page_next'] 			= $WP_TWIG_DATA['posts']->getPageNext();
+$WP_TWIG_DATA['page_prev']			= $WP_TWIG_DATA['posts']->getPagePrev();

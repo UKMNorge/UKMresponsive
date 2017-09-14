@@ -15,20 +15,14 @@ class kommuneController extends monstringController {
 			case 'arkiv':
 				self::$template = 'Kommune/front_arkiv';
 				break;
+			case 'lokalmonstring':
 			case 'pre_pamelding':
-				self::$template = 'Kommune/front_pre_pamelding';
-				break;
-/*
 			case 'pamelding':
-				self::$pameldingApen = true;
-			case 'lokalmonstringer':
-				self::_loadFylkeInfo();
-				self::$template = 'Fylke/front_lokalmonstringer';
+				self::$template = 'Kommune/front_sesong';
 				break;
-			case 'fylkesmonstring':
-				self::$template = 'Fylke/front_fylkesfestival';
+			case 'ferdig':
+				self::$template = 'Kommune/front_utenfor_sesong';
 				break;
-*/
 		}
 		self::$state = $state;
 	}
