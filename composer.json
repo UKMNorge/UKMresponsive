@@ -21,6 +21,6 @@
 	},
     "require": {
         "symfony/yaml": "^3.1",
-        "mariusmandal/wpoo": "dev-master"
+        "mariusmandal/wpoo": "^1.0"
     }
 }
