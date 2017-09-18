@@ -6,14 +6,19 @@
 
 			<div class="col-12 col-md-4 col-lg-3 col-xl-2 float-right mb-4">
 				<p class="lead">
-					Vil du ha en gratis sms-påminnelse når påmeldingen åpner {{ THEME_CONFIG('pamelding').startdato }}?
+					Vil du ha en gratis sms når påmeldingen åpner {{ THEME_CONFIG('pamelding').startdato }}?
 				</p>
 				{% embed "UKMDesignBundle:Husk:Form.html.twig"|UKMpath %}{% endembed %}
 			</div>
 			
 			<div class="col-12 col-md-8 col-lg-9 col-xl-10 float-left mb-4">
-				<h3>Velg hvor du bor</h3>
+				<h3>UKM i din {{ fylke.erOslo() ? 'bydel' : 'kommune' }}</h3>
 				{% embed "UKMDesignBundle:Fylke:lokalmonstringer_velg.html.twig"|UKMpath %}{% endembed %}
+				<div class="mt-2 center small">
+					<a href="ukm-lokalt/" class="btn btn-outline-secondary btn-sm btn-block">
+						Se alle {{ fylke.erOslo() ? 'bydeler' : 'kommuner' }} (kalender)
+					</a>
+				</div>
 			</div>
 
 			{% if not fylke.erRegistrert() %}
