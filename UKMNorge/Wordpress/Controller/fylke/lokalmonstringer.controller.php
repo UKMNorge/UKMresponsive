@@ -7,4 +7,4 @@ $FYLKE = new monstring_v2( get_option('pl_id') );
 $monstringer = new monstringer_v2( $FYLKE->getSesong() );
 
 $WP_TWIG_DATA['fylke'] 	= $FYLKE;
-$WP_TWIG_DATA['lokalt'] = $monstringer->getAllByFylke( $FYLKE->getFylke()->getId() );
+$WP_TWIG_DATA['lokalt'] = $monstringer->getAllByFylkeSortByStart( $FYLKE->getFylke()->getId() );
