@@ -22,9 +22,10 @@
 			var content = jQuery(clicked.currentTarget).find(".dynamicElement");
 			var innslagsID = jQuery(this).find("input").val();
 
-			console.log(content.find(".toppLinje"));
+			/*console.log(content.find(".toppLinje"));*/
 			if ( !content.is(":visible") ) {
 				content.slideDown();
+				jQuery(clicked.currentTarget).find(".trykkTekst").hide();
 				// Kun kjør request èn gang.
 				if (content.find(".toppLinje").length == 0 ) {
 					jQuery.post(
@@ -40,6 +41,7 @@
 					);
 				}
 			} else {
+				jQuery(clicked.currentTarget).find(".trykkTekst").show();
 				content.slideUp();
 			}
 		});
