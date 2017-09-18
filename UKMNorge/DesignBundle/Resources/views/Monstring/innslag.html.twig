@@ -1,3 +1,4 @@
+{# Selve innslagets info-side. Embeddes i /pameldte/ når noen trykker på et innslag, vises i standalone-mode når noen åpner /pameldte/id/ #}
 {% extends "Layout/_"~ (singleMode is defined and singleMode ? 'singleMode' : 'base' ) ~".html.twig"|UKMpath %}
 
 {% block content %}
@@ -15,7 +16,7 @@
 		</div>
 		<hr />
 		<div class="col-12">
-			<p>
+			<p class="beskrivelse">
 				{{ innslag.getBeskrivelse() }}
 			</p>
 		</div>
@@ -25,41 +26,41 @@
 		{# Dette er en dårlig idè dersom det lages en "Kunstutstilling"-hendelse da... #}
 		{% if innslagType.getKey() in ["musikk", "dans", "teater", "video", "scene"] or ( innslagType.getKey() == "litteratur" and skalLeseOpp )  %}
 			<div class="col-12 col-md-4">
-				<h3 class="overskrift">Forestillinger</h3>
+				<h5 class="overskrift">Forestillinger</h5>
 				{# {{ dump(program) }} #}
 				{% for forestilling in program.getAll() if forestilling.erSynligRammeProgram() %}
 					{# {{ dump(forestilling) }} #}
-					<strong>{{ forestilling.getNavn() }}</strong>
+					<strong class="navn">{{ forestilling.getNavn() }}</strong>
 					<span class="dato">{{ forestilling.getStart()|dato }}</span>
 				{% endfor %}
 			</div>
 		{% endif %}
 		{% if innslagType.harTitler() %}
 			<div class="col-12 col-md-4">
-				<h3 class="overskrift">Titler</h3>
+				<h5 class="overskrift">Titler</h5>
 				{% for tittel in titler if titler is not null %}
-					<p>{{ tittel.getTittel() }}</p>
+					<p class="navn">{{ tittel.getTittel() }}</p>
 					{% if innslagType.getKey() == "musikk" %}
 						{% if not tittel.erInstrumental() %}
-							<p>Tekst: {{ tittel.getTekstAv() }}</p>
+							<p class="titleInfo">Tekst: {{ tittel.getTekstAv() }}</p>
 						{% endif %}
-						<p>Melodi: {{ tittel.getMelodiAv() }}</p>
+						<p class="titleInfo">Melodi: {{ tittel.getMelodiAv() }}</p>
 					{% elseif innslagType.getKey() == "dans" %}
-						<p>Koreografi: {{ tittel.getKoreografiAv() }}</p>
+						<p class="titleInfo">Koreografi: {{ tittel.getKoreografiAv() }}</p>
 					{% elseif innslagType.getKey() == "litteratur" and not tittel.erSelvlaget() and not tittel.getTekstAv() == "" %}	
-						<p>Skrevet av: {{ tittel.getTekstAv() }}</p>
+						<p class="titleInfo">Skrevet av: {{ tittel.getTekstAv() }}</p>
 					{% endif %}
 					{% if innslagType.harTid() %}
-						<p>Varighet: {{ tittel.getVarighet().getHuman() }}</p>
+						<p class="titleInfo">Varighet: {{ tittel.getVarighet().getHuman() }}</p>
 					{% endif %}
 				{% else %}
-					<p>{{ innslag.getNavn() }} har ingen titler, og burde kanskje ikke vises som påmeldt enda?</p>
+					<p class="mangler">{{ innslag.getNavn() }} har ingen titler, og burde kanskje ikke vises som påmeldt enda?</p>
 				{% endfor %}
 			</div>
 		{% endif %}
 		{% if innslagType.getKey() not in ["nettredaksjon", "konferansier", "arrangor"] %}
 			<div class="col-12 col-md-4">
-				<h3 class="overskrift">Personer</h3>
+				<h5 class="overskrift">Personer</h5>
 				{% set personer = innslag.getPersoner().getAll() %}
 				{% for person in personer if personer is defined and not personer is empty %}
 					<div class="row">
@@ -67,41 +68,41 @@
 						<div class="col-5 right text-right instrumentLabel">{{ person.instrument }}</div>
 					</div>
 				{% else %}
-					<p>Fant ingen personer i dette innslaget - det er kanskje ikke helt ferdig meldt på?</p>
+					<p class="mangler">Fant ingen personer i dette innslaget - det er kanskje ikke helt ferdig meldt på?</p>
 				{% endfor %}
 			</div>
 		{% endif %}
 	</div>
 	<div class="row">
 		<div class="col-12">
-			<h3 class="overskrift">Artikler</h3>
+			<h5 class="overskrift">Artikler</h5>
 			{% set artikler = innslag.getArtikler().getAll() %}
 			{% for artikkel in artikler if not artikler is empty %}
 					<a href="{{ artikkel.getLink() }}">{{ artikkel.getTittel() }}</a><span> - publisert </span><span class="dato">{{ artikkel.getSesong() }}</span><br />
 			{% else %}
-				<p class="lead">Det finnes dessverre ingen relaterte artikler av {{ innslag.getNavn() }}.</p>
+				<p class="mangler">Det finnes dessverre ingen relaterte artikler av {{ innslag.getNavn() }}.</p>
 			{% endfor %}
 		</div>
 	</div>
 	<div class="row">
 		<div class="col-12">
-			<h3 class="overskrift">Bilder</h3>
+			<h5 class="overskrift">Bilder</h5>
 			{% set bilder = innslag.getBilder().getAll() %}
 			{% for bilde in bilder if not bilder is empty %}
 				{{ dump(bilder) }}
 			{% else %}
-				<p class="lead">Det finnes dessverre ingen bilder av {{ innslag.getNavn() }} enda.</p>
+				<p class="mangler">Det finnes dessverre ingen bilder av {{ innslag.getNavn() }} enda.</p>
 			{% endfor %}
 		</div>
 	</div>
 	<div class="row">
 		<div class="col-12">
-			<h3 class="overskrift">Videoer fra UKM-tv</h3>
+			<h5 class="overskrift">Videoer fra UKM-tv</h5>
 			{% set filmer = innslag.getFilmer().getAll() %}
 			{% if filmer %}
 				{{ dump(filmer) }}
 			{% else %}
-				<p class="lead">Det finnes dessverre ingen filmer av {{ innslag.getNavn() }}.</p>
+				<p class="mangler">Det finnes dessverre ingen filmer av {{ innslag.getNavn() }}.</p>
 			{% endif %}
 		</div>
 	</div>
