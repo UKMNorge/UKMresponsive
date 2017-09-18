@@ -11,17 +11,17 @@
 				<div class="center small mb-4">
 					<p>
 						{% if fylke.erAktiv() %}
-							Fylkesfestivalen i {{ fylke.getNavn() }} er endelig i gang!
+							{{ fylke.getNavn() }} er endelig i gang!
 							<br />
 							{{ fylke.getStart()|dato('D j.M')|capitalize }} til {{ fylke.getStop()|dato('D j.M') }}.
 						{% elseif daysUntil < 4 and daysUntil > 1 %}
-							{{ daysUntil }} dager igjen! Fylkesfestivalen i {{ fylke.getNavn() }} starter {{ fylke.getStart()|dato('d.M') }} kl. {{ fylke.getStart()|dato('H:i') }}
+							{{ daysUntil }} dager igjen! {{ fylke.getNavn() }} starter {{ fylke.getStart()|dato('d.M') }} kl. {{ fylke.getStart()|dato('H:i') }}
 						{% elseif daysUntil == 1 %}
-							Fylkesfestivalen i {{ fylke.getNavn() }} starter kl {{ fylke.getStart()|dato('H:i') }} i dag.
+							{{ fylke.getNavn() }} starter kl {{ fylke.getStart()|dato('H:i') }} i dag.
 						{% elseif daysUntil < 1 %}
-							Fylkesfestivalen i {{ fylke.getNavn() }} var fra {{ fylke.getStart()|dato('l j.F') }} til {{ fylke.getStop()|dato('l j.F') }}.
+							{{ fylke.getNavn() }} var fra {{ fylke.getStart()|dato('l j.F') }} til {{ fylke.getStop()|dato('l j.F') }}.
 						{% else %}
-						 	Bare {{ daysUntil }} dag{{ daysUntil > 1 ? 'er' }} til fylkesfestivalen i {{ fylke.getNavn() }}!
+						 	Bare {{ daysUntil }} dag{{ daysUntil > 1 ? 'er' }} til {{ fylke.getNavn() }}!
 						{% endif %}
 					</p>
 				</div>

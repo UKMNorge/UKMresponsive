@@ -20,7 +20,7 @@
 				<div class="col-12 col-md-4 col-lg-3 col-xl-10 float-right float-xl-left">
 					{% embed "UKMDesignBundle:Layout:alert_icon.html.twig"|UKMpath with {level: 'primary', icon: 'info-with-circle'} %}
 						{% block content %}
-							Dato for UKM-festivalen i {{ fylke.getNavn() }} er ikke bestemt, men dette vil bli gjort snart. 
+							Dato for {{ fylke.getNavn() }} er ikke bestemt, men dette vil bli gjort snart. 
 							I mellomtiden kan du sjekke om det er lagt inn info om ditt lokale UKM ved å velge din {{ fylke.erOslo() ? 'bydel' : 'kommune' }}.
 						{% endblock %}
 					{% endembed %}

@@ -40,7 +40,7 @@
 		<div class="container-fluid">
 			<div class="row align-items-center fylkesfestival-banner py-3 px-3">
 				<div class="col-7 title">
-					UKM-festivalen i {{ fylke.getNavn() }}
+					{{ fylke.getNavn() }}
 				</div>
 				<div class="col-5 date right small">
 					{% if fylke.getStart()|dato('m') == fylke.getStop()|dato('m') %}
