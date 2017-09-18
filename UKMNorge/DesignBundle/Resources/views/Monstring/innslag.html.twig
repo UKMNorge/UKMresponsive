@@ -15,6 +15,9 @@
 			<div class="sjanger">{{ innslag.getSjanger() }}</div>
 		</div>
 		<hr />
+	</div>
+	<br />{# TOOD: Fix vertical spacing! #}
+	<div class="row">
 		<div class="col-12">
 			<p class="beskrivelse">
 				{{ innslag.getBeskrivelse() }}
@@ -24,12 +27,11 @@
 	<div class="row">
 		{# Vis forestillinger kun for de på scenen - litteratur kun om den skal leses opp! #}
 		{# Dette er en dårlig idè dersom det lages en "Kunstutstilling"-hendelse da... #}
-		{% if innslagType.getKey() in ["musikk", "dans", "teater", "video", "scene"] or ( innslagType.getKey() == "litteratur" and skalLeseOpp )  %}
+		{% if innslagType.getKey() in ["musikk", "dans", "teater", "video", "scene", "konferansier"] or 
+			  ( innslagType.getKey() == "litteratur" and skalLeseOpp )  %}
 			<div class="col-12 col-md-4">
 				<h5 class="overskrift">Forestillinger</h5>
-				{# {{ dump(program) }} #}
 				{% for forestilling in program.getAll() if forestilling.erSynligRammeProgram() %}
-					{# {{ dump(forestilling) }} #}
 					<strong class="navn">{{ forestilling.getNavn() }}</strong>
 					<span class="dato">{{ forestilling.getStart()|dato }}</span>
 				{% endfor %}
@@ -50,14 +52,24 @@
 					{% elseif innslagType.getKey() == "litteratur" and not tittel.erSelvlaget() and not tittel.getTekstAv() == "" %}	
 						<p class="titleInfo">Skrevet av: {{ tittel.getTekstAv() }}</p>
 					{% endif %}
-					{% if innslagType.harTid() %}
+					{% if innslagType.harTid() and tittel.getVarighet().getSekunder() != 0 %}
 						<p class="titleInfo">Varighet: {{ tittel.getVarighet().getHuman() }}</p>
+					{% endif %}
+					{# Vi mangler harTeknikk-metoden #}
+					{% if innslagType.harTeknikk() or innslagType.getKey() == "utstilling" %}
+						<p class="titleInfo">Teknikk: {{ tittel.getTeknikk() }}</p>
+						<p class="titleInfo">Format: {{ tittel.getFormat() }}</p>
 					{% endif %}
 				{% else %}
 					<p class="mangler">{{ innslag.getNavn() }} har ingen titler, og burde kanskje ikke vises som påmeldt enda?</p>
 				{% endfor %}
 			</div>
 		{% endif %}
+		{% if innslagType.getKey() in ["media", "konferansier", "arrangor"] and tittel.getErfaring() != "" %}
+			<div class="col-12 col-md-4">
+				<p class="titleInfo">Erfaring: {{ tittel.getErfaring() }}</p>
+			</div>
+		{% endif %}	
 		{% if innslagType.getKey() not in ["nettredaksjon", "konferansier", "arrangor"] %}
 			<div class="col-12 col-md-4">
 				<h5 class="overskrift">Personer</h5>
