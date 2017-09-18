@@ -18,3 +18,16 @@ $innslag = new innslag_v2($id);
 #	sleep(2);
 $WP_TWIG_DATA['innslag'] = $innslag;
 $WP_TWIG_DATA['monstring'] = $monstring;
+
+$WP_TWIG_DATA['innslagType'] = $innslag->getType();
+
+if( $WP_TWIG_DATA['innslagType']->harTitler() ){
+	$titler = $innslag->getTitler($monstring);
+	$WP_TWIG_DATA['titler'] = $titler->getAll();
+
+	$WP_TWIG_DATA['skalLesesOpp'] = false;	
+	foreach( $WP_TWIG_DATA['titler'] as $tittel ) {
+		if ($tittel->skalLesesOpp() )
+			$WP_TWIG_DATA['skalLeseOpp'] = true;	
+	}
+}
