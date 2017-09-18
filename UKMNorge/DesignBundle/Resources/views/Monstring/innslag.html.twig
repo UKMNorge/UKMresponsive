@@ -41,28 +41,29 @@
 			<div class="col-12 col-md-4">
 				<h5 class="overskrift">Titler</h5>
 				{% for tittel in titler if titler is not null %}
-					<p class="navn">{{ tittel.getTittel() }}</p>
+					<strong class="navn">{{ tittel.getTittel() }}</strong><br />
 					{% if innslagType.getKey() == "musikk" %}
 						{% if not tittel.erInstrumental() %}
-							<p class="titleInfo">Tekst: {{ tittel.getTekstAv() }}</p>
+							<span class="titleInfo">Tekst: {{ tittel.getTekstAv() }}</span><br />
 						{% endif %}
-						<p class="titleInfo">Melodi: {{ tittel.getMelodiAv() }}</p>
+						<span class="titleInfo">Melodi: {{ tittel.getMelodiAv() }}</span><br />
 					{% elseif innslagType.getKey() == "dans" %}
-						<p class="titleInfo">Koreografi: {{ tittel.getKoreografiAv() }}</p>
+						<span class="titleInfo">Koreografi: {{ tittel.getKoreografiAv() }}</span><br />
 					{% elseif innslagType.getKey() == "litteratur" and not tittel.erSelvlaget() and not tittel.getTekstAv() == "" %}	
-						<p class="titleInfo">Skrevet av: {{ tittel.getTekstAv() }}</p>
+						<span class="titleInfo">Skrevet av: {{ tittel.getTekstAv() }}</span><br />
 					{% endif %}
 					{% if innslagType.harTid() and tittel.getVarighet().getSekunder() != 0 %}
-						<p class="titleInfo">Varighet: {{ tittel.getVarighet().getHuman() }}</p>
+						<span class="titleInfo">Varighet: {{ tittel.getVarighet().getHuman() }}</span><br />
 					{% endif %}
 					{# Vi mangler harTeknikk-metoden #}
 					{% if innslagType.harTeknikk() or innslagType.getKey() == "utstilling" %}
-						<p class="titleInfo">Teknikk: {{ tittel.getTeknikk() }}</p>
-						<p class="titleInfo">Format: {{ tittel.getFormat() }}</p>
+						<span class="titleInfo">Teknikk: {{ tittel.getTeknikk() }}</span><br />
+						<span class="titleInfo">Format: {{ tittel.getFormat() }}</span><br />
 					{% endif %}
 				{% else %}
 					<p class="mangler">{{ innslag.getNavn() }} har ingen titler, og burde kanskje ikke vises som påmeldt enda?</p>
 				{% endfor %}
+				<br /> {# TODO: VERTICAL SPACING #}
 			</div>
 		{% endif %}
 		{% if innslagType.getKey() in ["media", "konferansier", "arrangor"] and tittel.getErfaring() != "" %}
