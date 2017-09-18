@@ -55,6 +55,42 @@ img {
 .menu-item .icon {
   font-size: 1.5em;
 }
+.header-line {
+  border-bottom: 2px solid #ffe500;
+  color: #ffe500;
+  margin-bottom: .5em;
+  text-transform: uppercase;
+}
+.text-color-primary {
+  color: #ffe500;
+}
+.text-color-primary-dark {
+  color: #b3a000;
+}
+.text-color-primary-dark-dark {
+  color: #665c00;
+}
+.text-color-primary-light {
+  color: #ffed4d;
+}
+.text-color-primary-light-light {
+  color: #fff280;
+}
+.background-color-primary {
+  background-color: #ffe500;
+}
+.background-color-primary-dark {
+  background-color: #b3a000;
+}
+.background-color-primary-dark-dark {
+  background-color: #665c00;
+}
+.background-color-primary-light {
+  background-color: #ffed4d;
+}
+.background-color-primary-light-light {
+  background-color: #fff280;
+}
 /* FILE: navbar.less */
 /*#main_menu_button {
     margin: 7px 0px 0px 0px;
@@ -455,6 +491,17 @@ h6,
 }
 .program .hendelse > .data > .tittel {
   font-weight: bold;
+}
+.frister .header-line {
+  border-bottom: 2px solid rgba(0, 0, 0, 0.65);
+  color: rgba(0, 0, 0, 0.65);
+  margin-bottom: .5em;
+}
+.is-breakable {
+  word-break: break-word;
+}
+.no-color > a {
+  color: #212529 !important;
 }
 /* FILE: open-sans.less */
 /* FROM http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600,700,300 */

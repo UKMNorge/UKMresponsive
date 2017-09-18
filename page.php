@@ -12,7 +12,6 @@ $SEO->setTitle( $WP_TWIG_DATA['page']->getPage()->title );
 $SEO->setDescription( addslashes( preg_replace( "/\r|\n/", "", strip_tags( $WP_TWIG_DATA['page']->getPage()->lead ) ) ) );
 $SEO->setAuthor( $WP_TWIG_DATA['page']->getPage()->author->display_name );
 
-
 // CHECK TO FIND CUSTOM PAGE CONTROLLER AND VIEW ISSET
 if( isset( $WP_TWIG_DATA['page']->getPage()->meta->UKMviseng ) ) {
 	$page_template = $WP_TWIG_DATA['page']->getPage()->meta->UKMviseng;
@@ -30,8 +29,21 @@ switch( $page_template ) {
 		break;
 	# Påmeldte til mønstringen
 	case 'pameldte':
-		$view_template = 'Monstring/pameldte';
-		require_once('UKMNorge/Wordpress/Controller/monstring/deltakere.controller.php');
+		// Sjekk om det spørres etter enkeltside eller oversikt.
+		$id = $WP_TWIG_DATA['page']->getLastParameter();
+		if( is_numeric($id) ) {
+			// /pameldte/id/ - i.e. forespørsel om enkelt-innslag. Funker både med og uten slutt-/.
+			if(isset($_POST['singleMode']) && "true" == $_POST['singleMode'] ) {
+				$WP_TWIG_DATA['singleMode'] = true;
+			}
+			$view_template = 'Monstring/innslag';
+			require_once("UKMNorge/Wordpress/Controller/monstring/deltaker.controller.php");
+		}
+		else {
+			// /pameldte/ - vil altså laste inn oversikten.
+			$view_template = 'Monstring/pameldte';
+			require_once('UKMNorge/Wordpress/Controller/monstring/deltakere.controller.php');	
+		}
 		break;
 	# Mønstringens program
 	case 'program':
@@ -65,7 +77,11 @@ switch( $page_template ) {
 }
 
 // RENDER
-echo WP_TWIG::render( $view_template, $WP_TWIG_DATA );
+// echo "Total compile-time: ". (microtime(true) - $time)*1000 ."ms <br />";
+// $time = microtime(true);
+$out = WP_TWIG::render( $view_template, $WP_TWIG_DATA );
+/*echo "Total Twig-rendertime: " . (microtime(true) - $time)*1000 . "ms <br />";*/
+echo $out;
 
 if( WP_ENV == 'dev' ) {
 	echo '<script language="javascript">console.debug("'.basename(__FILE__).'");</script>';

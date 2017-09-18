@@ -5,7 +5,7 @@ use UKMNorge\DesignBundle\Utils\Sitemap;
 require_once('header.php');
 
 global $post, $post_id;
-$WP_TWIG_DATA['post'] = new WPOO_Post( $post);
+$WP_TWIG_DATA['post'] = new WPOO_Post( $post );
 
 $authorlist = '';
 // LOAD MULTI-AUTHORS LIST

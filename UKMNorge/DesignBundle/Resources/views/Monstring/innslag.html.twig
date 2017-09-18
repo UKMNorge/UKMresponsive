@@ -1,0 +1,94 @@
+{% extends "Layout/_"~ (singleMode is defined and singleMode ? 'singleMode' : 'base' ) ~".html.twig"|UKMpath %}
+
+{% block content %}
+	{# {{ dump( innslag ) }} #}
+	{% if not singleMode is defined %}
+		<div class="container">
+	{% endif %}
+	<div class="row toppLinje">
+		<div class="col-8">
+			<h2 class="innslagNavn">{{ innslag.getNavn() }}</h2><span class="deltakerkommune"> fra {{ innslag.getKommune() }}</span>
+		</div>
+		<div class="col-4 right innslagType">
+			<div class="type">{{ innslag.getType() }}</div>
+			<div class="sjanger">{{ innslag.getSjanger() }}</div>
+		</div>
+		<hr />
+		<div class="col-12">
+			<p>
+				{{ innslag.getBeskrivelse() }}
+			</p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-12 col-md-4">
+			<h3 class="overskrift">Forestillinger</h3>
+			{% set forestillinger = innslag.forestillinger() %}
+			{% if forestillinger is defined and forestillinger is not null %}
+				{{ dump(forestillinger) }}
+			{% else %}
+				<p>{{ innslag.getNavn() }} er ikke satt opp i noen forestilling enda.</p>
+				<p>Dersom du mener dette burde vært gjort, ta kontakt med lokalkontakten din.</p>
+			{% endif %}
+		</div>
+		<div class="col-12 col-md-4">
+			<h3 class="overskrift">Titler</h3>
+			{% set titler = innslag.titler(monstring.id) %}
+			{% if titler is defined and titler is not null %}
+				{{ dump(titler) }}
+			{% else %}
+				<p>{{ innslag.getNavn() }} har ingen titler, og burde ikke egentlig vises som påmeldt enda.</p>
+			{% endif %}
+		</div>
+		<div class="col-12 col-md-4">
+			<h3 class="overskrift">Personer</h3>
+			{% set personer = innslag.getPersoner().getAll() %}
+			{% for person in personer if personer is defined and not personer is empty %}
+				<div class="row">
+					<div class="col-7 personNavnLabel">{{ person.getNavn() }}</div>
+					<div class="col-5 right text-right instrumentLabel">{{ person.instrument }}</div>
+				</div>
+			{% else %}
+				<p>Fant ingen personer i dette innslaget - det er kanskje ikke helt ferdig meldt på?</p>
+			{% endfor %}
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-12">
+			<h3 class="overskrift">Artikler</h3>
+			{% set artikler = innslag.getArtikler().getAll() %}
+			{% for artikkel in artikler if artikler is defined and not artikler is empty %}
+					<div class="col-12">
+						<a href="{{ artikkel.getLink() }}">{{ artikkel.getTittel() }}</a><span> - publisert </span><span class="dato">{{ artikkel.getSesong() }}</span>
+					</div>
+			{% else %}
+				<p class="lead">Det finnes dessverre ingen relaterte artikler av {{ innslag.getNavn() }}.</p>
+			{% endfor %}
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-12">
+			<h3 class="overskrift">Bilder</h3>
+			{% set bilder = innslag.getBilder().getAll() %}
+			{% for bilde in bilder if not bilder is empty %}
+				{{ dump(bilder) }}
+			{% else %}
+				<p class="lead">Det finnes dessverre ingen bilder av {{ innslag.getNavn() }} enda.</p>
+			{% endfor %}
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-12">
+			<h3 class="overskrift">Videoer fra UKM-tv</h3>
+			{% set filmer = innslag.getFilmer().getAll() %}
+			{% if filmer %}
+				{{ dump(filmer) }}
+			{% else %}
+				<p class="lead">Det finnes dessverre ingen filmer av {{ innslag.getNavn() }}.</p>
+			{% endif %}
+		</div>
+	</div>
+	{% if not singleMode is defined %}
+		</div> {# END CONTAINER! #}
+	{% endif %}
+{% endblock content %}
