@@ -116,6 +116,12 @@ UKM:
             url: /ukmere/
             title: Kjente UKMere
             description: 
+        - 
+            id: tidligerear
+            url: /tidligere-ar/
+            title: UKM-arrangementer fra 2001 i dag
+            description: Bli kjent med oss
+
 
 
 ukmtv:
@@ -194,11 +200,6 @@ organisasjonen:
             id: historikk
             url: /om.ukm.no/historikk/
             title: Historikk
-        - 
-            id: tidligerear
-            url: /tidligere-ar/
-            title: UKM-arrangementer fra 2001 i dag
-            description: Bli kjent med oss
 
         - 
             id: login

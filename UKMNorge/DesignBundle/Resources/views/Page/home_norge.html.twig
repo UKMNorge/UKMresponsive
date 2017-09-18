@@ -13,11 +13,13 @@
 		{# ===== KUN SYNLIG XS ===== #}
 		<div class="row d-flex d-md-none">
 			<div class="col-12">
-				<p class="lead">
-					{{ page.getPage().getContentBeforeMore()|raw }}
-					<br />
-					<a href="#" class="UKMtoggleShow phoneReadMoreUKM" data-target="phoneReadMoreUKM">Les mer om UKM</a>
-				</p>
+				{% if page.getPage().getContentBeforeMore()|raw is not empty %}
+					<p class="lead">
+						{{ page.getPage().getContentBeforeMore()|raw }}
+						<br />
+						<a href="#" class="UKMtoggleShow phoneReadMoreUKM" data-target="phoneReadMoreUKM">Les mer om UKM</a>
+					</p>
+				{% endif %}
 			</div>
 
 			<div class="clearfix my-3"></div>
@@ -37,9 +39,11 @@
 		{# ==== KUN SYNLIG SM-UP ==== #}
 		<div class="row d-none d-md-flex">
 			<div class="col-6 col-xl-6">
-				<p class="lead">
-					{{ page.getPage().getContentBeforeMore()|raw }}
-				</p>
+				{% if page.getPage().getContentBeforeMore()|raw is not empty %}	
+					<p class="lead">
+						{{ page.getPage().getContentBeforeMore()|raw }}
+					</p>
+				{% endif %}
 				{{ page.getPage().getContentAfterMore()|raw }}
 			</div>
 			<div class="col-6 col-xl-6" style="font-size: 0.7em">

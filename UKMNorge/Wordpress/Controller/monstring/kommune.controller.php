@@ -49,7 +49,7 @@ else {
 	// DEV SETTINGS FOR ALLE STATES I RIKTIG REKKEFØLGE
 #	kommuneController::setState('pre_pamelding'); // DEV
 #	kommuneController::setState('pamelding'); // DEV
-#	kommuneController::setState('lokalmonstring'); // DEV
+	kommuneController::setState('lokalmonstring'); // DEV
 #	kommuneController::setState('ferdig'); // DEV
 
 
