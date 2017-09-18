@@ -21,13 +21,16 @@ $WP_TWIG_DATA['monstring'] = $monstring;
 
 $WP_TWIG_DATA['innslagType'] = $innslag->getType();
 
+$WP_TWIG_DATA['program'] = $innslag->getProgram($monstring);
+
 if( $WP_TWIG_DATA['innslagType']->harTitler() ){
 	$titler = $innslag->getTitler($monstring);
 	$WP_TWIG_DATA['titler'] = $titler->getAll();
 
+	// Dersom minst èn av titlene til innslaget skal leses opp
 	$WP_TWIG_DATA['skalLesesOpp'] = false;	
 	foreach( $WP_TWIG_DATA['titler'] as $tittel ) {
-		if ($tittel->skalLesesOpp() )
+		if ( $tittel->skalLesesOpp() )
 			$WP_TWIG_DATA['skalLeseOpp'] = true;	
 	}
 }

@@ -21,26 +21,23 @@
 		</div>
 	</div>
 	<div class="row">
-		{# {{ dump(innslagType.getKey() ) }} #}
 		{# Vis forestillinger kun for de på scenen - litteratur kun om den skal leses opp! #}
 		{# Dette er en dårlig idè dersom det lages en "Kunstutstilling"-hendelse da... #}
 		{% if innslagType.getKey() in ["musikk", "dans", "teater", "video", "scene"] or ( innslagType.getKey() == "litteratur" and skalLeseOpp )  %}
 			<div class="col-12 col-md-4">
 				<h3 class="overskrift">Forestillinger</h3>
-				{% set forestillinger = innslag.forestillinger() %}
-				{% if forestillinger is defined and forestillinger is not null %}
-					{{ dump(forestillinger) }}
-				{% else %}
-					<p>{{ innslag.getNavn() }} er ikke satt opp i noen forestilling enda.</p>
-					<p>Dersom du mener dette burde vært gjort, ta kontakt med lokalkontakten din.</p>
-				{% endif %}
+				{# {{ dump(program) }} #}
+				{% for forestilling in program.getAll() if forestilling.erSynligRammeProgram() %}
+					{# {{ dump(forestilling) }} #}
+					<strong>{{ forestilling.getNavn() }}</strong>
+					<span class="dato">{{ forestilling.getStart()|dato }}</span>
+				{% endfor %}
 			</div>
 		{% endif %}
 		{% if innslagType.harTitler() %}
 			<div class="col-12 col-md-4">
 				<h3 class="overskrift">Titler</h3>
 				{% for tittel in titler if titler is not null %}
-					{# {{ dump(tittel) }} #}
 					<p>{{ tittel.getTittel() }}</p>
 					{% if innslagType.getKey() == "musikk" %}
 						{% if not tittel.erInstrumental() %}
@@ -49,8 +46,8 @@
 						<p>Melodi: {{ tittel.getMelodiAv() }}</p>
 					{% elseif innslagType.getKey() == "dans" %}
 						<p>Koreografi: {{ tittel.getKoreografiAv() }}</p>
-					{% elseif innslagType.getKey() == "litteratur" %}	
-						<p>Skrevet av: {{ tittel.getTekstAv() and not tittel.erSelvlaget() and not tittel.getTekstAv() == "" }}</p>
+					{% elseif innslagType.getKey() == "litteratur" and not tittel.erSelvlaget() and not tittel.getTekstAv() == "" %}	
+						<p>Skrevet av: {{ tittel.getTekstAv() }}</p>
 					{% endif %}
 					{% if innslagType.harTid() %}
 						<p>Varighet: {{ tittel.getVarighet().getHuman() }}</p>
@@ -79,10 +76,8 @@
 		<div class="col-12">
 			<h3 class="overskrift">Artikler</h3>
 			{% set artikler = innslag.getArtikler().getAll() %}
-			{% for artikkel in artikler if artikler is defined and not artikler is empty %}
-					<div class="col-12">
-						<a href="{{ artikkel.getLink() }}">{{ artikkel.getTittel() }}</a><span> - publisert </span><span class="dato">{{ artikkel.getSesong() }}</span>
-					</div>
+			{% for artikkel in artikler if not artikler is empty %}
+					<a href="{{ artikkel.getLink() }}">{{ artikkel.getTittel() }}</a><span> - publisert </span><span class="dato">{{ artikkel.getSesong() }}</span><br />
 			{% else %}
 				<p class="lead">Det finnes dessverre ingen relaterte artikler av {{ innslag.getNavn() }}.</p>
 			{% endfor %}
