@@ -102,22 +102,37 @@
 		<div class="col-12">
 			<h5 class="overskrift">Bilder</h5>
 			{% set bilder = innslag.getBilder().getAll() %}
-			{% for bilde in bilder if not bilder is empty %}
-				{{ dump(bilder) }}
-			{% else %}
-				<p class="mangler">Det finnes dessverre ingen bilder av {{ innslag.getNavn() }} enda.</p>
-			{% endfor %}
+			<div class="row">
+				{% for bilde in bilder if not bilder is empty %}
+					<div class="col-6 col-md-4">
+						<a href="{{ bilde.getSize("original").getPath() }}">
+							<img src="{{ bilde.getSize("medium").getPath() }}">
+						</a>
+					</div>
+				{% else %}
+					<div class="col-12">
+						<p class="mangler">Det finnes dessverre ingen bilder av {{ innslag.getNavn() }} enda.</p>
+					</div>
+				{% endfor %}
+			</div>
 		</div>
 	</div>
 	<div class="row">
 		<div class="col-12">
 			<h5 class="overskrift">Videoer fra UKM-tv</h5>
 			{% set filmer = innslag.getFilmer().getAll() %}
-			{% if filmer %}
-				{{ dump(filmer) }}
+			{# Filmer is either null or an array #}
+			<div class="row">
+			{% for film in filmer if not filmer is empty %}
+				<div class="col-12 col-md-6">
+					<span class="filmLabel">{{ film.getTitle() }}</span>
+					{{ film.embedcode() }}
+				</div>
 			{% else %}
-				<p class="mangler">Det finnes dessverre ingen filmer av {{ innslag.getNavn() }}.</p>
-			{% endif %}
+				<div class="col-12">
+					<p class="mangler">Det finnes dessverre ingen filmer av {{ innslag.getNavn() }}.</p>
+				</div>
+			{% endfor %}
 		</div>
 	</div>
 	{% if not singleMode is defined %}
