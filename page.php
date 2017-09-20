@@ -66,6 +66,12 @@ switch( $page_template ) {
 		require_once('UKMNorge/Wordpress/Controller/fylkeskontakter.controller.php');
 		$view_template = 'Kontaktpersoner/fylkeskontakter';
 		break;
+	# Vis kontakt-side
+	case 'org/styret':
+		require_once('UKMNorge/Wordpress/Controller/kontakt.controller.php');
+		$view_template = 'Page/styret';
+		break;
+		
 if( $page_template == 'meny' || $har_meny ) {
 	require_once('UKMNorge/Wordpress/Controller/menu.controller.php');
 	$view_template = 'Page/fullpage_with_menu';
