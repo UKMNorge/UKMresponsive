@@ -3,7 +3,13 @@
 {% block content %}
 	<div class="container">
 		<h3>Påmeldte</h3>
-	 	<ul class="list-group">
+		<div class="row">
+			<div class="col-12">
+				<input type="text" name="filtrer" id="filterInnslag" placeholder="Skriv her for å filtrere listen..." class="form-control block" />
+			</div>
+			<br /><br />
+		</div>
+	 	<ul class="list-group" id="searchList">
 		 	{% for innslag in innslagListe %}
 		 		<a href="{{ innslag.id }}" class="no-color" onClick="return false;">
 		 		{% embed 'Monstring/deltaker.html.twig' with {'innslag': innslag} %}{% endembed %}
@@ -16,6 +22,7 @@
 {% block javascripts %}
 	{{ parent() }}
 	</script>
+	<script type="text/javascript" src="{{ UKMasset("js/fastlivefilter.jquery.js") }}"></script>
 	<script>
 	jQuery(document).ready(function() {
 		jQuery(".innslagElement").click(function (clicked) {
@@ -50,5 +57,10 @@
 			var dynamicElement = clicked.closest(".dynamicElement");
 			dynamicElement.slideUp();
 		});
+
+		jQuery('#filterInnslag').fastLiveFilter('#searchList', function(numShown){
+
+		});
+		jQuery('#filterInnslag').change();
 	});
 {% endblock %}
