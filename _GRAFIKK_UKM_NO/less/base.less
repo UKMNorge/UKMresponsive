@@ -1,5 +1,4 @@
 /* FILE: base.less */
-
 /* TEXT-ALIGN */
 .center {
 	text-align: center;
@@ -44,14 +43,19 @@ a:hover {
 	.center;
 	margin-top: 1.5em;
 	margin-bottom: .5em;
+	color: @color-primary-dark-dark !important;
 }
 .menu-item:hover,
+.menu-item a,
 .menu-item a:visited,
 .menu-item a:focus,
-.menu-item a:active,
-.menu-item a:hover {
+.menu-item a:active {
 	text-decoration: none;
 	color: @color-primary-dark-dark !important;
+}
+.menu-item a:hover {
+	text-decoration: none;
+	color: @color-primary !important;
 }
 .menu-item .icon {
 	font-size:1.5em;

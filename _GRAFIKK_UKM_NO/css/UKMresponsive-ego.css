@@ -22,7 +22,7 @@ button {
 }
 /* LINKS */
 a {
-  color: #b3a000;
+  color: #020306;
   cursor: pointer;
 }
 a .nocolor {
@@ -32,7 +32,7 @@ a:visited,
 a:focus,
 a:active,
 a:hover {
-  color: #b3a000;
+  color: #020306;
 }
 .wp-caption,
 img {
@@ -43,53 +43,58 @@ img {
   text-align: center;
   margin-top: 1.5em;
   margin-bottom: .5em;
+  color: #000000 !important;
 }
 .menu-item:hover,
+.menu-item a,
 .menu-item a:visited,
 .menu-item a:focus,
-.menu-item a:active,
+.menu-item a:active {
+  text-decoration: none;
+  color: #000000 !important;
+}
 .menu-item a:hover {
   text-decoration: none;
-  color: #665c00 !important;
+  color: #151e3f !important;
 }
 .menu-item .icon {
   font-size: 1.5em;
 }
 .header-line {
-  border-bottom: 2px solid #ffe500;
-  color: #ffe500;
+  border-bottom: 2px solid #151e3f;
+  color: #151e3f;
   margin-bottom: .5em;
   text-transform: uppercase;
 }
 .text-color-primary {
-  color: #ffe500;
+  color: #151e3f;
 }
 .text-color-primary-dark {
-  color: #b3a000;
+  color: #020306;
 }
 .text-color-primary-dark-dark {
-  color: #665c00;
+  color: #000000;
 }
 .text-color-primary-light {
-  color: #ffed4d;
+  color: #283978;
 }
 .text-color-primary-light-light {
-  color: #fff280;
+  color: #354c9f;
 }
 .background-color-primary {
-  background-color: #ffe500;
+  background-color: #151e3f;
 }
 .background-color-primary-dark {
-  background-color: #b3a000;
+  background-color: #020306;
 }
 .background-color-primary-dark-dark {
-  background-color: #665c00;
+  background-color: #000000;
 }
 .background-color-primary-light {
-  background-color: #ffed4d;
+  background-color: #283978;
 }
 .background-color-primary-light-light {
-  background-color: #fff280;
+  background-color: #354c9f;
 }
 /* FILE: navbar.less */
 /*#main_menu_button {
@@ -103,7 +108,7 @@ img {
 }
 .navbar-separator {
   margin-bottom: 1rem;
-  border-bottom: 5px solid #ffe500;
+  border-bottom: 5px solid #151e3f;
 }
 #UKMslogan {
   color: #ffffff;
@@ -137,12 +142,12 @@ img {
 .sectionTitle {
   font-size: 1.5em;
   font-weight: 100;
-  color: #ffe500;
-  padding-top: 0.35rem;
+  color: #151e3f;
+  padding-top: 0.75rem;
 }
 .navbar-with-slogan {
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: center top;
   background-image: url('//ukm.dev/wp-content/themes/UKMresponsive/_GRAFIKK_UKM_NO/img/banner-test.jpg');
   background-size: cover;
 }
@@ -154,16 +159,32 @@ footer {
   margin-bottom: 0px !important;
 }
 .sitemap .section .header {
-  color: #ffe500;
-  border-bottom: 4px solid #ffe500;
+  color: #151e3f;
+  border-bottom: 4px solid #151e3f;
+  text-transform: uppercase;
 }
 .sitemap .section .header a {
-  color: #ffe500;
+  color: #151e3f;
   text-decoration: none;
 }
+.sitemap a {
+  color: #000;
+}
 /* FORMS */
+body {
+  font-family: 'Helvetica Neue', Arial, freesans, sans-serif !important;
+  color: #000;
+  opacity: .85;
+  line-height: 1.5em;
+}
+.lead {
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 1.33rem;
+  font-weight: 300;
+  line-height: 1.5em;
+}
 .form-control:focus {
-  border-color: #958c40;
+  border-color: #725c9f;
   transition-duration: 0.20s;
   transition-timing-function: ease-in;
   transition-property: border-color;
@@ -179,25 +200,25 @@ a.btn-primary:active,
 a.btn-primary:visited,
 .btn-primary:focus,
 a.btn-primary:focus {
-  background-color: #ffe500;
-  border-color: #ffe500;
+  background-color: #151e3f;
+  border-color: #151e3f;
   color: #fff !important;
 }
 .btn-outline-primary,
 .btn-outline-primary:visited {
   background-color: transparent;
-  border-color: #ffe500 !important;
-  color: #ffe500 !important;
+  border-color: #151e3f !important;
+  color: #151e3f !important;
 }
 .btn-outline-primary:hover {
   background-color: transparent;
-  border-color: #b3a000 !important;
-  color: #b3a000 !important;
+  border-color: #020306 !important;
+  color: #020306 !important;
 }
 .btn-outline-primary:active,
 .btn-outline-primary:focus,
 .btn-outline-primary:active:focus {
-  background-color: #ffe500 !important;
+  background-color: #151e3f !important;
 }
 .btn-outline-primary:focus,
 .btn-outline-primary:active {
@@ -214,25 +235,25 @@ a.btn-secondary:active,
 a.btn-secondary:visited,
 .btn-secondary:focus,
 a.btn-secondary:focus {
-  background-color: #958c40;
-  border-color: #958c40;
+  background-color: #725c9f;
+  border-color: #725c9f;
   color: #fff !important;
 }
 .btn-outline-secondary,
 .btn-outline-secondary:visited {
   background-color: transparent;
-  border-color: #958c40 !important;
-  color: #958c40 !important;
+  border-color: #725c9f !important;
+  color: #725c9f !important;
 }
 .btn-outline-secondary:hover {
   background-color: transparent;
-  border-color: #5f5a29 !important;
-  color: #5f5a29 !important;
+  border-color: #4f406f !important;
+  color: #4f406f !important;
 }
 .btn-outline-secondary:active,
 .btn-outline-secondary:focus,
 .btn-outline-secondary:active:focus {
-  background-color: #958c40 !important;
+  background-color: #725c9f !important;
 }
 .btn-outline-secondary:focus,
 .btn-outline-secondary:active {
@@ -255,17 +276,32 @@ h6,
   font-weight: 500;
   opacity: .85;
 }
+h1 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  margin-top: 1.2em;
+}
+h2 {
+  font-size: 1.4em;
+  margin-top: 1.2em;
+  margin-bottom: .2em;
+}
+h3 {
+  margin-top: 1.3em;
+  font-size: 1.15rem;
+  opacity: .9;
+}
 .badge-square {
   border-radius: 0;
 }
 .badge-primary {
-  background-color: #ffe500;
-  border-color: #ffe500;
+  background-color: #151e3f;
+  border-color: #151e3f;
 }
 .alert-primary {
-  background-color: #fff280;
-  border-color: #b3a000;
-  color: #b3a000 !important;
+  background-color: #354c9f;
+  border-color: #020306;
+  color: #020306 !important;
 }
 /* FILE: post.less */
 /* GRID VIEW: PRETTY */
@@ -275,7 +311,7 @@ h6,
   margin-bottom: 6px;
 }
 .post-grid-pretty {
-  background: #ffed4d;
+  background: #283978;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -298,14 +334,14 @@ h6,
   left: 0;
   width: 100%;
   padding: .5em 10px;
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+7,0.65+39 */
-  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 7%, rgba(0, 0, 0, 0.65) 39%, rgba(0, 0, 0, 0.65) 100%);
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#606060+2,545454+99&0+1,0.65+94 */
+  background: -moz-linear-gradient(top, rgba(96, 96, 96, 0) 1%, rgba(96, 96, 96, 0.01) 2%, rgba(85, 85, 85, 0.65) 94%, rgba(84, 84, 84, 0.65) 99%);
   /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 7%, rgba(0, 0, 0, 0.65) 39%, rgba(0, 0, 0, 0.65) 100%);
+  background: -webkit-linear-gradient(top, rgba(96, 96, 96, 0) 1%, rgba(96, 96, 96, 0.01) 2%, rgba(85, 85, 85, 0.65) 94%, rgba(84, 84, 84, 0.65) 99%);
   /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 7%, rgba(0, 0, 0, 0.65) 39%, rgba(0, 0, 0, 0.65) 100%);
+  background: linear-gradient(to bottom, rgba(96, 96, 96, 0) 1%, rgba(96, 96, 96, 0.01) 2%, rgba(85, 85, 85, 0.65) 94%, rgba(84, 84, 84, 0.65) 99%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#a6000000', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00606060', endColorstr='#a6545454', GradientType=0);
   /* IE6-9 */
 }
 .post-grid-pretty > header::before {
@@ -344,7 +380,7 @@ h6,
   margin-bottom: 1em;
 }
 .post-grid-default .image {
-  background: #ffed4d;
+  background: #283978;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -353,6 +389,9 @@ h6,
   margin: 0;
   margin-bottom: 0.1em;
 }
+a .post-grid-default {
+  color: #000 !important;
+}
 /* SINGLE POST */
 #the_post_image {
   margin: 0;
@@ -360,7 +399,7 @@ h6,
   margin-bottom: 1em;
   height: 40vh;
   width: 100vw;
-  background: #ffed4d;
+  background: #283978;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -377,8 +416,8 @@ h6,
 }
 .postmeta {
   font-size: .9em;
-  border-top: 1px solid #ffed4d;
-  border-bottom: 1px solid #ffed4d;
+  border-top: 1px solid #283978;
+  border-bottom: 1px solid #283978;
   margin-bottom: 1em;
 }
 @media (min-width: 768px) {
@@ -411,7 +450,7 @@ h6,
   text-transform: capitalize;
   font-weight: bold;
   line-height: 1.1em;
-  color: #ffe500;
+  color: #151e3f;
   margin: 0;
   margin-bottom: .2em;
 }
@@ -420,8 +459,10 @@ h6,
   line-height: 1em;
 }
 blockquote {
-  font-size: 1.4em;
-  font-weight: 200;
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 1.33rem;
+  font-weight: 300;
+  line-height: 1.5em;
   /* margin-left: 4em; */
   padding-left: 4em;
 }
@@ -443,7 +484,7 @@ cite {
   font-size: 1rem;
 }
 .card-primary-light {
-  background-color: #fff280;
+  background-color: #354c9f;
 }
 .UKMtoggleContent#UKMtoggleLokal {
   display: none;
@@ -461,11 +502,11 @@ cite {
   background-position: center center;
 }
 .fylkesfestival {
-  background: #ffe500;
+  background: #151e3f;
   color: #fff;
 }
 .fylkesfestival-banner {
-  background: #ffe500;
+  background: #151e3f;
   color: #fff;
 }
 .fylkesfestival-banner .title {
@@ -479,7 +520,7 @@ cite {
 .fylkesfestival-banner-menu {
   background: rgba(184, 157, 204, 0.17);
   border: none;
-  border-bottom: 2px solid #ffe500;
+  border-bottom: 2px solid #151e3f;
   border-top: none;
   margin-top: -1px !important;
   padding-top: 0.5em;
@@ -487,16 +528,20 @@ cite {
 }
 @media (min-width: 992px) {
   .fylkesfestival-banner-menu {
-    border-left: 2px solid #ffe500;
-    border-right: 2px solid #ffe500;
+    border-left: 2px solid #151e3f;
+    border-right: 2px solid #151e3f;
   }
 }
 .calendar {
-  border: 3px solid #b3a000;
-  box-shadow: 5px 5px #665c00;
+  /*
+	border: 3px solid @color-primary-dark;
+	box-shadow: 5px 5px @color-primary-dark-dark;
+*/
 }
 .calendar > .month {
-  background: #b3a000;
+  /*	
+	background: @color-primary-dark;
+*/
 }
 .calendar > .day {
   font-size: x-small;

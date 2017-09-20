@@ -38,7 +38,7 @@
 
 		{# ==== KUN SYNLIG SM-UP ==== #}
 		<div class="row d-none d-md-flex">
-			<div class="col-6 col-xl-6">
+			<div class="col-7 col-xl-6">
 				{% if page.getPage().getContentBeforeMore()|raw is not empty %}	
 					<p class="lead">
 						{{ page.getPage().getContentBeforeMore()|raw }}
@@ -46,7 +46,7 @@
 				{% endif %}
 				{{ page.getPage().getContentAfterMore()|raw }}
 			</div>
-			<div class="col-6 col-xl-6" style="font-size: 0.7em">
+			<div class="col-5 col-xl-6" style="font-size: 0.7em">
 				<div class="row">
 					{% for post in posts.getAll() %}
 						<div class="col-12 col-lg-6">

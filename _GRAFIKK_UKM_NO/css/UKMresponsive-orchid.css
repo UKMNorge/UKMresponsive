@@ -43,14 +43,19 @@ img {
   text-align: center;
   margin-top: 1.5em;
   margin-bottom: .5em;
+  color: #452644 !important;
 }
 .menu-item:hover,
+.menu-item a,
 .menu-item a:visited,
 .menu-item a:focus,
-.menu-item a:active,
-.menu-item a:hover {
+.menu-item a:active {
   text-decoration: none;
   color: #452644 !important;
+}
+.menu-item a:hover {
+  text-decoration: none;
+  color: #a65ea5 !important;
 }
 .menu-item .icon {
   font-size: 1.5em;
@@ -138,11 +143,11 @@ img {
   font-size: 1.5em;
   font-weight: 100;
   color: #a65ea5;
-  padding-top: 0.35rem;
+  padding-top: 0.75rem;
 }
 .navbar-with-slogan {
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: center top;
   background-image: url('//ukm.dev/wp-content/themes/UKMresponsive/_GRAFIKK_UKM_NO/img/banner-test.jpg');
   background-size: cover;
 }
@@ -156,12 +161,28 @@ footer {
 .sitemap .section .header {
   color: #a65ea5;
   border-bottom: 4px solid #a65ea5;
+  text-transform: uppercase;
 }
 .sitemap .section .header a {
   color: #a65ea5;
   text-decoration: none;
 }
+.sitemap a {
+  color: #000;
+}
 /* FORMS */
+body {
+  font-family: 'Helvetica Neue', Arial, freesans, sans-serif !important;
+  color: #000;
+  opacity: .85;
+  line-height: 1.5em;
+}
+.lead {
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 1.33rem;
+  font-weight: 300;
+  line-height: 1.5em;
+}
 .form-control:focus {
   border-color: #f3d54d;
   transition-duration: 0.20s;
@@ -255,6 +276,21 @@ h6,
   font-weight: 500;
   opacity: .85;
 }
+h1 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  margin-top: 1.2em;
+}
+h2 {
+  font-size: 1.4em;
+  margin-top: 1.2em;
+  margin-bottom: .2em;
+}
+h3 {
+  margin-top: 1.3em;
+  font-size: 1.15rem;
+  opacity: .9;
+}
 .badge-square {
   border-radius: 0;
 }
@@ -298,14 +334,14 @@ h6,
   left: 0;
   width: 100%;
   padding: .5em 10px;
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+7,0.65+39 */
-  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 7%, rgba(0, 0, 0, 0.65) 39%, rgba(0, 0, 0, 0.65) 100%);
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#606060+2,545454+99&0+1,0.65+94 */
+  background: -moz-linear-gradient(top, rgba(96, 96, 96, 0) 1%, rgba(96, 96, 96, 0.01) 2%, rgba(85, 85, 85, 0.65) 94%, rgba(84, 84, 84, 0.65) 99%);
   /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 7%, rgba(0, 0, 0, 0.65) 39%, rgba(0, 0, 0, 0.65) 100%);
+  background: -webkit-linear-gradient(top, rgba(96, 96, 96, 0) 1%, rgba(96, 96, 96, 0.01) 2%, rgba(85, 85, 85, 0.65) 94%, rgba(84, 84, 84, 0.65) 99%);
   /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 7%, rgba(0, 0, 0, 0.65) 39%, rgba(0, 0, 0, 0.65) 100%);
+  background: linear-gradient(to bottom, rgba(96, 96, 96, 0) 1%, rgba(96, 96, 96, 0.01) 2%, rgba(85, 85, 85, 0.65) 94%, rgba(84, 84, 84, 0.65) 99%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#a6000000', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00606060', endColorstr='#a6545454', GradientType=0);
   /* IE6-9 */
 }
 .post-grid-pretty > header::before {
@@ -352,6 +388,9 @@ h6,
   padding-bottom: 66%;
   margin: 0;
   margin-bottom: 0.1em;
+}
+a .post-grid-default {
+  color: #000 !important;
 }
 /* SINGLE POST */
 #the_post_image {
@@ -420,8 +459,10 @@ h6,
   line-height: 1em;
 }
 blockquote {
-  font-size: 1.4em;
-  font-weight: 200;
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 1.33rem;
+  font-weight: 300;
+  line-height: 1.5em;
   /* margin-left: 4em; */
   padding-left: 4em;
 }
@@ -492,11 +533,15 @@ cite {
   }
 }
 .calendar {
-  border: 3px solid #764175;
-  box-shadow: 5px 5px #452644;
+  /*
+	border: 3px solid @color-primary-dark;
+	box-shadow: 5px 5px @color-primary-dark-dark;
+*/
 }
 .calendar > .month {
-  background: #764175;
+  /*	
+	background: @color-primary-dark;
+*/
 }
 .calendar > .day {
   font-size: x-small;

@@ -22,7 +22,7 @@ button {
 }
 /* LINKS */
 a {
-  color: #946bb2;
+  color: #d75d0c;
   cursor: pointer;
 }
 a .nocolor {
@@ -32,7 +32,7 @@ a:visited,
 a:focus,
 a:active,
 a:hover {
-  color: #946bb2;
+  color: #d75d0c;
 }
 .wp-caption,
 img {
@@ -43,53 +43,58 @@ img {
   text-align: center;
   margin-top: 1.5em;
   margin-bottom: .5em;
+  color: #682d06 !important;
 }
 .menu-item:hover,
+.menu-item a,
 .menu-item a:visited,
 .menu-item a:focus,
-.menu-item a:active,
+.menu-item a:active {
+  text-decoration: none;
+  color: #682d06 !important;
+}
 .menu-item a:hover {
   text-decoration: none;
-  color: #6d4789 !important;
+  color: #f26d15 !important;
 }
 .menu-item .icon {
   font-size: 1.5em;
 }
 .header-line {
-  border-bottom: 2px solid #b89dcc;
-  color: #b89dcc;
+  border-bottom: 2px solid #f26d15;
+  color: #f26d15;
   margin-bottom: .5em;
   text-transform: uppercase;
 }
 .text-color-primary {
-  color: #b89dcc;
+  color: #f26d15;
 }
 .text-color-primary-dark {
-  color: #946bb2;
+  color: #d75d0c;
 }
 .text-color-primary-dark-dark {
-  color: #6d4789;
+  color: #682d06;
 }
 .text-color-primary-light {
-  color: #dccfe6;
+  color: #f69a5d;
 }
 .text-color-primary-light-light {
-  color: #f5f1f8;
+  color: #f9b88e;
 }
 .background-color-primary {
-  background-color: #b89dcc;
+  background-color: #f26d15;
 }
 .background-color-primary-dark {
-  background-color: #946bb2;
+  background-color: #d75d0c;
 }
 .background-color-primary-dark-dark {
-  background-color: #6d4789;
+  background-color: #682d06;
 }
 .background-color-primary-light {
-  background-color: #dccfe6;
+  background-color: #f69a5d;
 }
 .background-color-primary-light-light {
-  background-color: #f5f1f8;
+  background-color: #f9b88e;
 }
 /* FILE: navbar.less */
 /*#main_menu_button {
@@ -103,7 +108,7 @@ img {
 }
 .navbar-separator {
   margin-bottom: 1rem;
-  border-bottom: 5px solid #b89dcc;
+  border-bottom: 5px solid #f26d15;
 }
 #UKMslogan {
   color: #ffffff;
@@ -137,12 +142,12 @@ img {
 .sectionTitle {
   font-size: 1.5em;
   font-weight: 100;
-  color: #b89dcc;
-  padding-top: 0.35rem;
+  color: #f26d15;
+  padding-top: 0.75rem;
 }
 .navbar-with-slogan {
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: center top;
   background-image: url('//ukm.dev/wp-content/themes/UKMresponsive/_GRAFIKK_UKM_NO/img/banner-test.jpg');
   background-size: cover;
 }
@@ -154,14 +159,30 @@ footer {
   margin-bottom: 0px !important;
 }
 .sitemap .section .header {
-  color: #b89dcc;
-  border-bottom: 4px solid #b89dcc;
+  color: #f26d15;
+  border-bottom: 4px solid #f26d15;
+  text-transform: uppercase;
 }
 .sitemap .section .header a {
-  color: #b89dcc;
+  color: #f26d15;
   text-decoration: none;
 }
+.sitemap a {
+  color: #000;
+}
 /* FORMS */
+body {
+  font-family: 'Helvetica Neue', Arial, freesans, sans-serif !important;
+  color: #000;
+  opacity: .85;
+  line-height: 1.5em;
+}
+.lead {
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 1.33rem;
+  font-weight: 300;
+  line-height: 1.5em;
+}
 .form-control:focus {
   border-color: #9acfa9;
   transition-duration: 0.20s;
@@ -179,25 +200,25 @@ a.btn-primary:active,
 a.btn-primary:visited,
 .btn-primary:focus,
 a.btn-primary:focus {
-  background-color: #b89dcc;
-  border-color: #b89dcc;
+  background-color: #f26d15;
+  border-color: #f26d15;
   color: #fff !important;
 }
 .btn-outline-primary,
 .btn-outline-primary:visited {
   background-color: transparent;
-  border-color: #b89dcc !important;
-  color: #b89dcc !important;
+  border-color: #f26d15 !important;
+  color: #f26d15 !important;
 }
 .btn-outline-primary:hover {
   background-color: transparent;
-  border-color: #946bb2 !important;
-  color: #946bb2 !important;
+  border-color: #d75d0c !important;
+  color: #d75d0c !important;
 }
 .btn-outline-primary:active,
 .btn-outline-primary:focus,
 .btn-outline-primary:active:focus {
-  background-color: #b89dcc !important;
+  background-color: #f26d15 !important;
 }
 .btn-outline-primary:focus,
 .btn-outline-primary:active {
@@ -255,17 +276,32 @@ h6,
   font-weight: 500;
   opacity: .85;
 }
+h1 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  margin-top: 1.2em;
+}
+h2 {
+  font-size: 1.4em;
+  margin-top: 1.2em;
+  margin-bottom: .2em;
+}
+h3 {
+  margin-top: 1.3em;
+  font-size: 1.15rem;
+  opacity: .9;
+}
 .badge-square {
   border-radius: 0;
 }
 .badge-primary {
-  background-color: #b89dcc;
-  border-color: #b89dcc;
+  background-color: #f26d15;
+  border-color: #f26d15;
 }
 .alert-primary {
-  background-color: #f5f1f8;
-  border-color: #946bb2;
-  color: #946bb2 !important;
+  background-color: #f9b88e;
+  border-color: #d75d0c;
+  color: #d75d0c !important;
 }
 /* FILE: post.less */
 /* GRID VIEW: PRETTY */
@@ -275,7 +311,7 @@ h6,
   margin-bottom: 6px;
 }
 .post-grid-pretty {
-  background: #dccfe6;
+  background: #f69a5d;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -298,14 +334,14 @@ h6,
   left: 0;
   width: 100%;
   padding: .5em 10px;
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+7,0.65+39 */
-  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 7%, rgba(0, 0, 0, 0.65) 39%, rgba(0, 0, 0, 0.65) 100%);
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#606060+2,545454+99&0+1,0.65+94 */
+  background: -moz-linear-gradient(top, rgba(96, 96, 96, 0) 1%, rgba(96, 96, 96, 0.01) 2%, rgba(85, 85, 85, 0.65) 94%, rgba(84, 84, 84, 0.65) 99%);
   /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 7%, rgba(0, 0, 0, 0.65) 39%, rgba(0, 0, 0, 0.65) 100%);
+  background: -webkit-linear-gradient(top, rgba(96, 96, 96, 0) 1%, rgba(96, 96, 96, 0.01) 2%, rgba(85, 85, 85, 0.65) 94%, rgba(84, 84, 84, 0.65) 99%);
   /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 7%, rgba(0, 0, 0, 0.65) 39%, rgba(0, 0, 0, 0.65) 100%);
+  background: linear-gradient(to bottom, rgba(96, 96, 96, 0) 1%, rgba(96, 96, 96, 0.01) 2%, rgba(85, 85, 85, 0.65) 94%, rgba(84, 84, 84, 0.65) 99%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#a6000000', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00606060', endColorstr='#a6545454', GradientType=0);
   /* IE6-9 */
 }
 .post-grid-pretty > header::before {
@@ -344,7 +380,7 @@ h6,
   margin-bottom: 1em;
 }
 .post-grid-default .image {
-  background: #dccfe6;
+  background: #f69a5d;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -353,6 +389,9 @@ h6,
   margin: 0;
   margin-bottom: 0.1em;
 }
+a .post-grid-default {
+  color: #000 !important;
+}
 /* SINGLE POST */
 #the_post_image {
   margin: 0;
@@ -360,7 +399,7 @@ h6,
   margin-bottom: 1em;
   height: 40vh;
   width: 100vw;
-  background: #dccfe6;
+  background: #f69a5d;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -377,8 +416,8 @@ h6,
 }
 .postmeta {
   font-size: .9em;
-  border-top: 1px solid #dccfe6;
-  border-bottom: 1px solid #dccfe6;
+  border-top: 1px solid #f69a5d;
+  border-bottom: 1px solid #f69a5d;
   margin-bottom: 1em;
 }
 @media (min-width: 768px) {
@@ -411,7 +450,7 @@ h6,
   text-transform: capitalize;
   font-weight: bold;
   line-height: 1.1em;
-  color: #b89dcc;
+  color: #f26d15;
   margin: 0;
   margin-bottom: .2em;
 }
@@ -420,8 +459,10 @@ h6,
   line-height: 1em;
 }
 blockquote {
-  font-size: 1.4em;
-  font-weight: 200;
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 1.33rem;
+  font-weight: 300;
+  line-height: 1.5em;
   /* margin-left: 4em; */
   padding-left: 4em;
 }
@@ -443,7 +484,7 @@ cite {
   font-size: 1rem;
 }
 .card-primary-light {
-  background-color: #f5f1f8;
+  background-color: #f9b88e;
 }
 .UKMtoggleContent#UKMtoggleLokal {
   display: none;
@@ -461,11 +502,11 @@ cite {
   background-position: center center;
 }
 .fylkesfestival {
-  background: #b89dcc;
+  background: #f26d15;
   color: #fff;
 }
 .fylkesfestival-banner {
-  background: #b89dcc;
+  background: #f26d15;
   color: #fff;
 }
 .fylkesfestival-banner .title {
@@ -479,7 +520,7 @@ cite {
 .fylkesfestival-banner-menu {
   background: rgba(184, 157, 204, 0.17);
   border: none;
-  border-bottom: 2px solid #b89dcc;
+  border-bottom: 2px solid #f26d15;
   border-top: none;
   margin-top: -1px !important;
   padding-top: 0.5em;
@@ -487,16 +528,20 @@ cite {
 }
 @media (min-width: 992px) {
   .fylkesfestival-banner-menu {
-    border-left: 2px solid #b89dcc;
-    border-right: 2px solid #b89dcc;
+    border-left: 2px solid #f26d15;
+    border-right: 2px solid #f26d15;
   }
 }
 .calendar {
-  border: 3px solid #946bb2;
-  box-shadow: 5px 5px #6d4789;
+  /*
+	border: 3px solid @color-primary-dark;
+	box-shadow: 5px 5px @color-primary-dark-dark;
+*/
 }
 .calendar > .month {
-  background: #946bb2;
+  /*	
+	background: @color-primary-dark;
+*/
 }
 .calendar > .day {
   font-size: x-small;
@@ -812,4 +857,7 @@ cite {
   font-weight: 400;
   src: local('Open Sans Italic'), local('OpenSans-Italic'), url(http://fonts.gstatic.com/s/opensans/v13/xjAJXh38I15wypJXxuGMBogp9Q8gbYrhqGlRav_IXfk.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+.navbar-with-slogan {
+  background-image: url('//ukm.dev/wp-content/themes/UKMresponsive/_GRAFIKK_UKM_NO/img/banner-test-gul-ish.jpg');
 }
