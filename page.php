@@ -62,6 +62,10 @@ switch( $page_template ) {
 	case 'org/logoer':
 		$view_template = 'GrafiskProfil/logoer';
 		break;
+	case 'org/fylkeskontakter':
+		require_once('UKMNorge/Wordpress/Controller/fylkeskontakter.controller.php');
+		$view_template = 'Kontaktpersoner/fylkeskontakter';
+		break;
 if( $page_template == 'meny' || $har_meny ) {
 	require_once('UKMNorge/Wordpress/Controller/menu.controller.php');
 	$view_template = 'Page/fullpage_with_menu';
