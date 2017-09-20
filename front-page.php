@@ -24,6 +24,10 @@ switch( get_option('site_type') ) {
 	case 'ego':
 		$view_template = 'Ego/home';
 		break;
+	case 'organisasjonen':
+		$view_template = 'Page/home_organisasjonen';
+		$WP_TWIG_DATA['section'] = null; // Fjern section-header på forsiden
+		break;
 	default:
 		$view_template = 'Page/home_norge';
 		break;
