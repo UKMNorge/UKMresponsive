@@ -52,10 +52,10 @@ switch( $page_template ) {
 	case 'hovedmeny':
 		$view_template = 'Page/meny';
 		break;
-	# Standard wordpress-side
-	default:
-		require_once('UKMNorge/Wordpress/Controller/page.controller.php');
-		$view_template = 'Page/fullpage';
+	# Vis kontakt-side
+	case 'kontakt':
+		require_once('UKMNorge/Wordpress/Controller/kontakt.controller.php');
+		$view_template = 'Kontaktpersoner/liste';
 		break;
 		
 	## ORGANISASJONEN
@@ -72,6 +72,13 @@ switch( $page_template ) {
 		$view_template = 'Page/styret';
 		break;
 		
+	# Standard wordpress-side
+	default:
+		require_once('UKMNorge/Wordpress/Controller/page.controller.php');
+		$view_template = 'Page/fullpage';
+		break;
+}
+
 if( $page_template == 'meny' || $har_meny ) {
 	require_once('UKMNorge/Wordpress/Controller/menu.controller.php');
 	$view_template = 'Page/fullpage_with_menu';
