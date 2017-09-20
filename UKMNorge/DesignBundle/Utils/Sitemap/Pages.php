@@ -24,4 +24,7 @@ class Pages {
 		}
 		return false;
 	}
+	public function getPage( $id ) {
+		return $this->get( $id );
+	}
 }

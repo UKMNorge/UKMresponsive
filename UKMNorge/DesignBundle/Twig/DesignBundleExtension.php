@@ -1,6 +1,8 @@
 <?php
 namespace UKMNorge\DesignBundle\Twig;
 
+use UKMNorge\DesignBundle\Utils\Sitemap;
+
 class DesignBundleExtension extends \Twig_Extension
 {
 
@@ -20,6 +22,7 @@ class DesignBundleExtension extends \Twig_Extension
         return array(
             new \Twig_SimpleFunction('UKMasset', array($this, "UKMasset")),
             new \Twig_SimpleFunction('THEME_CONFIG', array($this, "theme_config")),
+            new \Twig_SimpleFunction('UKMroute', array($this, "theme_config")),
         );
     }
 
@@ -34,5 +37,9 @@ class DesignBundleExtension extends \Twig_Extension
     
     public function UKMpathFilter( $path ) {
         return $path;
+    }
+    
+    public function ukm_route( $section, $page ) {
+	    return Sitemap::getPage( $section, $page );
     }
 }

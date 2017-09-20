@@ -19,8 +19,8 @@ class Sitemap {
 	}
 	
 	public static function getSection( $id ) {
-		foreach( self::$config as $order => $section ) {
-			if( $id == $section->getId() ) {
+		foreach( self::$sections as $order => $section ) {
+			if( is_object( $section ) && $id == $section->getId() ) {
 				return $section;
 			}
 		}
@@ -36,5 +36,12 @@ class Sitemap {
 	
 	public static function getSections() {
 		return self::$sections;
+	}
+	
+	public static function getPage( $sectionId, $pageId ) {
+		$section = self::getSection( $sectionId );
+		if( is_object( $section ) ) {
+			return $section->getPage( $pageId );
+		}
 	}
 }

@@ -1,4 +1,7 @@
 <?php
+
+use UKMNorge\DesignBundle\Utils\Sitemap;
+
 require_once('wp_twig.dateFilter.inc.php');
 require_once('wp_twig.ukm.inc.php');
 
@@ -84,6 +87,12 @@ class WP_TWIG {
 			return WP_CONFIG::get( $key );
 		});
 		$twig->addFunction($function_theme_config);
+			
+		// Add asset-function
+		$function_sitemap = new Twig_SimpleFunction('UKMroute', function( $section, $page ) {
+			return Sitemap::getPage( $section, $page );
+		});
+		$twig->addFunction($function_sitemap);
 			
 		// Debug
 		if( self::getDebug() ) {

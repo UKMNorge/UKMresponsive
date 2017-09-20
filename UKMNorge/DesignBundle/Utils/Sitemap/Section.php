@@ -41,6 +41,10 @@ class Section {
 		return $this->color;
 	}
 	
+	public function getPage( $id ) {
+		return $this->getPages()->getPage( $id );
+	}
+	
 	private function _loadPages( $data ) {
 		if( isset( $data['pages'] ) && is_array( $data['pages'] ) ) {
 			foreach( $data['pages'] as $id => $page ) {
