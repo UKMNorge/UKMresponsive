@@ -121,6 +121,10 @@ UKM:
             url: /tidligere-ar/
             title: UKM-arrangementer fra 2001 i dag
             description: Bli kjent med oss
+        - 
+            id: pressebilder
+            url: //www.flickr.com/photos/ukm/albums
+            title: UKM på flickr
 
 
 
@@ -169,49 +173,53 @@ egoego:
             
             
 organisasjonen:
-    url: //om.ukm.no/
+    url: //org.ukm.dev/
     title: Organisasjonen
     pages:
         - 
             id: forsiden
-            url: /om.ukm.no/
+            url: //org.ukm.dev/
             title: Nyheter
         - 
             id: presse
-            url: //pressemelding.ukm.no
-            title: Alt til din avis (for journalister)
-        - 
-            id: pressebilder
-            url: //www.flickr.com/photos/ukm/albums
-            title: Pressebilder
+            url: //org.ukm.dev/presse/
+            title: Presse
         - 
             id: grafikk
-            url: /om.ukm.no/
+            url: //org.ukm.dev/
             title: Grafisk profil
         - 
             id: kontakt
-            url: /om.ukm.no/kontakt/
+            url: //org.ukm.dev/kontakt/
             title: Kontakt oss
         - 
             id: bakgrunn
-            url: /om.ukm.no/verdier/
+            url: //org.ukm.dev/verdier/
             title: Verdier
         - 
             id: historikk
-            url: /om.ukm.no/historikk/
+            url: //org.ukm.dev/historikk/
             title: Historikk
+        - 
+            id: cookies
+            url: cookies/
+            title: Småkakepolitikk
 
+arrangorer:
+    url: //ukm.dev/wp-login.php
+    title: UKM-arrangører
+    pages:
         - 
             id: login
-            url: //ukm.no/wp-admin/
-            title: Logg inn for arrangører
-            description: 
-            
+            url: //ukm.dev/wp-login.php
+            title: Logg inn
+
 english:
-    url: //om.ukm.no/english
+    url: //org.ukm.dev/english
     title: English
     pages:
         - 
             id: about
-            url: //om.ukm.no/about/
+            url: //org.ukm.dev/about/
             title: About UKM
+
