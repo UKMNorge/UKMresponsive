@@ -9,13 +9,15 @@
 		
 			{# BRAND ICON #}
 			<div class="navbar-header float-left">
-				<a href="/">
-					{% if header is defined and header.logo == 'EGO' %}
+				{% if header is defined and header.logo == 'EGO' %}
+					<a href="{{ UKMroute('egoego', 'forsiden') }}">
 						<img src="http://grafikk.ukm.no/profil/ego/EGO_logo{{ showSlogan is defined ? '_helhvit_0100' : '' }}.png" id="EGOlogo" width="70" />
-					{% else %}
+					</a>
+				{% else %}
+					<a href="{{ UKMroute('UKM', 'forsiden') }}">
 						<img src="http://grafikk.ukm.no/profil/logo/UKM_logo{{ showSlogan is defined ? '_helhvit_0100' : '' }}.png" id="UKMlogo" width="70" />
-					{% endif %}
-				</a>
+					</a>
+				{% endif %}
 			</div>
 			
 			{% if section is defined %}
