@@ -83,22 +83,22 @@ UKM:
     pages:
         - 
             id: forsiden
-            url: /
+            url: //ukm.dev/
             title: Forsiden
             description: Ung kultur møtes
         - 
             id: hvaer
-            url: /hva-er/
+            url: //ukm.dev/hva-er/
             title: Hva er UKM?
             description: Alt om Ung Kultur Møtes
         - 
             id: hvameldepa
-            url: /hva-kan-jeg-delta-med/
+            url: //ukm.dev/hva-kan-jeg-delta-med/
             title: Hva kan du delta med?
             description: 
         - 
             id: ua
-            url: /unge-arrangører/
+            url: //ukm.dev/unge-arrangører/
             title: Unge arrangører
             description: 
         - 
@@ -108,17 +108,17 @@ UKM:
             description: Bli kjent med oss
         - 
             id: urg
-            url: /urg/
+            url: //ukm.dev/urg/
             title: URG (ung ressursgruppe)
             description: 
         - 
             id: ukmere
-            url: /ukmere/
+            url: //ukm.dev/ukmere/
             title: Kjente UKMere
             description: 
         - 
             id: tidligerear
-            url: /tidligere-ar/
+            url: //ukm.dev/tidligere-ar/
             title: UKM-arrangementer fra 2001 i dag
             description: Bli kjent med oss
         - 
@@ -153,22 +153,22 @@ ukmtv:
 
             
 egoego:
-    url: //egoego.no
+    url: //ukm.dev/egoego/
     title: Ego
     pages:
         - 
-            id: egoforsiden
-            url: //egoego.no
+            id: forsiden
+            url: //ukm.dev/egoego/
             title: Forsiden
             description:
         - 
             id: egoom
-            url: //egoego.no/om-oss/
+            url: //ukm.dev/egoego/om-oss/
             title: Hva er ego?
             description:
         -
             id: egokontakt
-            url: //egoego.no/kontakt
+            url: //ukm.dev/egoego/kontakt/
             title: Kontakt oss
             
             
