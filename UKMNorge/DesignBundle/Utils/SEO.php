@@ -22,7 +22,6 @@ class SEO {
 	}
 	public static function setCanonical( $canonical ){
 		self::$canonical = $canonical;
-		return self;
 	}
 	
 	public static function getDescription(){
@@ -30,7 +29,6 @@ class SEO {
 	}
 	public static function setDescription( $description ){
 		self::$description = $description;
-		return self;
 	}
 	
 	public static function getAuthor(){
@@ -38,7 +36,6 @@ class SEO {
 	}
 	public static function setAuthor( $author ){
 		self::$author = $author;
-		return self;
 	}
 	
 	public static function getSiteName(){
@@ -46,7 +43,6 @@ class SEO {
 	}
 	public static function setSiteName( $site_name ){
 		self::$site_name = $site_name;
-		return self;
 	}
 	
 	public static function getType(){
@@ -54,7 +50,6 @@ class SEO {
 	}
 	public static function setType( $type ){
 		self::$type = $type;
-		return self;
 	}
 	
 	public static function getTitle(){
@@ -62,7 +57,6 @@ class SEO {
 	}
 	public static function setTitle( $title ){
 		self::$title = $title;
-		return self;
 	}
 	
 	public static function getSection(){
@@ -70,7 +64,6 @@ class SEO {
 	}
 	public static function setSection( $section ){
 		self::$section = $section;
-		return self;
 	}
 	
 	public static function getImage(){
@@ -78,7 +71,6 @@ class SEO {
 	}
 	public static function setImage( $image ){
 		self::$image = $image;
-		return self;
 	}
 	
 	public static function getPublished(){
@@ -86,7 +78,6 @@ class SEO {
 	}
 	public static function setPublished( $published ){
 		self::$published = $published;
-		return self;
 	}
 
 
@@ -95,14 +86,12 @@ class SEO {
 	}
 	public static function setFBAdmins( $fb_admin_ids ) {
 		self::$fb_admins = $fb_admin_ids;
-		return self;
 	}
 	public static function getFBAppId() {
 		return self::$fb_app_id;
 	}
 	public static function setFBAppId( $fb_app_id ) {
 		self::$fb_app_id = $fb_app_id;
-		return self;
 	}
 	
 	
@@ -112,7 +101,6 @@ class SEO {
 	}
 	public static function setGoogleSiteVerification( $site_verification_id ) {
 		self::$google_site_verification = $site_verification_id;
-		return self;
 	}
 
 }

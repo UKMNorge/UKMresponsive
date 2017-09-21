@@ -28,7 +28,7 @@ class Sitemap {
 	}
 	
 	public static function addSection( $section ) {
-		if( !isset( self::$config[ $key ] ) ) {
+		if( !self::getSection( $section->getId() ) ) {
 			self::$sections[] = $section;
 		}
 		return sizeof( self::$sections );

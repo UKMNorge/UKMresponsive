@@ -13,7 +13,9 @@ class Page {
 		$this->id = $data['id'];
 		$this->url = $data['url'];
 		$this->title = $data['title'];
-		$this->description = $data['description'];
+		if( isset( $data['description'] ) ) {
+			$this->description = $data['description'];
+		}
 		if( isset( $data['target'] ) ) {
 			$this->target = $data['target'];
 		}
