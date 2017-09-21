@@ -1,6 +1,7 @@
 <?php
 
 use UKMNorge\DesignBundle\Utils\Sitemap;
+use UKMNorge\DesignBundle\Utils\SEO;
 
 require_once('header.php');
 require_once('UKMNorge/Wordpress/Utils/page.class.php');

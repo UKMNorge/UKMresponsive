@@ -1,6 +1,7 @@
 <?php
 
 use UKMNorge\DesignBundle\Utils\Sitemap;
+use UKMNorge\DesignBundle\Utils\SEO;
 
 require_once('header.php');
 
@@ -8,9 +9,9 @@ require_once('UKMNorge/Wordpress/Utils/page.class.php');
 $WP_TWIG_DATA['page'] = new page();
 
 // SET OPENGRAPH AND SEARCH OPTIMIZATION INFOS
-$SEO->setTitle( $WP_TWIG_DATA['page']->getPage()->title );
-$SEO->setDescription( addslashes( preg_replace( "/\r|\n/", "", strip_tags( $WP_TWIG_DATA['page']->getPage()->lead ) ) ) );
-$SEO->setAuthor( $WP_TWIG_DATA['page']->getPage()->author->display_name );
+SEO::setTitle( $WP_TWIG_DATA['page']->getPage()->title );
+SEO::setDescription( addslashes( preg_replace( "/\r|\n/", "", strip_tags( $WP_TWIG_DATA['page']->getPage()->lead ) ) ) );
+SEO::setAuthor( $WP_TWIG_DATA['page']->getPage()->author->display_name );
 
 
 // CHECK TO FIND CUSTOM PAGE CONTROLLER AND VIEW ISSET

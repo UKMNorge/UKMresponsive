@@ -38,9 +38,12 @@ class Sitemap {
 		return self::$sections;
 	}
 	
-	public static function getPage( $sectionId, $pageId ) {
+	public static function getPage( $sectionId, $pageId=null ) {
 		$section = self::getSection( $sectionId );
 		if( is_object( $section ) ) {
+			if( null == $pageId ) {
+				return $section->getUrl();
+			}
 			return $section->getPage( $pageId );
 		}
 	}
