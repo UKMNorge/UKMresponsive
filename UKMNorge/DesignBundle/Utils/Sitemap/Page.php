@@ -37,4 +37,7 @@ class Page {
 	public function getTargetProperty() {
 		return $this->target == false ? '' : 'target="'. $this->target .'"' ;
 	}
+	public function __toString() {
+		return $this->getUrl();
+	}
 }
