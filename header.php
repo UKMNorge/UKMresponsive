@@ -52,23 +52,19 @@ $SEOImage = new SEOImage( WP_CONFIG::get('SEOdefaults')['image']['url'],
 						  WP_CONFIG::get('SEOdefaults')['image']['height'],
 						  WP_CONFIG::get('SEOdefaults')['image']['type'] );
 
-$SEO = new SEO();
-$SEO->setCanonical( get_permalink() );
-$SEO->setSiteName( WP_CONFIG::get('SEOdefaults')['site_name'] );
-$SEO->setSection( get_bloginfo('name') );
-$SEO->setType('website');
-$SEO->setTitle( WP_CONFIG::get('SEOdefaults')['title'] );
-$SEO->setDescription( WP_CONFIG::get('slogan') );
-$SEO->setAuthor( WP_CONFIG::get('SEOdefaults')['author'] );
+SEO::setCanonical( get_permalink() );
+SEO::setSiteName( WP_CONFIG::get('SEOdefaults')['site_name'] );
+SEO::setSection( get_bloginfo('name') );
+SEO::setType('website');
+SEO::setTitle( WP_CONFIG::get('SEOdefaults')['title'] );
+SEO::setDescription( WP_CONFIG::get('slogan') );
+SEO::setAuthor( WP_CONFIG::get('SEOdefaults')['author'] );
 
-$SEO->setFBAdmins( WP_CONFIG::get('facebook')['admins'] );
-$SEO->setFBAppId( WP_CONFIG::get('facebook')['app_id'] );
+SEO::setFBAdmins( WP_CONFIG::get('facebook')['admins'] );
+SEO::setFBAppId( WP_CONFIG::get('facebook')['app_id'] );
 
-$SEO->setGoogleSiteVerification( WP_CONFIG::get('google')['site_verification'] );
-$SEO->setImage( $SEOImage );
-
-$WP_TWIG_DATA['SEO'] = $SEO;
-
+SEO::setGoogleSiteVerification( WP_CONFIG::get('google')['site_verification'] );
+SEO::setImage( $SEOImage );
 
 /**
  * TEMA-INNSTILLINGER

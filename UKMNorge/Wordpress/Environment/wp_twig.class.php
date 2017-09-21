@@ -1,6 +1,7 @@
 <?php
 
 use UKMNorge\DesignBundle\Utils\Sitemap;
+use UKMNorge\DesignBundle\Utils\SEO;
 
 require_once('wp_twig.dateFilter.inc.php');
 require_once('wp_twig.ukm.inc.php');
@@ -63,6 +64,8 @@ class WP_TWIG {
 		}
 
 		$twig = new Twig_Environment($loader, $environment);
+		$twig->addGlobal('Sitemap', new Sitemap);
+		$twig->addGlobal('SEO', new SEO);
 		
 		// Add dato-filter
 		$filter_dato = new Twig_SimpleFilter('dato', 'WP_TWIG_date');
@@ -87,13 +90,7 @@ class WP_TWIG {
 			return WP_CONFIG::get( $key );
 		});
 		$twig->addFunction($function_theme_config);
-			
-		// Add asset-function
-		$function_sitemap = new Twig_SimpleFunction('UKMroute', function( $section, $page ) {
-			return Sitemap::getPage( $section, $page );
-		});
-		$twig->addFunction($function_sitemap);
-			
+						
 		// Debug
 		if( self::getDebug() ) {
 			$twig->addExtension( new Twig_Extension_Debug() );
