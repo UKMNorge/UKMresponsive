@@ -185,26 +185,33 @@ organisasjonen:
             url: //org.ukm.dev/presse/
             title: Presse
         - 
-            id: grafikk
-            url: //org.ukm.dev/
-            title: Grafisk profil
-        - 
             id: kontakt
             url: //org.ukm.dev/kontakt/
             title: Kontakt oss
         - 
-            id: bakgrunn
-            url: //org.ukm.dev/verdier/
-            title: Verdier
+            id: ukmsjefen
+            url: //org.ukm.dev/category/ukmsjefen/
+            title: UKM-sjefen
         - 
             id: historikk
             url: //org.ukm.dev/historikk/
             title: Historikk
         - 
+            id: verdier
+            url: //org.ukm.dev/verdier/
+            title: Verdier
+        - 
+            id: grafikk
+            url: //org.ukm.dev/grafisk-profil/
+            title: Grafisk profil
+        - 
             id: cookies
             url: cookies/
             title: Småkakepolitikk
-
+        - 
+            id: creativecommons
+            url: vilkar/
+            title: Vilkår for bruk av innhold
 arrangorer:
     url: //ukm.dev/wp-login.php
     title: UKM-arrangører
