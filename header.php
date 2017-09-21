@@ -43,9 +43,6 @@ $WP_TWIG_DATA = [];
 $WP_TWIG_DATA['UKM_HOSTNAME'] = UKM_HOSTNAME;
 $WP_TWIG_DATA['blog_url'] = get_bloginfo('url');
 
-// SITEMAP / MENU
-$WP_TWIG_DATA['nav'] = Sitemap::getSections();
-
 // SEO INIT
 $SEOImage = new SEOImage( WP_CONFIG::get('SEOdefaults')['image']['url'], 
 						  WP_CONFIG::get('SEOdefaults')['image']['width'],
