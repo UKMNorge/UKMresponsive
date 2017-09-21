@@ -1,7 +1,7 @@
 {% extends "Layout/_"~ (singleMode is defined and singleMode ? 'singleMode' : 'base' ) ~".html.twig"|UKMpath %}
 
 {% set showSlogan = true %}
-{% set customSlogan = THEME_CONFIG('organisasjonen').slogan %}
+{% set customSlogan = THEME_CONFIG.get('organisasjonen').slogan %}
 
 {% block content %}
 	<div class="container-fluid">
