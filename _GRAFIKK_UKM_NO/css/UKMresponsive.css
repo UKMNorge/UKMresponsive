@@ -16,6 +16,12 @@
 .bold {
   font-weight: bold;
 }
+.click {
+  cursor: pointer;
+}
+.uppercase {
+  text-transform: uppercase;
+}
 /* BUTTONS */
 button {
   cursor: pointer;
@@ -96,6 +102,28 @@ img {
 .background-color-primary-light-light {
   background-color: #f9b88e;
 }
+/** OVERUNDER **/
+.overunder {
+  text-align: center;
+  font-weight: 400;
+  color: inherit;
+  text-rendering: optimizelegibility;
+}
+.overunder .over {
+  text-align: center;
+  line-height: 1.2em;
+  font-size: 1em;
+}
+.overunder .under {
+  text-align: center;
+  font-size: .7em;
+  line-height: 1em;
+}
+.overunder .over small {
+  font-weight: normal;
+  font-size: 14px;
+  margin: 0px;
+}
 /* FILE: navbar.less */
 /*#main_menu_button {
     margin: 7px 0px 0px 0px;
@@ -163,28 +191,46 @@ footer {
   border-bottom: 4px solid #f26d15;
   text-transform: uppercase;
 }
-.sitemap .section .header a {
+.sitemap .section .header a,
+.sitemap .section .header a:visited {
   color: #f26d15;
   text-decoration: none;
 }
-.sitemap a {
+.sitemap a,
+.sitemap a:visited {
   color: #000;
 }
-/* FORMS */
+/* BODY */
 body {
   font-family: 'Helvetica Neue', Arial, freesans, sans-serif !important;
   color: #000;
   opacity: .85;
   line-height: 1.5em;
 }
-.lead {
-  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  font-size: 1.33rem;
-  font-weight: 300;
-  line-height: 1.5em;
+/* FORMS */
+label {
+  margin-bottom: 0;
+}
+label + .help {
+  margin-top: 0;
+}
+.help + .form-control {
+  margin-top: .2em;
+}
+.form-control + .help {
+  margin-top: .4em;
+}
+.help {
+  font-size: .8em;
+  line-height: 1.2em;
+  font-style: italic;
+  margin-bottom: .2em;
+}
+.form-control {
+  border-color: #f9b88e;
 }
 .form-control:focus {
-  border-color: #9acfa9;
+  border-color: #f26d15;
   transition-duration: 0.20s;
   transition-timing-function: ease-in;
   transition-property: border-color;
@@ -259,6 +305,18 @@ a.btn-secondary:focus {
 .btn-outline-secondary:active {
   color: #fff !important;
 }
+/* FONTS */
+small,
+.small {
+  font-size: .8em;
+  line-height: 1.2em;
+}
+.lead {
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 1.33rem;
+  font-weight: 300;
+  line-height: 1.5em;
+}
 /* HEADERS */
 h1,
 h2,
@@ -291,6 +349,7 @@ h3 {
   font-size: 1.15rem;
   opacity: .9;
 }
+/* BADGES */
 .badge-square {
   border-radius: 0;
 }
@@ -298,6 +357,7 @@ h3 {
   background-color: #f26d15;
   border-color: #f26d15;
 }
+/* ALERTS */
 .alert-primary {
   background-color: #f9b88e;
   border-color: #d75d0c;
@@ -576,6 +636,45 @@ cite {
   color: rgba(0, 0, 0, 0.65);
   margin-bottom: .5em;
 }
+/* FILE: delta.less */
+.delta-header {
+  border-bottom: 3px solid #f26d15;
+}
+/*** ***/
+.delta-home {
+  padding-right: 7em;
+  /*padding-top: 2em;*/
+  padding-top: 0.5em;
+  margin-right: 0.2em;
+}
+.delta-home button {
+  display: block;
+  position: absolute;
+  background-color: white;
+  padding-top: 3px;
+  padding-left: 0.6em;
+  padding-right: 0em;
+  border: 1px solid #f26d15;
+  border-radius: 5px;
+}
+.delta-home img {
+  margin: -1px 2px 2px 5px;
+  height: 28px;
+}
+.delta-danger {
+  /*width: 95%;*/
+}
+/*
+.delta-form textarea {
+	border-radius: 2px;
+	border: 1.5px solid @color-primary;
+}
+
+.delta-input {
+	border-radius: 2px;
+	border: 1.5px solid @color-primary;
+}
+*/
 /* FILE: open-sans.less */
 /* FROM http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600,700,300 */
 /* cyrillic-ext */
