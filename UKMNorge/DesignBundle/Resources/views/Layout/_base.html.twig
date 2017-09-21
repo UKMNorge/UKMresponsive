@@ -7,12 +7,12 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		
-		<title>{#{ SEO.getTitle() }#}</title>
+		<title>{{ SEO.getTitle() }}</title>
 		<link rel="shortcut icon" href="//grafikk.ukm.no/favicon.ico" />
 		{% if blog is defined %}
 			<link rel="alternate" type="application/rss+xml" href="{{blog.feed}}" title="{{blog.name}} RSS-feed" />
 		{% endif %}
-		{#{% embed "UKMDesignBundle:Layout:seo.html.twig"|UKMpath %}{% endembed %}#}
+		{% embed "UKMDesignBundle:Layout:seo.html.twig"|UKMpath %}{% endembed %}
 
 		{# STYLES #}
 		<link href="{{ UKMasset("css/bootstrap.min.css") }}" rel="stylesheet" />
