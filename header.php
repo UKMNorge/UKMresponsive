@@ -86,13 +86,17 @@ if( get_current_blog_id() == 1 ) {
 		// 3: ORGANISASJONEN
 		case 'fylke':
 		case 'kommune':
-			$WP_TWIG_DATA['THEME'] = '';
+			$section = new stdClass();
+			$section->title = get_bloginfo('name');
+			$section->url = get_bloginfo('url');
+			$WP_TWIG_DATA['section'] = $section;
+			break;
 		case 'organisasjonen':
 			$section = new stdClass();
 			$section->title = get_bloginfo('name');
 			$section->url = get_bloginfo('url');
 			$WP_TWIG_DATA['section'] = $section;
-			$WP_TWIG_DATA['THEME'] = '';
+			$WP_TWIG_DATA['THEME'] = 'cherry';
 			break;
 		case 'ego':
 			$header = new stdClass();
