@@ -4,3 +4,9 @@ services:
         public: false
         tags:
             - { name: twig.extension }
+    ukmdesign.seo:
+        class: UKMNorge\DesignBundle\Services\SEOService
+    ukmdesign.sitemap:
+        class: UKMNorge\DesignBundle\Services\SitemapService
+        arguments:
+            - @file_locator
