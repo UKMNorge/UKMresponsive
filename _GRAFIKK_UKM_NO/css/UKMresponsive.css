@@ -1,6 +1,9 @@
 /* LAVENDEL */
 /* PRIMARY */
 /* LAVENDEL */
+/*#931660;*/
+/*@color-primary-dark;*/
+/*@color-primary-dark-dark;*/
 /* FILE: base.less */
 /* TEXT-ALIGN */
 @import "icomoon-entypo.css";
@@ -250,6 +253,14 @@ a.btn-primary:focus {
   border-color: #f26d15;
   color: #fff !important;
 }
+.btn-danger {
+  background: #a2325b;
+  border-color: #7d0e4e;
+  color: #ffffff !important;
+}
+.text-danger {
+  color: #7d0e4e !important;
+}
 .btn-outline-primary,
 .btn-outline-primary:visited {
   background-color: transparent;
@@ -281,25 +292,25 @@ a.btn-secondary:active,
 a.btn-secondary:visited,
 .btn-secondary:focus,
 a.btn-secondary:focus {
-  background-color: #9acfa9;
-  border-color: #9acfa9;
+  background-color: #a2325b;
+  border-color: #a2325b;
   color: #fff !important;
 }
 .btn-outline-secondary,
 .btn-outline-secondary:visited {
   background-color: transparent;
-  border-color: #9acfa9 !important;
-  color: #9acfa9 !important;
+  border-color: #a2325b !important;
+  color: #a2325b !important;
 }
 .btn-outline-secondary:hover {
   background-color: transparent;
-  border-color: #66b67d !important;
-  color: #66b67d !important;
+  border-color: #68203a !important;
+  color: #68203a !important;
 }
 .btn-outline-secondary:active,
 .btn-outline-secondary:focus,
 .btn-outline-secondary:active:focus {
-  background-color: #9acfa9 !important;
+  background-color: #a2325b !important;
 }
 .btn-outline-secondary:focus,
 .btn-outline-secondary:active {
@@ -362,6 +373,11 @@ h3 {
   background-color: #f9b88e;
   border-color: #d75d0c;
   color: #d75d0c !important;
+}
+.alert.alert-danger {
+  background-color: #a2325b;
+  border-color: #7d0e4e;
+  color: #ffffff !important;
 }
 /* FILE: post.less */
 /* GRID VIEW: PRETTY */
@@ -663,6 +679,11 @@ cite {
 }
 .delta-danger {
   /*width: 95%;*/
+}
+ul.innslag li a,
+ul.innslag li a:focus,
+ul.innslag li a:visited {
+  color: #000;
 }
 /*
 .delta-form textarea {

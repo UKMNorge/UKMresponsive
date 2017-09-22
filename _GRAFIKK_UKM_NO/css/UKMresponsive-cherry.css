@@ -250,6 +250,14 @@ a.btn-primary:focus {
   border-color: #931660;
   color: #fff !important;
 }
+.btn-danger {
+  background: #500c35;
+  border-color: #500c35;
+  color: #ffffff !important;
+}
+.text-danger {
+  color: #500c35 !important;
+}
 .btn-outline-primary,
 .btn-outline-primary:visited {
   background-color: transparent;
@@ -362,6 +370,11 @@ h3 {
   background-color: #e345a3;
   border-color: #500c35;
   color: #500c35 !important;
+}
+.alert.alert-danger {
+  background-color: #500c35;
+  border-color: #500c35;
+  color: #ffffff !important;
 }
 /* FILE: post.less */
 /* GRID VIEW: PRETTY */
@@ -663,6 +676,11 @@ cite {
 }
 .delta-danger {
   /*width: 95%;*/
+}
+ul.innslag li a,
+ul.innslag li a:focus,
+ul.innslag li a:visited {
+  color: #000;
 }
 /*
 .delta-form textarea {
