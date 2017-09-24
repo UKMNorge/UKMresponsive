@@ -649,6 +649,20 @@ cite {
   color: rgba(0, 0, 0, 0.65);
   margin-bottom: .5em;
 }
+#UKMfavoritt .header {
+  background: #931660;
+  color: #fff;
+}
+#UKMfavoritt .body {
+  border: 2px solid #931660;
+  border-top: none;
+}
+@media (max-width: 767px) {
+  #mitt_UKM {
+    margin-left: Calc(-2em + 2px);
+    margin-right: Calc(-2em + 2px);
+  }
+}
 /* FILE: delta.less */
 .delta-header {
   border-bottom: 3px solid #931660;

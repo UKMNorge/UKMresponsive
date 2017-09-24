@@ -26,4 +26,15 @@ class kommuneController extends monstringController {
 		}
 		self::$state = $state;
 	}
+	
+	public static function getFavoritt() {
+		if( isset( $_COOKIE['UKMfavoritt'] ) ) {
+			return $_COOKIE['UKMfavoritt'];
+		}
+		return false;
+	}
+	
+	public static function harFavoritt() {
+		return self::getFavoritt() ? true : false;
+	}
 }

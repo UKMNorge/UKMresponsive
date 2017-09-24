@@ -2,61 +2,54 @@
 
 {% set showSlogan = true %}
 
+{% block javascripts %}
+	{{ parent() }}
+	<script type="text/javascript">
+		$(document).ready(function(){
+			UKMresponsiveAJAX('favoritt', 'favoritt');
+		});
+	</script>
+{% endblock %}
+
+
 {% block content %}
 	<div class="container-fluid">
-		<div class="row" style="margin-bottom: 1em">
-			<div class="col right">
-				<a href="{{ Sitemap.getPage('derdubor') }}" class="mx-1 btn btn-primary">Finn nærmeste UKM</a>
-			</div>
-		</div>
-	
-		{# ===== KUN SYNLIG XS ===== #}
-		<div class="row d-flex d-md-none">
-			<div class="col-12">
-				{% if page.getPage().getContentBeforeMore()|raw is not empty %}
-					<p class="lead">
-						{{ page.getPage().getContentBeforeMore()|raw }}
-						<br />
-						<a href="#" class="UKMtoggleShow phoneReadMoreUKM" data-target="phoneReadMoreUKM">Les mer om UKM</a>
-					</p>
-				{% endif %}
-			</div>
-
-			<div class="clearfix my-3"></div>
-			<div class="col-12 UKMtoggleContent" style="display:none" id="phoneReadMoreUKM">
-				{{ page.getPage().getContentAfterMore()|raw }}
-				<a href="#" class="mx-1 btn btn-outline-primary UKMtoggleHide phoneReadMoreUKM" data-target="phoneReadMoreUKM">Lukk</a>
-			</div>
-		</div>
-		<div class="row d-flex d-md-none">
-			{% for post in posts.getAll() %}
-				<div class="col-6">
-					{% embed "Post:grid-default.html.twig"|UKMpath with { post: post } %}{% endembed %}
+		<div class="row-flex">
+			{# FINN NÆRMESTE UKM ELLER "FAVORITT-UKM"-BOKS #}
+			<div class="col-12 col-md-5 col-lg-5 mb-3 float-right">
+				<div class="right">
+					<a href="{{ Sitemap.getPage('derdubor') }}" class="btn btn-primary">Finn nærmeste UKM</a>
 				</div>
-			{% endfor %}
-		</div>
-
-		{# ==== KUN SYNLIG SM-UP ==== #}
-		<div class="row d-none d-md-flex">
-			<div class="col-7 col-xl-6">
-				{% if page.getPage().getContentBeforeMore()|raw is not empty %}	
-					<p class="lead">
-						{{ page.getPage().getContentBeforeMore()|raw }}
-					</p>
-				{% endif %}
-				{{ page.getPage().getContentAfterMore()|raw }}
 			</div>
-			<div class="col-5 col-xl-6" style="font-size: 0.7em">
+
+			{# HVA ER UKM? #}
+			<div class="col-12 col-md-7 float-left mt-3 mb-2">
+				<p class="lead">
+					Målet med Ung Kultur Møtes (UKM) er å ha det gøy, møte nye mennesker og bli inspirert til nye samarbeid og videre utvikling. Du får verdifull erfaring, uansett om du er proff eller fersk; UKM er for alle.
+				</p>
+			</div>
+			
+			<div class="col-12 col-lg-5 mb-3 float-right">
+				<div id="mitt_UKM"></div>
+			</div>
+
+			<div class="col-12 col-md-7 mb-3 float-left">
+				{{ page.getPage().content|raw }}
+			</div>
+
+			{# NYHETER #}
+			<div class="col-12 col-md-5 float-right">
+				<h4 class="mt-3">Nyheter fra UKM</h4>
 				<div class="row">
 					{% for post in posts.getAll() %}
-						<div class="col-12 col-lg-6">
-							{% embed "Post:grid-pretty.html.twig"|UKMpath %}{% endembed %}
+						<div class="col-6">
+							{% embed "Post:grid-default.html.twig"|UKMpath with { post: post } %}{% endembed %}
 						</div>
 					{% endfor %}
 				</div>
+				{% embed "Category:next_prev_links.html.twig"|UKMpath %}{% endembed %}
 			</div>
+			
 		</div>
-
-		{% embed "Category:next_prev_links.html.twig"|UKMpath %}{% endembed %}
 	</div>
 {% endblock %}
