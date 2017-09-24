@@ -86,7 +86,7 @@ $(document).ready( function() {
  *	 
  *	KNAPPER FOR Å SKJULE KREVER:
  *	 - data-target="id-på-div-som-skal-toggles"
- *	 - class="UKMtoggleShow id-på-div-som-skal-toggles
+ *	 - class="UKMtoggleHide id-på-div-som-skal-toggles
  *	
  *	CONTAINER SOM SKAL TOGGLES KREVER:
  *	 - class="UKMtoggleContent"
