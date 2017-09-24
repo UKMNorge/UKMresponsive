@@ -20,6 +20,9 @@
 		{% block css %}{% endblock %}
 		
 		{# SCRIPTS #}
+		{% if ajax_url is defined %}
+		<script type="text/javascript">var ajaxurl = '{{ ajax_url }}';</script>
+		{% endif %}
 		<script type="text/javascript" src="{{ UKMasset("js/jquery-2.2.4.min.js") }}"></script>
 		<script type="text/javascript" src="{{ UKMasset("js/jquery-autoshrink.js") }}"></script>
 		<script type="text/javascript" src="{{ UKMasset("js/UKMresponsive.js") }}"></script>

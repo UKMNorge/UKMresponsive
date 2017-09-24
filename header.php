@@ -8,41 +8,12 @@ header('Content-Type: text/html; charset=utf-8');
 session_start();
 setlocale(LC_ALL, 'nb_NO', 'nb', 'no');
 
-define('PATH_THEME', TEMPLATEPATH . '/');
-define('PATH_DESIGNBUNDLE', PATH_THEME .'UKMNorge/DesignBundle/');
-define('URL_THEME', get_stylesheet_directory_uri() );
-
-define( 'WP_ENV', (strpos( $_SERVER['HTTP_HOST'], 'ukm.dev' ) !== false || isset($_GET['debug'])) ? 'dev' : 'prod' );
-
 // CHECK CACHE (AND DIE IF FOUND CACHE)
 require_once('cache.php');
 
-// AUTOLOAD AND SYMFONY EXISTING FILES
-require_once('vendor/autoload.php');
-require_once('UKMNorge/Wordpress/Environment/wp_twig.class.php');
-require_once('UKMNorge/Wordpress/Environment/wp_config.class.php');
-
-// MANUALLY LOAD FILES SYMFONY WOULD LOAD BY NAMESPACE
-require_once( PATH_DESIGNBUNDLE . 'Utils/Sitemap/Page.php');
-require_once( PATH_DESIGNBUNDLE . 'Utils/Sitemap/Pages.php');
-require_once( PATH_DESIGNBUNDLE . 'Utils/Sitemap/Section.php');
-require_once( PATH_DESIGNBUNDLE . 'Utils/Sitemap.php');
-require_once( PATH_DESIGNBUNDLE . 'Utils/SEO.php');
-require_once( PATH_DESIGNBUNDLE . 'Utils/SEOImage.php');
-
-// LOAD CONFIG
-Sitemap::loadFromYamlFile( PATH_DESIGNBUNDLE . 'Resources/config/sitemap.yml' );
-
-WP_CONFIG::setConfigPath( PATH_DESIGNBUNDLE . 'Resources/config/parameters.yml' );
-
-// TWIG INIT
-WP_TWIG::setTemplateDir( PATH_DESIGNBUNDLE .'Resources/views/' );
-WP_TWIG::setDebug( WP_ENV == 'dev' );
-$WP_TWIG_DATA = [];
-
 $WP_TWIG_DATA['UKM_HOSTNAME'] = UKM_HOSTNAME;
 $WP_TWIG_DATA['blog_url'] = get_bloginfo('url');
-
+$WP_TWIG_DATA['ajax_url'] = admin_url( 'admin-ajax.php' );
 // SEO INIT
 $SEOImage = new SEOImage( WP_CONFIG::get('SEOdefaults')['image']['url'], 
 						  WP_CONFIG::get('SEOdefaults')['image']['width'],

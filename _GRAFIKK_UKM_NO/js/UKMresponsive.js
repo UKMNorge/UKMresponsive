@@ -26,6 +26,31 @@ jQuery( document ).on('click', '#main_menu_button', function(e){
 });
 
 /**
+ * UKMresponsive AJAX
+ *
+**/
+function UKMresponsiveAJAX( action, trigger, data ) {
+	if( null == data ) {
+		data = {};
+	}
+	data.action = 'UKMresponsive';
+	data.ajaxaction = action;
+	data.trigger = trigger;
+
+	jQuery.post(ajaxurl, data, function(response) {
+		if( response.success == true ) {
+			console.info('TRIGGER: UKMresponsiveAJAX:success:'+ response.trigger);
+			$(document).trigger('UKMresponsiveAJAX:success:'+ response.trigger, response);
+		} else {
+			console.info('TRIGGER: UKMresponsiveAJAX:fail:'+ response.trigger);
+			$(document).trigger('UKMresponsiveAJAX:fail:'+ response.trigger, response);
+		}
+	}, 'json');
+};
+
+
+
+/**
  * SCROLL TO ID
 **/
 function scrollToId( id ) {
