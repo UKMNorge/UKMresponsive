@@ -25,16 +25,30 @@
 			{# HVA ER UKM? #}
 			<div class="col-12 col-md-7 float-left mt-3 mb-2">
 				<p class="lead">
-					Målet med Ung Kultur Møtes (UKM) er å ha det gøy, møte nye mennesker og bli inspirert til nye samarbeid og videre utvikling. Du får verdifull erfaring, uansett om du er proff eller fersk; UKM er for alle.
+					{{ page.getPage().getContentBeforeMore()|raw }}
+				</p>
+				<p class="d-block d-md-none">
+					<a href="#" class="UKMtoggleShow phoneReadMoreUKM" data-target="phoneReadMoreUKM">Les mer om UKM</a>
 				</p>
 			</div>
-			
+
+			<div class="col-12 col-md-7 mb-3 float-left">
+				<div class="UKMtoggleContent" style="display:none" id="phoneReadMoreUKM">
+					{{ page.getPage().getContentAfterMore()|raw }}
+					<p>
+						<a href="#" class="UKMtoggleHide phoneReadMoreUKM" data-target="phoneReadMoreUKM">Lukk</a>
+					</p>
+				</div>
+			</div>
+
 			<div class="col-12 col-lg-5 mb-3 float-right">
 				<div id="mitt_UKM"></div>
 			</div>
 
 			<div class="col-12 col-md-7 mb-3 float-left">
-				{{ page.getPage().content|raw }}
+				<div class="d-none d-md-block">
+					{{ page.getPage().getContentAfterMore|raw }}
+				</div>
 			</div>
 
 			{# NYHETER #}
@@ -49,7 +63,6 @@
 				</div>
 				{% embed "Category:next_prev_links.html.twig"|UKMpath %}{% endembed %}
 			</div>
-			
 		</div>
 	</div>
 {% endblock %}
