@@ -6,10 +6,10 @@ CONTAINER
 <div class="" id="UKMfavoritt" style="display:none">
 	<div class="header">
 		<div class="row align-items-center py-1">
-			<div class="col-2 col-xl-1 pl-4" style="line-height: 0em;">
+			<div class="col-2 pl-4" style="line-height: 0em;">
 				<span class="icon icon-heart" style="font-size: 2.5em;"></span>
 			</div>
-			<div class="col-6 col-xl-7 name">
+			<div class="col-6 name">
 				 {{ monstring.getNavn() }}
 			</div>
 			<div class="col-4 date right pr-4">
@@ -25,13 +25,13 @@ CONTAINER
 		
 		<div class="row-flex">
 		
-			<div class="col-12 col-xl-6 float-left">
+			<div class="col-12">
 				<div class="row-flex mt-2 small center">
 					{% embed "UKMDesignBundle:Kommune:meny.html.twig"|UKMpath %}{% endembed %}
 				</div>
 			</div>
 
-			<div class="col-12 col-xl-6 float-right">
+			<div class="col-12">
 				<div class="card mt-3 p-0 px-0">
 					<div class="row mb-0 pb-0 post small">
 						<div class="col-4 px-0 post-grid-default">
@@ -49,7 +49,7 @@ CONTAINER
 				</div>
 			</div>
 			
-			<div class="col-12 col-xl-6 center my-3 float-right">
+			<div class="col-12 center my-3">
 				<a href="{{ monstring.getLink() }}" class="">
 					Alt om UKM {{ monstring.getNavn() }}
 				</a>
