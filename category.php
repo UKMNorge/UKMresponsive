@@ -10,7 +10,9 @@ require_once('UKMNorge/Wordpress/Utils/posts.class.php');
 $category = get_queried_object();
 $WP_TWIG_DATA['category'] = $category;
 
-$posts = new posts();
+$posts = new posts( null, true );
+$posts->setCategory( get_queried_object_id() );
+$posts->loadPosts();
 
 $WP_TWIG_DATA['posts'] = $posts->getAll();
 $WP_TWIG_DATA['page_next'] = $posts->getPageNext();
