@@ -1,78 +1,78 @@
 derdubor:
-    url: /derdubor/
+    url: //ukm.no/derdubor/
     title: Der du bor
     pages:
         - 
             id: akershus
-            url: /akershus/
+            url: //ukm.no/akershus/
             title: Akershus
         - 
             id: aust-agder
-            url: /aust-agder/
+            url: //ukm.no/aust-agder/
             title: Aust-Agder
         - 
             id: buskerud
-            url: /buskerud/
+            url: //ukm.no/buskerud/
             title: Buskerud
         - 
             id: finnmark
-            url: /finnmark/
+            url: //ukm.no/finnmark/
             title: Finnmark
         - 
             id: hedmark
-            url: /hedmark/
+            url: //ukm.no/hedmark/
             title: Hedmark
         - 
             id: hordaland
-            url: /hordaland/
+            url: //ukm.no/hordaland/
             title: Hordaland
         - 
             id: moreogromsdal
-            url: /moregoromsdal/
+            url: //ukm.no/moregoromsdal/
             title: Møre og Romsdal
         - 
             id: nordtrondelag
-            url: /nord-trondelag/
+            url: //ukm.no/nord-trondelag/
             title: Nord-Trøndelag
         - 
             id: nordland
-            url: /nordland/
+            url: //ukm.no/nordland/
             title: Nordland
         - 
             id: oslo
-            url: /oslo/
+            url: //ukm.no/oslo/
             title: Oslo
         - 
             id: rogaland
-            url: /rogaland/
+            url: //ukm.no/rogaland/
             title: Rogaland
         - 
             id: sognogfjordane
-            url: /sognogfjordane/
+            url: //ukm.no/sognogfjordane/
             title: Sogn og Fjordane
         - 
             id: sortrondelag
-            url: /sor-trondelag/
+            url: //ukm.no/sor-trondelag/
             title: Sør-Trøndelag
         - 
             id: telemark
-            url: /telemark/
+            url: //ukm.no/telemark/
             title: Telemark
         - 
             id: troms
-            url: /troms/
+            url: //ukm.no/troms/
             title: Troms
         - 
             id: vestagder
-            url: /vest-agder/
+            url: //ukm.no/vest-agder/
             title: Vest-Agder
         - 
             id: vestfold
-            url: /vestfold/
+            url: //ukm.no/vestfold/
             title: Vestfold
         - 
             id: ostfold
-            url: /ostfold/
+            url: //ukm.no/ostfold/
             title: Østfold
 
 
@@ -206,11 +206,11 @@ organisasjonen:
             title: Grafisk profil
         - 
             id: cookies
-            url: cookies/
+            url: //org.ukm.no/cookies/
             title: Småkakepolitikk
         - 
             id: creativecommons
-            url: vilkar/
+            url: //org.ukm.no/vilkar/
             title: Vilkår for bruk av innhold
 arrangorer:
     url: //ukm.no/wp-login.php
