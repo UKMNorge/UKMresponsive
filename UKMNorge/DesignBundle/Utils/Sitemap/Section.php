@@ -26,6 +26,9 @@ class Section {
 		return $this->id;
 	}
 	public function getUrl() {
+		if( defined( UKM_HOSTNAME ) && UKM_HOSTNAME != 'ukm.no' ) {
+			return str_replace('ukm.no', UKM_HOSTNAME, $this->url);
+		}
 		return $this->url;
 	}
 	public function getTitle() {

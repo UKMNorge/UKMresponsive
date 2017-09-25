@@ -2,7 +2,7 @@
 
 namespace UKMNorge\DesignBundle\Utils\Sitemap;
 
-use UKMNorge\DesignBundle\Utils\Section\Page;
+use UKMNorge\DesignBundle\Utils\Sitemap\Page;
 
 class Pages {
 	var $pages = [];
