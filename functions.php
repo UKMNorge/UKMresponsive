@@ -8,6 +8,7 @@ add_theme_support( 'post-thumbnails' );
 add_theme_support( 'menus' );
 
 add_action( 'wp_ajax_nopriv_UKMresponsive', 'UKMresponsive_ajax' );
+add_action( 'wp_ajax_UKMresponsive', 'UKMresponsive_ajax' );
 
 define('PATH_THEME', TEMPLATEPATH . '/');
 define('PATH_DESIGNBUNDLE', PATH_THEME .'UKMNorge/DesignBundle/');
