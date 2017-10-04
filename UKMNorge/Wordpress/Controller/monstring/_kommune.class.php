@@ -28,7 +28,7 @@ class kommuneController extends monstringController {
 	}
 	
 	public static function getFavoritt() {
-		if( isset( $_COOKIE['UKMfavoritt'] ) ) {
+		if( isset( $_COOKIE['UKMfavoritt'] ) && $_COOKIE['UKMfavoritt'] == self::getMonstring()->getId() ) {
 			return $_COOKIE['UKMfavoritt'];
 		}
 		return false;
