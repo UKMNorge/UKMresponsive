@@ -1,121 +1,117 @@
-derdubor:
-    url: /derdubor/
-    title: Der du bor
-    pages:
-        - 
-            id: akershus
-            url: /akershus/
-            title: Akershus
-        - 
-            id: aust-agder
-            url: /aust-agder/
-            title: Aust-Agder
-        - 
-            id: buskerud
-            url: /buskerud/
-            title: Buskerud
-        - 
-            id: finnmark
-            url: /finnmark/
-            title: Finnmark
-        - 
-            id: hedmark
-            url: /hedmark/
-            title: Hedmark
-        - 
-            id: hordaland
-            url: /hordaland/
-            title: Hordaland
-        - 
-            id: moreogromsdal
-            url: /moregoromsdal/
-            title: Møre og Romsdal
-        - 
-            id: nordtrondelag
-            url: /nord-trondelag/
-            title: Nord-Trøndelag
-        - 
-            id: nordland
-            url: /nordland/
-            title: Nordland
-        - 
-            id: oslo
-            url: /oslo/
-            title: Oslo
-        - 
-            id: rogaland
-            url: /rogaland/
-            title: Rogaland
-        - 
-            id: sognogfjordane
-            url: /sognogfjordane/
-            title: Sogn og Fjordane
-        - 
-            id: sortrondelag
-            url: /sor-trondelag/
-            title: Sør-Trøndelag
-        - 
-            id: telemark
-            url: /telemark/
-            title: Telemark
-        - 
-            id: troms
-            url: /troms/
-            title: Troms
-        - 
-            id: vestagder
-            url: /vest-agder/
-            title: Vest-Agder
-        - 
-            id: vestfold
-            url: /vestfold/
-            title: Vestfold
-        - 
-            id: ostfold
-            url: /ostfold/
-            title: Østfold
-
-
 UKM:
-    url: /
+    url: //ukm.no/
     title: UKM
     #color: d4c8e4
     pages:
         - 
             id: forsiden
-            url: /
+            url: //ukm.no/
             title: Forsiden
             description: Ung kultur møtes
+        -
+            id: derdubor
+            url: //ukm.no/derdubor/
+            title: Der du bor
         - 
             id: hvaer
-            url: /hva-er/
+            url: //ukm.no/hva-er/
             title: Hva er UKM?
             description: Alt om Ung Kultur Møtes
-        - 
-            id: hvameldepa
-            url: /hva-kan-jeg-delta-med/
-            title: Hva kan du delta med?
-            description: 
-        - 
-            id: ua
-            url: /unge-arrangører/
-            title: Unge arrangører
-            description: 
-        - 
-            id: ambassadorer
-            url: //ambassador.ukm.no/
-            title: Ambassadører
-            description: Bli kjent med oss
-        - 
-            id: urg
-            url: /urg/
-            title: URG (ung ressursgruppe)
-            description: 
+#        - 
+#            id: hvameldepa
+#            url: //ukm.no/hva-kan-jeg-delta-med/
+#            title: Hva kan du delta med?
+#        - 
+#            id: ua
+#            url: //ukm.no/unge-arrangører/
+#            title: Unge arrangører
+#            description: 
+#        - 
+#            id: ambassadorer
+#            url: //ambassador.ukm.no/
+#            title: Ambassadører
+#            description: Bli kjent med oss
+#        - 
+#            id: urg
+#            url: //ukm.no/urg/
+#            title: URG (ung ressursgruppe)
+#            description: 
         - 
             id: ukmere
-            url: /ukmere/
+            url: //ukm.no/blog/category/kjente-ukmere/
             title: Kjente UKMere
             description: 
+        - 
+            id: pressebilder
+            url: //www.flickr.com/photos/ukm/albums
+            title: UKM på flickr
+            target: _blank
+        - 
+            id: tidligerear
+            url: //ukm.no/tidligere-ar/
+            title: UKM-arrangement 2001-2017
+            description: Bli kjent med oss
+
+egoego:
+    url: //egoego.no/
+    title: Ego
+    pages:
+        - 
+            id: forsiden
+            url: //egoego.no/
+            title: Forsiden
+            description:
+        - 
+            id: egoom
+            url: //egoego.no/om-oss/
+            title: Hva er ego?
+            description:
+        -
+            id: egokontakt
+            url: //egoego.no/kontakt/
+            title: Kontakt oss
+
+
+organisasjonen:
+    url: //org.ukm.no/
+    title: Organisasjonen
+    pages:
+        - 
+            id: forsiden
+            url: //org.ukm.no/
+            title: Nyheter
+        - 
+            id: presse
+            url: //org.ukm.no/presse/
+            title: Presse
+        - 
+            id: kontakt
+            url: //org.ukm.no/kontakt/
+            title: Kontakt oss
+        - 
+            id: ukmsjefen
+            url: //org.ukm.no/category/ukmsjefen/
+            title: UKM-sjefen
+        - 
+            id: historikk
+            url: //org.ukm.no/historikk/
+            title: Historikk
+        - 
+            id: verdier
+            url: //org.ukm.no/verdier/
+            title: Verdier
+        - 
+            id: grafikk
+            url: //org.ukm.no/grafisk-profil/
+            title: Grafisk profil
+        - 
+            id: cookies
+            url: //org.ukm.no/cookies/
+            title: Småkakepolitikk
+        - 
+            id: creativecommons
+            url: //org.ukm.no/vilkar/
+            title: Vilkår for bruk av innhold
 
 
 ukmtv:
@@ -138,79 +134,22 @@ ukmtv:
             id: tvsok
             url: //tv.ukm.no/lokal/
             title: Lokalarrangementene
-            
 
-
-            
-egoego:
-    url: //egoego.no
-    title: Ego
+arrangorer:
+    url: //ukm.no/wp-login.php
+    title: UKM-arrangører
     pages:
-        - 
-            id: egoforsiden
-            url: //egoego.no
-            title: Forsiden
-            description:
-        - 
-            id: egoom
-            url: //egoego.no/om-oss/
-            title: Hva er ego?
-            description:
-        -
-            id: egokontakt
-            url: //egoego.no/kontakt
-            title: Kontakt oss
-            
-            
-organisasjonen:
-    url: //om.ukm.no/
-    title: Organisasjonen
-    pages:
-        - 
-            id: forsiden
-            url: /om.ukm.no/
-            title: Nyheter
-        - 
-            id: presse
-            url: //pressemelding.ukm.no
-            title: Alt til din avis (for journalister)
-        - 
-            id: pressebilder
-            url: //www.flickr.com/photos/ukm/albums
-            title: Pressebilder
-        - 
-            id: grafikk
-            url: /om.ukm.no/
-            title: Grafisk profil
-        - 
-            id: kontakt
-            url: /om.ukm.no/kontakt/
-            title: Kontakt oss
-        - 
-            id: bakgrunn
-            url: /om.ukm.no/verdier/
-            title: Verdier
-        - 
-            id: historikk
-            url: /om.ukm.no/historikk/
-            title: Historikk
-        - 
-            id: tidligerear
-            url: /tidligere-ar/
-            title: UKM fra 2001 i dag
-            description: Bli kjent med oss
-
         - 
             id: login
-            url: //ukm.no/wp-admin/
-            title: Logg inn for arrangører
-            description: 
-            
+            url: //ukm.no/wp-login.php
+            title: Logg inn
+
 english:
-    url: //om.ukm.no/english
+    url: //org.ukm.no/english
     title: English
     pages:
         - 
             id: about
-            url: //om.ukm.no/about/
+            url: //ukm.no/about-ukm/
             title: About UKM
+

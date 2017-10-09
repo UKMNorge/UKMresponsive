@@ -26,6 +26,31 @@ jQuery( document ).on('click', '#main_menu_button', function(e){
 });
 
 /**
+ * UKMresponsive AJAX
+ *
+**/
+function UKMresponsiveAJAX( action, trigger, data ) {
+	if( null == data ) {
+		data = {};
+	}
+	data.action = 'UKMresponsive';
+	data.ajaxaction = action;
+	data.trigger = trigger;
+
+	jQuery.post(ajaxurl, data, function(response) {
+		if( response.success == true ) {
+			console.info('TRIGGER: UKMresponsiveAJAX:success:'+ response.trigger);
+			$(document).trigger('UKMresponsiveAJAX:success:'+ response.trigger, response);
+		} else {
+			console.info('TRIGGER: UKMresponsiveAJAX:fail:'+ response.trigger);
+			$(document).trigger('UKMresponsiveAJAX:fail:'+ response.trigger, response);
+		}
+	}, 'json');
+};
+
+
+
+/**
  * SCROLL TO ID
 **/
 function scrollToId( id ) {
@@ -61,7 +86,7 @@ $(document).ready( function() {
  *	 
  *	KNAPPER FOR Å SKJULE KREVER:
  *	 - data-target="id-på-div-som-skal-toggles"
- *	 - class="UKMtoggleShow id-på-div-som-skal-toggles
+ *	 - class="UKMtoggleHide id-på-div-som-skal-toggles
  *	
  *	CONTAINER SOM SKAL TOGGLES KREVER:
  *	 - class="UKMtoggleContent"
@@ -87,6 +112,21 @@ $(document).on('click', '.UKMtoggleHide', function(e){
 	$('.' + target + '.UKMtoggleShow').fadeIn();
 });
 
+/**
+ * FORSIDE: UKMfavoritt
+ * 
+ * Henter ut info om lagret favoritt-side til UKM.no::forsiden
+**/
+// FAILED
+$(document).on('UKMresponsiveAJAX:fail:favoritt', function(e, JSONresponse) {
+	// console.warn('Favoritt ikke lagret');
+});
+// SUCCESS
+$(document).on('UKMresponsiveAJAX:success:favoritt', function(e, JSONresponse) {
+	$( '#mitt_UKM' ).html( JSONresponse.html );
+	$( '#UKMfavoritt').fadeIn(200);
+});
+
 
 /**
  * FYLKESSIDE
@@ -104,4 +144,27 @@ $(document).on('UKMtoggleShow#UKMtoggleLokal', function() {
 // Når listen lukkes, returner til tidligere scroll-position
 $(document).on('pre_UKMtoggleHide#UKMtoggleLokal', function(){
 	scrollToPosition( fylkePositionAtToggleLokalTriggered );
+});
+
+
+/**
+ * KOMMUNESIDE
+ *
+ * Lagre som favoritt
+**/
+$(document).on('click','#saveAsMine', function(e){
+	e.preventDefault();
+	if( $(this).attr('data-saved') == 'false' ) {
+		Cookies.set('UKMfavoritt', $(this).attr('data-plid'), { expires: 365 });
+		$(this).attr('data-saved', 'true');
+		$(this).find('span.icon').removeClass('icon-heart-outlined').addClass('icon-heart');
+		$('#saveAsMineExplanation').slideDown();
+		$(this).find('.text').text( $(this).find('.text').text().replace('lagre', 'lagret') );
+	} else {
+		$(this).attr('data-saved', 'false');
+		Cookies.remove('UKMfavoritt');
+		$(this).find('span.icon').removeClass('icon-heart').addClass('icon-heart-outlined');
+		$('#saveAsMineExplanation').slideUp();
+		$(this).find('.text').text( $(this).find('.text').text().replace('lagret', 'lagre') );	
+	}
 });

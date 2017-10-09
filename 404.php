@@ -1,6 +1,8 @@
 <?php
 
 use UKMNorge\DesignBundle\Utils\Sitemap;
+use UKMNorge\DesignBundle\Utils\SEO;
+
 
 require_once('header.php');
 
@@ -8,9 +10,9 @@ require_once('UKMNorge/Wordpress/Utils/page.class.php');
 $WP_TWIG_DATA['page'] = new page();
 
 // SET OPENGRAPH AND SEARCH OPTIMIZATION INFOS
-$SEO->setTitle( WP_CONFIG::get('firenullfire')['title'] );
-$SEO->setDescription( WP_CONFIG::get('firenullfire')['text'] );
-$SEO->setAuthor( 'UKM Norge' );
+SEO::setTitle( WP_CONFIG::get('firenullfire')['title'] );
+SEO::setDescription( WP_CONFIG::get('firenullfire')['text'] );
+SEO::setAuthor( 'UKM Norge' );
 
 
 // CHECK TO FIND CUSTOM PAGE CONTROLLER AND VIEW ISSET

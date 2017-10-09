@@ -4,7 +4,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-12 col-md-10 col-lg-8">
-				<h3>Program for {{ monstring.getNavn() }}</h3>
+				<h3>{{ monstring.getNavn() }} program</h3>
 			</div>
 		</div>
 		
@@ -37,13 +37,20 @@
 					{% endfor %}
 				</div>
 			{% else %}
-				<p>
-					Det er ikke satt opp noe program enda.
-				</p>
-				<p>
-					<a href="{{ section.url }}">Tilbake til {{ section.title }}</a>
-				</p>
+				<div class="col-12">
+					<p>
+						Det er ikke satt opp noe program enda.
+					</p>
+					<p>
+						<a href="{{ section.url }}">Tilbake til {{ monstring.getNavn() }}</a>
+					</p>
+				</div>
 			{% endfor %}
+			<div class="col-12">
+				<p class="my-4">
+					<a href="{{ section.url }}">Tilbake til {{ monstring.getNavn() }}</a>
+				</p>
+			</div>
 		</div>
 	</div>
 {% endblock %}

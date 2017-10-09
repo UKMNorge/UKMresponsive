@@ -49,7 +49,7 @@ else {
 	// DEV SETTINGS FOR ALLE STATES I RIKTIG REKKEFØLGE
 #	kommuneController::setState('pre_pamelding'); // DEV
 #	kommuneController::setState('pamelding'); // DEV
-#	kommuneController::setState('lokalmonstring'); // DEV
+	kommuneController::setState('lokalmonstring'); // DEV
 #	kommuneController::setState('ferdig'); // DEV
 
 
@@ -66,3 +66,6 @@ $WP_TWIG_DATA['harInfoPage']	 	= kommuneController::harInfoPage();
 
 $WP_TWIG_DATA['page_next'] 			= $WP_TWIG_DATA['posts']->getPageNext();
 $WP_TWIG_DATA['page_prev']			= $WP_TWIG_DATA['posts']->getPagePrev();
+
+$WP_TWIG_DATA['favoritt']			= kommuneController::getFavoritt();
+$WP_TWIG_DATA['harFavoritt']		= kommuneController::harFavoritt();

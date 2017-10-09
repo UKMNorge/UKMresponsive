@@ -30,6 +30,7 @@ class WP_CONFIG {
 		if( !self::$configPath ) {
 			throw new Exception('Missing basic config file path');
 		}
-		self::$keys = Yaml::parse( file_get_contents( self::$configPath ) );
+		$parameters = Yaml::parse( file_get_contents( self::$configPath ) );
+		self::$keys = $parameters['parameters'];
 	}
 }

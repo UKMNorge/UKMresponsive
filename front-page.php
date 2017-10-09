@@ -1,6 +1,7 @@
 <?php
 
 use UKMNorge\DesignBundle\Utils\Sitemap;
+use UKMNorge\DesignBundle\Utils\SEO;
 
 require_once('header.php');
 require_once('UKMNorge/Wordpress/Utils/page.class.php');
@@ -23,6 +24,10 @@ switch( get_option('site_type') ) {
 		break;
 	case 'ego':
 		$view_template = 'Ego/home';
+		break;
+	case 'organisasjonen':
+		$view_template = 'Page/home_organisasjonen';
+		$WP_TWIG_DATA['section'] = null; // Fjern section-header på forsiden
 		break;
 	default:
 		$view_template = 'Page/home_norge';

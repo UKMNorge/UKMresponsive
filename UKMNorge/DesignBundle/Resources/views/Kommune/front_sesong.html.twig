@@ -5,12 +5,13 @@
 		{% embed "UKMDesignBundle:Monstring:banner.html.twig"|UKMpath %}{% endembed %}
 	{% endif %}
 	<div class="container-fluid">
+		{% embed "UKMDesignBundle:Monstring:favoritt.html.twig"|UKMpath %}{% endembed %}
 		<div class="row-flex vertical-align-top">
 			<div class="col-12 col-md-8 float-left">
 				{# PÅMELDINGEN ER IKKE STARTET, VIS SMS-REMINDER-SKJEMA #}
 				{% if state == 'pre_pamelding' %}
 					<p class="lead">
-						Vil du ha en gratis sms-påminnelse når påmeldingen åpner {{ THEME_CONFIG('pamelding').startdato }}?
+						Vil du ha en gratis sms-påminnelse når påmeldingen åpner {{ THEME_CONFIG.get('pamelding').startdato }}?
 					</p>
 					{% embed "UKMDesignBundle:Husk:Form.html.twig"|UKMpath %}{% endembed %}
 				{% elseif state == 'pamelding' %}
@@ -49,7 +50,9 @@
 					</div>
 				{% endif %}
 				{% if state == 'lokalmonstring' and not monstring.erStartet() %}
-					<p class="center text-danger">Påmeldingen er stengt</p>
+					<p class="center">
+						Nettpåmeldingen er stengt, men du kan <a href="kontaktpersoner/">ringe lokalkontakten</a>
+					</p>
 				{% endif %}
 			</div>
 			
@@ -70,9 +73,9 @@
 
 				<div class="mb-4">
 					<h3>Hva er UKM?</h3>
-					<p>{{ THEME_CONFIG('hvaerukm').kort }} 
+					<p>{{ THEME_CONFIG.get('hvaerukm').kort }} 
 						<br />
-						<a href="{{ THEME_CONFIG('hvaerukm').lesmer }}" >Les mer</a>
+						<a href="{{ THEME_CONFIG.get('hvaerukm').lesmer }}" >Les mer</a>
 					</p>
 				</div>
 			</div>

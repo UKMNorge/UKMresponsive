@@ -26,6 +26,9 @@ class Section {
 		return $this->id;
 	}
 	public function getUrl() {
+		if( defined('UKM_HOSTNAME') && UKM_HOSTNAME != 'ukm.no' ) {
+			return str_replace(array('ukm.no', 'egoego.no'), array(UKM_HOSTNAME, 'egoego.dev'), $this->url);
+		}
 		return $this->url;
 	}
 	public function getTitle() {
@@ -39,6 +42,10 @@ class Section {
 	}
 	public function getColor() {
 		return $this->color;
+	}
+	
+	public function getPage( $id ) {
+		return $this->getPages()->getPage( $id );
 	}
 	
 	private function _loadPages( $data ) {

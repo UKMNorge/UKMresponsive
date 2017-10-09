@@ -13,7 +13,9 @@ class Page {
 		$this->id = $data['id'];
 		$this->url = $data['url'];
 		$this->title = $data['title'];
-		$this->description = $data['description'];
+		if( isset( $data['description'] ) ) {
+			$this->description = $data['description'];
+		}
 		if( isset( $data['target'] ) ) {
 			$this->target = $data['target'];
 		}
@@ -23,6 +25,9 @@ class Page {
 		return $this->id;
 	}
 	public function getUrl() {
+		if( defined('UKM_HOSTNAME') && UKM_HOSTNAME != 'ukm.no' ) {
+			return str_replace(array('ukm.no', 'egoego.no'), array(UKM_HOSTNAME, 'egoego.dev'), $this->url);
+		}
 		return $this->url;
 	}
 	public function getTitle() {
@@ -36,5 +41,8 @@ class Page {
 	}
 	public function getTargetProperty() {
 		return $this->target == false ? '' : 'target="'. $this->target .'"' ;
+	}
+	public function __toString() {
+		return $this->getUrl();
 	}
 }

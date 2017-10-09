@@ -1,6 +1,34 @@
+/* BODY */
+body {
+	font-family: 'Helvetica Neue',Arial,freesans,sans-serif !important;
+	color: #000;
+	opacity: .85;
+	line-height: 1.5em;
+}
+
 /* FORMS */
+label {
+	margin-bottom: 0;
+}
+label + .help {
+	margin-top: 0;
+}
+.help + .form-control {
+	margin-top: .2em;
+}
+.form-control + .help {
+	margin-top: .4em;
+}
+.help {
+	.small;
+	font-style: italic;
+	margin-bottom: .2em;
+}
+.form-control {
+	border-color: @color-primary-light-light;
+}
 .form-control:focus {
-	border-color: @color-secondary;
+	border-color: @color-primary;
 	transition-duration: 0.20s;
 	transition-timing-function: ease-in;
 	transition-property: border-color;
@@ -15,6 +43,16 @@
     background-color: @color-primary;
     border-color: @color-primary;
     color: #fff !important;
+}
+
+.btn-danger {
+	background: @color-danger-background;
+	border-color: @color-danger-border;
+	color: @color-danger-font !important;
+}
+
+.text-danger {
+	color: @color-danger-border !important;
 }
 
 .btn-outline-primary,
@@ -78,14 +116,45 @@
 	color: #fff !important;
 }
 
+/* FONTS */
+small, 
+.small {
+	font-size: .8em;
+	line-height: 1.2em;
+}
+
+.lead {
+	font-family: "Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+	font-size: 1.33rem;
+	font-weight: 300;
+	line-height: 1.5em;
+}
+
 /* HEADERS */
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 	font-weight: 500;
 	opacity: .85;
 }
+h1 {
+	font-size: 2.2rem;
+	margin-bottom: 1rem;
+	margin-top: 1.2em;
+}
 
+h2 {
+	font-size: 1.4em;
+	margin-top: 1.2em;
+	margin-bottom: .2em;
+}
 
+h3 {
+	margin-top: 1.3em;
+	font-size: 1.15rem;
+	opacity: .9;
+}
+
+/* BADGES */
 .badge-square {
 	border-radius: 0;
 }
@@ -94,10 +163,15 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     border-color: @color-primary;
 }
 
-
-
+/* ALERTS */
 .alert-primary {
 	background-color: @color-primary-light-light;
     border-color: @color-primary-dark;
     color: @color-primary-dark !important;
+}
+
+.alert.alert-danger {
+	background-color: @color-danger-background;
+	border-color: @color-danger-border;
+	color: @color-danger-font !important;
 }

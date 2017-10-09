@@ -16,6 +16,21 @@
 .bold {
   font-weight: bold;
 }
+.click {
+  cursor: pointer;
+}
+.alignleft {
+  float: left;
+}
+.alignright {
+  float: right;
+}
+.aligncenter {
+  text-align: center;
+}
+.uppercase {
+  text-transform: uppercase;
+}
 /* BUTTONS */
 button {
   cursor: pointer;
@@ -43,14 +58,19 @@ img {
   text-align: center;
   margin-top: 1.5em;
   margin-bottom: .5em;
+  color: #452644 !important;
 }
 .menu-item:hover,
+.menu-item a,
 .menu-item a:visited,
 .menu-item a:focus,
-.menu-item a:active,
-.menu-item a:hover {
+.menu-item a:active {
   text-decoration: none;
   color: #452644 !important;
+}
+.menu-item a:hover {
+  text-decoration: none;
+  color: #a65ea5 !important;
 }
 .menu-item .icon {
   font-size: 1.5em;
@@ -90,6 +110,28 @@ img {
 }
 .background-color-primary-light-light {
   background-color: #d3b0d3;
+}
+/** OVERUNDER **/
+.overunder {
+  text-align: center;
+  font-weight: 400;
+  color: inherit;
+  text-rendering: optimizelegibility;
+}
+.overunder .over {
+  text-align: center;
+  line-height: 1.2em;
+  font-size: 1em;
+}
+.overunder .under {
+  text-align: center;
+  font-size: .7em;
+  line-height: 1em;
+}
+.overunder .over small {
+  font-weight: normal;
+  font-size: 14px;
+  margin: 0px;
 }
 /* FILE: navbar.less */
 /*#main_menu_button {
@@ -138,12 +180,12 @@ img {
   font-size: 1.5em;
   font-weight: 100;
   color: #a65ea5;
-  padding-top: 0.35rem;
+  padding-top: 0.75rem;
 }
 .navbar-with-slogan {
   background-repeat: no-repeat;
-  background-position: center center;
-  background-image: url('//ukm.dev/wp-content/themes/UKMresponsive/_GRAFIKK_UKM_NO/img/banner-test.jpg');
+  background-position: center top;
+  background-image: url('//ukm.no/wp-content/themes/UKMresponsive_dev/_GRAFIKK_UKM_NO/img/banner-test.jpg');
   background-size: cover;
 }
 footer {
@@ -156,14 +198,48 @@ footer {
 .sitemap .section .header {
   color: #a65ea5;
   border-bottom: 4px solid #a65ea5;
+  text-transform: uppercase;
 }
-.sitemap .section .header a {
+.sitemap .section .header a,
+.sitemap .section .header a:visited {
   color: #a65ea5;
   text-decoration: none;
 }
+.sitemap a,
+.sitemap a:visited {
+  color: #000;
+}
+/* BODY */
+body {
+  font-family: 'Helvetica Neue', Arial, freesans, sans-serif !important;
+  color: #000;
+  opacity: .85;
+  line-height: 1.5em;
+}
 /* FORMS */
+label {
+  margin-bottom: 0;
+}
+label + .help {
+  margin-top: 0;
+}
+.help + .form-control {
+  margin-top: .2em;
+}
+.form-control + .help {
+  margin-top: .4em;
+}
+.help {
+  font-size: .8em;
+  line-height: 1.2em;
+  font-style: italic;
+  margin-bottom: .2em;
+}
+.form-control {
+  border-color: #d3b0d3;
+}
 .form-control:focus {
-  border-color: #f3d54d;
+  border-color: #a65ea5;
   transition-duration: 0.20s;
   transition-timing-function: ease-in;
   transition-property: border-color;
@@ -182,6 +258,14 @@ a.btn-primary:focus {
   background-color: #a65ea5;
   border-color: #a65ea5;
   color: #fff !important;
+}
+.btn-danger {
+  background: #764175;
+  border-color: #764175;
+  color: #ffffff !important;
+}
+.text-danger {
+  color: #764175 !important;
 }
 .btn-outline-primary,
 .btn-outline-primary:visited {
@@ -238,6 +322,18 @@ a.btn-secondary:focus {
 .btn-outline-secondary:active {
   color: #fff !important;
 }
+/* FONTS */
+small,
+.small {
+  font-size: .8em;
+  line-height: 1.2em;
+}
+.lead {
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 1.33rem;
+  font-weight: 300;
+  line-height: 1.5em;
+}
 /* HEADERS */
 h1,
 h2,
@@ -255,6 +351,22 @@ h6,
   font-weight: 500;
   opacity: .85;
 }
+h1 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  margin-top: 1.2em;
+}
+h2 {
+  font-size: 1.4em;
+  margin-top: 1.2em;
+  margin-bottom: .2em;
+}
+h3 {
+  margin-top: 1.3em;
+  font-size: 1.15rem;
+  opacity: .9;
+}
+/* BADGES */
 .badge-square {
   border-radius: 0;
 }
@@ -262,10 +374,16 @@ h6,
   background-color: #a65ea5;
   border-color: #a65ea5;
 }
+/* ALERTS */
 .alert-primary {
   background-color: #d3b0d3;
   border-color: #764175;
   color: #764175 !important;
+}
+.alert.alert-danger {
+  background-color: #764175;
+  border-color: #764175;
+  color: #ffffff !important;
 }
 /* FILE: post.less */
 /* GRID VIEW: PRETTY */
@@ -298,6 +416,15 @@ h6,
   left: 0;
   width: 100%;
   padding: .5em 10px;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#606060+2,545454+99&0+1,0.65+94 */
+  background: -moz-linear-gradient(top, rgba(96, 96, 96, 0) 1%, rgba(96, 96, 96, 0.01) 2%, rgba(85, 85, 85, 0.65) 94%, rgba(84, 84, 84, 0.65) 99%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(96, 96, 96, 0) 1%, rgba(96, 96, 96, 0.01) 2%, rgba(85, 85, 85, 0.65) 94%, rgba(84, 84, 84, 0.65) 99%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(96, 96, 96, 0) 1%, rgba(96, 96, 96, 0.01) 2%, rgba(85, 85, 85, 0.65) 94%, rgba(84, 84, 84, 0.65) 99%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00606060', endColorstr='#a6545454', GradientType=0);
+  /* IE6-9 */
 }
 .post-grid-pretty > header::before {
   content: "";
@@ -310,9 +437,11 @@ h6,
 .post-grid-pretty > header > h1 {
   font-size: 1.5em;
   margin: 0;
+  margin-top: .5em;
   color: white;
   position: relative;
   z-index: 1;
+  opacity: 1;
 }
 * {
   box-sizing: border-box;
@@ -341,6 +470,9 @@ h6,
   padding-bottom: 66%;
   margin: 0;
   margin-bottom: 0.1em;
+}
+a .post-grid-default {
+  color: #000 !important;
 }
 /* SINGLE POST */
 #the_post_image {
@@ -408,6 +540,31 @@ h6,
   font-size: .9em;
   line-height: 1em;
 }
+blockquote {
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 1.33rem;
+  font-weight: 300;
+  line-height: 1.5em;
+  /* margin-left: 4em; */
+  padding-left: 4em;
+}
+blockquote:before {
+  background-image: url('https://trudymorgancole.files.wordpress.com/2007/08/quotes1.jpg');
+  content: '';
+  background-repeat: no-repeat;
+  display: inline-grid;
+  background-size: contain;
+  float: left;
+  /* margin-right: 20px; */
+  height: 100%;
+  padding: 1.4em;
+  margin-left: -4em;
+  margin-right: 0;
+  opacity: .85;
+}
+cite {
+  font-size: 1rem;
+}
 .card-primary-light {
   background-color: #d3b0d3;
 }
@@ -458,11 +615,15 @@ h6,
   }
 }
 .calendar {
-  border: 3px solid #764175;
-  box-shadow: 5px 5px #452644;
+  /*
+	border: 3px solid @color-primary-dark;
+	box-shadow: 5px 5px @color-primary-dark-dark;
+*/
 }
 .calendar > .month {
-  background: #764175;
+  /*	
+	background: @color-primary-dark;
+*/
 }
 .calendar > .day {
   font-size: x-small;
@@ -503,6 +664,64 @@ h6,
 .no-color > a {
   color: #212529 !important;
 }
+#UKMfavoritt .header {
+  background: #a65ea5;
+  color: #fff;
+}
+#UKMfavoritt .body {
+  border: 2px solid #a65ea5;
+  border-top: none;
+}
+@media (max-width: 767px) {
+  #mitt_UKM {
+    margin-left: Calc(-2em + 2px);
+    margin-right: Calc(-2em + 2px);
+  }
+}
+/* FILE: delta.less */
+.delta-header {
+  border-bottom: 3px solid #a65ea5;
+}
+/*** ***/
+.delta-home {
+  padding-right: 7em;
+  /*padding-top: 2em;*/
+  padding-top: 0.5em;
+  margin-right: 0.2em;
+}
+.delta-home button {
+  display: block;
+  position: absolute;
+  background-color: white;
+  padding-top: 3px;
+  padding-left: 0.6em;
+  padding-right: 0em;
+  border: 1px solid #a65ea5;
+  border-radius: 5px;
+}
+.delta-home img {
+  margin: -1px 2px 2px 5px;
+  height: 28px;
+}
+.delta-danger {
+  /*width: 95%;*/
+}
+ul.innslag li a,
+ul.innslag li a:focus,
+ul.innslag li a:visited {
+  color: #000;
+}
+/*
+.delta-form textarea {
+	border-radius: 2px;
+	border: 1.5px solid @color-primary;
+}
+
+.delta-input {
+	border-radius: 2px;
+	border: 1.5px solid @color-primary;
+}
+*/
 /* FILE: open-sans.less */
 /* FROM http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600,700,300 */
 /* cyrillic-ext */

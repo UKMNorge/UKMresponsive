@@ -21,15 +21,20 @@
 			<div class="col-12 col-md-8 col-lg-9 col-xl-9 float-left mb-4">
 				<div class="mb-4">
 					{% embed "UKMDesignBundle:Fylke:lokalmonstringer_velg.html.twig"|UKMpath %}{% endembed %}
-					<div class="clearfix"></div>
+					<div class="mt-2 center small">
+						<a href="ukm-lokalt/" class="btn btn-outline-primary btn-sm btn-block">
+							Se alle {{ fylke.erOslo() ? 'bydeler' : 'kommuner' }} (kalender)
+						</a>
+					</div>
+
 				</div>
 			</div>
 			
 			<div class="col-12 col-md-4 col-lg-3 float-right">
 				<h3>Hva er UKM?</h3>
-				<p>{{ THEME_CONFIG('hvaerukm').kort }} 
+				<p>{{ THEME_CONFIG.get('hvaerukm').kort }} 
 					<br />
-					<a href="{{ THEME_CONFIG('hvaerukm').lesmer }}" >Les mer</a>
+					<a href="{{ THEME_CONFIG.get('hvaerukm').lesmer }}" >Les mer</a>
 				</p>
 			</div>
 		</div>
@@ -40,7 +45,7 @@
 		<div class="container-fluid">
 			<div class="row align-items-center fylkesfestival-banner py-3 px-3">
 				<div class="col-7 title">
-					UKM-festivalen i {{ fylke.getNavn() }}
+					{{ fylke.getNavn() }}
 				</div>
 				<div class="col-5 date right small">
 					{% if fylke.getStart()|dato('m') == fylke.getStop()|dato('m') %}

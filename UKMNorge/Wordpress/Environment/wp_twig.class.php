@@ -1,4 +1,8 @@
 <?php
+
+use UKMNorge\DesignBundle\Utils\Sitemap;
+use UKMNorge\DesignBundle\Utils\SEO;
+
 require_once('wp_twig.dateFilter.inc.php');
 require_once('wp_twig.ukm.inc.php');
 
@@ -60,6 +64,9 @@ class WP_TWIG {
 		}
 
 		$twig = new Twig_Environment($loader, $environment);
+		$twig->addGlobal('Sitemap', new Sitemap);
+		$twig->addGlobal('SEO', new SEO);
+		$twig->addGlobal('THEME_CONFIG', new WP_CONFIG);
 		
 		// Add dato-filter
 		$filter_dato = new Twig_SimpleFilter('dato', 'WP_TWIG_date');
@@ -75,16 +82,13 @@ class WP_TWIG {
 			
 		// Add asset-function
 		$function_ukmasset = new Twig_SimpleFunction('UKMasset', function( $path ) {
-			return URL_THEME . '/_GRAFIKK_UKM_NO/'. $path;
+			if( 'ukm.dev' == UKM_HOSTNAME ) {
+				return URL_THEME . '/_GRAFIKK_UKM_NO/'. $path;
+			}
+			return '//grafikk.ukm.no/UKMresponsive/'. $path;
 		});
 		$twig->addFunction($function_ukmasset);
-	
-		// Add asset-function
-		$function_theme_config = new Twig_SimpleFunction('THEME_CONFIG', function( $key ) {
-			return WP_CONFIG::get( $key );
-		});
-		$twig->addFunction($function_theme_config);
-			
+
 		// Debug
 		if( self::getDebug() ) {
 			$twig->addExtension( new Twig_Extension_Debug() );
