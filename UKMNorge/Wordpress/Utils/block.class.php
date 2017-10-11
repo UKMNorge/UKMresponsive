@@ -36,44 +36,37 @@ class block {
 	}
 
 	private function _setup_block_post() {
-		$post = get_post( $this->page->ID );
-	
-		if( !is_object( $post ) ) {
-			return;
-		}
-	
-		$this->post = new stdClass();
-		$this->post->ID = $this->page->ID;
-		$this->post->data = new WPOO_Post( $post );
-		$this->title = $this->post->data->title;
-		if( isset( $this->post->data->meta->lead ) )
-			$this->lead = $this->post->data->meta->lead;
+		$this->title = $this->page->title;
+		if( isset( $this->page->lead ) )
+			$this->lead = $this->page->lead;
 		else		
 			$this->lead = null;
-		$this->content = $this->post->data->content;
+		$this->content = $this->page->content;
 	}
 	
 	private function _lead() {
 		$this->_setup_block_post();	
+		$this->template = 'Text';
 		return $this;
 	}
 	
 	private function _lead_center() {
-		$this->_setup_block_post();	
+		$this->_setup_block_post();
+		$this->template = 'TextCenter';
 		return $this;
 	}
 
 	private function _image_oob_left() {
 		$this->_block_jumbo_image('', '');
 		$this->_setup_block_post();	
-		$this->type = 'oob_left';
+		$this->template = 'ImageLeft';
 		return $this;
 	}
 
 	private function _image_oob_right( ) {
 		$this->_block_jumbo_image('', '');
 		$this->_setup_block_post( $block, $post_id );
-		$this->type = 'oob_right';
+		$this->template = 'ImageRight';
 		return $this;
 	}
 	
@@ -87,41 +80,5 @@ class block {
 		$this->title = $title;
 		$this->subtitle = $subtitle;
 		return $this;
-	}
-
-
-	/**
-	 * _container_arrowbox
-	 *
-	 * En container som inneholder en annen blokk (_block_icons)
-	 *
-	 * @param block
-	 *
-	**/
-	private function _container_arrowbox( $content_block ) {
-		$this->type = 'container';
-		$this->container = 'arrowbox';
-		$this->contained = $content_block;
-		
-		return $block;
-	}
-	
-	/**
-	 * _block_icons
-	 *
-	 * Kun mulig å sette opp via hardkodet oppsett pga $icons som er et array ikoner
-	 *
-	**/
-	private function _block_icons( $anchor, $icons, $title=false, $lead=false ) {
-		$block = new stdClass();
-		$block->anchor = $anchor;
-		$block->type = 'icons';
-		$block->icons = $icons;
-		if( $title ) 
-			$block->title = $title;
-		if( $lead ) 
-			$block->lead = $lead;
-		
-		return $block;
 	}
 }

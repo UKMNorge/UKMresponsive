@@ -216,6 +216,9 @@ body {
   opacity: .85;
   line-height: 1.5em;
 }
+p {
+  line-height: 1.5em;
+}
 /* FORMS */
 label {
   margin-bottom: 0;
@@ -539,6 +542,41 @@ a .post-grid-default {
 .madeby .contact .info .title {
   font-size: .9em;
   line-height: 1em;
+}
+/* FILE: page.less */
+.UKMblock.UKMblockImage .image {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 70vh;
+}
+.UKMblock {
+  margin-bottom: 10vh;
+  margin-top: 10vh;
+  font-size: 1.3em;
+}
+.UKMblock p {
+  font-weight: 200;
+}
+@media (min-width: 768px) {
+  .UKMblock {
+    font-size: 2em;
+    font-weight: 100;
+  }
+}
+.UKMblock.UKMblockImage {
+  min-height: 80vh;
+}
+.UKMblock:not(.UKMblockImage) {
+  min-height: 20vh;
+}
+.UKMblock blockquote {
+  font-size: 1.2em;
+}
+@media (min-width: 768px) {
+  .UKMblock blockquote {
+    font-size: .9em;
+  }
 }
 blockquote {
   font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;

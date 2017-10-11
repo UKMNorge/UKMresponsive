@@ -11,8 +11,13 @@
 	</script>
 {% endblock %}
 
-
 {% block content %}
+	{% for section in page.getPageBlocks().getAll() %}
+		{% embed ("UKMDesignBundle:PageBlock:"~ section.template ~".html.twig")|UKMpath with{ block: section } %}{% endembed %}
+	{% endfor %}
+{% endblock %}
+
+{% block content_real %}
 	<div class="container-fluid">
 		<div class="row-flex">
 			{# FINN NÆRMESTE UKM ELLER "FAVORITT-UKM"-BOKS #}
@@ -24,9 +29,9 @@
 
 			{# HVA ER UKM? #}
 			<div class="col-12 col-md-7 float-left mt-3 mb-2">
-				<p class="lead">
-					{{ page.getPage().getContentBeforeMore()|raw }}
-				</p>
+				<div class="lead">
+					{{ page.getPage().content|raw }}
+				</div>
 				<p class="d-block d-md-none">
 					<a href="#" class="UKMtoggleShow phoneReadMoreUKM" data-target="phoneReadMoreUKM">Les mer om UKM</a>
 				</p>
