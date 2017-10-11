@@ -26,11 +26,11 @@ UKM:
 #            url: //ukm.no/unge-arrangører/
 #            title: Unge arrangører
 #            description: 
-#        - 
-#            id: ambassadorer
-#            url: //ambassador.ukm.no/
-#            title: Ambassadører
-#            description: Bli kjent med oss
+        - 
+            id: ambassadorer
+            url: //ambassador.ukm.no/
+            title: Ambassadører
+            description: Bli kjent med oss
 #        - 
 #            id: urg
 #            url: //ukm.no/urg/
