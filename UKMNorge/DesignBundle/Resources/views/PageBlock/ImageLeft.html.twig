@@ -1,9 +1,1 @@
-<div class="container-fluid UKMblock UKMblockImage UKMblockImageLeft">
-	<div class="row align-items-center">
-		<div class="col-12 col-sm-7 px-0 image" style="background-image: url('{{ block.image.xs }}');">
-		</div>
-		<div class="col-12 col-sm-5 text">
-			{{ block.content|raw }}
-		</div>
-	</div>
-</div>
+{% embed "UKMDesignBundle:PageBlock:Image.html.twig"|UKMpath with {align: 'left'} %}{% endembed %}

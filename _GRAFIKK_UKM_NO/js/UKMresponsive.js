@@ -126,8 +126,9 @@ $(document).on('UKMresponsiveAJAX:fail:favoritt', function(e, JSONresponse) {
 });
 // SUCCESS
 $(document).on('UKMresponsiveAJAX:success:favoritt', function(e, JSONresponse) {
-	$( '#mitt_UKM' ).html( JSONresponse.html );
-	$( '#UKMfavoritt').fadeIn(200);
+	$( '.mitt_UKM' ).html( JSONresponse.html );
+	$( '.mitt_UKM' ).html( JSONresponse.html );
+	$( '.UKMfavoritt').fadeIn(200);
 });
 
 

@@ -1,8 +1,1 @@
-<div class="container-fluid UKMblock UKMblockImage UKMblockImageRight">
-	<div class="row align-items-center">
-		<div class="col-12 col-lg-5 text">
-			{{ block.content|raw }}
-		</div>
-		<div class="col-12 col-lg-7 px-0 image" style="background-image: url('{{ block.image.xs }}');"></div>
-	</div>
-</div>
+{% embed "UKMDesignBundle:PageBlock:Image.html.twig"|UKMpath with {align: 'right'} %}{% endembed %}
