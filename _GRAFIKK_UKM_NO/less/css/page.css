@@ -1,0 +1,7 @@
+/* FILE: page.less */
+.UKMblock .image {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 80vh;
+}

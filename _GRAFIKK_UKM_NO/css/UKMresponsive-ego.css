@@ -216,6 +216,9 @@ body {
   opacity: .85;
   line-height: 1.5em;
 }
+p {
+  line-height: 1.5em;
+}
 /* FORMS */
 label {
   margin-bottom: 0;
@@ -540,6 +543,47 @@ a .post-grid-default {
   font-size: .9em;
   line-height: 1em;
 }
+/* FILE: page.less */
+.UKMblock.UKMblockImage .image {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.UKMblock {
+  margin-bottom: 10vh;
+  margin-top: 10vh;
+  font-size: 1.3em;
+  min-height: 20vh;
+}
+.UKMblock p {
+  font-weight: 200;
+}
+@media (min-width: 768px) {
+  .UKMblock {
+    font-size: 2em;
+    font-weight: 100;
+  }
+}
+.UKMblock blockquote {
+  font-size: 1.2em;
+}
+@media (min-width: 768px) {
+  .UKMblock {
+    font-size: 1.5em;
+  }
+  .UKMblock blockquote {
+    font-size: .9em;
+  }
+}
+@media (max-width: 767px) {
+  .UKMblock .image {
+    height: 45vh;
+  }
+}
+.UKMblock .text > h1,
+.UKMblock .text > h2 {
+  margin-top: 0em;
+}
 blockquote {
   font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: 1.33rem;
@@ -658,18 +702,18 @@ cite {
   color: rgba(0, 0, 0, 0.65);
   margin-bottom: .5em;
 }
-#UKMfavoritt .header {
+.UKMfavoritt .header {
   background: #151e3f;
   color: #fff;
 }
-#UKMfavoritt .body {
+.UKMfavoritt .body {
   border: 2px solid #151e3f;
   border-top: none;
 }
 @media (max-width: 767px) {
-  #mitt_UKM {
-    margin-left: Calc(-2em + 2px);
-    margin-right: Calc(-2em + 2px);
+  .mitt_UKM {
+    margin-left: Calc(-1em + 1px);
+    margin-right: Calc(-1em + 1px);
   }
 }
 /* FILE: delta.less */

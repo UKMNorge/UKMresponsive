@@ -1,83 +1,5 @@
-derdubor:
-    url: //ukm.no/derdubor/
-    title: Der du bor
-    pages:
-        - 
-            id: akershus
-            url: //ukm.no/akershus/
-            title: Akershus
-        - 
-            id: aust-agder
-            url: //ukm.no/aust-agder/
-            title: Aust-Agder
-        - 
-            id: buskerud
-            url: //ukm.no/buskerud/
-            title: Buskerud
-        - 
-            id: finnmark
-            url: //ukm.no/finnmark/
-            title: Finnmark
-        - 
-            id: hedmark
-            url: //ukm.no/hedmark/
-            title: Hedmark
-        - 
-            id: hordaland
-            url: //ukm.no/hordaland/
-            title: Hordaland
-        - 
-            id: moreogromsdal
-            url: //ukm.no/moregoromsdal/
-            title: Møre og Romsdal
-        - 
-            id: nordtrondelag
-            url: //ukm.no/nord-trondelag/
-            title: Nord-Trøndelag
-        - 
-            id: nordland
-            url: //ukm.no/nordland/
-            title: Nordland
-        - 
-            id: oslo
-            url: //ukm.no/oslo/
-            title: Oslo
-        - 
-            id: rogaland
-            url: //ukm.no/rogaland/
-            title: Rogaland
-        - 
-            id: sognogfjordane
-            url: //ukm.no/sognogfjordane/
-            title: Sogn og Fjordane
-        - 
-            id: sortrondelag
-            url: //ukm.no/sor-trondelag/
-            title: Sør-Trøndelag
-        - 
-            id: telemark
-            url: //ukm.no/telemark/
-            title: Telemark
-        - 
-            id: troms
-            url: //ukm.no/troms/
-            title: Troms
-        - 
-            id: vestagder
-            url: //ukm.no/vest-agder/
-            title: Vest-Agder
-        - 
-            id: vestfold
-            url: //ukm.no/vestfold/
-            title: Vestfold
-        - 
-            id: ostfold
-            url: //ukm.no/ostfold/
-            title: Østfold
-
-
 UKM:
-    url: /
+    url: //ukm.no/
     title: UKM
     #color: d4c8e4
     pages:
@@ -86,92 +8,70 @@ UKM:
             url: //ukm.no/
             title: Forsiden
             description: Ung kultur møtes
+        -
+            id: derdubor
+            url: //ukm.no/derdubor/
+            title: Der du bor
         - 
             id: hvaer
             url: //ukm.no/hva-er/
             title: Hva er UKM?
             description: Alt om Ung Kultur Møtes
-        - 
-            id: hvameldepa
-            url: //ukm.no/hva-kan-jeg-delta-med/
-            title: Hva kan du delta med?
-            description: 
-        - 
-            id: ua
-            url: //ukm.no/unge-arrangører/
-            title: Unge arrangører
-            description: 
+#        - 
+#            id: hvameldepa
+#            url: //ukm.no/hva-kan-jeg-delta-med/
+#            title: Hva kan du delta med?
+#        - 
+#            id: ua
+#            url: //ukm.no/unge-arrangører/
+#            title: Unge arrangører
+#            description: 
         - 
             id: ambassadorer
             url: //ambassador.ukm.no/
             title: Ambassadører
             description: Bli kjent med oss
-        - 
-            id: urg
-            url: //ukm.no/urg/
-            title: URG (ung ressursgruppe)
-            description: 
+#        - 
+#            id: urg
+#            url: //ukm.no/urg/
+#            title: URG (ung ressursgruppe)
+#            description: 
         - 
             id: ukmere
-            url: //ukm.no/ukmere/
+            url: //ukm.no/blog/category/kjente-ukmere/
             title: Kjente UKMere
             description: 
-        - 
-            id: tidligerear
-            url: //ukm.no/tidligere-ar/
-            title: UKM-arrangementer fra 2001 i dag
-            description: Bli kjent med oss
         - 
             id: pressebilder
             url: //www.flickr.com/photos/ukm/albums
             title: UKM på flickr
+            target: _blank
+        - 
+            id: tidligerear
+            url: //ukm.no/tidligere-ar/
+            title: UKM-arrangement 2001-2017
+            description: Bli kjent med oss
 
-
-
-ukmtv:
-    url: //tv.ukm.no
-    title: UKM-TV
-    pages:
-        -
-            id: tvsok
-            url: //tv.ukm.no/search/
-            title: Søk
-        -
-            id: festivaltv
-            url: //tv.ukm.no/festivalen/
-            title: UKM-festivalen
-        -
-            id: fylketv
-            url: //tv.ukm.no/fylke/
-            title: Fylkesfestivalene
-        -
-            id: tvsok
-            url: //tv.ukm.no/lokal/
-            title: Lokalarrangementene
-            
-
-
-            
 egoego:
-    url: //ukm.no/egoego/
+    url: //egoego.no/
     title: Ego
     pages:
         - 
             id: forsiden
-            url: //ukm.no/egoego/
+            url: //egoego.no/
             title: Forsiden
             description:
         - 
             id: egoom
-            url: //ukm.no/egoego/om-oss/
+            url: //egoego.no/om-oss/
             title: Hva er ego?
             description:
         -
             id: egokontakt
-            url: //ukm.no/egoego/kontakt/
+            url: //egoego.no/kontakt/
             title: Kontakt oss
-            
-            
+
+
 organisasjonen:
     url: //org.ukm.no/
     title: Organisasjonen
@@ -212,6 +112,29 @@ organisasjonen:
             id: creativecommons
             url: //org.ukm.no/vilkar/
             title: Vilkår for bruk av innhold
+
+
+ukmtv:
+    url: //tv.ukm.no
+    title: UKM-TV
+    pages:
+        -
+            id: tvsok
+            url: //tv.ukm.no/search/
+            title: Søk
+        -
+            id: festivaltv
+            url: //tv.ukm.no/festivalen/
+            title: UKM-festivalen
+        -
+            id: fylketv
+            url: //tv.ukm.no/fylke/
+            title: Fylkesfestivalene
+        -
+            id: tvsok
+            url: //tv.ukm.no/lokal/
+            title: Lokalarrangementene
+
 arrangorer:
     url: //ukm.no/wp-login.php
     title: UKM-arrangører
@@ -227,6 +150,6 @@ english:
     pages:
         - 
             id: about
-            url: //org.ukm.no/about/
+            url: //ukm.no/about-ukm/
             title: About UKM
 

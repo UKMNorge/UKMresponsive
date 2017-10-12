@@ -97,7 +97,10 @@ $(document).on('click', '.UKMtoggleShow', function(e){
 	
 	var target = $(this).attr('data-target');
 	$(document).trigger('pre_UKMtoggleShow#'+ target);
-	$('#' + target + '.UKMtoggleContent').slideDown(function(){$(document).trigger('UKMtoggleShow#'+ target);});
+	$('#' + target + '.UKMtoggleContent').slideDown(function(){
+		$(document).trigger('UKMtoggleShow#'+ target);
+		AOS.refresh();	
+	});
 	$('.' + target + '.UKMtoggleShow').hide();
 	$('.' + target + '.UKMtoggleHide').fadeIn();
 });
@@ -123,8 +126,9 @@ $(document).on('UKMresponsiveAJAX:fail:favoritt', function(e, JSONresponse) {
 });
 // SUCCESS
 $(document).on('UKMresponsiveAJAX:success:favoritt', function(e, JSONresponse) {
-	$( '#mitt_UKM' ).html( JSONresponse.html );
-	$( '#UKMfavoritt').fadeIn(200);
+	$( '.mitt_UKM' ).html( JSONresponse.html );
+	$( '.mitt_UKM' ).html( JSONresponse.html );
+	$( '.UKMfavoritt').fadeIn(200);
 });
 
 
@@ -167,4 +171,13 @@ $(document).on('click','#saveAsMine', function(e){
 		$('#saveAsMineExplanation').slideUp();
 		$(this).find('.text').text( $(this).find('.text').text().replace('lagret', 'lagre') );	
 	}
+});
+
+
+/**
+ * AOS - Animate On Scroll
+ *
+**/
+$(document).ready(function(){
+	AOS.init();
 });

@@ -20,7 +20,7 @@ class blocks {
 	
 	private function _load() {
 		$blocks = array();
-		$subpages = get_pages( array('child_of' => $this->getPageID(), 'sort_column' => 'menu_order' ) );
+		$subpages = get_pages( array('child_of' => $this->getPageID(), 'sort_column' => 'menu_order', 'post_status' => 'publish' ) );
 		foreach( $subpages as $page ) {
 			$block_type = get_post_meta( $page->ID, 'UKM_block', true );
 			if( !$block_type ) {

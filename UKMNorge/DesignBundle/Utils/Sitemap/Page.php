@@ -26,7 +26,7 @@ class Page {
 	}
 	public function getUrl() {
 		if( defined('UKM_HOSTNAME') && UKM_HOSTNAME != 'ukm.no' ) {
-			return str_replace('ukm.no', UKM_HOSTNAME, $this->url);
+			return str_replace(array('ukm.no', 'egoego.no'), array(UKM_HOSTNAME, 'egoego.dev'), $this->url);
 		}
 		return $this->url;
 	}

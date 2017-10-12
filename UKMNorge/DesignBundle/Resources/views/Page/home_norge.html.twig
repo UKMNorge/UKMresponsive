@@ -11,53 +11,64 @@
 	</script>
 {% endblock %}
 
+{% block blah %}
+	{% for section in page.getPageBlocks().getAll() %}
+		{% embed ("UKMDesignBundle:PageBlock:"~ section.template ~".html.twig")|UKMpath with{ block: section } %}{% endembed %}
+	{% endfor %}
+{% endblock %}
 
 {% block content %}
 	<div class="container-fluid">
 		<div class="row-flex">
 			{# FINN NÆRMESTE UKM ELLER "FAVORITT-UKM"-BOKS #}
-			<div class="col-12 col-md-5 col-lg-5 mb-3 float-right">
+			<div class="col-12 col-md-5 mb-3 float-right">
 				<div class="right">
-					<a href="{{ Sitemap.getPage('derdubor') }}" class="btn btn-primary">Finn nærmeste UKM</a>
+					<a href="{{ Sitemap.getPage('UKM','derdubor') }}" class="btn btn-primary">Finn nærmeste UKM</a>
 				</div>
+				<div class="d-none d-md-block mt-3 mitt_UKM"></div>
 			</div>
 
 			{# HVA ER UKM? #}
 			<div class="col-12 col-md-7 float-left mt-3 mb-2">
-				<p class="lead">
-					{{ page.getPage().getContentBeforeMore()|raw }}
-				</p>
-				<p class="d-block d-md-none">
+				<div class="lead">
+					{{ page.getPage().content|raw }}
+				</div>
+				<p>
 					<a href="#" class="UKMtoggleShow phoneReadMoreUKM" data-target="phoneReadMoreUKM">Les mer om UKM</a>
 				</p>
 			</div>
-
-			<div class="col-12 col-md-7 mb-3 float-left">
-				<div class="UKMtoggleContent" style="display:none" id="phoneReadMoreUKM">
-					{{ page.getPage().getContentAfterMore()|raw }}
+		</div>
+	</div>
+	
+	<div class="clearfix"></div>
+	
+	<div class="UKMtoggleContent" style="display:none" id="phoneReadMoreUKM">
+		{% for section in page.getPageBlocks().getAll() %}
+			{% embed ("UKMDesignBundle:PageBlock:"~ section.template ~".html.twig")|UKMpath with{ block: section } %}{% endembed %}
+		{% endfor %}
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
 					<p>
 						<a href="#" class="UKMtoggleHide phoneReadMoreUKM" data-target="phoneReadMoreUKM">Lukk</a>
 					</p>
 				</div>
 			</div>
-
-			<div class="col-12 col-lg-5 mb-3 float-right">
-				<div id="mitt_UKM"></div>
+		</div>
+	</div>
+	
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-12 d-block d-md-none">
+				<div class="mitt_UKM"></div>
 			</div>
 
-			<div class="col-12 col-md-7 mb-3 float-left">
-				<div class="d-none d-md-block">
-					{{ page.getPage().getContentAfterMore|raw }}
-				</div>
-			</div>
-
-			{# NYHETER #}
-			<div class="col-12 col-md-5 float-right">
-				<h4 class="mt-3">Nyheter fra UKM</h4>
+			<div class="col-12 px-4">
+				<h4 class="mt-5">Nyheter fra UKM</h4>
 				<div class="row">
 					{% for post in posts.getAll() %}
-						<div class="col-6">
-							{% embed "Post:grid-default.html.twig"|UKMpath with { post: post } %}{% endembed %}
+						<div class="col-12 col-sm-6">
+							{% embed "Post:grid-pretty.html.twig"|UKMpath with { post: post, showLead:true } %}{% endembed %}
 						</div>
 					{% endfor %}
 				</div>
