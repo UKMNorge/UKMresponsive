@@ -16,21 +16,25 @@ class SEOService extends SEO {
 		parent::setImage( $SEOImage );
 
 		// SET DEFAULTS (UKMNorge/DesignBundle/config/parameters.yml)
-		foreach( $SEOdefaults as $key => $val ) {
-			if( !is_array( $val ) ) {
-				$function = 'set' . ucfirst( $key );
-				if( method_exists('UKMNorge\DesignBundle\Utils\SEO', $function ) ) {
-					parent::$function( $val );
+		if( is_array( $SEOdefaults ) ) {
+			foreach( $SEOdefaults as $key => $val ) {
+				if( !is_array( $val ) ) {
+					$function = 'set' . ucfirst( $key );
+					if( method_exists('UKMNorge\DesignBundle\Utils\SEO', $function ) ) {
+						parent::$function( $val );
+					}
 				}
 			}
 		}
 
 		// SET APP DEFAULTS (App/config/parameters.yml)
-		foreach( $seoAppDefault as $key => $val ) {
-			if( !is_array( $val ) ) {
-				$function = 'set' . ucfirst( $key );
-				if( method_exists('UKMNorge\DesignBundle\Utils\SEO', $function ) ) {
-					parent::$function( $val );
+		if( is_array( $seoAppDefault ) ) {
+			foreach( $seoAppDefault as $key => $val ) {
+				if( !is_array( $val ) ) {
+					$function = 'set' . ucfirst( $key );
+					if( method_exists('UKMNorge\DesignBundle\Utils\SEO', $function ) ) {
+						parent::$function( $val );
+					}
 				}
 			}
 		}
