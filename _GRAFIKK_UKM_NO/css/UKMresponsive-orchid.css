@@ -543,6 +543,10 @@ a .post-grid-default {
   font-size: .9em;
   line-height: 1em;
 }
+/*
+ * PLAY ICON FOR FEATURED IMAGE
+ * (video on top)
+**/
 .featured-image-play {
   position: absolute;
   width: 5em;
@@ -551,7 +555,9 @@ a .post-grid-default {
   opacity: 0.92;
 }
 .post-grid-default .featured-image-play {
-  top: Calc( 45% - 5em );
+  top: 14%;
+  width: 20%;
+  left: 40%;
 }
 /* FILE: page.less */
 .UKMblock.UKMblockImage .image {
