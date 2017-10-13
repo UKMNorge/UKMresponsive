@@ -32,6 +32,25 @@ if ( isset( $WP_TWIG_DATA['post']->meta->ukm_ma ) ) {
 }
 $authorlist = rtrim( $authorlist, ', ');
 
+// VIDEO ON TOP (FEATURED VIDEO)
+if ( isset( $WP_TWIG_DATA['post']->meta->video_on_top ) ) {
+	require_once('UKM/tv.class.php');
+	$selected = $WP_TWIG_DATA['post']->meta->video_on_top;
+	if($selected == 'egendefinert') {
+		$url = $WP_TWIG_DATA['post']->meta->video_on_top_URL;
+		// Find ID from URL
+		$url = rtrim($url, '/').'/';
+		$url = explode ('/', $url);
+		$url = $url[count($url)-2];
+		$url = explode ('-', $url);
+		$selected = $url[0]; 
+	}
+	// Finn tv-objektet.
+	$tv = new TV($selected);
+	$WP_TWIG_DATA['featured_video'] = $tv->embedCodeVH();
+}
+
+
 SEO::setType('article');
 SEO::setTitle( $WP_TWIG_DATA['post']->title );
 SEO::setDescription( addslashes( preg_replace( "/\r|\n/", "", strip_tags( $WP_TWIG_DATA['post']->lead ) ) ) );
