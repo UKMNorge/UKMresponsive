@@ -9,6 +9,17 @@ add_theme_support( 'menus' );
 
 add_action( 'wp_ajax_nopriv_UKMresponsive', 'UKMresponsive_ajax' );
 add_action( 'wp_ajax_UKMresponsive', 'UKMresponsive_ajax' );
+add_action( 'after_setup_theme', 'UKMresponsive_imageSizes' );
+function UKMresponsive_imageSizes() {
+	add_image_size( 'lite', 350, 350 );
+	add_image_size( 'forsidebilde', 1800, 1800 );
+
+	update_option( 'medium_size_w', 600 );
+	update_option( 'medium_size_h', 600 );
+
+	update_option( 'large_size_w', 1200 );
+	update_option( 'large_size_h', 1200 );
+}
 
 define('PATH_THEME', TEMPLATEPATH . '/');
 define('PATH_DESIGNBUNDLE', PATH_THEME .'UKMNorge/DesignBundle/');
