@@ -17,7 +17,7 @@
 		{# STYLES #}
 		<link href="{{ UKMasset("css/bootstrap.min.css") }}" rel="stylesheet" />
 		<link href="{{ UKMasset("css/UKMresponsive"~ (THEME is defined and THEME is not empty ? '-'~THEME : '') ~".css") }}" rel="stylesheet" />
-		<link href="{{ UKMasset("css/aos.css") }}" rel="stylesheet" />
+{#		<link href="{{ UKMasset("css/aos.css") }}" rel="stylesheet" /> #}
 		{% block css %}{% endblock %}
 		
 		{# SCRIPTS #}
@@ -28,7 +28,7 @@
 		<script type="text/javascript" src="{{ UKMasset("js/jquery-autoshrink.js") }}"></script>
 		<script type="text/javascript" src="{{ UKMasset("js/cookie.js") }}"></script>
 		<script type="text/javascript" src="{{ UKMasset("js/UKMresponsive.js") }}"></script>
-		<script type="text/javascript" src="{{ UKMasset("js/aos.js") }}"></script>
+{#		<script type="text/javascript" src="{{ UKMasset("js/aos.js") }}"></script> #}
 		{% block javascripts %}{% endblock %}
 		
 		<script>(function(d, s, id) {
