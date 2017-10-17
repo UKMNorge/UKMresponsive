@@ -2,6 +2,7 @@
 
 use UKMNorge\DesignBundle\Utils\Sitemap;
 use UKMNorge\DesignBundle\Utils\SEO;
+use UKMNorge\DesignBundle\Utils\SEOImage;
 
 require_once('header.php');
 
@@ -50,6 +51,19 @@ if ( isset( $WP_TWIG_DATA['post']->meta->video_on_top ) ) {
 	$WP_TWIG_DATA['featured_video'] = $tv->embedCodeVH();
 }
 
+$image = $WP_TWIG_DATA['post']->image;
+
+if( is_object( $image ) ) {
+	if( isset( $image->forsidebilde ) ) {
+		$image = $image->forsidebilde;
+	} elseif( isset( $image->large ) ) {
+		$image = $image->large;
+	} else {
+		// $image = $image;
+	}
+	$SEOimage = new SEOimage( $image->src, $image->width, $image->height );
+	SEO::setImage( $SEOimage );
+}
 
 SEO::setType('article');
 SEO::setTitle( $WP_TWIG_DATA['post']->title );
