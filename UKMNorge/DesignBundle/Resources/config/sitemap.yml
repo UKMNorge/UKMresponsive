@@ -92,14 +92,14 @@ organisasjonen:
             id: ukmsjefen
             url: //org.ukm.no/category/ukmsjefen/
             title: UKM-sjefen
-        - 
-            id: historikk
-            url: //org.ukm.no/historikk/
-            title: Historikk
-        - 
-            id: verdier
-            url: //org.ukm.no/verdier/
-            title: Verdier
+#        - 
+#            id: historikk
+#            url: //org.ukm.no/historikk/
+#            title: Historikk
+#        - 
+#            id: verdier
+#            url: //org.ukm.no/verdier/
+#            title: Verdier
         - 
             id: grafikk
             url: //org.ukm.no/grafisk-profil/
