@@ -177,8 +177,7 @@ $(document).on('click','#saveAsMine', function(e){
 /**
  * AOS - Animate On Scroll
  *
-
+**/
 $(document).ready(function(){
 	AOS.init();
 });
-**/
