@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('/wp-content/themes/UKMresponsive/_GRAFIKK_UKM_NO/fonts/icomoon.eot?bm9egg');
-  src:  url('/wp-content/themes/UKMresponsive/_GRAFIKK_UKM_NO/fonts/icomoon.eot?bm9egg#iefix') format('embedded-opentype'),
-    url('/wp-content/themes/UKMresponsive/_GRAFIKK_UKM_NO/fonts/icomoon.ttf?bm9egg') format('truetype'),
-    url('/wp-content/themes/UKMresponsive/_GRAFIKK_UKM_NO/fonts/icomoon.woff?bm9egg') format('woff'),
-    url('/wp-content/themes/UKMresponsive/_GRAFIKK_UKM_NO/fonts/icomoon.svg?bm9egg#icomoon') format('svg');
+  src:  url('//grafikk.ukm.no/fonts/icomoon.eot?bm9egg');
+  src:  url('//grafikk.ukm.no/fonts/icomoon.eot?bm9egg#iefix') format('embedded-opentype'),
+    url('//grafikk.ukm.no/fonts/icomoon.ttf?bm9egg') format('truetype'),
+    url('//grafikk.ukm.no/fonts/icomoon.woff?bm9egg') format('woff'),
+    url('//grafikk.ukm.no/fonts/icomoon.svg?bm9egg#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
