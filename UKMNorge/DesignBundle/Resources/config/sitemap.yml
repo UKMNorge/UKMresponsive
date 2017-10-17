@@ -53,22 +53,22 @@ UKM:
             description: Bli kjent med oss
 
 egoego:
-    url: //egoego.no/
+    url: //ego.ukm.no/
     title: Ego
     pages:
         - 
             id: forsiden
-            url: //egoego.no/
+            url: //ego.ukm.no/
             title: Forsiden
             description:
 #        - 
 #            id: egoom
-#            url: //egoego.no/om-oss/
+#            url: //ego.ukm.no/om-oss/
 #            title: Hva er ego?
 #            description:
         -
             id: egokontakt
-            url: //egoego.no/kontakt/
+            url: //ego.ukm.no/kontakt/
             title: Kontakt oss
 
 
