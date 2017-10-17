@@ -1,3 +1,7 @@
+// @codekit-prepend "jquery-3.2.1.min.js";
+// @codekit-prepend "jquery-autoshrink.js";
+// @codekit-prepend "cookie.js";
+// @codekit-prepend "aos.js";
 /**
  * MAIN MENU BUTTON TOGGLE
 **/
