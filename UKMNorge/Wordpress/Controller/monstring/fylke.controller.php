@@ -8,7 +8,7 @@ fylkeController::init( get_option('pl_id') );
 
 // NÅR STARTER PÅMELDINGEN
 $now = new DateTime('now');
-$omToUker = new DateTime('now + 2 weeks');
+$omToUker = new DateTime('now + 3 weeks');
 
 /**
  * SET STATE
