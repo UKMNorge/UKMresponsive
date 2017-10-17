@@ -391,6 +391,13 @@ h3 {
   border-color: #7d0e4e;
   color: #ffffff !important;
 }
+/* BACKWARDS COMPAT */
+.pull-right {
+  float: right;
+}
+.pull-left {
+  float: left;
+}
 /* FILE: post.less */
 /* GRID VIEW: PRETTY */
 .post {
