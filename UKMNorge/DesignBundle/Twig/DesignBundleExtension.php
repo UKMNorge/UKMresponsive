@@ -28,7 +28,7 @@ class DesignBundleExtension extends \Twig_Extension
 
 	public function UKMasset($path)
 	{
-		if ( defined('UKM_HOSTNAME') && UKM_HOSTNAME != 'ukm.dev' ) {
+		if ( defined('UKM_HOSTNAME') && UKM_HOSTNAME == 'ukm.dev' ) {
 			return '//ukm.dev/wp-content/themes/UKMresponsive/_GRAFIKK_UKM_NO/'. $path;
 		}
 		return '//grafikk.ukm.no/'. $path;
