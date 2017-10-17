@@ -81,7 +81,7 @@ else {
 	#fylkeController::setState('pre_pamelding'); // DEV
 	#fylkeController::setState('pamelding'); // DEV
 	#fylkeController::setState('lokalmonstringer'); // DEV
-	fylkeController::setState('fylkesmonstring'); // DEV
+	#fylkeController::setState('fylkesmonstring'); // DEV
 
 
 
