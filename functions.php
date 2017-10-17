@@ -13,6 +13,7 @@ add_action( 'after_setup_theme', 'UKMresponsive_imageSizes' );
 function UKMresponsive_imageSizes() {
 	add_image_size( 'lite', 350, 350 );
 	add_image_size( 'forsidebilde', 1800, 1800 );
+	add_image_size( 'veldigstor', 3000, 3000 );
 
 	update_option( 'medium_size_w', 600 );
 	update_option( 'medium_size_h', 600 );
