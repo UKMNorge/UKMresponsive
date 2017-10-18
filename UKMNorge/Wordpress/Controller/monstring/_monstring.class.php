@@ -29,7 +29,7 @@ abstract class monstringController {
 	
 	
 	public static function _loadPameldingStarter() {
-		$configDatePameldingStarter = str_replace('YYYY', self::getMonstring()->getSesong(), WP_CONFIG::get('pamelding')['starter'] );
+		$configDatePameldingStarter = str_replace('YYYY', (self::getMonstring()->getSesong()-1), WP_CONFIG::get('pamelding')['starter'] );
 		self::$pameldingStarter = DateTime::createFromFormat( 'd.m.Y H:i:s', $configDatePameldingStarter .' 00:00:00' );
 	}
 	
