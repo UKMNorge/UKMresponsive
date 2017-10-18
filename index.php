@@ -5,8 +5,6 @@ use UKMNorge\DesignBundle\Utils\SEO;
 
 require_once('header.php');
 
-echo is_front_page();
-
 echo WP_TWIG::render( 'Page/meny', $WP_TWIG_DATA );
 wp_footer();
 if(is_user_logged_in() ) {
