@@ -119,21 +119,25 @@ ukmtv:
     title: UKM-TV
     pages:
         -
-            id: tvsok
+            id: sok
             url: //tv.ukm.no/search/
             title: Søk
         -
-            id: festivaltv
+            id: festival
             url: //tv.ukm.no/festivalen/
             title: UKM-festivalen
         -
-            id: fylketv
+            id: fylke
             url: //tv.ukm.no/fylke/
-            title: Fylkesfestivalene
+            title: Fylkesfestivaler
         -
-            id: tvsok
+            id: lokal
             url: //tv.ukm.no/lokal/
-            title: Lokalarrangementene
+            title: Lokalmønstringer
+        -
+            id: info
+            url: //tv.ukm.no/info/
+            title: Infovideoer
 
 arrangorer:
     url: //ukm.no/wp-login.php
