@@ -31,7 +31,7 @@ if( $WP_TWIG_DATA['posts']->getPaged() ) {
 	fylkeController::setState('arkiv');
 }
 // 2: Påmeldingen har ikke åpnet
-elseif( fylkeController::erPameldingStartet() ) {
+elseif( !fylkeController::erPameldingStartet() ) {
 	fylkeController::setState('pre_pamelding');
 }
 // 3: Fylkesmønstringen starter i løpet av 2 uker
