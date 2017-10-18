@@ -10,10 +10,12 @@
 			<div class="col-12 col-md-8 float-left">
 				{# PÅMELDINGEN ER IKKE STARTET, VIS SMS-REMINDER-SKJEMA #}
 				{% if state == 'pre_pamelding' %}
-					<p class="lead">
-						Vil du ha en gratis sms-påminnelse når påmeldingen åpner {{ THEME_CONFIG.get('pamelding').startdato }}?
-					</p>
-					{% embed "UKMDesignBundle:Husk:form.html.twig"|UKMpath %}{% endembed %}
+					<div class="my-4">
+						<p class="lead">
+							Vil du ha en gratis sms-påminnelse når påmeldingen åpner {{ THEME_CONFIG.get('pamelding').startdato }}?
+						</p>
+						{% embed "UKMDesignBundle:Husk:form.html.twig"|UKMpath %}{% endembed %}
+					</div>
 				{% elseif state == 'pamelding' %}
 					{% if not monstring.erRegistrert() %}
 						<p class="lead">
@@ -58,7 +60,7 @@
 			
 			<div class="col-12 col-md-8 float-left">
 				{% if harInfoPage %}
-					<div class="mb-3">
+					<div class="mb-4">
 						{{ infoPage.getPage().content|raw }}
 					</div>
 				{% endif %}
@@ -71,7 +73,7 @@
 					</div>
 				{% endif %}
 
-				<div class="mb-4">
+				<div class="my-4">
 					<h3>Hva er UKM?</h3>
 					<p>{{ THEME_CONFIG.get('hvaerukm').kort|raw }} 
 						<br />
