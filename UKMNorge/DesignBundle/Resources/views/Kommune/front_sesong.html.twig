@@ -13,7 +13,7 @@
 					<p class="lead">
 						Vil du ha en gratis sms-påminnelse når påmeldingen åpner {{ THEME_CONFIG.get('pamelding').startdato }}?
 					</p>
-					{% embed "UKMDesignBundle:Husk:Form.html.twig"|UKMpath %}{% endembed %}
+					{% embed "UKMDesignBundle:Husk:form.html.twig"|UKMpath %}{% endembed %}
 				{% elseif state == 'pamelding' %}
 					{% if not monstring.erRegistrert() %}
 						<p class="lead">
