@@ -1,0 +1,159 @@
+UKM:
+    url: //ukm.no/
+    title: UKM
+    #color: d4c8e4
+    pages:
+        - 
+            id: forsiden
+            url: //ukm.no/
+            title: Forsiden
+            description: Ung kultur møtes
+        -
+            id: derdubor
+            url: //ukm.no/derdubor/
+            title: Der du bor
+#        - 
+#            id: hvaer
+#            url: //ukm.no/hva-er/
+#            title: Hva er UKM?
+#            description: Alt om Ung Kultur Møtes
+#        - 
+#            id: hvameldepa
+#            url: //ukm.no/hva-kan-jeg-delta-med/
+#            title: Hva kan du delta med?
+#        - 
+#            id: ua
+#            url: //ukm.no/unge-arrangører/
+#            title: Unge arrangører
+#            description: 
+        - 
+            id: ambassadorer
+            url: //ambassador.ukm.no/
+            title: Ambassadører
+            description: Bli kjent med oss
+#        - 
+#            id: urg
+#            url: //ukm.no/urg/
+#            title: URG (ung ressursgruppe)
+#            description: 
+        - 
+            id: ukmere
+            url: //ukm.no/blog/category/kjente-ukmere/
+            title: Kjente UKMere
+            description: 
+        - 
+            id: pressebilder
+            url: //www.flickr.com/photos/ukm/albums
+            title: UKM på flickr
+            target: _blank
+        - 
+            id: tidligerear
+            url: //ukm.no/tidligere-ar/
+            title: UKM-arrangement 2001-2017
+            description: Bli kjent med oss
+
+egoego:
+    url: //ego.ukm.no/
+    title: Ego
+    pages:
+        - 
+            id: forsiden
+            url: //ego.ukm.no/
+            title: Forsiden
+            description:
+#        - 
+#            id: egoom
+#            url: //ego.ukm.no/om-oss/
+#            title: Hva er ego?
+#            description:
+        -
+            id: egokontakt
+            url: //ego.ukm.no/kontakt/
+            title: Kontakt oss
+
+
+organisasjonen:
+    url: //org.ukm.no/
+    title: Organisasjonen
+    pages:
+        - 
+            id: forsiden
+            url: //org.ukm.no/
+            title: Nyheter
+        - 
+            id: presse
+            url: //org.ukm.no/presse/
+            title: Presse
+        - 
+            id: kontakt
+            url: //org.ukm.no/kontakt/
+            title: Kontakt oss
+        - 
+            id: ukmsjefen
+            url: //org.ukm.no/category/ukmsjefen/
+            title: UKM-sjefen
+#        - 
+#            id: historikk
+#            url: //org.ukm.no/historikk/
+#            title: Historikk
+#        - 
+#            id: verdier
+#            url: //org.ukm.no/verdier/
+#            title: Verdier
+        - 
+            id: grafikk
+            url: //org.ukm.no/grafisk-profil/
+            title: Grafisk profil
+        - 
+            id: cookies
+            url: //org.ukm.no/cookies/
+            title: Småkakepolitikk
+        - 
+            id: creativecommons
+            url: //org.ukm.no/vilkar/
+            title: Vilkår for bruk av innhold
+
+
+ukmtv:
+    url: //tv.ukm.no
+    title: UKM-TV
+    pages:
+        -
+            id: sok
+            url: //tv.ukm.no/search/
+            title: Søk
+        -
+            id: festival
+            url: //tv.ukm.no/festivalen/
+            title: UKM-festivalen
+        -
+            id: fylke
+            url: //tv.ukm.no/fylke/
+            title: Fylkesfestivaler
+        -
+            id: lokal
+            url: //tv.ukm.no/lokal/
+            title: Lokalmønstringer
+        -
+            id: info
+            url: //tv.ukm.no/info/
+            title: Infovideoer
+
+arrangorer:
+    url: //ukm.no/wp-login.php
+    title: UKM-arrangører
+    pages:
+        - 
+            id: login
+            url: //ukm.no/wp-login.php
+            title: Logg inn
+
+english:
+    url: //org.ukm.no/english
+    title: English
+    pages:
+        - 
+            id: about
+            url: //ukm.no/about-ukm/
+            title: About UKM
+

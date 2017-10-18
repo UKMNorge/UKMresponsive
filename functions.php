@@ -1,53 +1,78 @@
 <?php
-// FUNCTIONS FILE USED BY WORDPRESS TO REGISTER HOOKS ++
-// USE functions_theme FOR FUNCTIONS RELATED TO THEME WHICH WP DOES NOT NEED TO EXEC ON-THE-FLY
 
-if( function_exists('is_admin') ) {
-	if( is_admin() && !in_array(get_option('site_type'), array('kommune','fylke','land')) ) {
-		add_action('admin_menu', 'UKMresponsive_menu');
-	}
-}
-
-function UKMresponsive_menu() {
-	$page = add_menu_page('Oppsett', 'Oppsett', 'administrator', 'UKMresponsive_layout', 'UKMresponsive_layout', 'http://ico.ukm.no/art-supplies-menu.png',40);
-	add_action( 'admin_print_styles-' . $page, 'UKMresponsive_sns' );	
-
-}
-function UKMresponsive_sns() {
-	wp_enqueue_script('WPbootstrap3_js');
-	wp_enqueue_style('WPbootstrap3_css');
-}
-
-
-function UKMresponsive_layout() {
-	require_once('wp-admin/layout.php');
-}
+use UKMNorge\DesignBundle\Utils\Sitemap;
+use UKMNorge\DesignBundle\Utils\SEO;
+use UKMNorge\DesignBundle\Utils\SEOImage;
 
 add_theme_support( 'post-thumbnails' );
+add_theme_support( 'menus' );
 
-// POST IMAGE GALLERIES
-require_once('functions/shortcode.gallery.php');
+add_action( 'wp_ajax_nopriv_UKMresponsive', 'UKMresponsive_ajax' );
+add_action( 'wp_ajax_UKMresponsive', 'UKMresponsive_ajax' );
+add_action( 'after_setup_theme', 'UKMresponsive_imageSizes' );
+function UKMresponsive_imageSizes() {
+	add_image_size( 'lite', 350, 350 );
+	add_image_size( 'forsidebilde', 1800, 1800 );
+	add_image_size( 'veldigstor', 3000, 3000 );
 
-function add_remove_contactmethods( $contactmethods ) {
-    $contactmethods['facebook'] = 'Facebook';
-	$contactmethods['Title'] = 'Tittel';
-    return $contactmethods;
-}
-add_filter('user_contactmethods','add_remove_contactmethods',10,1);
+	update_option( 'medium_size_w', 600 );
+	update_option( 'medium_size_h', 600 );
 
-
-
-// SET MAX CONTENT WIDTH (IMAGES + OEMBED)
-if ( ! isset( $content_width ) )
-	$content_width = 1200;
-
-add_action('wp_head', 'registerUKMTV');
-registerUKMTV();
-function registerUKMTV() {
-	wp_oembed_add_provider( 'http://tv.ukm.no/*', 'http://oembed.ukm.no/' );
+	update_option( 'large_size_w', 1200 );
+	update_option( 'large_size_h', 1200 );
 }
 
-// SIKRE HOMEPAGE PAGINATION
-	update_option('posts_per_page', 5);
-	update_option('show_on_front', 'posts');
-	update_option('page_on_front',2);
+define('PATH_THEME', TEMPLATEPATH . '/');
+define('PATH_DESIGNBUNDLE', PATH_THEME .'UKMNorge/DesignBundle/');
+define('PATH_WORDPRESSBUNDLE', PATH_THEME .'UKMNorge/Wordpress/');
+define('URL_THEME', get_stylesheet_directory_uri() );
+define( 'WP_ENV', (strpos( $_SERVER['HTTP_HOST'], 'ukm.dev' ) !== false || isset($_GET['debug'])) ? 'dev' : 'prod' );
+
+// AUTOLOAD AND SYMFONY EXISTING FILES
+require_once('vendor/autoload.php');
+require_once( PATH_WORDPRESSBUNDLE . 'Environment/wp_twig.class.php');
+require_once( PATH_WORDPRESSBUNDLE . 'Environment/wp_config.class.php');
+
+// MANUALLY LOAD FILES SYMFONY WOULD LOAD BY NAMESPACE
+require_once( PATH_DESIGNBUNDLE . 'Utils/Sitemap/Page.php');
+require_once( PATH_DESIGNBUNDLE . 'Utils/Sitemap/Pages.php');
+require_once( PATH_DESIGNBUNDLE . 'Utils/Sitemap/Section.php');
+require_once( PATH_DESIGNBUNDLE . 'Utils/Sitemap.php');
+require_once( PATH_DESIGNBUNDLE . 'Utils/SEO.php');
+require_once( PATH_DESIGNBUNDLE . 'Utils/SEOImage.php');
+
+// LOAD CONFIG
+Sitemap::loadFromYamlFile( PATH_DESIGNBUNDLE . 'Resources/config/sitemap.yml' );
+
+WP_CONFIG::setConfigPath( PATH_DESIGNBUNDLE . 'Resources/config/parameters.yml' );
+
+// TWIG INIT
+WP_TWIG::setTemplateDir( PATH_DESIGNBUNDLE .'Resources/views/' );
+WP_TWIG::setDebug( WP_ENV == 'dev' );
+$WP_TWIG_DATA = [];
+
+
+function UKMresponsive_ajax() {
+	global $WP_TWIG_DATA;
+	// LOAD CONFIG
+	WP_CONFIG::setConfigPath( PATH_DESIGNBUNDLE . 'Resources/config/parameters.yml' );
+	
+	// TWIG INIT
+	WP_TWIG::setTemplateDir( PATH_DESIGNBUNDLE .'Resources/views/' );
+	WP_TWIG::setDebug( WP_ENV == 'dev' );
+	$WP_TWIG_DATA = [];
+
+	$response = [
+		'action' => $_POST['ajaxaction'],
+		'trigger' => $_POST['trigger'],
+		'success' => false,
+	];
+
+	$ajaxFile = PATH_WORDPRESSBUNDLE . 'Ajax/'. basename($response['action']) .'.ajax.php';
+	if( file_exists( $ajaxFile ) ) {
+		require_once( PATH_WORDPRESSBUNDLE . 'Ajax/'. basename($response['action']) .'.ajax.php');
+	}
+	
+	echo json_encode( $response );
+	wp_die();
+}

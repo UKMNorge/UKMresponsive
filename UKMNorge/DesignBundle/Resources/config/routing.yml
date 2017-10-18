@@ -1,0 +1,3 @@
+ukm_designbundle_sync_sitemap:
+    path:     /cron/designbundle/sync_sitemap/
+    defaults: { _controller: UKMDesignBundle:Sitemap:cron }

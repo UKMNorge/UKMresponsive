@@ -1,5 +1,26 @@
 {
+	"name": "ukmnorge/designbundle",
+	"description": "Felles design for UKM.no og undersider",
+	"homepage": "http://github.com/UKMNorge/UKMresponsive",
+	"authors": [
+		{
+			"name": "Asgeir Stavik Hustad",
+			"email": "asgeirsh@ukmmedia.no",
+			"role": "Developer"
+		},
+		{
+			"name": "Marius Mandal",
+			"email": "mariusmandal@ukm.no",
+			"role": "Lead Developer"
+		}
+	],
+	"autoload": {
+		"psr-4": {
+			"UKMNorge\\DesignBundle\\": "UKMNorge\\DesignBundle"
+		}
+	},
     "require": {
-        "mobiledetect/mobiledetectlib": "dev-master"
+        "symfony/yaml": "^2.0",
+        "mariusmandal/wpoo": "^1.0"
     }
 }

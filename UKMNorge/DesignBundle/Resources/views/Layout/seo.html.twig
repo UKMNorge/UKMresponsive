@@ -1,0 +1,30 @@
+<link rel="canonical" href="{{SEO.canonical}}" />
+
+<meta name="description" content="{{ SEO.getDescription() }}">
+<meta name="author" content="{{ SEO.getAuthor() }}">
+<meta property="og:locale" content="nb_NO" />
+<meta property="fb:app_id" content="{{ SEO.getFBAppId() }}" />
+<meta property="fb:admins" content="{{ SEO.getFBAdmins() }}" />
+<meta name="google-site-verification" content="{{ SEO.getGoogleSiteVerification() }}" />
+<meta property="og:site_name" content="{{SEO.getSiteName()}}" />
+<meta property="og:type" content="{{SEO.getType()}}" />
+<meta property="og:title" content="{{SEO.getTitle()|raw}}"/>
+<meta property="article:section" content="{{SEO.getSection()}}" />
+{% if SEO.getImage().getWidth() > 0 and SEO.getImage().getHeight() > 0 %}
+<meta property="og:image" content="{{SEO.getImage().getUrl()}}" />
+<meta property="og:image:width" content="{{SEO.getImage().getWidth()}}" />
+<meta property="og:image:height" content="{{SEO.getImage().getHeight()}}" />
+{% elseif SEO.getImage() is not empty %}
+<meta property="og:image" content="{{SEO.getImage().getUrl()}}" />
+{% endif %}
+{% if SEO.getImage().getType() is not empty %}
+<meta property="og:image:type" content="{{SEO.getImage().getType()}}" />
+{% endif %}
+<meta property="og:url" content="{{SEO.getCanonical()}}" />
+<meta property="og:description" content="{{SEO.getDescription()}}" />
+<meta property="og:locale" content="nb_NO" />
+{% if SEO.getType() == 'article' %}
+<meta property="article:published_time" content="{{SEO.getPublished()}}" />
+<meta property="article:modified_time" content="{{SEO.getPublished()}}" />
+<meta property="article:author" content="{{SEO.getAuthor()}}" />
+{% endif %}

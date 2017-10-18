@@ -1,0 +1,79 @@
+{% extends "Layout/_"~ (singleMode is defined and singleMode ? 'singleMode' : 'base' ) ~".html.twig"|UKMpath %}
+
+{% block content %}
+	<div class="container-fluid">
+		<div class="row-flex">
+
+			<div class="col-12 col-md-4 col-lg-3 col-xl-2 float-right mb-4">
+				<p class="lead">
+					Vil du ha en gratis sms når påmeldingen åpner {{ THEME_CONFIG.get('pamelding').startdato }}?
+				</p>
+				{% embed "UKMDesignBundle:Husk:form.html.twig"|UKMpath %}{% endembed %}
+			</div>
+			
+			<div class="col-12 col-md-8 col-lg-9 col-xl-10 float-left mb-4">
+				<h3>UKM i din {{ fylke.erOslo() ? 'bydel' : 'kommune' }}</h3>
+				{% embed "UKMDesignBundle:Fylke:lokalmonstringer_velg.html.twig"|UKMpath %}{% endembed %}
+				<div class="mt-2 center small">
+					<a href="lokalmonstringer/" class="btn btn-outline-primary btn-sm btn-block">
+						Se alle {{ fylke.erOslo() ? 'bydeler' : 'kommuner' }} (kalender)
+					</a>
+				</div>
+			</div>
+
+			{% if not fylke.erRegistrert() %}
+				<div class="col-12 col-md-4 col-lg-3 col-xl-10 float-right float-xl-left">
+					{% embed "UKMDesignBundle:Layout:alert_icon.html.twig"|UKMpath with {level: 'primary', icon: 'info-with-circle'} %}
+						{% block content %}
+							Dato for {{ fylke.getNavn() }} er ikke bestemt, men dette vil bli gjort snart. 
+							I mellomtiden kan du sjekke om det er lagt inn info om ditt lokale UKM ved å velge din {{ fylke.erOslo() ? 'bydel' : 'kommune' }}.
+						{% endblock %}
+					{% endembed %}
+				</div>
+			{% endif %}
+		</div>
+	</div>
+	{% if fylke.erRegistrert() %}
+		<div class="clearfix mt-4"></div>
+		<div class="container-fluid">
+			<div class="row align-items-center fylkesfestival-banner py-3 px-3">
+				<div class="col-7 title">
+					{{ fylke.getNavn() }}
+				</div>
+				<div class="col-5 date right small">
+					{% if fylke.getStart()|dato('m') == fylke.getStop()|dato('m') %}
+						{% if fylke.getStart()|dato('j') == fylke.getStop()|dato('j') %}
+							{{ fylke.getStop()|dato('j. F') }}
+						{% else %}
+							{{ fylke.getStart()|dato('j') }} - {{ fylke.getStop()|dato('j. F') }}
+						{% endif %}
+					{% else %}
+						{{ fylke.getStart()|dato('j.M') }} - {{ fylke.getStop()|dato('j.M') }}
+					{% endif %}
+					<br />
+					{{ fylke.getSted() }}
+				</div>
+			</div>
+
+			<div class="row-flex fylkesfestival-banner-menu-container">
+				<div class="col-12 col-lg-3 float-lg-right float-xl-right mt-4 fylkesfestival-banner-menu">
+					{% embed "UKMDesignBundle:Fylke:meny.html.twig"|UKMpath %}{% endembed %}
+				</div>
+			</div>
+		</div>
+		
+		<div class="container-fluid">
+			<div class="row-flex">
+				<div class="col-12 col-lg-9 float-lg-left float-xl-left mt-4">
+					{% if posts.getAntall() == 0 and harInfoPage %}
+						{{ infoPage.getPage().content|raw }}
+					{% else %}
+						<div class="row">
+							{% embed "UKMDesignBundle:Category:list.html.twig"|UKMpath with {singleMode: true, posts: posts.getAll(), hideNoneFound: true} %}{% endembed %}
+						</div>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+	{% endif %}
+{% endblock %}

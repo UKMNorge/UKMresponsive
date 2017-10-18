@@ -1,0 +1,34 @@
+<div class="page-menu">
+	<div class="row">
+		{% if harProgram %}
+			<div class="col menu-item">
+				<a href="{{ monstring.getLink() }}program/">
+					<div class="icon icon-calendar"></div>
+					<div class="text">Program</div>
+				</a>
+			</div>
+		{% endif %}
+		{% if monstring.getInnslag().harInnslag() %}
+			<div class="col menu-item">
+				<a href="{{ monstring.getLink() }}pameldte/">
+					<div class="icon icon-users"></div>
+					<div class="text">Påmeldte</div>
+				</a>
+			</div>
+		{% endif %}
+		{% if state == 'ferdig' and harInfoPage %}
+			<div class="col menu-item">
+				<a href="{{ monstring.getLink() }}info/">
+					<div class="icon icon-info-with-circle"></div>
+					<div class="text">Praktisk info</div>
+				</a>
+			</div>
+		{% endif %}
+		<div class="col menu-item">
+			<a href="{{ monstring.getLink() }}kontaktpersoner/">
+				<div class="icon icon-mobile"></div>
+				<div class="text">Kontakt</div>
+			</a>
+		</div>
+	</div>
+</div>

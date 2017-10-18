@@ -1,0 +1,148 @@
+/* FILE: base.less */
+/* TEXT-ALIGN */
+.center {
+	text-align: center;
+}
+.right {
+	text-align: right;
+}
+.left {
+	text-align: left;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.click {
+	cursor: pointer;
+}
+
+.alignleft {
+	float:left;
+}
+.alignright {
+	float:right;
+}
+.aligncenter {
+	text-align: center;
+}
+
+.uppercase {
+	text-transform: uppercase;
+}
+
+/* BUTTONS */
+button {
+	cursor: pointer;
+}
+/* LINKS */
+a {
+	color: @color-primary-dark;
+	cursor: pointer;
+}
+a .nocolor {
+	color: rgba(0, 0, 0, 0.85);
+}
+
+a:visited,
+a:focus,
+a:active,
+a:hover {
+	color: @color-primary-dark;
+}
+
+.wp-caption, img {
+	max-width: 100% !important;
+	height: auto;
+}
+
+.menu-item {
+	.center;
+	margin-top: 1.5em;
+	margin-bottom: .5em;
+	color: @color-primary-dark-dark !important;
+}
+.menu-item:hover,
+.menu-item a,
+.menu-item a:visited,
+.menu-item a:focus,
+.menu-item a:active {
+	text-decoration: none;
+	color: @color-primary-dark-dark !important;
+}
+.menu-item a:hover {
+	text-decoration: none;
+	color: @color-primary !important;
+}
+.menu-item .icon {
+	font-size:1.5em;
+}
+
+.header-line {
+	border-bottom: 2px solid @color-primary;
+	color:  @color-primary;
+	margin-bottom: .5em;
+	text-transform: uppercase;
+}
+
+.text-color-primary {
+	color: @color-primary;
+}
+.text-color-primary-dark {
+	color: @color-primary-dark;
+}
+.text-color-primary-dark-dark {
+	color: @color-primary-dark-dark;
+}
+.text-color-primary-light {
+	color: @color-primary-light;
+}
+.text-color-primary-light-light {
+	color: @color-primary-light-light;
+}
+
+.background-color-primary {
+	background-color: @color-primary;
+}
+.background-color-primary-dark {
+	background-color: @color-primary-dark;
+}
+.background-color-primary-dark-dark {
+	background-color: @color-primary-dark-dark;
+}
+.background-color-primary-light {
+	background-color: @color-primary-light;
+}
+.background-color-primary-light-light {
+	background-color: @color-primary-light-light;
+}
+
+/** OVERUNDER **/
+.overunder {
+	.center;
+	font-weight: 400;
+	color: inherit;
+	text-rendering: optimizelegibility;
+}
+
+.overunder .over {
+	.center;
+	line-height: 1.2em;
+	font-size: 1em;
+}
+.overunder .under {
+	.center;
+	font-size: .7em;
+	line-height: 1em;
+}
+.overunder .over small {
+	font-weight: normal;
+	font-size: 14px;
+	margin: 0px;
+}
+
+/** LIMIT STUFFS WIDTHS **/
+iframe {
+	max-width: 100% !important;
+}

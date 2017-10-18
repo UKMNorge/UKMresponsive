@@ -1,0 +1,44 @@
+{% block navbar %}
+	<div class="container-fluid {{ showSlogan is defined ? 'navbar-with-slogan' : '' }}">
+		<header>
+			<div class="float-right">
+				<a href="//{{ UKM_HOSTNAME }}/hovedmeny/">
+					<button type="button" class="btn btn-sm my-2 {{ showSlogan is defined ? 'btn-outline-light' : 'btn-outline-primary' }}" id="main_menu_button" data-status="hidden"  {{ showSlogan is defined ? 'style="background: rgba(242, 109, 21, 0.44);"' }}>MENY</button>
+				</a>
+			</div>
+		
+			{# BRAND ICON #}
+			<div class="navbar-header float-left">
+				{% if header is defined and header.logo == 'EGO' %}
+					<a href="{{ Sitemap.getPage('egoego', 'forsiden') }}">
+						<img src="//grafikk.ukm.no/profil/ego/EGO_logo{{ showSlogan is defined ? '_helhvit_0100' : '' }}.png" id="EGOlogo" width="70" />
+					</a>
+				{% else %}
+					<a href="{{ Sitemap.getPage('UKM', 'forsiden') }}">
+						<img src="//grafikk.ukm.no/profil/logo/UKM_logo{{ showSlogan is defined ? '_helhvit_0100' : '' }}.png" id="UKMlogo" width="70" />
+					</a>
+				{% endif %}
+			</div>
+			
+			{% if section is defined %}
+				<div class="sectionTitle center">
+					<a href="{{ section.url }}">{{ section.title }}</a>
+				</div>
+			{% endif %}
+	
+			<div class="clearfix"></div>
+		</header>
+		{% if showSlogan is defined %}
+			<div class="container" id="UKMslogan_container">
+				<div class="row">
+					<div class="col-12">
+				    	<p class="lead center" id="UKMslogan">{{ customSlogan is defined ? customSlogan : THEME_CONFIG.get('hvaerukm').slogan }}</p>
+					</div>
+				</div>
+			</div>
+		{% endif %}
+	</div>
+	
+	<div class="navbar-separator"></div>
+{% endblock %}	
+

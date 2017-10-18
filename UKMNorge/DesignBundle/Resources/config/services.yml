@@ -1,0 +1,18 @@
+services:
+    app.twig_extension:
+        class: UKMNorge\DesignBundle\Twig\DesignBundleExtension
+        public: false
+        tags:
+            - { name: twig.extension }
+    ukmdesign.seo:
+        class: UKMNorge\DesignBundle\Services\SEOService
+        arguments: 
+            $seoDefault: '%SEOdefaults%'
+            $seoAppDefault: '%SEOdefaultsApp%'
+            $facebook: '%facebook%'
+            $google: '%google%'
+    ukmdesign.sitemap:
+        class: UKMNorge\DesignBundle\Services\SitemapService
+        arguments:
+            - @file_locator
+            - '%kernel.cache_dir%'

@@ -1,0 +1,182 @@
+/* FILE: post.less */
+
+/* GRID VIEW: PRETTY */
+.post {
+	padding: 0;
+	margin: 0;
+	margin-bottom: 6px;
+}
+
+.post-grid-pretty {
+	background: @color-primary-light;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 100%;
+	height: 15em;
+	position: relative;
+	overflow: hidden;
+	padding: 0;
+	margin: 0;
+	margin-bottom: 1em;
+}
+.post-grid-pretty > header > p {
+	font-size: 0.8em;
+	color: white;
+	margin-bottom: 0;
+}
+.post-grid-pretty > header {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	padding: .5em 10px;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#606060+2,545454+99&0+1,0.65+94 */
+	background: -moz-linear-gradient(top, rgba(96,96,96,0) 1%, rgba(96,96,96,0.01) 2%, rgba(85,85,85,0.65) 94%, rgba(84,84,84,0.65) 99%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(96,96,96,0) 1%,rgba(96,96,96,0.01) 2%,rgba(85,85,85,0.65) 94%,rgba(84,84,84,0.65) 99%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(96,96,96,0) 1%,rgba(96,96,96,0.01) 2%,rgba(85,85,85,0.65) 94%,rgba(84,84,84,0.65) 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00606060', endColorstr='#a6545454',GradientType=0 ); /* IE6-9 */
+}
+.post-grid-pretty > header::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.post-grid-pretty > header > h1 {
+	font-size: 1.5em;
+	margin: 0;
+	margin-top: .5em;
+	color: white;
+	position: relative;
+	z-index: 1;
+	opacity: 1;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+@media (min-width: 1200px) {
+	.post-grid-pretty {
+		height: 20em;
+	}
+	.post-grid-pretty > header > p {
+		font-size: 1em;
+	}
+	.post-grid-pretty > header > h1 {
+		font-size: 2em;
+	}
+}
+
+/* GRID VIEW: DEFAULT */
+.post-grid-default {
+	margin-bottom: 1em;
+}
+.post-grid-default .image {
+	background: @color-primary-light;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 100%;
+	padding-bottom: 66%;
+	margin: 0;
+	margin-bottom: 0.1em;
+}
+a .post-grid-default {
+	color: #000 !important;
+}
+
+
+/* SINGLE POST */
+
+#the_post_image {
+	margin:0;
+	margin-top:-1em;
+	margin-bottom: 1em;
+	height: 40vh;
+	width: 100vw;
+	background: @color-primary-light;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+@media (min-width: 576px) {
+	#the_post_image {
+		height: 50vh;
+	}
+}
+@media (min-width: 768px) {
+	#the_post_image {
+		height: 70vh;
+	}
+}
+
+.postmeta {
+	font-size: .9em;
+	border-top: 1px solid @color-primary-light;
+	border-bottom: 1px solid @color-primary-light;
+	margin-bottom: 1em;
+
+}
+
+@media (min-width: 768px) {
+	.madeby {
+		.right;
+	}
+	.madeby .contact {
+		margin-bottom: 1em !important;
+	}
+	.madeby .contact .image {
+		float: right !important;
+		margin-right: 0 !important;
+		margin-left: 1em !important;
+	}
+}
+.madeby {
+//	border-top: 1px solid @color-primary-light;
+//	border-bottom: 1px solid @color-primary-light;
+	font-size: .9rem;
+}
+.madeby .contact {
+	margin:.3em;
+}
+.madeby .contact .image {
+	float: left;
+	margin-right: 1em;
+}
+.madeby .contact .image img {
+	height: 2.5em;
+}
+.madeby .contact .info .name {
+	text-transform: capitalize;
+	font-weight: bold;
+	line-height: 1.1em;
+	color: @color-primary;
+	margin: 0;
+	margin-bottom: .2em;
+	}
+.madeby .contact .info .title {
+	font-size: .9em;
+	line-height: 1em;
+}
+
+/*
+ * PLAY ICON FOR FEATURED IMAGE
+ * (video on top)
+**/
+.featured-image-play { 
+	position: absolute;
+	width: 5em;
+	top: ~"Calc( 50% - 2.5em )";
+	left: ~"Calc( 50% - 2.5em )";
+	opacity: 0.92;
+}
+
+.post-grid-default .featured-image-play {
+	top: 14%;
+	width: 20%;
+	left: 40%;
+}
