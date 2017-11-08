@@ -1,0 +1,195 @@
+{# Selve innslagets info-side. Embeddes i /pameldte/ når noen trykker på et innslag, vises i standalone-mode når noen åpner /pameldte/id/ #}
+{% extends "Layout/_"~ (singleMode is defined and singleMode ? 'singleMode' : 'base' ) ~".html.twig"|UKMpath %}
+
+{% block content %}
+	<div id="innslag">
+		<div class="header {{ innslag.getBilder().getAntall() == 0 ? 'noImage' }}" style="background-image: url('{{ innslag.getBilder().getFirst().getSize("original").getUrl() }}')">
+			<h1 class="mb-2">{{ innslag.getNavn() }}</h1>
+			<div class="clearfix"></div>
+		</div>
+		<div class="row data mb-3">
+			<div class="container container-padding-small">
+				<div class="row">
+					<div class="col-8 sjanger">
+						{% if innslag.getSjanger() is empty %}
+							{{ innslag.getType() }}
+						{% else %}
+							{{ innslag.getType() }}: {{ innslag.getSjanger() }}
+						{% endif %}
+					</div>
+					<div class="col-4 kommune text-right">
+						{{ innslag.getKommune() }}
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+		<div class="{{ singleMode is not defined ? 'container' }}">
+			<div class="row-fluid">
+				<div class="col-12 {{ innslag.getFilmer().getAntall() > 0 and innslag.getBilder().getAntall() > 0 ? 'col-md-5 col-xl-4' }} float-right">
+					<div class="row">
+						<div class="col-12">
+							<p class="beskrivelse">
+								{{ innslag.getBeskrivelse() }}
+							</p>
+						</div>
+					</div>
+						
+					<div class="row">
+						<div class="col-12">
+							<div class="center" style="margin-bottom: 1em;">
+								<div class="center fb-like" data-href="{{ post.url }}" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="true"></div>
+							</div>
+						</div>
+					</div>
+
+					{# PERSONER I INNSLAGET #}
+					{% if innslag.getType().harTitler() and innslag.getPersoner().getAntall() > 0 %}
+						<div class="row mt-4">
+							<div class="col-12">
+								<h4 class="linje">Personer</h4>
+								{% for person in innslag.getPersoner().getAll() %}
+									<div class="row">
+										<div class="col-7">
+											{{ person.getNavn() }}, {{ person.getAlder() }}
+										</div>
+										<div class="col-5 right text-right small-but-same-height">{{ person.instrument }}</div>
+									</div>
+								{% endfor %}
+							</div>
+						</div>
+						
+					{% endif %}
+					
+					{# FORESTILLINGER INNSLAGET ER MED I #}
+					{% if innslag.getProgram( monstring ).getAntall() > 0 %}
+						<div class="row mt-4">
+							<div class="col-12">
+								<h4 class="linje">I programmet</h4>
+								{% for forestilling in program.getAll() if forestilling.erSynligRammeProgram() %}
+									<div class="row">
+										<div class="col-7">
+											Nr {{ forestilling.getNummer( innslag ) }} i {{ forestilling.getNavn() }}
+										</div>
+										<div class="col-5 right text-right small-but-same-height">
+											{{ forestilling.getStart()|dato }}
+										</div>
+									</div>
+								{% endfor %}
+							</div>
+						</div>
+					{% endif %}
+					
+					{# INFORMASJON OM TITLER #}
+					{% if innslag.getType().harTitler() and innslag.getTitler( monstring ).getAntall() > 0 %}
+						<div class="row mt-4">
+							<div class="col-12">
+								<h4 class="linje">Titler</h4>
+								{% for tittel in innslag.getTitler( monstring ).getAll() %}
+									<div class="row">
+										<div class="col-7">
+											{{ tittel.getTittel() }}
+											{% if innslag.getType().harTid() and tittel.getVarighet().getSekunder() != 0 %}
+											<p class="small">
+												{{ tittel.getVarighet().getHuman() }}
+											</p>
+											{% endif %}
+										</div>
+										<div class="col-5 right text-right small-but-same-height">
+											{% if innslag.getType().getKey() == "musikk" %}
+												{% if not tittel.erInstrumental() and tittel.getTekstAv() is not empty %}
+													Tekst: {{ tittel.getTekstAv() }}
+													<br />
+												{% endif %}
+												{% if tittel.getMelodiAv() is not empty %}
+													Melodi: {{ tittel.getMelodiAv() }}
+												{% endif %}
+											{% elseif innslag.getType().getKey() == "dans" %}
+												Koreografi: {{ tittel.getKoreografiAv() }}
+											{% elseif innslag.getType().getKey() == "litteratur" and not tittel.erSelvlaget() and tittel.getTekstAv() is not empty %}
+												Skrevet av: {{ tittel.getTekstAv() }}
+											{% endif %}
+											{% if innslagType.getKey() == "utstilling" %}
+												{% if tittel.getTeknikk() is not empty %}
+													Teknikk: {{ tittel.getTeknikk() }}<br />
+												{% endif %}
+												{% if tittel.getFormat() is not empty %}
+													Format: {{ tittel.getFormat() }}
+												{% endif %}
+											{% endif %}
+										</div>
+									</div>
+								{% endfor %}
+							</div>
+						</div>
+					{% endif %}
+		
+					{# EVENTUELLE RELATERTE ARTIKLER #}
+					{% if innslag.getArtikler().getAntall() > 0 %}
+						<div class="row mt-4">
+							<div class="col-12">
+								<h4 class="linje">Artikler</h4>
+								{% for artikkel in innslag.getArtikler().getAll() %}
+									<div class="row">
+										<div class="col-7">
+											<a href="{{ artikkel.getLink() }}" target="_blank">
+												{{ artikkel.getTittel() }}
+											</a>
+										</div>
+										<div class="col-5 right text-right small-but-same-height">
+											publisert {{ artikkel.getSesong() }}
+										</div>
+									</div>
+								{% endfor %}
+							</div>
+						</div>
+					{% endif %}
+				</div>
+				<div class="col-12 {{ innslag.getFilmer().getAntall() > 0 and innslag.getBilder().getAntall() > 0 ? 'col-md-7 col-xl-8' }} float-left">
+					{# INNSLAGET I UKM-TV #}
+					{% if innslag.getFilmer().getAntall() > 0 %}
+						<div class="row mt-4">
+							<div class="col-12">
+								<h4 class="linje">I UKM-TV</h4>
+								{% for film in innslag.getFilmer().getAll() %}
+									<div class="row">
+										<div class="col-12">
+											{{ film.getTitle() }}
+										</div>
+										<div class="col-12">
+											{{ film.embedCodeVH() }}
+										</div>
+									</div>
+								{% endfor %}
+							</div>
+						</div>
+					{% endif %}
+		
+					{# BILDER AV INNSLAGET #}
+					{% if innslag.getBilder().getAntall() > 0 %}
+						<div class="row mt-4">
+							<div class="col-12">
+								<h4 class="linje">Alle bilder</h4>
+								<center>
+									{% for bilde in innslag.getBilder().getAll() %}
+										<a href="{{ bilde.getSize("original").getUrl() }}" target="_blank">
+											<img src="{{ bilde.getSize("medium").getUrl() }}" class="mt-2" />
+										</a>
+									{% endfor %}
+								</center>
+							</div>
+						</div>
+					{% endif %}
+					
+					<p class="my-3">&nbsp;</p>
+					<p class="my-5">
+						<a href="../">
+							Tilbake til alle deltakere
+						</a>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock content %}

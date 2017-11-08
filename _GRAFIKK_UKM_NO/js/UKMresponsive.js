@@ -1,7 +1,3 @@
-// @codekit-prepend "jquery-3.2.1.min.js";
-// @codekit-prepend "jquery-autoshrink.js";
-// @codekit-prepend "cookie.js";
-// @codekit-prepend "aos.js";
 /**
  * MAIN MENU BUTTON TOGGLE
 **/
@@ -169,7 +165,7 @@ $(document).on('click','#saveAsMine', function(e){
 		$('#saveAsMineExplanation').slideDown();
 		$(this).find('.text').text( $(this).find('.text').text().replace('lagre', 'lagret') );
 	} else {
-		$(this).attr('data-saved', 'false');
+		$(this).attr('data-saved', 'false'); 
 		Cookies.remove('UKMfavoritt');
 		$(this).find('span.icon').removeClass('icon-heart').addClass('icon-heart-outlined');
 		$('#saveAsMineExplanation').slideUp();
@@ -177,7 +173,12 @@ $(document).on('click','#saveAsMine', function(e){
 	}
 });
 
-
+/**
+ * DELTAKERE-SIDEN
+**/
+$(document).on('click', '.innslagCard', function(e){
+	window.location.href = $(this).find('.name > a').attr('href');
+});
 /**
  * AOS - Animate On Scroll
  *

@@ -13,7 +13,6 @@ SEO::setTitle( $WP_TWIG_DATA['page']->getPage()->title );
 SEO::setDescription( addslashes( preg_replace( "/\r|\n/", "", strip_tags( $WP_TWIG_DATA['page']->getPage()->lead ) ) ) );
 SEO::setAuthor( $WP_TWIG_DATA['page']->getPage()->author->display_name );
 
-
 // CHECK TO FIND CUSTOM PAGE CONTROLLER AND VIEW ISSET
 if( isset( $WP_TWIG_DATA['page']->getPage()->meta->UKMviseng ) ) {
 	$page_template = $WP_TWIG_DATA['page']->getPage()->meta->UKMviseng;
@@ -31,8 +30,7 @@ switch( $page_template ) {
 		break;
 	# Påmeldte til mønstringen
 	case 'pameldte':
-		$view_template = 'Monstring/pameldte';
-		require_once('UKMNorge/Wordpress/Controller/monstring/deltakere.controller.php');
+		require_once("UKMNorge/Wordpress/Controller/monstring/pameldte.controller.php");
 		break;
 	# Mønstringens program
 	case 'program':
@@ -85,7 +83,11 @@ if( $page_template == 'meny' || $har_meny ) {
 }
 
 // RENDER
-echo WP_TWIG::render( $view_template, $WP_TWIG_DATA );
+// echo "Total compile-time: ". (microtime(true) - $time)*1000 ."ms <br />";
+// $time = microtime(true);
+$out = WP_TWIG::render( $view_template, $WP_TWIG_DATA );
+/*echo "Total Twig-rendertime: " . (microtime(true) - $time)*1000 . "ms <br />";*/
+echo $out;
 wp_footer();
 if(is_user_logged_in() ) {
 	echo '<style>body {margin-top: 33px;} @media (max-width:782px) {body {margin-top: 48px;}}</style>';

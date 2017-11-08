@@ -10,7 +10,6 @@ class page {
 			$post = $page;
 		}
 		$this->page = new WPOO_Post( $post );
-		
 		$this->_setup_blocks();
 	}
 	
@@ -22,6 +21,20 @@ class page {
 		return $this->blocks;
 	}
 	
+	/**
+	 * Henter den siste "pretty-parameteren" i en request. Burde muligens gjøres av en rewrite-rule?
+	 * Bruker for innslagsID i påmeldte, for å pretty-printe.
+	 * Eksempel: input: http://ukm.dev/akershus/pameldte/23/. Output: 23.
+	 */
+	public function getLastParameter() {
+		$parts = explode("/", $_SERVER['REQUEST_URI']);
+		$last = sizeof($parts)-1;
+		if( "" == $parts[$last] || null == $parts[$last] ) {
+			return $parts[$last-1];
+		}
+		return $parts[$last];
+	}
+
 	/**
 	 * _setup_blocks
 	 * 
