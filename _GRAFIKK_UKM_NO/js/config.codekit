@@ -68,12 +68,12 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 0
 		},
-	"\/min\/UKMresponsive-min.js": {
+	"\/UKMresponsive-min.js": {
 		"fileType": 64,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/min\/UKMresponsive-min.js",
-		"outputAbbreviatedPath": "\/min\/min\/UKMresponsive-min-min.js",
+		"inputAbbreviatedPath": "\/UKMresponsive-min.js",
+		"outputAbbreviatedPath": "\/min\/UKMresponsive-min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -84,9 +84,9 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/UKMresponsive.js",
-		"outputAbbreviatedPath": "\/min\/UKMresponsive-min.js",
+		"outputAbbreviatedPath": "\/UKMresponsive-min.js",
 		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
+		"outputPathIsSetByUser": 1,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 0
 		}
