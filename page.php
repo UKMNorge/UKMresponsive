@@ -30,21 +30,7 @@ switch( $page_template ) {
 		break;
 	# Påmeldte til mønstringen
 	case 'pameldte':
-		// Sjekk om det spørres etter enkeltside eller oversikt.
-		$id = $WP_TWIG_DATA['page']->getLastParameter();
-		if( is_numeric($id) ) {
-			// /pameldte/id/ - i.e. forespørsel om enkelt-innslag. Funker både med og uten slutt-/.
-			if(isset($_POST['singleMode']) && "true" == $_POST['singleMode'] ) {
-				$WP_TWIG_DATA['singleMode'] = true;
-			}
-			$view_template = 'Monstring/innslag';
-			require_once("UKMNorge/Wordpress/Controller/monstring/deltaker.controller.php");
-		}
-		else {
-			// /pameldte/ - vil altså laste inn oversikten.
-			$view_template = 'Monstring/pameldte';
-			require_once('UKMNorge/Wordpress/Controller/monstring/deltakere.controller.php');	
-		}
+		require_once("UKMNorge/Wordpress/Controller/monstring/pameldte.controller.php");
 		break;
 	# Mønstringens program
 	case 'program':
