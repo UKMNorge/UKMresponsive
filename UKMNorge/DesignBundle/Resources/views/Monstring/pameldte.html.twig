@@ -10,9 +10,9 @@
 		</div>
 	 	
 	 	<div class="row">
-	 		<div class="col-12">
+	 		<div class="col-12" id="searchList">
 				{% for innslag in monstring.getInnslag().getAll() %}
-					<div class="card innslagCard click mb-2 p-0">
+					<div class="card innslagCard click mb-2 p-0" data-filter="{{ innslag.getNavn() }}{% for person in innslag.getPersoner().getAll() %} {{ person.getNavn() }},{% endfor %}{% for kommune in monstring.getKommuner() if monstring.getType() == 'kommune' %}{{ kommune.getNavn() }},{% endfor %}">
 				 		{% embed 'Monstring/innslag-liste.html.twig' with {'innslag': innslag} %}{% endembed %}
 					</div>
 				{% endfor %}
@@ -31,9 +31,7 @@
 			dynamicElement.slideUp();
 		});
 
-		jQuery('#filterInnslag').fastLiveFilter('#searchList', function(numShown){
-
-		});
+		jQuery('#filterInnslag').fastLiveFilter('#searchList');
 		jQuery('#filterInnslag').change();
 	});
 	</script>

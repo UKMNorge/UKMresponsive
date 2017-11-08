@@ -3,7 +3,7 @@
 
 {% block content %}
 	<div id="innslag">
-		<div class="header {{ innslag.getBilder().getAntall() == 0 ? 'noImage' }}" style="background-image: url('{{ innslag.getBilder().getFirst().getSize("original").getUrl() }}')">
+		<div class="header {{ innslag.getBilder().getAntall() == 0 ? 'noImage' }}" style="background-image: url('{{ innslag.getBilder().getFirst().getSize("original").getUrl()|replace({'http:':'https:'}) }}')">
 			<h1 class="mb-2">{{ innslag.getNavn() }}</h1>
 			<div class="clearfix"></div>
 		</div>
@@ -27,7 +27,7 @@
 		
 		<div class="{{ singleMode is not defined ? 'container' }}">
 			<div class="row-fluid">
-				<div class="col-12 {{ innslag.getFilmer().getAntall() > 0 and innslag.getBilder().getAntall() > 0 ? 'col-md-5 col-xl-4' }} float-right">
+				<div class="col-12 {{ innslag.getFilmer()|length > 0 and innslag.getBilder().getAntall() > 0 ? 'col-md-5 col-xl-4' }} float-right">
 					<div class="row">
 						<div class="col-12">
 							<p class="beskrivelse">
@@ -146,19 +146,19 @@
 						</div>
 					{% endif %}
 				</div>
-				<div class="col-12 {{ innslag.getFilmer().getAntall() > 0 and innslag.getBilder().getAntall() > 0 ? 'col-md-7 col-xl-8' }} float-left">
+				<div class="col-12 {{ innslag.getFilmer()|length > 0 and innslag.getBilder().getAntall() > 0 ? 'col-md-7 col-xl-8' }} float-left">
 					{# INNSLAGET I UKM-TV #}
-					{% if innslag.getFilmer().getAntall() > 0 %}
+					{% if innslag.getFilmer()|length > 0 %}
 						<div class="row mt-4">
 							<div class="col-12">
 								<h4 class="linje">I UKM-TV</h4>
-								{% for film in innslag.getFilmer().getAll() %}
+								{% for film in innslag.getFilmer() %}
 									<div class="row">
 										<div class="col-12">
 											{{ film.getTitle() }}
 										</div>
 										<div class="col-12">
-											{{ film.embedCodeVH() }}
+											{{ film.embedCodeVH()|raw }}
 										</div>
 									</div>
 								{% endfor %}
@@ -173,8 +173,8 @@
 								<h4 class="linje">Alle bilder</h4>
 								<center>
 									{% for bilde in innslag.getBilder().getAll() %}
-										<a href="{{ bilde.getSize("original").getUrl() }}" target="_blank">
-											<img src="{{ bilde.getSize("medium").getUrl() }}" class="mt-2" />
+										<a href="{{ bilde.getSize("original").getUrl()|replace({'http:':'https:'}) }}" target="_blank">
+											<img src="{{ bilde.getSize("medium").getUrl()|replace({'http:':'https:'}) }}" class="mt-2" />
 										</a>
 									{% endfor %}
 								</center>
