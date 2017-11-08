@@ -4,7 +4,7 @@
 "files": {
 	"\/aos.js": {
 		"fileType": 64,
-		"ignore": 0,
+		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/aos.js",
 		"outputAbbreviatedPath": "\/min\/aos-min.js",
@@ -37,7 +37,7 @@
 		},
 	"\/fastlivefilter.jquery.js": {
 		"fileType": 64,
-		"ignore": 0,
+		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/fastlivefilter.jquery.js",
 		"outputAbbreviatedPath": "\/min\/fastlivefilter.jquery-min.js",
@@ -48,7 +48,7 @@
 		},
 	"\/jquery-3.2.1.min.js": {
 		"fileType": 64,
-		"ignore": 0,
+		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/jquery-3.2.1.min.js",
 		"outputAbbreviatedPath": "\/min\/jquery-3.2.1.min-min.js",
@@ -89,23 +89,44 @@
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 0
-		},
-	"\/UKMresponsive.min.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/UKMresponsive.min.js",
-		"outputAbbreviatedPath": "\/min\/UKMresponsive.min-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 0
 		}
 	},
 "hooks": [
 	],
 "lastSavedByUser": "Marius Mandal",
 "manualImportLinks": {
+	"\/UKMresponsive.js": [
+		{
+			"followForSyntaxChecking": 1,
+			"linkedFileAbbreviatedPath": "\/cookie.js",
+			"position": 0,
+			"type": 0
+			},
+		{
+			"followForSyntaxChecking": 1,
+			"linkedFileAbbreviatedPath": "\/jquery-3.2.1.min.js",
+			"position": 1,
+			"type": 0
+			},
+		{
+			"followForSyntaxChecking": 1,
+			"linkedFileAbbreviatedPath": "\/fastlivefilter.jquery.js",
+			"position": 2,
+			"type": 0
+			},
+		{
+			"followForSyntaxChecking": 1,
+			"linkedFileAbbreviatedPath": "\/jquery-autoshrink.js",
+			"position": 3,
+			"type": 0
+			},
+		{
+			"followForSyntaxChecking": 1,
+			"linkedFileAbbreviatedPath": "\/aos.js",
+			"position": 4,
+			"type": 0
+			}
+		]
 	},
 "projectAttributes": {
 	"bowerAbbreviatedPath": "",
