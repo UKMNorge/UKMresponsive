@@ -168,3 +168,10 @@ $(document).on('click','#saveAsMine', function(e){
 		$(this).find('.text').text( $(this).find('.text').text().replace('lagret', 'lagre') );	
 	}
 });
+
+/**
+ * DELTAKERE-SIDEN
+**/
+$(document).on('click', '.innslagCard', function(e){
+	window.location.href = $(this).find('.name > a').attr('href');
+});
