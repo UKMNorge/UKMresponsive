@@ -11,7 +11,7 @@
 		<div class="row vertical-align-center program">
 			{% for dag in monstring.getProgram().sorterPerDag( monstring.getProgram().getAll() ) %}
 				<div class="col mt-4 dag">
-					<h4>{{ dag.date|dato('l j.M')|capitalize }}</h4>
+					<h4 class="linje">{{ dag.date|dato('l j.M')|capitalize }}</h4>
 					{% for hendelse in dag.forestillinger %}
 						<div class="hendelse">
 							<div class="time">

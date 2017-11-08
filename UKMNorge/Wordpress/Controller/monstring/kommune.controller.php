@@ -24,7 +24,7 @@ if( $WP_TWIG_DATA['posts']->getPaged() ) {
 	kommuneController::setState('arkiv');
 }
 // 2: Påmeldingen har ikke åpnet enda (dato for systemåpning)
-elseif( !kommuneController::getPameldingApen() ) {
+elseif( !kommuneController::erPameldingStartet() ) {
 	kommuneController::setState('pre_pamelding');
 }
 // 3: Påmeldingen er ikke stengt (registrert dato by default eller user), (pre_registrering, pamelding)

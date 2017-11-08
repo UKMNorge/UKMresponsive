@@ -11,12 +11,6 @@
 	</script>
 {% endblock %}
 
-{% block blah %}
-	{% for section in page.getPageBlocks().getAll() %}
-		{% embed ("UKMDesignBundle:PageBlock:"~ section.template ~".html.twig")|UKMpath with{ block: section } %}{% endembed %}
-	{% endfor %}
-{% endblock %}
-
 {% block content %}
 	<div class="container-fluid">
 		<div class="row-flex">
@@ -33,20 +27,25 @@
 				<div class="lead">
 					{{ THEME_CONFIG.get('hvaerukm').kort|raw }}
 				</div>
-				<p>
+				<div class="col-12 d-block d-md-none mt-3">
+					<div class="mitt_UKM"></div>
+				</div>
+
+{#				<p>
 					<a href="#" class="UKMtoggleShow phoneReadMoreUKM" data-target="phoneReadMoreUKM">Les mer om UKM</a>
 				</p>
+#}
 			</div>
 		</div>
 	</div>
 	
 	<div class="clearfix"></div>
 	
-	<div class="UKMtoggleContent" style="display:none" id="phoneReadMoreUKM">
+{#	<div class="UKMtoggleContent" style="display:none" id="phoneReadMoreUKM"> #}
 		{% for section in page.getPageBlocks().getAll() %}
 			{% embed ("UKMDesignBundle:PageBlock:"~ section.template ~".html.twig")|UKMpath with{ block: section } %}{% endembed %}
 		{% endfor %}
-		<div class="container">
+{#		<div class="container">
 			<div class="row">
 				<div class="col-12">
 					<p>
@@ -55,14 +54,11 @@
 				</div>
 			</div>
 		</div>
-	</div>
+#}
+{#	</div> #}
 	
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-12 d-block d-md-none">
-				<div class="mitt_UKM"></div>
-			</div>
-
 			<div class="col-12 px-4">
 				<h4 class="mt-5">Nyheter fra UKM</h4>
 				<div class="row">

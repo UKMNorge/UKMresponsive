@@ -14,7 +14,7 @@ class SitemapService {
 	private $cacheDir = null;
 	private $cacheFile = null;
 	private $cacheTime = 3600; // 1H in seconds
-	private $githubUrl = 'https://raw.githubusercontent.com/UKMNorge/UKMresponsive/redesign/UKMNorge/DesignBundle/Resources/config/sitemap.yml'; // NOTE: BRANCH!
+	private $githubUrl = 'https://raw.githubusercontent.com/UKMNorge/UKMresponsive/master/UKMNorge/DesignBundle/Resources/config/sitemap.yml';
 	private $fileLocator;
 	
 	public function __construct(FileLocator $fileLocator, $cacheDir) {
