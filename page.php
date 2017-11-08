@@ -25,7 +25,7 @@ switch( $page_template ) {
 	## TILHØRENDE MØNSTRINGEN
 	# Lokalmønstringer i fylket
 	case 'lokalmonstringer':
-		require_once('UKMNorge/Wordpress/Controller/fylke/lokalmonstringer.controller.php');
+		require_once('UKMNorge/Wordpress/Controller/monstring/lokalmonstringer.controller.php');
 		$view_template = 'Fylke/lokalmonstringer_fullpage';
 		break;
 	# Påmeldte til mønstringen
@@ -73,7 +73,6 @@ switch( $page_template ) {
 		
 	# Standard wordpress-side
 	default:
-		require_once('UKMNorge/Wordpress/Controller/page.controller.php');
 		$view_template = 'Page/fullpage';
 		break;
 }

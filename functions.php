@@ -7,8 +7,22 @@ use UKMNorge\DesignBundle\Utils\SEOImage;
 add_theme_support( 'post-thumbnails' );
 add_theme_support( 'menus' );
 
+add_action( "template_include", "UKMresponsive_pageExists", 10000 );
+
 add_action( 'wp_ajax_nopriv_UKMresponsive', 'UKMresponsive_ajax' );
 add_action( 'wp_ajax_UKMresponsive', 'UKMresponsive_ajax' );
+add_action( 'after_setup_theme', 'UKMresponsive_imageSizes' );
+function UKMresponsive_imageSizes() {
+	add_image_size( 'lite', 350, 350 );
+	add_image_size( 'forsidebilde', 1800, 1800 );
+	add_image_size( 'veldigstor', 3000, 3000 );
+
+	update_option( 'medium_size_w', 600 );
+	update_option( 'medium_size_h', 600 );
+
+	update_option( 'large_size_w', 1200 );
+	update_option( 'large_size_h', 1200 );
+}
 
 define('PATH_THEME', TEMPLATEPATH . '/');
 define('PATH_DESIGNBUNDLE', PATH_THEME .'UKMNorge/DesignBundle/');
@@ -39,6 +53,12 @@ WP_TWIG::setTemplateDir( PATH_DESIGNBUNDLE .'Resources/views/' );
 WP_TWIG::setDebug( WP_ENV == 'dev' );
 $WP_TWIG_DATA = [];
 
+function UKMresponsive_pageExists( $template ) {
+	if( get_option('status_monstring') != false ) {
+		return locate_template( array('monstring-not-here.php') );
+	}
+	return $template;
+}
 
 function UKMresponsive_ajax() {
 	global $WP_TWIG_DATA;

@@ -97,7 +97,10 @@ $(document).on('click', '.UKMtoggleShow', function(e){
 	
 	var target = $(this).attr('data-target');
 	$(document).trigger('pre_UKMtoggleShow#'+ target);
-	$('#' + target + '.UKMtoggleContent').slideDown(function(){$(document).trigger('UKMtoggleShow#'+ target);});
+	$('#' + target + '.UKMtoggleContent').slideDown(function(){
+		$(document).trigger('UKMtoggleShow#'+ target);
+		AOS.refresh();	
+	});
 	$('.' + target + '.UKMtoggleShow').hide();
 	$('.' + target + '.UKMtoggleHide').fadeIn();
 });
@@ -123,8 +126,9 @@ $(document).on('UKMresponsiveAJAX:fail:favoritt', function(e, JSONresponse) {
 });
 // SUCCESS
 $(document).on('UKMresponsiveAJAX:success:favoritt', function(e, JSONresponse) {
-	$( '#mitt_UKM' ).html( JSONresponse.html );
-	$( '#UKMfavoritt').fadeIn(200);
+	$( '.mitt_UKM' ).html( JSONresponse.html );
+	$( '.mitt_UKM' ).html( JSONresponse.html );
+	$( '.UKMfavoritt').fadeIn(200);
 });
 
 
@@ -161,7 +165,7 @@ $(document).on('click','#saveAsMine', function(e){
 		$('#saveAsMineExplanation').slideDown();
 		$(this).find('.text').text( $(this).find('.text').text().replace('lagre', 'lagret') );
 	} else {
-		$(this).attr('data-saved', 'false');
+		$(this).attr('data-saved', 'false'); 
 		Cookies.remove('UKMfavoritt');
 		$(this).find('span.icon').removeClass('icon-heart').addClass('icon-heart-outlined');
 		$('#saveAsMineExplanation').slideUp();
@@ -174,4 +178,11 @@ $(document).on('click','#saveAsMine', function(e){
 **/
 $(document).on('click', '.innslagCard', function(e){
 	window.location.href = $(this).find('.name > a').attr('href');
+});
+/**
+ * AOS - Animate On Scroll
+ *
+**/
+$(document).ready(function(){
+	AOS.init();
 });

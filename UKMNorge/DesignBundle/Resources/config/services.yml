@@ -8,7 +8,11 @@ services:
         class: UKMNorge\DesignBundle\Services\SEOService
         arguments: 
             $seoDefault: '%SEOdefaults%'
+            $seoAppDefault: '%SEOdefaultsApp%'
+            $facebook: '%facebook%'
+            $google: '%google%'
     ukmdesign.sitemap:
         class: UKMNorge\DesignBundle\Services\SitemapService
         arguments:
             - @file_locator
+            - '%kernel.cache_dir%'

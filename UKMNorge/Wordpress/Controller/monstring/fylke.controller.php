@@ -8,7 +8,7 @@ fylkeController::init( get_option('pl_id') );
 
 // NÅR STARTER PÅMELDINGEN
 $now = new DateTime('now');
-$omToUker = new DateTime('now + 2 weeks');
+$omToUker = new DateTime('now + 3 weeks');
 
 /**
  * SET STATE
@@ -31,7 +31,7 @@ if( $WP_TWIG_DATA['posts']->getPaged() ) {
 	fylkeController::setState('arkiv');
 }
 // 2: Påmeldingen har ikke åpnet
-elseif( fylkeController::erPameldingStartet() ) {
+elseif( !fylkeController::erPameldingStartet() ) {
 	fylkeController::setState('pre_pamelding');
 }
 // 3: Fylkesmønstringen starter i løpet av 2 uker
@@ -81,7 +81,7 @@ else {
 	#fylkeController::setState('pre_pamelding'); // DEV
 	#fylkeController::setState('pamelding'); // DEV
 	#fylkeController::setState('lokalmonstringer'); // DEV
-	fylkeController::setState('fylkesmonstring'); // DEV
+	#fylkeController::setState('fylkesmonstring'); // DEV
 
 
 

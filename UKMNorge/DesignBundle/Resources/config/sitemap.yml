@@ -12,11 +12,11 @@ UKM:
             id: derdubor
             url: //ukm.no/derdubor/
             title: Der du bor
-        - 
-            id: hvaer
-            url: //ukm.no/hva-er/
-            title: Hva er UKM?
-            description: Alt om Ung Kultur Møtes
+#        - 
+#            id: hvaer
+#            url: //ukm.no/hva-er/
+#            title: Hva er UKM?
+#            description: Alt om Ung Kultur Møtes
 #        - 
 #            id: hvameldepa
 #            url: //ukm.no/hva-kan-jeg-delta-med/
@@ -26,11 +26,11 @@ UKM:
 #            url: //ukm.no/unge-arrangører/
 #            title: Unge arrangører
 #            description: 
-#        - 
-#            id: ambassadorer
-#            url: //ambassador.ukm.no/
-#            title: Ambassadører
-#            description: Bli kjent med oss
+        - 
+            id: ambassadorer
+            url: //ambassador.ukm.no/
+            title: Ambassadører
+            description: Bli kjent med oss
 #        - 
 #            id: urg
 #            url: //ukm.no/urg/
@@ -53,22 +53,22 @@ UKM:
             description: Bli kjent med oss
 
 egoego:
-    url: //egoego.no/
+    url: //ego.ukm.no/
     title: Ego
     pages:
         - 
             id: forsiden
-            url: //egoego.no/
+            url: //ego.ukm.no/
             title: Forsiden
             description:
-        - 
-            id: egoom
-            url: //egoego.no/om-oss/
-            title: Hva er ego?
-            description:
+#        - 
+#            id: egoom
+#            url: //ego.ukm.no/om-oss/
+#            title: Hva er ego?
+#            description:
         -
             id: egokontakt
-            url: //egoego.no/kontakt/
+            url: //ego.ukm.no/kontakt/
             title: Kontakt oss
 
 
@@ -92,14 +92,14 @@ organisasjonen:
             id: ukmsjefen
             url: //org.ukm.no/category/ukmsjefen/
             title: UKM-sjefen
-        - 
-            id: historikk
-            url: //org.ukm.no/historikk/
-            title: Historikk
-        - 
-            id: verdier
-            url: //org.ukm.no/verdier/
-            title: Verdier
+#        - 
+#            id: historikk
+#            url: //org.ukm.no/historikk/
+#            title: Historikk
+#        - 
+#            id: verdier
+#            url: //org.ukm.no/verdier/
+#            title: Verdier
         - 
             id: grafikk
             url: //org.ukm.no/grafisk-profil/
@@ -119,21 +119,25 @@ ukmtv:
     title: UKM-TV
     pages:
         -
-            id: tvsok
+            id: sok
             url: //tv.ukm.no/search/
             title: Søk
         -
-            id: festivaltv
+            id: festival
             url: //tv.ukm.no/festivalen/
             title: UKM-festivalen
         -
-            id: fylketv
+            id: fylke
             url: //tv.ukm.no/fylke/
-            title: Fylkesfestivalene
+            title: Fylkesfestivaler
         -
-            id: tvsok
+            id: lokal
             url: //tv.ukm.no/lokal/
-            title: Lokalarrangementene
+            title: Lokalmønstringer
+        -
+            id: info
+            url: //tv.ukm.no/info/
+            title: Infovideoer
 
 arrangorer:
     url: //ukm.no/wp-login.php

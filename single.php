@@ -2,6 +2,7 @@
 
 use UKMNorge\DesignBundle\Utils\Sitemap;
 use UKMNorge\DesignBundle\Utils\SEO;
+use UKMNorge\DesignBundle\Utils\SEOImage;
 
 require_once('header.php');
 
@@ -31,6 +32,38 @@ if ( isset( $WP_TWIG_DATA['post']->meta->ukm_ma ) ) {
 	$authorlist .= ucfirst( $WP_TWIG_DATA['post']->author->display_name ) .', ';
 }
 $authorlist = rtrim( $authorlist, ', ');
+
+// VIDEO ON TOP (FEATURED VIDEO)
+if ( isset( $WP_TWIG_DATA['post']->meta->video_on_top ) ) {
+	require_once('UKM/tv.class.php');
+	$selected = $WP_TWIG_DATA['post']->meta->video_on_top;
+	if($selected == 'egendefinert') {
+		$url = $WP_TWIG_DATA['post']->meta->video_on_top_URL;
+		// Find ID from URL
+		$url = rtrim($url, '/').'/';
+		$url = explode ('/', $url);
+		$url = $url[count($url)-2];
+		$url = explode ('-', $url);
+		$selected = $url[0]; 
+	}
+	// Finn tv-objektet.
+	$tv = new TV($selected);
+	$WP_TWIG_DATA['featured_video'] = $tv->embedCodeVH();
+}
+
+$image = $WP_TWIG_DATA['post']->image;
+
+if( is_object( $image ) ) {
+	if( isset( $image->forsidebilde ) ) {
+		$image = $image->forsidebilde;
+	} elseif( isset( $image->large ) ) {
+		$image = $image->large;
+	} else {
+		// $image = $image;
+	}
+	$SEOimage = new SEOimage( $image->src, $image->width, $image->height );
+	SEO::setImage( $SEOimage );
+}
 
 SEO::setType('article');
 SEO::setTitle( $WP_TWIG_DATA['post']->title );
