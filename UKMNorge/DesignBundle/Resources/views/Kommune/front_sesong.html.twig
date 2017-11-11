@@ -23,11 +23,21 @@
 							men vi har likevel åpnet forhåndspåmeldingen.
 						</p>
 					{% else %}
-						<h2>Påmeldingen er åpen</h2>
+						<h2>Påmeldingen er åpen!</h2>
+						<small>
+							{% if monstring.erRegistrert() and monstring.erPameldingApen() %}
+								{% embed "UKMDesignBundle:Kommune:frister.html.twig"|UKMpath %}{% endembed %}
+							{% endif %}
+						</small>
 					{% endif %}
 					
 					<p class="my-5">
 						<a href="//delta.{{ UKM_HOSTNAME }}" class="btn btn-block btn-primary">Start påmelding</a>
+					</p>
+				{% endif %}
+				{% if state == 'lokalmonstring' and not monstring.erStartet() %}
+					<p class="my-5 center">
+						Nettpåmeldingen er stengt, men du kan <a href="kontaktpersoner/">ringe lokalkontakten</a>
 					</p>
 				{% endif %}
 			</div>
@@ -42,19 +52,11 @@
 					{% endembed %}
 				{% endif %}
 
-				{% if state == 'pamelding' and monstring.erRegistrert() and monstring.erPameldingApen() %}
-					{% embed "UKMDesignBundle:Kommune:frister.html.twig"|UKMpath %}{% endembed %}
-				{% endif %}
 				
 				{% if state != 'pre_pamelding' %}
 					<div class="mb-3">
 						{% embed "UKMDesignBundle:Kommune:meny.html.twig"|UKMpath %}{% endembed %}
 					</div>
-				{% endif %}
-				{% if state == 'lokalmonstring' and not monstring.erStartet() %}
-					<p class="center">
-						Nettpåmeldingen er stengt, men du kan <a href="kontaktpersoner/">ringe lokalkontakten</a>
-					</p>
 				{% endif %}
 			</div>
 			
