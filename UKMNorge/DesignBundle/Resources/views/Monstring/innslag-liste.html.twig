@@ -1,35 +1,42 @@
 {# Embedded element - brukes for kjapp innlasting av oversikts-siden. Se innslag.html.twig for hovedsiden som lastes inn når man trykker på en deltaker. #}
 <div class="card-body m-0 p-2 innslag" attr-id="{{ innslag.id }}">
-	<div class="geografi is-breakable">
-		{% if monstring.getType() == 'kommune' %}
-			{{ innslag.getKommune() }}
-		{% else %}
-			{{ innslag.getFylke() }}
-		{% endif %}
-	</div>
+	{% if hendelse is defined and hendelse is not empty %}
+		<div class="order">
+			{{ innslag.getAttr('order') }}
+		</div>
+	{% endif %}
+	<div>
+		<div class="geografi is-breakable">
+			{% if monstring.getType() == 'kommune' %}
+				{{ innslag.getKommune() }}
+			{% else %}
+				{{ innslag.getFylke() }}
+			{% endif %}
+		</div>
+		
+		<div class="name">
+			<a href="../pameldte/{{ innslag.getId() }}/{{ hendelse is defined ? '?cid=' ~ hendelse.getId() ~ '&nr=' ~ innslag.getAttr('order') }}">
+				{{ innslag.getNavn() }}
+			</a>
+		</div>
+		<div class="sjanger">
+			{% if innslag.getSjanger() is empty %}
+				{{ innslag.getType() }}
+			{% else %}
+				{{ innslag.getType() }}: {{ innslag.getSjanger() }}
+			{% endif %}
+		</div>
 	
-	<div class="name">
-		<a href="{{ innslag.getId() }}/">
-			{{ innslag.getNavn() }}
-		</a>
-	</div>
-	<div class="sjanger">
-		{% if innslag.getSjanger() is empty %}
-			{{ innslag.getType() }}
-		{% else %}
-			{{ innslag.getType() }}: {{ innslag.getSjanger() }}
-		{% endif %}
-	</div>
-
-	<div class="row">
-		<div class="col-8 right innslagType small">
-			<div class="type"></div>
+		<div class="row">
+			<div class="col-8 right innslagType small">
+				<div class="type"></div>
+			</div>
 		</div>
 	</div>
-</div>
-<div class="collapse dynamicElement">
-	<div class="center">
-		<img class="loadingGif" width="100" src="{{ UKMasset('img/ukm-logo-pulse-breathe.gif') }}"/><br />
-		<button class="btn btn-large btn-default">Lukk</button>
+	<div class="collapse dynamicElement">
+		<div class="center">
+			<img class="loadingGif" width="100" src="{{ UKMasset('img/ukm-logo-pulse-breathe.gif') }}"/><br />
+			<button class="btn btn-large btn-default">Lukk</button>
+		</div>
 	</div>
 </div>

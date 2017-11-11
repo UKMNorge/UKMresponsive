@@ -27,7 +27,7 @@ class page {
 	 * Eksempel: input: http://ukm.dev/akershus/pameldte/23/. Output: 23.
 	 */
 	public function getLastParameter() {
-		$parts = explode("/", $_SERVER['REQUEST_URI']);
+		$parts = explode("/", explode('?', $_SERVER['REQUEST_URI'] )[0]);
 		$last = sizeof($parts)-1;
 		if( "" == $parts[$last] || null == $parts[$last] ) {
 			return $parts[$last-1];

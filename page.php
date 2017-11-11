@@ -34,7 +34,7 @@ switch( $page_template ) {
 		break;
 	# Mønstringens program
 	case 'program':
-		require_once('UKMNorge/Wordpress/Controller/program.controller.php');
+		require_once('UKMNorge/Wordpress/Controller/monstring/program.controller.php');
 		break;
 	# Kontaktpersoner på mønstringen
 	case 'kontaktpersoner':

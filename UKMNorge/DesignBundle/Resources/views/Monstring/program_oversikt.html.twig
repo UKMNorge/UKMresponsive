@@ -16,7 +16,7 @@
 						<div class="hendelse">
 							<div class="time">
 								{% if hendelse.harSynligDetaljprogram() %}
-									<a href="?id={{ hendelse.getId() }}">{{ hendelse.getStart()|date('H:i') }}</a>
+									<a href="{{ hendelse.getId() }}/">{{ hendelse.getStart()|date('H:i') }}</a>
 								{% else %}
 									{{ hendelse.getStart()|date('H:i') }}
 								{% endif %}
@@ -24,7 +24,7 @@
 							<div class="data">
 								<div class="tittel">
 									{% if hendelse.harSynligDetaljprogram() %}
-										<a href="?id={{ hendelse.getId() }}">{{ hendelse.getNavn() }}</a>
+										<a href="{{ hendelse.getId() }}/">{{ hendelse.getNavn() }}</a>
 									{% else %}
 										{{ hendelse.getNavn() }}
 									{% endif %}
