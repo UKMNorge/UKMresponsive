@@ -11,6 +11,9 @@
 		{% if monstring.getInnslag().harInnslag() %}
 			<div class="col menu-item">
 				<a href="{{ monstring.getLink() }}pameldte/">
+					<div class="badge badge-pill badge-primary pameldte-badge">
+						{{ monstring.getStatistikk().getTotal( monstring.getSesong() ).persons }}
+					</div>
 					<div class="icon icon-users"></div>
 					<div class="text">Påmeldte</div>
 				</a>
