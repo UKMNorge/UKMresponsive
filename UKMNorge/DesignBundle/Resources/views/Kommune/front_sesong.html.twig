@@ -31,14 +31,25 @@
 						</small>
 					{% endif %}
 					
-					<p class="my-5">
+					<p class="mt-5 center">
 						<a href="//delta.{{ UKM_HOSTNAME }}" class="btn btn-block btn-primary">Start påmelding</a>
 					</p>
+					{% if monstring.getStatistikk().getTotal( monstring.getSesong() ).persons > 10 %}
+						<p class="mt-0 mb-4 center small">
+							<a href="pameldte/">{{ monstring.getStatistikk().getTotal( monstring.getSesong() ).persons }} er allerede påmeldt</a>
+						</p>
+					{% endif %}
 				{% endif %}
 				{% if state == 'lokalmonstring' and not monstring.erStartet() %}
 					<p class="my-5 center">
 						Nettpåmeldingen er stengt, men du kan <a href="kontaktpersoner/">ringe lokalkontakten</a>
 					</p>
+					
+					{% if monstring.getStatistikk().getTotal( monstring.getSesong() ).persons > 0 %}
+						<p class="mt-0 mb-4 center small">
+							<a href="pameldte/">Se listen med de {{ monstring.getStatistikk().getTotal( monstring.getSesong() ).persons }} påmeldte</a>
+						</p>
+					{% endif %}
 				{% endif %}
 			</div>
 
