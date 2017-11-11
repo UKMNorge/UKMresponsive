@@ -2,6 +2,12 @@
 
 {% block content %}
 	<div class="container-fluid">
+		{% if fylke.getStatistikk().getTotal( fylke.getSesong() ).persons > 0 %}
+			<div class="float-right fylke-pameldte">
+				{{ fylke.getStatistikk().getTotal( fylke.getSesong() ).persons }} PÅMELDTE
+			</div>
+		{% endif %}
+
 		<div class="row-flex">
 			<div class="col-12 col-md-4 col-lg-3 float-right mb-4">
 			{% if pamelding_apen %}
