@@ -163,13 +163,13 @@ $(document).on('click','#saveAsMine', function(e){
 		$(this).attr('data-saved', 'true');
 		$(this).find('span.icon').removeClass('icon-heart-outlined').addClass('icon-heart');
 		$('#saveAsMineExplanation').slideDown();
-		$(this).find('.text').text( $(this).find('.text').text().replace('lagre', 'lagret') );
+		$(this).find('.text').text( $(this).find('.text').attr('data-saved') );
 	} else {
 		$(this).attr('data-saved', 'false'); 
 		Cookies.remove('UKMfavoritt');
 		$(this).find('span.icon').removeClass('icon-heart').addClass('icon-heart-outlined');
 		$('#saveAsMineExplanation').slideUp();
-		$(this).find('.text').text( $(this).find('.text').text().replace('lagret', 'lagre') );	
+		$(this).find('.text').text( $(this).find('.text').attr('data-save') );	
 	}
 });
 
