@@ -35,7 +35,7 @@ elseif( !fylkeController::erPameldingStartet() ) {
 	fylkeController::setState('pre_pamelding');
 }
 // 3: Fylkesmønstringen starter i løpet av 2 uker
-elseif( $omToUker > fylkeController::getMonstring()->getStart() ) {
+elseif( $omToUker > fylkeController::getMonstring()->getStart() && fylkeController::getMonstring()->erRegistrert() ) {
 	fylkeController::setState('fylkesmonstring');
 }
 // 4: Vi er i perioden mellom åpen påmelding og 2 uker før fylkesmønstring
