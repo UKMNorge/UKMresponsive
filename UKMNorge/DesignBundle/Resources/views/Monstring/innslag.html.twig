@@ -98,12 +98,16 @@
 										</div>
 										<div class="col-5 right text-right small-but-same-height">
 											{% if innslag.getType().getKey() == "musikk" %}
-												{% if not tittel.erInstrumental() and tittel.getTekstAv() is not empty %}
-													Tekst: {{ tittel.getTekstAv() }}
-													<br />
-												{% endif %}
-												{% if tittel.getMelodiAv() is not empty %}
-													Melodi: {{ tittel.getMelodiAv() }}
+												{% if tittel.getTekstAv() == tittel.getMelodiAv() and tittel.getTekstAv is not empty %}
+													Tekst og melodi: {{ tittel.getTekstAv() }}
+												{% else %}
+													{% if not tittel.erInstrumental() and tittel.getTekstAv() is not empty %}
+														Tekst: {{ tittel.getTekstAv() }}
+														<br />
+													{% endif %}
+													{% if tittel.getMelodiAv() is not empty %}
+														Melodi: {{ tittel.getMelodiAv() }}
+													{% endif %}
 												{% endif %}
 											{% elseif innslag.getType().getKey() == "dans" %}
 												Koreografi: {{ tittel.getKoreografiAv() }}
