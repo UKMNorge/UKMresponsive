@@ -16,6 +16,7 @@ class SEO {
 	public static $fb_app_id;
 	
 	public static $google_site_verification;
+	public static $google_analytics;
 	
 	public static function getCanonical(){
 		return self::$canonical;
@@ -102,5 +103,11 @@ class SEO {
 	public static function setGoogleSiteVerification( $site_verification_id ) {
 		self::$google_site_verification = $site_verification_id;
 	}
-
+	
+	public static function getGoogleAnalytics() {
+		return self::$google_analytics;
+	}
+	public static function setGoogleAnalytics( $analytics ) {
+		self::$google_analytics = $analytics;
+	}
 }

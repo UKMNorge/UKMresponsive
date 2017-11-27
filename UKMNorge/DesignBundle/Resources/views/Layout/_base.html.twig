@@ -2,9 +2,9 @@
 <html lang="en">
 	<head>
 		{# CHARSET AND VIEWPORT #}
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=1.0, initial-scale=1.0, user-scalable=no">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=1.0, initial-scale=1.0, user-scalable=no" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		
 		<title>{{ SEO.getTitle()|raw }}</title>
@@ -30,25 +30,34 @@
 		var js, fjs = d.getElementsByTagName(s)[0];
 		if (d.getElementById(id)) return;
 		js = d.createElement(s); js.id = id;
-		js.src = "//connect.facebook.net/nb_NO/sdk.js#xfbml=1&version=v2.10&appId=459906850746266";
+		js.src = "//connect.facebook.net/nb_NO/sdk.js#xfbml=1&version=v2.10&appId={{ SEO is defined ? SEO.getFBAppId() : '' }}";
 		fjs.parentNode.insertBefore(js, fjs);
-		}(document, 'script', 'facebook-jssdk'));</script>
+		}(document, 'script', 'facebook-jssdk'));
+		</script>
 	</head>
+
 	
+	<body>
+		<div id="fb-root"></div>{# FACEBOOK #}
+		{% embed "UKMDesignBundle:Layout:header.html.twig"|UKMpath %}{% endembed %}
+	
+		<div class="container-fluid" id="UKMDesign_sitemap" style="display:none;">
+			{% block sectionNav %}{% endblock %}
+			{% embed "UKMDesignBundle:Layout:nav.html.twig"|UKMpath with {'hidden': true} %}{% endembed %}
+		</div>
+		<div id="UKMDesign_content">
+			{% block content %}Designfil mangler content-block.{% endblock %}
+		</div>
+		
+		{% embed "UKMDesignBundle:Layout:footer.html.twig"|UKMpath %}{% endembed %}
+	</body>
+
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-46216680-1"></script>
+	<script type="tex">
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	
+	  gtag('config', 'UA-46216680-1');
+	</script>
 </html>
-
-<body>
-	<div id="fb-root"></div>{# FACEBOOK #}
-	{% embed "UKMDesignBundle:Layout:header.html.twig"|UKMpath %}{% endembed %}
-
-	<div class="container-fluid" id="UKMDesign_sitemap" style="display:none;">
-		{% block sectionNav %}{% endblock %}
-		{% embed "UKMDesignBundle:Layout:nav.html.twig"|UKMpath with {'hidden': true} %}{% endembed %}
-	</div>
-	<div id="UKMDesign_content">
-		{% block content %}Designfil mangler content-block.{% endblock %}
-	</div>
-	
-	{% embed "UKMDesignBundle:Layout:footer.html.twig"|UKMpath %}{% endembed %}
-</body>
-

@@ -24,6 +24,8 @@ parameters:
         admins: 597605662
     google:
         site_verification: 'dD8sAwp7X8mpu2PN1iu4C3VWEDS8sMxYUavoVBrmnek'
+        analytics: 
+            main: 'UA-46216680-1'
     SEOdefaults:
         author: UKM
         site_name: UKM.no
