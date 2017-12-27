@@ -1,0 +1,8 @@
+{% extends "Layout/_"~ (singleMode is defined and singleMode ? 'singleMode' : 'base' ) ~".html.twig"|UKMpath %}
+
+{% block content %}
+	{% embed "twig/front-end/_styles.html.twig" %}{% endembed %}
+	{% embed "twig/front-end/_scripts.html.twig" %}{% endembed %}
+
+	{% embed "twig/front-end/_content.html.twig" %}{% endembed %}
+{% endblock %}

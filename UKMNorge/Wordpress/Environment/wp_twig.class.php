@@ -43,7 +43,9 @@ class WP_TWIG {
 		require_once('Twig/Autoloader.php');
 		Twig_Autoloader::register();
 		$loader = new Twig_Loader_Filesystem( self::getTemplateDir() );
-		
+		if( defined( 'FULLSTORY_PATH' ) ) {
+			$loader->addPath( FULLSTORY_PATH );
+		}
 		if( self::getDebug() ) {
 			$environment['debug'] = self::getDebug();
 		} else {
