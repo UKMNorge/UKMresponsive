@@ -1,8 +1,17 @@
 {% extends "Layout/_"~ (singleMode is defined and singleMode ? 'singleMode' : 'base' ) ~".html.twig"|UKMpath %}
 
-{% block content %}
+{% block css %}
+	{{ parent() }}
 	{% embed "twig/front-end/_styles.html.twig" %}{% endembed %}
-	{% embed "twig/front-end/_scripts.html.twig" %}{% endembed %}
+{% endblock %}
 
-	{% embed "twig/front-end/_content.html.twig" %}{% endembed %}
+{% block javascripts %}
+	{{ parent() }}
+	{% embed "twig/front-end/_scripts.html.twig" %}{% endembed %}
+{% endblock %}
+
+{% block content %}
+	<div class="FullStory">
+		{% embed "twig/front-end/_content.html.twig" %}{% endembed %}
+	</div>
 {% endblock %}
