@@ -29,4 +29,16 @@
 			</a>
 		</div>
 	</div>
+	<div class="row">
+		<div class="col-12">
+			{% if meny is defined and meny|length > 0 %}
+				{% for element in meny %}
+					<a href="{{ element.url }}" class="btn btn-outline-primary btn-block btn-sm">
+						{{ element.title }}
+					</a>
+				{% endfor %}
+			{% endif %}
+		</div>
+
+	</div>
 </div>
