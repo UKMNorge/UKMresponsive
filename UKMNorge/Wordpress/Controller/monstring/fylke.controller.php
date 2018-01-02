@@ -100,3 +100,5 @@ $WP_TWIG_DATA['harProgram'] 	= fylkeController::harProgram();
 
 $WP_TWIG_DATA['page_next'] 		= $WP_TWIG_DATA['posts']->getPageNext();
 $WP_TWIG_DATA['page_prev']		= $WP_TWIG_DATA['posts']->getPagePrev();
+
+$WP_TWIG_DATA['HEADER']->background->url = get_option('UKM_banner_image');

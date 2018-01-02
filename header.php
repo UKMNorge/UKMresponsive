@@ -11,6 +11,10 @@ setlocale(LC_ALL, 'nb_NO', 'nb', 'no');
 // CHECK CACHE (AND DIE IF FOUND CACHE)
 require_once('cache.php');
 
+$WP_TWIG_DATA['HEADER'] = new stdClass();
+$WP_TWIG_DATA['HEADER']->background = new stdClass();
+$WP_TWIG_DATA['HEADER']->button = new stdClass();
+$WP_TWIG_DATA['HEADER']->logo = new stdClass();
 $WP_TWIG_DATA['UKM_HOSTNAME'] = UKM_HOSTNAME;
 $WP_TWIG_DATA['blog_url'] = get_bloginfo('url');
 $WP_TWIG_DATA['ajax_url'] = admin_url( 'admin-ajax.php' );

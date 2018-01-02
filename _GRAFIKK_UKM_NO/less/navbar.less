@@ -50,20 +50,48 @@
 }
 
 
-.sectionTitle {
-	font-size: 1.5em;
-	font-weight: 100;
-	color: @color-primary;
-	padding-top: 0.75rem;
-}
 
 #UKMheader {
 	background: #fff;
+	position: relative;
 }
 /* WILL BE OVERWRITTEN BY THEME FILE */
+
 #UKMheader.navbar-with-slogan {
 	background-repeat: no-repeat;
 	background-position: center top;
 	background-image: url('//ukm.no/wp-content/themes/UKMresponsive_dev/_GRAFIKK_UKM_NO/img/banner-test.jpg');
 	background-size: cover;
+}
+
+
+/* IMPROVED CSS 2018 */
+#UKMheader.background {
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-image: url('//ukm.no/wp-content/themes/UKMresponsive_dev/_GRAFIKK_UKM_NO/img/banner-test.jpg');
+	background-size: cover;
+	min-height: 30vh;
+}
+
+#UKMheader.background.top {
+	background-position-y: top;
+}
+
+#UKMheader.background #main_menu_button {
+	background: rgba(255, 255, 255, 0.44);
+}
+
+#UKMheader .sectionTitle {
+	font-size: 1.5em;
+	font-weight: 100;
+	color: @color-primary;
+	padding-top: 0.75rem;
+}
+#UKMheader.background .sectionTitle {
+	position: absolute;
+	bottom: .5em;
+}
+#UKMheader.background .sectionTitle > a {
+	color: #fff;
 }
