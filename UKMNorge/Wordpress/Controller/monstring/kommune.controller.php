@@ -70,4 +70,6 @@ $WP_TWIG_DATA['page_prev']			= $WP_TWIG_DATA['posts']->getPagePrev();
 $WP_TWIG_DATA['favoritt']			= kommuneController::getFavoritt();
 $WP_TWIG_DATA['harFavoritt']		= kommuneController::harFavoritt();
 
-$WP_TWIG_DATA['HEADER']->background->url = get_option('UKM_banner_image');
+if( get_option('UKM_banner_image') ) {
+	$WP_TWIG_DATA['HEADER']->background->url = get_option('UKM_banner_image');
+}
