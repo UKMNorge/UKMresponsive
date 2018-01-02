@@ -1,7 +1,5 @@
 {% extends "Layout/_"~ (singleMode is defined and singleMode ? 'singleMode' : 'base' ) ~".html.twig"|UKMpath %}
 
-{% set showSlogan = true %}
-
 {% block javascripts %}
 	{{ parent() }}
 	<script type="text/javascript">

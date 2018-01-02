@@ -24,13 +24,24 @@ switch( get_option('site_type') ) {
 		break;
 	case 'ego':
 		$view_template = 'Ego/home';
+		$WP_TWIG_DATA['section'] = null; // Fjern section-header på forsiden
+		$WP_TWIG_DATA['HEADER']->logo->url = '//grafikk.ukm.no/profil/ego/EGO_logo.png';
+		$WP_TWIG_DATA['HEADER']->logo->link = Sitemap::getPage('egoego', 'forsiden');
 		break;
 	case 'organisasjonen':
 		$view_template = 'Page/home_organisasjonen';
 		$WP_TWIG_DATA['section'] = null; // Fjern section-header på forsiden
+		$WP_TWIG_DATA['HEADER']->background->url = '//grafikk.ukm.no/UKMresponsive/img/banner-test-cherry.jpg';
+		$WP_TWIG_DATA['HEADER']->background->position = 'top';
+		$WP_TWIG_DATA['HEADER']->slogan = WP_CONFIG::get('organisasjonen')['slogan'];
+		$WP_TWIG_DATA['HEADER']->button->background = 'rgba(242, 109, 21, 0.44)';
 		break;
 	default:
 		$view_template = 'Page/home_norge';
+		$WP_TWIG_DATA['HEADER']->background->url = '//grafikk.ukm.no/UKMresponsive/img/banner-test-gul-ish.jpg';
+		$WP_TWIG_DATA['HEADER']->background->position = 'top';
+		$WP_TWIG_DATA['HEADER']->slogan = WP_CONFIG::get('hvaerukm')['slogan'];
+		$WP_TWIG_DATA['HEADER']->button->background = 'rgba(242, 109, 21, 0.44)';
 		break;
 }
 echo WP_TWIG::render( $view_template, $WP_TWIG_DATA );
