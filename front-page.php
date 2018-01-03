@@ -38,6 +38,18 @@ switch( get_option('site_type') ) {
 		break;
 	default:
 		$view_template = 'Page/home_norge';
+		
+		$WP_TWIG_DATA['in_season'] = date('m') < 5;
+		if( $WP_TWIG_DATA['in_season'] ) {
+			$WP_TWIG_DATA['pamelding_apen'] = date('m') < 4;
+
+			require_once('UKM/statistikk.class.php');
+			$stat = new statistikk();
+			$stat->setLand();
+			$total = $stat->getTotal(get_site_option('season'));
+			$WP_TWIG_DATA['pameldte'] = $total['persons'];
+		}
+		
 		$WP_TWIG_DATA['HEADER']->background->url = '//grafikk.ukm.no/UKMresponsive/img/banner-test-gul-ish.jpg';
 		$WP_TWIG_DATA['HEADER']->background->position = 'top';
 		$WP_TWIG_DATA['HEADER']->slogan = WP_CONFIG::get('hvaerukm')['slogan'];
