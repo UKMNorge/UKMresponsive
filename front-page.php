@@ -24,9 +24,12 @@ switch( get_option('site_type') ) {
 		break;
 	case 'ego':
 		$view_template = 'Ego/home';
-		$WP_TWIG_DATA['section'] = null; // Fjern section-header på forsiden
-		$WP_TWIG_DATA['HEADER']->logo->url = '//grafikk.ukm.no/profil/ego/EGO_logo.png';
-		$WP_TWIG_DATA['HEADER']->logo->link = Sitemap::getPage('egoego', 'forsiden');
+		$section = new stdClass();
+		$section->title = 'Redaksjonelt';
+		$section->link = Sitemap::getPage('egoego', 'forsdiden');
+		$WP_TWIG_DATA['section'] = $section;//null; // Fjern section-header på forsiden
+#		$WP_TWIG_DATA['HEADER']->logo->url = '//grafikk.ukm.no/profil/ego/EGO_logo.png';
+#		$WP_TWIG_DATA['HEADER']->logo->link = Sitemap::getPage('egoego', 'forsiden');
 		break;
 	case 'organisasjonen':
 		$view_template = 'Page/home_organisasjonen';
