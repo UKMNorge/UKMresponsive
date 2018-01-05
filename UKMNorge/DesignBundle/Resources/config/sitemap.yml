@@ -51,10 +51,15 @@ UKM:
             url: //ukm.no/tidligere-ar/
             title: UKM-arrangement 2001-2017
             description: Bli kjent med oss
+        -
+            id: deltalogin
+            url: //delta.ukm.no/
+            title: Logg inn
+            description: Endre din påmelding
 
 egoego:
     url: //ego.ukm.no/
-    title: Ego
+    title: Redaksjonelt
     pages:
         - 
             id: forsiden
@@ -66,10 +71,10 @@ egoego:
 #            url: //ego.ukm.no/om-oss/
 #            title: Hva er ego?
 #            description:
-        -
-            id: egokontakt
-            url: //ego.ukm.no/kontakt/
-            title: Kontakt oss
+#        -
+#            id: egokontakt
+#            url: //ego.ukm.no/kontakt/
+#            title: Kontakt oss
 
 
 organisasjonen:
@@ -107,7 +112,7 @@ organisasjonen:
         - 
             id: cookies
             url: //org.ukm.no/cookies/
-            title: Småkakepolitikk
+            title: Personvernpolitikk
         - 
             id: creativecommons
             url: //org.ukm.no/vilkar/
