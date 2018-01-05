@@ -58,22 +58,22 @@ UKM:
             description: Endre din påmelding
 
 egoego:
-    url: //ego.ukm.no/
+    url: //liker.ukm.no/
     title: Redaksjonelt
     pages:
         - 
             id: forsiden
-            url: //ego.ukm.no/
+            url: //liker.ukm.no/
             title: Forsiden
             description:
 #        - 
 #            id: egoom
-#            url: //ego.ukm.no/om-oss/
+#            url: //liker.ukm.no/om-oss/
 #            title: Hva er ego?
 #            description:
 #        -
 #            id: egokontakt
-#            url: //ego.ukm.no/kontakt/
+#            url: //liker.ukm.no/kontakt/
 #            title: Kontakt oss
 
 
