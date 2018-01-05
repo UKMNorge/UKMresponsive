@@ -12,16 +12,19 @@ $WP_TWIG_DATA['post'] = new WPOO_Post( $post );
 $authorlist = '';
 // LOAD MULTI-AUTHORS LIST
 if ( isset( $WP_TWIG_DATA['post']->meta->ukm_ma ) ) {
-	$list = json_decode( $WP_TWIG_DATA['post']->meta->ukm_ma, true);
+	$list = @json_decode( $WP_TWIG_DATA['post']->meta->ukm_ma, true);
 	$authors = array();
-
-	foreach ($list as $user_login => $role) {
-		$user = get_user_by('login', $user_login);
-		if ($user) {
-			$authors[$user_login] = new WPOO_Author($user);
-			$authors[$user_login]->role = $role;
-			$authorlist .= ucfirst( $authors[ $user_login ]->display_name ) .', ';
+	if( is_array( $list ) ) {
+		foreach ($list as $user_login => $role) {
+			$user = get_user_by('login', $user_login);
+			if ($user) {
+				$authors[$user_login] = new WPOO_Author($user);
+				$authors[$user_login]->role = $role;
+				$authorlist .= ucfirst( $authors[ $user_login ]->display_name ) .', ';
+			}
 		}
+	} else {
+		$authors = null;
 	}
 	$WP_TWIG_DATA['authors'] = $authors;
 
