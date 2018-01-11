@@ -74,6 +74,10 @@ class WP_TWIG {
 		$filter_dato = new Twig_SimpleFilter('dato', 'WP_TWIG_date');
 		$twig->addFilter($filter_dato);
 		
+		// Add maned-filter
+		$filter_maned = new Twig_SimpleFilter('maned', 'WP_TWIG_maned');
+		$twig->addFilter($filter_maned);
+		
 		// Add path-filter
 		$filter_path = new Twig_SimpleFilter('UKMpath', 'UKMpath');
 		$twig->addFilter($filter_path);
