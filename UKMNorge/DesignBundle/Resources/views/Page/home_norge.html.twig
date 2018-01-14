@@ -42,14 +42,17 @@
 	<div class="container-fluid">
 		<div class="row-flex">
 			{# FINN NÆRMESTE UKM ELLER "FAVORITT-UKM"-BOKS #}
-			{% if ( in_season and pamelding_apen ) or not in_season %}
-				<div class="col-12 col-md-5 mb-3 float-right">
+			<div class="col-12 col-md-5 mb-3 float-right">
+				{% if ( in_season and pamelding_apen ) or not in_season %}
 					<div class="right">
 						<a href="{{ Sitemap.getPage('UKM','derdubor') }}" class="btn btn-primary">Finn nærmeste UKM</a>
 					</div>
-					<div class="d-none d-md-block mt-3 mitt_UKM"></div>
+				{% endif %}
+				<div class="d-none d-md-block mt-3">
+					<div class="mitt_UKM"></div>
+					<div class="nyhet">{% embed "UKMDesignBundle:Page:home_norge_nyhet.html.twig"|UKMpath with {post: news } %}{% endembed %}</div>
 				</div>
-			{% endif %}
+			</div>
 
 			{# HVA ER UKM? #}
 			<div class="col-12 col-md-7 float-left mt-3 mb-2">
@@ -58,34 +61,31 @@
 				</div>
 				<div class="col-12 d-block d-md-none mt-3">
 					<div class="mitt_UKM"></div>
+					<div class="nyhet">{% embed "UKMDesignBundle:Page:home_norge_nyhet.html.twig"|UKMpath with {post: news } %}{% endembed %}</div>
 				</div>
-
-{#				<p>
-					<a href="#" class="UKMtoggleShow phoneReadMoreUKM" data-target="phoneReadMoreUKM">Les mer om UKM</a>
-				</p>
-#}
 			</div>
 		</div>
 	</div>
 	
 	<div class="clearfix"></div>
 	
-{#	<div class="UKMtoggleContent" style="display:none" id="phoneReadMoreUKM"> #}
-		{% for section in page.getPageBlocks().getAll() %}
-			{% embed ("UKMDesignBundle:PageBlock:"~ section.template ~".html.twig")|UKMpath with{ block: section } %}{% endembed %}
-		{% endfor %}
-{#		<div class="container">
-			<div class="row">
-				<div class="col-12">
-					<p>
-						<a href="#" class="UKMtoggleHide phoneReadMoreUKM" data-target="phoneReadMoreUKM">Lukk</a>
-					</p>
+	{% for section in page.getPageBlocks().getAll() %}
+		{% embed ("UKMDesignBundle:PageBlock:"~ section.template ~".html.twig")|UKMpath with{ block: section } %}{% endembed %}
+	{% endfor %}
+	
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div class="mx-4">
+					<h3>Leter du etter sakene våre?</h3>
+					<a href="{{ Sitemap.getPage('egoego','forsiden') }}">Vi har flyttet de til redaksjonelt-siden</a>
 				</div>
 			</div>
 		</div>
-#}
-{#	</div> #}
-	
+	</div>
+		
+
+	{#
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-12 px-4">
@@ -101,4 +101,5 @@
 			</div>
 		</div>
 	</div>
+	#}
 {% endblock %}
