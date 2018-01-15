@@ -7,6 +7,8 @@ require_once('header.php');
 require_once('UKMNorge/Wordpress/Utils/page.class.php');
 require_once('UKMNorge/Wordpress/Utils/posts.class.php');
 
+SEO::setCanonical( $WP_TWIG_DATA['blog_url'] );
+
 $WP_TWIG_DATA['page'] = new page();
 $WP_TWIG_DATA['posts'] = new posts(6);
 $WP_TWIG_DATA['page_next'] = get_permalink( get_option( 'page_for_posts' ) );
