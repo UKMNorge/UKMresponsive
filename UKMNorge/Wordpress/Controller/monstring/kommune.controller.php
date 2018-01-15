@@ -2,6 +2,7 @@
 	
 use UKMNorge\DesignBundle\Utils\Sitemap;
 use UKMNorge\DesignBundle\Utils\SEO;
+use UKMNorge\DesignBundle\Utils\SEOImage;
 
 require_once('UKM/monstring.class.php');
 require_once('UKM/monstringer.class.php');
