@@ -23,6 +23,7 @@ if( is_numeric( $id ) ) {
 	$innslag = new innslag_v2($id);	
 	$view_template = 'Monstring/innslag';
 	
+	SEO::setCanonical( SEO::getCanonical(). $id .'/'); // Already set to correct page, but is missing id
 	SEO::setTitle( $innslag->getNavn() .' @ UKM');
 	SEO::setDescription( 'Les mer om '. $innslag->getNavn() .' som deltar.' );
 	if( $innslag->getBilder()->har() ) {

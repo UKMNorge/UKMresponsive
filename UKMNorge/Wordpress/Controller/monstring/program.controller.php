@@ -17,6 +17,7 @@ if( is_numeric( $id ) ) {
 	$hendelse = new forestilling_v2( $id );
 	$WP_TWIG_DATA['hendelse'] = $hendelse;
 
+	SEO::setCanonical( SEO::getCanonical(). $id .'/'); // Already set to correct page, but is missing id
 	SEO::setTitle( $hendelse->getNavn() );
 	SEO::setDescription( $hendelse->getStart()->format('j. M \k\l. H:i') .'. '.( $monstring->getType() == 'kommune' ? 'UKM ' : ''). $monstring->getNavn() );
 
