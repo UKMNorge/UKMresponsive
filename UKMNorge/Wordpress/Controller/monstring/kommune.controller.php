@@ -1,4 +1,8 @@
 <?php
+	
+use UKMNorge\DesignBundle\Utils\Sitemap;
+use UKMNorge\DesignBundle\Utils\SEO;
+
 require_once('UKM/monstring.class.php');
 require_once('UKM/monstringer.class.php');
 require_once('_kommune.class.php');
@@ -22,22 +26,34 @@ kommuneController::init( get_option('pl_id') );
 // 1: pagination is active
 if( $WP_TWIG_DATA['posts']->getPaged() ) {
 	kommuneController::setState('arkiv');
+	SEO::setTitle( 'Nyheter fra UKM '. kommuneController::getMonstring()->getNavn() );
+	SEO::setDescription( 
+		'Her finner du alle nyheter fra '. kommuneController::getMonstring()->getNavn()
+	);
 }
 // 2: Påmeldingen har ikke åpnet enda (dato for systemåpning)
 elseif( !kommuneController::erPameldingStartet() ) {
 	kommuneController::setState('pre_pamelding');
+	SEO::setTitle( 'UKM '. kommuneController::getMonstring()->getNavn() );
+	SEO::setDescription( 'Hold deg oppdatert på hva som skjer med '. kommuneController::getMonstring()->getNavn() );
 }
 // 3: Påmeldingen er ikke stengt (registrert dato by default eller user), (pre_registrering, pamelding)
 elseif( kommuneController::getMonstring()->erPameldingApen() ) {
 	kommuneController::setState('pamelding');
+	SEO::setTitle( 'Påmeldingen er åpen!' );
+	SEO::setDescription( 'Meld deg på UKM '. kommuneController::getMonstring()->getNavn() );
 }
 // 4: Mønstringen er ikke over, ergo er påmeldingen stengt (by default eller user)
 elseif( !kommuneController::getMonstring()->erFerdig() ) {
 	kommuneController::setState('lokalmonstring');
+	SEO::setTitle( 'Vi er i gang!' );
+	SEO::setDescription( 'Alt om UKM '. kommuneController::getMonstring()->getNavn() );
 }
 // 5: Mønstringen er over
 else {
 	kommuneController::setState('ferdig');
+	SEO::setTitle( 'Alt om UKM '. kommuneController::getMonstring()->getNavn() );
+	SEO::setDescription( 'Les mer om UKM '. kommuneController::getMonstring()->getNavn() );
 }
 
 /**
@@ -72,4 +88,6 @@ $WP_TWIG_DATA['harFavoritt']		= kommuneController::harFavoritt();
 
 if( get_option('UKM_banner_image') ) {
 	$WP_TWIG_DATA['HEADER']->background->url = get_option('UKM_banner_image');
+	$image = new SEOImage( str_replace('http:','https:', get_option('UKM_banner_image') ) );
+	SEO::setImage( $image );
 }

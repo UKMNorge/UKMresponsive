@@ -1,4 +1,9 @@
 <?php
+	
+use UKMNorge\DesignBundle\Utils\Sitemap;
+use UKMNorge\DesignBundle\Utils\SEO;
+use UKMNorge\DesignBundle\Utils\SEOImage;
+
 require_once('UKM/monstring.class.php');
 require_once('UKM/monstringer.class.php');
 require_once('_fylke.class.php');
@@ -29,14 +34,26 @@ $omToUker = new DateTime('now + 3 weeks');
 // 1: pagination is active
 if( $WP_TWIG_DATA['posts']->getPaged() ) {
 	fylkeController::setState('arkiv');
+	SEO::setTitle( 'Nyheter fra '. fylkeController::getMonstring()->getNavn() );
+	SEO::setDescription( 
+		'Her finner du alle nyheter fra '. fylkeController::getMonstring()->getNavn()
+	);
 }
 // 2: Påmeldingen har ikke åpnet
 elseif( !fylkeController::erPameldingStartet() ) {
 	fylkeController::setState('pre_pamelding');
+	SEO::setTitle( fylkeController::getMonstring()->getNavn() );
+	SEO::setDescription( 
+		'Hold deg oppdatert på hva som skjer med '. fylkeController::getMonstring()->getNavn()
+	);
 }
 // 3: Fylkesmønstringen starter i løpet av 2 uker
 elseif( $omToUker > fylkeController::getMonstring()->getStart() && fylkeController::getMonstring()->erRegistrert() ) {
 	fylkeController::setState('fylkesmonstring');
+	SEO::setTitle( fylkeController::getMonstring()->getNavn() );
+	SEO::setDescription( 
+		'Straks klar for fylkesfestival! Vi starter '. fylkeController::getMonstring()->getStart()->format('j. M \k\l. H:i')
+	);
 }
 // 4: Vi er i perioden mellom åpen påmelding og 2 uker før fylkesmønstring
 else {
@@ -61,10 +78,14 @@ else {
 	// 4.1: Påmeldingen er åpen
 	if( $now < $siste_pamelding ) {
 		fylkeController::setState('pamelding');
+		SEO::setTitle( 'Påmeldingen er åpen!' );
+		SEO::setDescription( 'Meld deg på UKM i '. fylkeController::getMonstring()->getFylke()	);
 	}
 	// 4.2: Påmeldingen er lukket - fokus på lokalmønstringer (publikum)
 	 else {
 		fylkeController::setState('lokalmonstringer');
+		SEO::setTitle( 'Lokalmønstringene er i gang!' );
+		SEO::setDescription( 'Les mer om din lokalmønstring i '. fylkeController::getMonstring()->getFylke() .' her');
 	}
 	$WP_TWIG_DATA['lokalt_start'] = $forste_monstring;
 	$WP_TWIG_DATA['lokalt_stopp'] = $siste_monstring;
@@ -103,6 +124,8 @@ $WP_TWIG_DATA['page_prev']		= $WP_TWIG_DATA['posts']->getPagePrev();
 
 if( get_option('UKM_banner_image') ) {
 	$WP_TWIG_DATA['HEADER']->background->url = get_option('UKM_banner_image');
+	$image = new SEOImage( str_replace('http:','https:', get_option('UKM_banner_image') ) );
+	SEO::setImage( $image );
 }
 
 $meny = wp_get_nav_menu_object( get_option('UKM_menu') );	

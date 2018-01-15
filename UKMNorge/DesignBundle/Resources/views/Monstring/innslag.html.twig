@@ -3,7 +3,7 @@
 
 {% block content %}
 	<div id="innslag">
-		<div class="header {{ innslag.getBilder().getAntall() == 0 ? 'noImage' }}" style="background-image: url('{{ innslag.getBilder().getFirst().getSize("original").getUrl()|replace({'http:':'https:'}) }}')">
+		<div class="header {{ innslag.getBilder().getAntall() == 0 ? 'noImage' }}" style="background-image: url('{{ innslag.getBilder().getFirst().getSize("large").getUrl()|replace({'http:':'https:'}) }}')">
 			<h1 class="mb-2">{{ innslag.getNavn() }}</h1>
 			<div class="clearfix"></div>
 		</div>
