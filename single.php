@@ -75,6 +75,14 @@ SEO::setAuthor( $authorlist );
 SEO::setPublished( $WP_TWIG_DATA['post']->raw->post_date_gmt );
 
 
+/**
+ * EXPORT MODE
+ * Export basic page data as json
+ **/
+if( isset( $_GET['exportContent'] ) ) {
+	echo WP_TWIG::render('Export/content', ['export' => $WP_TWIG_DATA['post'] ] );
+	die();
+}
 
 echo WP_TWIG::render( 'Post/fullpage', $WP_TWIG_DATA );
 wp_footer();

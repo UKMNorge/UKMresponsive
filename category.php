@@ -22,7 +22,17 @@ $WP_TWIG_DATA['posts'] = $posts->getAll();
 $WP_TWIG_DATA['page_next'] = $posts->getPageNext();
 $WP_TWIG_DATA['page_prev'] = $posts->getPagePrev();
 
+/**
+ * EXPORT MODE
+ * Export basic page data as json
+ **/
+if( isset( $_GET['exportContent'] ) ) {
+	echo WP_TWIG::render('Export/content', ['export' => $WP_TWIG_DATA['posts'] ] );
+	die();
+}
+
 echo WP_TWIG::render( 'Category/list', $WP_TWIG_DATA );
+
 wp_footer();
 if(is_user_logged_in() ) {
 	echo '<style>body {margin-top: 33px;} @media (max-width:782px) {body {margin-top: 48px;}}</style>';

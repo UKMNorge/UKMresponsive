@@ -86,6 +86,15 @@ if( $page_template == 'meny' || $har_meny ) {
 	$view_template = 'Page/fullpage_with_menu';
 }
 
+/**
+ * EXPORT MODE
+ * Export basic page data as json
+ **/
+if( isset( $_GET['exportContent'] ) ) {
+	echo WP_TWIG::render('Export/content', ['export' => $WP_TWIG_DATA['page']->page ] );
+	die();
+}
+
 echo WP_TWIG::render( $view_template, $WP_TWIG_DATA );
 
 wp_footer();
