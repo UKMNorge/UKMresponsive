@@ -86,12 +86,8 @@ if( $page_template == 'meny' || $har_meny ) {
 	$view_template = 'Page/fullpage_with_menu';
 }
 
-// RENDER
-// echo "Total compile-time: ". (microtime(true) - $time)*1000 ."ms <br />";
-// $time = microtime(true);
-$out = WP_TWIG::render( $view_template, $WP_TWIG_DATA );
-/*echo "Total Twig-rendertime: " . (microtime(true) - $time)*1000 . "ms <br />";*/
-echo $out;
+echo WP_TWIG::render( $view_template, $WP_TWIG_DATA );
+
 wp_footer();
 if(is_user_logged_in() ) {
 	echo '<style>body {margin-top: 33px;} @media (max-width:782px) {body {margin-top: 48px;}}</style>';
