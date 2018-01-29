@@ -6,11 +6,13 @@ CONTAINER
 <div class="UKMfavoritt" style="display:none">
 	<div class="header">
 		<div class="row align-items-center py-1">
-			<div class="col-2 pl-4" style="line-height: 0em;">
-				<span class="icon icon-heart" style="font-size: 2.5em;"></span>
-			</div>
-			<div class="col-6 name">
-				 {{ monstring.getNavn() }}
+			<div class="col-8">
+				<div class="icon-container">
+					<span class="icon icon-heart" style="font-size: 2.5em;"></span>
+				</div>
+				<p class="name">
+					 {{ monstring.getNavn() }}
+				</p>
 			</div>
 			<div class="col-4 date right pr-4">
 				{{ monstring.getStart()|date('d.M') }}
@@ -47,8 +49,8 @@ CONTAINER
 							</div>
 						</div>
 					</div>
-				{% endif %}
-			</div>
+				</div>
+			{% endif %}
 			
 			<div class="col-12 center my-3">
 				<a href="{{ monstring.getLink() }}" class="">

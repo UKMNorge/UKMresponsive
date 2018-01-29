@@ -49,8 +49,11 @@
 					</div>
 				{% endif %}
 				<div class="d-none d-md-block mt-3">
-					<div class="mitt_UKM"></div>
+					<div class="frontpage-box mitt_UKM"></div>
 					<div class="nyhet">{% embed "UKMDesignBundle:Page:home_norge_nyhet.html.twig"|UKMpath with {post: news } %}{% endembed %}</div>
+					<div class="frontpage-box kort_om_UKM mt-3">
+						{% embed "UKMDesignBundle:Page:home_norge_kort_om_ukm.html.twig"|UKMpath %}{% endembed %}
+					</div>
 				</div>
 			</div>
 
@@ -60,8 +63,11 @@
 					{{ THEME_CONFIG.get('hvaerukm').kort|raw }}
 				</div>
 				<div class="col-12 d-block d-md-none mt-3">
-					<div class="mitt_UKM"></div>
+					<div class="frontpage-box mitt_UKM"></div>
 					<div class="nyhet">{% embed "UKMDesignBundle:Page:home_norge_nyhet.html.twig"|UKMpath with {post: news } %}{% endembed %}</div>
+					<div class="frontpage-box kort_om_UKM mt-3">
+						{% embed "UKMDesignBundle:Page:home_norge_kort_om_ukm.html.twig"|UKMpath %}{% endembed %}
+					</div>
 				</div>
 			</div>
 		</div>
