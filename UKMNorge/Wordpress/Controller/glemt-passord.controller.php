@@ -172,8 +172,9 @@ function UKMresponsive_sendPassUser( $id, $epost, $navn, $fylke ) {
 	$message = 
 		'Hei!'.
 		"\r\n\r\n".
-		'Klikk her for å sende nytt passord til '. $navn .' som har glemt passordet sitt.'.
-		'<a href="https://ukm.no/'. $fylke->getLink() .'/wp-admin/admin.php?page=UKMpassord&send='. $id .'">Send passord</a>'.
+		'<a href="https://ukm.no/'. $fylke->getLink() .'/wp-admin/admin.php?page=UKMpassord&send='. $id .'">'. 
+		'Klikk her for å sende nytt passord til '. $navn .'</a>'.
+		' som har glemt passordet sitt.'.
 		"\r\n\r\n".
 		'Mvh,'.
 		"\r\n".
@@ -218,7 +219,7 @@ function UKMresponsive_sendPassFylke( $epost, $navn, $fylke ) {
 	$mail
 		->subject( 'Mangler passord til arrangørsystemet' )
 		->message( $message )
-		->to( implode(',', [$_POST['email'], $fylke->getLink().'@ukm.dev', 'support@ukm.no']) )
+		->to( implode(',', [$_POST['email'], $fylke->getLink().'@ukm.no', 'support@ukm.no']) )
 		->ok()
 	;
 }
