@@ -56,6 +56,11 @@ switch( $page_template ) {
 		require_once('UKMNorge/Wordpress/Controller/kontakt.controller.php');
 		$view_template = 'Kontaktpersoner/liste';
 		break;
+	# Glemt passord
+	case 'glemt-passord':
+		require_once('UKMNorge/Wordpress/Controller/glemt-passord.controller.php');
+		break;
+	
 		
 	## ORGANISASJONEN
 	case 'org/logoer':
