@@ -22,7 +22,7 @@ switch( get_option('site_type') ) {
 		require_once('UKMNorge/Wordpress/Controller/monstring/kommune.controller.php');
 		break;
 	case 'land':
-		$view_template = 'Page/home_norge';
+		$view_template = 'Page/fullpage';
 		break;
 	case 'ego':
 		$view_template = 'Ego/home';
