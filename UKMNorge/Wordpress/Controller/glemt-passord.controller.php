@@ -13,7 +13,7 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 	**/
 	if( isset( $_POST['fylkesrequest'] ) ) {
 		$fylke = fylker::getById( $_POST['fylke'] );
-		UKMresponsive_sendPassFylke( $_POST['email'], $_POST['navn'], $fylke );
+		UKMresponsive_sendPassFylke( $_POST['email'], $_POST['navn'], $fylke, $_POST['kommune'] );
 		
 		$view_template = 'Passord/sendt';
 		$WP_TWIG_DATA['mottaker'] = 'UKM '. $fylke->getNavn();
@@ -164,6 +164,7 @@ function UKMresponsive_sendPass( $epost, $fylke, $kommune ) {
 		->subject( 'Ønsker passord til arrangørsystemet' )
 		->message( $message )
 		->to( 'support@ukm.no' )
+		->setReplyTo( $_POST['email'], $_POST['navn'] )
 		->ok()
 	;
 }
@@ -189,24 +190,31 @@ function UKMresponsive_sendPassUser( $id, $epost, $navn, $fylke ) {
 		->subject( 'Ønsker passord til arrangørsystemet' )
 		->message( $message )
 		->to( 'support@ukm.no' )
+		->setReplyTo( $_POST['email'], $_POST['navn'] )
 		->ok()
 	;
 }
 
-function UKMresponsive_sendPassFylke( $epost, $navn, $fylke ) {
+function UKMresponsive_sendPassFylke( $epost, $navn, $fylke, $kommune) {
 	$message = 
 		'Hei UKM '. $fylke->getNavn().
 		"\r\n\r\n".
-		$_POST['navn'] .' har vært i kontakt med support, og ønsker tilgang til arrangørsystemet.'.
+		$navn .' har vært i kontakt med support, og ønsker tilgang til arrangørsystemet for kommune: '. $kommune .'.'.
 		"\r\n\r\n".
-		'Vi har ikke funnet e-postadressen registrert noe sted i systemet, '.
+		'Vi har ikke funnet e-postadressen ('. $epost .') registrert noe sted i systemet, '.
 		'og trenger derfor at dere godkjenner tilgangen i arrangørsystemet. '.
 		"\r\n\r\n".
 		'Logg inn til arrangørsystemet som vanlig, og velg menyen "Passordliste".'.
 		"\r\n\r\n".
-		'Herfra velger du om 1) '. $_POST['navn'] .' skal oppføres som ny hovedkontakt, '.
-		'eller om du 2) sender brukernavn og passord direkte til '.
-		$_POST['navn'] .' som et svar på denne e-posten'.
+		'Herfra velger du om: '.
+		"\r\n".
+		' 1) '. $navn .' skal oppføres som ny hovedkontakt.'.
+		"\r\n".
+		' 2) du sender brukernavn og passord direkte til '. $navn .' som et svar på denne e-posten.'.
+		"\r\n".
+		' 3) eventuelt kan du sende '. $navn .' lenken til glemt passord for deltakere, hvis du tror det er en deltaker.'.
+		"\r\n".
+		'Lenke for glemt passord: https://delta.'. UKM_HOSTNAME .'/resetting/send-email'.
 		"\r\n\r\n".
 		'Mvh,'.
 		"\r\n".
@@ -220,6 +228,7 @@ function UKMresponsive_sendPassFylke( $epost, $navn, $fylke ) {
 		->subject( 'Mangler passord til arrangørsystemet' )
 		->message( $message )
 		->to( implode(',', [$_POST['email'], $fylke->getLink().'@ukm.no', 'support@ukm.no']) )
+		->setReplyTo( $_POST['email'], $_POST['navn'] )
 		->ok()
 	;
 }
