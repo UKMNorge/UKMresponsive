@@ -165,6 +165,7 @@ function UKMresponsive_sendPass( $epost, $fylke, $kommune ) {
 		->message( $message )
 		->to( 'support@ukm.no' )
 		->setReplyTo( $_POST['email'], $_POST['navn'] )
+		->setFrom( $_POST['email'], $_POST['navn'] )
 		->ok()
 	;
 }
@@ -191,6 +192,7 @@ function UKMresponsive_sendPassUser( $id, $epost, $navn, $fylke ) {
 		->message( $message )
 		->to( 'support@ukm.no' )
 		->setReplyTo( $_POST['email'], $_POST['navn'] )
+		->setFrom( $_POST['email'], $_POST['navn'] )
 		->ok()
 	;
 }
