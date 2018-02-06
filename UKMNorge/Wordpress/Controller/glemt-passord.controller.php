@@ -231,6 +231,7 @@ function UKMresponsive_sendPassFylke( $epost, $navn, $fylke, $kommune) {
 		->message( $message )
 		->to( implode(',', [$_POST['email'], $fylke->getLink().'@ukm.no', 'support@ukm.no']) )
 		->setReplyTo( $_POST['email'], $_POST['navn'] )
+		->setFrom( $_POST['email'], $_POST['navn'] )
 		->ok()
 	;
 }
