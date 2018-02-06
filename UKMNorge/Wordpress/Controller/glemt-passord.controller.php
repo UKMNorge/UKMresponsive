@@ -214,7 +214,7 @@ function UKMresponsive_sendPassFylke( $epost, $navn, $fylke, $kommune) {
 		"\r\n".
 		' 3) eventuelt kan du sende '. $navn .' lenken til glemt passord for deltakere, hvis du tror det er en deltaker.'.
 		"\r\n".
-		'Lenke for glemt passord: https://delta.'. UKM_HOSTNAME .'/resetting/send-email'.
+		'Lenke for glemt passord: https://delta.'. UKM_HOSTNAME .'/resetting/request'.
 		"\r\n\r\n".
 		'Mvh,'.
 		"\r\n".
