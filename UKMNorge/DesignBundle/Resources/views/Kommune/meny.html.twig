@@ -34,4 +34,15 @@
 			</a>
 		</div>
 	</div>
+	
+	{% if direkte is defined and direkte != false %}
+		<div class="row mt-3">
+			<div class="col">
+				{% if direkte.type == 'link' %}
+					<a href="{{ direkte.link }}" target="_blank" class="btn btn-block btn-outline-primary">Se direktesending her</a>
+				{% endif %}
+			</div>
+		</div>
+	{% endif %}
+	<div class="clearfix"></div>
 </div>

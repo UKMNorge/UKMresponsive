@@ -119,6 +119,8 @@ $WP_TWIG_DATA['infoPage'] 		= fylkeController::getInfoPage();
 $WP_TWIG_DATA['harInfoPage'] 	= fylkeController::harInfoPage();
 $WP_TWIG_DATA['harProgram'] 	= fylkeController::harProgram();
 
+$WP_TWIG_DATA['direkte']		= kommuneController::getLive();
+
 $WP_TWIG_DATA['page_next'] 		= $WP_TWIG_DATA['posts']->getPageNext();
 $WP_TWIG_DATA['page_prev']		= $WP_TWIG_DATA['posts']->getPagePrev();
 

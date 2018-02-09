@@ -93,4 +93,41 @@ abstract class monstringController {
 		self::$harInfoPage = ( is_object( $page ) && $page->post_status == 'publish' );
 		return self;
 	}
+	
+	
+		/**
+	 * Bruker siden live-modulen? vis lenke / embedkode
+	 *
+	 */	
+	public static function getLive() {
+		$link		= get_option('ukm_live_link');
+		$embedcode	= get_option('ukm_live_embedcode');
+			
+		$show_embed = false;
+		if( $embedcode ) {
+			$perioder 	= get_option('ukm_hendelser_perioder');
+			foreach( $perioder as $p ) {
+				if( $p->start < time() && $p->stop > time() ) {
+					$show_embed = true;
+					break;
+				}
+			}
+		}
+			
+		if( $show_embed ) {
+			return 
+				[
+					'type' => 'embed',
+					'code' => $embedcode
+				];
+		}
+		if( $link ) {
+			return 
+				[
+					'type' => 'link',
+					'link' => $link
+				];
+		}
+		return false;
+	}
 }
