@@ -33,6 +33,17 @@ abstract class monstringController {
 		self::$pameldingStarter = DateTime::createFromFormat( 'd.m.Y H:i:s', $configDatePameldingStarter .' 00:00:00' );
 	}
 	
+	public static function getUKMTV() {
+		require_once('UKM/tv_files.class.php');
+		
+		// Hent filer fra mønstringen
+		$tv_files = new tv_files( 'place', self::getMonstring()->getId() );
+		$tv_files->limit(1);
+		$tv_files->fetch();
+		
+		return $tv_files->num_videos > 0;
+	}
+	
 	
 	public static function getPameldingStarter() {
 		return self::$pameldingStarter;
@@ -92,5 +103,42 @@ abstract class monstringController {
 		self::$infoPage = new page( $page );
 		self::$harInfoPage = ( is_object( $page ) && $page->post_status == 'publish' );
 		return self;
+	}
+	
+	
+		/**
+	 * Bruker siden live-modulen? vis lenke / embedkode
+	 *
+	 */	
+	public static function getLive() {
+		$link		= get_option('ukm_live_link');
+		$embedcode	= get_option('ukm_live_embedcode');
+			
+		$show_embed = false;
+		if( $embedcode ) {
+			$perioder 	= get_option('ukm_hendelser_perioder');
+			foreach( $perioder as $p ) {
+				if( $p->start < time() && $p->stop > time() ) {
+					$show_embed = true;
+					break;
+				}
+			}
+		}
+			
+		if( $show_embed ) {
+			return 
+				[
+					'type' => 'embed',
+					'code' => $embedcode
+				];
+		}
+		if( $link ) {
+			return 
+				[
+					'type' => 'link',
+					'link' => $link
+				];
+		}
+		return false;
 	}
 }
