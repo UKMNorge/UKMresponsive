@@ -77,14 +77,35 @@
 									</div>
 								{% endfor %}
 							</div>
-							
-						{% endif %}
-
-						{# TITLER #}
-						{% if innslag.getType().harTitler() and innslag.getTitler( monstring ).getAntall() > 0 %}
-							<div class="{{ col_right }}">
+						</div>
+						
+					{% endif %}
+					
+					{# FORESTILLINGER INNSLAGET ER MED I #}
+					{% if innslag.getProgram().getAntall() > 0 %}
+						<div class="row mt-4">
+							<div class="col-12">
+								<h4 class="linje">I programmet</h4>
+								{% for forestilling in innslag.program.getAll() if forestilling.erSynligDetaljProgram() %}
+									<div class="row">
+										<div class="col-7">
+											Nr {{ forestilling.getNummer( innslag ) }} i {{ forestilling.getNavn() }}
+										</div>
+										<div class="col-5 right text-right small-but-same-height">
+											{{ forestilling.getStart()|dato('j. M Y \k\\l. H:i') }}
+										</div>
+									</div>
+								{% endfor %}
+							</div>
+						</div>
+					{% endif %}
+					
+					{# INFORMASJON OM TITLER #}
+					{% if innslag.getType().harTitler() and innslag.getTitler().getAntall() > 0 %}
+						<div class="row mt-4">
+							<div class="col-12">
 								<h4 class="linje">Titler</h4>
-								{% for tittel in innslag.getTitler( monstring ).getAll() %}
+								{% for tittel in innslag.getTitler().getAll() %}
 									<div class="row">
 										<div class="col-7">
 											{{ tittel.getTittel() }}
@@ -127,7 +148,7 @@
 						{% endif %}
 						
 						{# PROGRAM #}
-						{% if innslag.getProgram( monstring ).getAntall() > 0 %}
+						{% if innslag.getProgram().getAntall() > 0 %}
 							<div class="{{ col_right }}">
 								<h4 class="linje">I programmet</h4>
 								{% for forestilling in innslag.program.getAll( monstring ) if forestilling.erSynligRammeprogram() %}

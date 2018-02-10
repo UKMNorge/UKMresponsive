@@ -6,7 +6,7 @@ require_once('UKM/monstring.class.php');
 require_once('UKM/innslag.class.php');
 
 $id = $WP_TWIG_DATA['page']->getLastParameter();
-$WP_TWIG_DATA['monstring'] = new monstring_v2(get_option('pl_id'));;
+$monstring = new monstring_v2(get_option('pl_id'));;
 
 ## Skal hente ut ETT innslag, gitt i $id.
 if( is_numeric( $id ) ) {
@@ -17,10 +17,10 @@ if( is_numeric( $id ) ) {
 
 	if( isset( $_GET['cid'] ) ) {
 		require_once('UKM/forestilling.class.php');
-		$WP_TWIG_DATA['hendelse'] = new forestilling_v2( (int) $_GET['cid'] );
+		$WP_TWIG_DATA['hendelse'] = $monstring->getProgram()->get( (int) $_GET['cid'] );
 	}
 
-	$innslag = new innslag_v2($id);	
+	$innslag = $monstring->getInnslag()->get( $id );
 	$view_template = 'Monstring/innslag';
 	
 	SEO::setCanonical( SEO::getCanonical(). $id .'/'); // Already set to correct page, but is missing id
@@ -43,3 +43,4 @@ else {
 	SEO::setTitle( 'Påmeldte til '. $WP_TWIG_DATA['monstring']->getNavn() );
 	SEO::setDescription( 'Les mer om de som er med' );
 }
+$WP_TWIG_DATA['monstring'] = $monstring;

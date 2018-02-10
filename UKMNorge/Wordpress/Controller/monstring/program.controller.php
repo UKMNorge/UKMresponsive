@@ -14,7 +14,7 @@ $id = $WP_TWIG_DATA['page']->getLastParameter();
 if( is_numeric( $id ) ) {
 	// /program/c_id/
 	$view_template = 'Monstring/program_hendelse';
-	$hendelse = new forestilling_v2( $id );
+	$hendelse = $monstring->getProgram()->get( $id );
 	$WP_TWIG_DATA['hendelse'] = $hendelse;
 
 	SEO::setCanonical( SEO::getCanonical(). $id .'/'); // Already set to correct page, but is missing id
