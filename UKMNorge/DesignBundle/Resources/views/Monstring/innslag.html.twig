@@ -148,7 +148,7 @@
 						{% endif %}
 						
 						{# PROGRAM #}
-						{% if innslag.getProgram( monstring ).getAntall() > 0 %}
+						{% if innslag.getProgram().getAntall() > 0 %}
 							<div class="{{ col_right }}">
 								<h4 class="linje">I programmet</h4>
 								{% for forestilling in innslag.program.getAll( monstring ) if forestilling.erSynligRammeprogram() %}
