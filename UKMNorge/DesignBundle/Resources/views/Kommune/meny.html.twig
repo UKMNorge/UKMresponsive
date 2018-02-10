@@ -19,6 +19,14 @@
 				</a>
 			</div>
 		{% endif %}
+		{% if ukmtv %}
+			<div class="col menu-item">
+				<a href="//tv.ukm.no/{% if not monstring.erFellesmonstring() %}lokal/{{ (monstring.getKommuner()|first).getId()~'-'~(monstring.getKommuner()|first).getURLsafe()~'/' }}{% endif %}">
+					<div class="icon icon-tv"></div>
+					<div class="text">TV</div>
+				</a>
+			</div>		
+		{% endif %}
 		{% if state == 'ferdig' and harInfoPage %}
 			<div class="col menu-item">
 				<a href="{{ monstring.getLink() }}info/">

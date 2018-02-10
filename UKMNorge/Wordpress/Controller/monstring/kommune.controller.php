@@ -88,6 +88,7 @@ $WP_TWIG_DATA['favoritt']			= kommuneController::getFavoritt();
 $WP_TWIG_DATA['harFavoritt']		= kommuneController::harFavoritt();
 
 $WP_TWIG_DATA['direkte']			= kommuneController::getLive();
+$WP_TWIG_DATA['ukmtv']				= kommuneController::getUKMTV();
 
 if( get_option('UKM_banner_image') ) {
 	$WP_TWIG_DATA['HEADER']->background->url = get_option('UKM_banner_image');

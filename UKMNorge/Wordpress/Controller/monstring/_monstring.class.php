@@ -33,6 +33,17 @@ abstract class monstringController {
 		self::$pameldingStarter = DateTime::createFromFormat( 'd.m.Y H:i:s', $configDatePameldingStarter .' 00:00:00' );
 	}
 	
+	public static function getUKMTV() {
+		require_once('UKM/tv_files.class.php');
+		
+		// Hent filer fra mønstringen
+		$tv_files = new tv_files( 'place', self::getMonstring()->getId() );
+		$tv_files->limit(1);
+		$tv_files->fetch();
+		
+		return $tv_files->num_videos > 0;
+	}
+	
 	
 	public static function getPameldingStarter() {
 		return self::$pameldingStarter;
