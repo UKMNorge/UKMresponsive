@@ -10,7 +10,7 @@
 	<div id="innslag">
 	
 		{# HEADER #}
-		<div class="header {{ innslag.getBilder().getAntall() == 0 ? 'noImage' }}" style="background-image: url('{{ innslag.getBilder().getFirst().getSize("large").getUrl()|replace({'https:':'http:'}) }}')">
+		<div class="header {{ innslag.getBilder().getAntall() == 0 ? 'noImage' }}" style="background-image: url('{{ innslag.getBilder().getFirst().getSize("large").getUrl()|replace({'http:':'https:'}) }}')">
 			<div class="container">
 				<div class="row bs-margin-fix">
 					<div class="col-12">
@@ -193,8 +193,8 @@
 									<h4 class="linje">Bilder</h4>
 									<center>
 										{% for bilde in innslag.getBilder().getAll() %}
-											<a href="{{ bilde.getSize("original").getUrl()|replace({'https:':'http:'}) }}" target="_blank">
-												<img src="{{ bilde.getSize("medium").getUrl()|replace({'https:':'http:'}) }}" class="mt-2" />
+											<a href="{{ bilde.getSize("original").getUrl()|replace({'http:':'https:'}) }}" target="_blank">
+												<img src="{{ bilde.getSize("medium").getUrl()|replace({'http:':'https:'}) }}" class="mt-2" />
 											</a>
 										{% endfor %}
 									</center>
