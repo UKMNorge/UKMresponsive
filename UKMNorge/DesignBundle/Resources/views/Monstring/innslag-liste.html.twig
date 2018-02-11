@@ -2,7 +2,7 @@
 <div class="card-body m-0 p-2 innslag" attr-id="{{ innslag.id }}">
 	{% if hendelse is defined and hendelse is not empty %}
 		<div class="order">
-			{{ innslag.getAttr('order') }}
+			{{ hendelse.getNummer( innslag ) }}
 		</div>
 	{% endif %}
 	<div>
