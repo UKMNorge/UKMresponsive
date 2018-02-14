@@ -109,6 +109,10 @@ organisasjonen:
             id: MGPjr
             url: //org.ukm.no/mgpjr/
             title: MGPjr-samarbeid
+        -
+            id: historikk
+            url: //org.ukm.no/historikk/
+            title: Historikk
         - 
             id: statistikk
             url: //org.ukm.no/statistikk/
