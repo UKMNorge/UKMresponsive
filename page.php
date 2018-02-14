@@ -98,17 +98,6 @@ if( $page_template == 'meny' || $har_meny ) {
 	$view_template = 'Page/fullpage_with_menu';
 }
 
-/* SET HEADER-BILDE PÅ SIDER HVIS FEATURED IMAGE ER LASTET OPP */
-if( is_object( $WP_TWIG_DATA['page']->getPage()->image ) && is_numeric( $WP_TWIG_DATA['page']->getPage()->image->ID ) ) {
-	$WP_TWIG_DATA['HEADER']->background->url = $WP_TWIG_DATA['page']->getPage()->image->large->src;
-	
-	if( property_exists( $WP_TWIG_DATA['page']->getPage()->meta, 'headerPosition' ) ) {
-		$WP_TWIG_DATA['HEADER']->background->position = $WP_TWIG_DATA['page']->getPage()->meta->headerPosition;	
-	} else {
-		$WP_TWIG_DATA['HEADER']->background->position = 'center';
-	}
-}
-
 /**
  * EXPORT MODE
  * Export basic page data as json
