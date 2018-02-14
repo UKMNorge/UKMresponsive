@@ -97,6 +97,27 @@ organisasjonen:
             id: ukmsjefen
             url: //org.ukm.no/category/ukmsjefen/
             title: UKM-sjefen
+        - 
+            id: festivalen
+            url: //org.ukm.no/festivalen/
+            title: UKM-festivalen
+        -
+            id: stimuleringsmidler
+            url: //org.ukm.no/stimuleringsmidler/
+            title: Stimuleringsmidler
+        -
+            id: MGPjr
+            url: //org.ukm.no/mgpjr/
+            title: MGPjr-samarbeid
+        - 
+            id: statistikk
+            url: //org.ukm.no/statistikk/
+            title: Statistikk
+        - 
+            id: grafikk
+            url: //org.ukm.no/grafisk-profil/
+            title: Grafisk profil
+
 #        - 
 #            id: historikk
 #            url: //org.ukm.no/historikk/
@@ -105,10 +126,7 @@ organisasjonen:
 #            id: verdier
 #            url: //org.ukm.no/verdier/
 #            title: Verdier
-        - 
-            id: grafikk
-            url: //org.ukm.no/grafisk-profil/
-            title: Grafisk profil
+
         - 
             id: cookies
             url: //org.ukm.no/cookies/
