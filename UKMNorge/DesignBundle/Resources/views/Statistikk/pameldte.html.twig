@@ -1,4 +1,4 @@
-{% extends "Layout/_"~ (singleMode is defined and singleMode ? 'singleMode' : 'base' ) ~".html.twig"|UKMpath %}
+{% extends "Page/fullpage_with_menu.html.twig"|UKMpath %}
 
 {% block javascripts %}
 	{{ parent() }}
@@ -7,57 +7,50 @@
 		google.charts.load('current', {'packages':['corechart']});
 	</script>
 	<script>
-		{% embed "Statistikk:js:per_dag_hele_perioden.js.twig"|UKMpath %}{% endembed %}
-		{% embed "Statistikk:js:per_dag_per_maned.js.twig"|UKMpath %}{% endembed %}
-		{% embed "Statistikk:js:per_uke_hele_perioden.js.twig"|UKMpath %}{% endembed %}
-		{% embed "Statistikk:js:per_uke_per_maned.js.twig"|UKMpath %}{% endembed %}
+		{% if maned is defined %}
+			{% embed "Statistikk:js:per_dag_per_maned.js.twig"|UKMpath %}{% endembed %}
+			{% embed "Statistikk:js:per_uke_per_maned.js.twig"|UKMpath %}{% endembed %}
+		{% else %}
+			{% embed "Statistikk:js:per_dag_hele_perioden.js.twig"|UKMpath %}{% endembed %}
+			{% embed "Statistikk:js:per_uke_hele_perioden.js.twig"|UKMpath %}{% endembed %}
+		{% endif %}
     </script>
     
 {% endblock %}
 
-{% block content %}
-	<div class="container">
-		<div class="row">
-			<div class="col-12">
-				<h1>Påmeldingsstatistikk siste {{ history }} år</h1>	
+{% block page_content %}
+	<h1>Påmeldingsstatistikk siste {{ history+1 }} år</h1>	
 
-				<p class="help">
-					<small>
-						*) Antall påmeldte for året vil ikke stemme 100% med det reelle deltakelsestallet for året.
-						Dette fordi påmeldinger gjort av arrangører før 1.{{ start_maned }}, påmeldinger gjort etter 31.03 eller såkalte "uregistrerte" deltakere ikke regnes med.
-						Disse avgrensningene er lagt inn for å gi et mest mulig korrekt sammenligningsgrunnlag for antall påmeldinger gjennomført i påmeldingsmånedene.
-					</small>
-				</p>
+	<p class="lead">
+		Sammenlign påmeldingens utvikling dag for dag de siste {{ history+1 }} årene.
+	</p>
+
+	<p>
+		Tallene på denne siden er veiledende, og vil ikke stemme 100% med det reelle deltakelsestallet for året.
+		Dette fordi deltakere som etter-registreres etter mønstringen er gjennomført ikke tas med, da det ville gitt et skjevt sammenligningsgrunnlag.
+	</p>
 
 
-				<ul class="nav nav-tabs col-xs-12">
-					<li class="nav-item active">
-						<a href="{{ page.getPage().url }}" class="nav-link {{ not active ? 'active' }}" data-toggle="tab">Hele perioden</a>
-					</li>
-					{% for mnd, dager in stat_mnd %}
-						<li class="nav-item">
-							<a href="{{ page.getPage().url }}{{ mnd }}/" class="nav-link {{ mnd == active ? 'active' }}" data-toggle="tab">{{ mnd|maned }}</a>
-						</li>
-					{% endfor %}
-				</ul>
-				<div class="tab-content">
-			        <div class="tab-pane active" id="tab_0">
-						<div id="akk_per_dag_hele_perioden" style="height:55vh; width: 100%;"></div>
-				    	<div id="per_uke_hele_perioden" style="height:55vh; width: 100%;"></div>
-				    	<div id="per_dag_hele_perioden" style="height:55vh; width: 100%;"></div>
-			        </div>
-			        
-					{% for mnd, dager in stat_mnd %}
-			        <div class="tab-pane" id="tab_{{ loop.index }}">
-						<div id="pameldte_akk_per_dag_per_maned_{{mnd}}" style="height:55vh; width: 100%;"></div>
-						<div id="pameldte_per_uke_per_mnd_{{mnd}}" style="height:55vh; width: 100%;"></div>
-						<div id="pameldte_per_dag_per_maned_{{mnd}}" style="height:55vh; width: 100%;"></div>
-				    </div>
-					{% endfor %}
-				</div>
-				
-				<p>&nbsp;</p>
-			</div>
-		</div>
-	</div>
+	<ul class="nav nav-tabs col-xs-12 mt-5">
+		<li class="nav-item active">
+			<a href="{{ page.getPage().url }}" class="nav-link {{ not active ? 'active' }}" data-toggle="tab">Hele perioden</a>
+		</li>
+		{% for mnd, dager in stat_mnd %}
+			<li class="nav-item">
+				<a href="{{ page.getPage().url }}{{ mnd }}/" class="nav-link {{ mnd == active ? 'active' }}" data-toggle="tab">{{ mnd|maned }}</a>
+			</li>
+		{% endfor %}
+	</ul>
+	
+	{% if maned is defined %}
+		<div id="pameldte_akk_per_dag_per_maned_{{ maned_id }}" style="height:55vh; width: 100%;"></div>
+		<div id="pameldte_per_uke_per_maned_{{ maned_id }}" style="height:55vh; width: 100%;"></div>
+		<div id="pameldte_per_dag_per_maned_{{ maned_id }}" style="height:55vh; width: 100%;"></div>
+	{% else %}
+		<div id="akk_per_dag_hele_perioden" style="height:55vh; width: 100%;"></div>
+		<div id="per_uke_hele_perioden" style="height:55vh; width: 100%;"></div>
+		<div id="per_dag_hele_perioden" style="height:55vh; width: 100%;"></div>
+	{% endif %}
+	
+	<p>&nbsp;</p>
 {% endblock %}

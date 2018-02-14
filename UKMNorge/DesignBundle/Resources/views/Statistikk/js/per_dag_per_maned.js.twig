@@ -1,51 +1,49 @@
-{% for mnd, dager in stat_mnd %}
-	google.charts.setOnLoadCallback(pameldte_per_dag_per_maned_{{mnd}});
-	function pameldte_per_dag_per_maned_{{mnd}}() {
-		var data = google.visualization.arrayToDataTable([
-			['Sesong', {% for ar in stat_ar %}'{{ ar }}'{{ loop.last ? '' : ','}}{% endfor %}],
-				{% for dag in 1..dager %}
-					['{{dag}}.{{mnd|maned}}', {% for ar in stat_ar %}{{ stat[ ar~'-'~mnd~'-'~(dag<10?'0'~dag:dag) ] is defined ? stat[ ar~'-'~mnd~'-'~(dag<10?'0'~dag:dag) ] : 0 }}{{ not loop.last ? ', ' : '' }}{% endfor %}]{{ not loop.last ? ',
+google.charts.setOnLoadCallback(pameldte_per_dag_per_maned_{{maned_id}});
+function pameldte_per_dag_per_maned_{{maned_id}}() {
+	var data = google.visualization.arrayToDataTable([
+		['Sesong', {% for ar in stat_ar %}'{{ ar }}'{{ loop.last ? '' : ','}}{% endfor %}],
+			{% for dag in 1..maned_dager %}
+				['{{dag}}.{{maned_id|maned}}', {% for ar in stat_ar %}{{ stat[ ar~'-'~maned_id~'-'~(dag<10?'0'~dag:dag) ] is defined ? stat[ ar~'-'~maned_id~'-'~(dag<10?'0'~dag:dag) ] : 0 }}{{ not loop.last ? ', ' : '' }}{% endfor %}]{{ not loop.last ? ',
 ' : ''}}{% endfor %}{{ not loop.last ? ',
 ' : ''}}
-		]);
-		
-		var options = {
-			chartArea: {width: '100%'},
-			title: 'Antall påmeldte per dag i {{mnd|maned}}',
-			curveType: 'function',
-			legend: { position: 'bottom' }
-		};
-		
-		var chart = new google.visualization.LineChart(document.getElementById('pameldte_per_dag_per_maned_{{mnd}}'));
-		chart.draw(data, options);
-	}
+	]);
 	
+	var options = {
+		chartArea: {width: '100%'},
+		title: 'Antall påmeldte per dag i {{maned_id|maned}}',
+		curveType: 'function',
+		legend: { position: 'bottom' }
+	};
 	
+	var chart = new google.visualization.LineChart(document.getElementById('pameldte_per_dag_per_maned_{{maned_id}}'));
+	chart.draw(data, options);
+}
+
+
+
+
+
+
+
+
+
+google.charts.setOnLoadCallback(pameldte_akk_per_dag_per_maned_{{maned_id}});
+function pameldte_akk_per_dag_per_maned_{{maned_id}}() {
+	var data = google.visualization.arrayToDataTable([
+		['Sesong', {% for ar in stat_ar %}'{{ ar }}'{{ loop.last ? '' : ','}}{% endfor %}],
+			{% for dag in 1..maned_dager %}
+				['{{dag}}.{{maned_id|maned}}', {% for ar in stat_ar %}{{ akk_mnd[ ar~'-'~maned_id~'-'~(dag<10?'0'~dag:dag) ] is defined ? akk_mnd[ ar~'-'~maned_id~'-'~(dag<10?'0'~dag:dag) ] : 0 }}{{ not loop.last ? ', ' : '' }}{% endfor %}]{{ not loop.last ? ',
+' : ''}}{% endfor %}{{ not loop.last ? ',
+' : ''}}
+	]);
 	
+	var options = {
+		chartArea: {width: '100%'},
+		title: 'Akkumulert antall påmeldte per dag i {{maned_id|maned}}',
+		curveType: 'function',
+		legend: { position: 'bottom' }
+	};
 	
-	
-	
-	
-	
-	
-	google.charts.setOnLoadCallback(pameldte_akk_per_dag_per_maned_{{mnd}});
-	function pameldte_akk_per_dag_per_maned_{{mnd}}() {
-		var data = google.visualization.arrayToDataTable([
-			['Sesong', {% for ar in stat_ar %}'{{ ar }}'{{ loop.last ? '' : ','}}{% endfor %}],
-				{% for dag in 1..dager %}
-					['{{dag}}.{{mnd|maned}}', {% for ar in stat_ar %}{{ akk_mnd[ ar~'-'~mnd~'-'~(dag<10?'0'~dag:dag) ] is defined ? akk_mnd[ ar~'-'~mnd~'-'~(dag<10?'0'~dag:dag) ] : 0 }}{{ not loop.last ? ', ' : '' }}{% endfor %}]{{ not loop.last ? ',
- ' : ''}}{% endfor %}{{ not loop.last ? ',
- ' : ''}}
-		]);
-		
-		var options = {
-			chartArea: {width: '100%'},
-			title: 'Akkumulert antall påmeldte per dag i {{mnd|maned}}',
-			curveType: 'function',
-			legend: { position: 'bottom' }
-		};
-		
-		var chart = new google.visualization.LineChart(document.getElementById('pameldte_akk_per_dag_per_maned_{{mnd}}'));
-		chart.draw(data, options);
-	}
-{% endfor %}
+	var chart = new google.visualization.LineChart(document.getElementById('pameldte_akk_per_dag_per_maned_{{maned_id}}'));
+	chart.draw(data, options);
+}

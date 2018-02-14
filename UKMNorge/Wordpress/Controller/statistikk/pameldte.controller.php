@@ -22,9 +22,13 @@ $ar_start = 2013;
 $ar_history = date('Y') - $ar_start;
 $ar_stop = date('Y');
 
+$WP_TWIG_DATA['history'] = $ar_history;
+
 for( $i=$ar_start; $i < $ar_stop+1; $i++ ) {
     $WP_TWIG_DATA['stat_ar'][] = $i;
 }
+
+
 $qry = "SELECT 	COUNT(`stat_id`) AS `antall`,
 				DATE_FORMAT(`time`, '%d') AS `dag`,
 				DATE_FORMAT(`time`, '%m') AS `mnd`,
@@ -75,7 +79,8 @@ foreach( $WP_TWIG_DATA['stat_ar'] as $ar ) {
 			$WP_TWIG_DATA['akk_ar'][ $dato ] = $akk['ar'][ $ar ];
 			
 			// Påmeldte per uke
-			$uke = 'Uke '. ((floor(($dag-1)/7))+1);
+			$uke = ((floor(($dag-1)/7))+1);
+			$uke = uke( $uke, $WP_TWIG_DATA['stat_mnd'][ $mnd ] );
 			if( !isset( $WP_TWIG_DATA['uker'][ $mnd ][ $uke ][ $ar ] ) ) {
 				$WP_TWIG_DATA['uker'][ $mnd ][ $uke ][ $ar ] = 0;
 			}
@@ -84,4 +89,25 @@ foreach( $WP_TWIG_DATA['stat_ar'] as $ar ) {
 	}
 }
 
-$WP_TWIG_DATA['history'] = $ar_history;
+function uke( $nummer, $days_in_month ) {
+	switch( $nummer ) {
+		case 1:
+			return '1.-7.';
+		case 2:
+			return '8.-14.';
+		case 3:
+			return '15.-21.';
+		case 4:
+			return '22.-28.';
+	}
+	return '29.-'.$days_in_month;
+}
+
+// HVIS VI SKAL VISE OVERSIKTEN FOR KUN ÉN MÅNED
+$id = $WP_TWIG_DATA['page']->getLastParameter();
+if( is_numeric( $id ) ) {
+	$mnd = str_pad( (string) $id, 2, '0', STR_PAD_LEFT );
+	$WP_TWIG_DATA['maned'] = $WP_TWIG_DATA['stat_mnd'][$mnd];
+	$WP_TWIG_DATA['maned_id'] = $mnd;
+	$WP_TWIG_DATA['maned_dager'] = $WP_TWIG_DATA['stat_mnd'][$mnd];
+}

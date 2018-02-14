@@ -71,8 +71,15 @@ switch( $page_template ) {
 		$view_template = 'Kontaktpersoner/fylkeskontakter';
 		break;
 	case 'statistikk/pameldte':
-		require_once('UKMNorge/Wordpress/Controller/statistikk/pameldte.controller.php');
+		require_once('UKMNorge/Wordpress/Controller/menu.controller.php');
 		$view_template = 'Statistikk/pameldte';
+		require_once('UKMNorge/Wordpress/Controller/statistikk/pameldte.controller.php');
+		break;
+	case 'statistikk/frister':
+	case 'statistikk/monstringer':
+		require_once('UKMNorge/Wordpress/Controller/menu.controller.php');
+		$view_template = 'Statistikk/monstringer';
+		require_once('UKMNorge/Wordpress/Controller/statistikk/monstringer.controller.php');
 		break;
 	# Vis kontakt-side
 	case 'org/styret':
