@@ -16,6 +16,9 @@ SEO::setAuthor( $WP_TWIG_DATA['page']->getPage()->author->display_name );
 // CHECK TO FIND CUSTOM PAGE CONTROLLER AND VIEW ISSET
 if( isset( $WP_TWIG_DATA['page']->getPage()->meta->UKMviseng ) ) {
 	$page_template = $WP_TWIG_DATA['page']->getPage()->meta->UKMviseng;
+	if( is_array( $page_template ) && isset( $page_template[0] ) ) {
+		$page_template = $page_template[0];
+	}
 } else {
 	$page_template = false;
 }
