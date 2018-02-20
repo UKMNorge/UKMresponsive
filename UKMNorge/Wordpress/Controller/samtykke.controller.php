@@ -18,7 +18,7 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 		# FØRSTE SKJEMA (SAMTYKKE GITT)
 		case 'approval':
 			# For ung til å oppgi samtykke, etterspør foresattes info
-			if( $_POST['alder'] == 'under10' || (int) $_POST['alder'] < 15 ) {
+			if( ($_POST['alder'] == 'under10' || (int) $_POST['alder'] < 15) && $_POST['alder'] != 'over20' ) {
 				write_samtykke::godta( $request, $_POST['alder'] );
 				$view_template = 'Samtykke/foresatt';
 			}
