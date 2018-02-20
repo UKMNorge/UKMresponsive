@@ -41,6 +41,11 @@ switch( get_option('site_type') ) {
 		$WP_TWIG_DATA['HEADER']->slogan = WP_CONFIG::get('organisasjonen')['slogan'];
 		$WP_TWIG_DATA['HEADER']->button->background = 'rgba(242, 109, 21, 0.44)';
 		break;
+	# Samtykke-skjema
+	case 'samtykke':
+		$view_template = 'Samtykke/view';
+		require_once('UKMNorge/Wordpress/Controller/samtykke.controller.php');
+		break;
 	default:
 		$view_template = 'Page/home_norge';
 		require_once('UKMNorge/Wordpress/Controller/norge.controller.php');
