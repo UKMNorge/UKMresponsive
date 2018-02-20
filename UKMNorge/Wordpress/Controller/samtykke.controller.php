@@ -28,18 +28,19 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 				$view_template = 'Samtykke/takk';
 				$melding = samtykke_request::createMeldingTakk( $request );
 				// SEND SMS
-				require_once('UKM/sms.class.php');
-				$sms = new SMS('samtykke-takk', 0);
-				$sms->text( $melding )
-					->to( $request->getMobil() )
-					->from('UKMNorge')
-					->ok()
-					;
-				/*
-				echo '<h3>SMS-debug</h3>'.
-					'<b>TEXT: </b>'. $melding .' <br />'.
-					'<b>TO: </b>'. $request->getMobil();
-				*/
+				if( UKM_HOSTNAME == 'ukm.dev' ) {
+					echo '<h3>SMS-debug</h3>'.
+						'<b>TEXT: </b>'. $melding .' <br />'.
+						'<b>TO: </b>'. $request->getMobil();
+				} else {
+					require_once('UKM/sms.class.php');
+					$sms = new SMS('samtykke-takk', 0);
+					$sms->text( $melding )
+						->to( $request->getMobil() )
+						->from('UKMNorge')
+						->ok()
+						;
+				}
 			}
 		break;
 		
@@ -48,19 +49,20 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 			write_samtykke::lagreForesatt( $request, utf8_encode( $_POST['navn'] ), $_POST['mobil'] );
 			$melding = samtykke_request::createMeldingForeldre( $request, utf8_encode( $_POST['navn'] ), $_POST['mobil'] );
 			// SEND SMS
-			require_once('UKM/sms.class.php');
-			$sms = new SMS('samtykke-barn', 0);
-			$sms->text( $melding )
-				->to( $_POST['mobil'] )
-				->from('UKMNorge')
-				->ok()
-				;
-			/*
-			echo '<h3>SMS-debug</h3>'.
-				'<b>TEXT: </b>'. $melding .' <br />'.
-				'<b>TO: </b>'. $_POST['mobil'];
-			*/
-
+			if( UKM_HOSTNAME == 'ukm.dev' ) {
+				echo '<h3>SMS-debug</h3>'.
+					'<b>TEXT: </b>'. $melding .' <br />'.
+					'<b>TO: </b>'. $_POST['mobil'];
+			} else {
+				require_once('UKM/sms.class.php');
+				$sms = new SMS('samtykke-barn', 0);
+				$sms->text( $melding )
+					->to( $_POST['mobil'] )
+					->from('UKMNorge')
+					->ok()
+					;
+			}
+			
 			$WP_TWIG_DATA['foresatt'] = $_POST['navn'];
 			$WP_TWIG_DATA['mobil'] = $_POST['mobil'];
 			$view_template = 'Samtykke/takkBarn';
@@ -73,18 +75,19 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 
 			$melding = samtykke_request::createMeldingTakk( $request );
 			// SEND SMS
-			require_once('UKM/sms.class.php');
-			$sms = new SMS('samtykke-takk', 0);
-			$sms->text( $melding )
-				->to( $request->getMobil() )
-				->from('UKMNorge')
-				->ok()
-				;
-			/*
-			echo '<h3>SMS-debug</h3>'.
-				'<b>TEXT: </b>'. $melding .' <br />'.
-				'<b>TO: </b>'. $request->getMobil();
-			*/
+			if( UKM_HOSTNAME == 'ukm.dev' ) {
+				echo '<h3>SMS-debug</h3>'.
+					'<b>TEXT: </b>'. $melding .' <br />'.
+					'<b>TO: </b>'. $request->getMobil();
+			} else {
+				require_once('UKM/sms.class.php');
+				$sms = new SMS('samtykke-takk', 0);
+				$sms->text( $melding )
+					->to( $request->getMobil() )
+					->from('UKMNorge')
+					->ok()
+					;
+			}
 		break;
 	}
 } else {
