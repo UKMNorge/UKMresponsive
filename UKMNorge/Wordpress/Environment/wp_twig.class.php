@@ -95,6 +95,16 @@ class WP_TWIG {
 		});
 		$twig->addFunction($function_ukmasset);
 
+		// Add GET-function
+		$function_get = new Twig_SimpleFunction('GET', function( $var ) {
+			if( !isset( $_GET[ $var ] ) ) {
+				return false;
+			}
+			return $_GET[ $var ];
+
+		});
+		$twig->addFunction($function_get);
+		
 		// Debug
 		if( self::getDebug() ) {
 			$twig->addExtension( new Twig_Extension_Debug() );
