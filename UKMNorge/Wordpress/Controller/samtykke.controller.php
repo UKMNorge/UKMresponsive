@@ -43,8 +43,8 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 		
 		# ANDRE SKJEMA (KONTAKT FORESATT)
 		case 'request-parent':
-			write_samtykke::lagreForesatt( $request, $_POST['navn'], $_POST['mobil'] );
-			$melding = samtykke_request::createMeldingForeldre( $request, $_POST['navn'], $_POST['mobil'] );
+			write_samtykke::lagreForesatt( $request, utf8_encode( $_POST['navn'] ), $_POST['mobil'] );
+			$melding = samtykke_request::createMeldingForeldre( $request, utf8_encode( $_POST['navn'] ), $_POST['mobil'] );
 			// SEND SMS
 			require_once('UKM/sms.class.php');
 			$sms = new SMS('samtykke-barn', 0);
