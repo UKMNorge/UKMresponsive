@@ -33,13 +33,11 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 				$sms->text( $melding )
 					->to( $request->getMobil() )
 					->from('UKMNorge')
-					->ok()
+					#->ok()
 					;
-				/*
 				echo '<h3>SMS-debug</h3>'.
 					'<b>TEXT: </b>'. $melding .' <br />'.
-					'<b>TO: </b>'. $request->getMobil();
-				*/
+					'<b>TO: </b>'. $_POST['mobil'];
 			}
 		break;
 		
@@ -53,13 +51,11 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 			$sms->text( $melding )
 				->to( $_POST['mobil'] )
 				->from('UKMNorge')
-				->ok()
+				#->ok()
 				;
-			/*
 			echo '<h3>SMS-debug</h3>'.
 				'<b>TEXT: </b>'. $melding .' <br />'.
 				'<b>TO: </b>'. $_POST['mobil'];
-			*/
 
 			$WP_TWIG_DATA['foresatt'] = $_POST['navn'];
 			$WP_TWIG_DATA['mobil'] = $_POST['mobil'];
@@ -78,13 +74,12 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 			$sms->text( $melding )
 				->to( $request->getMobil() )
 				->from('UKMNorge')
-				->ok()
+				#->ok()
 				;
-			/*
 			echo '<h3>SMS-debug</h3>'.
 				'<b>TEXT: </b>'. $melding .' <br />'.
 				'<b>TO: </b>'. $request->getMobil();
-			*/
+
 		break;
 	}
 } else {
