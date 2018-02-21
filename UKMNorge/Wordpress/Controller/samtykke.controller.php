@@ -26,20 +26,28 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 			else {
 				write_samtykke::godta( $request, $_POST['alder'] );
 				$view_template = 'Samtykke/takk';
-				$melding = samtykke_request::createMeldingTakk( $request );
-				// SEND SMS
-				if( UKM_HOSTNAME == 'ukm.dev' ) {
-					echo '<h3>SMS-debug</h3>'.
-						'<b>TEXT: </b>'. $melding .' <br />'.
-						'<b>TO: </b>'. $request->getMobil();
-				} else {
-					require_once('UKM/sms.class.php');
-					$sms = new SMS('samtykke-takk', 0);
-					$sms->text( $melding )
-						->to( $request->getMobil() )
-						->from('UKMNorge')
-						->ok()
-						;
+				try {
+					$melding = samtykke_request::createMeldingTakk( $request );
+					// SEND SMS
+					if( UKM_HOSTNAME == 'ukm.dev' ) {
+						echo '<h3>SMS-debug</h3>'.
+							'<b>TEXT: </b>'. $melding .' <br />'.
+							'<b>TO: </b>'. $request->getMobil();
+					} else {
+						require_once('UKM/sms.class.php');
+						$sms = new SMS('samtykke-takk', 0);
+						$sms->text( $melding )
+							->to( $request->getMobil() )
+							->from('UKMNorge')
+							->ok()
+							;
+					}
+				} catch( Exception $e ) {
+					if( $e->getCode() == 2 ) {
+						$view_template = 'Samtykke/foresatt';
+					} else {
+						throw $e;
+					}
 				}
 			}
 		break;
