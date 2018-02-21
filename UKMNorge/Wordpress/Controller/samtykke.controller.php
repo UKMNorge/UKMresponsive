@@ -54,25 +54,25 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 		
 		# ANDRE SKJEMA (KONTAKT FORESATT)
 		case 'request-parent':
-			write_samtykke::lagreForesatt( $request, utf8_encode( $_POST['navn'] ), $_POST['mobil'] );
-			$melding = samtykke_request::createMeldingForeldre( $request, utf8_encode( $_POST['navn'] ), $_POST['mobil'] );
+			write_samtykke::lagreForesatt( $request, utf8_encode( $_POST['navn'] ), str_replace(' ','', $_POST['mobil']) );
+			$melding = samtykke_request::createMeldingForeldre( $request, utf8_encode( $_POST['navn'] ), str_replace(' ','',$_POST['mobil']) );
 			// SEND SMS
 			if( UKM_HOSTNAME == 'ukm.dev' ) {
 				echo '<h3>SMS-debug</h3>'.
 					'<b>TEXT: </b>'. $melding .' <br />'.
-					'<b>TO: </b>'. $_POST['mobil'];
+					'<b>TO: </b>'. str_replace(' ','',$_POST['mobil']);
 			} else {
 				require_once('UKM/sms.class.php');
 				$sms = new SMS('samtykke-barn', 0);
 				$sms->text( $melding )
-					->to( $_POST['mobil'] )
+					->to( str_replace(' ','',$_POST['mobil']) )
 					->from('UKMNorge')
 					->ok()
 					;
 			}
 			
 			$WP_TWIG_DATA['foresatt'] = $_POST['navn'];
-			$WP_TWIG_DATA['mobil'] = $_POST['mobil'];
+			$WP_TWIG_DATA['mobil'] = str_replace(' ','',$_POST['mobil']);
 			$view_template = 'Samtykke/takkBarn';
 		break;
 		
