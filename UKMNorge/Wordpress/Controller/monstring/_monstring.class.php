@@ -92,10 +92,9 @@ abstract class monstringController {
 		return self::$infoPage;
 	}
 	public static function harInfoPage() {
-		if( null === self::$harInfoPage ) {
-			self::_loadInfoPage();
-		}
-		return self::$harInfoPage;
+		$page = get_page_by_path('info');
+		
+		return null != $page;
 	}
 
 	public static function _loadInfoPage() {
