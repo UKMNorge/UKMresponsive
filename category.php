@@ -10,6 +10,11 @@ require_once('UKMNorge/Wordpress/Utils/posts.class.php');
 $category = get_queried_object();
 $WP_TWIG_DATA['category'] = $category;
 
+
+SEO::setTitle( $WP_TWIG_DATA['category']->name );
+SEO::setDescription( addslashes( preg_replace( "/\r|\n/", "", strip_tags( $WP_TWIG_DATA['category']->description ) ) ) );
+
+
 if( !is_category() ) {
 	$posts = new posts();
 } else {
