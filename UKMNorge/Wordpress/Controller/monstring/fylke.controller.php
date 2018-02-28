@@ -24,12 +24,11 @@ $omToUker = new DateTime('now + 3 weeks');
  *
  * 1:	Hvis siden er paginert, vis kun arkivsiden
  * 2:	Påmeldingen har ikke startet
- * 3:	Det er mindre enn 2 uker til fylkesmønstringen, eller
- *   	fylkesmønstringen er over
- * 4:	Vi er mellom ny sesong og fylkesmønstring (høst/vinter)
+ * 3: 	Fylkesmønstringen har ikke vært
  * 4.1:	Påmeldingen er åpen (siste frist har ikke passert)
- * 4.2: Påmeldingen er over, men det er mer enn 2 uker til fylkesmønstring (se pkt 3)
- *		vis derfor info om lokalmønstringer 
+ * 4.2: Påmeldingen er over, men siste mønstring er ikke ferdig. Viser info om lokalmønstringer 
+ * 4.3: Fylkesfestivalen skjer snart, eller nå
+ * 4:	Vi er mellom fylkesmønstring og ny sesong (sommer)
 **/
 // 1: pagination is active
 if( $WP_TWIG_DATA['posts']->getPaged() ) {
@@ -47,16 +46,8 @@ elseif( !fylkeController::erPameldingStartet() ) {
 		'Hold deg oppdatert på hva som skjer med '. fylkeController::getMonstring()->getNavn()
 	);
 }
-// 3: Fylkesmønstringen starter i løpet av 2 uker
-elseif( $omToUker > fylkeController::getMonstring()->getStart() && fylkeController::getMonstring()->erRegistrert() ) {
-	fylkeController::setState('fylkesmonstring');
-	SEO::setTitle( fylkeController::getMonstring()->getNavn() );
-	SEO::setDescription( 
-		'Straks klar for fylkesfestival! Vi starter '. fylkeController::getMonstring()->getStart()->format('j. M \k\l. H:i')
-	);
-}
-// 4: Vi er i perioden mellom åpen påmelding og 2 uker før fylkesmønstring
-else {
+// 3: Fylkesmønstringen har ikke vært
+elseif( !fylkeController::getMonstring()->erFerdig() ) {
 	$forste_monstring	= fylkeController::getPameldingStarter();
 	$siste_monstring	= fylkeController::getPameldingStarter();
 	$siste_pamelding 	= fylkeController::getPameldingStarter();
@@ -75,21 +66,37 @@ else {
 			$siste_pamelding = $lokalmonstring->getFrist2();
 		}
 	}
-	// 4.1: Påmeldingen er åpen
+	// 3.1: Påmeldingen er åpen
 	if( $now < $siste_pamelding ) {
 		fylkeController::setState('pamelding');
 		SEO::setTitle( 'Påmeldingen er åpen!' );
 		SEO::setDescription( 'Meld deg på UKM i '. fylkeController::getMonstring()->getFylke()	);
 	}
-	// 4.2: Påmeldingen er lukket - fokus på lokalmønstringer (publikum)
-	 else {
+	// 3.2: Påmeldingen er lukket, siste mønstring har ikke vært - fokus på lokalmønstringer (publikum)
+	 elseif( $now < $siste_monstring ) {
 		fylkeController::setState('lokalmonstringer');
 		SEO::setTitle( 'Lokalmønstringene er i gang!' );
 		SEO::setDescription( 'Les mer om din lokalmønstring i '. fylkeController::getMonstring()->getFylke() .' her');
 	}
+	// 3.3 Fylkesfestivalen skjer straks, eller nå.
+	else {
+		fylkeController::setState('fylkesmonstring');
+		SEO::setTitle( fylkeController::getMonstring()->getNavn() );
+		SEO::setDescription( 
+			'Straks klar for fylkesfestival! Vi starter '. fylkeController::getMonstring()->getStart()->format('j. M \k\l. H:i')
+		);
+	}
 	$WP_TWIG_DATA['lokalt_start'] = $forste_monstring;
 	$WP_TWIG_DATA['lokalt_stopp'] = $siste_monstring;
 	$WP_TWIG_DATA['lokalt_siste_pamelding'] = $siste_pamelding;
+}
+// 4: Fylkesmønstringen har vært
+else {
+	fylkeController::setState('fylkesmonstring');
+	SEO::setTitle( fylkeController::getMonstring()->getNavn() );
+	SEO::setDescription( 
+		'UKM-festivalen i '. fylkeController::getMonstring()->getNavn() .' var '. fylkeController::getMonstring()->getStart()->format('j. M \k\l. H:i')
+	);
 }
 
 /**

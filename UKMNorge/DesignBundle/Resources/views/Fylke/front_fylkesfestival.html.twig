@@ -19,7 +19,7 @@
 						{% elseif daysUntil == 1 %}
 							{{ fylke.getNavn() }} starter kl {{ fylke.getStart()|dato('H:i') }} i dag.
 						{% elseif daysUntil < 1 %}
-							{{ fylke.getNavn() }} var fra {{ fylke.getStart()|dato('l j.F') }} til {{ fylke.getStop()|dato('l j.F') }}.
+							Bare timer igjen! {{ fylke.getNavn() }}: {{ fylke.getStart()|dato('l j.F') }} til {{ fylke.getStop()|dato('l j.F') }}.
 						{% else %}
 						 	Bare {{ daysUntil }} dag{{ daysUntil > 1 ? 'er' }} til {{ fylke.getNavn() }}!
 						{% endif %}
