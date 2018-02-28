@@ -1,5 +1,13 @@
 <div class="page-menu">
 	<div class="row">
+		{% if linkToWebsite is defined and linkToWebsite != false %}
+			<div class="col menu-item">
+				<a href="{{ monstring.getLink() }}">
+					<div class="icon icon-home"></div>
+					<div class="text">Nettsiden</div>
+				</a>
+			</div>
+		{% endif %}
 		{% if harProgram %}
 			<div class="col menu-item">
 				<a href="{{ monstring.getLink() }}program/">
