@@ -39,10 +39,10 @@ function UKMresponsiveAJAX( action, trigger, data ) {
 
 	jQuery.post(ajaxurl, data, function(response) {
 		if( response.success == true ) {
-			console.info('TRIGGER: UKMresponsiveAJAX:success:'+ response.trigger);
+			//console.info('TRIGGER: UKMresponsiveAJAX:success:'+ response.trigger);
 			$(document).trigger('UKMresponsiveAJAX:success:'+ response.trigger, response);
 		} else {
-			console.info('TRIGGER: UKMresponsiveAJAX:fail:'+ response.trigger);
+			//console.info('TRIGGER: UKMresponsiveAJAX:fail:'+ response.trigger);
 			$(document).trigger('UKMresponsiveAJAX:fail:'+ response.trigger, response);
 		}
 	}, 'json');
