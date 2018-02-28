@@ -128,7 +128,7 @@ abstract class monstringController {
 			return 
 				[
 					'type' => 'embed',
-					'code' => $embedcode
+					'code' => stripslashes( $embedcode )
 				];
 		}
 		if( $link ) {
