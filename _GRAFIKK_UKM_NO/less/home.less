@@ -1,4 +1,29 @@
-.UKMfavoritt,
+.UKMfavoritt {
+	margin-bottom: 2em;
+
+	.body {
+		background: #fcfcfc;
+		
+		padding-bottom: 1em;
+		padding-left: 1em;
+		padding-right: 1em;
+		
+		border-bottom: 2px solid #ccc;
+		margin-top: -1em;
+		
+		@media (min-width: 768px) {
+			border: 1px solid #ccc;
+			margin-top: 0;
+		}
+
+	}
+
+	.icon-heart {
+		color: @color-primary;
+		font-size: 1.3em;
+	}
+}
+
 .kort_om_UKM {
 	.header {
 		background: @color-primary;
@@ -9,14 +34,19 @@
 		border: 2px solid @color-primary;
 		border-top: none;
 	}
+	
 }
 
 @media (max-width: 767px) {
-	.mitt_UKM,
 	.kort_om_UKM, 
 	#home_norge_nyhet { 
 		margin-left: ~"Calc(-1em + 1px)";
 		margin-right: ~"Calc(-1em + 1px)";
+	}
+	
+	.UKMfavoritt {
+		margin-left: ~"Calc(-2em + 1px)";
+		margin-right: ~"Calc(-2em + 1px)";
 	}
 }
 
@@ -25,7 +55,6 @@
 	line-height: 1.2em;
 }
 .frontpage-box .header p {
-	/*line-height: 2.4em;*/
 	margin-top: 0.14em;
 	margin-bottom: 0px;
 }
