@@ -1,0 +1,67 @@
+.PushToFront {
+	.fylke {
+		background: #fcfcfc;
+		border: 1px solid #ccc;
+		
+		margin-bottom: 2em;
+
+		@media (max-width: 767px) {
+			margin-left: ~"Calc(-2em + 1px)";
+			margin-right: ~"Calc(-2em + 2px)";
+		}
+
+		.cover {
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			
+			position: relative;
+			
+			min-height: 40vh;
+			width: 100%;
+			@media (min-width: 768px) {
+				width: 40%;
+				float: left;
+				margin-right: 1em;
+			}
+			
+			.header {
+				position: absolute;
+				bottom: 0px;
+				width: 100%;
+				
+				color: #fff;
+				
+				/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+97&0+12,0.65+70,0.56+70 */
+				background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 12%, rgba(0,0,0,0.56) 70%, rgba(0,0,0,0.56) 97%); /* FF3.6-15 */
+				background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 12%,rgba(0,0,0,0.56) 70%,rgba(0,0,0,0.56) 97%); /* Chrome10-25,Safari5.1-6 */
+				background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 12%,rgba(0,0,0,0.56) 70%,rgba(0,0,0,0.56) 97%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#8f000000',GradientType=0 ); /* IE6-9 */
+				
+				a,
+				a:visited,
+				a:focus,
+				a:hover {
+					color: #fff;
+				}
+			}
+		}
+		
+		.content {
+			@media (min-width: 768px) {
+				float: right;
+				width: ~"Calc( 60% - 1em )";
+			}
+			
+			h3 {
+				margin-top: 0;
+			}
+			
+			.nyheter {
+				font-size: 0.8em;
+				padding-left: 2em;
+				padding-right: 2em;
+			}
+		}
+	}
+}

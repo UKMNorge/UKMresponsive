@@ -18,3 +18,14 @@ foreach( $posts as $key => $post ) {
 	the_post();
 	$WP_TWIG_DATA['news'] = new WPOO_Post( $post );
 }
+
+/* PUSH TO FRONT */
+if( function_exists('UKMpush_to_front_load_all_fm_data') ) {	
+	if( (int) date('m') > 2 && (int) date('m') < 6 ) {
+		$week = (int) date('W');
+		$WP_TWIG_DATA['PtF'] = [
+			'current' => UKMpush_to_front_load_all_fm_data( date('Y'), $week ),
+			'previous' => (int) date('N') > 4 ? false : UKMpush_to_front_load_all_fm_data( date('Y'), $week-1 ), // Forrige uke vises tom onsdag
+		];
+	}
+}
