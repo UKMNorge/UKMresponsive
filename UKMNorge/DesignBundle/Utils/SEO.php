@@ -18,6 +18,8 @@ class SEO {
 	public static $google_site_verification;
 	public static $google_analytics;
 	
+	public static $oembed = false;
+	
 	public static function getCanonical(){
 		return self::$canonical;
 	}
@@ -109,5 +111,12 @@ class SEO {
 	}
 	public static function setGoogleAnalytics( $analytics ) {
 		self::$google_analytics = $analytics;
+	}
+	
+	public static function getOembed() {
+		return self::$oembed;
+	}
+	public static function setOembed( $oembed ) {
+		self::$oembed = $oembed;
 	}
 }

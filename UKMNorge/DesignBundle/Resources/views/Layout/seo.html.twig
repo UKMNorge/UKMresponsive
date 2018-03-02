@@ -28,3 +28,6 @@
 <meta property="article:modified_time" content="{{SEO.getPublished()}}" />
 <meta property="article:author" content="{{SEO.getAuthor()}}" />
 {% endif %}
+{% if SEO.getOembed() != false %}
+	<link rel="alternate" type="application/json+oembed" href="{{ SEO.getOembed() }}" title="{{ SEO.getTitle()|raw }}" />
+{% endif %}
