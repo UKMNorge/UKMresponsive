@@ -1,0 +1,39 @@
+<script>
+	$(document).ready(function() {
+		UKMKonkurranse.on('rusfritt:svar', function( response ) {
+			$('#rusfritt-sporsmal').hide();
+			$('#rusfritt-agreed').fadeIn(200);
+		});
+		
+		UKMKonkurranse.on('rusfritt:get', function( response ) {
+			if( response.harSvart != null && response.harSvart !== undefined && response.harSvart == true ) {
+				$('#rusfritt-sporsmal').hide();
+				$('#rusfritt-agreed').fadeIn(200);
+			}
+		});
+		
+		if( UKMMobil.har() ) {
+			UKMKonkurranse.get('rusfritt');
+		}
+	});
+	
+	$(document).on('click', '.rusfritt-agree', function( response ) {
+		UKMKonkurranse.svar('rusfritt', $(this).attr('data-val'));
+	});
+	
+</script>
+
+<div id="rusfritt-agreed"  style="display:none;">
+	<p>Vi er enige.</p>
+</div>
+<div id="rusfritt-sporsmal">
+	<p>Ok?</p>
+	
+	<div class="form-group">
+		<button class="btn btn-block btn-outline-primary rusfritt-agree" style="background-color: #fff;" type="button" data-val="ja">Ja</button>
+	</div>
+
+	<div class="form-group">
+		<button class="btn btn-block btn-outline-primary rusfritt-agree" style="background-color: #fff;" type="button" data-val="perfekt">Perfekt</button>
+	</div>
+</div>

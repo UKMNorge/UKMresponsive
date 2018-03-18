@@ -42,6 +42,7 @@
 		{% embed "UKMDesignBundle:Layout:header.html.twig"|UKMpath %}{% endembed %}
 	
 		<div class="container-fluid" id="UKMDesign_sitemap" style="display:none;">
+			{% embed "UKMDesignBundle:Layout:UKMMobil.html.twig"|UKMpath %}{% endembed %}
 			{% block sectionNav %}{% endblock %}
 			{% embed "UKMDesignBundle:Layout:nav.html.twig"|UKMpath with {'hidden': true} %}{% endembed %}
 		</div>

@@ -1,17 +1,43 @@
 <script>
-	$(document).on('click', '#korslaget-submit', function(){
-	    var form = $('form#korslaget-fylke');
-	    localStorage.setItem('ukm-mobil', $('#korslaget-mobil').val());
-	    console.log('VOTE: '+ $('#korslaget-mobil').val() + ': '+ $('#korslaget-valgt-fylke').val() );
-	    $('#korslaget-fylke').hide();
-	    $('#korslaget-thanks').fadeIn(200);
+	$(document).ready(function() {
+		UKMKonkurranse.on('korslaget-fylke:svar', function( response ) {
+			$('#korslaget-fylke').hide();
+			$('#korslaget-thanks').fadeIn(200);
+		});
+		
+		UKMKonkurranse.on('korslaget-fylke:get', function( response ) {
+			$('#korslaget-fylke').hide();
+			$('#korslaget-mitt-fylke').html( response.fylke );
+			$('#korslaget-valgt').show();
+		});
+		
+		if( UKMMobil.har() ) {
+			$('#korslaget-mobil').val( UKMMobil.get() );
+			UKMKonkurranse.get('korslaget-fylke');
+		}
 	});
+	
+	$(document).on('click', '#korslaget-submit', function() {
+		UKMMobil.set( $('#korslaget-mobil').val() );
+		UKMKonkurranse.svar('korslaget-fylke', $('#korslaget-valgt-fylke').val());
+	});
+	
 </script>
+<div id="korslaget-valgt" style="display:none;">
+	<h2>May the odds be ever in your favor!</h2>
+
+	<p>
+		La oss alle heie på <span id="korslaget-mitt-fylke">ditt fylke</span>!
+	</p>
+</div>
+
 <div id="korslaget-thanks" style="display:none;">
 	<h2>May the odds be ever in your favor!</h2>
 </div>
 <form id="korslaget-fylke">
-	<div class="form-group" required>
+	<h2>Hvilket fylke tror du vinner korslaget?</h2>
+
+	<div class="form-group mt-3" required>
 		<select class="form-control" name="fylke" id="korslaget-valgt-fylke">
 			<option value="false" disabled="disabled" selected="selected">Velg fylke</option>
 			<option value="akershus">Akershus</option>
