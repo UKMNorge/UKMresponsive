@@ -71,7 +71,7 @@ var UKMMobil = function( $ ) {
 		showGUI: function( e ){
 			$('#UKMMobil').html(
 				self.get()
-				+ ' <span class="icon icon-users"></span>'
+				+ ' <span class="icon icon-user"></span>'
 			);
 			$('#UKMMobil').fadeIn( 250 );
 		},
