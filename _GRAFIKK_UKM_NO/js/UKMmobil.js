@@ -42,8 +42,8 @@ var UKMMobil = function( $ ) {
 		getCookieConfig: function(){
 			return {
 				expires: 365,
-				domain: 'ukm.dev',
-				secure: false
+				domain: 'ukm.no',
+				secure: true
 			}
 		},
 		
