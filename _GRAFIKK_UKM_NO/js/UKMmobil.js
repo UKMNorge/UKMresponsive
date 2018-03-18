@@ -17,6 +17,10 @@ var UKMMobil = function( $ ) {
 		},
 		
 		set: function( mobil ) {
+			if( typeof mobil != 'string' ) {
+				return false;
+			}
+			
 			//console.log('UKMMOBIL:set( '+ mobil +' )');
 			mobil = mobil.replace(/\D/g,''); // Replace all but digits
 			
@@ -40,6 +44,13 @@ var UKMMobil = function( $ ) {
 		},
 		
 		getCookieConfig: function(){
+			if( UKM_HOSTNAME != undefined && UKM_HOSTNAME != null && UKM_HOSTNAME == 'ukm.dev' ) {
+				return {
+					expires: 365,
+					domain: 'ukm.dev',
+					secure: false
+				}
+			}
 			return {
 				expires: 365,
 				domain: 'ukm.no',
