@@ -18,6 +18,7 @@
 	});
 	
 	$(document).on('click', '.rusfritt-agree', function( response ) {
+		$( this ).html('Lagrer...');
 		UKMKonkurranse.svar('rusfritt', $(this).attr('data-val'));
 	});
 	

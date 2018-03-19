@@ -18,6 +18,7 @@
 	});
 	
 	$(document).on('click', '#korslaget-submit', function() {
+		$('#korslaget-submit').html('Lagrer...');
 		UKMMobil.set( $('#korslaget-mobil').val() );
 		UKMKonkurranse.svar('korslaget-fylke', $('#korslaget-valgt-fylke').val());
 	});
