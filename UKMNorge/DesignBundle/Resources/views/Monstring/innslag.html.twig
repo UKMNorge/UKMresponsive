@@ -133,7 +133,10 @@
 								{% for forestilling in innslag.program.getAll() if forestilling.erSynligRammeprogram() %}
 									<div class="row">
 										<div class="col-7">
-											Nr {{ forestilling.getNummer( innslag ) }} i {{ forestilling.getNavn() }}
+											{% if forestilling.erSynligDetaljprogram() %}
+												Nr {{ forestilling.getNummer( innslag ) }} i 
+											{% endif %}
+											{{ forestilling.getNavn() }}
 										</div>
 										<div class="col-5 right text-right small-but-same-height">
 											{{ forestilling.getStart()|dato('j. M Y \k\\l. H:i') }}
