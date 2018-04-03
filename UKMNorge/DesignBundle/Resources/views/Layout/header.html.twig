@@ -1,17 +1,14 @@
-{% block css %}
-	{{ parent() }}
-	
-	{% if HEADER.background.url_large is defined and HEADER.background.url_large is not empty %}
-		@media (min-width: 992px {
-			#UKMheader {
-				background-image: url('{{ HEADER.background.url_large }}') !important;
-			}
-		}
-	{% endif %}
-{% endblock %}
-
 {% block navbar %}
 	<div class="container-fluid {{ HEADER.background.url is defined ? 'background' }} {{ HEADER.background.position is defined ? HEADER.background.position }}" id="UKMheader" style="{{ HEADER.background.url is defined ? "background-image:url('"~ HEADER.background.url ~"');" }}">
+		{% if HEADER.background.url_large is defined and HEADER.background.url_large is not empty %}
+			<style>
+				@media (min-width: 992px {
+					#UKMheader {
+						background-image: url('{{ HEADER.background.url_large }}') !important;
+					}
+				}
+			</style>
+		{% endif %}
 		<header>
 			<div class="float-right">
 				<a href="//{{ UKM_HOSTNAME }}/hovedmeny/">
