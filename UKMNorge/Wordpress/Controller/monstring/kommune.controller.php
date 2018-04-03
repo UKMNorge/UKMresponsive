@@ -92,6 +92,10 @@ $WP_TWIG_DATA['ukmtv']				= kommuneController::getUKMTV();
 
 if( get_option('UKM_banner_image') ) {
 	$WP_TWIG_DATA['HEADER']->background->url = get_option('UKM_banner_image');
+	$large_image = get_option('UKM_banner_image_large');
+	if( is_string( $large_image ) && !empty( $large_image ) ) {
+		$WP_TWIG_DATA['HEADER']->background->url_large = $large_image;
+	}
 	$image = new SEOImage( str_replace('http:','https:', get_option('UKM_banner_image') ) );
 	SEO::setImage( $image );
 }
