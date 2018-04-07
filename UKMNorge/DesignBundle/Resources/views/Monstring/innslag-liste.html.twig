@@ -7,10 +7,10 @@
 	{% endif %}
 	<div>
 		<div class="geografi is-breakable">
-			{% if monstring.getType() == 'kommune' %}
-				{{ innslag.getKommune() }}
-			{% else %}
+			{% if monstring.getType() == 'land' %}
 				{{ innslag.getFylke() }}
+			{% else %}
+				{{ innslag.getKommune() }}
 			{% endif %}
 		</div>
 		
