@@ -127,10 +127,14 @@
 						{% endif %}
 						
 						{# PROGRAM #}
+						{% set showOppmoteTid = false %}
 						{% if innslag.getProgram().getAntall() > 0 %}
 							<div class="{{ col_right }}">
 								<h4 class="linje">I programmet</h4>
 								{% for forestilling in innslag.program.getAll() if forestilling.erSynligRammeprogram() %}
+									{% if showOppmoteTid == false and forestilling.erSynligOppmotetid() %}
+										{% set showOppmoteTid = true %}
+									{% endif %}
 									<div class="row">
 										<div class="col-7">
 											{% if forestilling.erSynligDetaljprogram() %}
@@ -164,6 +168,27 @@
 								{% endfor %}
 							</div>
 						{% endif %}
+						
+						
+						
+						
+						{% if showOppmoteTid %}
+							<div class="{{ col_right }}">
+								<h4 class="linje">Oppmøtetidspunkt</h4>
+								{% for forestilling in innslag.program.getAll() if forestilling.erSynligOppmotetid() %}
+									<div class="row">
+										<div class="col-7">
+											{{ forestilling.getNavn() }}
+										</div>
+										<div class="col-5 right text-right small-but-same-height">
+											{{ forestilling.getOppmoteTid( innslag )|dato('j. M Y \k\\l. H:i') }}
+										</div>
+									</div>
+								{% endfor %}
+							</div>
+						{% endif %}
+						
+						
 						
 					</div>{# /ROW #}
 				</div>
