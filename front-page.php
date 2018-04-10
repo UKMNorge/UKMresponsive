@@ -46,6 +46,9 @@ switch( get_option('site_type') ) {
 		$view_template = 'Samtykke/view';
 		require_once('UKMNorge/Wordpress/Controller/samtykke.controller.php');
 		break;
+	case 'site':
+		$view_template = 'Page/fullpage';
+		break;
 	default:
 		$view_template = 'Page/home_norge';
 		require_once('UKMNorge/Wordpress/Controller/norge.controller.php');
