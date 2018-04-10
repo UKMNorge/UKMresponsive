@@ -46,6 +46,7 @@ switch( get_option('site_type') ) {
 		$view_template = 'Samtykke/view';
 		require_once('UKMNorge/Wordpress/Controller/samtykke.controller.php');
 		break;
+	case 'gdpr':
 	case 'site':
 		$view_template = 'Page/fullpage';
 		break;

@@ -9,6 +9,11 @@ require_once('header.php');
 require_once('UKMNorge/Wordpress/Utils/page.class.php');
 $WP_TWIG_DATA['page'] = new page();
 
+// Hvis det er GDPR-siden er det bare å redirecte til forsiden
+if( get_option('site_type') == 'gdpr' ) {
+	header("Location: ". get_bloginfo('url'));
+}
+
 // SET OPENGRAPH AND SEARCH OPTIMIZATION INFOS
 SEO::setTitle( WP_CONFIG::get('firenullfire')['title'] );
 SEO::setDescription( WP_CONFIG::get('firenullfire')['text'] );
