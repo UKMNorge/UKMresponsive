@@ -12,6 +12,12 @@ UKM:
             id: derdubor
             url: //ukm.no/derdubor/
             title: Der du bor
+        - 
+            id: festivalen
+            url: //festivalen.ukm.no/
+            title: UKM-festivalen
+            description: Alt om UKM-festivalen
+
 #        - 
 #            id: hvaer
 #            url: //ukm.no/hva-er/
