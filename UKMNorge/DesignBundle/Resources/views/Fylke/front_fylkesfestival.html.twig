@@ -33,7 +33,7 @@
 							</div>
 						</div>
 					{% elseif direkte is defined and direkte != false and direkte.type == 'link' %}
-						<a href="{{ direkte.link }}">Vi sender direkte</a>
+						<a href="{{ direkte.link }}" class="btn btn-primary btn-block">Vi sender direkte</a>
 					{% endif %}
 				</div>
 				{% embed "UKMDesignBundle:Fylke:meny.html.twig"|UKMpath %}{% endembed %}
