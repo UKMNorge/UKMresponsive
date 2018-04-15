@@ -16,6 +16,14 @@
 				</a>
 			</div>
 		{% endif %}
+		{% if harTV %}
+			<div class="col menu-item">
+				<a href="//tv.ukm.no/fylke/{{ fylke.getPath() }}/{{ fylke.getSesong() }}/">
+					<div class="icon icon-tv"></div>
+					<div class="text">UKM-TV</div>
+				</a>
+			</div>
+		{% endif %}
 		<div class="col menu-item">
 			<a href="{{ monstring.getLink() }}pameldte/">
 				<div class="icon icon-users"></div>

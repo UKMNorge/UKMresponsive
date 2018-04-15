@@ -125,6 +125,7 @@ $WP_TWIG_DATA['infoPage'] 		= fylkeController::getInfoPage();
 
 $WP_TWIG_DATA['harInfoPage'] 	= fylkeController::harInfoPage();
 $WP_TWIG_DATA['harProgram'] 	= fylkeController::harProgram();
+$WP_TWIG_DATA['harTV'] 			= fylkeController::getUKMTV();
 
 $WP_TWIG_DATA['direkte']		= fylkeController::getLive();
 
