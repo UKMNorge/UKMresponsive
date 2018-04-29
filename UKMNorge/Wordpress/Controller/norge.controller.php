@@ -19,6 +19,14 @@ foreach( $posts as $key => $post ) {
 	$WP_TWIG_DATA['news'] = new WPOO_Post( $post );
 }
 
+/** VIS FESTIVALINFO PÅ FORSIDEN **/
+$WP_TWIG_DATA['vis_festival'] = false;
+if( ((int)date('m') == 4 && (int)date('d') > 14) or ((int)date('m') > 4 && (int)date('m') < 8) ) {
+	require_once('UKM/monstringer.collection.php');
+	$WP_TWIG_DATA['festivalen'] = monstringer_v2::land( date('Y') );
+	$WP_TWIG_DATA['vis_festival'] = true;
+}
+
 /* PUSH TO FRONT */
 if( function_exists('UKMpush_to_front_load_all_fm_data') ) {	
 	if( (int) date('m') > 2 && (int) date('m') < 6 ) {

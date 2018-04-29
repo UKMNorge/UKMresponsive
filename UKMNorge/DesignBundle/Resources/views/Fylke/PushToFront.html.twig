@@ -3,7 +3,7 @@
 	<div class="PushToFront">
 		{# DENNE UKEN #}
 		{% if PtF.current|length > 0 %}
-			<h2>Fylkesfestivaler denne uken</h2>
+			<h2 class="mt-0">Fylkesfestivaler denne uken</h2>
 			{% for fylke in PtF.current %}
 				{% embed "UKMDesignBundle:Fylke:PushToFrontFylke.html.twig"|UKMpath %}{% endembed %}
 			{% endfor %}
