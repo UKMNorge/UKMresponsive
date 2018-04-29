@@ -46,6 +46,10 @@ class WP_TWIG {
 		if( defined( 'FULLSTORY_PATH' ) ) {
 			$loader->addPath( FULLSTORY_PATH );
 		}
+		if( defined( 'UKMKONKURRANSE_PATH' ) ) {
+			$loader->addPath( UKMKONKURRANSE_PATH .'/twig/' );
+		}
+
 		if( self::getDebug() ) {
 			$environment['debug'] = self::getDebug();
 		} else {
