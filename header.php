@@ -54,6 +54,7 @@ if( get_current_blog_id() == 1 ) {
 		// 3: ORGANISASJONEN
 		case 'fylke':
 		case 'kommune':
+		case 'land':
 			$section = new stdClass();
 			$section->title = get_bloginfo('name');
 			$section->url = get_bloginfo('url');
