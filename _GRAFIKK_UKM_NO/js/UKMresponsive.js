@@ -184,7 +184,7 @@ $( document ).on('visInnslag', function( e, innslag ){
 	
 	header.slideUp();
 	$.post(
-			window.location.href + '/'+ innslag.attr('data-id') +'/',
+			blog_url + 'pameldte/'+ innslag.attr('data-id') +'/',
 			{
 				singleMode: "true"
 			},
