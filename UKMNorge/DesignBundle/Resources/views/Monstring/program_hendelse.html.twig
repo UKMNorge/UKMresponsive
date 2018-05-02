@@ -8,7 +8,7 @@
 				<p>{{ hendelse.getStart()|dato('l j.M H:i')|capitalize }}, {{ hendelse.getSted() }}</p>
 				
 				{% for innslag in hendelse.getInnslag().getAll() %}
-					<div class="card innslagCard click mb-2 p-0">
+					<div class="card innslagCard mb-2 p-0" data-visning="skjult" data-id="{{ innslag.getId() }}">
 				 		{% embed 'Monstring/innslag-liste.html.twig' with {'innslag': innslag, 'hendelse': hendelse } %}{% endembed %}
 					</div>
 				{% endfor %}
