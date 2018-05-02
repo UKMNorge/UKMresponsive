@@ -236,27 +236,29 @@
 
 			<div class="clearfix"></div>
 
-			<div class="row">
-				<div class="col-12">
-					{% if hendelse is defined %}
-						<p class="my-5">
-							<a href="../program/{{ hendelse.getId() }}/">
-								Tilbake til {{ hendelse.getNavn()}}
-							</a>
-							eller
-							<a href="../">
-								se alle som deltar
-							</a>
-						</p>
-					{% else %}
-						<p class="my-5">
-							<a href="../">
-								Tilbake til alle deltakere
-							</a>
-						</p>
-					{% endif %}
+			{% if singleMode is not defined or not singleMode %}
+				<div class="row">
+					<div class="col-12">
+						{% if hendelse is defined %}
+							<p class="my-5">
+								<a href="../program/{{ hendelse.getId() }}/">
+									Tilbake til {{ hendelse.getNavn()}}
+								</a>
+								eller
+								<a href="../">
+									se alle som deltar
+								</a>
+							</p>
+						{% else %}
+							<p class="my-5">
+								<a href="../">
+									Tilbake til alle deltakere
+								</a>
+							</p>
+						{% endif %}
+					</div>
 				</div>
-			</div>
+			{% endif %}
 
 		</div>
 	</div>

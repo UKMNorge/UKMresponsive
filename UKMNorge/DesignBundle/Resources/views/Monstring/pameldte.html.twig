@@ -12,7 +12,7 @@
 	 	<div class="row">
 	 		<div class="col-12" id="searchList">
 				{% for innslag in monstring.getInnslag().getAll() %}
-					<div class="card innslagCard click mb-2 p-0" data-filter="{{ innslag.getNavn() }}{% for person in innslag.getPersoner().getAll() %} {{ person.getNavn() }},{% endfor %}{% for kommune in monstring.getKommuner() if monstring.getType() == 'kommune' %}{{ kommune.getNavn() }},{% endfor %}">
+					<div class="card innslagCard click mb-2 p-0" data-visning="skjult" data-id="{{ innslag.getId() }}" data-filter="{{ innslag.getNavn() }}{% for person in innslag.getPersoner().getAll() %} {{ person.getNavn() }},{% endfor %}{% for kommune in monstring.getKommuner() if monstring.getType() == 'kommune' %}{{ kommune.getNavn() }},{% endfor %}">
 				 		{% embed 'Monstring/innslag-liste.html.twig' with {'innslag': innslag} %}{% endembed %}
 					</div>
 				{% endfor %}
@@ -26,43 +26,8 @@
 	<script type="text/javascript" src="{{ UKMasset("js/fastlivefilter.jquery.js") }}"></script>
 	<script>
 	jQuery(document).ready(function() {
-		jQuery(".lukkButton").click(function (clicked) {
-			var dynamicElement = clicked.closest(".dynamicElement");
-			dynamicElement.slideUp();
-		});
-
 		jQuery('#filterInnslag').fastLiveFilter('#searchList');
 		jQuery('#filterInnslag').change();
 	});
 	</script>
-{% endblock %}
-
-{% block temp_out %}
-		jQuery(".innslagElement").click(function (clicked) {
-			var content = jQuery(clicked.currentTarget).find(".dynamicElement");
-			var innslagsID = jQuery(this).find("input").val();
-
-			/*console.log(content.find(".toppLinje"));*/
-			if ( !content.is(":visible") ) {
-				content.slideDown();
-				jQuery(clicked.currentTarget).find(".trykkTekst").hide();
-				// Kun kjør request èn gang.
-				if (content.find(".toppLinje").length == 0 ) {
-					jQuery.post(
-						innslagsID+"/", 
-						{
-							singleMode: "true"
-						},
-						function(output) {
-							content.find(".loadingGif").hide();
-							content.prepend(output);
-							content.find(".toppLinje").hide();
-					 	}
-					);
-				}
-			} else {
-				jQuery(clicked.currentTarget).find(".trykkTekst").show();
-				content.slideUp();
-			}
-		});
 {% endblock %}
