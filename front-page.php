@@ -50,7 +50,7 @@ switch( get_option('site_type') ) {
 		$view_template = 'Media/home';
 		require_once('UKMNorge/Wordpress/Controller/menu.controller.php');
 		$WP_TWIG_DATA['HEADER']->background->url = '//ukm.no/media/files/2018/05/2016-06-27-14.57.29-1800x1350.jpg';
-		$WP_TWIG_DATA['HEADER']->background->position = 'top';
+		$WP_TWIG_DATA['HEADER']->background->position = 'bottom';
 		$WP_TWIG_DATA['HEADER']->slogan = 'UKM sin medieavdeling - av og for ungdom';
 		$WP_TWIG_DATA['HEADER']->button->background = 'rgba(242, 109, 21, 0.44)';
 		break;
