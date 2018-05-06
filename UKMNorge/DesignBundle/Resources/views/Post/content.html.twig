@@ -1,15 +1,19 @@
 <div class="post">
-	{% if featured_video is defined %}
-		{{ featured_video|raw }}
-	{% elseif post.image.large.src is defined and post.image.large.src is not empty %}
-		<div id="the_post_image" style="background-image: url('{{ post.image.large.src }}'); max-width:100%"></div>
-	{% endif %}
+	<div class="hidePost">
+		{% if featured_video is defined %}
+			{{ featured_video|raw }}
+		{% elseif post.image.large.src is defined and post.image.large.src is not empty %}
+			<div id="the_post_image" style="background-image: url('{{ post.image.large.src }}'); max-width:100%"></div>
+		{% endif %}
+		
+		<div class="col-12">
+			<h1>{{ post.title|raw }}</h1>
+			<p class="lead">{{ post.lead|raw }}</p>
+		</div>
+	</div>
 	
 	<div class="col-12">
 		<article>
-			<h1>{{ post.title|raw }}</h1>
-			<p class="lead">{{ post.lead|raw }}</p>
-			
 			<div class="d-block d-md-none center" style="margin-bottom: 1em;">
 				<div class="center fb-like" data-href="{{ post.url }}" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="true"></div>
 			</div>

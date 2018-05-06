@@ -11,12 +11,12 @@
 				{% for post in posts.getAll() %}
 					<div class="card UKMcard mb-2 p-0 showPost post" data-post-url="{{ post.url }}">
 						<div class="card-body m-0 p-0">
+							<div class="husk m-2 float-right">
+								<div class="icon icon-star-{{ HUSK('hendelse_post-'~ post.ID ) ? 'full' : 'outlined'}} click huskMeg" data-husk="hendelse_post" data-husk-id="{{ post.ID }}" data-husk-status="{{ HUSK('hendelse_post-'~ post.ID ) ? 'true':'false' }}"></div>
+							</div>
+
 							<div class="header click m-2">
 								<div class="hendelse">
-									<div class="husk float-right">
-										<div class="icon icon-star-{{ HUSK('hendelse_post-'~ post.ID ) ? 'full' : 'outlined'}} click huskMeg" data-husk="hendelse_post" data-husk-id="{{ post.ID }}" data-husk-status="{{ HUSK('hendelse_post-'~ post.ID ) ? 'true':'false' }}"></div>
-									</div>
-									
 									<div class="name bold">
 										<a href="{{ post.url }}">{{ post.title|raw }}</a>
 									</div>
