@@ -12,7 +12,7 @@
 	 	<div class="row">
 	 		<div class="col-12" id="searchList">
 				{% for innslag in monstring.getInnslag().getAll() %}
-					<div class="card innslagCard mb-2 p-0" data-visning="skjult" data-id="{{ innslag.getId() }}" data-filter="{{ innslag.getNavn() }}{% for person in innslag.getPersoner().getAll() %} {{ person.getNavn() }},{% endfor %}{% for kommune in monstring.getKommuner() if monstring.getType() == 'kommune' %}{{ kommune.getNavn() }},{% endfor %}">
+					<div class="card innslagCard UKMcard mb-2 p-0" data-visning="skjult" data-id="{{ innslag.getId() }}" data-filter="{{ innslag.getNavn() }}{% for person in innslag.getPersoner().getAll() %} {{ person.getNavn() }},{% endfor %}{% for kommune in monstring.getKommuner() if monstring.getType() == 'kommune' %}{{ kommune.getNavn() }},{% endfor %}">
 				 		{% embed 'Monstring/innslag-liste.html.twig' with {'innslag': innslag} %}{% endembed %}
 					</div>
 				{% endfor %}
