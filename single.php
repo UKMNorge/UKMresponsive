@@ -5,7 +5,7 @@ use UKMNorge\DesignBundle\Utils\SEO;
 use UKMNorge\DesignBundle\Utils\SEOImage;
 
 require_once('header.php');
-
+$view_template = 'Post/fullpage';
 global $post, $post_id;
 $WP_TWIG_DATA['post'] = new WPOO_Post( $post );
 
@@ -75,6 +75,10 @@ SEO::setAuthor( $authorlist );
 SEO::setPublished( $WP_TWIG_DATA['post']->raw->post_date_gmt );
 
 
+if( isset($_POST['contentMode']) && $_POST['contentMode'] == 'true' ) {
+	$view_template = 'Post/content';
+}
+
 /**
  * EXPORT MODE
  * Export basic page data as json
@@ -84,7 +88,7 @@ if( isset( $_GET['exportContent'] ) ) {
 	die();
 }
 
-echo WP_TWIG::render( 'Post/fullpage', $WP_TWIG_DATA );
+echo WP_TWIG::render( $view_template, $WP_TWIG_DATA );
 wp_footer();
 if(is_user_logged_in() ) {
 	echo '<style>body {margin-top: 33px;} @media (max-width:782px) {body {margin-top: 48px;}}</style>';

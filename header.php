@@ -18,6 +18,11 @@ $WP_TWIG_DATA['HEADER']->logo = new stdClass();
 $WP_TWIG_DATA['UKM_HOSTNAME'] = UKM_HOSTNAME;
 $WP_TWIG_DATA['blog_url'] = get_bloginfo('url');
 $WP_TWIG_DATA['ajax_url'] = admin_url( 'admin-ajax.php' );
+
+if(isset($_POST['singleMode']) && "true" == $_POST['singleMode'] ) {
+	$WP_TWIG_DATA['singleMode'] = true;
+}
+
 // SEO INIT
 $SEOImage = new SEOImage( WP_CONFIG::get('SEOdefaults')['image']['url'], 
 						  WP_CONFIG::get('SEOdefaults')['image']['width'],

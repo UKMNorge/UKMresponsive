@@ -9,9 +9,9 @@
 				<p>{{ kategori.description|raw }}</p>
 
 				{% for post in posts.getAll() %}
-					<div class="card UKMcard mb-2 p-0">
+					<div class="card UKMcard mb-2 p-0 showPost post" data-post-url="{{ post.url }}">
 						<div class="card-body m-0 p-0">
-							<div class="header m-2">
+							<div class="header click m-2">
 								<div class="hendelse">
 									<div class="husk float-right">
 										<div class="icon icon-star-{{ HUSK('hendelse_post-'~ post.ID ) ? 'full' : 'outlined'}} click huskMeg" data-husk="hendelse_post" data-husk-id="{{ post.ID }}" data-husk-status="{{ HUSK('hendelse_post-'~ post.ID ) ? 'true':'false' }}"></div>
@@ -23,16 +23,24 @@
 									<div class="description">
 										{{ post.lead|raw }}
 									</div>
-									<div class="categories">
-										{% for category in post.categories %}
-											<a href="{{ category.url }}" class="badge badge-primary">{{ category.name }}</a>
-										{% endfor %}
-									</div>
 								</div>
 							</div>
-							<div class="data m-2">
-							Mer info kommer
+							<div class="data" style="display:none; margin-left: -.4rem !important; margin-top: 1rem;">
+								<div class="center">Vennligst vent, laster inn..</div>
 							</div>
+
+							<div class="categories my-2" style="margin-left: -.4rem !important;">
+								<div class="col-12">
+									{% for category in post.categories %}
+										<a href="{{ category.url }}" class="badge badge-primary">{{ category.name }}</a>
+									{% endfor %}
+								</div>
+							</div>
+
+							<div class="cancel m-2" style="text-align:right; display:none;">
+								<button type="button" class="btn btn-outline-primary btn-sm hidePost">Lukk</button>
+							</div>
+
 						</div>
 					</div>
 				{% endfor %}

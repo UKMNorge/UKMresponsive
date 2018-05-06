@@ -10,11 +10,6 @@ $monstring = new monstring_v2(get_option('pl_id'));;
 
 ## Skal hente ut ETT innslag, gitt i $id.
 if( is_numeric( $id ) ) {
-	// /pameldte/id/ - i.e. forespørsel om enkelt-innslag. Funker både med og uten slutt-/.
-	if(isset($_POST['singleMode']) && "true" == $_POST['singleMode'] ) {
-		$WP_TWIG_DATA['singleMode'] = true;
-	}
-
 	if( isset( $_GET['cid'] ) ) {
 		require_once('UKM/forestilling.class.php');
 		$WP_TWIG_DATA['hendelse'] = $monstring->getProgram()->get( (int) $_GET['cid'] );
