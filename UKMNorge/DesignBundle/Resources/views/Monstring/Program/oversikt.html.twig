@@ -4,7 +4,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-12 col-md-10 col-lg-8">
-				<h1>Program</h1>
+				<h1>{{ page.getPage().title|raw }}</h1>
 			</div>
 		</div>
 		
@@ -12,7 +12,7 @@
 			{% for dag in monstring.getProgram().sorterPerDag( monstring.getProgram().getAll() ) %}
 				<div class="col mt-4 dag">
 					<h4 class="linje">{{ dag.date|dato('l j.M')|capitalize }}</h4>
-					{% for hendelse in dag.forestillinger %}
+					{% for hendelse in dag.forestillinger if visInterne or (not visInterne and not hendelse.erIntern()) %}
 						<div class="card innslagCard UKMcard mb-2 p-0">
 							<div class="card-body m-0 p-0">
 								<div class="hendelse">

@@ -35,6 +35,9 @@ switch( $page_template ) {
 	case 'pameldte':
 		require_once("UKMNorge/Wordpress/Controller/monstring/pameldte.controller.php");
 		break;
+	# Mønstringens deltakerprogram
+	case 'deltakerprogram':
+		define('DELTAKERPROGRAM', true);
 	# Mønstringens program
 	case 'program':
 		require_once('UKMNorge/Wordpress/Controller/monstring/program.controller.php');

@@ -100,6 +100,7 @@ if( is_numeric( $id ) ) {
 }
 ## Skal vise rammeprogrammet
 else {
+	$WP_TWIG_DATA['visInterne'] = defined('DELTAKERPROGRAM') && DELTAKERPROGRAM;
 	$view_template = 'Monstring/Program/oversikt';
 	SEO::setTitle( 'Program for'.( $monstring->getType() == 'kommune' ? ' UKM' : '').' '. $WP_TWIG_DATA['monstring']->getNavn() );
 	SEO::setDescription( 'Vi starter '. $monstring->getStart()->format('j. M \k\l. H:i') );
