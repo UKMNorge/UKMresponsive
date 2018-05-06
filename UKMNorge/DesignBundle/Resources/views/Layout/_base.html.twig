@@ -16,14 +16,14 @@
 
 		{# STYLES #}
 		<link href="{{ UKMasset("css/bootstrap.min.css") }}" rel="stylesheet" />
-		<link href="{{ UKMasset("css/UKMresponsive"~ (THEME is defined and THEME is not empty ? '-'~THEME : '') ~".css") }}?20180501-2-Martha" rel="stylesheet" />
+		<link href="{{ UKMasset("css/UKMresponsive"~ (THEME is defined and THEME is not empty ? '-'~THEME : '') ~".css") }}?20180506" rel="stylesheet" />
 		{% block css %}{% endblock %}
 		
 		{# SCRIPTS #}
 		{% if ajax_url is defined %}
 		<script type="text/javascript">var ajaxurl = '{{ ajax_url }}';</script>
 		{% endif %}
-		<script type="text/javascript" src="{{ UKMasset("js/UKMresponsive.min.js") }}?20180502-2-JanErik"></script>
+		<script type="text/javascript" src="{{ UKMasset("js/UKMresponsive.min.js") }}?20180506"></script>
 		{% block javascripts %}{% endblock %}
 		
 		<script>(function(d, s, id) {
