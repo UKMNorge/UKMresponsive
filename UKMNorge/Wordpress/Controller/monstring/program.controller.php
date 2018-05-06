@@ -21,6 +21,52 @@ if( is_numeric( $id ) ) {
 	SEO::setTitle( $hendelse->getNavn() );
 	SEO::setDescription( $hendelse->getStart()->format('j. M \k\l. H:i') .'. '.( $monstring->getType() == 'kommune' ? 'UKM ' : ''). $monstring->getNavn() );
 
+
+	if( $hendelse->getType() == 'post' ) {
+		$view_template = 'Monstring/program_hendelse_post';
+		
+		global $post, $post_id;
+		$post = get_post( $hendelse->getTypePostId() );
+		$WP_TWIG_DATA['post'] = new WPOO_Post( $post );
+
+		/** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **
+		 * 			KOPIERT FRA SINGLE.PHP
+		 ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **/
+		// VIDEO ON TOP (FEATURED VIDEO)
+		if ( isset( $WP_TWIG_DATA['post']->meta->video_on_top ) ) {
+			require_once('UKM/tv.class.php');
+			$selected = $WP_TWIG_DATA['post']->meta->video_on_top;
+			if($selected == 'egendefinert') {
+				$url = $WP_TWIG_DATA['post']->meta->video_on_top_URL;
+				// Find ID from URL
+				$url = rtrim($url, '/').'/';
+				$url = explode ('/', $url);
+				$url = $url[count($url)-2];
+				$url = explode ('-', $url);
+				$selected = $url[0]; 
+			}
+			// Finn tv-objektet.
+			$tv = new TV($selected);
+			$WP_TWIG_DATA['featured_video'] = $tv->embedCodeVH();
+		}
+		
+		$image = $WP_TWIG_DATA['post']->image;
+		
+		if( is_object( $image ) ) {
+			if( isset( $image->forsidebilde ) ) {
+				$image = $image->forsidebilde;
+			} elseif( isset( $image->large ) ) {
+				$image = $image->large;
+			} else {
+				// $image = $image;
+			}
+			$SEOimage = new SEOimage( $image->src, $image->width, $image->height );
+			SEO::setImage( $SEOimage );
+		}
+		/** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **
+		 * 			E.O KOPIERT FRA SINGLE.PHP
+		 ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **/
+	}
 }
 ## Skal vise rammeprogrammet
 else {

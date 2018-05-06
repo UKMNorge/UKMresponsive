@@ -109,6 +109,13 @@ class WP_TWIG {
 		});
 		$twig->addFunction($function_get);
 		
+		// Add husk-function
+		$function_ukmhusk = new Twig_SimpleFunction('HUSK', function( $identifier ) {
+			return UKMhusk( $identifier );
+		});
+		$twig->addFunction($function_ukmhusk);
+
+		
 		// Debug
 		if( self::getDebug() ) {
 			$twig->addExtension( new Twig_Extension_Debug() );

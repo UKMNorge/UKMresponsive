@@ -174,6 +174,23 @@ $(document).on('click','#saveAsMine', function(e){
 });
 
 /**
+ * PROGRAM-SIDEN
+ *
+**/
+jQuery( document ).on('click', '.huskMeg', function(){
+	var huskId = 'UKMhusk-'+ $(this).attr('data-husk') +'-'+ $(this).attr('data-husk-id');
+
+	if( jQuery( this ).attr('data-husk-status') == 'true' ) {
+		jQuery( this ).attr('data-husk-status', 'false');
+		jQuery( this ).addClass('icon-star-outlined').removeClass('icon-star-full');
+		Cookies.remove( huskId );
+	} else {
+		Cookies.set(huskId, true, {expires: 365} );
+		jQuery( this ).attr('data-husk-status', 'true');
+		jQuery( this ).addClass('icon-star-full').removeClass('icon-star-outlined');
+	}
+});
+/**
  * DELTAKERE-SIDEN
 **/
 $( document ).on('visInnslag', function( e, innslag ){
@@ -215,7 +232,7 @@ $( document ).on('skjulInnslag', function( e, innslag ){
 $( document ).on('click', '.innslagCard .header', function( e ){
 	e.preventDefault();
 	
-	innslag = $( this ).parents('.innslagCard');
+	var innslag = $( this ).parents('.innslagCard');
 	if( innslag.attr('data-visning') == 'synlig' ) {
 		$( document ).trigger('skjulInnslag', [ innslag ] );
 	} else {

@@ -15,7 +15,7 @@
 				{% endif %}
 			</div>
 			
-			<div class="name">
+			<div class="name autoshrink">
 				<a href="../pameldte/{{ innslag.getId() }}/{{ hendelse is defined ? '?cid=' ~ hendelse.getId() ~ '&nr=' ~ innslag.getAttr('order') }}">
 					{{ innslag.getNavn() }}
 				</a>
