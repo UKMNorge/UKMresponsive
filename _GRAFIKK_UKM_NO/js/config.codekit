@@ -120,13 +120,13 @@
 	"\/UKMresponsive.js": [
 		{
 			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/cookie.js",
+			"linkedFileAbbreviatedPath": "\/jquery-3.2.1.min.js",
 			"position": 0,
 			"type": 0
 			},
 		{
 			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/jquery-3.2.1.min.js",
+			"linkedFileAbbreviatedPath": "\/jquery-autoshrink.js",
 			"position": 1,
 			"type": 0
 			},
@@ -138,13 +138,13 @@
 			},
 		{
 			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/jquery-autoshrink.js",
+			"linkedFileAbbreviatedPath": "\/aos.js",
 			"position": 3,
 			"type": 0
 			},
 		{
 			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/aos.js",
+			"linkedFileAbbreviatedPath": "\/cookie.js",
 			"position": 4,
 			"type": 0
 			},
@@ -355,7 +355,7 @@
 	"javascriptAutoOutputPathStyle": 2,
 	"javascriptCreateSourceMap": 1,
 	"javascriptOutputStyle": 1,
-	"javascriptSyntaxCheckerStyle": 0,
+	"javascriptSyntaxCheckerStyle": 1,
 	"jsCheckerReservedNamesString": "",
 	"jsHintFlags2": {
 		"asi": {
@@ -387,7 +387,7 @@
 			"flagValue": -1
 			},
 		"curly": {
-			"active": 0,
+			"active": 1,
 			"flagValue": -1
 			},
 		"debug": {
