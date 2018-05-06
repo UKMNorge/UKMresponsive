@@ -9,10 +9,10 @@
 		</div>
 		
 		<div class="row vertical-align-center program">
-			{% for dag in monstring.getProgram().sorterPerDag( monstring.getProgram().getAll() ) if dag.forestillinger|length > 0 %}
+			{% for dag in monstring.getProgram().sorterPerDag( visInterne ? monstring.getProgram().getAllInkludertInterne() : monstring.getProgram().getAll() ) %}
 				<div class="col mt-4 dag">
 					<h4 class="linje">{{ dag.date|dato('l j.M')|capitalize }}</h4>
-					{% for hendelse in dag.forestillinger if visInterne or (not visInterne and not hendelse.erIntern()) %}
+					{% for hendelse in dag.forestillinger %}
 						<div class="card innslagCard UKMcard mb-2 p-0">
 							<div class="card-body m-0 p-0">
 								<div class="hendelse">
