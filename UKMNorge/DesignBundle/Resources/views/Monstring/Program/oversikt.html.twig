@@ -9,7 +9,7 @@
 		</div>
 		
 		<div class="row vertical-align-center program">
-			{% for dag in monstring.getProgram().sorterPerDag( monstring.getProgram().getAll() ) %}
+			{% for dag in monstring.getProgram().sorterPerDag( monstring.getProgram().getAll() ) if dag.forestillinger|length > 0 %}
 				<div class="col mt-4 dag">
 					<h4 class="linje">{{ dag.date|dato('l j.M')|capitalize }}</h4>
 					{% for hendelse in dag.forestillinger if visInterne or (not visInterne and not hendelse.erIntern()) %}
