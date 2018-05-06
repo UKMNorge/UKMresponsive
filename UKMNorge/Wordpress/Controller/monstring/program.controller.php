@@ -13,7 +13,7 @@ $id = $WP_TWIG_DATA['page']->getLastParameter();
 ## Skal hente ut programmet for en forestilling
 if( is_numeric( $id ) ) {
 	// /program/c_id/
-	$view_template = 'Monstring/program_hendelse';
+	$view_template = 'Monstring/Program/hendelse';
 	$hendelse = $monstring->getProgram()->get( $id );
 	$WP_TWIG_DATA['hendelse'] = $hendelse;
 
@@ -22,55 +22,70 @@ if( is_numeric( $id ) ) {
 	SEO::setDescription( $hendelse->getStart()->format('j. M \k\l. H:i') .'. '.( $monstring->getType() == 'kommune' ? 'UKM ' : ''). $monstring->getNavn() );
 
 
-	if( $hendelse->getType() == 'post' ) {
-		$view_template = 'Monstring/program_hendelse_post';
-		
-		global $post, $post_id;
-		$post = get_post( $hendelse->getTypePostId() );
-		$WP_TWIG_DATA['post'] = new WPOO_Post( $post );
 
-		/** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **
-		 * 			KOPIERT FRA SINGLE.PHP
-		 ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **/
-		// VIDEO ON TOP (FEATURED VIDEO)
-		if ( isset( $WP_TWIG_DATA['post']->meta->video_on_top ) ) {
-			require_once('UKM/tv.class.php');
-			$selected = $WP_TWIG_DATA['post']->meta->video_on_top;
-			if($selected == 'egendefinert') {
-				$url = $WP_TWIG_DATA['post']->meta->video_on_top_URL;
-				// Find ID from URL
-				$url = rtrim($url, '/').'/';
-				$url = explode ('/', $url);
-				$url = $url[count($url)-2];
-				$url = explode ('-', $url);
-				$selected = $url[0]; 
+	switch( $hendelse->getType() == 'post' ) {
+		/**
+		 * HVIS EN POST SKAL VISES
+		**/
+		case 'post':
+			$view_template = 'Monstring/Program/post';
+			
+			global $post, $post_id;
+			$post = get_post( $hendelse->getTypePostId() );
+			$WP_TWIG_DATA['post'] = new WPOO_Post( $post );
+	
+			/** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **
+			 * 			KOPIERT FRA SINGLE.PHP
+			 ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **/
+			// VIDEO ON TOP (FEATURED VIDEO)
+			if ( isset( $WP_TWIG_DATA['post']->meta->video_on_top ) ) {
+				require_once('UKM/tv.class.php');
+				$selected = $WP_TWIG_DATA['post']->meta->video_on_top;
+				if($selected == 'egendefinert') {
+					$url = $WP_TWIG_DATA['post']->meta->video_on_top_URL;
+					// Find ID from URL
+					$url = rtrim($url, '/').'/';
+					$url = explode ('/', $url);
+					$url = $url[count($url)-2];
+					$url = explode ('-', $url);
+					$selected = $url[0]; 
+				}
+				// Finn tv-objektet.
+				$tv = new TV($selected);
+				$WP_TWIG_DATA['featured_video'] = $tv->embedCodeVH();
 			}
-			// Finn tv-objektet.
-			$tv = new TV($selected);
-			$WP_TWIG_DATA['featured_video'] = $tv->embedCodeVH();
-		}
-		
-		$image = $WP_TWIG_DATA['post']->image;
-		
-		if( is_object( $image ) ) {
-			if( isset( $image->forsidebilde ) ) {
-				$image = $image->forsidebilde;
-			} elseif( isset( $image->large ) ) {
-				$image = $image->large;
-			} else {
-				// $image = $image;
+			
+			$image = $WP_TWIG_DATA['post']->image;
+			
+			if( is_object( $image ) ) {
+				if( isset( $image->forsidebilde ) ) {
+					$image = $image->forsidebilde;
+				} elseif( isset( $image->large ) ) {
+					$image = $image->large;
+				} else {
+					// $image = $image;
+				}
+				$SEOimage = new SEOimage( $image->src, $image->width, $image->height );
+				SEO::setImage( $SEOimage );
 			}
-			$SEOimage = new SEOimage( $image->src, $image->width, $image->height );
-			SEO::setImage( $SEOimage );
-		}
-		/** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **
-		 * 			E.O KOPIERT FRA SINGLE.PHP
-		 ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **/
+			/** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **
+			 * 			E.O KOPIERT FRA SINGLE.PHP
+			 ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** **/
+		break;
+
+		/**
+		 * HVIS EN KATEGORI SKAL VISES
+		**/		
+		case 'category':
+			$view_template = 'Monstring/Program/category';
+		break;
 	}
+
+
 }
 ## Skal vise rammeprogrammet
 else {
-	$view_template = 'Monstring/program_oversikt';
+	$view_template = 'Monstring/Program/oversikt';
 	SEO::setTitle( 'Program for'.( $monstring->getType() == 'kommune' ? ' UKM' : '').' '. $WP_TWIG_DATA['monstring']->getNavn() );
 	SEO::setDescription( 'Vi starter '. $monstring->getStart()->format('j. M \k\l. H:i') );
 }
