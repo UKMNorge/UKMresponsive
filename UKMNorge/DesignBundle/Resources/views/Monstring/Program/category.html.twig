@@ -1,0 +1,47 @@
+{% extends "Layout/_"~ (singleMode is defined and singleMode ? 'singleMode' : 'base' ) ~".html.twig"|UKMpath %}
+
+{% block content %}
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<h1>{{ hendelse.getNavn() }}</h1>
+				<p class="lead">{{ hendelse.getStart()|dato('l j.M H:i')|capitalize }}, {{ hendelse.getSted() }}</p>
+				<p>{{ kategori.description|raw }}</p>
+
+				{% for post in posts.getAll() %}
+					<div class="card innslagCard mb-2 p-0">
+						<div class="card-body m-0 p-0">
+							<div class="header m-2">
+								<div class="hendelse">
+									<div class="husk float-right">
+										<div class="icon icon-star-{{ HUSK('hendelse_post-'~ post.ID ) ? 'full' : 'outlined'}} click huskMeg" data-husk="hendelse_post" data-husk-id="{{ post.ID }}" data-husk-status="{{ HUSK('hendelse_post-'~ post.ID ) ? 'true':'false' }}"></div>
+									</div>
+									
+									<div class="name bold">
+										{{ post.title|raw }}
+									</div>
+									<div class="description">
+										{{ post.lead|raw }}
+									</div>
+									<div class="categories">
+										{% for category in post.categories %}
+											<a href="{{ category.url }}" class="badge badge-primary">{{ category.name }}</a>
+										{% endfor %}
+									</div>
+								</div>
+							</div>
+							<div class="data m-2">
+							Mer info kommer
+							</div>
+						</div>
+					</div>
+				{% endfor %}
+
+				<p class="my-4">
+					<a href="../">Tilbake til rammeprogrammet</a>
+				</p>
+			</div>
+		</div>
+
+	</div>
+{% endblock %}

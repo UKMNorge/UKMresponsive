@@ -13,7 +13,6 @@ $id = $WP_TWIG_DATA['page']->getLastParameter();
 ## Skal hente ut programmet for en forestilling
 if( is_numeric( $id ) ) {
 	// /program/c_id/
-	$view_template = 'Monstring/Program/hendelse';
 	$hendelse = $monstring->getProgram()->get( $id );
 	$WP_TWIG_DATA['hendelse'] = $hendelse;
 
@@ -23,9 +22,9 @@ if( is_numeric( $id ) ) {
 
 
 
-	switch( $hendelse->getType() == 'post' ) {
+	switch( $hendelse->getType() ) {
 		/**
-		 * HVIS EN POST SKAL VISES
+		 * TYPE: POST ELLER PAGE
 		**/
 		case 'post':
 			$view_template = 'Monstring/Program/post';
@@ -74,11 +73,27 @@ if( is_numeric( $id ) ) {
 		break;
 
 		/**
-		 * HVIS EN KATEGORI SKAL VISES
+		 * TYPE: KATEGORI
 		**/		
 		case 'category':
 			$view_template = 'Monstring/Program/category';
+			
+			require_once(get_template_directory() . '/UKMNorge/Wordpress/Utils/posts.class.php');
+
+			$posts = new posts( null, true );
+			$posts->setCategory( $hendelse->getTypeCategoryId() );
+			$posts->loadPosts();
+			
+			$WP_TWIG_DATA['kategori'] = get_category( $hendelse->getTypeCategoryId() );
+			$WP_TWIG_DATA['posts'] = $posts;
 		break;
+		
+		/**
+		 * TYPE: STANDARD
+		**/
+		default:
+			$view_template = 'Monstring/Program/hendelse';
+			break;
 	}
 
 
