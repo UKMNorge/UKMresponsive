@@ -8,11 +8,39 @@
 				<input type="text" name="filtrer" id="filterInnslag" placeholder="Skriv her for å filtrere listen..." class="form-control block" />
 			</div>
 		</div>
+		
+		{% if monstring.getType() == 'fylke' %}
+			<div class="row mb-4">
+				<div class="col-12">
+					<h3>Filtrer</h3>
+					
+					<p class="bold mb-1 mt-3">
+						Fylke
+					</p>
+					
+					<div class="row" style="padding-left:.75em; padding-right: .75em;">
+						{% for fylke in fylker %}
+							<button class="col btn btn-sm m-1 btn-outline-primary filterFylke" id="fylke-{{ fylke.getId() }}" data-id="{{ fylke.getId() }}">{{ fylke.getNavn() }}</button>
+						{% endfor %}
+					</div>
+					
+					<p class="bold mb-1 mt-3">
+						Kategori
+					</p>
+					
+					<div class="row" style="padding-left: .75em; padding-right:.75em;">
+						{% for kategori in kategorier %}
+							<button class="col btn btn-sm m-1 btn-outline-primary filterKategori" id="kategori-{{ kategori.getId() }}" data-id="{{ kategori.getId() }}" >{{ kategori.getNavn() }}</button>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		{% endif %}
 	 	
 	 	<div class="row">
 	 		<div class="col-12" id="searchList">
 				{% for innslag in monstring.getInnslag().getAll() %}
-					<div class="card innslagCard UKMcard mb-2 p-0" data-visning="skjult" data-id="{{ innslag.getId() }}" data-filter="{{ innslag.getNavn() }}{% for person in innslag.getPersoner().getAll() %} {{ person.getNavn() }},{% endfor %}{% for kommune in monstring.getKommuner() if monstring.getType() == 'kommune' %}{{ kommune.getNavn() }},{% endfor %}">
+					<div class="card innslagCard UKMcard mb-2 p-0 filter filter-kategori-{{ innslag.getType().getId() }} filter-fylke-{{ innslag.getFylke().getId() }}" data-visning="skjult" data-id="{{ innslag.getId() }}" id="innslag-{{innslag.getId()}}" data-filter="{{ innslag.getNavn() }}{% for person in innslag.getPersoner().getAll() %} {{ person.getNavn() }},{% endfor %}{% for kommune in monstring.getKommuner() if monstring.getType() == 'kommune' %}{{ kommune.getNavn() }},{% endfor %}">
 				 		{% embed 'Monstring/innslag-liste.html.twig' with {'innslag': innslag} %}{% endembed %}
 					</div>
 				{% endfor %}
