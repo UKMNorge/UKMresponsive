@@ -205,9 +205,11 @@ var UKMpameldte = function( filterList ){
 **/
 $(document).on('click', '.filterKategori', function(){
 	UKMpameldte.click( 'kategori', $(this).attr('data-id') );
+	$(this).blur();
 });
 $(document).on('click', '.filterFylke', function(){
 	UKMpameldte.click( 'fylke', $(this).attr('data-id') );
+	$(this).blur();
 });
 
 
