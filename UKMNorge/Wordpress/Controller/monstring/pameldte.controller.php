@@ -31,8 +31,12 @@ if( is_numeric( $id ) ) {
 }
 ## Skal hente ut alle påmeldte innslag til påmeldte-oversikten.
 else {
+	require_once('UKM/fylker.class.php');
+	require_once('UKM/innslag_typer.class.php');
 	// /pameldte/ - vil altså laste inn oversikten.
-	$WP_TWIG_DATA['monstring'] = new monstring_v2(get_option('pl_id'));;
+	$WP_TWIG_DATA['monstring'] = new monstring_v2(get_option('pl_id'));
+	$WP_TWIG_DATA['fylker'] = fylker::getAllInkludertFalske();
+	$WP_TWIG_DATA['kategorier'] = innslag_typer::getAllTyper();
 	$view_template = 'Monstring/pameldte';
 
 	SEO::setTitle( 'Påmeldte til '. $WP_TWIG_DATA['monstring']->getNavn() );

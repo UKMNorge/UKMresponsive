@@ -68,6 +68,17 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 0
 		},
+	"\/prototype.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/prototype.js",
+		"outputAbbreviatedPath": "\/min\/prototype-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
 	"\/UKMkonkurranse.js": {
 		"fileType": 64,
 		"ignore": 1,
@@ -89,6 +100,17 @@
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 0
+		},
+	"\/UKMpameldte.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/UKMpameldte.js",
+		"outputAbbreviatedPath": "\/min\/UKMpameldte-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
 		},
 	"\/UKMresponsive.js": {
 		"fileType": 64,
@@ -120,44 +142,56 @@
 	"\/UKMresponsive.js": [
 		{
 			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/jquery-3.2.1.min.js",
+			"linkedFileAbbreviatedPath": "\/prototype.js",
 			"position": 0,
 			"type": 0
 			},
 		{
 			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/jquery-autoshrink.js",
+			"linkedFileAbbreviatedPath": "\/jquery-3.2.1.min.js",
 			"position": 1,
 			"type": 0
 			},
 		{
 			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/fastlivefilter.jquery.js",
+			"linkedFileAbbreviatedPath": "\/jquery-autoshrink.js",
 			"position": 2,
 			"type": 0
 			},
 		{
 			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/aos.js",
+			"linkedFileAbbreviatedPath": "\/fastlivefilter.jquery.js",
 			"position": 3,
 			"type": 0
 			},
 		{
 			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/cookie.js",
+			"linkedFileAbbreviatedPath": "\/aos.js",
 			"position": 4,
 			"type": 0
 			},
 		{
 			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/UKMmobil.js",
+			"linkedFileAbbreviatedPath": "\/cookie.js",
 			"position": 5,
 			"type": 0
 			},
 		{
 			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/UKMkonkurranse.js",
+			"linkedFileAbbreviatedPath": "\/UKMmobil.js",
 			"position": 6,
+			"type": 0
+			},
+		{
+			"followForSyntaxChecking": 1,
+			"linkedFileAbbreviatedPath": "\/UKMkonkurranse.js",
+			"position": 7,
+			"type": 0
+			},
+		{
+			"followForSyntaxChecking": 1,
+			"linkedFileAbbreviatedPath": "\/UKMpameldte.js",
+			"position": 8,
 			"type": 0
 			}
 		]
