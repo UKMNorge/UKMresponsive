@@ -6,7 +6,8 @@ var UKMfilter = function( group, id ){
 	var self = {
 		init: function() {
 			name = $( selector ).html();
-			$( listSelector ).attr('filter-'+ group +'-show', self.isVisible());
+			// Always init as showing
+			$( listSelector ).attr('filter-'+ group +'-show', true );
 		},
 		
 		getGroup: function(){
@@ -172,9 +173,27 @@ var UKMpameldte = function( filterList ){
 					listElement.removeClass('d-none');
 				}
 			});
+			
+			self.showCount();
 		},
 		
+		showCount: function(){
+			var numShown = $(filterList +' .filter:visible').length;
+			$('#innslagCount').html('Viser '+ numShown +' innslag');
+			if( numShown == 0 ) {
+				self.showNoneFound();
+			} else {
+				self.hideNoneFound();
+			}
+		},
 		
+		showNoneFound: function(){
+			$('#searchListNoneFound').fadeIn(200);
+		},
+
+		hideNoneFound: function(){
+			$('#searchListNoneFound').hide();
+		},		
 	};
 	
 	return self;
@@ -192,11 +211,11 @@ $(document).on('click', '.filterFylke', function(){
 });
 
 
-
 /**
  * LOAD FILTERS AND FILTER GROUPS
 **/
 $(document).ready( function(){
+	UKMpameldte.showCount();
 	UKMpameldte.registergroup('kategori');
 
 	$('.filterKategori').each( function(){
@@ -208,4 +227,39 @@ $(document).ready( function(){
 		UKMpameldte.registerFilter('fylke', $(this).attr('data-id'));
 	});
 
+});
+
+
+/**
+ * GUI STUFF
+**/
+$(document).on('click', '.toggleFilters', function(e){
+	e.preventDefault();
+	if( $('#filters').is(':visible') ) {
+		$('#filters').slideUp();
+	} else {
+		$('#filters').slideDown();
+	}
+});
+
+
+$(document).on('keyup', '#filterInnslag', function() {
+	var words = $(this).val().toLowerCase().split(' ');
+//	var rex = new RegExp( '\\b' + $(this).val(), 'gi');
+	$('#searchList .filter').hide();
+	$('#searchList .filter').filter(function() {
+		var searchIn = $(this).attr('data-filter').toLowerCase();
+		var found = false;
+		
+		words.forEach( function( word ) {
+			if( searchIn.indexOf( word ) !== -1 ) {
+				found = true;
+				return;
+			}
+		});
+		
+		return found;
+	}).show();
+	
+	UKMpameldte.showCount();
 });
