@@ -34,7 +34,7 @@
 									I programmet: 
 									{% for category in post.categories %}
 										{#<a href="{{ category.url }}" class="badge badge-primary">{{ category.name }}</a>#}
-										{{ category.name }}{{ not loop.last ? ', ', :'' }}
+										{{ category.name }}{{ not loop.last ? ', ' :'' }}
 									{% endfor %}
 								</div>
 							</div>
