@@ -131,7 +131,7 @@
 						{% if innslag.getProgram().getAntall() > 0 %}
 							<div class="{{ col_right }}">
 								<h4 class="linje">I programmet</h4>
-								{% for forestilling in innslag.program.getAll() if forestilling.erSynligRammeprogram() %}
+								{% for forestilling in innslag.program.getAll() if forestilling.erSynligDetaljprogram() %}
 									{% if showOppmoteTid == false and forestilling.erSynligOppmotetid() %}
 										{% set showOppmoteTid = true %}
 									{% endif %}
