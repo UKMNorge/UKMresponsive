@@ -47,6 +47,11 @@ switch( $page_template ) {
 		$view_template = 'Monstring/kontaktpersoner';
 		require_once('UKMNorge/Wordpress/Controller/monstring/kontaktpersoner.controller.php');
 		break;
+		
+	case 'geocache':
+		$view_template = 'Geocache/geocache';
+		require_once('UKMNorge/Wordpress/Controller/geocache.controller.php');
+		break;
 
 	## HOVEDSIDER
 	# Norgeskartet
