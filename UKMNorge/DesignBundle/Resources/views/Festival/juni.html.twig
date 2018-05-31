@@ -1,0 +1,171 @@
+{% extends "Layout/_"~ (singleMode is defined and singleMode ? 'singleMode' : 'base' ) ~".html.twig"|UKMpath %}
+
+{% set visNyhetsbrev = false %}
+
+{% block content %}
+	<script>
+		$(document).on('click', '.clickContainer', function(e){
+			e.preventDefault();
+			window.location.href = $(this).find('.momClickMeClickMe').attr('href');
+		});
+	</script>
+	<style>
+		h1, .h1,
+		h2, .h2,
+		h3,	.h3,
+		h4,	.h4,
+		h5,	.h5,
+		h6,	.h6,
+		p,	.p {
+			opacity: 1;
+		}
+		
+		.blackBG {
+			background-color: #000;
+			color: #fff;
+		}
+		
+		.UKMfestivalBox {
+			min-height: 20vh;
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center center;
+		}
+		#UKMheader_separator {
+			border-bottom: 0.4em solid #000;
+		}
+		.white {
+			color: #fff;
+		}
+		footer.mt-4 {
+			margin-top: 0px !important;
+		}
+		
+		.clickContainer {
+			cursor: pointer;
+		}
+		
+		a,
+		a:hover,
+		a:active,
+		a:visited {
+			color: inherit;
+		}
+		
+		
+		#forste_linje {
+			margin-top: -1em;
+		}
+		@media (min-width: 992px) {
+			#forste_linje {
+			    margin-top: -1.4em;
+			}
+		}
+		
+		/** MOBIL **/
+		#boxProgram {
+			min-height: 30vh !important;
+			background-image: url('//ukm.no/wp-content/themes/UKMresponsive/UKMNorge/DesignBundle/Resources/views/Festival/program.jpg'); 
+		}
+		#boxProgram h2 {
+			margin-top: Calc( 35% - 1em);
+			margin-bottom: Calc( 35% - 1em );
+		}
+		#boxDeltaker {
+			background-color: #afd6b7;
+		}
+		#boxPublikum {
+			background-color: #151e3f;
+		}
+		#boxHvaEr {
+			background-color: #ddd;
+			background-image: url('//ukm.no/wp-content/themes/UKMresponsive/UKMNorge/DesignBundle/Resources/views/Festival/hvaer.jpg');
+			background-position: bottom right;
+		}
+		#boxDeltar {
+			background: #5c3b8a;
+		}
+		/** DESKTOP **/
+		@media (min-width: 992px) {
+			#boxDeltaker {
+				color: #fff;
+				background-image: url('//ukm.no/wp-content/themes/UKMresponsive/UKMNorge/DesignBundle/Resources/views/Festival/deltaker.jpg');
+			}
+
+			#boxPublikum {
+				background-color: #afd6b7; /* Mobil-fargen fra deltaker-boksen */
+			}
+		}
+		
+	</style>
+	<div class="container-fluid" id="forste_linje">
+		{% if visNyhetsbrev %}	
+			{% embed "Festival:nyhetsbrev.html.twig"|UKMpath %}{% endembed %}
+		{% endif %}
+
+		<div class="row">
+			{% if visNyhetsbrev %}
+				<div class="col-12 blackBG">
+					<h2 class="my-2">INFORMASJON</h2>
+				</div>
+			{% endif %}
+
+			<div class="col-6 col-lg-3 UKMfestivalBox clickContainer" id="boxDeltaker">
+				<h2>
+					<a href="//festivalen.ukm.no/gratulerer/" class="momClickMeClickMe">
+						Deltaker
+					</a>
+				</h2>	
+			</div>
+			
+			<div class="col-6 col-lg-3 UKMfestivalBox clickContainer white" id="boxPublikum">
+				<h2>
+					<a href="//festivalen.ukm.no/publikum/" class="momClickMeClickMe">
+						Publikum
+					</a>
+				</h2>	
+			</div>
+		
+			<div class="col-12 col-lg-6 UKMfestivalBox clickContainer black center" id="boxProgram">
+				<h2>
+					<span style="background-color: rgba(0,0,0,0.85)">
+						<a href="//festivalen.ukm.no/program/" class="momClickMeClickMe white">
+							PROGRAM
+						</a>
+					</span>
+				</h2>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-6 UKMfestivalBox white clickContainer" id="boxDeltar">
+				<h2 class="mb-4">
+					<a href="//festivalen.ukm.no/pameldte/" class="momClickMeClickMe">
+						Disse deltar
+					</a>
+				</h2>
+			</div>
+			
+			<div class="col-6 UKMfestivalBox clickContainer" id="boxHvaEr">
+				<h2>
+					<span style="background-color: rgba(255,255,255,0.85)">
+						<a href="//festivalen.ukm.no/hva-er/" class="momClickMeClickMe" style="line-height: 1.24em;">
+							&nbsp;Hva er&nbsp; 
+							<br />
+							&nbsp;festivalen?&nbsp;
+						</a>
+					</span>
+				</h2>	
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-12" style="background: #000;">
+				<h2 class="my-2 white">SISTE NYHETER</h2>
+			</div>
+		</div>
+	</div>
+	<div class="container mt-3">
+		{% embed "Category:the_list.html.twig"|UKMpath with {'posts': posts.posts } %}{% endembed %}
+	</div>
+{% endblock %}
