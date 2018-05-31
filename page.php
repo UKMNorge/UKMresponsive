@@ -52,6 +52,11 @@ switch( $page_template ) {
 		$view_template = 'Geocache/geocache';
 		require_once('UKMNorge/Wordpress/Controller/geocache.controller.php');
 		break;
+	case 'festival/juni':
+		$view_template = 'Festival/juni';
+		require_once('UKMNorge/Wordpress/Controller/festival/juni.controller.php');
+		break;
+
 
 	## HOVEDSIDER
 	# Norgeskartet
