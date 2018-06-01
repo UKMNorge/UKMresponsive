@@ -15,7 +15,7 @@
 					<b>{{ prosjekt.getSetning() }}</b>.
 				</p>
 				<p>
-					Tillatelsen gjelder <b>{{ prosjekt.getVarighet() }}</b> for følgende {{ request.getLenker()|length > 1 ? request.getLenker()|length }} bilde{{ request.getLenker()|length > 1 ? 'r' }}
+					Tillatelsen gjelder <b>{{ prosjekt.getVarighet() }}</b> for følgende {#{ request.getLenker()|length > 1 ? request.getLenker()|length }} bilde{{ request.getLenker()|length > 1 ? 'r' }#}
 				</p>
 				
 				<div class="mb-3">
