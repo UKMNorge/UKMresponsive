@@ -13,6 +13,16 @@ $WP_TWIG_DATA['page'] = new page();
 $WP_TWIG_DATA['posts'] = new posts(6);
 $WP_TWIG_DATA['page_next'] = get_permalink( get_option( 'page_for_posts' ) );
 
+// PAGE TEMPLATE - FOR OVERRIDES
+if( isset( $WP_TWIG_DATA['page']->getPage()->meta->UKMviseng ) ) {
+	$page_template = $WP_TWIG_DATA['page']->getPage()->meta->UKMviseng;
+	if( is_array( $page_template ) && isset( $page_template[0] ) ) {
+		$page_template = $page_template[0];
+	}
+} else {
+	$page_template = false;
+}
+
 
 switch( get_option('site_type') ) {
 	case 'fylke':
@@ -22,7 +32,15 @@ switch( get_option('site_type') ) {
 		require_once('UKMNorge/Wordpress/Controller/monstring/kommune.controller.php');
 		break;
 	case 'land':
-		$view_template = 'Page/fullpage';
+		switch( $page_template ) {
+		 	case 'festival/juni':
+				$view_template = 'Festival/juni';
+				require_once('UKMNorge/Wordpress/Controller/festival/juni.controller.php');
+				break;
+			default:
+				$view_template = 'Page/fullpage';
+				break;
+		}
 		break;
 	case 'ego':
 		$view_template = 'Ego/home';
