@@ -208,7 +208,9 @@
 												{{ film.getTitle() }}
 											</div>
 											<div class="col-12">
-												{{ film.embedCodeVH()|raw }}
+												<div class="iframe-container iframe-container-16x9">
+													{{ film.embedCodeVH()|raw }}
+												</div>
 											</div>
 										</div>
 									{% endfor %}
