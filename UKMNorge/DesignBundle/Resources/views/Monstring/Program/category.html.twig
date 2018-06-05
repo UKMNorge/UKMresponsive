@@ -18,7 +18,7 @@
 				<p>{{ kategori.description|raw }}</p>
 
 				{% for post in posts.getAll() %}
-					<div class="card UKMcard mb-2 p-0 showPost post" data-post-url="{{ post.url }}">
+					<div class="card UKMcard mb-2 p-0 showPost post" data-post-url="{{ post.url }}" data-post-hideTopImage="true">
 						<div class="topimage-xs" style="background-image: url('{{ post.image.large.src }}');"></div>
 						<div class="card-body m-0 p-0">
 							<div class="husk m-2 float-right">
