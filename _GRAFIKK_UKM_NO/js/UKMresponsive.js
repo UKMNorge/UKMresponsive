@@ -205,7 +205,8 @@ $( document ).on('showPost', function( e, post ) {
 	$.post(
 			post.attr('data-post-url'),
 			{
-				contentMode: true
+				contentMode: true,
+				topImage: post.attr('data-post-hideTopImage'),
 			},
 			function( response ) {
 				dataContainer.html( response );
