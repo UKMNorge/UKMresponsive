@@ -8,9 +8,9 @@
 
 {% block content %}
 	<div id="innslag">
-	
+		{% set valgt_bilde = innslag.getBilder().getFirst().getSize("large") %}
 		{# HEADER #}
-		<div class="header {{ innslag.getBilder().getAntall() == 0 ? 'noImage' }}" style="background-image: url('{{ innslag.getBilder().getFirst().getSize("large").getUrl()|replace({'http:':'https:'}) }}')">
+		<div class="header {{ innslag.getBilder().getAntall() == 0 ? 'noImage' }}" style="background-image: url('{{ valgt_bilde.getUrl()|replace({'http:':'https:'}) }}'); {{ valgt_bilde.getOrientation() == 'portrait' ? 'background-position-y: top;' : ''}}">
 			<div class="container">
 				<div class="row bs-margin-fix">
 					<div class="col-12">
