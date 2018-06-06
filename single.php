@@ -79,6 +79,10 @@ if( isset($_POST['contentMode']) && $_POST['contentMode'] == 'true' ) {
 	$view_template = 'Post/content';
 }
 
+if( (isset($_POST['hideTopImage']) && $_POST['hideTopImage'] == 'true') || (isset($_GET['hideTopImage']) && $_GET['hideTopImage'] == 'true') ) {
+	$WP_TWIG_DATA['hideTopImage'] = true;
+}
+
 /**
  * EXPORT MODE
  * Export basic page data as json

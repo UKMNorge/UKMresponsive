@@ -3,7 +3,7 @@
 {% block content %}
 	{% if featured_video is defined %}
 		{{ featured_video|raw }}
-	{% elseif post.image.large.src is defined and post.image.large.src is not empty and hideFeaturedImage is not defined %}
+	{% elseif post.image.large.src is defined and post.image.large.src is not empty and hideTopImage is not defined %}
 		<div id="the_post_image" style="background-image: url('{{ post.image.large.src }}');"></div>
 	{% endif %}
 
@@ -30,6 +30,15 @@
 	
 					<p>{{ post.content_wo_lead|raw }}</p>
 				</article>
+				
+				{# CUSTOM WORKSHOP STUFF BRUKT PÅ FESTIVALEN #}
+				{% if post.meta.type == 'workshop' and post.meta.sted is defined %}
+					<p>
+						<b>STED: </b>
+						{{ post.meta.sted }}
+					</p>
+				{% endif %}
+				{# E.O CUSTOM WORKSHOP STUFF BRUKT PÅ FESTIVALEN #}
 			</div>
 			
 			<div class="col-md-2 col-lg-3 float-right">

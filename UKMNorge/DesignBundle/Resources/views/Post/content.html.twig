@@ -2,7 +2,7 @@
 	<div class="hidePost">
 		{% if featured_video is defined %}
 			{{ featured_video|raw }}
-		{% elseif post.image.large.src is defined and post.image.large.src is not empty %}
+			{% elseif post.image.large.src is defined and post.image.large.src is not empty and hideTopImage is not defined %}
 			<div id="the_post_image" style="background-image: url('{{ post.image.large.src }}'); max-width:100%"></div>
 		{% endif %}
 		
