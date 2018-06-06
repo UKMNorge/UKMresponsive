@@ -206,7 +206,7 @@ $( document ).on('showPost', function( e, post ) {
 			post.attr('data-post-url'),
 			{
 				contentMode: true,
-				topImage: post.attr('data-post-hideTopImage'),
+				hideTopImage: post.attr('data-post-hideTopImage'),
 			},
 			function( response ) {
 				dataContainer.html( response );
