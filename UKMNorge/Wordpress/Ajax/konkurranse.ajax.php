@@ -33,6 +33,11 @@ switch( $_POST['konkurranse'] ) {
 			if( $_POST['sporsmal'] == 'korslaget-fylke' ) {
 				$response['fylke'] = fylker::getByLink( $res )->getNavn();
 			}
+			if( strpos( $_POST['sporsmal'], 'onskereprise-' ) === 0 ) {
+				require_once('UKM/monstring.class.php');
+				$monstring = new monstring_v2( get_option('pl_id') );
+				$response['innslag'] = $monstring->getInnslag()->get( $res )->getNavn();
+			}
 		}
 		
 		$response['harSvart'] = $res != null;

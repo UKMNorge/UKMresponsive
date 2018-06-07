@@ -56,6 +56,10 @@ switch( $page_template ) {
 		$view_template = 'Festival/juni';
 		require_once('UKMNorge/Wordpress/Controller/festival/juni.controller.php');
 		break;
+	case 'festival/onskereprise':
+		$view_template = 'Festival/onskereprise';
+		require_once('UKMNorge/Wordpress/Controller/festival/onskereprise.controller.php');
+		break;
 
 
 	## HOVEDSIDER
