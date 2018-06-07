@@ -1,0 +1,30 @@
+{% for hendelse in hendelser %}
+	<div class="card innslagCard UKMcard mb-2 p-0">
+		<div class="card-body m-0 p-0">
+			<div class="hendelse">
+				<div class="husk float-right">
+					<div class="icon icon-star-{{ HUSK('hendelse-'~ hendelse.getId() ) ? 'full' : 'outlined'}} click huskMeg" data-husk="hendelse" data-husk-id="{{ hendelse.getId() }}" data-husk-status="{{ HUSK('hendelse-'~ hendelse.getId() ) ? 'true':'false' }}"></div>
+				</div>
+				<div class="time">
+					{% if hendelse.harSynligDetaljprogram() %}
+						<a href="{{ hendelse.getId() }}/">{{ hendelse.getStart()|date('H:i') }}</a>
+					{% else %}
+						{{ hendelse.getStart()|date('H:i') }}
+					{% endif %}
+				</div>
+				<div class="data">
+					<div class="tittel">
+						{% if hendelse.harSynligDetaljprogram() %}
+							<a href="{{ hendelse.getId() }}/">{{ hendelse.getNavn() }}</a>
+						{% else %}
+							{{ hendelse.getNavn() }}
+						{% endif %}
+					</div>
+					<div class="sted">
+						{{ hendelse.getSted() }}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endfor %}

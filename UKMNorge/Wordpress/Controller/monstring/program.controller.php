@@ -98,10 +98,29 @@ if( is_numeric( $id ) ) {
 
 
 }
-## Skal vise rammeprogrammet
+## Skal vise rammeprogram for en gitt dag
+elseif( isset($WP_TWIG_DATA['page']->getPage()->meta->dato) && !empty( $WP_TWIG_DATA['page']->getPage()->meta->dato ) ) {
+	$visInterne = defined('DELTAKERPROGRAM') && DELTAKERPROGRAM;
+	$hendelser = $visInterne ? $monstring->getProgram()->getAllInkludertInterne() : $monstring->getProgram()->getAll();
+	
+	$dato = DateTime::createFromFormat( 'd_m', $WP_TWIG_DATA['page']->getPage()->meta->dato);
+	
+	$WP_TWIG_DATA['visInterne'] = $visInterne;
+	$WP_TWIG_DATA['program'] = $monstring->getProgram()->filterByDato( $dato, $hendelser );
+
+	$view_template = 'Monstring/Program/oversikt_dag';
+}
+## Skal vise rammeprogram
 else {
-	$WP_TWIG_DATA['visInterne'] = defined('DELTAKERPROGRAM') && DELTAKERPROGRAM;
+	$visInterne = defined('DELTAKERPROGRAM') && DELTAKERPROGRAM;
+	$hendelser = $visInterne ? $monstring->getProgram()->getAllInkludertInterne() : $monstring->getProgram()->getAll();
+	
+	$WP_TWIG_DATA['visInterne'] = $visInterne;
+	$WP_TWIG_DATA['program'] = $monstring->getProgram()->sorterPerDag( $hendelser );
+
 	$view_template = 'Monstring/Program/oversikt';
 	SEO::setTitle( 'Program for'.( $monstring->getType() == 'kommune' ? ' UKM' : '').' '. $WP_TWIG_DATA['monstring']->getNavn() );
 	SEO::setDescription( 'Vi starter '. $monstring->getStart()->format('j. M \k\l. H:i') );
 }
+
+#var_dump( $WP_TWIG_DATA['page']->getPage() );
