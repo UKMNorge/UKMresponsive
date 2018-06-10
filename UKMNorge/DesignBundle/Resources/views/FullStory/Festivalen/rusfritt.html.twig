@@ -1,11 +1,11 @@
 <script>
 	$(document).ready(function() {
-		UKMKonkurranse.on('rusfritt:svar', function( response ) {
+		UKMKonkurranse.on('3:svar', function( response ) {
 			$('#rusfritt-sporsmal').hide();
 			$('#rusfritt-agreed').fadeIn(200);
 		});
 		
-		UKMKonkurranse.on('rusfritt:get', function( response ) {
+		UKMKonkurranse.on('3:get', function( response ) {
 			if( response.harSvart != null && response.harSvart !== undefined && response.harSvart == true ) {
 				$('#rusfritt-sporsmal').hide();
 				$('#rusfritt-agreed').fadeIn(200);
@@ -13,13 +13,13 @@
 		});
 		
 		if( UKMMobil.har() ) {
-			UKMKonkurranse.get('rusfritt');
+			UKMKonkurranse.get(3);
 		}
 	});
 	
 	$(document).on('click', '.rusfritt-agree', function( response ) {
 		$( this ).html('Lagrer...');
-		UKMKonkurranse.svar('rusfritt', $(this).attr('data-val'));
+		UKMKonkurranse.svar(3, $(this).attr('data-val'));
 	});
 	
 </script>
@@ -34,10 +34,10 @@
 	<p>Ok?</p>
 	
 	<div class="form-group">
-		<button class="btn btn-block btn-outline-primary rusfritt-agree" style="background-color: #fff;" type="button" data-val="ja">Ja</button>
+		<button class="btn btn-block btn-outline-primary rusfritt-agree" style="background-color: #fff;" type="button" data-val="16">Ja</button>
 	</div>
 
 	<div class="form-group">
-		<button class="btn btn-block btn-outline-primary rusfritt-agree" style="background-color: #fff;" type="button" data-val="perfekt">Perfekt</button>
+		<button class="btn btn-block btn-outline-primary rusfritt-agree" style="background-color: #fff;" type="button" data-val="17">Perfekt</button>
 	</div>
 </div>
