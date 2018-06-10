@@ -66,8 +66,7 @@ var UKMKonkurranse = function( $ ) {
 			
 			// SETT DATA
 			var data = {
-				action: 'UKMresponsive',
-				ajaxaction: 'konkurranse',
+				action: 'UKMkonkurranse',
 				konkurranse: _action,
 				sporsmal: _sporsmal,
 				mobil: mobil
@@ -93,7 +92,7 @@ var UKMKonkurranse = function( $ ) {
 			if( response.success == true ) {
 				self.emit( response.sporsmal +':'+ response.action, response );
 			} else {
-				alert('Beklager, klarte ikke å hente konkurranse-status');
+				//alert('Beklager, klarte ikke å hente konkurranse-status');
 			}
 		},
 		
