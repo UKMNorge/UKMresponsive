@@ -36,10 +36,10 @@ else {
 		);
 		$id = $sql->run('field', 'id');
 	 
-		$ins = new SQLins('konkurranse_svar');
-		$ins->add('sporsmal-key', 'geocache-'.$_GET['code'] );
+		$ins = new SQLins('konkurranse_geocache_checkin');
+		$ins->add('cache', $_GET['code'] );
 		$ins->add('mobil', $_COOKIE['UKMMobil']);
-		$ins->add('svar', date('d.m.Y H:i:s'));
+#		$ins->add('svar', date('d.m.Y H:i:s'));
 		$res = $ins->run();
 		
 		
@@ -77,9 +77,8 @@ else {
 	
 	$sql = new SQL("
 		SELECT *
-		FROM `konkurranse_svar`
+		FROM `konkurranse_geocache_checkin`
 		WHERE `mobil` = '#mobil'
-		AND `sporsmal-key` LIKE 'geocache-%'
 		",
 		[
 			'mobil' => $_COOKIE['UKMMobil'],
@@ -88,7 +87,7 @@ else {
 	$res = $sql->run();
 	if( $res ) {
 		while( $row = mysql_fetch_assoc( $res ) ) {
-			$geocacher[ str_replace('geocache-','',$row['sporsmal-key']) ]['status'] = true;
+			$geocacher[ $row['cache'] ]['status'] = true;
 		}
 	}
 	$WP_TWIG_DATA['geocacher'] = $geocacher;
