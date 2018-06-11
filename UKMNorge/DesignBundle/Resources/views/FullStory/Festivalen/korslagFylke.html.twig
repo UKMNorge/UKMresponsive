@@ -1,26 +1,26 @@
 <script>
 	$(document).ready(function() {
-		UKMKonkurranse.on('korslaget-fylke:svar', function( response ) {
+		UKMKonkurranse.on('1:svar', function( response ) {
 			$('#korslaget-fylke').hide();
 			$('#korslaget-thanks').fadeIn(200);
 		});
 		
-		UKMKonkurranse.on('korslaget-fylke:get', function( response ) {
+		UKMKonkurranse.on('1:get', function( response ) {
 			$('#korslaget-fylke').hide();
-			$('#korslaget-mitt-fylke').html( response.fylke );
+			$('#korslaget-mitt-fylke').html( response.svar );
 			$('#korslaget-valgt').show();
 		});
 		
 		if( UKMMobil.har() ) {
 			$('#korslaget-mobil').val( UKMMobil.get() );
-			UKMKonkurranse.get('korslaget-fylke');
+			UKMKonkurranse.get(1);
 		}
 	});
 	
 	$(document).on('click', '#korslaget-submit', function() {
 		$('#korslaget-submit').html('Lagrer...');
 		UKMMobil.set( $('#korslaget-mobil').val() );
-		UKMKonkurranse.svar('korslaget-fylke', $('#korslaget-valgt-fylke').val());
+		UKMKonkurranse.svar(1, $('#korslaget-valgt-fylke').val());
 	});
 	
 </script>
