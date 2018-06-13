@@ -1,0 +1,27 @@
+{% extends "Layout/_"~ (singleMode is defined and singleMode ? 'singleMode' : 'base' ) ~".html.twig"|UKMpath %}
+
+{% block javascripts %}
+	<script src="//grafikk.ukm.no/UKMresponsive/swipebox/js/jquery.swipebox.js"></script>
+	{{ parent() }}
+{% endblock %}
+
+{% block css %}
+	<link rel="stylesheet" href="//grafikk.ukm.no/UKMresponsive/swipebox/css/swipebox.css" />
+	{{ parent() }}
+{% endblock %}
+
+{% block content %}
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				{% for innslag in monstring.getInnslag().getAll() %}
+					{% for bilde in innslag.getBilder().getAll() if bilde.getPlid() == monstring.getId() %}
+						<a href="{{ bilde.getSize('large').getUrl() }}" class="swipebox" title="FOTO: {{ bilde.getAuthor().getName() }}">
+							<img src="{{ bilde.getSize('medium').getUrl() }}" alt="image" />
+						</a>
+					{% endfor %}
+				{% endfor %}
+	 		</div>
+	 	</div>
+	</div>
+{% endblock content %}

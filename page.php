@@ -47,6 +47,11 @@ switch( $page_template ) {
 		$view_template = 'Monstring/kontaktpersoner';
 		require_once('UKMNorge/Wordpress/Controller/monstring/kontaktpersoner.controller.php');
 		break;
+	case 'bilder':
+		require_once('UKMNorge/Wordpress/Controller/monstring/bilder.controller.php');
+		$view_template = 'Monstring/bilder';
+		break;
+
 		
 	case 'geocache':
 		$view_template = 'Geocache/geocache';
@@ -107,6 +112,12 @@ switch( $page_template ) {
 		$view_template = 'Page/styret';
 		break;
 		
+		
+	case 'samtykke/eula':
+		$view_template = 'Samtykke/eula';
+		require_once('UKMNorge/Wordpress/Controller/eula.controller.php');
+		break;
+
 	# Standard wordpress-side
 	default:
 		$view_template = 'Page/fullpage';
