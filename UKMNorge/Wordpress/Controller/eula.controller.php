@@ -13,111 +13,109 @@ require_once(UKMSAMTYKKE_PLUGIN_PATH . 'models/samtykke/timestamp.class.php');
 
 try {
 	if( !isset( $_GET['id'] ) ) {
-		throw new Exception('Mangler mobil-nummer og ID-felt');	
-	}
-
-	$data = explode('-', $_GET['id']);
-	$mobil = $data[0];
-	$id = $data[1];
-
-	if( !is_numeric( $mobil ) || !is_numeric( $id ) ) {
-		throw new Exception('Mangler numerisk mobil-nummer og ID-felt');
-	}
-	
-	$samtykke = samtykke_person::getById( $id );
-	if( $samtykke->getMobil() != $mobil ) {
-		throw new Exception('Feil i ID-felt.');
-	}
-	
-	$KREV_FORESATT = in_array( $samtykke->getKategori()->getId(), ['u13','u15'] );
-	$ER_FORESATT = isset( $_GET['foresatt'] );
-	
-	if( isset( $_GET['feedback'] ) ) {
-		$feedback = $_GET['feedback'];
-	} elseif( isset( $_POST['feedback'] ) ) {
-		$feedback = $_POST['feedback'];
+		$WP_TWIG_DATA['skjul_skjema'] = true;
 	} else {
-		$feedback = false;
-	}
+		$data = explode('-', $_GET['id']);
+		$mobil = $data[0];
+		$id = $data[1];
 	
-	// VI HAR FÅTT INN ET SVAR
-	if( $feedback ) {
+		if( !is_numeric( $mobil ) || !is_numeric( $id ) ) {
+			throw new Exception('Mangler numerisk mobil-nummer og ID-felt');
+		}
+		
+		$samtykke = samtykke_person::getById( $id );
+		if( $samtykke->getMobil() != $mobil ) {
+			throw new Exception('Feil i ID-felt.');
+		}
+		
+		$KREV_FORESATT = in_array( $samtykke->getKategori()->getId(), ['u13','u15'] );
+		$ER_FORESATT = isset( $_GET['foresatt'] );
+		
+		if( isset( $_GET['feedback'] ) ) {
+			$feedback = $_GET['feedback'];
+		} elseif( isset( $_POST['feedback'] ) ) {
+			$feedback = $_POST['feedback'];
+		} else {
+			$feedback = false;
+		}
+		
+		// VI HAR FÅTT INN ET SVAR
+		if( $feedback ) {
+			/**
+			 * FIKK FORESATT-INFO SAMMEN MED FEEDBACK
+			 *
+			 * Dvs at deltakeren er under 15,
+			 * og vi må informere foresatte
+			**/
+	
+			if( isset( $_POST['foresatt_navn'] ) ) {
+				$_POST['foresatt_mobil'] = preg_replace('/[^0-9]/', '', $_POST['foresatt_mobil']);
+				$samtykke->setForesatt( utf8_encode($_POST['foresatt_navn']), $_POST['foresatt_mobil'] );
+				$samtykke->persist();
+			}
+			/**
+			 * VI HAR FÅTT EN GODKJENNING
+			**/
+			if( $feedback == 'go' ) {
+				// Foresatt: it's a GO!
+				if( $ER_FORESATT ) {
+					$samtykke->setForesattStatus('godkjent', $_SERVER['HTTP_CF_CONNECTING_IP']);
+				}
+				// Deltaker: take pictures of me!
+				else {
+					$samtykke->setStatus('godkjent', $_SERVER['HTTP_CF_CONNECTING_IP']);
+				}
+				$view_template = 'Samtykke/go';
+			}
+			/**
+			 * VI HAR FÅTT EN NO-GO :(
+			**/
+			else {
+				// No-go fra foresatte
+				if( $ER_FORESATT ) {
+					$samtykke->setForesattStatus('ikke_godkjent', $_SERVER['HTTP_CF_CONNECTING_IP']);
+				}
+				// No-go fra deltakeren
+				else {
+					$samtykke->setStatus('ikke_godkjent', $_SERVER['HTTP_CF_CONNECTING_IP']);
+				}
+				$view_template = 'Samtykke/nogo';
+			}
+			$samtykke->persist();
+			
+			/**
+			 * FIKK FORESATT-INFO SAMMEN MED FEEDBACK
+			 *
+			 * Faktisk informer den foresatte.
+			 * Må gjøres etter lagret samtykke, slik at vi kan gi foresatte
+			 * informasjon om hva deltakeren ønsker.
+			**/
+			if( isset( $_POST['foresatt_navn'] ) ) {
+				// SEND SMS TIL FORESATT
+				$samtykke = samtykke_person::getById( $id );
+				samtykke_sms::send('samtykke_foresatt', $samtykke );
+			}
+		}
 		/**
-		 * FIKK FORESATT-INFO SAMMEN MED FEEDBACK
-		 *
-		 * Dvs at deltakeren er under 15,
-		 * og vi må informere foresatte
+		 * Hvis deltakeren ikke har sett siden før, marker den som lest nå
 		**/
-
-		if( isset( $_POST['foresatt_navn'] ) ) {
-			$samtykke->setForesatt( utf8_encode($_POST['foresatt_navn']), $_POST['foresatt_mobil'] );
+		elseif( !$ER_FORESATT && $samtykke->getStatus()->getId() == 'ikke_sett' ) {
+			$samtykke->setStatus('ikke_svart', $_SERVER['HTTP_CF_CONNECTING_IP']);
 			$samtykke->persist();
 		}
 		/**
-		 * VI HAR FÅTT EN GODKJENNING
+		 * Hvis den foresatte ikke har sett siden før, marker den som lest nå
 		**/
-		if( $feedback == 'go' ) {
-			// Foresatt: it's a GO!
-			if( $ER_FORESATT ) {
-				echo 'GO Foresatt';
-				$samtykke->setForesattStatus('godkjent', $_SERVER['HTTP_CF_CONNECTING_IP']);
-			}
-			// Deltaker: take pictures of me!
-			else {
-				echo 'GO Deltaker';
-				$samtykke->setStatus('godkjent', $_SERVER['HTTP_CF_CONNECTING_IP']);
-			}
-			$view_template = 'Samtykke/go';
-		}
-		/**
-		 * VI HAR FÅTT EN NO-GO :(
-		**/
-		else {
-			// No-go fra foresatte
-			if( $ER_FORESATT ) {
-				$samtykke->setForesattStatus('ikke_godkjent', $_SERVER['HTTP_CF_CONNECTING_IP']);
-			}
-			// No-go fra deltakeren
-			else {
-				$samtykke->setStatus('ikke_godkjent', $_SERVER['HTTP_CF_CONNECTING_IP']);
-			}
-			$view_template = 'Samtykke/nogo';
-		}
-		$samtykke->persist();
+		elseif( $ER_FORESATT && $samtykke->getForesatt()->getStatus()->getId() == 'ikke_sett' ) {
+			$samtykke->setForesattStatus('ikke_svart', $_SERVER['HTTP_CF_CONNECTING_IP']);
+			$samtykke->persist();
+		}	
 		
-		/**
-		 * FIKK FORESATT-INFO SAMMEN MED FEEDBACK
-		 *
-		 * Faktisk informer den foresatte.
-		 * Må gjøres etter lagret samtykke, slik at vi kan gi foresatte
-		 * informasjon om hva deltakeren ønsker.
-		**/
-		if( isset( $_POST['foresatt_navn'] ) ) {
-			// SEND SMS TIL FORESATT
-			$samtykke = samtykke_person::getById( $id );
-			echo 'DEBUG: '. samtykke_sms::send('samtykke_foresatt', $samtykke );
-		}
+		
+		$WP_TWIG_DATA['samtykke'] = $samtykke;
+		$WP_TWIG_DATA['krev_foresatt'] = $KREV_FORESATT;
+		$WP_TWIG_DATA['er_foresatt'] = $ER_FORESATT;
 	}
-	/**
-	 * Hvis deltakeren ikke har sett siden før, marker den som lest nå
-	**/
-	elseif( !$ER_FORESATT && $samtykke->getStatus()->getId() == 'ikke_sett' ) {
-		$samtykke->setStatus('ikke_svart', $_SERVER['HTTP_CF_CONNECTING_IP']);
-		$samtykke->persist();
-	}
-	/**
-	 * Hvis den foresatte ikke har sett siden før, marker den som lest nå
-	**/
-	elseif( $ER_FORESATT && $samtykke->getForesatt()->getStatus()->getId() == 'ikke_sett' ) {
-		$samtykke->setForesattStatus('ikke_svart', $_SERVER['HTTP_CF_CONNECTING_IP']);
-		$samtykke->persist();
-	}	
-	
-	
-	$WP_TWIG_DATA['samtykke'] = $samtykke;
-	$WP_TWIG_DATA['krev_foresatt'] = $KREV_FORESATT;
-	$WP_TWIG_DATA['er_foresatt'] = $ER_FORESATT;
-
 } catch( Exception $e ) {
 	$view_template = 'Samtykke/error';
 	$WP_TWIG_DATA['melding'] = $e->getMessage();

@@ -7,54 +7,69 @@
 				<article>
 					<p class="lead mt-3">
 						UKM-festivalen er et offentlig arrangement hvor det vil bli tatt bilder og film.
-					</p>					
-					
-					<p class="bold">
-						Jeg, 
-						{% if er_foresatt %}
-							{{ samtykke.getForesatt().getNavn() }}, på vegne av {{ samtykke.getNavn() }}, 
-						{% else %}
-							{{ samtykke.getNavn() }} ({{ samtykke.getAlder() }} år) 
-						{% endif %}
-						forstår at UKM tar bilder og film, og bruker det som det står nedover denne siden.
 					</p>
-					{% if krev_foresatt and not er_foresatt %}
-						<form method="POST" class="form">
-							<div class="form-group">
-								<label for="foresatt">
-									Navn til en av dine foreldre/foresatte
-								</label>
-								<input type="text" class="form-control" name="foresatt_navn" required="required" />
-							</div>
-							
-							<div class="form-group">
-								<label for="foresatt_mobil">
-									Mobilnummer til en av dine foreldre/foresatte
-								</label>
-								<input type="tel" class="form-control" name="foresatt_mobil" required="required" />
-							</div>
-							
-							<div class="form-group">
-								<button type="submit" name="feedback" value="go" class="btn btn-primary btn-sm btn-block">Det er greit</button>
-							</div>
-							<div class="form-group">
-								<button type="submit" name="feedback" value="nogo" class="btn btn-primary btn-sm btn-block">Det er ikke greit</button>
-							</div>
-						</form>
+					{% if skjul_skjema is not defined %}
+						<p class="bold">
+							Jeg, 
+							{% if er_foresatt %}
+								{{ samtykke.getForesatt().getNavn() }}, på vegne av {{ samtykke.getNavn() }}, 
+							{% else %}
+								{{ samtykke.getNavn() }} ({{ samtykke.getAlder() }} år) 
+							{% endif %}
+							forstår at UKM tar bilder og film, og bruker det som det står nedover denne siden.
+						</p>
+						{% if krev_foresatt and not er_foresatt %}
+							<form method="POST" class="form">
+								<div class="form-group">
+									<label for="foresatt">
+										Navn til en av dine foreldre/foresatte
+										<br />
+										<small>(vi må gi dem beskjed om ditt valg)</small>
+									</label>
+									<input type="text" class="form-control" name="foresatt_navn" required="required" placeholder="Skriv fornavn og etternavn.." />
+								</div>
+								
+								<div class="form-group">
+									<label for="foresatt_mobil">
+										Mobilnummer til en av dine foreldre/foresatte
+									</label>
+									<input type="tel" class="form-control" name="foresatt_mobil" required="required" placeholder="Skriv mobilnummer her.." maxlength="8" />
+								</div>
+
+								<p class="small text-muted">
+									<b>Kort-versjonen:</b>
+									Du vil bli tatt bilde av og filmet, dette legges ut på UKM.no og kan legges ut på UKMs 
+									sosiale medier de neste tre årene. Vi vil aldri drite deg ut eller legge ut pinlige bilder, 
+									og du kan når som helst gi oss beskjed om å slette bilder/filmer av deg.
+								</p>
+
+								<div class="form-group">
+									<button type="submit" name="feedback" value="go" class="btn btn-primary btn-sm btn-block">Det er greit</button>
+								</div>
+								<div class="form-group">
+									<button type="submit" name="feedback" value="nogo" class="btn btn-primary btn-sm btn-block">Det er ikke greit</button>
+								</div>
+							</form>
+						{% else %}
+								<p class="small text-muted">
+									<b>Kort-versjonen:</b>
+									Du vil bli tatt bilde av og filmet, dette legges ut på UKM.no og kan legges ut på UKMs 
+									sosiale medier de neste tre årene. Vi vil aldri drite deg ut eller legge ut pinlige bilder, 
+									og du kan når som helst gi oss beskjed om å slette bilder/filmer av deg.
+								</p>
+							<p>
+								<a href="?id={{GET('id')}}&feedback=go{{ krev_foresatt is defined and krev_foresatt ? '&foresatt=true' }}" class="btn btn-primary btn-sm btn-block">Det er greit</a>
+								<a href="?id={{GET('id')}}&feedback=nogo{{ krev_foresatt is defined and krev_foresatt ? '&foresatt=true' }}" class="btn btn-primary btn-sm btn-block mt-3" id="nogo">Det er ikke greit</a>
+							</p>
+						{% endif %}
 					{% else %}
 						<p>
-							<a href="?id={{GET('id')}}&feedback=go{{ krev_foresatt is defined and krev_foresatt ? '&foresatt=true' }}" class="btn btn-primary btn-sm btn-block">Det er greit</a>
-							<a href="?id={{GET('id')}}&feedback=nogo{{ krev_foresatt is defined and krev_foresatt ? '&foresatt=true' }}" class="btn btn-primary btn-sm btn-block mt-3" id="nogo">Det er ikke greit</a>
+							<b>Kort:</b>
+							Du vil bli tatt bilde av og filmet, dette legges ut på UKM.no og kan legges ut på UKMs 
+							sosiale medier de neste tre årene. Vi vil aldri drite deg ut eller legge ut pinlige bilder, 
+							og du kan når som helst gi oss beskjed om å slette bilder/filmer av deg.
 						</p>
 					{% endif %}
-
-					<p>
-						<b>Kort:</b>
-						Du vil bli tatt bilde av og filmet, dette legges ut på UKM.no og kan legges ut på UKMs 
-						sosiale medier de neste tre årene. Vi vil aldri drite deg ut eller legge ut pinlige bilder, 
-						og du kan når som helst gi oss beskjed om å slette bilder/filmer av deg.
-					</p>
-					
 					<h1>Den lange versjonen</h1>
 					<h2>Hvorfor tar vi bilder og filmer?</h2>
 					<p>
@@ -99,7 +114,7 @@
 							<b>Stemning</b>
 							<br />
 							Dette er bilder/film av deltakere som har det hyggelig, og som viser hva som skjer. 
-							Her er det vanligvis mange personer i bildet samtidig.
+							Her er det vanligvis flere personer i bildet samtidig.
 							<br />
 							Hvis du gjør ablegøyer for å få fotografens oppmerksomhet kan vi ta bilder av deg alene, 
 							men hovedregelen er at vi alltid tar bilder av flere sammen.
