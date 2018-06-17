@@ -3,6 +3,16 @@
 {% block javascripts %}
 	<script src="//grafikk.ukm.no/UKMresponsive/swipebox/js/jquery.swipebox.js"></script>
 	{{ parent() }}
+	<script>
+		$(document).ready(function(){
+			$( '.swipebox' ).swipebox(
+				{
+					removeBarsOnMobile: false,
+					hideBarsDelay: 0
+				}
+			);
+		});
+	</script>
 {% endblock %}
 
 {% block css %}
@@ -14,11 +24,15 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-12">
-				{% for innslag in monstring.getInnslag().getAll() %}
-					{% for bilde in innslag.getBilder().getAll() if bilde.getPlid() == monstring.getId() %}
-						<a href="{{ bilde.getSize('large').getUrl() }}" class="swipebox" title="FOTO: {{ bilde.getAuthor().getName() }}">
-							<img src="{{ bilde.getSize('medium').getUrl() }}" alt="image" />
-						</a>
+				{% for forestilling in monstring.getProgram().getAll() if forestilling.getInnslag().getAntall > 0 %}
+					<h2>{{ forestilling.getNavn() }}</h2>
+						
+					{% for innslag in forestilling.getInnslag().getAll() %}
+						{% for bilde in innslag.getBilder().getAll() if bilde.getPlid() == monstring.getId() %}
+							<a href="{{ bilde.getSize('large').getUrl() }}" class="swipebox" title="{{ innslag.getNavn() }} av {{ bilde.getAuthor().getNiceName() }}">
+								<img src="{{ bilde.getSize('thumbnail').getUrl() }}" alt="image" />
+							</a>
+						{% endfor %}
 					{% endfor %}
 				{% endfor %}
 	 		</div>

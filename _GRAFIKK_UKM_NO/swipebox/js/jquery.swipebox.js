@@ -11,6 +11,8 @@
 				useSVG : true,
 				initialIndexOnArray : 0,
 				removeBarsOnMobile : true,
+				removeTopBarOnMobile: false,
+				removeBottomBarOnMobile: true,
 				hideCloseButtonOnMobile : false,
 				hideBarsDelay : 3000,
 				videoMaxWidth : 1140,
@@ -179,6 +181,14 @@
 
 				if ( isMobile && plugin.settings.removeBarsOnMobile ) {
 					$( '#swipebox-bottom-bar, #swipebox-top-bar' ).remove();
+				}
+				
+				if ( isMobile && plugin.settings.removeBottomBarOnMobile ) {
+					$( '#swipebox-bottom-bar' ).remove();
+				}
+
+				if ( isMobile && plugin.settings.removeTopBarOnMobile ) {
+					$( '#swipebox-top-bar' ).remove();
 				}
 
 				$.each( elements,  function() {
