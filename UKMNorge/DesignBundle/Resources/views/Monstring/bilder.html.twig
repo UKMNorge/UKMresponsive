@@ -29,9 +29,11 @@
 						
 					{% for innslag in forestilling.getInnslag().getAll() %}
 						{% for bilde in innslag.getBilder().getAll() if bilde.getPlid() == monstring.getId() %}
-							<a href="{{ bilde.getSize('large').getUrl() }}" class="swipebox" title="{{ innslag.getNavn() }} av {{ bilde.getAuthor().getNiceName() }}">
-								<img src="{{ bilde.getSize('thumbnail').getUrl() }}" alt="image" />
-							</a>
+							{% spaceless %}
+								<a href="{{ bilde.getSize('large').getUrl() }}" class="swipebox" title="{{ innslag.getNavn() }} av {{ bilde.getAuthor().getNiceName() }}">
+									<img src="{{ bilde.getSize('lite', 'medium').getUrl() }}" alt="image" class="m-1" />
+								</a>
+							{% endspaceless %}
 						{% endfor %}
 					{% endfor %}
 				{% endfor %}
