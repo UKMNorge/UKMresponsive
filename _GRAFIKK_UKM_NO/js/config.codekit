@@ -68,6 +68,17 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 0
 		},
+	"\/jquery.imagesGrid.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/jquery.imagesGrid.js",
+		"outputAbbreviatedPath": "\/min\/jquery.imagesGrid-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
 	"\/prototype.js": {
 		"fileType": 64,
 		"ignore": 1,
@@ -166,32 +177,38 @@
 			},
 		{
 			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/aos.js",
+			"linkedFileAbbreviatedPath": "\/jquery.imagesGrid.js",
 			"position": 4,
 			"type": 0
 			},
 		{
 			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/cookie.js",
+			"linkedFileAbbreviatedPath": "\/aos.js",
 			"position": 5,
 			"type": 0
 			},
 		{
 			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/UKMmobil.js",
+			"linkedFileAbbreviatedPath": "\/cookie.js",
 			"position": 6,
 			"type": 0
 			},
 		{
 			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/UKMkonkurranse.js",
+			"linkedFileAbbreviatedPath": "\/UKMmobil.js",
 			"position": 7,
 			"type": 0
 			},
 		{
 			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/UKMpameldte.js",
+			"linkedFileAbbreviatedPath": "\/UKMkonkurranse.js",
 			"position": 8,
+			"type": 0
+			},
+		{
+			"followForSyntaxChecking": 1,
+			"linkedFileAbbreviatedPath": "\/UKMpameldte.js",
+			"position": 9,
 			"type": 0
 			}
 		]
