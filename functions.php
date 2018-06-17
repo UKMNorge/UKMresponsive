@@ -7,6 +7,9 @@ use UKMNorge\DesignBundle\Utils\SEOImage;
 add_theme_support( 'post-thumbnails' );
 add_theme_support( 'menus' );
 
+remove_shortcode('gallery');
+add_shortcode('gallery', 'UKMresponsive_gallery');
+
 add_action( "template_include", "UKMresponsive_pageExists", 10000 );
 
 add_action( 'wp_ajax_nopriv_UKMresponsive', 'UKMresponsive_ajax' );
@@ -22,6 +25,23 @@ function UKMresponsive_imageSizes() {
 
 	update_option( 'large_size_w', 1200 );
 	update_option( 'large_size_h', 1200 );
+}
+
+
+function UKMresponsive_gallery( $gallery ) {
+	
+	$ids = explode(',', $gallery['ids']);
+	
+	$WP_TWIG_DATA['bilder'] = [];
+	foreach( $ids as $image_id ) {
+		$image = wp_get_attachment_metadata( $image_id );
+		$image['baseurl'] = wp_upload_dir()['baseurl'] .'/'. dirname( $image['file'] ).'/';
+		$WP_TWIG_DATA['bilder'][] = $image;
+	}
+	
+echo '<pre>';	var_dump( $WP_TWIG_DATA['bilder'][0] ); echo '</pre>';
+	
+	return WP_TWIG::render( 'Bilder/galleri', $WP_TWIG_DATA );
 }
 
 define('PATH_THEME', TEMPLATEPATH . '/');
