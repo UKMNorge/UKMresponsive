@@ -2,7 +2,7 @@
 	{% for bilde in bilder %}
 		{% spaceless %}
 			<a href="{{ bilde.baseurl ~ bilde.sizes.large.file }}" class="swipebox image-wrapper" data-width="{{ bilde.sizes.lite.width }}" data-height="{{ bilde.sizes.lite.height }}">
-				<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-src="{{ bilde.baseurl ~ bilde.sizes.lite.file }}" alt="" class="image-thumb" />
+				<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-src="{{ bilde.baseurl ~ bilde.sizes.lite.file }}" alt="" class="image-thumb lazyLoad" />
 			</a>
 		{% endspaceless %}
 	{% endfor %}
