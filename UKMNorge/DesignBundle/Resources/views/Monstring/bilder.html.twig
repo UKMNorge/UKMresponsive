@@ -1,38 +1,5 @@
 {% extends "Layout/_"~ (singleMode is defined and singleMode ? 'singleMode' : 'base' ) ~".html.twig"|UKMpath %}
 
-{% block javascripts %}
-	<script src="//grafikk.ukm.no/UKMresponsive/swipebox/js/jquery.swipebox.js"></script>
-	<script src="//grafikk.ukm.no/UKMresponsive/js/jquery.imagesGrid.js"></script>
-	{{ parent() }}
-	<script>
-		$(document).ready(function(){
-			$( '.swipebox' ).swipebox(
-				{
-					removeBarsOnMobile: false,
-					hideBarsDelay: 0
-				}
-			);
-			$(".images-grid").imagesGrid(
-				{
-					rowHeight:65, 
-					margin: 5,
-					
-				}
-			);
-			
-			$('.lazyLoad').each(function(){
-				$(this).attr('src', $(this).attr('data-src'));
-			});
-		});
-		
-	</script>
-{% endblock %}
-
-{% block css %}
-	<link rel="stylesheet" href="//grafikk.ukm.no/UKMresponsive/swipebox/css/swipebox.css" />
-	{{ parent() }}
-{% endblock %}
-
 {% block content %}
 	<div class="container">
 		<div class="row">
