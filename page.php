@@ -61,9 +61,9 @@ switch( $page_template ) {
 		$view_template = 'Festival/juni';
 		require_once('UKMNorge/Wordpress/Controller/festival/juni.controller.php');
 		break;
-	case 'festival/nyhetsbrev/tirsdag':
-		$view_template = 'Festival/Nyhetsbrev/tirsdag';
-		require_once('UKMNorge/Wordpress/Controller/festival/nyhetsbrev/tirsdag.controller.php');
+	case 'festival/mandag':
+		$view_template = 'Festival/Nyhetsbrev/mandag';
+		require_once('UKMNorge/Wordpress/Controller/festival/nyhetsbrev/mandag.controller.php');
 		break;
 	case 'festival/onskereprise':
 		$view_template = 'Festival/onskereprise';
