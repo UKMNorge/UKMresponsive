@@ -18,7 +18,7 @@ SEO::setDescription( addslashes( preg_replace( "/\r|\n/", "", strip_tags( $WP_TW
 if( !is_category() ) {
 	$posts = new posts();
 } else {
-	$posts = new posts( 16, true );
+	$posts = new posts( 20, true );
 	$posts->setCategory( get_queried_object_id() );
 	$posts->loadPosts();
 }

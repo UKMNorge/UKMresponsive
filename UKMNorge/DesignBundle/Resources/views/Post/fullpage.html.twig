@@ -13,7 +13,12 @@
 				<article>
 					<div class="row postmeta">
 						<div class="col">
-							{{ post.date|dato }}
+							{% if post.meta.type == 'workshop' and post.meta.sted is defined %}
+								<b>STED: </b>
+								{{ post.meta.sted }}
+							{% else %}
+								{{ post.date|dato }}
+							{% endif %}
 						</div>
 						<div class="col right">
 							{% for category in post.categories %}
@@ -32,12 +37,7 @@
 				</article>
 				
 				{# CUSTOM WORKSHOP STUFF BRUKT PÅ FESTIVALEN #}
-				{% if post.meta.type == 'workshop' and post.meta.sted is defined %}
-					<p>
-						<b>STED: </b>
-						{{ post.meta.sted }}
-					</p>
-				{% endif %}
+				
 				{# E.O CUSTOM WORKSHOP STUFF BRUKT PÅ FESTIVALEN #}
 			</div>
 			
