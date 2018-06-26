@@ -114,7 +114,7 @@
 
 		}
 
-		.oskarSak {
+		.fullsizeTekst {
 			position: absolute;
 			color: #FCF7BD;
 			/*transform: translate(-50%, -50%);*/
@@ -123,8 +123,9 @@
 			line-height: 0.5rem;
 		}
 
-		.oskarSak > a.big {
-			font-size: 2.8rem;
+		.fullsizeTekst > a.big {
+			font-size: 1.9rem;
+		}
 		}
 
 		.oskarSak > a.small {
@@ -138,7 +139,7 @@
 
 		/* #### NYHETSBREV #### */
 		.ticker {
-			width: 110%;
+			/*width: 110%;*/
 			min-height: 1.6em;
 			display: block;
 			font-family: 'anton', bold sans-serif;
@@ -166,7 +167,7 @@
 		}
 
 		.anton.big {
-			font-size: 3.2em!important;
+			font-size: 2.6em!important;
 		}
 
 		.inline-row {
@@ -239,7 +240,7 @@
 		}
 
 		.sticker.right {
-			left: 75vw;
+			left: 85vw;
 			transform: translate(-50%, 145%);
 			height: 25vw;
 			width: 25vw;
@@ -291,9 +292,13 @@
 
 		{# HALVBREDDE-SAK #}
 		<div class="row">
-			<div class="UKMfestivalBox col-6 halfwidthBox clickContainer newsletter_green">
+			{# <div class="UKMfestivalBox col-6 halfwidthBox clickContainer newsletter_green">
 				<a href="https://tv.ukm.no/festivalen/2018/12930-Festival-guide/" class="anton momClickMeClickMe" style="margin-top: 1.4rem; font-size: 2.3rem; padding-bottom: 0.2rem;">FESTIVAL-</a>
 				<a href="https://tv.ukm.no/festivalen/2018/12930-Festival-guide/" class="anton big" style="margin-top: 0.25em;margin-left:-0.05em;">GUIDEN</a>
+			</div> #}
+			<div class="UKMfestivalBox col-6 halfwidthBox clickContainer newsletter_purple">
+				<a href="https://tv.ukm.no/festivalen/2018/12930-Festival-guide/" class="anton momClickMeClickMe" style="margin-top: 1.4rem; font-size: 1.8rem; padding-bottom: 0.2rem;">HVA HAR DU</a>
+				<a href="https://tv.ukm.no/festivalen/2018/12930-Festival-guide/" class="anton big" style="margin-top: 0.25em;margin-left:-0.05em;">PAKKA?</a>
 			</div>
 			<div class="UKMfestivalBox col-6 halfwidthBox" style="overflow:hidden;">
 				<div class="row inline-row">
@@ -301,29 +306,66 @@
 				</div>
 			</div>
 			<div class="clickContainer sticker right newsletter_green">
-				<a href="https://festivalen.ukm.no/deltakerprogram/" class="big momClickMeClickMe">MAT?</a>
+				<a href="https://festivalen.ukm.no/deltakerprogram/" class="momClickMeClickMe" style="font-size: 1.1rem; margin-top: 1.4rem;">DAGENS</a>
+				<a href="https://festivalen.ukm.no/deltakerprogram/" class="momClickMeClickMe" style="font-size: 0.7rem; line-height: 0.5rem;">HØYDEPUNKT</a>
 			</div>
 			<div class="clearfix"></div>
 		</div>
 		{# FULLBREDDE-SAK #}
 		<div class="row fullwidthBox clickContainer" style="background-image: url('{{ UKMasset("img/newsletter/oskar_sak.png" ) }}'); background-position: 0,0;
 			">
-			<div class="oskarSak" style="margin-top: 6rem; margin-left: 0.75rem;">
-				<a href="https://tv.ukm.no/festivalen/2018/12925-Game-master-Oskar/" class="big momClickMeClickMe" style="position: relative; top: 1vw;">OSKAR</a><br class="line-height: 1rem;"/>
-				<a href="https://tv.ukm.no/festivalen/2018/12925-Game-master-Oskar/" class="small" style="position: relative; top: 1vw; padding-left: 0.2rem;">GAME MASTER</a>
+			<div class="fullsizeTekst center" style="margin-top: 6rem; margin-left: 0.75rem;">
+				<a href="https://tv.ukm.no/festivalen/2018/12925-Game-master-Oskar/" class="big momClickMeClickMe" style="position: relative; top: 10vw; margin-left: -5%;">LUFTAKROBATIKK</a><br class="line-height: 1rem;"/>
 			</div>
 		</div>
-		<div class="row fullwidthBox newsletter_yellow headerBox big center clickContainer" style=" padding-top: 0.6rem; padding-bottom: 0.2rem;">
-			<a href="https://festivalen.ukm.no/category/workshop-foredrag/" class="anton center momClickMeClickMe" style="font-size: 1.4rem; overflow: hidden;">WORKSHOPS WORKSHOPS WORKSHOPS</a>
+		{# <div class="row fullwidthBox  headerBox big center clickContainer" style=" padding-top: 0.6rem; padding-bottom: 0.2rem;">
+			<a href="https://festivalen.ukm.no/category/workshop-foredrag/" class="anton center momClickMeClickMe" style="max-height: 0.1vw; font-size: 1.4rem; overflow-x: hidden;"></a>
+		</div> #}
+		<div class="row ticker newsletter_green">
+			<marquee behavior="scroll" scrollamount="5" direction="left" style="padding-top: 0.3rem;">FORESTILLINGER UKM TV - FORESTILLINGER UKM TV</marquee>
 		</div>
-		<div class="row fullwidthBox newsletter_purple headerBox big center" style="color: white; padding-top: 0.6em;">
-			<br /><a href="https://festivalen.ukm.no/deltakerprogram/" class="anton big center momClickMeClickMe">PROGRAM</a><br /><br />
+		<div class="row fullwidthBox newsletter_yellow big center" style="color: white; padding-top: 0.6em; line-height: 2.15rem;">
+			<br /><a href="https://festivalen.ukm.no/deltakerprogram/" class="anton big center momClickMeClickMe">ER DET NOE</a><br />
+			<a href="https://festivalen.ukm.no/deltakerprogram/" class="anton big center momClickMeClickMe">I VANNET..?</a><br />
 		</div>
-		<div class="row fullwidthBox">
-			<img src="https://media.giphy.com/media/mbEgX6CUS01cQ/giphy.gif" style="width: 100%">
+		<div class="row">
+			<div class="UKMfestivalBox col-6 halfwidthBox clickContainer newsletter_purple">
+				<a href="https://tv.ukm.no/festivalen/2018/12930-Festival-guide/" class="anton momClickMeClickMe" style="margin-top: 1.4rem; font-size: 1.2rem; padding-bottom: 0.2rem;">SLIK BLIR DU GOD I</a>
+				<a href="https://tv.ukm.no/festivalen/2018/12930-Festival-guide/" class="anton" style="margin-top: 0.25em; margin-left:-0.05em;">RUMPELDUNK</a>
+			</div>
+			<div class="UKMfestivalBox col-6 halfwidthBox" style="overflow:hidden;">
+				<div class="row inline-row">
+					<img src="https://media.giphy.com/media/wNOsMItba4FwY/giphy.gif">
+				</div>
+			</div>
 		</div>
-		<div class="row fullwidthBox newsletter_green" style="min-height: 20vh; height: auto;">
-			<div class="col-xs-12 center thanks" style="color:white;">
+		<div class="row">
+			<div class="UKMfestivalBox col-6 halfwidthBox clickContainer newsletter_green">
+				<div class="row inline-row">
+					<img src="https://media.giphy.com/media/LqafmeaBVxCRG/giphy.gif">
+				</div>
+			</div>
+			<div class="UKMfestivalBox col-6 halfwidthBox newsletter_green" style="overflow:hidden;">
+				<a href="https://tv.ukm.no/festivalen/2018/12930-Festival-guide/" class="anton momClickMeClickMe" style="margin-top: 3rem; font-size: 5rem; padding-bottom: 0.2rem;">UKM</a>
+				<a href="https://tv.ukm.no/festivalen/2018/12930-Festival-guide/" class="anton" style="margin-top: 1em; margin-left:-0.05em;">STARTERPACK</a>
+			</div>
+		</div>
+		<div class="row fullwidthBox clickContainer" style="background-image: url('{{ UKMasset("img/newsletter/oskar_sak.png" ) }}'); background-position: 0,0;
+			">
+			<div class="fullsizeTekst center" style="margin-top: 6rem; margin-left: 0.75rem;">
+				<a href="https://tv.ukm.no/festivalen/2018/12925-Game-master-Oskar/" class="big momClickMeClickMe" style="position: relative; top: 10vw; margin-left: -5%;">KLEMMEFILMEN</a>
+
+				<br class="line-height: 1rem;"/>
+			</div>
+		</div>
+		<div class="row fullwidthBox clickContainer" style="background-image: url('{{ UKMasset("img/newsletter/oskar_sak.png" ) }}'); background-position: 0,0;
+			">
+			<div class="row inline-row">
+				<img src="https://media.giphy.com/media/mhDwIpbsgGKk/giphy.gif">
+			</div>
+		</div>
+		<div class="row fullwidthBox newsletter_yellow" style="min-height: 20vh; height: auto;">
+			<div class="col-xs-12 center thanks" style="color:black; letter-spacing:0.05rem; font-size: 1.3rem;">
 				<br />
 				<span>NYHETSBREVET KOMMER HVER </span><br />
 				<span style="letter-spacing: 0.08rem;">DAG MED BILDER, VIDEOER, </span><br />

@@ -20,6 +20,8 @@
 		<link href="{{ UKMasset("swipebox/css/swipebox.css") }}" rel="stylesheet" />
 		<link href="{{ UKMasset("css/nyhetsbrev-fonts.css") }}" rel="stylesheet" />
 		<link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+		
+		<style>html, body {  margin: 0;  padding: 0; overflow-x: hidden; }</style>
 		{% block css %}{% endblock %}
 		
 		{# SCRIPTS #}
@@ -47,7 +49,7 @@
 	</head>
 
 	
-	<body style="overflow-x: hidden;">
+	<body>
 		<main id="mainContent">
 			<div id="fb-root"></div>{# FACEBOOK #}
 			<!-- {% embed "UKMDesignBundle:Layout:header.html.twig"|UKMpath %}{% endembed %} -->
