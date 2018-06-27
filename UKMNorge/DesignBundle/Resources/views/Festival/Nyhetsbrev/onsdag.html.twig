@@ -314,7 +314,7 @@
 				<a href="https://tv.ukm.no/festivalen/2018/12930-Festival-guide/" class="anton big" style="margin-top: 0.25em;margin-left:-0.05em;">GUIDEN</a>
 			</div> #}
 			<div class="UKMfestivalBox col-6 halfwidthBox center newsletter_purple expandOnClick">
-				<a href="https://festivalen.ukm.no/2018/06/26/ukm-hvor-oredobbposer-og-silkeband-er-prioritetene-i-bagen/" data-article-id=1 class="anton articleLink" style="margin-top: 1.4rem; font-size: 1.8rem; padding-bottom: 0.2rem;">HVA HAR DU</a>
+				<a href="https://festivalen.ukm.no/2018/06/26/ukm-hvor-oredobbposer-og-silkeband-er-prioritetene-i-bagen/" data-article-id=1 id="article-1" class="anton articleLink" style="margin-top: 1.4rem; font-size: 1.8rem; padding-bottom: 0.2rem;">HVA HAR DU</a>
 				<a href="https://festivalen.ukm.no/2018/06/26/ukm-hvor-oredobbposer-og-silkeband-er-prioritetene-i-bagen/" class="anton big" style="margin-top: 0.25em;margin-left:-0.05em;">PAKKA?</a>
 			</div>
 
@@ -331,7 +331,7 @@
 					<br />
 				</div>
 				<div class="col-12 close center text-center">
-					<button class="btn btn-block btn-outline-secondary">Lukk artikkel</button>
+					<button class="btn btn-block btn-outline-secondary closeButton">Lukk artikkel</button>
 					<br />
 				</div>
 			</div>
@@ -470,6 +470,12 @@
 					},
 				);
 			}
+		});
+
+		$(".closeButton").click( function (event) {
+			jQuery(event.target).parent().parent().slideUp();
+			console.log(jQuery(event.target).parent().parent().attr("id"));
+			scrollTo(jQuery(event.target).parent().parent().attr("id"));
 		});
 	});
 	</script>
