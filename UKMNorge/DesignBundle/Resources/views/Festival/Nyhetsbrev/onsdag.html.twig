@@ -244,17 +244,19 @@
 			display: inline-block;
 			position: absolute;
 			z-index: 10000;
-			box-shadow: 3px 3px 3px #999999;
+			/*box-shadow: 3px 3px 3px #999999;*/
 		}
 
 		.sticker.center {
 			left: 50%;
-			transform: translate(-50%, 115%);
+			transform: translate(-50%, 115% - .5px);
+			/*-webkit-filter: blur(0.000001px);
+			-webkit-font-smoothing: antialiased;*/
 		}
 
 		.sticker.right {
-			left: 85vw;
-			transform: translate(-50%, 145%);
+			left: 75vw;
+			transform: translate(-50%, 145% -.5px);
 			height: 20vw;
 			width: 20vw;
 		}
@@ -341,9 +343,9 @@
 					<img src="https://media.giphy.com/media/wNOsMItba4FwY/giphy.gif">
 				</div>
 			</div> #}
-			<div class="clickContainer sticker right newsletter_yellow" >
-				<a href="#popupMap" class="momClickMeClickMe" data-rel="popup" data-position-to="window" style="font-size: 1.4rem; margin-top: 1rem;color:black;">DAGENS</a>
-				<a href="#popupMap" class="momClickMeClickMe" data-rel="popup" data-position-to="window" style="font-size: 0.8rem; margin-top: -0.1rem;color:black;">HØYDEPUNKT</a>
+			<div class="clickContainer sticker right newsletter_yellow" style="margin-top: 32%;">
+				<a class="momClickMeClickMe" style="font-size: 1.2rem; margin-top: 1rem;color:black;">DAGENS</a>
+				<a class="momClickMeClickMe" style="font-size: 0.7rem; margin-top: -0.1rem;color:black;">HØYDEPUNKT</a>
 			</div>
 			<div class="clearfix"></div>
 		</div>
