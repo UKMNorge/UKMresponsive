@@ -98,8 +98,6 @@
 
 		.textOverlay {
 			position: absolute;
-			
-			transform: translate(-50%, -50%);
 			font-family: 'Crimson Text', bold serif;
 			font-weight: 500;
 			
@@ -177,7 +175,7 @@
 		.fullwidthBox {
 			background-color: black; 
 			display: block;
-			height: 50vw;
+			height: 60vw;
 			overflow: hidden;
 			background-repeat: no-repeat;
 			background-size: 100% auto;
@@ -261,6 +259,15 @@
 			width: 20vw;
 		}
 
+		.sticker {
+			transform: translate(-50%, 145% -.5px);
+			height: 20vw;
+			width: 20vw;
+		}
+
+		.sticker.left {
+			margin-left: 0%;
+		}
 		.sticker.right > a {
 			font-size: 3vw;
 		}
@@ -275,6 +282,10 @@
 			color: white;
 			display: block;
 			text-align: center;
+		}
+
+		.rotate {
+			transform: rotate(-15deg);
 		}
 
 		.sticker > a.big {
@@ -318,7 +329,7 @@
 				<a href="https://tv.ukm.no/festivalen/2018/12930-Festival-guide/" class="anton big" style="margin-top: 0.25em;margin-left:-0.05em;">GUIDEN</a>
 			</div> #}
 			<div class="UKMfestivalBox col-6 halfwidthBox center newsletter_green expandOnClick">
-				<a href="https://festivalen.ukm.no/2018/06/26/ukm-hvor-oredobbposer-og-silkeband-er-prioritetene-i-bagen/" data-articleBox-id=1 id="article-1" class="anton big articleLink" style="margin-top: 1.4rem; font-size: 1.4rem; padding-bottom: 0.2rem;">BACKSTAGE</a>
+				<a href="https://festivalen.ukm.no/2018/06/26/ukm-hvor-oredobbposer-og-silkeband-er-prioritetene-i-bagen/" data-articleBox-id=1 id="article-1" class="anton big articleLink" style="margin-top: 40%; font-size: 1.2rem; padding-bottom: 0.2rem;">BACKSTAGE</a>
 			</div>
 
 			<div class="UKMfestivalBox col-6 halfwidthBox center expandOnClick" style="background-image: url('https://ukm.no/festivalen/files/2018/06/DSC0410_artikkelbilder_japansak_bildeav_StoneHeart_Foto_Deivid_Garcia-1-768x512.jpg'); background-position: 0,0;
@@ -350,12 +361,17 @@
 			<div class="clearfix"></div>
 		</div>
 		{# FULLBREDDE-SAK #}
-		<div class="row fullwidthBox clickContainer" style="background-image: url('https://ukm.no/festivalen/files/2018/06/Screen-Shot-2018-06-26-at-16.04.39-768x480.png'); background-size: 110%; background-position: 0px,-240px;
+		<div class="row fullwidthBox clickContainer" style="background-image: url('https://ukm.no/festivalen/files/2018/06/180636-UKM-Vannflaske-11-1-768x512.jpg'); background-size: 110%; background-position: 0px,-240px;
 			">
-			<div class="fullsizeTekst" style="margin-top: 40%;">
-				<a href="https://tv.ukm.no/Luftakrobatikk/12958" class="anton big right momClickMeClickMe" style="color: white; position: relative;">LANDSBYKVELD</a><br />
+			<div class="fullsizeTekst" style="margin-top: 45%;">
+				<a href="https://tv.ukm.no/Luftakrobatikk/12958" class="anton big right white momClickMeClickMe" style="letter-spacing: 0.08rem; position: relative; margin-right: 5%;">LANDSBYKVELD</a><br />
 			</div>
 		</div>
+		<div class="clickContainer sticker left newsletter_purple" style="margin-top: -5%;">
+			<a class="momClickMeClickMe rotate" style="font-size: 1.2rem; margin-top: 34%; color:black;">BILDER</a>
+		</div>
+		<div class="clearfix"></div>
+
 		<div class="col-12 articleBox newsletter_cream" id="articleBox-2" style="display:none;">
 				<br />
 				<div class="articleContent">
@@ -382,8 +398,8 @@
 		
 		<div class="row">
 			<div class="UKMfestivalBox col-6 halfwidthBox clickContainer newsletter_yellow">
-				<a href="https://festivalen.ukm.no/2018/06/26/3-2-1-rumpeldunk/" class="anton momClickMeClickMe" style="margin-top: 20%; font-size: 2rem; padding-bottom: 0.2rem;">Å BLANDE</a>
-				<a href="https://festivalen.ukm.no/2018/06/26/3-2-1-rumpeldunk/" class="anton" style="font-size: 1.4rem; margin-top: 0.20em; letter-spacing: 0.11rem;">DANSESTILER</a>
+				<a href="https://festivalen.ukm.no/2018/06/26/3-2-1-rumpeldunk/" class="anton momClickMeClickMe" style="margin-top: 30%; font-size: 2.3rem; padding-bottom: 0.2rem;">Å BLANDE</a>
+				<a href="https://festivalen.ukm.no/2018/06/26/3-2-1-rumpeldunk/" class="anton" style="font-size: 1.45rem; margin-top: 0.20em; letter-spacing: 0.11rem;">DANSESTILER</a>
 			</div>
 			<div class="UKMfestivalBox col-6 halfwidthBox" style="overflow:hidden;">
 				<div class="row inline-row" style="background-image: url('https://media.giphy.com/media/3EfgWHj0YIDrW/giphy.gif'); background-size: 140%; background-position: center, center; ">
@@ -397,12 +413,12 @@
 					<img src="https://media.giphy.com/media/ZY4iELUOD1a0M/giphy.gif">
 				</div>
 			</div>
-			<div class="clickContainer sticker right newsletter_yellow" style="left: 40%; margin-top: -10%;">
-				<a href="https://pent.no/63.43048,10.39506" class="momClickMeClickMe" style="transform: rotate(-20deg); color: black; font-size: 1rem; margin-top: 1rem;">VET IKKE ENNÅ</a>
+			<div class="clickContainer sticker newsletter_yellow" style="left: 40%; margin-top: -10%;">
+				<a href="https://pent.no/63.43048,10.39506" class="rotate momClickMeClickMe" style="color: black; font-size: 1rem; margin-top: 1rem;">VET IKKE ENNÅ</a>
 			</div>
 			<div class="clearfix"></div>
 			<div class="UKMfestivalBox col-6 halfwidthBox newsletter_green" style="overflow:hidden;">
-				<a href="https://festivalen.ukm.no/2018/06/26/vans-sang-og-sokker-i-sandaler/" class="anton momClickMeClickMe" style="margin-top: 20%; font-size: 3rem; padding-bottom: 0.2rem;">HEI DU!</a>
+				<a href="https://festivalen.ukm.no/2018/06/26/vans-sang-og-sokker-i-sandaler/" class="anton momClickMeClickMe" style="margin-top: 40%; font-size: 3rem; padding-bottom: 0.2rem;">HEI DU!</a>
 			</div>
 		</div>
 		<div class="row">
