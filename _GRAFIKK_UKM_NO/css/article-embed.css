@@ -1,0 +1,4 @@
+.the_post_image {
+	/* Force max width to 100%, not 100vw in embedded articles. */
+	width: 100%;
+}
