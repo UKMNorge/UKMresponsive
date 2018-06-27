@@ -314,14 +314,14 @@
 				<a href="https://tv.ukm.no/festivalen/2018/12930-Festival-guide/" class="anton big" style="margin-top: 0.25em;margin-left:-0.05em;">GUIDEN</a>
 			</div> #}
 			<div class="UKMfestivalBox col-6 halfwidthBox center newsletter_purple expandOnClick">
-				<a href="https://festivalen.ukm.no/2018/06/26/ukm-hvor-oredobbposer-og-silkeband-er-prioritetene-i-bagen/" data-article-id=1 id="article-1" class="anton big articleLink" style="margin-top: 1.4rem; font-size: 1.4rem; padding-bottom: 0.2rem;">KUNST</a>
+				<a href="https://festivalen.ukm.no/2018/06/26/ukm-hvor-oredobbposer-og-silkeband-er-prioritetene-i-bagen/" data-articleBox-id=1 id="article-1" class="anton big articleLink" style="margin-top: 1.4rem; font-size: 1.4rem; padding-bottom: 0.2rem;">KUNST</a>
 				<a href="https://festivalen.ukm.no/2018/06/26/ukm-hvor-oredobbposer-og-silkeband-er-prioritetene-i-bagen/" class="anton" style="margin-top: 0.25em;margin-left:-0.05em;">UTSTILLING</a>
 			</div>
 
 			<div class="UKMfestivalBox col-6 halfwidthBox newsletter_purple expandOnClick" style="background-image: url('https://ukm.no/festivalen/files/2018/06/DSC0410_artikkelbilder_japansak_bildeav_StoneHeart_Foto_Deivid_Garcia-1-768x512.jpg'); background-position: 0,0;
 			">
-				<a href="https://festivalen.ukm.no/2018/06/26/valgte-ukm-over-japan/" class="left momClickMeClickMe" style="font-family: 'Crimson Text', serif; margin-top: 3.4rem; font-size: 1.2rem; padding-bottom: 0.2rem;">JAPAN? NÆH</a>
-				<a href="https://festivalen.ukm.no/2018/06/26/valgte-ukm-over-japan/" class="left " style="font-family: 'Crimson Text', serif; font-size: 1.2rem; margin-top: 0rem;margin-left:-0.05em;">UKM? JA!</a>
+				<a href="https://festivalen.ukm.no/2018/06/26/valgte-ukm-over-japan/" class="left momClickMeClickMe articleLink" data-articleBox-id=1 id="article-2" style="font-family: 'Crimson Text', serif; margin-top: 3.4rem; font-size: 1.2rem; padding-bottom: 0.2rem;">BACKSTAGE</a>
+				{# <a href="https://festivalen.ukm.no/2018/06/26/valgte-ukm-over-japan/" class="left " style="font-family: 'Crimson Text', serif; font-size: 1.2rem; margin-top: 0rem;margin-left:-0.05em;">UKM? JA!</a> #}
 			</div>
 			<div class="col-12 articleBox newsletter_cream" id="articleBox-1" style="display:none;">
 				<br />
@@ -435,10 +435,12 @@
 
 	<script type="text/javascript">
 	$ ( document ).ready(function () {
+		var latestArticle = null;
 		$(".expandOnClick").click(function(event) {
 			event.preventDefault();
 			var link = jQuery(event.target).find(".articleLink");
-			var articleBox = jQuery('.articleBox#articleBox-'+jQuery(link).attr('data-article-id'));
+			var articleBox = jQuery('.articleBox#articleBox-'+jQuery(link).attr('data-articleBox-id'));
+			var newArticle = jQuery(link).attr('data-article-id');
 			console.log(articleBox);
 			var url = link.attr("href");
 			
@@ -450,7 +452,7 @@
 				url = "https://ukm.dev/blog/2014/06/06/av-med-og-for-ungdom/?singleMode=true";
 			}
 
-			if( articleBox.is(':visible') ) {
+			if( articleBox.is(':visible') && latestArticle == newArticle) {
 				articleBox.slideUp();
 			}
 			else {
