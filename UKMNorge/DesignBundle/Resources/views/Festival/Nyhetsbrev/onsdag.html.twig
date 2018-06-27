@@ -440,8 +440,9 @@
 			event.preventDefault();
 			var link = jQuery(event.target).find(".articleLink");
 			var articleBox = jQuery('.articleBox#articleBox-'+jQuery(link).attr('data-articleBox-id'));
-			var newArticle = jQuery(link).attr('data-article-id');
-			console.log(articleBox);
+			var articleContent = jQuery(articleBox).find(".articleContent");
+			var newArticle = jQuery(link).attr('id');
+			console.log(newArticle);
 			var url = link.attr("href");
 			
 			if (undefined == url) {
@@ -455,13 +456,11 @@
 			// Lukk samme artikkel
 			if( articleBox.is(':visible') && latestArticle == newArticle ) {
 				articleBox.slideUp();
-				articleBox.html("Laster inn...");
+				articleContent.html("Laster inn...");
 			}
-			// Ny artikkel
-			else if (latestArticle == newArticle) {
-				articleBox.slideUp();
-				articleBox.html("Laster inn...");
-				articleBox.slideDown();
+			// Ny artikkel, men en annen vises
+			else if (latestArticle != null && latestArticle != newArticle) {
+				articleContent.html("Laster inn...");
 
 				jQuery.post(
 					url+"?singleMode=true",
@@ -469,9 +468,10 @@
 						'singleMode': true,
 					},
 					function(data) {
-						jQuery(articleBox).find(".articleContent").html(data);
+						articleContent.html(data);
 					},
 				);
+				latestArticle = newArticle;
 			}
 			// Første gang artikkelboks åpnes.
 			else {
@@ -486,6 +486,7 @@
 						jQuery(articleBox).find(".articleContent").html(data);
 					},
 				);
+				latestArticle = newArticle;
 			}
 		});
 
