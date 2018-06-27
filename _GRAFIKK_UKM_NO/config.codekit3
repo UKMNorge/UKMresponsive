@@ -63,6 +63,16 @@
 		"oAP": "\/build\/.gitignore",
 		"oF": 0
 		},
+	"\/css\/article-embed.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/css\/article-embed-min.css",
+		"oF": 0,
+		"oS": 3
+		},
 	"\/css\/bootstrap.min.css": {
 		"aP": 1,
 		"bl": 0,
@@ -90,6 +100,16 @@
 		"ma": 0,
 		"oA": 0,
 		"oAP": "\/css\/nyhetsbrev-fonts-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/css\/nyhetsbrev.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/css\/nyhetsbrev-min.css",
 		"oF": 0,
 		"oS": 3
 		},
@@ -169,6 +189,13 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/css\/UKMresponsive.css.map",
+		"oF": 0
+		},
+	"\/fonts\/Anton-Regular.ttf": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/fonts\/Anton-Regular.ttf",
 		"oF": 0
 		},
 	"\/fonts\/Fedra-Sans-Std-Bold_17246.ttf": {
@@ -4465,6 +4492,58 @@
 		"opt": 0,
 		"q": 100
 		},
+	"\/img\/newsletter\/korslaget.gif": {
+		"ft": 4194304,
+		"iS": 968049,
+		"oA": 0,
+		"oAP": "\/img\/newsletter\/korslaget.gif",
+		"oF": 0,
+		"opt": 0
+		},
+	"\/img\/newsletter\/MR_UKM_buss-2.jpg": {
+		"ft": 16384,
+		"iS": 11224387,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/img\/newsletter\/MR_UKM_buss-2.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/img\/newsletter\/oskar_sak.png": {
+		"ft": 32768,
+		"iS": 182217,
+		"oA": 0,
+		"oAP": "\/img\/newsletter\/oskar_sak.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/img\/newsletter\/oskar_sak@2x.png": {
+		"ft": 32768,
+		"iS": 618323,
+		"oA": 0,
+		"oAP": "\/img\/newsletter\/oskar_sak@2x.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/img\/newsletter\/ukm_ankomst-3.jpg": {
+		"ft": 16384,
+		"iS": 4914353,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/img\/newsletter\/ukm_ankomst-3.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"\/img\/norgeskart.png": {
 		"ft": 32768,
 		"iS": 55959,
@@ -4669,6 +4748,16 @@
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/js\/prototype.min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"\/js\/slideout.min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/js\/slideout.min.min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
