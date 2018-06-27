@@ -324,7 +324,16 @@
 				<a href="https://festivalen.ukm.no/2018/06/26/valgte-ukm-over-japan/" class="left " style="font-family: 'Crimson Text', serif; font-size: 1.2rem; margin-top: 0rem;margin-left:-0.05em;">UKM? JA!</a>
 			</div>
 			<div class="col-12 articleBox newsletter_cream" id="articleBox-1" style="display:none;">
-				Laster inn...
+				<br />
+				<div class="articleContent">
+					Laster inn...
+					<br />
+					<br />
+				</div>
+				<div class="col-12 close center text-center">
+					<button class="btn btn-block btn-outline-secondary">Lukk artikkel</button>
+					<br />
+				</div>
 			</div>
 			{# <div class="UKMfestivalBox col-6 halfwidthBox" style="overflow:hidden;">
 				<div class="row inline-row">
@@ -457,7 +466,7 @@
 						'singleMode': true,
 					},
 					function(data) {
-						articleBox.html(data);
+						jQuery(articleBox).find(".articleContent").html(data);
 					},
 				);
 			}
