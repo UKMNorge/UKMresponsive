@@ -452,9 +452,28 @@
 				url = "https://ukm.dev/blog/2014/06/06/av-med-og-for-ungdom/?singleMode=true";
 			}
 
-			if( articleBox.is(':visible') && latestArticle == newArticle) {
+			// Lukk samme artikkel
+			if( articleBox.is(':visible') && latestArticle == newArticle ) {
 				articleBox.slideUp();
+				articleBox.html("Laster inn...");
 			}
+			// Ny artikkel
+			else if (latestArticle == newArticle) {
+				articleBox.slideUp();
+				articleBox.html("Laster inn...");
+				articleBox.slideDown();
+
+				jQuery.post(
+					url+"?singleMode=true",
+					{
+						'singleMode': true,
+					},
+					function(data) {
+						jQuery(articleBox).find(".articleContent").html(data);
+					},
+				);
+			}
+			// Første gang artikkelboks åpnes.
 			else {
 				articleBox.slideDown();
 
