@@ -16,3 +16,5 @@ $posts->loadPosts();
 
 //	$WP_TWIG_DATA['kategori'] = get_category( 1 );
 $WP_TWIG_DATA['posts'] = $posts;
+$WP_TWIG_DATA['direktesending'] = new stdClass();
+$WP_TWIG_DATA['direktesending']->link = "https://livestream.com/ukmnorge/forestilling5";
