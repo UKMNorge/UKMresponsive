@@ -106,13 +106,6 @@
 		
 	</style>
 	<div class="container-fluid" id="forste_linje">
-		{% if direktesending is defined and direktesending is true %}
-			<div class="row" style="background-color: @color-primary; color: white;">
-				<div class="col-12">
-					<a href="#">DIREKTESENDING</a>
-				</div>
-			</div>
-		{% endif %}
 		{% if visNyhetsbrev %}	
 			{% embed "Festival:nyhetsbrev.html.twig"|UKMpath %}{% endembed %}
 		{% endif %}
