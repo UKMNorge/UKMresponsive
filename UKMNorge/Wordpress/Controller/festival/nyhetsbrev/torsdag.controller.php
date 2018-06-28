@@ -22,3 +22,4 @@ require_once('UKM/tv.class.php');
 // KORSLAGET-TEASER
 $WP_TWIG_DATA['openingVideo'] = new TV(12984);
 $WP_TWIG_DATA['landsbyVideo'] = new TV(12987);
+$WP_TWIG_DATA['video2'] = new TV(12988);
