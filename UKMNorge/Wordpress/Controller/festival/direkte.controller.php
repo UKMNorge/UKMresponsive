@@ -13,8 +13,3 @@ require_once(get_template_directory() . '/UKMNorge/Wordpress/Utils/posts.class.p
 $posts = new posts( null, true );
 $posts->setCategory( 1 );
 $posts->loadPosts();
-
-//	$WP_TWIG_DATA['kategori'] = get_category( 1 );
-$WP_TWIG_DATA['posts'] = $posts;
-$WP_TWIG_DATA['direktesending'] = new stdClass();
-$WP_TWIG_DATA['direktesending']->link = "https://festivalen.ukm.no/direkte/";# "https://livestream.com/ukmnorge/forestilling5";
