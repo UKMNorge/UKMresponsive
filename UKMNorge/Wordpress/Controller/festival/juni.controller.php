@@ -16,6 +16,3 @@ $posts->loadPosts();
 
 //	$WP_TWIG_DATA['kategori'] = get_category( 1 );
 $WP_TWIG_DATA['posts'] = $posts;
-
-echo get_option('ukm_live_link');
-$WP_TWIG_DATA['direktesending'] = monstringController::getLive();
