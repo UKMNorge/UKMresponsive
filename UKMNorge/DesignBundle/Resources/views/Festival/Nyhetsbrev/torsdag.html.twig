@@ -397,8 +397,11 @@
 					latestArticle = newArticle;
 					}
 				}
-				$('html, body').animate({ scrollTop: jQuery(articleContent).offset().top }, 50);
-				jQuery(articleContent).find("#my-video").click();
+				window.setTimeout(function () {
+					$('html, body').animate({ scrollTop: jQuery(articleContent).offset().top + 50 }, 50);
+					jQuery(articleContent).find("#my-video").click();
+				}, 500);
+				
 		});
 
 		$(".closeButton").click( function (event) {
