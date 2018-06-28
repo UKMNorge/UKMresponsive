@@ -14,7 +14,6 @@ $posts = new posts( null, true );
 $posts->setCategory( 1 );
 $posts->loadPosts();
 
-//	$WP_TWIG_DATA['kategori'] = get_category( 1 );
 $WP_TWIG_DATA['posts'] = $posts;
 $WP_TWIG_DATA['direktesending'] = new stdClass();
-$WP_TWIG_DATA['direktesending']->link = "https://festivalen.ukm.no/direkte/";# "https://livestream.com/ukmnorge/forestilling5";
+$WP_TWIG_DATA['direktesending']->link = "https://festivalen.ukm.no/direkte/";
