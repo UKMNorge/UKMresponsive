@@ -309,13 +309,18 @@
 	</style>
 	<div class="container-fluid" id="forste_linje" style="overflow: hidden; max-width: 560px;">
 		<div class="row center" style="height: 100vh; background-color: black;">
-			<div class="">
-				{{ openingVideo.embedCodeVH()|raw }}
+			<div class="expandOnClick momDiv">
+				<a href="#" class="articleLink clickMomDiv" data-articleBox-id=1 id="video-1">
+					<img src="{{ UKMasset('img/newsletter/magnus.png') }}" style="width: 100; object-fit: cover;">
+				</a>
 			</div>
 		</div>
 
-		<div class="row ticker newsletter_purple">
-			<marquee behavior="scroll" scrollamount="8" direction="left" style="padding-top: 0.3rem;">VELKOMMEN TIL NYHETSBREVET! KLIKK PÅ SAKENE FOR Å LESE MER</marquee>
+		<div class="row articleBox newsletter_cream" id="articleBox-1" style="display:none;">
+			<br />
+			<div class="articleContent col-12" style="padding: 0%; margin-top: 0%; background-color: black;">
+				{{ openingVideo.embedCodeVH()|raw }}
+			</div>
 		</div>
 	</div>
 
@@ -392,6 +397,7 @@
 					latestArticle = newArticle;
 					}
 				}
+				$('html, body').animate({ scrollTop: jQuery(articleContent).offset().top }, 50);
 		});
 
 		$(".closeButton").click( function (event) {
