@@ -23,3 +23,4 @@ $WP_TWIG_DATA['video1'] = new TV(13005);
 $WP_TWIG_DATA['video2'] = new TV(13007);
 $WP_TWIG_DATA['video3'] = new TV(13015);
 $WP_TWIG_DATA['video4'] = new TV(13008);
+$WP_TWIG_DATA['videogodteri'] = new TV(13026);
