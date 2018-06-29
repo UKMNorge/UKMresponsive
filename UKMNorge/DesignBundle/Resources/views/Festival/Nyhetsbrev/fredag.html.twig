@@ -432,16 +432,26 @@
 
 
 		<div class="row">
-			<div class="UKMfestivalBox col-6 halfwidthBox" style="overflow:hidden;">
-				<div class="row inline-row" style="background-image: url('{{ UKMasset('img/newsletter/daniel.gif') }}'); background-size: 150%; background-position: top center; ">
+			<div class="UKMfestivalBox col-6 halfwidthBox expandOnClick momDiv center" style="overflow:hidden;">
+				<div class="row inline-row center" style="background-image: url('{{ UKMasset('img/newsletter/daniel.gif') }}'); background-size: 150%; background-position: top center; ">
+					<div class="col-12 center" style="">
+						<a href="https://tv.ukm.no/festivalen/2018/13026-Blindtest-med-Fredrik/" class="anton white clickMomDiv articleLink" data-articleBox-id="godteri" style="font-size: 2rem; line-height: 40vw;">GODTERITEST</a>
+					</div>
 				</div>
 			</div>
 			<div class="UKMfestivalBox col-6 halfwidthBox newsletter_yellow expandOnClick momDiv">
 				<a href="https://festivalen.ukm.no/2018/06/28/hei-filmskaper/" class="anton articleLink clickMomDiv" data-articleBox-id=6 id="article-5" style="margin-top: 15%; font-size: 6rem; line-height: 6rem; padding-bottom: 0rem;">HEI</a>
 				<a href="https://festivalen.ukm.no/2018/06/28/hei-filmskaper/" class="anton" style="font-size: 1.12rem; line-height:0.93rem; letter-spacing: 0.11rem;">FILMSKAPER!</a>
 			</div>
+		</div>
+
+		<div class="row articleBox newsletter_cream" id="articleBox-godteri" style="display:none;">
+			<br />
+			<div class="col-12 articleContent" style="width: 100vw; height: Calc( (100vw/16)*9); padding: 0%; margin-top: 0%; background-color: black;">
+				{{ video1.embedCodeVH()|raw }}
 			</div>
 		</div>
+
 		<div class="row articleBox newsletter_cream" id="articleBox-6" style="display:none;">
 			<br />
 			<div class="articleContent col-12" style="">
