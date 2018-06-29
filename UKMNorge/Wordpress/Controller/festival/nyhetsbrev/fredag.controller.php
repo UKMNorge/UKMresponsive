@@ -19,4 +19,6 @@ $posts->loadPosts();
 $WP_TWIG_DATA['posts'] = $posts;
 
 require_once('UKM/tv.class.php');
-$WP_TWIG_DATA['video'] = new TV(13005);
+$WP_TWIG_DATA['video1'] = new TV(13005);
+$WP_TWIG_DATA['video2'] = new TV(13007);
+$WP_TWIG_DATA['video3'] = new TV(13008);
