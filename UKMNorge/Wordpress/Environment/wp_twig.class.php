@@ -10,6 +10,9 @@ class WP_TWIG {
 	private static $debug = false;
 	private static $templateDir = false;
 	private static $cacheDir = false;
+	private static $paths = false;
+	private static $functions = false;
+	private static $filters = false;
 	
 	static function setDebug( $status ) {
 		self::$debug = $status;
@@ -35,6 +38,64 @@ class WP_TWIG {
 		return self;
 	}
 	
+	static function addTemplateDir( $path ) {
+		if( !is_array( self::$paths ) ) {
+			self::$paths = [];
+		}
+		self::$paths[] = $path;
+	}
+	static function getTemplateDirectories() {
+		if( !is_array( self::$paths ) ) {
+			self::$paths = [];
+		}
+		return self::$paths;
+	}
+	
+	static function addFunction( $twig_name, $callback, $options=false ) {
+		self::_initFunctions();
+		$function = [
+			'twig_name'	=> $twig_name,
+			'callback' => $callback,
+			'options' => is_array( $options ) ? $options : [],
+		];
+		self::$functions[ $twig_name ] = $function;
+	}
+	static function getFunctions() {
+		self::_initFunctions();
+		return self::$functions;
+	}
+	
+	private static function _initFunctions() {
+		if( !is_array( self::$functions ) ) {
+			self::$functions = [];
+		}
+		return true;
+	}
+	
+	
+	static function addFilter( $twig_name, $callback, $options=false ) {
+		self::_initFilters();
+		$filter = [
+			'twig_name'	=> $twig_name,
+			'callback' => $callback,
+			'options' => is_array( $options ) ? $options : [],
+		];
+		self::$filters[ $twig_name ] = $filter;
+	}
+	static function getFilters() {
+		self::_initFilters();
+		return self::$filters;
+	}
+	
+	private static function _initFilters() {
+		if( !is_array( self::$filters ) ) {
+			self::$filters = [];
+		}
+		return true;
+	}
+	
+
+
 	static function render( $template, $data ) {
 		if( false == self::getTemplateDir() ) {
 			throw new Exception('Cannot render Twig. Missing templateDir parameter');
@@ -44,12 +105,15 @@ class WP_TWIG {
 		Twig_Autoloader::register();
 		$loader = new Twig_Loader_Filesystem( self::getTemplateDir() );
 		if( defined( 'FULLSTORY_PATH' ) ) {
-			$loader->addPath( FULLSTORY_PATH );
+			self::addTemplateDir( FULLSTORY_PATH );
 		}
 		if( defined( 'UKMKONKURRANSE_PATH' ) ) {
-			$loader->addPath( UKMKONKURRANSE_PATH .'/twig/' );
+			self::addTemplateDir( UKMKONKURRANSE_PATH .'/twig/' );
 		}
 
+		foreach( self::getTemplateDirectories() as $path ) {
+			$loader->addPath( $path );
+		}
 		if( self::getDebug() ) {
 			$environment['debug'] = self::getDebug();
 		} else {
@@ -115,6 +179,17 @@ class WP_TWIG {
 		});
 		$twig->addFunction($function_ukmhusk);
 
+		// Add dynamically added functions
+		foreach( self::getFunctions() as $twig_name => $function_data ) {
+			$function = new Twig_SimpleFunction( $twig_name, $function_data['callback'], $function_data['options'] );
+			$twig->addFunction( $function );
+		}
+		
+		// Add dynamically added filters
+		foreach( self::getFilters() as $twig_name => $filter_data ) {
+			$filter = new Twig_SimpleFilter( $twig_name, $filter_data['callback'], $filter_data['options'] );
+			$twig->addFilter( $filter );
+		}
 		
 		// Debug
 		if( self::getDebug() ) {
