@@ -16,7 +16,6 @@ class WP_TWIG {
 	
 	static function setDebug( $status ) {
 		self::$debug = $status;
-		return self;
 	}
 	static function getDebug() {
 		return self::$debug;
@@ -24,7 +23,6 @@ class WP_TWIG {
 	
 	static function setTemplateDir( $dir ) {
 		self::$templateDir = $dir;
-		return $self;
 	}
 	static function getTemplateDir() {
 		return self::$templateDir;
@@ -35,7 +33,6 @@ class WP_TWIG {
 	}
 	static function setCacheDir( $dir ) {
 		self::$cacheDir = $dir;
-		return self;
 	}
 	
 	static function addTemplateDir( $path ) {
