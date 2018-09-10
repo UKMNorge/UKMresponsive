@@ -91,7 +91,7 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 				
 				$monstringer = [];
 				if( $res ) {
-					while( $row = mysql_fetch_assoc( $res ) ) {
+					while( $row = SQL::fetch( $res ) ) {
 						$monstring = new monstring_v2( $row['pl_id'] );
 						#echo $monstring->getSesong().'<br />';
 						if( $monstring->getSesong() == get_site_option('season') ) {

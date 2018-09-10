@@ -40,7 +40,7 @@ $qry = "SELECT 	COUNT(`stat_id`) AS `antall`,
 		ORDER BY `dato` ASC";
 $sql = new SQL( $qry, array('start_year' => $ar_start-1, 'start_month' => $start_maned_include) );
 $res = $sql->run();
-while( $r = mysql_fetch_assoc( $res ) ) {
+while( $r = SQL::fetch( $res ) ) {
 	if( (int) $r['mnd'] < (int) $start_maned_include && (int) $r['mnd'] > 4 ) {
 		continue;
 	}

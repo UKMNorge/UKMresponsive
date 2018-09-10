@@ -71,7 +71,7 @@ else {
 	**/
 	$cacher = new SQL("SELECT * FROM `konkurranse_geocache`");
 	$cacher = $cacher->run();
-	while( $row = mysql_fetch_assoc( $cacher ) ) {
+	while( $row = SQL::fetch( $cacher ) ) {
 		$geocacher[ $row['code'] ] = $row;
 	}
 	
@@ -86,7 +86,7 @@ else {
 	);
 	$res = $sql->run();
 	if( $res ) {
-		while( $row = mysql_fetch_assoc( $res ) ) {
+		while( $row = SQL::fetch( $res ) ) {
 			$geocacher[ $row['cache'] ]['status'] = true;
 		}
 	}
