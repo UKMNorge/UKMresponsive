@@ -14,5 +14,5 @@ services:
     ukmdesign.sitemap:
         class: UKMNorge\DesignBundle\Services\SitemapService
         arguments:
-            - @file_locator
+            - "@file_locator"
             - '%kernel.cache_dir%'
