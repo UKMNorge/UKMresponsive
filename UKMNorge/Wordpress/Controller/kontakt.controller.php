@@ -16,11 +16,11 @@ foreach( $kontakter as $kontakt ) {
 
 	$mock_db_row = array(
 					'id' 			=> -1,
-					'firstname' 	=> utf8_decode( $kontakt->post_title ),
+					'firstname' 	=>  $kontakt->post_title,
 					'lastname' 		=> '',
 					'tlf' 			=> get_post_meta( $kontakt->ID, 'UKMkontakt_mobil', true),
 					'email'			=> get_post_meta( $kontakt->ID, 'UKMkontakt_epost', true),
-					'title'			=> utf8_decode( get_post_meta( $kontakt->ID, 'UKMkontakt_tittel', true) ),
+					'title'			=> get_post_meta( $kontakt->ID, 'UKMkontakt_tittel', true),
 					'facebook'		=> get_post_meta( $kontakt->ID, 'UKMkontakt_facebook', true),
 					'picture' 		=> wp_get_attachment_image_src( $post_thumbnail_id, 'medium' )[0],
 					'beskrivelse'	=> $kontakt->post_content,
