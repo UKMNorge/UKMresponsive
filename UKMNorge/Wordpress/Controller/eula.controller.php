@@ -50,7 +50,7 @@ try {
 	
 			if( isset( $_POST['foresatt_navn'] ) ) {
 				$_POST['foresatt_mobil'] = preg_replace('/[^0-9]/', '', $_POST['foresatt_mobil']);
-				$samtykke->setForesatt( utf8_encode($_POST['foresatt_navn']), $_POST['foresatt_mobil'] );
+				$samtykke->setForesatt( $_POST['foresatt_navn'], $_POST['foresatt_mobil'] );
 				$samtykke->persist();
 			}
 			/**
