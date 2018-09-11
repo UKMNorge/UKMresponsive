@@ -17,31 +17,6 @@ UKM:
             url: //festivalen.ukm.no/
             title: UKM-festivalen
             description: Alt om UKM-festivalen
-
-#        - 
-#            id: hvaer
-#            url: //ukm.no/hva-er/
-#            title: Hva er UKM?
-#            description: Alt om Ung Kultur Møtes
-#        - 
-#            id: hvameldepa
-#            url: //ukm.no/hva-kan-jeg-delta-med/
-#            title: Hva kan du delta med?
-#        - 
-#            id: ua
-#            url: //ukm.no/unge-arrangører/
-#            title: Unge arrangører
-#            description: 
-        - 
-            id: ambassadorer
-            url: //ambassador.ukm.no/
-            title: Ambassadører
-            description: Bli kjent med oss
-#        - 
-#            id: urg
-#            url: //ukm.no/urg/
-#            title: URG (ung ressursgruppe)
-#            description: 
         - 
             id: ukmere
             url: //ukm.no/blog/category/kjente-ukmere/
