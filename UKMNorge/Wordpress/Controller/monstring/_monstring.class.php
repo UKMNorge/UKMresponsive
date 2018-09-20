@@ -78,7 +78,6 @@ abstract class monstringController {
 		if( null === self::$harProgram ) {
 			self::$harProgram = self::getMonstring()->getProgram()->getAntall() > 0;
 		}
-		return self;
 	}
 	
 	private static function _loadMonstring() {
@@ -101,7 +100,6 @@ abstract class monstringController {
 		$page = get_page_by_path('info');
 		self::$infoPage = new page( $page );
 		self::$harInfoPage = ( is_object( $page ) && $page->post_status == 'publish' );
-		return self;
 	}
 	
 	
