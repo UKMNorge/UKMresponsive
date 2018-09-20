@@ -47,7 +47,7 @@ define('URL_THEME', get_stylesheet_directory_uri() );
 define( 'WP_ENV', (strpos( $_SERVER['HTTP_HOST'], 'ukm.dev' ) !== false || isset($_GET['debug'])) ? 'dev' : 'prod' );
 
 // AUTOLOAD AND SYMFONY EXISTING FILES
-require_once('vendor/autoload.php');
+require_once(PATH_THEME.'vendor/autoload.php');
 require_once( PATH_WORDPRESSBUNDLE . 'Environment/wp_twig.class.php');
 require_once( PATH_WORDPRESSBUNDLE . 'Environment/wp_config.class.php');
 
