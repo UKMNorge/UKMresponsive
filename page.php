@@ -144,6 +144,11 @@ switch( $page_template ) {
 		break;
 
 	# Standard wordpress-side
+	
+	case 'Page/fullpage_wide':
+	case 'fullpage_wide':
+		$view_template = 'Page/fullpage_wide';
+		break;
 	default:
 		$view_template = 'Page/fullpage';
 		break;
