@@ -91,6 +91,30 @@ parameters:
                         - 
                             url: '//grafikk.ukm.no/profil/logoer/UKM_logo_hvit_0100.png'
                             navn: PNG (100px)
+                spesial:
+                    url: '//grafikk.ukm.no/profil/logoer/UKM_logo_bla_0300.png'
+                    navn: Blå (spesialutgave)
+                    class: 
+                    filer:
+                        - 
+                            url: '//grafikk.ukm.no/profil/logoer/UKM_logo_bla.pdf'
+                            navn: PDF (vektorbasert)
+                        -
+                            url: '//grafikk.ukm.no/profil/logoer/UKM_logo_bla_2500.png'
+                            navn: PNG (2500px)
+                        - 
+                            url: '//grafikk.ukm.no/profil/logoer/UKM_logo_bla_1500.png'
+                            navn: PNG (1500px)
+                        - 
+                            url: '//grafikk.ukm.no/profil/logoer/UKM_logo_bla_0500.png'
+                            navn: PNG (500px)
+                        - 
+                            url: '//grafikk.ukm.no/profil/logoer/UKM_logo_bla_0300.png'
+                            navn: PNG (300px)
+                        - 
+                            url: '//grafikk.ukm.no/profil/logoer/UKM_logo_bla_0100.png'
+                            navn: PNG (100px)
+
         ukmmedia:
             navn: UKM Media-logo
             utgaver:
@@ -189,4 +213,54 @@ parameters:
                             navn: PNG (300px)
                         - 
                             url: '//grafikk.ukm.no/profil/logoer/ressurs/UKM-ressurs_hvit_0100.png'
+                            navn: PNG (100px)
+    grafiske_elementer:
+        bobla:
+            navn: UKM-bobla
+            utgaver:
+                bla:
+                    url: '//grafikk.ukm.no/profil/bobla/UKM-bobla_bla_0300.png'
+                    navn: Blå
+                    class:
+                    filer:
+                        - 
+                            url: '//grafikk.ukm.no/profil/bobla/UKM-bobla_bla.pdf'
+                            navn: PDF (vektorbasert)
+                        - 
+                            url: '//grafikk.ukm.no/profil/bobla/UKM-bobla_bla_2500.png'
+                            navn: PNG (2500px)
+                        - 
+                            url: '//grafikk.ukm.no/profil/bobla/UKM-bobla_bla_1500.png'
+                            navn: PNG (1500px)
+                        - 
+                            url: '//grafikk.ukm.no/profil/bobla/UKM-bobla_bla_0500.png'
+                            navn: PNG (500px)
+                        - 
+                            url: '//grafikk.ukm.no/profil/bobla/UKM-bobla_bla_0300.png'
+                            navn: PNG (300px)
+                        - 
+                            url: '//grafikk.ukm.no/profil/bobla/UKM-bobla_bla_0100.png'
+                            navn: PNG (100px)
+                hvit:
+                    url: '//grafikk.ukm.no/profil/bobla/UKM-bobla_hvit_0300.png'
+                    navn: Hvit
+                    class: background-color-primary-light
+                    filer:
+                        - 
+                            url: '//grafikk.ukm.no/profil/bobla/UKM-bobla_hvit.pdf'
+                            navn: PDF (vektorbasert)
+                        - 
+                            url: '//grafikk.ukm.no/profil/bobla/UKM-bobla_hvit_2500.png'
+                            navn: PNG (2500px)
+                        - 
+                            url: '//grafikk.ukm.no/profil/bobla/UKM-bobla_hvit_1500.png'
+                            navn: PNG (1500px)
+                        - 
+                            url: '//grafikk.ukm.no/profil/bobla/UKM-bobla_hvit_0500.png'
+                            navn: PNG (500px)
+                        - 
+                            url: '//grafikk.ukm.no/profil/bobla/UKM-bobla_hvit_0300.png'
+                            navn: PNG (300px)
+                        - 
+                            url: '//grafikk.ukm.no/profil/bobla/UKM-bobla_hvit_0100.png'
                             navn: PNG (100px)
