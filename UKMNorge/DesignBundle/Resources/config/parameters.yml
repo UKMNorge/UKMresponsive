@@ -264,3 +264,56 @@ parameters:
                         - 
                             url: '//grafikk.ukm.no/profil/bobla/UKM-bobla_hvit_0100.png'
                             navn: PNG (100px)
+        plakater:
+            navn: Plakater
+            utgaver:
+                boble:
+                    url: '//grafikk.ukm.no/profil/plakater/UKM-plakat_boble.png'
+                    navn: Plakat med boble
+                    class: 
+                    filer:
+                        - 
+                            url: '//grafikk.ukm.no/profil/plakater/UKM-plakat_boble.pdf'
+                            navn: PDF (vektorbasert)
+                pamelding:
+                    url: '//grafikk.ukm.no/profil/plakater/UKM-plakat_pamelding.png'
+                    navn: Påmeldingsplakat
+                    class: 
+                    filer:
+                        - 
+                            url: '//grafikk.ukm.no/profil/plakater/UKM-plakat_pamelding.pdf'
+                            navn: PDF (vektorbasert)
+        flyere:
+            navn: Flyerer
+            utgaver:
+                flyer:
+                    url: '//grafikk.ukm.no/profil/flyere/UKM-flyer.png'
+                    navn: Flyer
+                    class: 
+                    filer:
+                        - 
+                            url: '//grafikk.ukm.no/profil/flyere/UKM-flyer_bokmal.pdf'
+                            navn: Bokmål (PDF)
+                        - 
+                            url: '//grafikk.ukm.no/profil/flyere/UKM-flyer_nynorsk.pdf'
+                            navn: Nynorsk (PDF)
+                        - 
+                            url: '//grafikk.ukm.no/profil/flyere/UKM-flyer_nordsamisk.pdf'
+                            navn: Nordsamisk (PDF)
+                        - 
+                            url: '//grafikk.ukm.no/profil/flyere/UKM-flyer_sorsamisk.pdf'
+                            navn: Sørsamisk (PDF)
+                        - 
+                            url: '//grafikk.ukm.no/profil/flyere/UKM-flyer_lulesamisk.pdf'
+                            navn: Lulesamisk (PDF)
+        brosjyrer:
+            navn: Brosjyrer
+            utgaver:
+                flyer:
+                    url: '//grafikk.ukm.no/profil/flyere/UKM-internasjonal-brosjyre.png'
+                    navn: Internasjonal brosjyre
+                    class: 
+                    filer:
+                        - 
+                            url: '//grafikk.ukm.no/profil/flyere/UKM-internasjonal-brosjyre.pdf'
+                            navn: PDF
