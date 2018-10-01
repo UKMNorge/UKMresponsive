@@ -154,7 +154,7 @@ switch( $page_template ) {
 		break;
 }
 
-if( $page_template == 'meny' || $har_meny ) {
+if( $page_template == 'meny' || isset( $WP_TWIG_DATA['page']->getPage()->meta->UKM_block ) && $WP_TWIG_DATA['page']->getPage()->meta->UKM_block == 'sidemedmeny'  ) {
 	require_once('UKMNorge/Wordpress/Controller/menu.controller.php');
 	$view_template = 'Page/fullpage_with_menu';
 }
