@@ -1,7 +1,7 @@
 parameters:
     pamelding:
-        starter: 23.10.YYYY
-        startdato: 23. oktober
+        starter: 01.11.YYYY
+        startdato: 1. november
     standardbilder:
         person: http://grafikk.ukm.no/placeholder/person.jpg
     hvaerukm:
