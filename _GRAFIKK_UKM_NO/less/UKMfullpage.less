@@ -1,0 +1,200 @@
+@import "fullpage.less";
+
+
+header {
+	-webkit-transition: all 0.5s ease-out;
+	-moz-transition: all 0.5s ease-out;
+	transition: all 0.5s ease-out;
+		
+	position: fixed;
+    top: ~"Calc( 60vh - 3em)";
+    left: 50%;
+    color: #fff;
+    font-weight: 800;
+    width: 26em;
+    margin-left: -13em;
+    text-align: center;
+    max-width: 99vw;
+}
+
+.header-more {
+    text-align: center;
+    font-weight: normal;
+}
+.header-more a,
+.header-more a:visited,
+.header-more a:focus,
+.header-more a:active {
+    color: #fff;
+}
+
+.fullpage {
+	height: 100vh;
+	width: 100vw;
+	
+	-webkit-transition: background-color 1s;
+			transition: background-color 1s;
+	
+	position:relative;
+}
+
+.fullpage-content {
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+
+
+	opacity: 0;
+	-webkit-transition: opacity 1.5s ease-in;
+			transition: opacity 1.5s ease-in;
+	width: 100%;
+	height: 100%;
+
+}
+
+.fullpage h1 {
+    font-weight: 800;
+    color: #fff;
+    opacity: 1;
+}
+.fullpage header h1 {
+    background: rgba(0,0,0,.15);
+}
+
+.fullpage .hugetext {
+    font-size: 1.3em;
+    margin: 10vh 10vw;
+}
+@media (min-width: 768px) {
+    .fullpage .hugetext {
+        font-size: 1.7em;
+    }
+}
+@media (min-width: 992px) {
+    .fullpage .hugetext {
+        font-size: 2em;
+    }
+}
+.fullpage .hugetext h1 {
+    font-size: 2.2em;
+}
+
+.border {
+	border: 5px solid #ffffff !important;
+	padding: 0.5em .8em;
+	color: #fff;
+}
+
+.fadeIn {
+	-webkit-transition: opacity 2s; /* Safari */
+	transition: opacity 2s;
+}
+
+
+/** LOGO I HEADER **/
+.logo img {
+    margin: 1em;
+    width: 73px;
+}
+
+/** MENY-KNAPP OPPE TIL HØYRE **/
+.meny {
+    float: right;
+    margin: 1em;
+}
+.meny a, 
+.meny a:visited,
+.meny a:active,
+.meny a:hover {
+    color: #fff !important;
+    border-color: #fff !important;
+}
+
+.fullpage .lead {
+    font-size: 1.5em;
+    font-weight: 300;
+    line-height: 1.25em;
+}
+
+.fullpage .textbox {
+    align-self: center;
+    margin-left: 2rem;
+    padding: 3em;
+    width: 80vw;
+    background: rgba(0,0,0,0.7);
+}
+
+@media (min-width: 992px) {
+    .fullpage .textbox {
+        width: 30vw;
+        margin-left: 10rem;
+    }
+}
+
+.sitemap .pageContainer .page {
+    font-size: 1.4rem;
+}
+
+.white,
+.white
+.white a,
+.white a:hover,
+.white a:visited {
+    border-color: #fff !important;
+    color: #fff !important;
+}
+.readmoreIcon {
+    text-align: center;
+    margin-top: 4vh;
+    font-size: 1.8em;
+    -webkit-animation: jump 2s ease 2.5s infinite normal ;
+    animation: jump 2s ease 2.5s infinite normal ;
+}
+
+@-webkit-keyframes jump {
+    0%{
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    20%{
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    40%{
+        -webkit-transform: translateY(-30px);
+        transform: translateY(-30px);
+    }
+    50%{
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    80%{
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    100%{
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+@keyframes jump {
+    0%{
+        transform: translateY(0);
+    }
+    20%{
+        transform: translateY(0);
+    }
+    40%{
+        transform: translateY(-30px);
+    }
+    50%{
+        transform: translateY(0);
+    }
+    80%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
