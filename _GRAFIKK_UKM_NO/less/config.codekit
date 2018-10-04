@@ -122,6 +122,15 @@
 		"strictMath": 0,
 		"strictUnits": 0
 		},
+	"\/css\/UKMfullpage.css": {
+		"fileType": 16,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/css\/UKMfullpage.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/delta.less": {
 		"allowInsecureImports": 0,
 		"createSourceMap": 1,
@@ -491,9 +500,9 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/UKMfullpage.less",
-		"outputAbbreviatedPath": "\/css\/UKMfullpage.css",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
+		"outputAbbreviatedPath": "\/Users\/mariusmandal\/Dev\/ukm.no\/server_data\/themes\/UKMresponsive\/_GRAFIKK_UKM_NO\/css\/UKMfullpage.min.css",
+		"outputPathIsOutsideProject": 1,
+		"outputPathIsSetByUser": 1,
 		"outputStyle": 0,
 		"relativeURLS": 0,
 		"shouldRunAutoprefixer": 0,
