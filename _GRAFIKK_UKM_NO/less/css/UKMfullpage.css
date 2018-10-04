@@ -234,26 +234,14 @@ header {
   -moz-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
   position: fixed;
-  top: Calc( 50vh - 3em);
+  top: Calc( 60vh - 3em);
   left: 50%;
   color: #fff;
   font-weight: 800;
-  width: 90vw;
-  margin-left: -45vw;
+  width: 26em;
+  margin-left: -13em;
   text-align: center;
-}
-@media (min-width: 768px) {
-  header {
-    position: fixed;
-    top: Calc( 60vh - 3em);
-    left: 50%;
-    color: #fff;
-    font-weight: 800;
-    width: 26em;
-    margin-left: -13em;
-    text-align: center;
-    max-width: 99vw;
-  }
+  max-width: 99vw;
 }
 .header-more {
   text-align: center;
