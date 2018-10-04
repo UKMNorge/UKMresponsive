@@ -67,7 +67,7 @@
 						{% for fylke in fylker %}
 							<div class="col-12 col-sm-6 col-lg-4">
 								<div class="page p-2 px-4 m-2 center white" style="background: rgba(0,0,0,.3);">
-									<a href="{{ fylke.getUrl() }}" class="autoshrink">{{ fylke.getNavn() }}</a>
+									<a href="{{ fylke.getLink() }}" class="autoshrink">{{ fylke.getNavn() }}</a>
 								</div>
 							</div>
 						{% endfor %}
