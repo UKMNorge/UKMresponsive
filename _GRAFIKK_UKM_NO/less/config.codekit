@@ -512,7 +512,7 @@
 		"outputAbbreviatedPath": "\/Users\/mariusmandal\/Dev\/ukm.no\/server_data\/themes\/UKMresponsive\/_GRAFIKK_UKM_NO\/css\/UKMfullpage.min.css",
 		"outputPathIsOutsideProject": 1,
 		"outputPathIsSetByUser": 1,
-		"outputStyle": 0,
+		"outputStyle": 1,
 		"relativeURLS": 0,
 		"shouldRunAutoprefixer": 0,
 		"shouldRunBless": 0,
