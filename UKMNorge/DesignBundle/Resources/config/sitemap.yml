@@ -22,11 +22,6 @@ UKM:
             url: //festivalen.ukm.no/
             title: festivalen
             description: Alt om UKM-festivalen
-        - 
-            id: ambassadorer
-            url: //ambassador.ukm.no/
-            title: Ambassadører
-            description: Bli kjent med oss
 #        - 
 #            id: ukmere
 #            url: //ukm.no/blog/category/kjente-ukmere/
