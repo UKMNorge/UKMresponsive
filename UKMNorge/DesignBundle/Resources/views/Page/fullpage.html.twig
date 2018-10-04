@@ -13,4 +13,8 @@
 			</div>
 		</div>
 	</div>
+	
+	{% for section in page.getPageBlocks().getAll() %}
+		{% embed ("UKMDesignBundle:PageBlock:"~ section.template ~".html.twig")|UKMpath with{ block: section } %}{% endembed %}
+	{% endfor %}
 {% endblock %}

@@ -8,7 +8,9 @@ jQuery( document ).on('click', '#main_menu_button', function(e){
 		jQuery('#UKMDesign_content').fadeOut(
 			{'duration': 250, 
 			 'complete': function(){
-			 	jQuery('#UKMDesign_sitemap').fadeIn();
+			 	jQuery('#UKMDesign_sitemap').fadeIn(function(){
+					$('#UKMDesign_sitemap .autoshrink').autoshrink();
+				 });
 			 }
 			}
 		);

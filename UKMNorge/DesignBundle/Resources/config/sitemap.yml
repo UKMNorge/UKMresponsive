@@ -13,40 +13,20 @@ UKM:
             url: //ukm.no/derdubor/
             title: Der du bor
         - 
+            id: redaksjonelt
+            url: //liker.ukm.no/
+            title: Nyheter
+            description:
+        - 
             id: festivalen
             url: //festivalen.ukm.no/
-            title: UKM-festivalen
+            title: festivalen
             description: Alt om UKM-festivalen
-
 #        - 
-#            id: hvaer
-#            url: //ukm.no/hva-er/
-#            title: Hva er UKM?
-#            description: Alt om Ung Kultur Møtes
-#        - 
-#            id: hvameldepa
-#            url: //ukm.no/hva-kan-jeg-delta-med/
-#            title: Hva kan du delta med?
-#        - 
-#            id: ua
-#            url: //ukm.no/unge-arrangører/
-#            title: Unge arrangører
+#            id: ukmere
+#            url: //ukm.no/blog/category/kjente-ukmere/
+#            title: Kjente UKMere
 #            description: 
-        - 
-            id: ambassadorer
-            url: //ambassador.ukm.no/
-            title: Ambassadører
-            description: Bli kjent med oss
-#        - 
-#            id: urg
-#            url: //ukm.no/urg/
-#            title: URG (ung ressursgruppe)
-#            description: 
-        - 
-            id: ukmere
-            url: //ukm.no/blog/category/kjente-ukmere/
-            title: Kjente UKMere
-            description: 
         - 
             id: pressebilder
             url: //www.flickr.com/photos/ukm/albums
@@ -55,12 +35,12 @@ UKM:
         - 
             id: tidligerear
             url: //ukm.no/tidligere-ar/
-            title: UKM-arrangement 2001-2017
+            title: Arkiv
             description: Bli kjent med oss
         -
             id: deltalogin
             url: //delta.ukm.no/
-            title: Logg inn
+            title: Din side
             description: Endre din påmelding
 
 egoego:
@@ -189,4 +169,3 @@ english:
             id: about
             url: //ukm.no/about-ukm/
             title: About UKM
-

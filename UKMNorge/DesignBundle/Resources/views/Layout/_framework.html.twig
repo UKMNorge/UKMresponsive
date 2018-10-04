@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		{# CHARSET AND VIEWPORT #}
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=1.0, initial-scale=1.0, user-scalable=no" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		
+		<title>{{ SEO.getTitle()|raw }}</title>
+		<link rel="shortcut icon" href="//grafikk.ukm.no/favicon.ico" />
+		{% if blog is defined %}
+			<link rel="alternate" type="application/rss+xml" href="{{blog.feed}}" title="{{blog.name}} RSS-feed" />
+		{% endif %}
+		{% embed "UKMDesignBundle:Layout:seo.html.twig"|UKMpath %}{% endembed %}
+
+		{# STYLES #}
+		<link href="{{ UKMasset("css/bootstrap.min.css") }}" rel="stylesheet" />
+		<link href="{{ UKMasset("css/UKMresponsive"~ (THEME is defined and THEME is not empty ? '-'~THEME : '') ~".css") }}?20181004-V2-Trine" rel="stylesheet" />
+		<link href="{{ UKMasset("swipebox/css/swipebox.css") }}" rel="stylesheet" />
+		{% block css %}{% endblock %}
+		
+		{# SCRIPTS #}
+		{% if ajax_url is defined %}
+		<script type="text/javascript">var ajaxurl = '{{ ajax_url }}';</script>
+		{% endif %}
+		<script type="text/javascript" src="{{ UKMasset("js/UKMresponsive.min.js") }}?20181004-V1-Trine"></script>
+		<script src="{{ UKMasset("swipebox/js/jquery.swipebox.js") }}"></script>
+		{% block javascripts %}{% endblock %}
+		
+		<script>(function(d, s, id) {
+		var js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) return;
+		js = d.createElement(s); js.id = id;
+		js.src = "//connect.facebook.net/nb_NO/sdk.js#xfbml=1&version=v2.10&appId={{ SEO is defined ? SEO.getFBAppId() : '' }}";
+		fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+		</script>
+		<script>
+			var UKM_HOSTNAME = '{{ UKM_HOSTNAME }}';
+			{% if blog_url is defined and blog_url is not empty %}
+			var blog_url = '{{ blog_url }}/';
+			{% endif %}
+		</script>
+	</head>
+	
+	<body>
+		<div id="fb-root"></div>{# FACEBOOK #}
+        {% block framework_content %}{% endblock %}
+	</body>
+
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-46216680-1"></script>
+	<script type="tex">
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	
+	  gtag('config', 'UA-46216680-1');
+	</script>
+</html>

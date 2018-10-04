@@ -14,3 +14,33 @@
 .sitemap a:visited {
 	color: #000;
 }
+
+.sitemap .pageContainer {
+	font-size: 1rem;
+}
+
+.sitemap .pageContainer .page {
+	border: 5px solid @color-primary;
+    padding-top: 1em !important;
+    padding-bottom: 1em !important;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: @color-primary;
+}
+.sitemap .pageContainer .page a,
+.sitemap .pageContainer .page a:visited {
+		color: @color-primary;
+}
+
+@media (min-width: 992px) {
+	.sitemap .divider {
+		border-right: 5px solid #efefef;
+	}
+}
+
+
+@media (min-width: 1200px) {
+	.sitemap .pageContainer {
+		font-size: 1.9em;
+	}
+}

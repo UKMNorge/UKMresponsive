@@ -1,100 +1,81 @@
-{% extends "Layout/_"~ (singleMode is defined and singleMode ? 'singleMode' : 'base' ) ~".html.twig"|UKMpath %}
+{% extends "UKMDesignBundle:Layout:_framework.html.twig"|UKMpath %}
 
 {% block javascripts %}
 	{{ parent() }}
-	<script type="text/javascript">
-		$(document).ready(function(){
-			UKMresponsiveAJAX('favoritt', 'favoritt');
-		});
-	</script>
+	<script type="text/javascript" src="{{ UKMasset("js/UKMfullpage.min.js") }}?20181004-HelloWorld"></script>
 {% endblock %}
 
-{% block content %}
-	{# TOP-BANNER #}
-	{% if in_season %}
-		<div class="fylkesfestival">
-			<div class="container mb-3" style="margin-top:-1em;">
-				<div class="row align-items-center py-3">
-					<div class="col-8 col-sm-9 col-md-10 title">
-						{% if pamelding_apen %}
-							<a href="{{ Sitemap.getPage('UKM','derdubor') }}" class="btn btn-outline-light">Start påmelding</a>
-						{% else %}
-							<a href="{{ Sitemap.getPage('UKM','derdubor') }}" class="btn btn-outline-light">Finn nærmeste UKM</a>
-						{% endif %}
-					</div>
-					
-					<div class="col-4 col-sm-3 col-md-2 center">
-						<div class="calendar">
-							<div class="dato">
-								{{ pameldte }}
-							</div>
-							<div class="month autoshrink">
-								<small>PÅMELDTE</small>
-							</div>
+{% block css %}
+	{{ parent() }}
+	<link href="{{ UKMasset("css/UKMfullpage.min.css") }}" rel="stylesheet" />
+{% endblock %}
+
+{% block framework_content %}
+	<div id="fullpage">
+		<section class="section fullpage white waypoint" data-photo-background-transition="#000000" style="background-color: #00508C;" data-photo-background="https://grafikk.ukm.no/forside/superstition-color.jpg">
+			<div class="fullpage-content">
+				<div class="meny">
+					<a href="/hovedmeny/" class="btn btn-sm my-2 btn-outline-primary">MENY</a>
+				</div>
+				<div class="logo">
+					<img src="https://grafikk.ukm.no/profil/logoer/UKM_logo_hvit_0100.png" />
+				</div>
+				<header class="white" style="z-index: 100">
+					<h1 class="border autoshrink">
+						PÅMELDING STARTER
+						<br />
+						1. NOVEMBER
+						{#
+						START PÅMELDING#}
+					</h1>
+					<div class="header-more" style="margin-top: 5vh;">
+						<p>
+							<a href="#om/2">Hva er UKM?</a>
+							| 
+							<a href="#finn/3">Finn nærmeste UKM</a>
+						</p>
+
+						<div class="readmoreIcon">
+							<span class="icon icon-down-2"></span>
 						</div>
 					</div>
+				</header>
+			</div>
+		</section>
+		
+		
+		<section class="section fullpage white waypoint" data-photo-background-transition="#000000" style="background-color: #00508C;" data-photo-background="https://grafikk.ukm.no/forside/korslaget-bla.jpg">
+			<div class="fullpage-content" style="display: flex;">
+				<div class="hugetext center">
+					<h1 >UKM er en plass der vi skaper noe sammen. </h1>
+					<p class="lead">
+						En plass der du kan vise frem noe du brenner for. 
+						En plass du kan hjelpe andre å bli sett.
+						En plass der alle kulturelle uttrykk er velkomne.
+					</p>
+					<p class="lead mb-0">
+						<a href="/hva-er/" class="btn btn-outline-primary btn-xs" style="border-radius: 0px; border-color: #fff !important; color: #fff !important;">Les mer</a>
+					</p>
 				</div>
 			</div>
-		</div>
-	{% endif %}
+		</section>
 
-	{# PAGE CONTENT #}
-	<div class="container-fluid">
-		<div class="row-flex">
-			{# FINN NÆRMESTE UKM ELLER "FAVORITT-UKM"-BOKS #}
-			<div class="col-12 col-md-5 mb-3 float-right">
-				{% if vis_festival %}
-					{% embed "UKMDesignBundle:Favoritt:festival.html.twig"|UKMpath %}{% endembed %}
-				{% else %}
-					<div class="mitt_UKM"></div>
-				{% endif %}
-
-				{% if ( in_season and pamelding_apen ) or not in_season %}
-					<div class="right">
-						<a href="{{ Sitemap.getPage('UKM','derdubor') }}" class="btn btn-outline-primary btn-block">Finn nærmeste UKM</a>
+		<section class="section fullpage white waypoint" data-photo-background-transition="#000000" style="background-color: #00508C;" data-photo-background="https://grafikk.ukm.no/forside/newdawn.jpg">
+			<div class="fullpage-content" style="display: flex;">
+				<div class="container sitemap mt-5">
+					<div class="row pageContainer">
+						{% for fylke in fylker %}
+							<div class="col-12 col-sm-6 col-lg-4">
+								<div class="page p-2 px-4 m-2 center white" style="background: rgba(0,0,0,.3);">
+									<a href="{{ fylke.getLink() }}" class="autoshrink">{{ fylke.getNavn() }}</a>
+								</div>
+							</div>
+						{% endfor %}
 					</div>
-				{% endif %}
-				<div class="clearfix"></div>
+				</div>
 				
+			</div>
+		</section>
 
-				<div class="d-none d-md-block mt-5">
-					<div class="nyhet">{% embed "UKMDesignBundle:Page:home_norge_nyhet.html.twig"|UKMpath with {post: news } %}{% endembed %}</div>
-					<div class="frontpage-box kort_om_UKM mt-3">
-						{% embed "UKMDesignBundle:Page:home_norge_kort_om_ukm.html.twig"|UKMpath %}{% endembed %}
-					</div>
-				</div>
-			</div>
-
-			{# HVA ER UKM? #}
-			<div class="col-12 col-md-7 float-left mt-3 mb-2">
-				{% embed "UKMDesignBundle:Fylke:PushToFront.html.twig"|UKMpath %}{% endembed %}
-				<div class="lead">
-					{{ THEME_CONFIG.get('hvaerukm').kort|raw }}
-				</div>
-				<div class="col-12 d-block d-sm-none mt-3">
-					<div class="nyhet">{% embed "UKMDesignBundle:Page:home_norge_nyhet.html.twig"|UKMpath with {post: news } %}{% endembed %}</div>
-					<div class="frontpage-box kort_om_UKM mt-3">
-						{% embed "UKMDesignBundle:Page:home_norge_kort_om_ukm.html.twig"|UKMpath %}{% endembed %}
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	
-	<div class="clearfix"></div>
-	
-	{% for section in page.getPageBlocks().getAll() %}
-		{% embed ("UKMDesignBundle:PageBlock:"~ section.template ~".html.twig")|UKMpath with{ block: section } %}{% endembed %}
-	{% endfor %}
-	
-	<div class="container">
-		<div class="row">
-			<div class="col-12">
-				<div class="mx-4" align="center">
-					<h3>Leter du etter sakene våre?</h3>
-					<a href="{{ Sitemap.getPage('egoego','forsiden') }}">Vi har flyttet de til redaksjonelt-siden</a>
-				</div>
-			</div>
-		</div>
-	</div>
+	</div>	
 {% endblock %}
