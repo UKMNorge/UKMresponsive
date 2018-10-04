@@ -562,15 +562,6 @@
 		"strictMath": 0,
 		"strictUnits": 0
 		},
-	"\/UKMresponsive.css": {
-		"fileType": 16,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/UKMresponsive.css",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
 	"\/UKMresponsive.less": {
 		"allowInsecureImports": 0,
 		"createSourceMap": 0,
@@ -580,10 +571,10 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/UKMresponsive.less",
-		"outputAbbreviatedPath": "\/UKMresponsive.css",
-		"outputPathIsOutsideProject": 0,
+		"outputAbbreviatedPath": "\/Users\/mariusmandal\/Dev\/ukm.no\/server_data\/themes\/UKMresponsive\/_GRAFIKK_UKM_NO\/css\/UKMresponsive.css",
+		"outputPathIsOutsideProject": 1,
 		"outputPathIsSetByUser": 1,
-		"outputStyle": 0,
+		"outputStyle": 1,
 		"relativeURLS": 0,
 		"shouldRunAutoprefixer": 0,
 		"shouldRunBless": 0,
