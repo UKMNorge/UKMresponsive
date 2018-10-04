@@ -20,7 +20,7 @@ UKM:
         - 
             id: festivalen
             url: //festivalen.ukm.no/
-            title: UKM-festivalen
+            title: festivalen
             description: Alt om UKM-festivalen
         - 
             id: ambassadorer
