@@ -79,11 +79,6 @@ switch( get_option('site_type') ) {
 	default:
 		$view_template = 'Page/home_norge';
 		require_once('UKMNorge/Wordpress/Controller/norge.controller.php');
-		
-		$WP_TWIG_DATA['HEADER']->background->url = '//grafikk.ukm.no/UKMresponsive/img/banner-test-gul-ish.jpg';
-		$WP_TWIG_DATA['HEADER']->background->position = 'top';
-		$WP_TWIG_DATA['HEADER']->slogan = WP_CONFIG::get('hvaerukm')['slogan'];
-		$WP_TWIG_DATA['HEADER']->button->background = 'rgba(242, 109, 21, 0.44)';
 		break;
 }
 echo WP_TWIG::render( $view_template, $WP_TWIG_DATA );
