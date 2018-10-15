@@ -4,8 +4,8 @@
 	{% embed "UKMDesignBundle:Page:topImage.html.twig"|UKMpath %}{% endembed %}	
 	
 	<div class="container">
-		<div class="row">
-			<div class="col-md-10 ml-md-auto mr-md-auto col-lg-8">
+		<div class="row justify-content-center">
+			<div class="col-10">
 				<article>
 					<h1>{{ page.getPage().title|raw }}</h1>
 					{{ page.getPage().content|raw }}
@@ -13,8 +13,4 @@
 			</div>
 		</div>
 	</div>
-	
-	{% for section in page.getPageBlocks().getAll() %}
-		{% embed ("UKMDesignBundle:PageBlock:"~ section.template ~".html.twig")|UKMpath with{ block: section } %}{% endembed %}
-	{% endfor %}
 {% endblock %}

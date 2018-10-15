@@ -1,4 +1,4 @@
-{% if page.page.image.large.src is defined and page.page.image.large.src is not empty %}
+{% if page.page.image.large.src is defined and page.page.image.large.src is not empty and page.page.meta.noImageOnTop is not defined %}
 	{% if page.page.meta.headerPosition is defined %}
 		{% set position = 'background-position: '~ page.page.meta.headerPosition ~';' %}
 	{% else %}

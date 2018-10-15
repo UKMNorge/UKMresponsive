@@ -1,7 +1,7 @@
 <div class="container-fluid UKMblock UKMblockImage UKMblockImageLeft">
 	<div class="row row-eq-height">
 		{% if align == "right" %}
-			<div class="col-12 col-sm-6 text px-5 py-4">
+			<div class="col-12 col-sm-6 text px-5 py-4 UKMblockContent">
 				{{ block.content|raw }}
 			</div>
 		{% endif %}
@@ -10,7 +10,7 @@
 		</div>
 
 		{% if align == "left" %}
-			<div class="col-12 col-sm-6 text px-5 py-4">
+			<div class="col-12 col-sm-6 text px-5 py-4 UKMblockContent">
 				{{ block.content|raw }}
 			</div>
 		{% endif %}

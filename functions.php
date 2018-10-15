@@ -28,6 +28,30 @@ function UKMresponsive_imageSizes() {
 }
 
 
+add_shortcode('UKMgrafisk', 'UKMgrafisk_element');
+add_shortcode('UKMlogo', 'UKMgrafisk_logo');
+
+function UKMgrafisk_element( $attributes ) {
+	return UKMgrafisk('grafiske_elementer', $attributes);
+}
+function UKMgrafisk_logo( $attributes ) {
+	return UKMgrafisk('logoer', $attributes);
+}
+function UKMgrafisk( $container, $attributes ) {
+	$elementer = WP_CONFIG::get( $container );
+	if( is_array( $attributes ) && isset( $attributes['element'] ) && isset( $elementer[ $attributes['element'] ] ) ) {
+		$element = $elementer[ $attributes['element'] ];
+		
+		return WP_TWIG::render(
+			'GrafiskProfil/element', 
+			[
+				'element' => $element
+			]
+		);
+	}
+	return '';
+}
+
 function UKMresponsive_gallery( $gallery ) {
 	$ids = explode(',', $gallery['ids']);
 	$WP_TWIG_DATA['bilder'] = [];

@@ -7,14 +7,27 @@ header {
 	transition: all 0.5s ease-out;
 		
 	position: fixed;
-    top: ~"Calc( 60vh - 3em)";
+    top: ~"Calc( 50vh - 3em)";
     left: 50%;
     color: #fff;
     font-weight: 800;
-    width: 26em;
-    margin-left: -13em;
+    width: 90vw;
+    margin-left: -45vw;
     text-align: center;
-    max-width: 99vw;
+}
+
+@media (min-width: 768px) {
+    header {
+        position: fixed;
+        top: ~"Calc( 60vh - 3em)";
+        left: 50%;
+        color: #fff;
+        font-weight: 800;
+        width: 26em;
+        margin-left: -13em;
+        text-align: center;
+        max-width: 99vw;
+    }
 }
 
 .header-more {
@@ -63,11 +76,12 @@ header {
 
 .fullpage .hugetext {
     font-size: 1.3em;
-    margin: 10vh 10vw;
+    margin: 2vh 10vw;
 }
 @media (min-width: 768px) {
     .fullpage .hugetext {
         font-size: 1.7em;
+        margin: 10vh 10vw;
     }
 }
 @media (min-width: 992px) {

@@ -15,6 +15,32 @@ Installer med composer "ukmnorge/designbundle"
         "ukmnorge/designbundle": "dev-master"
     },
 ``` 
+
+## Config.yml må ha disse linjene:
+```
+globals:
+    UKM_HOSTNAME: %UKM_HOSTNAME%
+    SEO: "@ukmdesign.seo"
+    Sitemap: "@ukmdesign.sitemap"
+    THEME: "%UKMresponsive.theme%"
+    section: "%UKMresponsive.section%"
+```
+
+## Parameters.yml må ha disse linjene:
+```
+UKMresponsive.theme: ''
+UKMresponsive.section:
+    title: UKM RSVP
+    url: //rsvp.ukm.no
+
+SEOdefaultsApp:
+    title: UKM RSVP
+    canonical: //rsvp.ukm.no
+    description: Kommer du?
+    siteName: UKM RSVP
+    section: organisasjon
+```
+
 ### Sitemap auto-update
 Det er viktig at sitemap til enhver tid er synkronisert mellom alle installasjoner.
 Sett derfor opp en cron-jobb som åpner APP_URL/cron/designbundle/sync_sitemap/ så ofte som ønskelig (anbefalt minst 1 gang per døgn)
@@ -53,3 +79,5 @@ OBS: Bruk `$WP_TWIG_DATA` da denne også brukes av loaderen.
 ```php
 $WP_TWIG_DATA[ key ] = [ value ];
 echo WP_TWIG::render( 'Folder/Template', $WP_TWIG_DATA );
+```
+    description: Kommer du?

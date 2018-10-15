@@ -5,20 +5,10 @@
 		<div class="row">
 			<div class="col-12">
 				{{ page.getPage().content|raw }}
-				
-				{% for id, logoer in THEME_CONFIG.get('logoer') %}
+
+				{% for id, element in THEME_CONFIG.get('logoer') %}
 					<h2 class="mt-5">{{ THEME_CONFIG.get('logoer')[ id ].navn }}</h2>
-					{% for logo in logoer.utgaver %}
-						<div class="header-line mt-4 mb-2">{{ logo.navn }}</div>
-						<img class="float-right ml-2 mb-2 p-2 {{ logo.class }}" width="120" src="{{ logo.url }}" />
-	
-						{% for utgave in logo.filer %}
-							<a href="{{ utgave.url }}" class="my-2 btn btn-outline-primary {{ not loop.first ? 'btn-sm' }}" target="_blank">
-								{{ utgave.navn }}
-							</a>
-						{% endfor %}
-						<div class="clearfix"></div>
-					{% endfor %}
+					{% include "UKMDesignBundle:GrafiskProfil:element.html.twig"|UKMpath  with { element: element } %}
 				{% endfor %}
 			</div>
 		</div>

@@ -16,7 +16,7 @@
 			<div class="col-12 col-md-10 col-lg-3 ml-md-auto mr-md-auto mt-5">
 				{#<p class="small bold mt-4 mb-1 right">SNARVEIER</p>#}
 				{% for element in meny %}
-					<a href="{{ element.url }}" class="btn btn-outline-primary btn-block btn-sm">
+					<a href="{{ element.url }}" class="btn btn-{{ element.object_id == page.getPage().ID ? '' : 'outline-' }}primary btn-block btn-sm">
 						{{ element.title }}
 					</a>
 				{% endfor %}
