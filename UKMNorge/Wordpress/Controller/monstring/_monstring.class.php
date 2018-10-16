@@ -74,6 +74,11 @@ abstract class monstringController {
 		return self::$harProgram;
 	}
 	
+	
+	public static function harPameldte() {
+		return self::$monstring->getInnslag()->getAntall() > 0;
+	}
+	
 	private static function _loadProgram() {
 		if( null === self::$harProgram ) {
 			self::$harProgram = self::getMonstring()->getProgram()->getAntall() > 0;

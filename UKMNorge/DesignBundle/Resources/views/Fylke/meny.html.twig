@@ -24,12 +24,14 @@
 				</a>
 			</div>
 		{% endif %}
+		{% if harPameldte %}
 		<div class="col menu-item">
 			<a href="{{ monstring.getLink() }}pameldte/">
 				<div class="icon icon-users"></div>
 				<div class="text">Påmeldte</div>
 			</a>
 		</div>
+		{% endif %}
 		{% if harInfoPage and posts.getAntall() > 0 %}
 			<div class="col menu-item">
 				<a href="{{ monstring.getLink() }}info/">
