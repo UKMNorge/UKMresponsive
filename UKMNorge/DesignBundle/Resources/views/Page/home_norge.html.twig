@@ -22,11 +22,13 @@
 				</div>
 				<header class="white" style="z-index: 100">
 					<h1 class="border autoshrink">
-						PÅMELDING STARTER
-						<br />
-						1. NOVEMBER
-						{#
-						START PÅMELDING#}
+						{% if pamelding_apen %}
+							<a href="//delta.{{ UKM_HOSTNAME }}">START PÅMELDING</a>
+						{% else %}
+							PÅMELDING STARTER
+							<br />
+							1. NOVEMBER
+						{% endif %}
 					</h1>
 					<div class="header-more" style="margin-top: 5vh;">
 						<p>
@@ -36,7 +38,7 @@
 						</p>
 
 						<div class="readmoreIcon">
-							<span class="icon icon-down-2"></span>
+							<a href="#om/2" style="text-decoration: none"><span class="icon icon-down-2"></span></a>
 						</div>
 					</div>
 				</header>
@@ -47,11 +49,17 @@
 		<section class="section fullpage white waypoint" data-photo-background-transition="#000000" style="background-color: #00508C;" data-photo-background="https://grafikk.ukm.no/forside/korslaget-bla.jpg">
 			<div class="fullpage-content" style="display: flex;">
 				<div class="hugetext center">
-					<h1 >UKM er en plass der vi skaper noe sammen. </h1>
+					<p class="lead mt-3">
+					Noen deltar på UKM for å vise frem noe de brenner for, noen prøver noe helt nytt og andre er med sånn at alle får vist sin beste side.
+					</p>
 					<p class="lead">
-						En plass der du kan vise frem noe du brenner for. 
-						En plass du kan hjelpe andre å bli sett.
-						En plass der alle kulturelle uttrykk er velkomne.
+						Sammen skaper vi noe nytt, inspirerer og lærer av hverandre og har det gøy.
+					</p>
+					<p class="lead">
+						Musikk, teater, dans, litteratur, arrangering, eller 
+						<a href="{{ pamelding_apen ? '//delta.'~ UKM_HOSTNAME ~'/' : '/hva-er/' }}" style="color: #fff;">...</a>
+						<br />
+						<a href="{{ pamelding_apen ? '//delta.'~ UKM_HOSTNAME ~'/' : '/hva-er/' }}" style="color: #fff;">Du bestemmer</a>
 					</p>
 					<p class="lead" style="margin-bottom: 16vh;">
 						<a href="/hva-er/" class="btn btn-outline-primary btn-xs" style="border-radius: 0px; border-color: #fff !important; color: #fff !important;">Les mer</a>
