@@ -1,5 +1,5 @@
 {% block navbar %}
-	<div class="container-fluid {{ HEADER.background.url is defined ? 'background' }} {{ HEADER.background.position is defined ? HEADER.background.position }}" id="UKMheader" style="{{ HEADER.background.url is defined ? "background-image:url('"~ HEADER.background.url ~"');" }} background-position: 0px 0px;">
+	<div class="container-fluid {{ HEADER.background.url is defined ? 'background' }}" id="UKMheader" style="{{ HEADER.background.url is defined ? "background-image:url('"~ HEADER.background.url ~"');" }} background-position: {{ HEADER.background.position is defined ? HEADER.background.position : '0px 0px;'}}">
 		{% if HEADER.background.url_large is defined and HEADER.background.url_large is not empty %}
 			<style>
 				@media (min-width: 992px) {
