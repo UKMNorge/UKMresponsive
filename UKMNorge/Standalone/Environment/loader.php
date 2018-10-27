@@ -51,7 +51,7 @@ WP_CONFIG::setConfigPath( PATH_DESIGNBUNDLE . 'Resources/config/parameters.yml' 
 // TWIG INIT
 WP_TWIG::setTemplateDir( PATH_DESIGNBUNDLE .'Resources/views/' );
 WP_TWIG::addTemplateDir( STANDALONE_TWIG_PATH );
-WP_TWIG::setDebug( WP_ENV == 'dev' );
+WP_TWIG::setDebug( is_defined('WP_ENV') && WP_ENV == 'dev' );
 $WP_TWIG_DATA = [];
 
 
