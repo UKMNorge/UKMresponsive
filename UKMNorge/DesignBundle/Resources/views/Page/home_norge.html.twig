@@ -3,23 +3,105 @@
 {% block javascripts %}
 	{{ parent() }}
 	<script type="text/javascript" src="{{ UKMasset("js/UKMfullpage.min.js") }}?20181004-HelloWorld"></script>
+	<script type="text/javascript" src="{{ UKMasset("js/jquery-ui.min") }}?20181102-HelloWorld"></script>
+	<script>
+		jQuery(document).on('click', '#audioToggle', function(){
+			var video = jQuery('#fullVideo').get(0);
+			var icon = jQuery(this).find('.icon');
+			video.play();
+
+			if( icon.hasClass('icon-volume-high') ) {
+				jQuery('#fullVideo').prop('muted', true);
+				icon.removeClass('icon-volume-high').addClass('icon-volume-mute');
+			} else {
+				jQuery('#fullVideo').prop('muted', false);
+				icon.removeClass('icon-volume-mute').addClass('icon-volume-high');
+			}
+		});
+
+		$(window).on('load resize', function(){
+			$('#fullVideo').css({
+				'position' : 'absolute',
+				'top': $(window).height()/2 - $('video').height()/2,
+				'left': $(window).width()/2 - $('video').width()/2
+			});
+		});
+
+		jQuery(document).ready(function(){
+			// Bytt film hvis desktop
+			if( $(window).width() > $(window).height() ) {
+				jQuery('#fullVideo').find('source').each(function(){
+					jQuery(this).attr('src', jQuery(this).attr('data-src-wide'));
+				});
+			}
+			$('#fullVideo').get(0).load();
+			$('#fullVideo').prop('muted',true);
+			$('#fullVideo').get(0).play();
+		});
+
+		jQuery(document).on('click', '#fullVideo', function(){
+			jQuery('#fullVideo').prop('muted', false);
+		});
+
+		setTimeout( function(){
+			jQuery('#audioToggle').effect('pulsate', {times: 2, duration: 300});
+		}, 1200);
+	</script>
 {% endblock %}
 
 {% block css %}
 	{{ parent() }}
 	<link href="{{ UKMasset("css/UKMfullpage.min.css") }}" rel="stylesheet" />
+	<style>
+		#menyKnapp {
+			position: relative;
+			z-index: 20;
+		}
+		#logo {
+			position: relative;
+			z-index: 20;
+		}
+		#audioToggle {
+			position: absolute;
+			right: 1em;
+			bottom: 1em;
+			font-size: 2em;
+			opacity: .8;
+			color: #fff;
+		}
+
+		@media (min-width: 768px) {
+			#audioToggle {
+				font-size: 3em;
+			}
+		}
+
+		#fullVideo {
+			position: relative;
+			top: 50%;
+			transition: top 100ms ease;
+		}
+	</style>
 {% endblock %}
 
 {% block framework_content %}
 	<div id="fullpage">
-		<section class="section fullpage white waypoint" data-photo-background-transition="#000000" style="background-color: #00508C;" data-photo-background="https://grafikk.ukm.no/forside/superstition-color.jpg">
+		<section class="section fullpage white waypoint" data-photo-background-transition="#000000" style="background-color: #000000;" data-photo-background="false">
 			<div class="fullpage-content">
-				<div class="meny">
-					<a href="/hovedmeny/" class="btn btn-sm my-2 btn-outline-primary">MENY</a>
+				<div class="meny" id="menyKnapp">
+					<a href="/hovedmeny/" class="btn btn-sm my-2 btn-outline-primary"  style="z-index: 50">MENY</a>
 				</div>
-				<div class="logo">
+				<div class="logo" id="logo">
 					<img src="https://grafikk.ukm.no/profil/logoer/UKM_logo_hvit_0100.png" />
 				</div>
+				<video muted loop id="fullVideo" style="width: 100vw;">
+					<source src="https://video.ukm.no/ukmno/videos/2016/4056/innslag/2016_4056_innslag_115709_cron_11990_720p.mp4" data-src-wide="https://video.ukm.no//ukmno/videos/2018/4950/innslag/2018_4950_innslag_149108_cron_17453_720p.mp4" type="video/mp4">
+				</video>
+
+				<div id="audioToggle" class="click">
+					<div class="icon icon-volume-mute"></div>
+				</div>
+				
 				<header class="white" style="z-index: 100">
 					<h1 class="border autoshrink">
 						{% if pamelding_apen %}
