@@ -77,7 +77,11 @@ switch( get_option('site_type') ) {
 		$view_template = 'Page/fullpage';
 		break;
 	default:
-		if( isset($_GET['mgpjr']) ) {
+		$now = new DateTime();
+		$start = DateTime::createFromFormat ( 'Y-m-d H:i', '2018-11-03 20:00' );
+		$stop = DateTime::createFromFormat ( 'Y-m-d H:i', '2018-11-10 23:59' );
+		
+		if( ($start < $now && $stop > $now) || isset($_GET['mgpjr']) ) {
 			$view_template = 'Page/home_norge_mgpjr';
 		} else {
 			$view_template = 'Page/home_norge';
