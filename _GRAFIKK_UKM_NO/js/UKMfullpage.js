@@ -2,14 +2,18 @@ $(document).ready( function(){
 	$('.fullpage').each( function(){
 		var fullpage = $(this);
 		var image = new Image();
-		image.onload = function() {
-			fullpage.css('background-color', fullpage.attr('data-photo-background-transition'));
-			fullpage.find('.fullpage-content')
-				.css('background-image', 'url(' + image.src + ')')
-				.css('opacity', 1)
-				.attr('test', image.src);
+		if( fullpage.attr('data-photo-background') == 'false' ) {
+			fullpage.find('.fullpage-content').css('opacity', 1);
+		} else {
+			image.onload = function() {
+				fullpage.css('background-color', fullpage.attr('data-photo-background-transition'));
+				fullpage.find('.fullpage-content')
+					.css('background-image', 'url(' + image.src + ')')
+					.css('opacity', .5)
+					.attr('test', image.src);
+			}
+			image.src = $(this).attr('data-photo-background');
 		}
-		image.src = $(this).attr('data-photo-background');
 	});
 	
 	new fullpage('#fullpage', {
