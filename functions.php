@@ -92,6 +92,7 @@ WP_CONFIG::setConfigPath( PATH_DESIGNBUNDLE . 'Resources/config/parameters.yml' 
 WP_TWIG::setTemplateDir( PATH_DESIGNBUNDLE .'Resources/views/' );
 if( !isset( $_ENV['HOME'] ) && UKM_HOSTNAME == 'ukm.no' ) {
 	$_ENV['HOME'] = '/home/ukmno/';	
+}
 if( WP_ENV == 'dev' ) {
 	$_ENV['HOME'] = '/temp';
 }
