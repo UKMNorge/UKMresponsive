@@ -8,7 +8,10 @@
 		jQuery(document).on('click', '#audioToggle', function(){
 			var video = jQuery('#fullVideo').get(0);
 			var icon = jQuery(this).find('.icon');
-			video.play();
+			try {
+                video.play();
+            } catch() {
+            }
 
 			if( icon.hasClass('icon-volume-high') ) {
 				jQuery('#fullVideo').prop('muted', true);
@@ -34,9 +37,16 @@
 					jQuery(this).attr('src', jQuery(this).attr('data-src-wide'));
 				});
 			}
-			$('#fullVideo').get(0).load();
-			$('#fullVideo').prop('muted',true);
-			$('#fullVideo').get(0).play();
+			try {
+                $('#fullVideo').get(0).load();
+            } catch() {}
+            $('#fullVideo').prop('muted',true);
+			try {
+                $('#fullVideo').get(0).load();
+            } catch() {}
+			try {
+                $('#fullVideo').get(0).play();
+            } catch() {}
 		});
 
 		jQuery(document).on('click', '#fullVideo', function(){
