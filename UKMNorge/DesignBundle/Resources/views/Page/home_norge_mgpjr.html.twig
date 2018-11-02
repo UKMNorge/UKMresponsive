@@ -35,7 +35,7 @@
 			var video = $('#fullVideo').get(0);
 			video.muted = true;
 
-	console.log( video );
+			console.log( video );
 			if( $(window).width() > $(window).height() ) {
 				jQuery('#fullVideo').find('source').each(function() {
 					jQuery(this).attr('src', jQuery(this).attr('data-src-wide'));
@@ -59,7 +59,21 @@
 				}
 			} else {
 				try {
-					$('#fullVideo').get(0).play();
+					video.play()
+						.then( function(e){
+							console.log('playing');
+						} )
+						.catch( function(err){
+							jQuery('#fullVideo').find('source').each(function(){
+								jQuery(this).attr('src', jQuery(this).attr('src').replace('audio','mute'));
+								try {
+									video.load().then(function(e){
+										video.play()
+									});
+								}
+							});
+							console.log('catched error');
+						} );
 				} catch(err) {}
 			}
 		});
