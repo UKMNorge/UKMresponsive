@@ -65,7 +65,10 @@
 						} )
 						.catch( function(err){
 							jQuery('#fullVideo').find('source').each(function(){
+								console.log('replace src');
+								console.log(jQuery(this).attr('src'));
 								jQuery(this).attr('src', jQuery(this).attr('src').replace('audio','mute'));
+								console.log(jQuery(this).attr('src'));
 								try {
 									video.load().then(function(e){
 										video.play()
