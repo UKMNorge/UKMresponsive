@@ -32,21 +32,36 @@
 
 		jQuery(document).ready(function(){
 			// Bytt film hvis desktop
+			var video = $('#fullVideo').get(0);
+			video.muted = true;
+
+	console.log( video );
 			if( $(window).width() > $(window).height() ) {
 				jQuery('#fullVideo').find('source').each(function() {
 					jQuery(this).attr('src', jQuery(this).attr('data-src-wide'));
 				});
+				try {
+					console.log('load');
+					video.load()
+						.then( function(e) {
+							console.log('loaded');
+							video.muted = true;
+							video.play()
+								.then( function(e){
+									console.log('playing');
+								} )
+								.catch( function(err){
+									console.log('catched error');
+								} );
+						});
+				} catch( err ) {
+					console.log('catched another error');
+				}
+			} else {
+				try {
+					$('#fullVideo').get(0).play();
+				} catch(err) {}
 			}
-			try {
-                $('#fullVideo').get(0).load();
-            } catch(err) {}
-            $('#fullVideo').prop('muted',true);
-			try {
-                $('#fullVideo').get(0).load();
-            } catch(err) {}
-			try {
-                $('#fullVideo').get(0).play();
-            } catch(err) {}
 		});
 
 		jQuery(document).on('click', '#fullVideo', function(){
@@ -87,6 +102,7 @@
 		}
 
 		#fullVideo {
+			width: 100vw;
 			position: relative;
 			top: 50%;
 			transition: top 100ms ease;
@@ -104,8 +120,8 @@
 				<div class="logo" id="logo">
 					<img src="https://grafikk.ukm.no/profil/logoer/UKM_logo_hvit_0100.png" />
 				</div>
-				<video muted loop id="fullVideo" style="width: 100vw;" preload="none" controls="true">
-					<source src="https://video.ukm.no/ukmno/videos/2016/4056/innslag/2016_4056_innslag_115709_cron_11990_720p.mp4" data-src-wide="https://video.ukm.no//ukmno/videos/2018/4950/innslag/2018_4950_innslag_149108_cron_17453_720p.mp4" type="video/mp4">
+				<video autoplay muted loop id="fullVideo" preload="none">
+					<source src="https://video.ukm.no/ukmno/18_mgpjr/9x16_audio.mp4" data-src-wide="https://video.ukm.no/ukmno/18_mgpjr/16x9_audio.mp4" type="video/mp4">
 				</video>
 
 				<div id="audioToggle" class="click">
