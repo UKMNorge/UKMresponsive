@@ -10,7 +10,7 @@
 			var icon = jQuery(this).find('.icon');
 			try {
                 video.play();
-            } catch() {
+            } catch(err) {
             }
 
 			if( icon.hasClass('icon-volume-high') ) {
@@ -39,14 +39,14 @@
 			}
 			try {
                 $('#fullVideo').get(0).load();
-            } catch() {}
+            } catch(err) {}
             $('#fullVideo').prop('muted',true);
 			try {
                 $('#fullVideo').get(0).load();
-            } catch() {}
+            } catch(err) {}
 			try {
                 $('#fullVideo').get(0).play();
-            } catch() {}
+            } catch(err) {}
 		});
 
 		jQuery(document).on('click', '#fullVideo', function(){
