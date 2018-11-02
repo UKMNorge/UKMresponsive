@@ -90,6 +90,9 @@ WP_CONFIG::setConfigPath( PATH_DESIGNBUNDLE . 'Resources/config/parameters.yml' 
 
 // TWIG INIT
 WP_TWIG::setTemplateDir( PATH_DESIGNBUNDLE .'Resources/views/' );
+if( !isset( $_ENV['HOME'] ) && UKM_HOSTNAME == 'ukm.no' ) {
+	$_ENV['HOME'] = '/home/ukmno/';	
+}
 WP_TWIG::setCacheDir( $_ENV['HOME'].'/cache/ukmresponsive/');
 WP_TWIG::setDebug( WP_ENV == 'dev' );
 $WP_TWIG_DATA = [];
