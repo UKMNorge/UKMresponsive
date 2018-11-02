@@ -3,7 +3,7 @@
 {% block javascripts %}
 	{{ parent() }}
 	<script type="text/javascript" src="{{ UKMasset("js/UKMfullpage.min.js") }}?20181004-HelloWorld"></script>
-	<script type="text/javascript" src="{{ UKMasset("js/jquery-ui.min") }}?20181102-HelloWorld"></script>
+	<script type="text/javascript" src="{{ UKMasset("js/jquery-ui.min.js") }}?20181102-HelloWorld"></script>
 	<script>
 		jQuery(document).on('click', '#audioToggle', function(){
 			var video = jQuery('#fullVideo').get(0);
@@ -30,7 +30,7 @@
 		jQuery(document).ready(function(){
 			// Bytt film hvis desktop
 			if( $(window).width() > $(window).height() ) {
-				jQuery('#fullVideo').find('source').each(function(){
+				jQuery('#fullVideo').find('source').each(function() {
 					jQuery(this).attr('src', jQuery(this).attr('data-src-wide'));
 				});
 			}
