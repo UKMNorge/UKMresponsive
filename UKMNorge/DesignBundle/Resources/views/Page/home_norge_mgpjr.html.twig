@@ -5,13 +5,10 @@
 	<script type="text/javascript" src="{{ UKMasset("js/UKMfullpage.min.js") }}?20181004-HelloWorld"></script>
 	<script type="text/javascript" src="{{ UKMasset("js/jquery-ui.min.js") }}?20181102-HelloWorld"></script>
 	<script>
-		jQuery(document).on('click', '#audioToggle', function(){
+		jQuery(document).on('click touch', '#audioToggle, #audioToggle .icon', function(){
 			var video = jQuery('#fullVideo').get(0);
 			var icon = jQuery(this).find('.icon');
-			try {
-                video.play();
-            } catch(err) {
-            }
+			jQuery(document).trigger('playVideo');
 
 			if( icon.hasClass('icon-volume-high') ) {
 				jQuery('#fullVideo').prop('muted', true);
@@ -30,61 +27,39 @@
 			});
 		});
 
+		jQuery(document).on('click', '#fullVideo', function(){
+			jQuery(document).trigger('playVideo');
+		});
+
 		jQuery(document).ready(function(){
 			// Bytt film hvis desktop
 			var video = $('#fullVideo').get(0);
 			video.muted = true;
 
-			console.log( video );
 			if( $(window).width() > $(window).height() ) {
 				jQuery('#fullVideo').find('source').each(function() {
 					jQuery(this).attr('src', jQuery(this).attr('data-src-wide'));
 				});
 				try {
-					console.log('load');
 					video.load()
 						.then( function(e) {
-							console.log('loaded');
 							video.muted = true;
-							video.play()
-								.then( function(e){
-									console.log('playing');
-								} )
-								.catch( function(err){
-									console.log('catched error');
-								} );
+							jQuery(document).trigger('playVideo');
 						});
 				} catch( err ) {
-					console.log('catched another error');
 				}
-			} else {
-				try {
-					video.play()
-						.then( function(e){
-							console.log('playing');
-						} )
-						.catch( function(err){
-							jQuery('#fullVideo').find('source').each(function(){
-								console.log('replace src');
-								console.log(jQuery(this).attr('src'));
-								jQuery(this).attr('src', jQuery(this).attr('src').replace('audio','mute'));
-								console.log(jQuery(this).attr('src'));
-								try {
-									video.load().then(function(e){
-										video.play()
-									});
-								}catch( err ) {
-									console.log('err x');
-								}
-							});
-							console.log('catched error');
-						} );
-				} catch(err) {}
 			}
 		});
 
-		jQuery(document).on('click', '#fullVideo', function(){
+		jQuery(document).on('click touch', '#fullVideo', function(){
 			jQuery('#fullVideo').prop('muted', false);
+		});
+		
+		jQuery(document).on('playVideo', function(e) {
+			try {
+				jQuery('#fullVideo').get(0).play();
+			} catch( err ) {
+			}
 		});
 
 		setTimeout( function(){
@@ -112,6 +87,7 @@
 			font-size: 2em;
 			opacity: .8;
 			color: #fff;
+			z-index: 200;
 		}
 
 		@media (min-width: 768px) {
@@ -139,7 +115,7 @@
 				<div class="logo" id="logo">
 					<img src="https://grafikk.ukm.no/profil/logoer/UKM_logo_hvit_0100.png" />
 				</div>
-				<video autoplay muted loop id="fullVideo" preload="none">
+				<video id="fullVideo" muted="true" loop="true" autoplay preload="none" playsinline="" webkit-playsinline="" >
 					<source src="https://video.ukm.no/ukmno/18_mgpjr/9x16_audio.mp4" data-src-wide="https://video.ukm.no/ukmno/18_mgpjr/16x9_audio.mp4" type="video/mp4">
 				</video>
 
