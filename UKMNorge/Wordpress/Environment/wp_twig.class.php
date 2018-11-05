@@ -122,7 +122,10 @@ class WP_TWIG {
 			self::setCacheDir( sys_get_temp_dir() .'/wp_twig_cache/' );
 		}
 		if( !file_exists( self::getCacheDir() ) ) {
-			mkdir( self::getCacheDir(), 0777 );
+			$res = mkdir( self::getCacheDir(), 0777 );
+			if( !$res && $_GET['debug']) {
+				echo 'Failed to create: '. self::getCacheDir();
+			}
 		}
 		$environment['cache'] = self::getCacheDir();
 		$environment['auto_reload'] = true;
