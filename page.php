@@ -122,13 +122,13 @@ switch( $page_template ) {
 		break;
 	case 'statistikk/pameldte':
 		require_once('UKMNorge/Wordpress/Controller/menu.controller.php');
-		$view_template = 'Statistikk/pameldte';
+		$view_menu_template  ='Statistikk/pameldte';
 		require_once('UKMNorge/Wordpress/Controller/statistikk/pameldte.controller.php');
 		break;
 	case 'statistikk/frister':
 	case 'statistikk/monstringer':
 		require_once('UKMNorge/Wordpress/Controller/menu.controller.php');
-		$view_template = 'Statistikk/monstringer';
+		$view_menu_template = 'Statistikk/monstringer';
 		require_once('UKMNorge/Wordpress/Controller/statistikk/monstringer.controller.php');
 		break;
 	# Vis kontakt-side
@@ -156,7 +156,11 @@ switch( $page_template ) {
 
 if( $page_template == 'meny' || isset( $WP_TWIG_DATA['page']->getPage()->meta->UKM_block ) && $WP_TWIG_DATA['page']->getPage()->meta->UKM_block == 'sidemedmeny'  ) {
 	require_once('UKMNorge/Wordpress/Controller/menu.controller.php');
-	$view_template = 'Page/fullpage_with_menu';
+	if( !empty( $view_menu_template ) ) {
+		$view_template = $view_menu_template;
+	} else {
+		$view_template = 'Page/fullpage_with_menu';
+	}
 }
 
 /**
