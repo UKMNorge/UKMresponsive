@@ -2,6 +2,21 @@
 	{% set section = Sitemap.getSection('UKM') %}
 	<div class="col-xs-12 col-md-8 col-lg-8 section divider">
 		<div class="pageContainer row">
+			{% if menu is defined %}
+				{% set trash = menu.get() %}
+				{% set section_local = Sitemap.getSection('extra') %}
+				{% if section_local %}
+					{% for page in section_local.getPages().getAll() %}
+						<div class="col-6 col-lg-4">
+							<div class="page secondary p-2 m-1 my-2 m-md-2 center autoshrink">
+								<a href="{{ page.getUrl() }}" {{ page.getTargetProperty() }} class="">
+									{{ page.getTitle() }}
+								</a>
+							</div>
+						</div>
+					{% endfor %}
+				{% endif %}
+			{% endif %}
 			{% for page in section.getPages().getAll() if page.getId() not in ['pressebilder'] %}
 				<div class="col-6 col-lg-4">
 					<div class="page p-2 m-1 my-2 m-md-2 center">
