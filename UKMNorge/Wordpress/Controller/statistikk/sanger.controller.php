@@ -2,7 +2,7 @@
 
 require_once('UKM/sql.class.php');
 
-$WP_TWIG_DATA['season_start'] = 2009;
+$WP_TWIG_DATA['season_start'] = 2010;
 $WP_TWIG_DATA['season'] = isset( $_GET['season'] ) ? (int) $_GET['season'] : get_site_option('season');
 $WP_TWIG_DATA['real_season'] = get_site_option('season');
 $artister = [];
