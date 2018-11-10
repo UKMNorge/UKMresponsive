@@ -123,14 +123,23 @@ switch( $page_template ) {
 	case 'statistikk/pameldte':
 		require_once('UKMNorge/Wordpress/Controller/menu.controller.php');
 		$view_menu_template  ='Statistikk/pameldte';
+		$view_template = &$view_menu_template;
 		require_once('UKMNorge/Wordpress/Controller/statistikk/pameldte.controller.php');
 		break;
 	case 'statistikk/frister':
 	case 'statistikk/monstringer':
 		require_once('UKMNorge/Wordpress/Controller/menu.controller.php');
 		$view_menu_template = 'Statistikk/monstringer';
+		$view_template = &$view_menu_template;
 		require_once('UKMNorge/Wordpress/Controller/statistikk/monstringer.controller.php');
 		break;
+	case 'statistikk/sanger':
+		require_once('UKMNorge/Wordpress/Controller/menu.controller.php');
+		$view_menu_template  = 'Statistikk/sanger';
+		$view_template = &$view_menu_template;
+		require_once('UKMNorge/Wordpress/Controller/statistikk/sanger.controller.php');
+		break;
+
 	# Vis kontakt-side
 	case 'org/styret':
 		require_once('UKMNorge/Wordpress/Controller/kontakt.controller.php');
