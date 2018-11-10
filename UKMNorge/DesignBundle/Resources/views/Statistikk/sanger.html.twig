@@ -1,7 +1,7 @@
 {% extends "Page/fullpage_with_menu.html.twig"|UKMpath %}
 
 {% block page_content %}
-    <h1>De mest covrede artistene i {{ season }}</h1>
+    <h1>Mest covrede artister i {{ season }}</h1>
     <p class="small">
         Se 
         {% for goto in season_start..real_season %}
