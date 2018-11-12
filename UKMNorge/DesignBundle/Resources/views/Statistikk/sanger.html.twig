@@ -2,7 +2,11 @@
 
 {% block page_content %}
     <h1>Mest covrede artister i {{ season }}</h1>
-    <p class="small">
+    <p class="lead">
+        Da listen er auto-generert fra påmeldingssystemet, gir den (bl.a. på grunn av manuell inntasting)
+        kun en indikasjon på de mest populære artistene.
+    </p>
+    <p>
         Se 
         {% for goto in season_start..real_season %}
             <a href="?season={{ goto }}" class="{{ goto == season ? 'bold' }}">{{ goto }}</a>{{ not loop.last ? ' | ' }}
