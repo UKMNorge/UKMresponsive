@@ -9,7 +9,7 @@ $(document).ready( function(){
 				fullpage.css('background-color', fullpage.attr('data-photo-background-transition'));
 				fullpage.find('.fullpage-content')
 					.css('background-image', 'url(' + image.src + ')')
-					.css('opacity', .5)
+					.css('opacity', 1)
 					.attr('test', image.src);
 			}
 			image.src = $(this).attr('data-photo-background');
