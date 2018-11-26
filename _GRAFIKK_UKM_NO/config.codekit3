@@ -1,13 +1,13 @@
 {
-"AAInfo": "This is a CodeKit 3 project config file. MODIFYING THE CONTENTS OF THIS FILE IS A POOR LIFE DECISION. Doing so will cause CodeKit to crash and\/or corrupt your project. I know it looks like JSON, but it is *not*. Many numbers in this file are 64-bit long long bitFlags, which JSON does not support. These numbers *cannot* be treated as discrete values and if you attempt to parse this file as standard JSON with any public JSON parser, these values will be corrupted. This file is not backwards-compatible with CodeKit 1 or 2. For more information, see https:\/\/codekitapp.com\/",
+"AAInfo": "This is a CodeKit 3 project config file. MODIFYING THE CONTENTS OF THIS FILE IS A POOR LIFE DECISION. Doing so will cause CodeKit to crash and/or corrupt your project. I know it looks like JSON, but it is *not*. Many numbers in this file are 64-bit long long bitFlags, which JSON does not support. These numbers *cannot* be treated as discrete values and if you attempt to parse this file as standard JSON with any public JSON parser, these values will be corrupted. This file is not backwards-compatible with CodeKit 1 or 2. For more information, see https://codekitapp.com/",
 "buildSteps": [
 	{
 		"itemsToProcess": [
-			"\/js\/UKMresponsive.js",
-			"\/js\/bootstrap.min.js",
-			"\/js\/cookie.js",
-			"\/js\/fastlivefilter.jquery.js",
-			"\/js\/jquery-autoshrink.js"
+			"/js/UKMresponsive.js",
+			"/js/bootstrap.min.js",
+			"/js/cookie.js",
+			"/js/fastlivefilter.jquery.js",
+			"/js/jquery-autoshrink.js"
 			],
 		"name": "New \"Process Certain Files\" Step",
 		"stepType": 0,
@@ -15,27 +15,27 @@
 		},
 	{
 		"itemsToProcess": [
-			"\/less\/UKMresponsive-cherry.less",
-			"\/less\/UKMresponsive-ego.less",
-			"\/less\/UKMresponsive-orchid.less",
-			"\/less\/UKMresponsive.less",
-			"\/less\/base.less",
-			"\/less\/blockquote.less",
-			"\/less\/bootstrap-modifications.less",
-			"\/less\/calendar.less",
-			"\/less\/card.less",
-			"\/less\/delta.less",
-			"\/less\/deltakere.less",
-			"\/less\/files.less",
-			"\/less\/footer.less",
-			"\/less\/fylke.less",
-			"\/less\/home.less",
-			"\/less\/kommune.less",
-			"\/less\/navbar.less",
-			"\/less\/open-sans.less",
-			"\/less\/post.less",
-			"\/less\/program.less",
-			"\/less\/sitemap.less"
+			"/less/UKMresponsive-cherry.less",
+			"/less/UKMresponsive-ego.less",
+			"/less/UKMresponsive-orchid.less",
+			"/less/UKMresponsive.less",
+			"/less/base.less",
+			"/less/blockquote.less",
+			"/less/bootstrap-modifications.less",
+			"/less/calendar.less",
+			"/less/card.less",
+			"/less/delta.less",
+			"/less/deltakere.less",
+			"/less/files.less",
+			"/less/footer.less",
+			"/less/fylke.less",
+			"/less/home.less",
+			"/less/kommune.less",
+			"/less/navbar.less",
+			"/less/open-sans.less",
+			"/less/post.less",
+			"/less/program.less",
+			"/less/sitemap.less"
 			],
 		"name": "New \"Process Certain Files\" Step",
 		"stepType": 0,
@@ -47,5302 +47,5481 @@
 		"uuidString": "C0E5ED16-103C-462F-A29A-7BCA32408419"
 		}
 	],
-"creatorBuild": "26680",
+"creatorBuild": "28905",
 "files": {
-	"\/.htaccess": {
+	"/.htaccess": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/.htaccess",
+		"oAP": "/.htaccess",
 		"oF": 0
 		},
-	"\/build\/.gitignore": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 2,
-		"oAP": "\/build\/.gitignore",
-		"oF": 0
-		},
-	"\/css\/article-embed.css": {
+	"/css/article-embed.css": {
 		"aP": 1,
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "\/css\/article-embed-min.css",
+		"oAP": "/css/article-embed-min.css",
 		"oF": 0,
 		"oS": 3
 		},
-	"\/css\/bootstrap.min.css": {
+	"/css/bootstrap.min.css": {
 		"aP": 1,
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "\/css\/bootstrap.min-min.css",
+		"oAP": "/css/bootstrap.min-min.css",
 		"oF": 0,
 		"oS": 3
 		},
-	"\/css\/kommune.css": {
+	"/css/kommune.css": {
 		"aP": 1,
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "\/css\/kommune-min.css",
+		"oAP": "/css/kommune-min.css",
 		"oF": 0,
 		"oS": 3
 		},
-	"\/css\/nyhetsbrev-fonts.css": {
+	"/css/nyhetsbrev-fonts.css": {
 		"aP": 1,
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "\/css\/nyhetsbrev-fonts-min.css",
+		"oAP": "/css/nyhetsbrev-fonts-min.css",
 		"oF": 0,
 		"oS": 3
 		},
-	"\/css\/nyhetsbrev.css": {
+	"/css/nyhetsbrev.css": {
 		"aP": 1,
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "\/css\/nyhetsbrev-min.css",
+		"oAP": "/css/nyhetsbrev-min.css",
 		"oF": 0,
 		"oS": 3
 		},
-	"\/css\/program.css": {
+	"/css/program.css": {
 		"aP": 1,
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "\/css\/program-min.css",
+		"oAP": "/css/program-min.css",
 		"oF": 0,
 		"oS": 3
 		},
-	"\/css\/UKMresponsive-cherry.css": {
+	"/css/UKMfullpage.min.css": {
 		"aP": 1,
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "\/css\/UKMresponsive-cherry-min.css",
+		"oAP": "/css/UKMfullpage.min-min.css",
 		"oF": 0,
 		"oS": 3
 		},
-	"\/css\/UKMresponsive-cherry.css.map": {
+	"/css/UKMfullpage.min.css.map": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/css\/UKMresponsive-cherry.css.map",
+		"oAP": "/css/UKMfullpage.min.css.map",
 		"oF": 0
 		},
-	"\/css\/UKMresponsive-ego.css": {
+	"/css/UKMresponsive-cherry.css": {
 		"aP": 1,
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "\/css\/UKMresponsive-ego-min.css",
+		"oAP": "/css/UKMresponsive-cherry-min.css",
 		"oF": 0,
 		"oS": 3
 		},
-	"\/css\/UKMresponsive-ego.css.map": {
+	"/css/UKMresponsive-cherry.css.map": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/css\/UKMresponsive-ego.css.map",
+		"oAP": "/css/UKMresponsive-cherry.css.map",
 		"oF": 0
 		},
-	"\/css\/UKMresponsive-orchid.css": {
+	"/css/UKMresponsive-ego.css": {
 		"aP": 1,
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "\/css\/UKMresponsive-orchid-min.css",
+		"oAP": "/css/UKMresponsive-ego-min.css",
 		"oF": 0,
 		"oS": 3
 		},
-	"\/css\/UKMresponsive-orchid.css.map": {
+	"/css/UKMresponsive-ego.css.map": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/css\/UKMresponsive-orchid.css.map",
+		"oAP": "/css/UKMresponsive-ego.css.map",
 		"oF": 0
 		},
-	"\/css\/UKMresponsive.css": {
+	"/css/UKMresponsive-orchid.css": {
 		"aP": 1,
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "\/css\/UKMresponsive-min.css",
+		"oAP": "/css/UKMresponsive-orchid-min.css",
 		"oF": 0,
 		"oS": 3
 		},
-	"\/css\/UKMresponsive.css.map": {
+	"/css/UKMresponsive-orchid.css.map": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/css\/UKMresponsive.css.map",
+		"oAP": "/css/UKMresponsive-orchid.css.map",
 		"oF": 0
 		},
-	"\/fonts\/Anton-Regular.ttf": {
+	"/css/UKMresponsive.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/css/UKMresponsive-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/css/UKMresponsive.css.map": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/fonts\/Anton-Regular.ttf",
+		"oAP": "/css/UKMresponsive.css.map",
 		"oF": 0
 		},
-	"\/fonts\/Fedra-Sans-Std-Bold_17246.ttf": {
+	"/fonts/Anton-Regular.ttf": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/fonts\/Fedra-Sans-Std-Bold_17246.ttf",
+		"oAP": "/fonts/Anton-Regular.ttf",
 		"oF": 0
 		},
-	"\/fonts\/Fedra-Serif-A-Pro-Book_17258.ttf": {
+	"/fonts/Fedra-Sans-Std-Bold_17246.ttf": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/fonts\/Fedra-Serif-A-Pro-Book_17258.ttf",
+		"oAP": "/fonts/Fedra-Sans-Std-Bold_17246.ttf",
 		"oF": 0
 		},
-	"\/fonts\/icomoon.eot": {
+	"/fonts/Fedra-Serif-A-Pro-Book_17258.ttf": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/fonts\/icomoon.eot",
+		"oAP": "/fonts/Fedra-Serif-A-Pro-Book_17258.ttf",
 		"oF": 0
 		},
-	"\/fonts\/icomoon.json": {
+	"/fonts/icomoon.eot": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "/fonts/icomoon.eot",
+		"oF": 0
+		},
+	"/fonts/icomoon.json": {
 		"ft": 524288,
 		"oA": 1,
-		"oAP": "\/fonts\/icomoon-min.json",
+		"oAP": "/fonts/icomoon-min.json",
 		"oF": 0,
 		"oO": 0,
 		"oS": 1
 		},
-	"\/fonts\/icomoon.svg": {
+	"/fonts/icomoon.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/fonts\/icomoon.svg",
+		"oAP": "/fonts/icomoon.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/fonts\/icomoon.ttf": {
+	"/fonts/icomoon.ttf": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/fonts\/icomoon.ttf",
+		"oAP": "/fonts/icomoon.ttf",
 		"oF": 0
 		},
-	"\/fonts\/icomoon.woff": {
+	"/fonts/icomoon.woff": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/fonts\/icomoon.woff",
+		"oAP": "/fonts/icomoon.woff",
 		"oF": 0
 		},
-	"\/fonts\/Impact.ttf": {
+	"/fonts/Impact.ttf": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/fonts\/Impact.ttf",
+		"oAP": "/fonts/Impact.ttf",
 		"oF": 0
 		},
-	"\/img\/banner-test-cherry.jpg": {
+	"/img/banner-test-cherry.jpg": {
 		"ft": 16384,
 		"iS": 23125,
 		"jF": 0,
 		"oA": 0,
-		"oAP": "\/img\/banner-test-cherry.jpg",
+		"oAP": "/img/banner-test-cherry.jpg",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"q": 100
 		},
-	"\/img\/banner-test-gul-ish.jpg": {
+	"/img/banner-test-gul-ish.jpg": {
 		"ft": 16384,
 		"iS": 96261,
 		"jF": 0,
 		"oA": 0,
-		"oAP": "\/img\/banner-test-gul-ish.jpg",
+		"oAP": "/img/banner-test-gul-ish.jpg",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"q": 100
 		},
-	"\/img\/banner-test-gul.jpg": {
+	"/img/banner-test-gul.jpg": {
 		"ft": 16384,
 		"iS": 27017,
 		"jF": 0,
 		"oA": 0,
-		"oAP": "\/img\/banner-test-gul.jpg",
+		"oAP": "/img/banner-test-gul.jpg",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"q": 100
 		},
-	"\/img\/banner-test.jpg": {
+	"/img/banner-test.jpg": {
 		"ft": 16384,
 		"iS": 55858,
 		"jF": 0,
 		"oA": 0,
-		"oAP": "\/img\/banner-test.jpg",
+		"oAP": "/img/banner-test.jpg",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"q": 100
 		},
-	"\/img\/circle-play.png": {
+	"/img/circle-play.png": {
 		"ft": 32768,
 		"iS": 4217,
 		"oA": 0,
-		"oAP": "\/img\/circle-play.png",
+		"oAP": "/img/circle-play.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
 		"q": 100
 		},
-	"\/img\/Entypo-social\/500px-with-circle.svg": {
+	"/img/Entypo-social/500px-with-circle.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/500px-with-circle.svg",
+		"oAP": "/img/Entypo-social/500px-with-circle.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo-social\/500px.svg": {
+	"/img/Entypo-social/500px.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/500px.svg",
+		"oAP": "/img/Entypo-social/500px.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo-social\/app-store.svg": {
+	"/img/Entypo-social/app-store.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/app-store.svg",
+		"oAP": "/img/Entypo-social/app-store.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo-social\/baidu.svg": {
+	"/img/Entypo-social/baidu.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/baidu.svg",
+		"oAP": "/img/Entypo-social/baidu.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo-social\/basecamp.svg": {
+	"/img/Entypo-social/basecamp.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/basecamp.svg",
+		"oAP": "/img/Entypo-social/basecamp.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo-social\/behance.svg": {
+	"/img/Entypo-social/behance.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/behance.svg",
+		"oAP": "/img/Entypo-social/behance.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo-social\/creative-cloud.svg": {
+	"/img/Entypo-social/creative-cloud.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/creative-cloud.svg",
+		"oAP": "/img/Entypo-social/creative-cloud.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo-social\/dribbble-with-circle.svg": {
+	"/img/Entypo-social/dribbble-with-circle.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/dribbble-with-circle.svg",
+		"oAP": "/img/Entypo-social/dribbble-with-circle.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo-social\/dribbble.svg": {
+	"/img/Entypo-social/dribbble.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/dribbble.svg",
+		"oAP": "/img/Entypo-social/dribbble.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo-social\/dropbox.svg": {
+	"/img/Entypo-social/dropbox.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/dropbox.svg",
+		"oAP": "/img/Entypo-social/dropbox.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo-social\/evernote.svg": {
+	"/img/Entypo-social/evernote.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/evernote.svg",
+		"oAP": "/img/Entypo-social/evernote.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo-social\/facebook-with-circle.svg": {
+	"/img/Entypo-social/facebook-with-circle.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/facebook-with-circle.svg",
+		"oAP": "/img/Entypo-social/facebook-with-circle.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo-social\/facebook.svg": {
+	"/img/Entypo-social/facebook.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/facebook.svg",
+		"oAP": "/img/Entypo-social/facebook.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo-social\/flattr.svg": {
+	"/img/Entypo-social/flattr.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/flattr.svg",
+		"oAP": "/img/Entypo-social/flattr.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo-social\/flickr-with-circle.svg": {
+	"/img/Entypo-social/flickr-with-circle.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/flickr-with-circle.svg",
+		"oAP": "/img/Entypo-social/flickr-with-circle.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo-social\/flickr.svg": {
+	"/img/Entypo-social/flickr.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/flickr.svg",
+		"oAP": "/img/Entypo-social/flickr.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo-social\/foursquare.svg": {
+	"/img/Entypo-social/foursquare.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/foursquare.svg",
+		"oAP": "/img/Entypo-social/foursquare.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo-social\/github-with-circle.svg": {
+	"/img/Entypo-social/github-with-circle.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/github-with-circle.svg",
+		"oAP": "/img/Entypo-social/github-with-circle.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo-social\/github.svg": {
+	"/img/Entypo-social/github.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/github.svg",
+		"oAP": "/img/Entypo-social/github.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo-social\/google+-with-circle.svg": {
+	"/img/Entypo-social/google+-with-circle.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/google+-with-circle.svg",
+		"oAP": "/img/Entypo-social/google+-with-circle.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo-social\/google+.svg": {
+	"/img/Entypo-social/google+.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/google+.svg",
+		"oAP": "/img/Entypo-social/google+.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo-social\/google-drive.svg": {
+	"/img/Entypo-social/google-drive.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/google-drive.svg",
+		"oAP": "/img/Entypo-social/google-drive.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo-social\/google-hangouts.svg": {
+	"/img/Entypo-social/google-hangouts.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/google-hangouts.svg",
+		"oAP": "/img/Entypo-social/google-hangouts.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo-social\/google-play.svg": {
+	"/img/Entypo-social/google-play.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/google-play.svg",
+		"oAP": "/img/Entypo-social/google-play.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo-social\/grooveshark.svg": {
+	"/img/Entypo-social/grooveshark.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/grooveshark.svg",
+		"oAP": "/img/Entypo-social/grooveshark.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo-social\/houzz.svg": {
+	"/img/Entypo-social/houzz.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/houzz.svg",
+		"oAP": "/img/Entypo-social/houzz.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo-social\/icloud.svg": {
+	"/img/Entypo-social/icloud.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/icloud.svg",
+		"oAP": "/img/Entypo-social/icloud.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo-social\/Icon\r": {
+	"/img/Entypo-social/Icon\r": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/Icon\r",
+		"oAP": "/img/Entypo-social/Icon\r",
 		"oF": 0
 		},
-	"\/img\/Entypo-social\/instagram-with-circle.svg": {
+	"/img/Entypo-social/instagram-with-circle.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/instagram-with-circle.svg",
+		"oAP": "/img/Entypo-social/instagram-with-circle.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo-social\/instagram.svg": {
+	"/img/Entypo-social/instagram.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/instagram.svg",
+		"oAP": "/img/Entypo-social/instagram.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo-social\/lastfm-with-circle.svg": {
+	"/img/Entypo-social/lastfm-with-circle.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/lastfm-with-circle.svg",
+		"oAP": "/img/Entypo-social/lastfm-with-circle.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo-social\/lastfm.svg": {
+	"/img/Entypo-social/lastfm.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/lastfm.svg",
+		"oAP": "/img/Entypo-social/lastfm.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo-social\/linkedin-with-circle.svg": {
+	"/img/Entypo-social/linkedin-with-circle.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/linkedin-with-circle.svg",
+		"oAP": "/img/Entypo-social/linkedin-with-circle.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo-social\/linkedin.svg": {
+	"/img/Entypo-social/linkedin.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/linkedin.svg",
+		"oAP": "/img/Entypo-social/linkedin.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo-social\/mail-with-circle.svg": {
+	"/img/Entypo-social/mail-with-circle.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/mail-with-circle.svg",
+		"oAP": "/img/Entypo-social/mail-with-circle.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo-social\/medium-with-circle.svg": {
+	"/img/Entypo-social/medium-with-circle.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/medium-with-circle.svg",
+		"oAP": "/img/Entypo-social/medium-with-circle.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo-social\/medium.svg": {
+	"/img/Entypo-social/medium.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/medium.svg",
+		"oAP": "/img/Entypo-social/medium.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo-social\/mixi.svg": {
+	"/img/Entypo-social/mixi.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/mixi.svg",
+		"oAP": "/img/Entypo-social/mixi.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo-social\/onedrive.svg": {
+	"/img/Entypo-social/onedrive.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/onedrive.svg",
+		"oAP": "/img/Entypo-social/onedrive.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo-social\/paypal.svg": {
+	"/img/Entypo-social/paypal.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/paypal.svg",
+		"oAP": "/img/Entypo-social/paypal.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo-social\/picasa.svg": {
+	"/img/Entypo-social/picasa.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/picasa.svg",
+		"oAP": "/img/Entypo-social/picasa.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo-social\/pinterest-with-circle.svg": {
+	"/img/Entypo-social/pinterest-with-circle.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/pinterest-with-circle.svg",
+		"oAP": "/img/Entypo-social/pinterest-with-circle.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo-social\/pinterest.svg": {
+	"/img/Entypo-social/pinterest.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/pinterest.svg",
+		"oAP": "/img/Entypo-social/pinterest.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo-social\/qq-with-circle.svg": {
+	"/img/Entypo-social/qq-with-circle.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/qq-with-circle.svg",
+		"oAP": "/img/Entypo-social/qq-with-circle.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo-social\/qq.svg": {
+	"/img/Entypo-social/qq.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/qq.svg",
+		"oAP": "/img/Entypo-social/qq.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo-social\/raft-with-circle.svg": {
+	"/img/Entypo-social/raft-with-circle.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/raft-with-circle.svg",
+		"oAP": "/img/Entypo-social/raft-with-circle.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo-social\/raft.svg": {
+	"/img/Entypo-social/raft.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/raft.svg",
+		"oAP": "/img/Entypo-social/raft.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo-social\/rainbow.svg": {
+	"/img/Entypo-social/rainbow.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/rainbow.svg",
+		"oAP": "/img/Entypo-social/rainbow.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo-social\/rdio-with-circle.svg": {
+	"/img/Entypo-social/rdio-with-circle.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/rdio-with-circle.svg",
+		"oAP": "/img/Entypo-social/rdio-with-circle.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo-social\/rdio.svg": {
+	"/img/Entypo-social/rdio.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/rdio.svg",
+		"oAP": "/img/Entypo-social/rdio.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo-social\/renren.svg": {
+	"/img/Entypo-social/renren.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/renren.svg",
+		"oAP": "/img/Entypo-social/renren.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo-social\/scribd.svg": {
+	"/img/Entypo-social/scribd.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/scribd.svg",
+		"oAP": "/img/Entypo-social/scribd.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo-social\/sina-weibo.svg": {
+	"/img/Entypo-social/sina-weibo.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/sina-weibo.svg",
+		"oAP": "/img/Entypo-social/sina-weibo.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo-social\/skype-with-circle.svg": {
+	"/img/Entypo-social/skype-with-circle.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/skype-with-circle.svg",
+		"oAP": "/img/Entypo-social/skype-with-circle.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo-social\/skype.svg": {
+	"/img/Entypo-social/skype.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/skype.svg",
+		"oAP": "/img/Entypo-social/skype.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo-social\/slideshare.svg": {
+	"/img/Entypo-social/slideshare.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/slideshare.svg",
+		"oAP": "/img/Entypo-social/slideshare.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo-social\/smashing.svg": {
+	"/img/Entypo-social/smashing.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/smashing.svg",
+		"oAP": "/img/Entypo-social/smashing.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo-social\/soundcloud.svg": {
+	"/img/Entypo-social/soundcloud.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/soundcloud.svg",
+		"oAP": "/img/Entypo-social/soundcloud.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo-social\/spotify-with-circle.svg": {
+	"/img/Entypo-social/spotify-with-circle.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/spotify-with-circle.svg",
+		"oAP": "/img/Entypo-social/spotify-with-circle.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo-social\/spotify.svg": {
+	"/img/Entypo-social/spotify.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/spotify.svg",
+		"oAP": "/img/Entypo-social/spotify.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo-social\/stumbleupon-with-circle.svg": {
+	"/img/Entypo-social/stumbleupon-with-circle.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/stumbleupon-with-circle.svg",
+		"oAP": "/img/Entypo-social/stumbleupon-with-circle.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo-social\/stumbleupon.svg": {
+	"/img/Entypo-social/stumbleupon.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/stumbleupon.svg",
+		"oAP": "/img/Entypo-social/stumbleupon.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo-social\/swarm.svg": {
+	"/img/Entypo-social/swarm.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/swarm.svg",
+		"oAP": "/img/Entypo-social/swarm.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo-social\/tripadvisor.svg": {
+	"/img/Entypo-social/tripadvisor.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/tripadvisor.svg",
+		"oAP": "/img/Entypo-social/tripadvisor.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo-social\/tumblr-with-circle.svg": {
+	"/img/Entypo-social/tumblr-with-circle.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/tumblr-with-circle.svg",
+		"oAP": "/img/Entypo-social/tumblr-with-circle.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo-social\/tumblr.svg": {
+	"/img/Entypo-social/tumblr.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/tumblr.svg",
+		"oAP": "/img/Entypo-social/tumblr.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo-social\/twitter-with-circle.svg": {
+	"/img/Entypo-social/twitter-with-circle.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/twitter-with-circle.svg",
+		"oAP": "/img/Entypo-social/twitter-with-circle.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo-social\/twitter.svg": {
+	"/img/Entypo-social/twitter.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/twitter.svg",
+		"oAP": "/img/Entypo-social/twitter.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo-social\/vimeo-with-circle.svg": {
+	"/img/Entypo-social/vimeo-with-circle.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/vimeo-with-circle.svg",
+		"oAP": "/img/Entypo-social/vimeo-with-circle.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo-social\/vimeo.svg": {
+	"/img/Entypo-social/vimeo.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/vimeo.svg",
+		"oAP": "/img/Entypo-social/vimeo.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo-social\/vine-with-circle.svg": {
+	"/img/Entypo-social/vine-with-circle.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/vine-with-circle.svg",
+		"oAP": "/img/Entypo-social/vine-with-circle.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo-social\/vine.svg": {
+	"/img/Entypo-social/vine.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/vine.svg",
+		"oAP": "/img/Entypo-social/vine.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo-social\/vk-alternitive.svg": {
+	"/img/Entypo-social/vk-alternitive.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/vk-alternitive.svg",
+		"oAP": "/img/Entypo-social/vk-alternitive.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo-social\/vk-with-circle.svg": {
+	"/img/Entypo-social/vk-with-circle.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/vk-with-circle.svg",
+		"oAP": "/img/Entypo-social/vk-with-circle.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo-social\/vk.svg": {
+	"/img/Entypo-social/vk.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/vk.svg",
+		"oAP": "/img/Entypo-social/vk.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo-social\/windows-store.svg": {
+	"/img/Entypo-social/windows-store.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/windows-store.svg",
+		"oAP": "/img/Entypo-social/windows-store.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo-social\/xing-with-circle.svg": {
+	"/img/Entypo-social/xing-with-circle.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/xing-with-circle.svg",
+		"oAP": "/img/Entypo-social/xing-with-circle.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo-social\/xing.svg": {
+	"/img/Entypo-social/xing.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/xing.svg",
+		"oAP": "/img/Entypo-social/xing.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo-social\/yelp.svg": {
+	"/img/Entypo-social/yelp.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/yelp.svg",
+		"oAP": "/img/Entypo-social/yelp.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo-social\/youko-with-circle.svg": {
+	"/img/Entypo-social/youko-with-circle.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/youko-with-circle.svg",
+		"oAP": "/img/Entypo-social/youko-with-circle.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo-social\/youko.svg": {
+	"/img/Entypo-social/youko.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/youko.svg",
+		"oAP": "/img/Entypo-social/youko.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo-social\/youtube-with-circle.svg": {
+	"/img/Entypo-social/youtube-with-circle.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/youtube-with-circle.svg",
+		"oAP": "/img/Entypo-social/youtube-with-circle.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo-social\/youtube.svg": {
+	"/img/Entypo-social/youtube.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo-social\/youtube.svg",
+		"oAP": "/img/Entypo-social/youtube.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/add-to-list.svg": {
+	"/img/Entypo/add-to-list.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/add-to-list.svg",
+		"oAP": "/img/Entypo/add-to-list.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/add-user.svg": {
+	"/img/Entypo/add-user.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/add-user.svg",
+		"oAP": "/img/Entypo/add-user.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/address.svg": {
+	"/img/Entypo/address.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/address.svg",
+		"oAP": "/img/Entypo/address.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/adjust.svg": {
+	"/img/Entypo/adjust.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/adjust.svg",
+		"oAP": "/img/Entypo/adjust.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/air.svg": {
+	"/img/Entypo/air.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/air.svg",
+		"oAP": "/img/Entypo/air.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/aircraft-landing.svg": {
+	"/img/Entypo/aircraft-landing.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/aircraft-landing.svg",
+		"oAP": "/img/Entypo/aircraft-landing.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/aircraft-take-off.svg": {
+	"/img/Entypo/aircraft-take-off.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/aircraft-take-off.svg",
+		"oAP": "/img/Entypo/aircraft-take-off.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/aircraft.svg": {
+	"/img/Entypo/aircraft.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/aircraft.svg",
+		"oAP": "/img/Entypo/aircraft.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/align-bottom.svg": {
+	"/img/Entypo/align-bottom.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/align-bottom.svg",
+		"oAP": "/img/Entypo/align-bottom.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/align-horizontal-middle.svg": {
+	"/img/Entypo/align-horizontal-middle.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/align-horizontal-middle.svg",
+		"oAP": "/img/Entypo/align-horizontal-middle.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/align-left.svg": {
+	"/img/Entypo/align-left.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/align-left.svg",
+		"oAP": "/img/Entypo/align-left.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/align-right.svg": {
+	"/img/Entypo/align-right.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/align-right.svg",
+		"oAP": "/img/Entypo/align-right.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/align-top.svg": {
+	"/img/Entypo/align-top.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/align-top.svg",
+		"oAP": "/img/Entypo/align-top.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/align-vertical-middle.svg": {
+	"/img/Entypo/align-vertical-middle.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/align-vertical-middle.svg",
+		"oAP": "/img/Entypo/align-vertical-middle.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/archive.svg": {
+	"/img/Entypo/archive.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/archive.svg",
+		"oAP": "/img/Entypo/archive.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/area-graph.svg": {
+	"/img/Entypo/area-graph.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/area-graph.svg",
+		"oAP": "/img/Entypo/area-graph.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/arrow-bold-down.svg": {
+	"/img/Entypo/arrow-bold-down.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/arrow-bold-down.svg",
+		"oAP": "/img/Entypo/arrow-bold-down.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/arrow-bold-left.svg": {
+	"/img/Entypo/arrow-bold-left.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/arrow-bold-left.svg",
+		"oAP": "/img/Entypo/arrow-bold-left.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/arrow-bold-right.svg": {
+	"/img/Entypo/arrow-bold-right.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/arrow-bold-right.svg",
+		"oAP": "/img/Entypo/arrow-bold-right.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/arrow-bold-up.svg": {
+	"/img/Entypo/arrow-bold-up.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/arrow-bold-up.svg",
+		"oAP": "/img/Entypo/arrow-bold-up.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/arrow-down.svg": {
+	"/img/Entypo/arrow-down.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/arrow-down.svg",
+		"oAP": "/img/Entypo/arrow-down.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/arrow-left.svg": {
+	"/img/Entypo/arrow-left.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/arrow-left.svg",
+		"oAP": "/img/Entypo/arrow-left.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/arrow-long-down.svg": {
+	"/img/Entypo/arrow-long-down.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/arrow-long-down.svg",
+		"oAP": "/img/Entypo/arrow-long-down.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/arrow-long-left.svg": {
+	"/img/Entypo/arrow-long-left.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/arrow-long-left.svg",
+		"oAP": "/img/Entypo/arrow-long-left.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/arrow-long-right.svg": {
+	"/img/Entypo/arrow-long-right.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/arrow-long-right.svg",
+		"oAP": "/img/Entypo/arrow-long-right.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/arrow-long-up.svg": {
+	"/img/Entypo/arrow-long-up.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/arrow-long-up.svg",
+		"oAP": "/img/Entypo/arrow-long-up.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/arrow-right.svg": {
+	"/img/Entypo/arrow-right.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/arrow-right.svg",
+		"oAP": "/img/Entypo/arrow-right.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/arrow-up.svg": {
+	"/img/Entypo/arrow-up.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/arrow-up.svg",
+		"oAP": "/img/Entypo/arrow-up.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/arrow-with-circle-down.svg": {
+	"/img/Entypo/arrow-with-circle-down.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/arrow-with-circle-down.svg",
+		"oAP": "/img/Entypo/arrow-with-circle-down.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/arrow-with-circle-left.svg": {
+	"/img/Entypo/arrow-with-circle-left.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/arrow-with-circle-left.svg",
+		"oAP": "/img/Entypo/arrow-with-circle-left.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/arrow-with-circle-right.svg": {
+	"/img/Entypo/arrow-with-circle-right.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/arrow-with-circle-right.svg",
+		"oAP": "/img/Entypo/arrow-with-circle-right.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/arrow-with-circle-up.svg": {
+	"/img/Entypo/arrow-with-circle-up.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/arrow-with-circle-up.svg",
+		"oAP": "/img/Entypo/arrow-with-circle-up.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/attachment.svg": {
+	"/img/Entypo/attachment.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/attachment.svg",
+		"oAP": "/img/Entypo/attachment.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/awareness-ribbon.svg": {
+	"/img/Entypo/awareness-ribbon.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/awareness-ribbon.svg",
+		"oAP": "/img/Entypo/awareness-ribbon.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/back-in-time.svg": {
+	"/img/Entypo/back-in-time.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/back-in-time.svg",
+		"oAP": "/img/Entypo/back-in-time.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/back.svg": {
+	"/img/Entypo/back.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/back.svg",
+		"oAP": "/img/Entypo/back.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/bar-graph.svg": {
+	"/img/Entypo/bar-graph.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/bar-graph.svg",
+		"oAP": "/img/Entypo/bar-graph.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/battery.svg": {
+	"/img/Entypo/battery.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/battery.svg",
+		"oAP": "/img/Entypo/battery.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/beamed-note.svg": {
+	"/img/Entypo/beamed-note.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/beamed-note.svg",
+		"oAP": "/img/Entypo/beamed-note.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/bell.svg": {
+	"/img/Entypo/bell.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/bell.svg",
+		"oAP": "/img/Entypo/bell.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/blackboard.svg": {
+	"/img/Entypo/blackboard.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/blackboard.svg",
+		"oAP": "/img/Entypo/blackboard.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/block.svg": {
+	"/img/Entypo/block.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/block.svg",
+		"oAP": "/img/Entypo/block.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/book.svg": {
+	"/img/Entypo/book.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/book.svg",
+		"oAP": "/img/Entypo/book.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/bookmark.svg": {
+	"/img/Entypo/bookmark.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/bookmark.svg",
+		"oAP": "/img/Entypo/bookmark.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/bookmarks.svg": {
+	"/img/Entypo/bookmarks.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/bookmarks.svg",
+		"oAP": "/img/Entypo/bookmarks.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/bowl.svg": {
+	"/img/Entypo/bowl.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/bowl.svg",
+		"oAP": "/img/Entypo/bowl.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/box.svg": {
+	"/img/Entypo/box.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/box.svg",
+		"oAP": "/img/Entypo/box.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/briefcase.svg": {
+	"/img/Entypo/briefcase.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/briefcase.svg",
+		"oAP": "/img/Entypo/briefcase.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/browser.svg": {
+	"/img/Entypo/browser.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/browser.svg",
+		"oAP": "/img/Entypo/browser.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/brush.svg": {
+	"/img/Entypo/brush.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/brush.svg",
+		"oAP": "/img/Entypo/brush.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/bucket.svg": {
+	"/img/Entypo/bucket.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/bucket.svg",
+		"oAP": "/img/Entypo/bucket.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/bug.svg": {
+	"/img/Entypo/bug.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/bug.svg",
+		"oAP": "/img/Entypo/bug.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/cake.svg": {
+	"/img/Entypo/cake.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/cake.svg",
+		"oAP": "/img/Entypo/cake.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/calculator.svg": {
+	"/img/Entypo/calculator.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/calculator.svg",
+		"oAP": "/img/Entypo/calculator.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/calendar.svg": {
+	"/img/Entypo/calendar.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/calendar.svg",
+		"oAP": "/img/Entypo/calendar.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/camera.svg": {
+	"/img/Entypo/camera.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/camera.svg",
+		"oAP": "/img/Entypo/camera.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/ccw.svg": {
+	"/img/Entypo/ccw.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/ccw.svg",
+		"oAP": "/img/Entypo/ccw.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/chat.svg": {
+	"/img/Entypo/chat.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/chat.svg",
+		"oAP": "/img/Entypo/chat.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/check.svg": {
+	"/img/Entypo/check.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/check.svg",
+		"oAP": "/img/Entypo/check.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/chevron-down.svg": {
+	"/img/Entypo/chevron-down.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/chevron-down.svg",
+		"oAP": "/img/Entypo/chevron-down.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/chevron-left.svg": {
+	"/img/Entypo/chevron-left.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/chevron-left.svg",
+		"oAP": "/img/Entypo/chevron-left.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/chevron-right.svg": {
+	"/img/Entypo/chevron-right.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/chevron-right.svg",
+		"oAP": "/img/Entypo/chevron-right.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/chevron-small-down.svg": {
+	"/img/Entypo/chevron-small-down.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/chevron-small-down.svg",
+		"oAP": "/img/Entypo/chevron-small-down.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/chevron-small-left.svg": {
+	"/img/Entypo/chevron-small-left.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/chevron-small-left.svg",
+		"oAP": "/img/Entypo/chevron-small-left.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/chevron-small-right.svg": {
+	"/img/Entypo/chevron-small-right.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/chevron-small-right.svg",
+		"oAP": "/img/Entypo/chevron-small-right.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/chevron-small-up.svg": {
+	"/img/Entypo/chevron-small-up.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/chevron-small-up.svg",
+		"oAP": "/img/Entypo/chevron-small-up.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/chevron-thin-down.svg": {
+	"/img/Entypo/chevron-thin-down.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/chevron-thin-down.svg",
+		"oAP": "/img/Entypo/chevron-thin-down.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/chevron-thin-left.svg": {
+	"/img/Entypo/chevron-thin-left.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/chevron-thin-left.svg",
+		"oAP": "/img/Entypo/chevron-thin-left.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/chevron-thin-right.svg": {
+	"/img/Entypo/chevron-thin-right.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/chevron-thin-right.svg",
+		"oAP": "/img/Entypo/chevron-thin-right.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/chevron-thin-up.svg": {
+	"/img/Entypo/chevron-thin-up.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/chevron-thin-up.svg",
+		"oAP": "/img/Entypo/chevron-thin-up.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/chevron-up.svg": {
+	"/img/Entypo/chevron-up.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/chevron-up.svg",
+		"oAP": "/img/Entypo/chevron-up.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/chevron-with-circle-down.svg": {
+	"/img/Entypo/chevron-with-circle-down.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/chevron-with-circle-down.svg",
+		"oAP": "/img/Entypo/chevron-with-circle-down.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/chevron-with-circle-left.svg": {
+	"/img/Entypo/chevron-with-circle-left.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/chevron-with-circle-left.svg",
+		"oAP": "/img/Entypo/chevron-with-circle-left.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/chevron-with-circle-right.svg": {
+	"/img/Entypo/chevron-with-circle-right.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/chevron-with-circle-right.svg",
+		"oAP": "/img/Entypo/chevron-with-circle-right.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/chevron-with-circle-up.svg": {
+	"/img/Entypo/chevron-with-circle-up.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/chevron-with-circle-up.svg",
+		"oAP": "/img/Entypo/chevron-with-circle-up.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/circle-with-cross.svg": {
+	"/img/Entypo/circle-with-cross.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/circle-with-cross.svg",
+		"oAP": "/img/Entypo/circle-with-cross.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/circle-with-minus.svg": {
+	"/img/Entypo/circle-with-minus.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/circle-with-minus.svg",
+		"oAP": "/img/Entypo/circle-with-minus.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/circle-with-plus.svg": {
+	"/img/Entypo/circle-with-plus.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/circle-with-plus.svg",
+		"oAP": "/img/Entypo/circle-with-plus.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/circle.svg": {
+	"/img/Entypo/circle.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/circle.svg",
+		"oAP": "/img/Entypo/circle.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/circular-graph.svg": {
+	"/img/Entypo/circular-graph.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/circular-graph.svg",
+		"oAP": "/img/Entypo/circular-graph.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/clapperboard.svg": {
+	"/img/Entypo/clapperboard.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/clapperboard.svg",
+		"oAP": "/img/Entypo/clapperboard.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/classic-computer.svg": {
+	"/img/Entypo/classic-computer.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/classic-computer.svg",
+		"oAP": "/img/Entypo/classic-computer.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/clipboard.svg": {
+	"/img/Entypo/clipboard.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/clipboard.svg",
+		"oAP": "/img/Entypo/clipboard.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/clock.svg": {
+	"/img/Entypo/clock.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/clock.svg",
+		"oAP": "/img/Entypo/clock.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/cloud.svg": {
+	"/img/Entypo/cloud.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/cloud.svg",
+		"oAP": "/img/Entypo/cloud.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/code.svg": {
+	"/img/Entypo/code.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/code.svg",
+		"oAP": "/img/Entypo/code.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/cog.svg": {
+	"/img/Entypo/cog.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/cog.svg",
+		"oAP": "/img/Entypo/cog.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/colours.svg": {
+	"/img/Entypo/colours.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/colours.svg",
+		"oAP": "/img/Entypo/colours.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/compass.svg": {
+	"/img/Entypo/compass.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/compass.svg",
+		"oAP": "/img/Entypo/compass.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/controller-fast-backward.svg": {
+	"/img/Entypo/controller-fast-backward.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/controller-fast-backward.svg",
+		"oAP": "/img/Entypo/controller-fast-backward.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/controller-fast-forward.svg": {
+	"/img/Entypo/controller-fast-forward.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/controller-fast-forward.svg",
+		"oAP": "/img/Entypo/controller-fast-forward.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/controller-jump-to-start.svg": {
+	"/img/Entypo/controller-jump-to-start.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/controller-jump-to-start.svg",
+		"oAP": "/img/Entypo/controller-jump-to-start.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/controller-next.svg": {
+	"/img/Entypo/controller-next.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/controller-next.svg",
+		"oAP": "/img/Entypo/controller-next.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/controller-paus.svg": {
+	"/img/Entypo/controller-paus.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/controller-paus.svg",
+		"oAP": "/img/Entypo/controller-paus.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/controller-play.svg": {
+	"/img/Entypo/controller-play.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/controller-play.svg",
+		"oAP": "/img/Entypo/controller-play.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/controller-record.svg": {
+	"/img/Entypo/controller-record.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/controller-record.svg",
+		"oAP": "/img/Entypo/controller-record.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/controller-stop.svg": {
+	"/img/Entypo/controller-stop.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/controller-stop.svg",
+		"oAP": "/img/Entypo/controller-stop.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/controller-volume.svg": {
+	"/img/Entypo/controller-volume.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/controller-volume.svg",
+		"oAP": "/img/Entypo/controller-volume.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/copy.svg": {
+	"/img/Entypo/copy.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/copy.svg",
+		"oAP": "/img/Entypo/copy.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/creative-commons-attribution.svg": {
+	"/img/Entypo/creative-commons-attribution.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/creative-commons-attribution.svg",
+		"oAP": "/img/Entypo/creative-commons-attribution.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/creative-commons-noderivs.svg": {
+	"/img/Entypo/creative-commons-noderivs.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/creative-commons-noderivs.svg",
+		"oAP": "/img/Entypo/creative-commons-noderivs.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/creative-commons-noncommercial-eu.svg": {
+	"/img/Entypo/creative-commons-noncommercial-eu.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/creative-commons-noncommercial-eu.svg",
+		"oAP": "/img/Entypo/creative-commons-noncommercial-eu.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/creative-commons-noncommercial-us.svg": {
+	"/img/Entypo/creative-commons-noncommercial-us.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/creative-commons-noncommercial-us.svg",
+		"oAP": "/img/Entypo/creative-commons-noncommercial-us.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/creative-commons-public-domain.svg": {
+	"/img/Entypo/creative-commons-public-domain.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/creative-commons-public-domain.svg",
+		"oAP": "/img/Entypo/creative-commons-public-domain.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/creative-commons-remix.svg": {
+	"/img/Entypo/creative-commons-remix.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/creative-commons-remix.svg",
+		"oAP": "/img/Entypo/creative-commons-remix.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/creative-commons-share.svg": {
+	"/img/Entypo/creative-commons-share.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/creative-commons-share.svg",
+		"oAP": "/img/Entypo/creative-commons-share.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/creative-commons-sharealike.svg": {
+	"/img/Entypo/creative-commons-sharealike.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/creative-commons-sharealike.svg",
+		"oAP": "/img/Entypo/creative-commons-sharealike.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/creative-commons.svg": {
+	"/img/Entypo/creative-commons.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/creative-commons.svg",
+		"oAP": "/img/Entypo/creative-commons.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/credit-card.svg": {
+	"/img/Entypo/credit-card.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/credit-card.svg",
+		"oAP": "/img/Entypo/credit-card.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/credit.svg": {
+	"/img/Entypo/credit.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/credit.svg",
+		"oAP": "/img/Entypo/credit.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/crop.svg": {
+	"/img/Entypo/crop.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/crop.svg",
+		"oAP": "/img/Entypo/crop.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/cross.svg": {
+	"/img/Entypo/cross.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/cross.svg",
+		"oAP": "/img/Entypo/cross.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/cup.svg": {
+	"/img/Entypo/cup.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/cup.svg",
+		"oAP": "/img/Entypo/cup.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/cw.svg": {
+	"/img/Entypo/cw.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/cw.svg",
+		"oAP": "/img/Entypo/cw.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/cycle.svg": {
+	"/img/Entypo/cycle.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/cycle.svg",
+		"oAP": "/img/Entypo/cycle.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/database.svg": {
+	"/img/Entypo/database.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/database.svg",
+		"oAP": "/img/Entypo/database.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/dial-pad.svg": {
+	"/img/Entypo/dial-pad.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/dial-pad.svg",
+		"oAP": "/img/Entypo/dial-pad.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/direction.svg": {
+	"/img/Entypo/direction.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/direction.svg",
+		"oAP": "/img/Entypo/direction.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/document-landscape.svg": {
+	"/img/Entypo/document-landscape.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/document-landscape.svg",
+		"oAP": "/img/Entypo/document-landscape.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/document.svg": {
+	"/img/Entypo/document.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/document.svg",
+		"oAP": "/img/Entypo/document.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/documents.svg": {
+	"/img/Entypo/documents.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/documents.svg",
+		"oAP": "/img/Entypo/documents.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/dot-single.svg": {
+	"/img/Entypo/dot-single.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/dot-single.svg",
+		"oAP": "/img/Entypo/dot-single.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/dots-three-horizontal.svg": {
+	"/img/Entypo/dots-three-horizontal.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/dots-three-horizontal.svg",
+		"oAP": "/img/Entypo/dots-three-horizontal.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/dots-three-vertical.svg": {
+	"/img/Entypo/dots-three-vertical.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/dots-three-vertical.svg",
+		"oAP": "/img/Entypo/dots-three-vertical.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/dots-two-horizontal.svg": {
+	"/img/Entypo/dots-two-horizontal.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/dots-two-horizontal.svg",
+		"oAP": "/img/Entypo/dots-two-horizontal.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/dots-two-vertical.svg": {
+	"/img/Entypo/dots-two-vertical.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/dots-two-vertical.svg",
+		"oAP": "/img/Entypo/dots-two-vertical.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/download.svg": {
+	"/img/Entypo/download.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/download.svg",
+		"oAP": "/img/Entypo/download.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/drink.svg": {
+	"/img/Entypo/drink.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/drink.svg",
+		"oAP": "/img/Entypo/drink.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/drive.svg": {
+	"/img/Entypo/drive.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/drive.svg",
+		"oAP": "/img/Entypo/drive.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/drop.svg": {
+	"/img/Entypo/drop.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/drop.svg",
+		"oAP": "/img/Entypo/drop.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/edit.svg": {
+	"/img/Entypo/edit.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/edit.svg",
+		"oAP": "/img/Entypo/edit.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/email.svg": {
+	"/img/Entypo/email.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/email.svg",
+		"oAP": "/img/Entypo/email.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/emoji-flirt.svg": {
+	"/img/Entypo/emoji-flirt.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/emoji-flirt.svg",
+		"oAP": "/img/Entypo/emoji-flirt.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/emoji-happy.svg": {
+	"/img/Entypo/emoji-happy.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/emoji-happy.svg",
+		"oAP": "/img/Entypo/emoji-happy.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/emoji-neutral.svg": {
+	"/img/Entypo/emoji-neutral.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/emoji-neutral.svg",
+		"oAP": "/img/Entypo/emoji-neutral.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/emoji-sad.svg": {
+	"/img/Entypo/emoji-sad.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/emoji-sad.svg",
+		"oAP": "/img/Entypo/emoji-sad.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/erase.svg": {
+	"/img/Entypo/erase.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/erase.svg",
+		"oAP": "/img/Entypo/erase.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/eraser.svg": {
+	"/img/Entypo/eraser.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/eraser.svg",
+		"oAP": "/img/Entypo/eraser.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/export.svg": {
+	"/img/Entypo/export.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/export.svg",
+		"oAP": "/img/Entypo/export.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/eye-with-line.svg": {
+	"/img/Entypo/eye-with-line.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/eye-with-line.svg",
+		"oAP": "/img/Entypo/eye-with-line.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/eye.svg": {
+	"/img/Entypo/eye.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/eye.svg",
+		"oAP": "/img/Entypo/eye.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/feather.svg": {
+	"/img/Entypo/feather.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/feather.svg",
+		"oAP": "/img/Entypo/feather.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/fingerprint.svg": {
+	"/img/Entypo/fingerprint.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/fingerprint.svg",
+		"oAP": "/img/Entypo/fingerprint.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/flag.svg": {
+	"/img/Entypo/flag.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/flag.svg",
+		"oAP": "/img/Entypo/flag.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/flash.svg": {
+	"/img/Entypo/flash.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/flash.svg",
+		"oAP": "/img/Entypo/flash.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/flashlight.svg": {
+	"/img/Entypo/flashlight.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/flashlight.svg",
+		"oAP": "/img/Entypo/flashlight.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/flat-brush.svg": {
+	"/img/Entypo/flat-brush.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/flat-brush.svg",
+		"oAP": "/img/Entypo/flat-brush.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/flow-branch.svg": {
+	"/img/Entypo/flow-branch.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/flow-branch.svg",
+		"oAP": "/img/Entypo/flow-branch.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/flow-cascade.svg": {
+	"/img/Entypo/flow-cascade.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/flow-cascade.svg",
+		"oAP": "/img/Entypo/flow-cascade.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/flow-line.svg": {
+	"/img/Entypo/flow-line.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/flow-line.svg",
+		"oAP": "/img/Entypo/flow-line.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/flow-parallel.svg": {
+	"/img/Entypo/flow-parallel.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/flow-parallel.svg",
+		"oAP": "/img/Entypo/flow-parallel.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/flow-tree.svg": {
+	"/img/Entypo/flow-tree.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/flow-tree.svg",
+		"oAP": "/img/Entypo/flow-tree.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/flower.svg": {
+	"/img/Entypo/flower.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/flower.svg",
+		"oAP": "/img/Entypo/flower.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/folder-images.svg": {
+	"/img/Entypo/folder-images.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/folder-images.svg",
+		"oAP": "/img/Entypo/folder-images.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/folder-music.svg": {
+	"/img/Entypo/folder-music.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/folder-music.svg",
+		"oAP": "/img/Entypo/folder-music.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/folder-video.svg": {
+	"/img/Entypo/folder-video.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/folder-video.svg",
+		"oAP": "/img/Entypo/folder-video.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/folder.svg": {
+	"/img/Entypo/folder.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/folder.svg",
+		"oAP": "/img/Entypo/folder.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/forward.svg": {
+	"/img/Entypo/forward.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/forward.svg",
+		"oAP": "/img/Entypo/forward.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/funnel.svg": {
+	"/img/Entypo/funnel.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/funnel.svg",
+		"oAP": "/img/Entypo/funnel.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/game-controller.svg": {
+	"/img/Entypo/game-controller.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/game-controller.svg",
+		"oAP": "/img/Entypo/game-controller.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/gauge.svg": {
+	"/img/Entypo/gauge.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/gauge.svg",
+		"oAP": "/img/Entypo/gauge.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/globe.svg": {
+	"/img/Entypo/globe.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/globe.svg",
+		"oAP": "/img/Entypo/globe.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/graduation-cap.svg": {
+	"/img/Entypo/graduation-cap.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/graduation-cap.svg",
+		"oAP": "/img/Entypo/graduation-cap.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/grid.svg": {
+	"/img/Entypo/grid.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/grid.svg",
+		"oAP": "/img/Entypo/grid.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/hair-cross.svg": {
+	"/img/Entypo/hair-cross.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/hair-cross.svg",
+		"oAP": "/img/Entypo/hair-cross.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/hand.svg": {
+	"/img/Entypo/hand.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/hand.svg",
+		"oAP": "/img/Entypo/hand.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/heart-outlined.svg": {
+	"/img/Entypo/heart-outlined.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/heart-outlined.svg",
+		"oAP": "/img/Entypo/heart-outlined.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/heart.svg": {
+	"/img/Entypo/heart.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/heart.svg",
+		"oAP": "/img/Entypo/heart.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/help-with-circle.svg": {
+	"/img/Entypo/help-with-circle.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/help-with-circle.svg",
+		"oAP": "/img/Entypo/help-with-circle.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/help.svg": {
+	"/img/Entypo/help.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/help.svg",
+		"oAP": "/img/Entypo/help.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/home.svg": {
+	"/img/Entypo/home.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/home.svg",
+		"oAP": "/img/Entypo/home.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/hour-glass.svg": {
+	"/img/Entypo/hour-glass.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/hour-glass.svg",
+		"oAP": "/img/Entypo/hour-glass.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/Icon\r": {
+	"/img/Entypo/Icon\r": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/Icon\r",
+		"oAP": "/img/Entypo/Icon\r",
 		"oF": 0
 		},
-	"\/img\/Entypo\/image-inverted.svg": {
+	"/img/Entypo/image-inverted.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/image-inverted.svg",
+		"oAP": "/img/Entypo/image-inverted.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/image.svg": {
+	"/img/Entypo/image.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/image.svg",
+		"oAP": "/img/Entypo/image.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/images.svg": {
+	"/img/Entypo/images.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/images.svg",
+		"oAP": "/img/Entypo/images.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/inbox.svg": {
+	"/img/Entypo/inbox.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/inbox.svg",
+		"oAP": "/img/Entypo/inbox.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/infinity.svg": {
+	"/img/Entypo/infinity.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/infinity.svg",
+		"oAP": "/img/Entypo/infinity.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/info-with-circle.svg": {
+	"/img/Entypo/info-with-circle.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/info-with-circle.svg",
+		"oAP": "/img/Entypo/info-with-circle.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/info.svg": {
+	"/img/Entypo/info.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/info.svg",
+		"oAP": "/img/Entypo/info.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/install.svg": {
+	"/img/Entypo/install.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/install.svg",
+		"oAP": "/img/Entypo/install.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/key.svg": {
+	"/img/Entypo/key.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/key.svg",
+		"oAP": "/img/Entypo/key.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/keyboard.svg": {
+	"/img/Entypo/keyboard.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/keyboard.svg",
+		"oAP": "/img/Entypo/keyboard.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/lab-flask.svg": {
+	"/img/Entypo/lab-flask.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/lab-flask.svg",
+		"oAP": "/img/Entypo/lab-flask.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/landline.svg": {
+	"/img/Entypo/landline.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/landline.svg",
+		"oAP": "/img/Entypo/landline.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/language.svg": {
+	"/img/Entypo/language.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/language.svg",
+		"oAP": "/img/Entypo/language.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/laptop.svg": {
+	"/img/Entypo/laptop.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/laptop.svg",
+		"oAP": "/img/Entypo/laptop.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/layers.svg": {
+	"/img/Entypo/layers.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/layers.svg",
+		"oAP": "/img/Entypo/layers.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/leaf.svg": {
+	"/img/Entypo/leaf.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/leaf.svg",
+		"oAP": "/img/Entypo/leaf.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/level-down.svg": {
+	"/img/Entypo/level-down.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/level-down.svg",
+		"oAP": "/img/Entypo/level-down.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/level-up.svg": {
+	"/img/Entypo/level-up.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/level-up.svg",
+		"oAP": "/img/Entypo/level-up.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/lifebuoy.svg": {
+	"/img/Entypo/lifebuoy.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/lifebuoy.svg",
+		"oAP": "/img/Entypo/lifebuoy.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/light-bulb.svg": {
+	"/img/Entypo/light-bulb.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/light-bulb.svg",
+		"oAP": "/img/Entypo/light-bulb.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/light-down.svg": {
+	"/img/Entypo/light-down.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/light-down.svg",
+		"oAP": "/img/Entypo/light-down.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/light-up.svg": {
+	"/img/Entypo/light-up.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/light-up.svg",
+		"oAP": "/img/Entypo/light-up.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/line-graph.svg": {
+	"/img/Entypo/line-graph.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/line-graph.svg",
+		"oAP": "/img/Entypo/line-graph.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/link.svg": {
+	"/img/Entypo/link.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/link.svg",
+		"oAP": "/img/Entypo/link.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/list.svg": {
+	"/img/Entypo/list.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/list.svg",
+		"oAP": "/img/Entypo/list.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/location-pin.svg": {
+	"/img/Entypo/location-pin.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/location-pin.svg",
+		"oAP": "/img/Entypo/location-pin.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/location.svg": {
+	"/img/Entypo/location.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/location.svg",
+		"oAP": "/img/Entypo/location.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/lock-open.svg": {
+	"/img/Entypo/lock-open.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/lock-open.svg",
+		"oAP": "/img/Entypo/lock-open.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/lock.svg": {
+	"/img/Entypo/lock.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/lock.svg",
+		"oAP": "/img/Entypo/lock.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/log-out.svg": {
+	"/img/Entypo/log-out.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/log-out.svg",
+		"oAP": "/img/Entypo/log-out.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/login.svg": {
+	"/img/Entypo/login.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/login.svg",
+		"oAP": "/img/Entypo/login.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/loop.svg": {
+	"/img/Entypo/loop.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/loop.svg",
+		"oAP": "/img/Entypo/loop.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/magnet.svg": {
+	"/img/Entypo/magnet.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/magnet.svg",
+		"oAP": "/img/Entypo/magnet.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/magnifying-glass.svg": {
+	"/img/Entypo/magnifying-glass.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/magnifying-glass.svg",
+		"oAP": "/img/Entypo/magnifying-glass.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/mail.svg": {
+	"/img/Entypo/mail.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/mail.svg",
+		"oAP": "/img/Entypo/mail.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/man.svg": {
+	"/img/Entypo/man.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/man.svg",
+		"oAP": "/img/Entypo/man.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/map.svg": {
+	"/img/Entypo/map.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/map.svg",
+		"oAP": "/img/Entypo/map.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/mask.svg": {
+	"/img/Entypo/mask.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/mask.svg",
+		"oAP": "/img/Entypo/mask.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/medal.svg": {
+	"/img/Entypo/medal.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/medal.svg",
+		"oAP": "/img/Entypo/medal.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/megaphone.svg": {
+	"/img/Entypo/megaphone.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/megaphone.svg",
+		"oAP": "/img/Entypo/megaphone.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/menu.svg": {
+	"/img/Entypo/menu.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/menu.svg",
+		"oAP": "/img/Entypo/menu.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/merge.svg": {
+	"/img/Entypo/merge.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/merge.svg",
+		"oAP": "/img/Entypo/merge.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/message.svg": {
+	"/img/Entypo/message.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/message.svg",
+		"oAP": "/img/Entypo/message.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/mic.svg": {
+	"/img/Entypo/mic.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/mic.svg",
+		"oAP": "/img/Entypo/mic.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/minus.svg": {
+	"/img/Entypo/minus.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/minus.svg",
+		"oAP": "/img/Entypo/minus.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/mobile.svg": {
+	"/img/Entypo/mobile.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/mobile.svg",
+		"oAP": "/img/Entypo/mobile.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/modern-mic.svg": {
+	"/img/Entypo/modern-mic.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/modern-mic.svg",
+		"oAP": "/img/Entypo/modern-mic.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/moon.svg": {
+	"/img/Entypo/moon.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/moon.svg",
+		"oAP": "/img/Entypo/moon.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/mouse-pointer.svg": {
+	"/img/Entypo/mouse-pointer.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/mouse-pointer.svg",
+		"oAP": "/img/Entypo/mouse-pointer.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/mouse.svg": {
+	"/img/Entypo/mouse.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/mouse.svg",
+		"oAP": "/img/Entypo/mouse.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/music.svg": {
+	"/img/Entypo/music.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/music.svg",
+		"oAP": "/img/Entypo/music.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/network.svg": {
+	"/img/Entypo/network.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/network.svg",
+		"oAP": "/img/Entypo/network.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/new-message.svg": {
+	"/img/Entypo/new-message.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/new-message.svg",
+		"oAP": "/img/Entypo/new-message.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/new.svg": {
+	"/img/Entypo/new.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/new.svg",
+		"oAP": "/img/Entypo/new.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/news.svg": {
+	"/img/Entypo/news.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/news.svg",
+		"oAP": "/img/Entypo/news.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/newsletter.svg": {
+	"/img/Entypo/newsletter.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/newsletter.svg",
+		"oAP": "/img/Entypo/newsletter.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/note.svg": {
+	"/img/Entypo/note.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/note.svg",
+		"oAP": "/img/Entypo/note.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/notification.svg": {
+	"/img/Entypo/notification.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/notification.svg",
+		"oAP": "/img/Entypo/notification.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/notifications-off.svg": {
+	"/img/Entypo/notifications-off.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/notifications-off.svg",
+		"oAP": "/img/Entypo/notifications-off.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/old-mobile.svg": {
+	"/img/Entypo/old-mobile.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/old-mobile.svg",
+		"oAP": "/img/Entypo/old-mobile.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/old-phone.svg": {
+	"/img/Entypo/old-phone.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/old-phone.svg",
+		"oAP": "/img/Entypo/old-phone.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/open-book.svg": {
+	"/img/Entypo/open-book.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/open-book.svg",
+		"oAP": "/img/Entypo/open-book.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/palette.svg": {
+	"/img/Entypo/palette.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/palette.svg",
+		"oAP": "/img/Entypo/palette.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/paper-plane.svg": {
+	"/img/Entypo/paper-plane.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/paper-plane.svg",
+		"oAP": "/img/Entypo/paper-plane.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/pencil.svg": {
+	"/img/Entypo/pencil.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/pencil.svg",
+		"oAP": "/img/Entypo/pencil.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/phone.svg": {
+	"/img/Entypo/phone.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/phone.svg",
+		"oAP": "/img/Entypo/phone.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/pie-chart.svg": {
+	"/img/Entypo/pie-chart.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/pie-chart.svg",
+		"oAP": "/img/Entypo/pie-chart.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/pin.svg": {
+	"/img/Entypo/pin.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/pin.svg",
+		"oAP": "/img/Entypo/pin.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/plus.svg": {
+	"/img/Entypo/plus.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/plus.svg",
+		"oAP": "/img/Entypo/plus.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/popup.svg": {
+	"/img/Entypo/popup.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/popup.svg",
+		"oAP": "/img/Entypo/popup.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/power-plug.svg": {
+	"/img/Entypo/power-plug.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/power-plug.svg",
+		"oAP": "/img/Entypo/power-plug.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/price-ribbon.svg": {
+	"/img/Entypo/price-ribbon.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/price-ribbon.svg",
+		"oAP": "/img/Entypo/price-ribbon.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/price-tag.svg": {
+	"/img/Entypo/price-tag.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/price-tag.svg",
+		"oAP": "/img/Entypo/price-tag.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/print.svg": {
+	"/img/Entypo/print.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/print.svg",
+		"oAP": "/img/Entypo/print.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/progress-empty.svg": {
+	"/img/Entypo/progress-empty.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/progress-empty.svg",
+		"oAP": "/img/Entypo/progress-empty.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/progress-full.svg": {
+	"/img/Entypo/progress-full.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/progress-full.svg",
+		"oAP": "/img/Entypo/progress-full.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/progress-one.svg": {
+	"/img/Entypo/progress-one.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/progress-one.svg",
+		"oAP": "/img/Entypo/progress-one.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/progress-two.svg": {
+	"/img/Entypo/progress-two.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/progress-two.svg",
+		"oAP": "/img/Entypo/progress-two.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/publish.svg": {
+	"/img/Entypo/publish.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/publish.svg",
+		"oAP": "/img/Entypo/publish.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/quote.svg": {
+	"/img/Entypo/quote.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/quote.svg",
+		"oAP": "/img/Entypo/quote.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/radio.svg": {
+	"/img/Entypo/radio.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/radio.svg",
+		"oAP": "/img/Entypo/radio.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/remove-user.svg": {
+	"/img/Entypo/remove-user.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/remove-user.svg",
+		"oAP": "/img/Entypo/remove-user.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/reply-all.svg": {
+	"/img/Entypo/reply-all.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/reply-all.svg",
+		"oAP": "/img/Entypo/reply-all.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/reply.svg": {
+	"/img/Entypo/reply.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/reply.svg",
+		"oAP": "/img/Entypo/reply.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/resize-100%.svg": {
+	"/img/Entypo/resize-100%.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/resize-100%.svg",
+		"oAP": "/img/Entypo/resize-100%.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/resize-full-screen.svg": {
+	"/img/Entypo/resize-full-screen.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/resize-full-screen.svg",
+		"oAP": "/img/Entypo/resize-full-screen.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/retweet.svg": {
+	"/img/Entypo/retweet.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/retweet.svg",
+		"oAP": "/img/Entypo/retweet.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/rocket.svg": {
+	"/img/Entypo/rocket.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/rocket.svg",
+		"oAP": "/img/Entypo/rocket.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/round-brush.svg": {
+	"/img/Entypo/round-brush.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/round-brush.svg",
+		"oAP": "/img/Entypo/round-brush.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/rss.svg": {
+	"/img/Entypo/rss.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/rss.svg",
+		"oAP": "/img/Entypo/rss.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/ruler.svg": {
+	"/img/Entypo/ruler.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/ruler.svg",
+		"oAP": "/img/Entypo/ruler.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/save.svg": {
+	"/img/Entypo/save.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/save.svg",
+		"oAP": "/img/Entypo/save.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/scissors.svg": {
+	"/img/Entypo/scissors.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/scissors.svg",
+		"oAP": "/img/Entypo/scissors.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/select-arrows.svg": {
+	"/img/Entypo/select-arrows.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/select-arrows.svg",
+		"oAP": "/img/Entypo/select-arrows.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/share-alternative.svg": {
+	"/img/Entypo/share-alternative.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/share-alternative.svg",
+		"oAP": "/img/Entypo/share-alternative.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/share.svg": {
+	"/img/Entypo/share.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/share.svg",
+		"oAP": "/img/Entypo/share.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/shareable.svg": {
+	"/img/Entypo/shareable.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/shareable.svg",
+		"oAP": "/img/Entypo/shareable.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/shield.svg": {
+	"/img/Entypo/shield.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/shield.svg",
+		"oAP": "/img/Entypo/shield.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/shop.svg": {
+	"/img/Entypo/shop.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/shop.svg",
+		"oAP": "/img/Entypo/shop.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/shopping-bag.svg": {
+	"/img/Entypo/shopping-bag.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/shopping-bag.svg",
+		"oAP": "/img/Entypo/shopping-bag.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/shopping-basket.svg": {
+	"/img/Entypo/shopping-basket.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/shopping-basket.svg",
+		"oAP": "/img/Entypo/shopping-basket.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/shopping-cart.svg": {
+	"/img/Entypo/shopping-cart.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/shopping-cart.svg",
+		"oAP": "/img/Entypo/shopping-cart.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/shuffle.svg": {
+	"/img/Entypo/shuffle.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/shuffle.svg",
+		"oAP": "/img/Entypo/shuffle.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/signal.svg": {
+	"/img/Entypo/signal.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/signal.svg",
+		"oAP": "/img/Entypo/signal.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/sound-mix.svg": {
+	"/img/Entypo/sound-mix.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/sound-mix.svg",
+		"oAP": "/img/Entypo/sound-mix.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/sound-mute.svg": {
+	"/img/Entypo/sound-mute.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/sound-mute.svg",
+		"oAP": "/img/Entypo/sound-mute.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/sound.svg": {
+	"/img/Entypo/sound.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/sound.svg",
+		"oAP": "/img/Entypo/sound.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/sports-club.svg": {
+	"/img/Entypo/sports-club.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/sports-club.svg",
+		"oAP": "/img/Entypo/sports-club.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/spreadsheet.svg": {
+	"/img/Entypo/spreadsheet.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/spreadsheet.svg",
+		"oAP": "/img/Entypo/spreadsheet.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/squared-cross.svg": {
+	"/img/Entypo/squared-cross.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/squared-cross.svg",
+		"oAP": "/img/Entypo/squared-cross.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/squared-minus.svg": {
+	"/img/Entypo/squared-minus.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/squared-minus.svg",
+		"oAP": "/img/Entypo/squared-minus.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/squared-plus.svg": {
+	"/img/Entypo/squared-plus.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/squared-plus.svg",
+		"oAP": "/img/Entypo/squared-plus.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/star-outlined.svg": {
+	"/img/Entypo/star-outlined.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/star-outlined.svg",
+		"oAP": "/img/Entypo/star-outlined.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/star.svg": {
+	"/img/Entypo/star.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/star.svg",
+		"oAP": "/img/Entypo/star.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/stopwatch.svg": {
+	"/img/Entypo/stopwatch.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/stopwatch.svg",
+		"oAP": "/img/Entypo/stopwatch.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/suitcase.svg": {
+	"/img/Entypo/suitcase.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/suitcase.svg",
+		"oAP": "/img/Entypo/suitcase.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/swap.svg": {
+	"/img/Entypo/swap.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/swap.svg",
+		"oAP": "/img/Entypo/swap.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/sweden.svg": {
+	"/img/Entypo/sweden.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/sweden.svg",
+		"oAP": "/img/Entypo/sweden.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/switch.svg": {
+	"/img/Entypo/switch.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/switch.svg",
+		"oAP": "/img/Entypo/switch.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/tablet-mobile-combo.svg": {
+	"/img/Entypo/tablet-mobile-combo.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/tablet-mobile-combo.svg",
+		"oAP": "/img/Entypo/tablet-mobile-combo.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/tablet.svg": {
+	"/img/Entypo/tablet.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/tablet.svg",
+		"oAP": "/img/Entypo/tablet.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/tag.svg": {
+	"/img/Entypo/tag.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/tag.svg",
+		"oAP": "/img/Entypo/tag.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/text-document-inverted.svg": {
+	"/img/Entypo/text-document-inverted.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/text-document-inverted.svg",
+		"oAP": "/img/Entypo/text-document-inverted.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/text-document.svg": {
+	"/img/Entypo/text-document.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/text-document.svg",
+		"oAP": "/img/Entypo/text-document.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/text.svg": {
+	"/img/Entypo/text.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/text.svg",
+		"oAP": "/img/Entypo/text.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/thermometer.svg": {
+	"/img/Entypo/thermometer.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/thermometer.svg",
+		"oAP": "/img/Entypo/thermometer.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/thumbs-down.svg": {
+	"/img/Entypo/thumbs-down.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/thumbs-down.svg",
+		"oAP": "/img/Entypo/thumbs-down.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/thumbs-up.svg": {
+	"/img/Entypo/thumbs-up.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/thumbs-up.svg",
+		"oAP": "/img/Entypo/thumbs-up.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/thunder-cloud.svg": {
+	"/img/Entypo/thunder-cloud.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/thunder-cloud.svg",
+		"oAP": "/img/Entypo/thunder-cloud.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/ticket.svg": {
+	"/img/Entypo/ticket.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/ticket.svg",
+		"oAP": "/img/Entypo/ticket.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/time-slot.svg": {
+	"/img/Entypo/time-slot.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/time-slot.svg",
+		"oAP": "/img/Entypo/time-slot.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/tools.svg": {
+	"/img/Entypo/tools.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/tools.svg",
+		"oAP": "/img/Entypo/tools.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/traffic-cone.svg": {
+	"/img/Entypo/traffic-cone.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/traffic-cone.svg",
+		"oAP": "/img/Entypo/traffic-cone.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/trash.svg": {
+	"/img/Entypo/trash.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/trash.svg",
+		"oAP": "/img/Entypo/trash.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/tree.svg": {
+	"/img/Entypo/tree.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/tree.svg",
+		"oAP": "/img/Entypo/tree.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/triangle-down.svg": {
+	"/img/Entypo/triangle-down.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/triangle-down.svg",
+		"oAP": "/img/Entypo/triangle-down.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/triangle-left.svg": {
+	"/img/Entypo/triangle-left.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/triangle-left.svg",
+		"oAP": "/img/Entypo/triangle-left.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/triangle-right.svg": {
+	"/img/Entypo/triangle-right.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/triangle-right.svg",
+		"oAP": "/img/Entypo/triangle-right.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/triangle-up.svg": {
+	"/img/Entypo/triangle-up.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/triangle-up.svg",
+		"oAP": "/img/Entypo/triangle-up.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/trophy.svg": {
+	"/img/Entypo/trophy.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/trophy.svg",
+		"oAP": "/img/Entypo/trophy.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/tv.svg": {
+	"/img/Entypo/tv.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/tv.svg",
+		"oAP": "/img/Entypo/tv.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/typing.svg": {
+	"/img/Entypo/typing.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/typing.svg",
+		"oAP": "/img/Entypo/typing.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/uninstall.svg": {
+	"/img/Entypo/uninstall.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/uninstall.svg",
+		"oAP": "/img/Entypo/uninstall.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/unread.svg": {
+	"/img/Entypo/unread.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/unread.svg",
+		"oAP": "/img/Entypo/unread.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/untag.svg": {
+	"/img/Entypo/untag.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/untag.svg",
+		"oAP": "/img/Entypo/untag.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/upload-to-cloud.svg": {
+	"/img/Entypo/upload-to-cloud.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/upload-to-cloud.svg",
+		"oAP": "/img/Entypo/upload-to-cloud.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/upload.svg": {
+	"/img/Entypo/upload.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/upload.svg",
+		"oAP": "/img/Entypo/upload.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/user.svg": {
+	"/img/Entypo/user.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/user.svg",
+		"oAP": "/img/Entypo/user.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/users.svg": {
+	"/img/Entypo/users.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/users.svg",
+		"oAP": "/img/Entypo/users.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/v-card.svg": {
+	"/img/Entypo/v-card.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/v-card.svg",
+		"oAP": "/img/Entypo/v-card.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/video-camera.svg": {
+	"/img/Entypo/video-camera.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/video-camera.svg",
+		"oAP": "/img/Entypo/video-camera.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/video.svg": {
+	"/img/Entypo/video.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/video.svg",
+		"oAP": "/img/Entypo/video.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/vinyl.svg": {
+	"/img/Entypo/vinyl.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/vinyl.svg",
+		"oAP": "/img/Entypo/vinyl.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/voicemail.svg": {
+	"/img/Entypo/voicemail.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/voicemail.svg",
+		"oAP": "/img/Entypo/voicemail.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/wallet.svg": {
+	"/img/Entypo/wallet.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/wallet.svg",
+		"oAP": "/img/Entypo/wallet.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/warning.svg": {
+	"/img/Entypo/warning.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/warning.svg",
+		"oAP": "/img/Entypo/warning.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/Entypo\/water.svg": {
+	"/img/Entypo/water.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/img\/Entypo\/water.svg",
+		"oAP": "/img/Entypo/water.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/img\/festival\/deltaker.jpg": {
+	"/img/festival/deltaker.jpg": {
 		"ft": 16384,
 		"iS": 480663,
 		"jF": 0,
 		"oA": 0,
-		"oAP": "\/img\/festival\/deltaker.jpg",
+		"oAP": "/img/festival/deltaker.jpg",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"q": 100
 		},
-	"\/img\/festival\/forsidebilde.jpg": {
+	"/img/festival/forsidebilde.jpg": {
 		"ft": 16384,
 		"iS": 154094,
 		"jF": 0,
 		"oA": 0,
-		"oAP": "\/img\/festival\/forsidebilde.jpg",
+		"oAP": "/img/festival/forsidebilde.jpg",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"q": 100
 		},
-	"\/img\/festival\/hvaer.jpg": {
+	"/img/festival/hvaer.jpg": {
 		"ft": 16384,
 		"iS": 3403308,
 		"jF": 0,
 		"oA": 0,
-		"oAP": "\/img\/festival\/hvaer.jpg",
+		"oAP": "/img/festival/hvaer.jpg",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"q": 100
 		},
-	"\/img\/festival\/program.jpg": {
+	"/img/festival/program.jpg": {
 		"ft": 16384,
 		"iS": 529699,
 		"jF": 0,
 		"oA": 0,
-		"oAP": "\/img\/festival\/program.jpg",
+		"oAP": "/img/festival/program.jpg",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"q": 100
 		},
-	"\/img\/festival\/workshop.jpg": {
+	"/img/festival/workshop.jpg": {
 		"ft": 16384,
 		"iS": 727185,
 		"jF": 0,
 		"oA": 0,
-		"oAP": "\/img\/festival\/workshop.jpg",
+		"oAP": "/img/festival/workshop.jpg",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"q": 100
 		},
-	"\/img\/newsletter\/korslaget.gif": {
+	"/img/newsletter/daniel.gif": {
 		"ft": 4194304,
-		"iS": 968049,
+		"iS": 799363,
 		"oA": 0,
-		"oAP": "\/img\/newsletter\/korslaget.gif",
+		"oAP": "/img/newsletter/daniel.gif",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/img\/newsletter\/MR_UKM_buss-2.jpg": {
+	"/img/newsletter/gaven.gif": {
+		"ft": 4194304,
+		"iS": 631829,
+		"oA": 0,
+		"oAP": "/img/newsletter/gaven.gif",
+		"oF": 0,
+		"opt": 0
+		},
+	"/img/newsletter/konf.png": {
+		"ft": 32768,
+		"iS": 60876,
+		"oA": 0,
+		"oAP": "/img/newsletter/konf.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/img/newsletter/korslaget.gif": {
+		"ft": 4194304,
+		"iS": 968049,
+		"oA": 0,
+		"oAP": "/img/newsletter/korslaget.gif",
+		"oF": 0,
+		"opt": 0
+		},
+	"/img/newsletter/kunstbilde.png": {
+		"ft": 32768,
+		"iS": 60137,
+		"oA": 0,
+		"oAP": "/img/newsletter/kunstbilde.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/img/newsletter/magnus.png": {
+		"ft": 32768,
+		"iS": 972749,
+		"oA": 0,
+		"oAP": "/img/newsletter/magnus.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/img/newsletter/marimba.png": {
+		"ft": 32768,
+		"iS": 164537,
+		"oA": 0,
+		"oAP": "/img/newsletter/marimba.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"/img/newsletter/MR_UKM_buss-2.jpg": {
 		"ft": 16384,
 		"iS": 11224387,
 		"jF": 0,
 		"oA": 0,
-		"oAP": "\/img\/newsletter\/MR_UKM_buss-2.jpg",
+		"oAP": "/img/newsletter/MR_UKM_buss-2.jpg",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"q": 100
 		},
-	"\/img\/newsletter\/oskar_sak.png": {
+	"/img/newsletter/oskar.gif": {
+		"ft": 4194304,
+		"iS": 2104685,
+		"oA": 0,
+		"oAP": "/img/newsletter/oskar.gif",
+		"oF": 0,
+		"opt": 0
+		},
+	"/img/newsletter/oskar_sak.png": {
 		"ft": 32768,
 		"iS": 182217,
 		"oA": 0,
-		"oAP": "\/img\/newsletter\/oskar_sak.png",
+		"oAP": "/img/newsletter/oskar_sak.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
 		"q": 100
 		},
-	"\/img\/newsletter\/oskar_sak@2x.png": {
+	"/img/newsletter/oskar_sak@2x.png": {
 		"ft": 32768,
 		"iS": 618323,
 		"oA": 0,
-		"oAP": "\/img\/newsletter\/oskar_sak@2x.png",
+		"oAP": "/img/newsletter/oskar_sak@2x.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
 		"q": 100
 		},
-	"\/img\/newsletter\/ukm_ankomst-3.jpg": {
+	"/img/newsletter/ukm_ankomst-3.jpg": {
 		"ft": 16384,
 		"iS": 4914353,
 		"jF": 0,
 		"oA": 0,
-		"oAP": "\/img\/newsletter\/ukm_ankomst-3.jpg",
+		"oAP": "/img/newsletter/ukm_ankomst-3.jpg",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"q": 100
 		},
-	"\/img\/norgeskart.png": {
+	"/img/norgeskart.png": {
 		"ft": 32768,
 		"iS": 55959,
 		"oA": 0,
-		"oAP": "\/img\/norgeskart.png",
+		"oAP": "/img/norgeskart.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
 		"q": 100
 		},
-	"\/img\/quotes.jpg": {
+	"/img/quotes.jpg": {
 		"ft": 16384,
 		"iS": 4670,
 		"jF": 0,
 		"oA": 0,
-		"oAP": "\/img\/quotes.jpg",
+		"oAP": "/img/quotes.jpg",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"q": 100
 		},
-	"\/img\/quotes.png": {
+	"/img/quotes.png": {
 		"ft": 32768,
 		"iS": 13222,
 		"oA": 0,
-		"oAP": "\/img\/quotes.png",
+		"oAP": "/img/quotes.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
 		"q": 100
 		},
-	"\/img\/skygge.png": {
+	"/img/skygge.png": {
 		"ft": 32768,
 		"iS": 111539,
 		"oA": 0,
-		"oAP": "\/img\/skygge.png",
+		"oAP": "/img/skygge.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
 		"q": 100
 		},
-	"\/img\/ukm-logo-flip.gif": {
+	"/img/ukm-logo-flip.gif": {
 		"ft": 4194304,
 		"iS": 87046,
 		"oA": 0,
-		"oAP": "\/img\/ukm-logo-flip.gif",
+		"oAP": "/img/ukm-logo-flip.gif",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/img\/ukm-logo-pulse-breathe.gif": {
+	"/img/ukm-logo-pulse-breathe.gif": {
 		"ft": 4194304,
 		"iS": 96083,
 		"oA": 0,
-		"oAP": "\/img\/ukm-logo-pulse-breathe.gif",
+		"oAP": "/img/ukm-logo-pulse-breathe.gif",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/img\/ukm-logo-pulsing.gif": {
+	"/img/ukm-logo-pulsing.gif": {
 		"ft": 4194304,
 		"iS": 82489,
 		"oA": 0,
-		"oAP": "\/img\/ukm-logo-pulsing.gif",
+		"oAP": "/img/ukm-logo-pulsing.gif",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/js\/aos.js": {
+	"/js/aos.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/js\/aos.min.js",
+		"oAP": "/js/aos.min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
 		},
-	"\/js\/bootstrap.min.js": {
+	"/js/bootstrap.min.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/js\/bootstrap.min.min.js",
+		"oAP": "/js/bootstrap.min.min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
 		},
-	"\/js\/bootstrap.min.min.js": {
+	"/js/bootstrap.min.min.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/js\/bootstrap.min.min.min.js",
+		"oAP": "/js/bootstrap.min.min.min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
 		},
-	"\/js\/cookie.js": {
+	"/js/cookie.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/js\/cookie.min.js",
+		"oAP": "/js/cookie.min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
 		},
-	"\/js\/cookie.min.js": {
+	"/js/cookie.min.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/js\/cookie.min.min.js",
+		"oAP": "/js/cookie.min.min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
 		},
-	"\/js\/fastlivefilter.jquery.js": {
+	"/js/fastlivefilter.jquery.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/js\/fastlivefilter.jquery.min.js",
+		"oAP": "/js/fastlivefilter.jquery.min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
 		},
-	"\/js\/fastlivefilter.jquery.min.js": {
+	"/js/fastlivefilter.jquery.min.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/js\/fastlivefilter.jquery.min.min.js",
+		"oAP": "/js/fastlivefilter.jquery.min.min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
 		},
-	"\/js\/jquery-2.2.4.min.min.js": {
+	"/js/fullpage.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/js\/jquery-2.2.4.min.min.min.js",
+		"oAP": "/js/fullpage.min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
 		},
-	"\/js\/jquery-3.1.1.min.min.js": {
+	"/js/jquery-2.2.4.min.min.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/js\/jquery-3.1.1.min.min.min.js",
+		"oAP": "/js/jquery-2.2.4.min.min.min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
 		},
-	"\/js\/jquery-3.2.1.min.js": {
+	"/js/jquery-3.1.1.min.min.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/js\/jquery-3.2.1.min.min.js",
+		"oAP": "/js/jquery-3.1.1.min.min.min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
 		},
-	"\/js\/jquery-autoshrink.js": {
+	"/js/jquery-3.2.1.min.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/js\/jquery-autoshrink.min.js",
+		"oAP": "/js/jquery-3.2.1.min.min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
 		},
-	"\/js\/jquery-autoshrink.min.js": {
+	"/js/jquery-autoshrink.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/js\/jquery-autoshrink.min.min.js",
+		"oAP": "/js/jquery-autoshrink.min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
 		},
-	"\/js\/jquery.imagesGrid.js": {
+	"/js/jquery-autoshrink.min.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/js\/jquery.imagesGrid.min.js",
+		"oAP": "/js/jquery-autoshrink.min.min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
 		},
-	"\/js\/prototype.js": {
+	"/js/jquery-ui.min.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/js\/prototype.min.js",
+		"oAP": "/js/jquery-ui.min.min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
 		},
-	"\/js\/slideout.min.js": {
+	"/js/jquery.imagesGrid.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/js\/slideout.min.min.js",
+		"oAP": "/js/jquery.imagesGrid.min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
 		},
-	"\/js\/UKMkonkurranse.js": {
+	"/js/prototype.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/js\/UKMkonkurranse.min.js",
+		"oAP": "/js/prototype.min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
 		},
-	"\/js\/UKMmobil.js": {
+	"/js/scrolloverflow.min.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/js\/UKMmobil.min.js",
+		"oAP": "/js/scrolloverflow.min.min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
 		},
-	"\/js\/UKMpameldte.js": {
+	"/js/slideout.min.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/js\/UKMpameldte.min.js",
+		"oAP": "/js/slideout.min.min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
 		},
-	"\/js\/UKMresponsive.js": {
+	"/js/UKMfullpage.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/js\/UKMresponsive.min.js",
+		"oAP": "/js/UKMfullpage.min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
 		},
-	"\/js\/UKMresponsive.min.js": {
+	"/js/UKMfullpage.min.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/js\/UKMresponsive.min.min.js",
+		"oAP": "/js/UKMfullpage.min.min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
 		},
-	"\/less\/aos.less": {
+	"/js/UKMkonkurranse.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/js/UKMkonkurranse.min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"/js/UKMmobil.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/js/UKMmobil.min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"/js/UKMpameldte.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/js/UKMpameldte.min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"/js/UKMresponsive.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/js/UKMresponsive.min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"/js/UKMresponsive.min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/js/UKMresponsive.min.min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"/less/aos.less": {
 		"aP": 0,
 		"bl": 0,
-		"dJ": 0,
+		"eJ": 0,
 		"ft": 1,
 		"ie": 1,
 		"iI": 0,
 		"ma": 0,
+		"mS": 0,
 		"oA": 1,
-		"oAP": "\/css\/aos.css",
+		"oAP": "/css/aos.css",
 		"oF": 0,
 		"oS": 0,
-		"rU": 0,
+		"rwU": 0,
 		"sI": 0,
-		"sM": 0,
 		"sU": 0
 		},
-	"\/less\/base.less": {
+	"/less/base.less": {
 		"aP": 0,
 		"bl": 0,
-		"dJ": 0,
+		"eJ": 0,
 		"ft": 1,
 		"ie": 1,
 		"iI": 0,
 		"ma": 0,
+		"mS": 0,
 		"oA": 1,
-		"oAP": "\/css\/base.css",
+		"oAP": "/css/base.css",
 		"oF": 0,
 		"oS": 0,
-		"rU": 0,
+		"rwU": 0,
 		"sI": 0,
-		"sM": 0,
 		"sU": 0
 		},
-	"\/less\/blockquote.less": {
+	"/less/blockquote.less": {
 		"aP": 0,
 		"bl": 0,
-		"dJ": 0,
+		"eJ": 0,
 		"ft": 1,
 		"ie": 1,
 		"iI": 0,
 		"ma": 0,
+		"mS": 0,
 		"oA": 1,
-		"oAP": "\/css\/blockquote.css",
+		"oAP": "/css/blockquote.css",
 		"oF": 0,
 		"oS": 0,
-		"rU": 0,
+		"rwU": 0,
 		"sI": 0,
-		"sM": 0,
 		"sU": 0
 		},
-	"\/less\/bootstrap-modifications.less": {
+	"/less/bootstrap-modifications.less": {
 		"aP": 0,
 		"bl": 0,
-		"dJ": 0,
+		"eJ": 0,
 		"ft": 1,
 		"ie": 1,
 		"iI": 0,
 		"ma": 0,
+		"mS": 0,
 		"oA": 1,
-		"oAP": "\/css\/bootstrap-modifications.css",
+		"oAP": "/css/bootstrap-modifications.css",
 		"oF": 0,
 		"oS": 0,
-		"rU": 0,
+		"rwU": 0,
 		"sI": 0,
-		"sM": 0,
 		"sU": 0
 		},
-	"\/less\/build\/.gitignore": {
+	"/less/build/.gitignore": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 2,
-		"oAP": "\/less\/build\/.gitignore",
+		"oAP": "/less/build/.gitignore",
 		"oF": 0
 		},
-	"\/less\/calendar.less": {
+	"/less/calendar.less": {
 		"aP": 0,
 		"bl": 0,
-		"dJ": 0,
+		"eJ": 0,
 		"ft": 1,
 		"ie": 1,
 		"iI": 0,
 		"ma": 0,
+		"mS": 0,
 		"oA": 1,
-		"oAP": "\/css\/calendar.css",
+		"oAP": "/css/calendar.css",
 		"oF": 0,
 		"oS": 0,
-		"rU": 0,
+		"rwU": 0,
 		"sI": 0,
-		"sM": 0,
 		"sU": 0
 		},
-	"\/less\/card.less": {
+	"/less/card.less": {
 		"aP": 0,
 		"bl": 0,
-		"dJ": 0,
+		"eJ": 0,
 		"ft": 1,
 		"ie": 1,
 		"iI": 0,
 		"ma": 0,
+		"mS": 0,
 		"oA": 1,
-		"oAP": "\/css\/card.css",
+		"oAP": "/css/card.css",
 		"oF": 0,
 		"oS": 0,
-		"rU": 0,
+		"rwU": 0,
 		"sI": 0,
-		"sM": 0,
 		"sU": 0
 		},
-	"\/less\/delta.less": {
+	"/less/delta.less": {
 		"aP": 0,
 		"bl": 0,
-		"dJ": 0,
+		"eJ": 0,
 		"ft": 1,
 		"ie": 1,
 		"iI": 0,
 		"ma": 0,
+		"mS": 0,
 		"oA": 1,
-		"oAP": "\/css\/delta.css",
+		"oAP": "/css/delta.css",
 		"oF": 0,
 		"oS": 0,
-		"rU": 0,
+		"rwU": 0,
 		"sI": 0,
-		"sM": 0,
 		"sU": 0
 		},
-	"\/less\/deltakere.less": {
+	"/less/deltakere.less": {
 		"aP": 0,
 		"bl": 0,
-		"dJ": 0,
+		"eJ": 0,
 		"ft": 1,
 		"ie": 1,
 		"iI": 0,
 		"ma": 0,
+		"mS": 0,
 		"oA": 1,
-		"oAP": "\/css\/deltakere.css",
+		"oAP": "/css/deltakere.css",
 		"oF": 0,
 		"oS": 0,
-		"rU": 0,
+		"rwU": 0,
 		"sI": 0,
-		"sM": 0,
 		"sU": 0
 		},
-	"\/less\/files.less": {
+	"/less/files.less": {
 		"aP": 0,
 		"bl": 0,
-		"dJ": 0,
+		"eJ": 0,
 		"ft": 1,
 		"ie": 1,
 		"iI": 0,
 		"ma": 0,
+		"mS": 0,
 		"oA": 1,
-		"oAP": "\/css\/files.css",
+		"oAP": "/css/files.css",
 		"oF": 0,
 		"oS": 0,
-		"rU": 0,
+		"rwU": 0,
 		"sI": 0,
-		"sM": 0,
 		"sU": 0
 		},
-	"\/less\/footer.less": {
+	"/less/footer.less": {
 		"aP": 0,
 		"bl": 0,
-		"dJ": 0,
+		"eJ": 0,
 		"ft": 1,
 		"ie": 1,
 		"iI": 0,
 		"ma": 0,
+		"mS": 0,
 		"oA": 1,
-		"oAP": "\/css\/footer.css",
+		"oAP": "/css/footer.css",
 		"oF": 0,
 		"oS": 0,
-		"rU": 0,
+		"rwU": 0,
 		"sI": 0,
-		"sM": 0,
 		"sU": 0
 		},
-	"\/less\/fylke.less": {
+	"/less/fullpage.less": {
 		"aP": 0,
 		"bl": 0,
-		"dJ": 0,
+		"eJ": 0,
 		"ft": 1,
 		"ie": 1,
 		"iI": 0,
 		"ma": 0,
+		"mS": 0,
 		"oA": 1,
-		"oAP": "\/css\/fylke.css",
+		"oAP": "/css/fullpage.css",
 		"oF": 0,
 		"oS": 0,
-		"rU": 0,
+		"rwU": 0,
 		"sI": 0,
-		"sM": 0,
 		"sU": 0
 		},
-	"\/less\/home.less": {
+	"/less/fylke.less": {
 		"aP": 0,
 		"bl": 0,
-		"dJ": 0,
+		"eJ": 0,
 		"ft": 1,
 		"ie": 1,
 		"iI": 0,
 		"ma": 0,
+		"mS": 0,
 		"oA": 1,
-		"oAP": "\/css\/home.css",
+		"oAP": "/css/fylke.css",
 		"oF": 0,
 		"oS": 0,
-		"rU": 0,
+		"rwU": 0,
 		"sI": 0,
-		"sM": 0,
 		"sU": 0
 		},
-	"\/less\/icomoon-entypo.less": {
+	"/less/home.less": {
 		"aP": 0,
 		"bl": 0,
-		"dJ": 0,
+		"eJ": 0,
 		"ft": 1,
 		"ie": 1,
 		"iI": 0,
 		"ma": 0,
+		"mS": 0,
 		"oA": 1,
-		"oAP": "\/css\/icomoon-entypo.css",
+		"oAP": "/css/home.css",
 		"oF": 0,
 		"oS": 0,
-		"rU": 0,
+		"rwU": 0,
 		"sI": 0,
-		"sM": 0,
 		"sU": 0
 		},
-	"\/less\/iframe.less": {
+	"/less/icomoon-entypo.less": {
 		"aP": 0,
 		"bl": 0,
-		"dJ": 0,
+		"eJ": 0,
 		"ft": 1,
 		"ie": 1,
 		"iI": 0,
 		"ma": 0,
+		"mS": 0,
 		"oA": 1,
-		"oAP": "\/css\/iframe.css",
+		"oAP": "/css/icomoon-entypo.css",
 		"oF": 0,
 		"oS": 0,
-		"rU": 0,
+		"rwU": 0,
 		"sI": 0,
-		"sM": 0,
 		"sU": 0
 		},
-	"\/less\/kommune.less": {
+	"/less/iframe.less": {
 		"aP": 0,
 		"bl": 0,
-		"dJ": 0,
+		"eJ": 0,
 		"ft": 1,
 		"ie": 1,
 		"iI": 0,
 		"ma": 0,
+		"mS": 0,
 		"oA": 1,
-		"oAP": "\/css\/kommune.css",
+		"oAP": "/css/iframe.css",
 		"oF": 0,
 		"oS": 0,
-		"rU": 0,
+		"rwU": 0,
 		"sI": 0,
-		"sM": 0,
 		"sU": 0
 		},
-	"\/less\/navbar.less": {
+	"/less/kommune.less": {
 		"aP": 0,
 		"bl": 0,
-		"dJ": 0,
+		"eJ": 0,
 		"ft": 1,
 		"ie": 1,
 		"iI": 0,
 		"ma": 0,
+		"mS": 0,
 		"oA": 1,
-		"oAP": "\/css\/navbar.css",
+		"oAP": "/css/kommune.css",
 		"oF": 0,
 		"oS": 0,
-		"rU": 0,
+		"rwU": 0,
 		"sI": 0,
-		"sM": 0,
 		"sU": 0
 		},
-	"\/less\/nyhetsbrev-fonts.less": {
+	"/less/liste.less": {
 		"aP": 0,
 		"bl": 0,
-		"dJ": 0,
+		"eJ": 0,
 		"ft": 1,
 		"ie": 1,
 		"iI": 0,
 		"ma": 0,
+		"mS": 0,
+		"oA": 1,
+		"oAP": "/css/liste.css",
+		"oF": 0,
+		"oS": 0,
+		"rwU": 0,
+		"sI": 0,
+		"sU": 0
+		},
+	"/less/navbar.less": {
+		"aP": 0,
+		"bl": 0,
+		"eJ": 0,
+		"ft": 1,
+		"ie": 1,
+		"iI": 0,
+		"ma": 0,
+		"mS": 0,
+		"oA": 1,
+		"oAP": "/css/navbar.css",
+		"oF": 0,
+		"oS": 0,
+		"rwU": 0,
+		"sI": 0,
+		"sU": 0
+		},
+	"/less/nyhetsbrev-fonts.less": {
+		"aP": 0,
+		"bl": 0,
+		"eJ": 0,
+		"ft": 1,
+		"ie": 1,
+		"iI": 0,
+		"ma": 0,
+		"mS": 0,
 		"oA": 0,
-		"oAP": "\/css\/nyhetsbrev-fonts.css",
+		"oAP": "/css/nyhetsbrev-fonts.css",
 		"oF": 1,
 		"oS": 0,
-		"rU": 0,
+		"rwU": 0,
 		"sI": 0,
-		"sM": 0,
 		"sU": 0
 		},
-	"\/less\/open-sans.less": {
+	"/less/open-sans.less": {
 		"aP": 0,
 		"bl": 0,
-		"dJ": 0,
+		"eJ": 0,
 		"ft": 1,
 		"ie": 1,
 		"iI": 0,
 		"ma": 0,
+		"mS": 0,
 		"oA": 1,
-		"oAP": "\/css\/open-sans.css",
+		"oAP": "/css/open-sans.css",
 		"oF": 0,
 		"oS": 0,
-		"rU": 0,
+		"rwU": 0,
 		"sI": 0,
-		"sM": 0,
 		"sU": 0
 		},
-	"\/less\/page.less": {
+	"/less/page.less": {
 		"aP": 0,
 		"bl": 0,
-		"dJ": 0,
+		"eJ": 0,
 		"ft": 1,
 		"ie": 1,
 		"iI": 0,
 		"ma": 0,
+		"mS": 0,
 		"oA": 1,
-		"oAP": "\/css\/page.css",
+		"oAP": "/css/page.css",
 		"oF": 0,
 		"oS": 0,
-		"rU": 0,
+		"rwU": 0,
 		"sI": 0,
-		"sM": 0,
 		"sU": 0
 		},
-	"\/less\/post.less": {
+	"/less/post.less": {
 		"aP": 0,
 		"bl": 0,
-		"dJ": 0,
+		"eJ": 0,
 		"ft": 1,
 		"ie": 1,
 		"iI": 0,
 		"ma": 0,
+		"mS": 0,
 		"oA": 1,
-		"oAP": "\/css\/post.css",
+		"oAP": "/css/post.css",
 		"oF": 0,
 		"oS": 0,
-		"rU": 0,
+		"rwU": 0,
 		"sI": 0,
-		"sM": 0,
 		"sU": 0
 		},
-	"\/less\/program.less": {
+	"/less/program.less": {
 		"aP": 0,
 		"bl": 0,
-		"dJ": 0,
+		"eJ": 0,
 		"ft": 1,
 		"ie": 1,
 		"iI": 0,
 		"ma": 0,
+		"mS": 0,
 		"oA": 1,
-		"oAP": "\/css\/program.css",
+		"oAP": "/css/program.css",
 		"oF": 0,
 		"oS": 0,
-		"rU": 0,
+		"rwU": 0,
 		"sI": 0,
-		"sM": 0,
 		"sU": 0
 		},
-	"\/less\/pushtofront.less": {
+	"/less/pushtofront.less": {
 		"aP": 0,
 		"bl": 0,
-		"dJ": 0,
+		"eJ": 0,
 		"ft": 1,
 		"ie": 1,
 		"iI": 0,
 		"ma": 0,
+		"mS": 0,
 		"oA": 1,
-		"oAP": "\/css\/pushtofront.css",
+		"oAP": "/css/pushtofront.css",
 		"oF": 0,
 		"oS": 0,
-		"rU": 0,
+		"rwU": 0,
 		"sI": 0,
-		"sM": 0,
 		"sU": 0
 		},
-	"\/less\/sitemap.less": {
+	"/less/sitemap.less": {
 		"aP": 0,
 		"bl": 0,
-		"dJ": 0,
+		"eJ": 0,
 		"ft": 1,
 		"ie": 1,
 		"iI": 0,
 		"ma": 0,
+		"mS": 0,
 		"oA": 1,
-		"oAP": "\/css\/sitemap.css",
+		"oAP": "/css/sitemap.css",
 		"oF": 0,
 		"oS": 0,
-		"rU": 0,
+		"rwU": 0,
 		"sI": 0,
-		"sM": 0,
 		"sU": 0
 		},
-	"\/less\/UKMresponsive-cherry.less": {
+	"/less/UKMfullpage.less": {
 		"aP": 0,
 		"bl": 0,
-		"dJ": 0,
+		"eJ": 0,
 		"ft": 1,
 		"ie": 1,
 		"iI": 0,
 		"ma": 0,
+		"mS": 0,
 		"oA": 0,
-		"oAP": "\/css\/UKMresponsive-cherry.css",
+		"oAP": "/css/UKMfullpage.css",
 		"oF": 0,
 		"oS": 0,
-		"rU": 0,
+		"rwU": 0,
 		"sI": 0,
-		"sM": 0,
 		"sU": 0
 		},
-	"\/less\/UKMresponsive-ego.less": {
+	"/less/UKMresponsive-cherry.less": {
 		"aP": 0,
 		"bl": 0,
-		"dJ": 0,
+		"eJ": 0,
 		"ft": 1,
 		"ie": 1,
 		"iI": 0,
 		"ma": 0,
+		"mS": 0,
 		"oA": 0,
-		"oAP": "\/css\/UKMresponsive-ego.css",
+		"oAP": "/css/UKMresponsive-cherry.css",
 		"oF": 0,
 		"oS": 0,
-		"rU": 0,
+		"rwU": 0,
 		"sI": 0,
-		"sM": 0,
 		"sU": 0
 		},
-	"\/less\/UKMresponsive-orchid.less": {
+	"/less/UKMresponsive-ego.less": {
 		"aP": 0,
 		"bl": 0,
-		"dJ": 0,
+		"eJ": 0,
 		"ft": 1,
 		"ie": 1,
 		"iI": 0,
 		"ma": 0,
+		"mS": 0,
 		"oA": 0,
-		"oAP": "\/css\/UKMresponsive-orchid.css",
+		"oAP": "/css/UKMresponsive-ego.css",
 		"oF": 0,
 		"oS": 0,
-		"rU": 0,
+		"rwU": 0,
 		"sI": 0,
-		"sM": 0,
 		"sU": 0
 		},
-	"\/less\/UKMresponsive.less": {
+	"/less/UKMresponsive-orchid.less": {
 		"aP": 0,
 		"bl": 0,
-		"dJ": 0,
+		"eJ": 0,
 		"ft": 1,
 		"ie": 1,
 		"iI": 0,
 		"ma": 0,
+		"mS": 0,
 		"oA": 0,
-		"oAP": "\/css\/UKMresponsive.css",
+		"oAP": "/css/UKMresponsive-orchid.css",
 		"oF": 0,
 		"oS": 0,
-		"rU": 0,
+		"rwU": 0,
 		"sI": 0,
-		"sM": 0,
 		"sU": 0
 		},
-	"\/swipebox\/css\/swipebox.css": {
+	"/less/UKMresponsive.less": {
+		"aP": 0,
+		"bl": 0,
+		"eJ": 0,
+		"ft": 1,
+		"ie": 1,
+		"iI": 0,
+		"ma": 0,
+		"mS": 0,
+		"oA": 0,
+		"oAP": "/css/UKMresponsive.css",
+		"oF": 0,
+		"oS": 0,
+		"rwU": 0,
+		"sI": 0,
+		"sU": 0
+		},
+	"/swipebox/css/swipebox.css": {
 		"aP": 1,
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "\/swipebox\/css\/swipebox-min.css",
+		"oAP": "/swipebox/css/swipebox-min.css",
 		"oF": 0,
 		"oS": 3
 		},
-	"\/swipebox\/css\/swipebox.min.css": {
+	"/swipebox/css/swipebox.min.css": {
 		"aP": 1,
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "\/swipebox\/css\/swipebox.min-min.css",
+		"oAP": "/swipebox/css/swipebox.min-min.css",
 		"oF": 0,
 		"oS": 3
 		},
-	"\/swipebox\/img\/icons.png": {
+	"/swipebox/img/icons.png": {
 		"ft": 32768,
 		"iS": 729,
 		"oA": 0,
-		"oAP": "\/swipebox\/img\/icons.png",
+		"oAP": "/swipebox/img/icons.png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
 		"oT": 1,
 		"q": 100
 		},
-	"\/swipebox\/img\/icons.svg": {
+	"/swipebox/img/icons.svg": {
 		"ft": 2097152,
 		"miP": 0,
 		"oA": 2,
-		"oAP": "\/swipebox\/img\/icons.svg",
+		"oAP": "/swipebox/img/icons.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"\/swipebox\/img\/loader.gif": {
+	"/swipebox/img/loader.gif": {
 		"ft": 4194304,
 		"iS": 2608,
 		"oA": 0,
-		"oAP": "\/swipebox\/img\/loader.gif",
+		"oAP": "/swipebox/img/loader.gif",
 		"oF": 0,
 		"opt": 0
 		},
-	"\/swipebox\/js\/jquery.swipebox.js": {
+	"/swipebox/js/jquery.swipebox.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/swipebox\/js\/jquery.swipebox.min.js",
+		"oAP": "/swipebox/js/jquery.swipebox.min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
 		},
-	"\/swipebox\/js\/jquery.swipebox.min.js": {
+	"/swipebox/js/jquery.swipebox.min.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
 		"oA": 0,
-		"oAP": "\/swipebox\/js\/jquery.swipebox.min.min.js",
+		"oAP": "/swipebox/js/jquery.swipebox.min.min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
@@ -5364,141 +5543,94 @@
 	"alwaysUseExternalServer": 0,
 	"animateCSSInjections": 1,
 	"autoBuildNewItems": 1,
-	"autoprefixerBrowserString": "> 1%, last 2 versions, Firefox ESR, Opera 12.1",
 	"autoprefixerEnableIEGrid": 0,
+	"babel7PresetType": 1,
+	"babelAllowRCFiles": 0,
 	"babelAuxiliaryCommentAfter": "",
 	"babelAuxiliaryCommentBefore": "",
-	"babelConfigFileHandlingType": 0,
+	"babelConfigType": 0,
 	"babelCustomPluginsList": "",
 	"babelCustomPresetsList": "",
 	"babelInsertModuleIDs": 0,
 	"babelModuleID": "",
 	"babelNoComments": 0,
 	"babelPlugins": {
+		"arrow-functions": {
+			"active": 0
+			},
 		"async-generator-functions": {
 			"active": 0
 			},
 		"async-to-generator": {
 			"active": 0
 			},
-		"async-to-module-method": {
+		"block-scoped-functions": {
+			"active": 0
+			},
+		"block-scoping": {
 			"active": 0
 			},
 		"class-properties": {
 			"active": 0
 			},
+		"classes": {
+			"active": 0
+			},
+		"computed-properties": {
+			"active": 0
+			},
 		"decorators": {
 			"active": 0
 			},
-		"decorators-legacy": {
+		"destructuring": {
 			"active": 0
 			},
 		"do-expressions": {
 			"active": 0
 			},
-		"es2015-arrow-functions": {
+		"dotall-regex": {
 			"active": 0
 			},
-		"es2015-block-scoped-functions": {
-			"active": 0
-			},
-		"es2015-block-scoping": {
-			"active": 0
-			},
-		"es2015-classes": {
-			"active": 0
-			},
-		"es2015-computed-properties": {
-			"active": 0
-			},
-		"es2015-constants": {
-			"active": 0
-			},
-		"es2015-destructuring": {
-			"active": 0
-			},
-		"es2015-duplicate-keys": {
-			"active": 0
-			},
-		"es2015-for-of": {
-			"active": 0
-			},
-		"es2015-function-name": {
-			"active": 0
-			},
-		"es2015-literals": {
-			"active": 0
-			},
-		"es2015-modules-amd": {
-			"active": 0
-			},
-		"es2015-modules-commonjs": {
-			"active": 0
-			},
-		"es2015-modules-systemjs": {
-			"active": 0
-			},
-		"es2015-modules-umd": {
-			"active": 0
-			},
-		"es2015-object-super": {
-			"active": 0
-			},
-		"es2015-parameters": {
-			"active": 0
-			},
-		"es2015-shorthand-properties": {
-			"active": 0
-			},
-		"es2015-spread": {
-			"active": 0
-			},
-		"es2015-sticky-regex": {
-			"active": 0
-			},
-		"es2015-template-literals": {
-			"active": 0
-			},
-		"es2015-typeof-symbol": {
-			"active": 0
-			},
-		"es2015-unicode-regex": {
-			"active": 0
-			},
-		"es3-member-expression-literals": {
-			"active": 0
-			},
-		"es3-property-literals": {
-			"active": 0
-			},
-		"es5-property-mutators": {
-			"active": 0
-			},
-		"eval": {
+		"duplicate-keys": {
 			"active": 0
 			},
 		"exponentiation-operator": {
 			"active": 0
 			},
-		"export-extensions": {
+		"export-default-from": {
+			"active": 0
+			},
+		"export-namespace-from": {
 			"active": 0
 			},
 		"external-helpers": {
 			"active": 0
 			},
-		"flow-comments": {
+		"flow-strip-types": {
 			"active": 0
 			},
-		"flow-strip-types": {
+		"for-of": {
 			"active": 0
 			},
 		"function-bind": {
 			"active": 0
 			},
-		"inline-environment-variables": {
+		"function-name": {
+			"active": 0
+			},
+		"function-sent": {
+			"active": 0
+			},
+		"instanceof": {
 			"active": 0
 			},
 		"jscript": {
+			"active": 0
+			},
+		"literals": {
+			"active": 0
+			},
+		"logical-assignment-operators": {
 			"active": 0
 			},
 		"member-expression-literals": {
@@ -5510,7 +5642,28 @@
 		"minify-booleans": {
 			"active": 0
 			},
+		"modules-amd": {
+			"active": 0
+			},
+		"modules-commonjs": {
+			"active": 0
+			},
+		"modules-systemjs": {
+			"active": 0
+			},
+		"modules-umd": {
+			"active": 0
+			},
+		"new-target": {
+			"active": 0
+			},
 		"node-env-inline": {
+			"active": 0
+			},
+		"nullish-coalescing-operator": {
+			"active": 0
+			},
+		"numeric-separator": {
 			"active": 0
 			},
 		"object-assign": {
@@ -5522,7 +5675,25 @@
 		"object-set-prototype-of-to-assign": {
 			"active": 0
 			},
+		"object-super": {
+			"active": 0
+			},
+		"optional-catch-binding": {
+			"active": 0
+			},
+		"optional-chaining": {
+			"active": 0
+			},
+		"parameters": {
+			"active": 0
+			},
+		"pipeline-operator": {
+			"active": 0
+			},
 		"property-literals": {
+			"active": 0
+			},
+		"property-mutators": {
 			"active": 0
 			},
 		"proto-to-assign": {
@@ -5558,53 +5729,46 @@
 		"remove-debugger": {
 			"active": 0
 			},
+		"reserved-words": {
+			"active": 0
+			},
 		"runtime": {
+			"active": 0
+			},
+		"shorthand-properties": {
 			"active": 0
 			},
 		"simplify-comparison-operators": {
 			"active": 0
 			},
+		"spread": {
+			"active": 0
+			},
+		"sticky-regex": {
+			"active": 0
+			},
 		"strict-mode": {
 			"active": 0
 			},
-		"syntax-async-generators": {
+		"template-literals": {
 			"active": 0
 			},
-		"syntax-class-properties": {
+		"throw-expressions": {
 			"active": 0
 			},
-		"syntax-decorators": {
-			"active": 0
-			},
-		"syntax-do-expressions": {
-			"active": 0
-			},
-		"syntax-export-extensions": {
-			"active": 0
-			},
-		"syntax-flow": {
-			"active": 0
-			},
-		"syntax-function-bind": {
-			"active": 0
-			},
-		"syntax-function-sent": {
-			"active": 0
-			},
-		"syntax-jsx": {
-			"active": 0
-			},
-		"syntax-object-rest-spread": {
-			"active": 0
-			},
-		"undeclared-variables-check": {
+		"typeof-symbol": {
 			"active": 0
 			},
 		"undefined-to-void": {
 			"active": 0
+			},
+		"unicode-property-regex": {
+			"active": 0
+			},
+		"unicode-regex": {
+			"active": 0
 			}
 		},
-	"babelPresetType": 193,
 	"babelRetainLines": 0,
 	"bowerAbbreviatedPath": "bower_components",
 	"bowerAutoCreateInfoFile": 1,
@@ -5613,6 +5777,7 @@
 	"bowerSaveDevDependencies": 0,
 	"bowerUseExactVersion": 0,
 	"browserRefreshDelay": 0,
+	"browserslistString": ">0.2%, last 2 versions, Firefox ESR, not dead",
 	"buildFolderActive": 0,
 	"buildFolderName": "build",
 	"cleanBuild": 1,
@@ -5970,6 +6135,10 @@
 			"active": 0,
 			"optionString": "'always', {exceptAfterSingleLine: false}"
 			},
+		"max-classes-per-file": {
+			"active": 0,
+			"optionString": "1"
+			},
 		"max-depth": {
 			"active": 0,
 			"optionString": "{'max': 4}"
@@ -5981,6 +6150,10 @@
 		"max-lines": {
 			"active": 0,
 			"optionString": "{'max': 300, 'skipBlankLines': true, 'skipComments': true}"
+			},
+		"max-lines-per-function": {
+			"active": 0,
+			"optionString": "{'max': 50, 'skipBlankLines': true, 'skipComments': true, 'IIFEs': false}"
 			},
 		"max-nested-callbacks": {
 			"active": 0,
@@ -6026,6 +6199,10 @@
 			"active": 0,
 			"optionString": ""
 			},
+		"no-async-promise-executor": {
+			"active": 0,
+			"optionString": ""
+			},
 		"no-await-in-loop": {
 			"active": 0,
 			"optionString": ""
@@ -6044,10 +6221,6 @@
 			},
 		"no-case-declarations": {
 			"active": 1,
-			"optionString": ""
-			},
-		"no-catch-shadow": {
-			"active": 0,
 			"optionString": ""
 			},
 		"no-class-assign": {
@@ -6246,9 +6419,13 @@
 			"active": 0,
 			"optionString": "{'ignore': [], 'ignoreArrayIndexes': true, 'enforceConst': false, 'detectObjects': false}"
 			},
+		"no-misleading-character-class": {
+			"active": 0,
+			"optionString": ""
+			},
 		"no-mixed-operators": {
 			"active": 0,
-			"optionString": "{'groups': [['+', '-', '*', '\/', '%', '**'], ['&', '|', '^', '~', '<<', '>>', '>>>'], ['==', '!=', '===', '!==', '>', '>=', '<', '<='], ['&&', '||'], ['in', 'instanceof']], 'allowSamePrecedence': true}"
+			"optionString": "{'groups': [['+', '-', '*', '/', '%', '**'], ['&', '|', '^', '~', '<<', '>>', '>>>'], ['==', '!=', '===', '!==', '>', '>=', '<', '<='], ['&&', '||'], ['in', 'instanceof']], 'allowSamePrecedence': true}"
 			},
 		"no-mixed-requires": {
 			"active": 0,
@@ -6602,6 +6779,10 @@
 			"active": 0,
 			"optionString": ""
 			},
+		"prefer-object-spread": {
+			"active": 0,
+			"optionString": ""
+			},
 		"prefer-promise-reject-errors": {
 			"active": 0,
 			"optionString": "{'allowEmptyReject': false}"
@@ -6630,6 +6811,10 @@
 			"active": 0,
 			"optionString": "'always'"
 			},
+		"require-atomic-updates": {
+			"active": 0,
+			"optionString": ""
+			},
 		"require-await": {
 			"active": 0,
 			"optionString": ""
@@ -6637,6 +6822,10 @@
 		"require-jsdoc": {
 			"active": 0,
 			"optionString": "{'require': {'FunctionDeclaration': true, 'MethodDefinition': false, 'ClassDeclaration': false, 'ArrowFunctionExpression': false}}"
+			},
+		"require-unicode-regexp": {
+			"active": 0,
+			"optionString": ""
 			},
 		"require-yield": {
 			"active": 1,
@@ -6692,7 +6881,7 @@
 			},
 		"spaced-comment": {
 			"active": 0,
-			"optionString": "'always', {'line': {'markers': ['\/'], 'exceptions': ['-', '+']}, 'block': {'markers': ['!'], 'exceptions': ['*'], 'balanced': false}}"
+			"optionString": "'always', {'line': {'markers': ['/'], 'exceptions': ['-', '+']}, 'block': {'markers': ['!'], 'exceptions': ['*'], 'balanced': false}}"
 			},
 		"strict": {
 			"active": 0,
@@ -6752,7 +6941,7 @@
 			}
 		},
 	"esLintSourceType": 0,
-	"externalServerAddress": "http:\/\/localhost:8888",
+	"externalServerAddress": "http://localhost:8888",
 	"gitIgnoreBuildFolder": 1,
 	"hideConfigFile": 0,
 	"jsCheckerReservedNamesString": "",
@@ -7147,7 +7336,6 @@
 		"escapeHTMLCharacters": 0,
 		"noEscapeInAttributes": 0,
 		"outputFormat": 2,
-		"outputStyle": 0,
 		"shouldRunCacheBuster": 0,
 		"useCDATA": 0,
 		"useDoubleQuotes": 0,
@@ -7166,7 +7354,7 @@
 	"languageDefaultsJS": {
 		"autoOutputAction": 0,
 		"autoOutputPathFilenamePattern": "*.min.js",
-		"autoOutputPathRelativePath": "\/min",
+		"autoOutputPathRelativePath": "/min",
 		"autoOutputPathReplace1": "",
 		"autoOutputPathReplace2": "",
 		"autoOutputPathStyle": 0,
@@ -7198,19 +7386,19 @@
 		"allowInsecureImports": 0,
 		"autoOutputAction": 0,
 		"autoOutputPathFilenamePattern": "*.css",
-		"autoOutputPathRelativePath": "..\/css",
+		"autoOutputPathRelativePath": "../css",
 		"autoOutputPathReplace1": "less",
 		"autoOutputPathReplace2": "css",
 		"autoOutputPathStyle": 2,
 		"createSourceMap": 0,
-		"disableJavascript": 0,
+		"enableJavascript": 0,
 		"ieCompatibility": 1,
+		"mathStyle": 0,
 		"outputStyle": 0,
-		"relativeURLS": 0,
+		"rewriteURLStyle": 0,
 		"shouldRunAutoprefixer": 0,
 		"shouldRunBless": 0,
 		"strictImports": 0,
-		"strictMath": 0,
 		"strictUnits": 0
 		},
 	"languageDefaultsMARKDOWN": {
@@ -7266,7 +7454,7 @@
 	"languageDefaultsSASS": {
 		"autoOutputAction": 0,
 		"autoOutputPathFilenamePattern": "*.css",
-		"autoOutputPathRelativePath": "..\/css",
+		"autoOutputPathRelativePath": "../css",
 		"autoOutputPathReplace1": "sass",
 		"autoOutputPathReplace2": "css",
 		"autoOutputPathStyle": 0,
@@ -7295,7 +7483,7 @@
 	"languageDefaultsSTYLUS": {
 		"autoOutputAction": 0,
 		"autoOutputPathFilenamePattern": "*.css",
-		"autoOutputPathRelativePath": "..\/css",
+		"autoOutputPathRelativePath": "../css",
 		"autoOutputPathReplace1": "stylus",
 		"autoOutputPathReplace2": "css",
 		"autoOutputPathStyle": 0,
@@ -7319,36 +7507,70 @@
 	"languageDefaultsTS": {
 		"autoOutputAction": 0,
 		"autoOutputPathFilenamePattern": "*.js",
-		"autoOutputPathRelativePath": "\/js",
+		"autoOutputPathRelativePath": "/js",
 		"autoOutputPathReplace1": "",
 		"autoOutputPathReplace2": "",
 		"autoOutputPathStyle": 0,
 		"createDeclarationFile": 0,
 		"createSourceMap": 0,
-		"jsxMode": 0,
 		"minifyOutput": 0,
 		"moduleResolutionType": 0,
 		"moduleType": 2,
-		"noImplicitAny": 0,
-		"preserveConstEnums": 0,
 		"removeComments": 0,
-		"suppressImplicitAnyIndexErrors": 0,
 		"targetECMAVersion": 0
 		},
 	"languageDefaultsUserDefined": [
 		],
 	"overrideExternalServerCSS": 0,
 	"previewPathAddition": "",
-	"skippedFoldersString": "log, _logs, logs, _cache, cache, \/storage\/framework\/sessions, node_modules",
+	"skippedFoldersString": "log, _logs, logs, _cache, cache, /storage/framework/sessions, node_modules",
 	"sourceFolderName": "source",
 	"susyVersion": 3,
+	"tsAllowSyntheticDefaultImports": 0,
+	"tsAllowUnreachableCode": 0,
+	"tsAllowUnusedLabels": 0,
+	"tsAlwaysStrict": 0,
+	"tsDownlevelIteration": 0,
+	"tsEmitBOM": 0,
+	"tsEmitDecoratorMetadata": 0,
+	"tsESModuleInterop": 0,
+	"tsForceConsistentCasingInFileNames": 0,
+	"tsImportHelpers": 0,
+	"tsIsolatedModules": 0,
+	"tsJSXFactory": "React.createElement",
+	"tsKeyofStringsOnly": 0,
+	"tsNoEmitHelpers": 0,
+	"tsNoFallthroughCasesInSwitch": 0,
+	"tsNoImplicitAny": 0,
+	"tsNoImplicitReturns": 0,
+	"tsNoImplicitThis": 0,
+	"tsNoImplicitUseStrict": 0,
+	"tsNoLib": 0,
+	"tsNoResolve": 0,
+	"tsNoStrictGenericChecks": 0,
+	"tsNoUnusedLocals": 0,
+	"tsNoUnusedParameters": 0,
+	"tsPreserveConstEnums": 0,
+	"tsPreserveSymlinks": 0,
+	"tsResolveJsonModule": 0,
+	"tsSkipLibCheck": 0,
+	"tsStrictFunctionTypes": 0,
+	"tsStrictNullChecks": 0,
+	"tsStrictPropertyInitialization": 0,
+	"tsStripInternal": 0,
+	"tsSuppressExcessPropertyErrors": 0,
+	"tsSuppressImplicitAnyIndexErrors": 0,
 	"uglifyDefinesString": "",
 	"uglifyFlags2": {
-		"ascii-only": {
+		"arguments": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"ascii_only": {
 			"active": 0,
 			"flagValue": -1
 			},
-		"bare-returns": {
+		"bare_returns": {
 			"active": 0,
 			"flagValue": -1
 			},
@@ -7356,11 +7578,11 @@
 			"active": 1,
 			"flagValue": -1
 			},
-		"bracketize": {
+		"braces": {
 			"active": 0,
 			"flagValue": -1
 			},
-		"cascade": {
+		"collapse_vars": {
 			"active": 1,
 			"flagValue": -1
 			},
@@ -7384,6 +7606,10 @@
 			"active": 0,
 			"flagValue": -1
 			},
+		"directives": {
+			"active": 1,
+			"flagValue": -1
+			},
 		"drop_console": {
 			"active": 0,
 			"flagValue": -1
@@ -7400,7 +7626,15 @@
 			"active": 1,
 			"flagValue": -1
 			},
+		"expression": {
+			"active": 0,
+			"flagValue": -1
+			},
 		"hoist_funs": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"hoist_props": {
 			"active": 1,
 			"flagValue": -1
 			},
@@ -7408,20 +7642,32 @@
 			"active": 0,
 			"flagValue": -1
 			},
-		"if_return": {
+		"html5_comments": {
 			"active": 1,
 			"flagValue": -1
 			},
-		"indent-level": {
+		"ie8": {
 			"active": 0,
-			"flagValue": 4
+			"flagValue": -1
+			},
+		"if_return": {
+			"active": 1,
+			"flagValue": -1
 			},
 		"indent-start": {
 			"active": 0,
 			"flagValue": 0
 			},
-		"inline-script": {
+		"indent_level": {
 			"active": 0,
+			"flagValue": 4
+			},
+		"inline": {
+			"active": 1,
+			"flagValue": 3
+			},
+		"inline_script": {
+			"active": 1,
 			"flagValue": -1
 			},
 		"join_vars": {
@@ -7436,6 +7682,14 @@
 			"active": 0,
 			"flagValue": -1
 			},
+		"keep_infinity": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"keep_quoted_props": {
+			"active": 0,
+			"flagValue": -1
+			},
 		"loops": {
 			"active": 1,
 			"flagValue": -1
@@ -7444,12 +7698,20 @@
 			"active": 1,
 			"flagValue": -1
 			},
-		"max-line-len": {
+		"max_line_len": {
 			"active": 1,
 			"flagValue": 32000
 			},
 		"negate_iife": {
 			"active": 1,
+			"flagValue": -1
+			},
+		"passes": {
+			"active": 1,
+			"flagValue": 1
+			},
+		"preserve_line": {
+			"active": 0,
 			"flagValue": -1
 			},
 		"properties": {
@@ -7460,11 +7722,19 @@
 			"active": 0,
 			"flagValue": -1
 			},
-		"quote-keys": {
+		"quote_keys": {
 			"active": 0,
 			"flagValue": -1
 			},
-		"screw-ie8": {
+		"quote_style": {
+			"active": 1,
+			"flagValue": 0
+			},
+		"reduce_funcs": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"reduce_vars": {
 			"active": 1,
 			"flagValue": -1
 			},
@@ -7476,23 +7746,51 @@
 			"active": 1,
 			"flagValue": -1
 			},
-		"sort": {
-			"active": 0,
-			"flagValue": -1
-			},
-		"space-colon": {
+		"shebang": {
 			"active": 1,
 			"flagValue": -1
 			},
-		"support-ie8": {
-			"active": 0,
+		"side_effects": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"switches": {
+			"active": 1,
 			"flagValue": -1
 			},
 		"toplevel": {
 			"active": 0,
 			"flagValue": -1
 			},
+		"typeofs": {
+			"active": 1,
+			"flagValue": -1
+			},
 		"unsafe": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"unsafe_comps": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"unsafe_Function": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"unsafe_math": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"unsafe_proto": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"unsafe_regexp": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"unsafe_undefined": {
 			"active": 0,
 			"flagValue": -1
 			},
@@ -7504,9 +7802,17 @@
 			"active": 0,
 			"flagValue": -1
 			},
+		"webkit": {
+			"active": 0,
+			"flagValue": -1
+			},
 		"width": {
 			"active": 1,
 			"flagValue": 80
+			},
+		"wrap_iife": {
+			"active": 0,
+			"flagValue": -1
 			}
 		},
 	"uglifyReservedNamesString": "$",
