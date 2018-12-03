@@ -72,11 +72,7 @@ switch( get_option('site_type') ) {
 		$WP_TWIG_DATA['HEADER']->slogan = 'UKM sin medieavdeling - av og for ungdom';
 		$WP_TWIG_DATA['HEADER']->button->background = 'rgba(242, 109, 21, 0.44)';
 		break;
-	case 'gdpr':
-	case 'site':
-		$view_template = 'Page/fullpage';
-		break;
-	default:
+	case 'norge':
 		$now = new DateTime();
 		$start = DateTime::createFromFormat ( 'Y-m-d H:i', '2018-11-03 20:00' );
 		$stop = DateTime::createFromFormat ( 'Y-m-d H:i', '2018-11-10 23:59' );
@@ -87,6 +83,14 @@ switch( get_option('site_type') ) {
 			$view_template = 'Page/home_norge';
 		}
 		require_once('UKMNorge/Wordpress/Controller/norge.controller.php');
+        break;
+    default:
+        $view_template = 'Page/fullpage';
+
+        if( $page_template == 'meny' || isset( $WP_TWIG_DATA['page']->getPage()->meta->UKM_block ) && $WP_TWIG_DATA['page']->getPage()->meta->UKM_block == 'sidemedmeny'  ) {
+            require_once('UKMNorge/Wordpress/Controller/menu.controller.php');
+            $view_template = 'Page/fullpage_with_menu';
+        }
 		break;
 }
 echo WP_TWIG::render( $view_template, $WP_TWIG_DATA );
