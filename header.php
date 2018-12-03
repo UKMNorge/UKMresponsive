@@ -54,34 +54,30 @@ SEO::setImage( $SEOImage );
 if( get_current_blog_id() == 1 ) {
 	$WP_TWIG_DATA['THEME'] = '';
 } else {
+    $section = new stdClass();
+    $section->title = get_bloginfo('name');
+    $section->url = get_bloginfo('url');
+    $WP_TWIG_DATA['section'] = $section;
+    
 	switch( get_option('site_type') ) {
 		// 2: Fylkesside eller lokalside
 		// 3: ORGANISASJONEN
 		case 'fylke':
 		case 'kommune':
 		case 'land':
-			$section = new stdClass();
-			$section->title = get_bloginfo('name');
-			$section->url = get_bloginfo('url');
-			$WP_TWIG_DATA['section'] = $section;
 			break;
 		case 'organisasjonen':
-			$section = new stdClass();
-			$section->title = get_bloginfo('name');
-			$section->url = get_bloginfo('url');
-			$WP_TWIG_DATA['section'] = $section;
 			$WP_TWIG_DATA['THEME'] = 'cherry';
 			break;
 		case 'ego':
-			$header = new stdClass();
 			$header->logo = 'EGO';
 			$header->config = 'hvaerego';
 			$WP_TWIG_DATA['header'] = $header;
-			
 			$WP_TWIG_DATA['THEME'] = 'ego';
 			break;
 		default:
-			$WP_TWIG_DATA['THEME'] = '';
+            $WP_TWIG_DATA['THEME'] = '';
 			break;
-	}
+    }
+    $WP_TWIG_DATA['section'] = $section;
 }
