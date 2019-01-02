@@ -146,10 +146,15 @@ switch( $page_template ) {
 		$view_template = 'Page/styret';
 		break;
 		
-		
-	case 'samtykke/eula':
-		$view_template = 'Samtykke/eula';
-		require_once('UKMNorge/Wordpress/Controller/eula.controller.php');
+        
+	# Samtykke-skjema
+	case 'personvern/samtykke':
+		$view_template = 'Personvern/samtykke';
+		require_once('UKMNorge/Wordpress/Controller/personvern/samtykke.controller.php');
+		break;
+	case 'personvern/pamelding':
+		$view_template = 'Personvern/pamelding';
+		require_once('UKMNorge/Wordpress/Controller/personvern/pamelding.controller.php');
 		break;
 
 	# Standard wordpress-side

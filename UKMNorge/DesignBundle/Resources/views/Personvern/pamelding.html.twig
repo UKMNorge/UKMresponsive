@@ -2,12 +2,40 @@
 
 {% block content %}
 	<div class="container">
+        <div class="row">
+			<div class="col-12">
+				{# CONTENT #}
+				<p class="lead">{{ trans['media'].ingress }}</p>
+					
+				<p>
+				    <b>{{ trans['versjon'].kort }}</b>{{ trans['media'].kort|nl2br }}
+				</p>
+				
+				<p class="right">
+					<a href="#langversjonPersonvern" class="btn btn-outline-secondary btn-sm">{{ trans['versjon'].lang|nl2br }}</a>
+				</p>
+				
+			</div>
+		</div>
+		
 		<div class="row">
 			<div class="col-12">
-				<article>
-					<p class="lead mt-3">
-						UKM-festivalen er et offentlig arrangement hvor det vil bli tatt bilder og film.
-					</p>
+				{# CONTENT #}
+                <h2>{{ trans['datalagring'].overskrift }}</h2>
+				<p class="lead">{{ trans['datalagring'].ingress }}</p>					
+				<p>
+				    <b>{{ trans['versjon'].kort }}</b>{{ trans['datalagring'].kort|nl2br }}
+				</p>
+				
+				<p class="right">
+					<a href="/datalagring/" class="btn btn-outline-secondary btn-sm">{{ trans['versjon'].lang|nl2br }}</a>
+				</p>
+				
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-12">
 					{% if skjul_skjema is not defined %}
 						<p class="bold">
 							Jeg, 
@@ -62,15 +90,11 @@
 								<a href="?id={{GET('id')}}&feedback=nogo{{ krev_foresatt is defined and krev_foresatt ? '&foresatt=true' }}" class="btn btn-primary btn-sm btn-block mt-3" id="nogo">Det er ikke greit</a>
 							</p>
 						{% endif %}
-					{% else %}
-						<p>
-							<b>Kort:</b>
-							Du vil bli tatt bilde av og filmet, dette legges ut på UKM.no og kan legges ut på UKMs 
-							sosiale medier de neste tre årene. Vi vil aldri drite deg ut eller legge ut pinlige bilder, 
-							og du kan når som helst gi oss beskjed om å slette bilder/filmer av deg.
-						</p>
+						
 					{% endif %}
-					<h1>Den lange versjonen</h1>
+					
+                    <a name="langversjonPersonvern"></a>
+                    <h1>Den lange versjonen om personvern</h1>
 					<h2>Hvorfor tar vi bilder og filmer?</h2>
 					<p>
 						Vi er her for deg, og andre som deg. Det er to grunner til at vi tar bilder og film:
