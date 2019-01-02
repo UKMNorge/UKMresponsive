@@ -22,12 +22,12 @@ try {
                 # For ung til å oppgi samtykke, etterspør foresattes info
                 if( ($_POST['alder'] == 'under10' || (int) $_POST['alder'] < 15) && $_POST['alder'] != 'over20' ) {
                     Write::godta( $request, $_POST['alder'] );
-                    $view_template = 'Samtykke/foresatt';
+                    $view_template = 'Personvern/foresatt';
                 }
                 # Alt OK. Si takk.
                 else {
                     Write::godta( $request, $_POST['alder'] );
-                    $view_template = 'Samtykke/takk';
+                    $view_template = 'Personvern/takk';
                     try {
                         $melding = Request::createMeldingTakk( $request );
                         // SEND SMS
@@ -46,7 +46,7 @@ try {
                         }
                     } catch( Exception $e ) {
                         if( $e->getCode() == 2 ) {
-                            $view_template = 'Samtykke/foresatt';
+                            $view_template = 'Personvern/foresatt';
                         } else {
                             throw $e;
                         }
@@ -75,13 +75,13 @@ try {
                 
                 $WP_TWIG_DATA['foresatt'] = $_POST['navn'];
                 $WP_TWIG_DATA['mobil'] = str_replace(' ','',$_POST['mobil']);
-                $view_template = 'Samtykke/takkBarn';
+                $view_template = 'Personvern/takkBarn';
             break;
             
             # TREDJE SKJEMA (FORESATT HAR GODTATT)
             case 'approval-foresatt':
                 Write::godtaForesatt( $request );
-                $view_template = 'Samtykke/takk';
+                $view_template = 'Personvern/takk';
     
                 $melding = Request::createMeldingTakk( $request );
                 // SEND SMS

@@ -80,7 +80,7 @@ try {
 				else {
 					$samtykke->setStatus('godkjent', $IP);
 				}
-				$view_template = 'Samtykke/go';
+				$view_template = 'Personvern/go';
 			}
 			/**
 			 * VI HAR FÅTT EN NO-GO :(
@@ -94,7 +94,7 @@ try {
 				else {
 					$samtykke->setStatus('ikke_godkjent', $_SERVER['HTTP_CF_CONNECTING_IP']);
 				}
-				$view_template = 'Samtykke/nogo';
+				$view_template = 'Personvern/nogo';
 			}
 			$samtykke->persist();
 			
@@ -132,6 +132,6 @@ try {
 		$WP_TWIG_DATA['er_foresatt'] = $ER_FORESATT;
 	}
 } catch( Exception $e ) {
-	$view_template = 'Samtykke/error';
+	$view_template = 'Personvern/error';
 	$WP_TWIG_DATA['melding'] = $e->getMessage();
 }
