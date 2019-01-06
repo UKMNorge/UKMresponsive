@@ -69,8 +69,9 @@ if( get_current_blog_id() == 1 ) {
 		case 'organisasjonen':
 			$WP_TWIG_DATA['THEME'] = 'cherry';
 			break;
-		case 'ego':
-			$header->logo = 'EGO';
+        case 'ego':
+            $header = new stdClass();
+			#$header->logo = 'EGO';
 			$header->config = 'hvaerego';
 			$WP_TWIG_DATA['header'] = $header;
 			$WP_TWIG_DATA['THEME'] = 'ego';
