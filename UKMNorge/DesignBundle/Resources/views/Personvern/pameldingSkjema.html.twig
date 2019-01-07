@@ -6,15 +6,13 @@
         {% else %}
             {{ samtykke.getNavn() }} ({{ samtykke.getAlder() }} år) 
         {% endif %}
-        forstår at UKM tar bilder og film, og bruker det som det står nedover denne siden.
+        forstår at UKM tar bilder og film, og bruker det slik det står nedover denne siden.
     </p>
     {% if krev_foresatt and not er_foresatt %}
         <form method="POST" class="form">
             <div class="form-group">
                 <label for="foresatt">
-                    Navn til en av dine foreldre/foresatte
-                    <br />
-                    <small>(vi må gi dem informasjon om ditt valg)</small>
+                    Navn på en av dine foreldre/foresatte
                 </label>
                 <input type="text" class="form-control" name="foresatt_navn" required="required" placeholder="Skriv fornavn og etternavn.." />
             </div>
@@ -26,10 +24,6 @@
                 <input type="tel" class="form-control" name="foresatt_mobil" required="required" placeholder="Skriv mobilnummer her.." maxlength="8" />
             </div>
 
-            <p class="small text-muted">
-                <b>Kort-versjonen:</b> {{ trans['versjon'].ekstremkort }}
-            </p>
-
             <div class="form-group">
                 <button type="submit" name="feedback" value="go" class="btn btn-primary btn-sm btn-block">Det er greit</button>
             </div>
@@ -38,9 +32,6 @@
             </div>
         </form>
     {% else %}
-            <p class="small text-muted">
-                <b>Kort-versjonen:</b> {{ trans['versjon'].ekstremkort }}
-            </p>
         <p>
             <a href="?id={{GET('id')}}&feedback=go{{ krev_foresatt is defined and krev_foresatt ? '&foresatt=true' }}" class="btn btn-primary btn-sm btn-block">Det er greit</a>
             <a href="?id={{GET('id')}}&feedback=nogo{{ krev_foresatt is defined and krev_foresatt ? '&foresatt=true' }}" class="btn btn-primary btn-sm btn-block mt-3" id="nogo">Jeg ønsker ikke at UKM tar bilder/film</a>

@@ -7,7 +7,22 @@
                 {% include "UKMDesignBundle:Personvern:pameldingSkjema.html.twig"|UKMpath %}
             </div>
         </div>
+
         <div class="row">
+			<div class="col-12">
+				{# CONTENT #}
+                <h2>{{ trans['datalagring'].overskrift }}</h2>
+				<p class="lead">{{ trans['datalagring'].ingress }}</p>					
+				<p>
+				   {{ trans['datalagring'].kort|nl2br }}
+				</p>
+				
+				<p class="right">
+					<a href="/datalagring/" target="_blank" class="btn btn-outline-secondary btn-sm">{{ trans['versjon'].lang|nl2br }}</a>
+				</p>
+				
+			</div>
+
 			<div class="col-12">
                 <h2>{{ trans['media'].overskrift }}</h2>
 
@@ -15,170 +30,20 @@
 				<p class="lead">{{ trans['media'].ingress }}</p>
 					
 				<p>
-				    <b>{{ trans['versjon'].kort }}</b>{{ trans['media'].kort|nl2br }}
+				    {{ trans['media'].kort|nl2br }}
 				</p>
 				
 				<p class="right">
-					<a href="#langversjonPersonvern" class="btn btn-outline-secondary btn-sm">{{ trans['versjon'].lang|nl2br }}</a>
+					<a href="/alt-om-personvern/" target="_blank" class="btn btn-outline-secondary btn-sm">{{ trans['versjon'].lang|nl2br }}</a>
 				</p>
-				
 			</div>
 		</div>
 		
-		<div class="row">
-			<div class="col-12">
-				{# CONTENT #}
-                <h2>{{ trans['datalagring'].overskrift }}</h2>
-				<p class="lead">{{ trans['datalagring'].ingress }}</p>					
-				<p>
-				    <b>{{ trans['versjon'].kort }}</b>{{ trans['datalagring'].kort|nl2br }}
-				</p>
-				
-				<p class="right">
-					<a href="/datalagring/" class="btn btn-outline-secondary btn-sm">{{ trans['versjon'].lang|nl2br }}</a>
-				</p>
-				
-			</div>
-		</div>
-
-		<div class="row">
-			<div class="col-12">
-                    <a name="langversjonPersonvern"></a>
-                    <h1>Den lange versjonen om personvern</h1>
-					<h2>Hvorfor tar vi bilder og filmer?</h2>
-					<p>
-						Vi er her for deg, og andre som deg. Det er to grunner til at vi tar bilder og film:
-					</p>
-					<ul class="list-group">
-						<li class="list-group-item">
-							Vi vil gi deg gode bilder og filmer du kan dele med venner og familie.
-						</li>
-						<li class="list-group-item">
-							Vi vil vise andre hva UKM og UKM-festivalen er.
-						</li>
-					</ul>
-
-
-					<h2>Hvor gjør vi av det?</h2>
-					<ul class="list-group">
-						<li class="list-group-item">
-							<strong>UKM.no og sosiale medier</strong>
-							<br />
-							Alt UKM Media gjør, legges ut på UKM.no og kan brukes på våre kanaler i sosiale medier
-							(facebook, snapchat og instagram).<br />
-							Du kan finne alle bilder og filmer vi publiserer av innslaget ditt på 
-							<a href="https://ukm-festivalen.no/pameldte/">ukm-festivalen.no/pameldte</a>.
-							Nyhetssaker, bilder og filmer fra hele festivalen finner du på 
-							<a href="https://ukm-festivalen.no">ukm-festivalen.no</a>
-						</li>
-						<li class="list-group-item">
-							<strong>Lokalpressen</strong>
-							<br />
-							Scenebilder og backstagebilder gjøres tilgjengelig for pressen på 
-							<a href="http://pressemelding.ukm.no">pressemelding.ukm.no</a>. 
-							Dette gjør vi i tilfelle lokalavisa lager en nyhetssak om deg.
-						</li>
-					</ul>
-					<p>&nbsp;</p>
-					
-					
-					<h2>Hva tar vi bilder og film av?</h2>
-					<ul class="list-group">
-						<li class="list-group-item">
-							<b>Stemning</b>
-							<br />
-							Dette er bilder/film av deltakere som har det hyggelig, og som viser hva som skjer. 
-							Her er det vanligvis flere personer i bildet samtidig.
-							<br />
-							Hvis du gjør ablegøyer for å få fotografens oppmerksomhet kan vi ta bilder av deg alene, 
-							men hovedregelen er at vi alltid tar bilder av flere sammen.
-						</li>
-						<li class="list-group-item">
-							<b>Scenebilder</b>
-							<br />
-							Dette er promobilder av innslaget på scenen. 
-							Disse tar vi for deg, slik at du har et proft minne å dele med familie og venner.
-						</li>
-						<li class="list-group-item">
-							<b>Backstage-bilder</b>
-							<br />
-							Dette er artistbilder du kan bruke hvis du skal gi ut en singel eller 
-							vil markedsføre deg selv på sosiale medier.
-						</li>
-						<li class="list-group-item">
-							<b>Film av scene-opptreden</b>
-							<br />
-							Deltar du på scenen lager vi en film av opptreden din som du kan dele med familie og venner.
-							<br />
-							Fordi vi betaler alle tono- og ncb-avgifter for deg 
-							(sånn at det er gratis for deg å dele filmen med alle du vil), 
-							vil alle filmer kun være tilgjengelig på UKM-TV (les mer).
-						</li>
-						<li class="list-group-item">
-							<strong>Gruppebilder</strong>
-							<br />
-							Hvis du er del av en gruppe, som for eksempel UKM Media eller unge arrangører
-							 tar vi et bilde av hele gjengen sånn at dere har et felles minne.
-						</li>
-						<li class="list-group-item">
-							<b>
-								Intervju 
-								<span style="color: red;">(OBS)</span>
-							</b>
-							<br />
-							Hvis du stiller opp til et intervju vil vi skrive om deg eller filme deg, 
-							og ta intervju-bilder av deg.
-							<br />
-							Dette er et redaksjonelt produkt, så hvis du stiller opp til intervju, 
-							kan det være litt vanskeligere å slette det. 
-							Vi skal selvfølgelig ikke drite deg ut, 
-							men hvis du er del av en større reportasje må vi også ta hensyn til de andre 
-							i saken/filmen før vi sletter den.
-						</li>
-					</ul>
-					
-					
-					<h2>Hva gjør vi ikke?</h2>
-					<ul class="list-group">
-						<li class="list-group-item">
-							Snikfotografering driver vi ikke med.
-						</li>
-						<li class="list-group-item">
-							Vi vil aldri drite deg ut eller publisere pinlig innhold.
-						</li>
-						<li class="list-group-item">
-							Vi selger selvfølgelig ikke innholdet til andre.
-						</li>
-						<li class="list-group-item">
-							Hvis vi liker et bilde skikkelig godt og vil bruke det på en plakat eller i en trykksak, 
-							så gjør vi ikke dette uten å spørre deg om det er greit først.
-						</li>
-					</ul>
-					
-					
-					<h2>Hvor lenge?</h2>
-					<p>
-						Bilder og filmer blir liggende på UKM.no til du ber oss om å slette det. 
-						Vi synes det er fint å vise hva som har vært vist frem i UKM, 
-						og ønsker å vise det frem lengst mulig.
-					</p>
-					<p>
-						Noen ganger klipper vi om filmer, eller re-publiserer bilder for å vise hva UKM og UKM-festivalen er. 
-						Da bruker vi bilder fra de siste to-tre årene.
-					</p>
-					
-					
-					<h2>Misfornøyd?</h2>
-					<p>
-						<strong>Du kan når som helst be oss om å slette ting.</strong> 
-						Vi vil ikke ha filmer og bilder på UKM.no som du er misfornøyd med, 
-						og sletter alt vi kan så fort som mulig. 
-						Send en e-post til 
-						<a href="mailto:slettmeg@ukm.no">slettmeg@ukm.no</a> 
-						(husk å sende med lenke til det du vil ha slettet &#8211; da kan vi hjelpe deg enda raskere).
-					</p>
-				</article>
-			</div>
-		</div>
+		
 	</div>
+{% endblock %}
+
+
+{% block langversjon_som_ma_flyttes %}
+
 {% endblock %}
