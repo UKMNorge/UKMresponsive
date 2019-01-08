@@ -3,6 +3,11 @@ use UKMNorge\DesignBundle\Utils\SEO;
 use UKMNorge\DesignBundle\Utils\SEOImage;
 
 if( get_option('UKM_banner_image') ) {
+    
+    if( is_front_page() ) {
+        $WP_TWIG_DATA['page']->getPage()->meta->noImageOnTop = true;
+    }
+    
     $WP_TWIG_DATA['HEADER']->background->url = get_option('UKM_banner_image');
     if( get_option('UKM_banner_image_position_y' ) ) {
         $pos_y = get_option('UKM_banner_image_position_y');
