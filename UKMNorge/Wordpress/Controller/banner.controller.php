@@ -4,7 +4,7 @@ use UKMNorge\DesignBundle\Utils\SEOImage;
 
 if( get_option('UKM_banner_image') ) {
     
-    if( is_front_page() ) {
+    if( is_front_page() || is_home() ) {
         $WP_TWIG_DATA['page']->getPage()->meta->noImageOnTop = true;
     }
     
