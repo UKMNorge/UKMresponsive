@@ -81,6 +81,7 @@ switch( get_option('site_type') ) {
         break;
     default:
         $view_template = 'Page/fullpage';
+        require_once(PATH_WORDPRESSBUNDLE. 'Controller/banner.controller.php');
 
         if( $page_template == 'meny' || isset( $WP_TWIG_DATA['page']->getPage()->meta->UKM_block ) && $WP_TWIG_DATA['page']->getPage()->meta->UKM_block == 'sidemedmeny'  ) {
             require_once('UKMNorge/Wordpress/Controller/menu.controller.php');
