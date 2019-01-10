@@ -13,7 +13,7 @@
 
                     {# FORENKLE KLOKKA HVIS MULIG #}
                     {% if monstring.getStart()|dato('i') == '00' and monstring.getStop()|dato('i') == '00' %}
-                        {% set timeFormat = 'g' %}
+                        {% set timeFormat = 'G' %}
                     {% else %}
                         {% set timeFormat = 'H:i' %}
                     {% endif %}
