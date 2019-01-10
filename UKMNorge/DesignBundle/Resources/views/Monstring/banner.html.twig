@@ -20,7 +20,7 @@
 
                     {# SAMME DAG #}
                     {% if monstring.getStart()|dato('d.m') == monstring.getStop()|dato('d.m') %}
-                        {{ monstring.getStart()|dato('D d.M')|capitalize }} kl. {{ monstring.getStart()|dato( timeFormat ) }}
+                        {{ monstring.getStart()|dato('D d. M')|capitalize }} kl. {{ monstring.getStart()|dato( timeFormat ) }}
                         - {{ monstring.getStop()|dato( timeFormat ) }}
                     {# FLERE DAGER #}
                     {% else %}
