@@ -15,7 +15,7 @@
                     {% if monstring.getStart()|dato('i') == '00' and monstring.getStop()|dato('i') == '00' %}
                         {% set timeFormat = 'g' %}
                     {% else %}
-                        {% set timeFormat = 'h:i' %}
+                        {% set timeFormat = 'H:i' %}
                     {% endif %}
 
                     {# SAMME DAG #}
@@ -24,9 +24,9 @@
                         - {{ monstring.getStop()|dato( timeFormat ) }}
                     {# FLERE DAGER #}
                     {% else %}
-                        {{ monstring.getStart()|dato('j.M') }} kl. {{ monstring.getStart()|dato('h:i') }}
+                        {{ monstring.getStart()|dato('j.M') }} kl. {{ monstring.getStart()|dato('H:i') }}
                         til
-                        {{ monstring.getStop()|dato('j.M') }} kl. {{ monstring.getStop()|dato('h:i') }}
+                        {{ monstring.getStop()|dato('j.M') }} kl. {{ monstring.getStop()|dato('H:i') }}
                     {% endif %}
                 </p>
 			</div>
