@@ -10,7 +10,9 @@ $WP_TWIG_DATA['page'] = new page();
 
 // SET OPENGRAPH AND SEARCH OPTIMIZATION INFOS
 SEO::setTitle( $WP_TWIG_DATA['page']->getPage()->title );
-SEO::setDescription( addslashes( preg_replace( "/\r|\n/", "", strip_tags( $WP_TWIG_DATA['page']->getPage()->lead ) ) ) );
+#SEO::setDescription( addslashes( preg_replace( "/\r|\n/", "", strip_tags( $WP_TWIG_DATA['page']->getPage()->lead ) ) ) );
+SEO::setDescription( strip_tags( $WP_TWIG_DATA['page']->getPage()->lead ) );
+
 SEO::setAuthor( $WP_TWIG_DATA['page']->getPage()->author->display_name );
 
 // CHECK TO FIND CUSTOM PAGE CONTROLLER AND VIEW ISSET

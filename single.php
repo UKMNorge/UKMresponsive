@@ -71,6 +71,7 @@ if( is_object( $image ) ) {
 SEO::setType('article');
 SEO::setTitle( $WP_TWIG_DATA['post']->title );
 SEO::setDescription( addslashes( preg_replace( "/\r|\n/", "", strip_tags( $WP_TWIG_DATA['post']->lead ) ) ) );
+SEO::setDescription( strip_tags( $WP_TWIG_DATA['post']->lead ) );
 SEO::setAuthor( $authorlist );
 SEO::setPublished( $WP_TWIG_DATA['post']->raw->post_date_gmt );
 
