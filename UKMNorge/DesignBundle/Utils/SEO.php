@@ -31,7 +31,7 @@ class SEO {
 		return self::$description;
 	}
 	public static function setDescription( $description ){
-		self::$description = $description;
+		self::$description = str_replace(["\r","\n"], "", strip_tags($description));
 	}
 	
 	public static function getAuthor(){

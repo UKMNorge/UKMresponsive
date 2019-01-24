@@ -8,7 +8,10 @@ require_once('UKMNorge/Wordpress/Utils/page.class.php');
 require_once('UKMNorge/Wordpress/Utils/posts.class.php');
 
 SEO::setCanonical( $WP_TWIG_DATA['blog_url'] );
-
+SEO::setDescription(
+    'Noen deltar på UKM for å vise frem noe de brenner for, '.
+    'noen prøver noe helt nytt og andre er med sånn at alle får vist sin beste side.'
+);
 $WP_TWIG_DATA['page'] = new page();
 $WP_TWIG_DATA['posts'] = new posts(6);
 $WP_TWIG_DATA['page_next'] = get_permalink( get_option( 'page_for_posts' ) );
