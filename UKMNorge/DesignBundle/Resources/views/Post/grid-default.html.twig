@@ -4,6 +4,9 @@
 			{% if post.meta.video_on_top is defined and post.meta.video_on_top is not empty %}
 				<img src="{{ UKMasset('img/circle-play.png') }}" class="featured-image-play" />
 			{% endif %}
+            {% if post.meta.repost is defined %}
+                <div class="repost">FRA {{ post.meta.repost }}</div>
+            {% endif %}
 		</div>	
 		<p class="mb-1 bold">
 			{{ post.title|raw }}

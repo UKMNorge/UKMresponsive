@@ -1685,9 +1685,22 @@ h4.linje {
   padding-bottom: 66%;
   margin: 0;
   margin-bottom: 0.1em;
+  position: relative;
 }
 a .post-grid-default {
   color: #000 !important;
+}
+.post-grid-default .image > .repost {
+  color: #fff;
+  background: #151e3f;
+  padding: 0.5em;
+  text-transform: uppercase;
+  font-size: 0.75em;
+  font-weight: bold;
+  float: left;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
 }
 /* SINGLE POST */
 #the_post_image {
