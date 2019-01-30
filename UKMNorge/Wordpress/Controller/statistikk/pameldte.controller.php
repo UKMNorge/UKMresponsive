@@ -1,6 +1,9 @@
 <?php
 	
 $maned = $WP_TWIG_DATA['page']->getLastParameter();
+if( $maned == '111' ) {
+    $maned = '01';
+}
 
 require_once('UKM/sql.class.php');
 $start_maned_include = '10'; // Før var det fra og med desember
@@ -105,6 +108,9 @@ function uke( $nummer, $days_in_month ) {
 
 // HVIS VI SKAL VISE OVERSIKTEN FOR KUN ÉN MÅNED
 $id = $WP_TWIG_DATA['page']->getLastParameter();
+if( $id == '111' ) {
+    $id = '01';
+}
 if( is_numeric( $id ) ) {
 	$mnd = str_pad( (string) $id, 2, '0', STR_PAD_LEFT );
 	$WP_TWIG_DATA['maned'] = $WP_TWIG_DATA['stat_mnd'][$mnd];
