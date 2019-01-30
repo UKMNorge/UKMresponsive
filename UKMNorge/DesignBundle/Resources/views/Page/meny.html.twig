@@ -1,5 +1,7 @@
 {% extends "Layout/_"~ (singleMode is defined and singleMode ? 'singleMode' : 'base' ) ~".html.twig"|UKMpath %}
 
 {% block content %}
-	{% embed "Layout/nav.html.twig" %}{% endembed %}
+	<div class="container-fluid">
+	    {% embed "Layout/nav.html.twig" %}{% endembed %}
+    </div>
 {% endblock %}
