@@ -60,10 +60,12 @@
 			</div>
         {% endif %}
     </div>
-    <div class="row mt-3">
-        <div class="col">
-            <a href="/{{ monstring.getFylke().getLink() }}/" class="btn btn-sm btn-block btn-outline-primary">UKM {{ monstring.getFylke() }}</a>
+    {% for kommune in monstring.getKommuner().getAll() %}
+        <div class="row mt-3">
+            <div class="col">
+                <a href="/{{ kommune.getFylke().getLink() }}/" class="btn btn-sm btn-block btn-outline-primary">UKM {{ kommune.getFylke() }}</a>
+            </div>
         </div>
-	</div>
+    {% endfor %}
 	<div class="clearfix"></div>
 </div>
