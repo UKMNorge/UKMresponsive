@@ -1,6 +1,6 @@
 <?php
 /** 
-	STATIC HELPER CLASS FOR frontpage.controller.php
+ *	STATIC HELPER CLASS FOR frontpage.controller.php
 **/
 abstract class monstringController {
 	static $pl_id = false;
