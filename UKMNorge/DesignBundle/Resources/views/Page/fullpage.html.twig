@@ -7,7 +7,9 @@
 		<div class="row">
 			<div class="col-md-10 ml-md-auto mr-md-auto col-lg-8">
 				<article>
-					<h1>{{ page.getPage().title|raw }}</h1>
+					{% if not page.getPage().meta.hideTitle %}
+						<h1>{{ page.getPage().title|raw }}</h1>
+					{% endif %}
 					{{ page.getPage().content|raw }}
 				</article>
 			</div>
