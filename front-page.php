@@ -36,7 +36,11 @@ switch( get_option('site_type') ) {
 		break;
 	case 'land':
 		switch( $page_template ) {
-		 	case 'festival/juni':
+			case 'festival/plakat':
+				$view_template = 'Festival/plakat';
+				#require_once('UKMNorge/Wordpress/Controller/festival/juni.controller.php');
+				break; 
+			case 'festival/juni':
 				$view_template = 'Festival/juni';
 				require_once('UKMNorge/Wordpress/Controller/festival/juni.controller.php');
 				break;
