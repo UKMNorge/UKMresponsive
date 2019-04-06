@@ -11,10 +11,14 @@ if( function_exists('UKMpush_to_front_load_all_fm_data') ) {
 		$ptf_posts = [];
 		$week = (int) date('W');
 		$festivaler = UKMpush_to_front_load_all_fm_data( date('Y'), $week );
-		foreach( $festivaler as $festival ) {
-			foreach( $festival->postdata as $post ) {
-				$ptf_posts[] = $post;
-				$post->meta->repost = $festival->title;
+		if( is_array( $festivaler ) ) {
+			foreach( $festivaler as $festival ) {
+				if( is_array( $festival->postdata ) ) {
+					foreach( $festival->postdata as $post ) {
+						$ptf_posts[] = $post;
+						$post->meta->repost = $festival->title;
+					}
+				}
 			}
 		}
 		shuffle( $ptf_posts );
