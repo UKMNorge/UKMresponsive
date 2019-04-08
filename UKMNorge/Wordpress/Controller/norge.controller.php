@@ -11,6 +11,15 @@ if( function_exists('UKMpush_to_front_load_all_fm_data') ) {
 		$ptf_posts = [];
 		$week = (int) date('W');
 		$festivaler = UKMpush_to_front_load_all_fm_data( date('Y'), $week );
+
+		// Forrige uke vises tom fredag
+		if( (int) date('N') < 6 ) {
+			$forrige = UKMpush_to_front_load_all_fm_data( date('Y'), $week-1 );
+			if( is_array( $forrige ) ) {
+				$festivaler = array_merge($festivaler, $forrige );
+			}
+		}
+
 		if( is_array( $festivaler ) ) {
 			foreach( $festivaler as $festival ) {
 				if( is_array( $festival->postdata ) ) {
