@@ -14,19 +14,17 @@
 		<p class="nocolor mt-0">
 			{{ post.lead|raw }}
 		</p>
-
 {#
-			{% if hidelead is not defined %}
-				{{ post.lead|raw }}
-			{% endif %}
-			{% if hideleadmobile is not defined and hidelead is not defined %}
-				{{ post.lead|raw }}
-			{% endif %}
-			
-			{% if hidelead or hideleadmobile is defined %}
-				<a href="{{ post.url }}">Les mer</a>
-			{% endif %}
+		{% if hidelead is not defined %}
+			{{ post.lead|raw }}
+		{% endif %}
+		{% if hideleadmobile is not defined and hidelead is not defined %}
+			{{ post.lead|raw }}
+		{% endif %}
+		
+		{% if hidelead or hideleadmobile is defined %}
+			<a href="{{ post.url }}">Les mer</a>
+		{% endif %}
 #}
-		</p>
 	</div>
 </a>
