@@ -10,7 +10,15 @@ $WP_TWIG_DATA['page'] = new page();
 
 // SET OPENGRAPH AND SEARCH OPTIMIZATION INFOS
 SEO::setTitle( $WP_TWIG_DATA['page']->getPage()->title );
-SEO::setDescription( addslashes( preg_replace( "/\r|\n/", "", strip_tags( $WP_TWIG_DATA['page']->getPage()->lead ) ) ) );
+SEO::setDescription(
+    'Noen deltar på UKM for å vise frem noe de brenner for, '.
+    'noen prøver noe helt nytt og andre er med sånn at alle får vist sin beste side.'
+);
+if( !empty( strip_tags( $WP_TWIG_DATA['page']->getPage()->lead )) ) {
+    #SEO::setDescription( addslashes( preg_replace( "/\r|\n/", "", strip_tags( $WP_TWIG_DATA['page']->getPage()->lead ) ) ) );
+    SEO::setDescription( strip_tags( $WP_TWIG_DATA['page']->getPage()->lead ) );
+}
+
 SEO::setAuthor( $WP_TWIG_DATA['page']->getPage()->author->display_name );
 
 // CHECK TO FIND CUSTOM PAGE CONTROLLER AND VIEW ISSET
@@ -122,25 +130,39 @@ switch( $page_template ) {
 		break;
 	case 'statistikk/pameldte':
 		require_once('UKMNorge/Wordpress/Controller/menu.controller.php');
-		$view_template = 'Statistikk/pameldte';
+		$view_menu_template  ='Statistikk/pameldte';
+		$view_template = &$view_menu_template;
 		require_once('UKMNorge/Wordpress/Controller/statistikk/pameldte.controller.php');
 		break;
 	case 'statistikk/frister':
 	case 'statistikk/monstringer':
 		require_once('UKMNorge/Wordpress/Controller/menu.controller.php');
-		$view_template = 'Statistikk/monstringer';
+		$view_menu_template = 'Statistikk/monstringer';
+		$view_template = &$view_menu_template;
 		require_once('UKMNorge/Wordpress/Controller/statistikk/monstringer.controller.php');
 		break;
+	case 'statistikk/sanger':
+		require_once('UKMNorge/Wordpress/Controller/menu.controller.php');
+		$view_menu_template  = 'Statistikk/sanger';
+		$view_template = &$view_menu_template;
+		require_once('UKMNorge/Wordpress/Controller/statistikk/sanger.controller.php');
+		break;
+
 	# Vis kontakt-side
 	case 'org/styret':
 		require_once('UKMNorge/Wordpress/Controller/kontakt.controller.php');
 		$view_template = 'Page/styret';
 		break;
 		
-		
-	case 'samtykke/eula':
-		$view_template = 'Samtykke/eula';
-		require_once('UKMNorge/Wordpress/Controller/eula.controller.php');
+        
+	# Samtykke-skjema
+	case 'personvern/samtykke':
+		$view_template = 'Personvern/samtykke';
+		require_once('UKMNorge/Wordpress/Controller/personvern/samtykke.controller.php');
+		break;
+	case 'personvern/pamelding':
+		$view_template = 'Personvern/pamelding';
+		require_once('UKMNorge/Wordpress/Controller/personvern/pamelding.controller.php');
 		break;
 
 	# Standard wordpress-side
@@ -156,7 +178,11 @@ switch( $page_template ) {
 
 if( $page_template == 'meny' || isset( $WP_TWIG_DATA['page']->getPage()->meta->UKM_block ) && $WP_TWIG_DATA['page']->getPage()->meta->UKM_block == 'sidemedmeny'  ) {
 	require_once('UKMNorge/Wordpress/Controller/menu.controller.php');
-	$view_template = 'Page/fullpage_with_menu';
+	if( !empty( $view_menu_template ) ) {
+		$view_template = $view_menu_template;
+	} else {
+		$view_template = 'Page/fullpage_with_menu';
+	}
 }
 
 /**

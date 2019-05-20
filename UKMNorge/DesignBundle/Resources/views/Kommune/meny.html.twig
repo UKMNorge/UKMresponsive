@@ -51,14 +51,21 @@
 		</div>
 	</div>
 	
-	{% if direkte is defined and direkte != false %}
-		<div class="row mt-3">
+	<div class="row mt-3">
+        {% if direkte is defined and direkte != false %}
 			<div class="col">
 				{% if direkte.type == 'link' %}
-					<a href="{{ direkte.link }}" target="_blank" class="btn btn-block btn-outline-primary">Se direktesending her</a>
+					<a href="{{ direkte.link }}" target="_blank" class="btn btn-block btn-primary">Se direktesending her</a>
 				{% endif %}
 			</div>
-		</div>
-	{% endif %}
+        {% endif %}
+    </div>
+    {% for fylke in monstring.getKommuner().getFylker() %}
+        <div class="row mt-3">
+            <div class="col">
+                <a href="/{{ fylke.getLink() }}/" class="btn btn-sm btn-block btn-outline-primary">UKM {{ fylke.getNavn() }}</a>
+            </div>
+        </div>
+    {% endfor %}
 	<div class="clearfix"></div>
 </div>

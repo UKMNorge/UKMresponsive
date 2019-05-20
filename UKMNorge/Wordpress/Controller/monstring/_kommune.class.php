@@ -2,7 +2,7 @@
 	
 require_once('_monstring.class.php');
 /** 
-	STATIC HELPER CLASS FOR frontpage.controller.php
+ *	STATIC HELPER CLASS FOR frontpage.controller.php
 **/
 class kommuneController extends monstringController {
 	

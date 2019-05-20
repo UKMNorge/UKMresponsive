@@ -133,22 +133,7 @@ $WP_TWIG_DATA['direkte']		= fylkeController::getLive();
 $WP_TWIG_DATA['page_next'] 		= $WP_TWIG_DATA['posts']->getPageNext();
 $WP_TWIG_DATA['page_prev']		= $WP_TWIG_DATA['posts']->getPagePrev();
 
-if( get_option('UKM_banner_image') ) {
-	$WP_TWIG_DATA['HEADER']->background->url = get_option('UKM_banner_image');
-	if( get_option('UKM_banner_image_position_y' ) ) {
-		$pos_y = get_option('UKM_banner_image_position_y');
-		if( $pos_y == 'bottom' ) {
-			$pos_y = '95%';
-		}
-		$WP_TWIG_DATA['HEADER']->background->position = '50% '. $pos_y;
-	}
-	$large_image = get_option('UKM_banner_image_large');
-	if( is_string( $large_image ) && !empty( $large_image ) ) {
-		$WP_TWIG_DATA['HEADER']->background->url_large = $large_image;
-	}
-	$image = new SEOImage( str_replace('http:','https:', get_option('UKM_banner_image') ) );
-	SEO::setImage( $image );
-}
+require_once(PATH_WORDPRESSBUNDLE. 'Controller/banner.controller.php');
 
 $meny = wp_get_nav_menu_object( get_option('UKM_menu') );	
 $WP_TWIG_DATA['meny'] = wp_get_nav_menu_items( $meny );

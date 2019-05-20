@@ -1,17 +1,32 @@
 <?php
 use UKMNorge\DesignBundle\Utils\SEO;
 use UKMNorge\DesignBundle\Utils\SEOImage;
+use Symfony\Component\Yaml\Yaml;
 
-require_once(UKMSAMTYKKE_PLUGIN_PATH . 'models/samtykke/person.class.php');
-require_once(UKMSAMTYKKE_PLUGIN_PATH . 'models/samtykke/kategori.class.php');
-require_once(UKMSAMTYKKE_PLUGIN_PATH . 'models/samtykke/foresatt.class.php');
-require_once(UKMSAMTYKKE_PLUGIN_PATH . 'models/samtykke/sms_meldinger.class.php');
-require_once(UKMSAMTYKKE_PLUGIN_PATH . 'models/samtykke/sms.class.php');
-require_once(UKMSAMTYKKE_PLUGIN_PATH . 'models/samtykke/status.class.php');
-require_once(UKMSAMTYKKE_PLUGIN_PATH . 'models/samtykke/timestamp.class.php');
+use UKMNorge\Samtykke;
 
+require_once('UKM/samtykke/person.class.php');
+//require_once(PATH_THEME.'vendor/autoload.php');
+
+$IP = isset( $_SERVER['HTTP_CF_CONNECTING_IP'] ) ? 
+        $_SERVER['HTTP_CF_CONNECTING_IP'] : 
+        $_SERVER['REMOTE_ADDR'];
 
 try {
+    /*
+     * Sjekk at vi har nødvendig translations-fil fra UKMNorge/UKMdelta.git
+     * Hentes inn via UKMNorge/UKMDeltakere.git (cron/samtykke/translations.cron.php)
+    */
+    if( !file_exists( PATH_PLUGIN_UKMDELTAKERE.'translations/ukmid.en.yml' ) ) {
+        throw new Exception('Mangler translations-fil');
+    }
+    $translations = file_get_contents( PATH_PLUGIN_UKMDELTAKERE.'translations/ukmid.en.yml' );
+    $translate = Yaml::parse( $translations );
+    $WP_TWIG_DATA['trans'] = $translate['personvernAction'];
+
+    /*
+     *
+    */
 	if( !isset( $_GET['id'] ) ) {
 		$WP_TWIG_DATA['skjul_skjema'] = true;
 	} else {
@@ -23,7 +38,7 @@ try {
 			throw new Exception('Mangler numerisk mobil-nummer og ID-felt');
 		}
 		
-		$samtykke = samtykke_person::getById( $id );
+		$samtykke = Samtykke\Person::getById( $id );
 		if( $samtykke->getMobil() != $mobil ) {
 			throw new Exception('Feil i ID-felt.');
 		}
@@ -59,13 +74,13 @@ try {
 			if( $feedback == 'go' ) {
 				// Foresatt: it's a GO!
 				if( $ER_FORESATT ) {
-					$samtykke->setForesattStatus('godkjent', $_SERVER['HTTP_CF_CONNECTING_IP']);
+					$samtykke->setForesattStatus('godkjent', $IP);
 				}
 				// Deltaker: take pictures of me!
 				else {
-					$samtykke->setStatus('godkjent', $_SERVER['HTTP_CF_CONNECTING_IP']);
+					$samtykke->setStatus('godkjent', $IP);
 				}
-				$view_template = 'Samtykke/go';
+				$view_template = 'Personvern/go';
 			}
 			/**
 			 * VI HAR FÅTT EN NO-GO :(
@@ -79,7 +94,7 @@ try {
 				else {
 					$samtykke->setStatus('ikke_godkjent', $_SERVER['HTTP_CF_CONNECTING_IP']);
 				}
-				$view_template = 'Samtykke/nogo';
+				$view_template = 'Personvern/nogo';
 			}
 			$samtykke->persist();
 			
@@ -92,8 +107,8 @@ try {
 			**/
 			if( isset( $_POST['foresatt_navn'] ) ) {
 				// SEND SMS TIL FORESATT
-				$samtykke = samtykke_person::getById( $id );
-				samtykke_sms::send('samtykke_foresatt', $samtykke );
+                $samtykke = Samtykke\Person::getById( $id );
+                $samtykke->getKommunikasjon()->sendMelding('samtykke_foresatt');
 			}
 		}
 		/**
@@ -117,6 +132,6 @@ try {
 		$WP_TWIG_DATA['er_foresatt'] = $ER_FORESATT;
 	}
 } catch( Exception $e ) {
-	$view_template = 'Samtykke/error';
+	$view_template = 'Personvern/error';
 	$WP_TWIG_DATA['melding'] = $e->getMessage();
 }

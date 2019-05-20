@@ -12,6 +12,26 @@ require_once('_kommune.class.php');
 kommuneController::init( get_option('pl_id') );
 
 /**
+ * Test at lokalmønstringen har kommuner
+ * Hvis ikke er det en feil, og mønstringen bør være avlyst.
+ * Oppdater denne settingen, og videresend brukeren til monstring-not-found.php
+ * som vil hjelpe deltakeren tilbake på rett spor.
+ */
+try {
+	$monstring = kommuneController::getMonstring();
+	$ant_kommuner = $monstring->getKommuner()->getAntall();
+} catch( Exception $e ) {}
+
+if( 0 == $ant_kommuner ) {
+	$test = get_option('status_monstring');
+	if( !$test ) {
+		update_option('status_monstring', 'avlyst');
+		update_option('debug_status_monstring', 'setByKommuneController');
+	}
+	header('Location: '.$_SERVER['REQUEST_URI']);
+}
+
+/**
  * SET STATE
  * Switcher mellom lokalmønstringens forskjellige states.
  * Forbereder hjelpeklassen slik at det alltid kan kjøres
@@ -90,19 +110,4 @@ $WP_TWIG_DATA['harFavoritt']		= kommuneController::harFavoritt();
 $WP_TWIG_DATA['direkte']			= kommuneController::getLive();
 $WP_TWIG_DATA['ukmtv']				= kommuneController::getUKMTV();
 
-if( get_option('UKM_banner_image') ) {
-	$WP_TWIG_DATA['HEADER']->background->url = get_option('UKM_banner_image');
-	if( get_option('UKM_banner_image_position_y' ) ) {
-		$pos_y = get_option('UKM_banner_image_position_y');
-		if( $pos_y == 'bottom' ) {
-			$pos_y = '95%';
-		}
-		$WP_TWIG_DATA['HEADER']->background->position = '50% '. $pos_y;
-	}
-	$large_image = get_option('UKM_banner_image_large');
-	if( is_string( $large_image ) && !empty( $large_image ) ) {
-		$WP_TWIG_DATA['HEADER']->background->url_large = $large_image;
-	}
-	$image = new SEOImage( str_replace('http:','https:', get_option('UKM_banner_image') ) );
-	SEO::setImage( $image );
-}
+require_once(PATH_WORDPRESSBUNDLE. 'Controller/banner.controller.php');

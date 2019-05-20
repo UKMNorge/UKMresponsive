@@ -67,7 +67,9 @@ class SitemapService {
 	public function getPage( $sectionId, $pageId ) {
 		return Sitemap::getPage( $sectionId, $pageId );
 	}
-	
+	public function addSection( $section ) {
+		return Sitemap::addSection( $section );
+	}	
 	
 	public function loadFromGithub($timeout=1) {
 		$data = $this->_doLoadFromGithub( $timeout );

@@ -4,6 +4,36 @@ require_once('UKM/fylker.class.php');
 $WP_TWIG_DATA['fylker'] = fylker::getAll();
 $WP_TWIG_DATA['pamelding_apen'] = time() > strtotime( str_replace('YYYY', 2018, WP_CONFIG::get('pamelding')['starter'] ) );
 
+
+// PUSH TO FRONT
+if( function_exists('UKMpush_to_front_load_all_fm_data') ) {	
+	if( (int) date('m') > 2 && (int) date('m') < 6 ) {
+		$ptf_posts = [];
+		$week = (int) date('W');
+		$festivaler = UKMpush_to_front_load_all_fm_data( date('Y'), $week );
+
+		// Forrige uke vises tom fredag
+		if( (int) date('N') < 6 ) {
+			$forrige = UKMpush_to_front_load_all_fm_data( date('Y'), $week-1 );
+			if( is_array( $forrige ) ) {
+				$festivaler = array_merge($festivaler, $forrige );
+			}
+		}
+
+		if( is_array( $festivaler ) ) {
+			foreach( $festivaler as $festival ) {
+				if( is_array( $festival->postdata ) ) {
+					foreach( $festival->postdata as $post ) {
+						$ptf_posts[] = $post;
+						$post->meta->repost = $festival->title;
+					}
+				}
+			}
+		}
+		shuffle( $ptf_posts );
+		$WP_TWIG_DATA['PtF_posts'] = $ptf_posts;
+	}
+}
 /*
 	$WP_TWIG_DATA['in_season'] = date('m') < 5;
 	if( $WP_TWIG_DATA['in_season'] ) {

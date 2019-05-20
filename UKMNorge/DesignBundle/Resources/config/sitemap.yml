@@ -119,7 +119,7 @@ organisasjonen:
 
         - 
             id: cookies
-            url: //org.ukm.no/cookies/
+            url: //personvern.ukm.no/
             title: Personvernpolitikk
         - 
             id: creativecommons

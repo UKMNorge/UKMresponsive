@@ -28,8 +28,8 @@ $WP_TWIG_DATA['stat_mnd'] = array(
 );
 
 $ar_start = 2013;
-$ar_history = date('Y') - $ar_start;
-$ar_stop = date('Y');
+$ar_history = get_site_option('season') - $ar_start;
+$ar_stop = get_site_option('season');
 
 $WP_TWIG_DATA['history'] = $ar_history;
 

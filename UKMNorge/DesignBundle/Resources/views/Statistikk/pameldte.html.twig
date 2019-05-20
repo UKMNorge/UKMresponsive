@@ -37,7 +37,7 @@
 		</li>
 		{% for mnd, dager in stat_mnd %}
 			<li class="nav-item">
-				<a href="{{ page.getPage().url }}{{ mnd }}/" class="nav-link {{ mnd == active ? 'active' }}" data-toggle="tab">{{ mnd|maned }}</a>
+				<a href="{{ page.getPage().url }}{{ mnd == '01' ? '111' : mnd }}/" class="nav-link {{ mnd == active ? 'active' }}" data-toggle="tab">{{ mnd|maned }}</a>
 			</li>
 		{% endfor %}
 	</ul>

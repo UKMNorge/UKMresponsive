@@ -4,7 +4,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-12">
-				{% for forestilling in monstring.getProgram().getAll() if forestilling.getInnslag().getAntall > 0 %}
+				{% for forestilling in monstring.getProgram().getAll() if forestilling.getInnslag().getAntall > 0 and (visAlle or forestilling.getId() == vis ) %}
 					<h2>{{ forestilling.getNavn() }}</h2>
 						
 					<div class="images-grid">
