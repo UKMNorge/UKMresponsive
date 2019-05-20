@@ -7,8 +7,15 @@ function UKMfullpage( id, anchors ) {
 		if( fullpage.attr('data-photo-background') == 'false' ) {
 			fullpage.find('.fullpage-content').css('opacity', 1);
 		} else {
+			// Failsafe hvis bildet ikke laster som det skal
+			var timer = setTimeout( 
+				() => {
+					fullpage.css('opacity', 1)
+				}, 700
+			);
 			image.onload = function() {
 				fullpage.css('background-color', fullpage.attr('data-photo-background-transition'));
+				clearTimeout( timer );
 				fullpage.find('.fullpage-content')
 					.css('background-image', 'url(' + image.src + ')')
 					.css('opacity', 1)
