@@ -7,19 +7,19 @@ require_once('header.php');
 require_once('UKMNorge/Wordpress/Utils/page.class.php');
 require_once('UKMNorge/Wordpress/Utils/posts.class.php');
 
-SEO::setCanonical( $WP_TWIG_DATA['blog_url'] );
+SEO::setCanonical($WP_TWIG_DATA['blog_url']);
 SEO::setDescription(
-    'Noen deltar på UKM for å vise frem noe de brenner for, '.
-    'noen prøver noe helt nytt og andre er med sånn at alle får vist sin beste side.'
+	'Noen deltar på UKM for å vise frem noe de brenner for, ' .
+		'noen prøver noe helt nytt og andre er med sånn at alle får vist sin beste side.'
 );
 $WP_TWIG_DATA['page'] = new page();
 $WP_TWIG_DATA['posts'] = new posts(12);
-$WP_TWIG_DATA['page_next'] = get_permalink( get_option( 'page_for_posts' ) );
+$WP_TWIG_DATA['page_next'] = get_permalink(get_option('page_for_posts'));
 
 // PAGE TEMPLATE - FOR OVERRIDES
-if( isset( $WP_TWIG_DATA['page']->getPage()->meta->UKMviseng ) ) {
+if (isset($WP_TWIG_DATA['page']->getPage()->meta->UKMviseng)) {
 	$page_template = $WP_TWIG_DATA['page']->getPage()->meta->UKMviseng;
-	if( is_array( $page_template ) && isset( $page_template[0] ) ) {
+	if (is_array($page_template) && isset($page_template[0])) {
 		$page_template = $page_template[0];
 	}
 } else {
@@ -27,7 +27,7 @@ if( isset( $WP_TWIG_DATA['page']->getPage()->meta->UKMviseng ) ) {
 }
 
 
-switch( get_option('site_type') ) {
+switch (get_option('site_type')) {
 	case 'fylke':
 		require_once('UKMNorge/Wordpress/Controller/monstring/fylke.controller.php');
 		break;
@@ -35,11 +35,11 @@ switch( get_option('site_type') ) {
 		require_once('UKMNorge/Wordpress/Controller/monstring/kommune.controller.php');
 		break;
 	case 'land':
-		switch( $page_template ) {
+		switch ($page_template) {
 			case 'festival/plakat':
 				$view_template = 'Festival/plakat';
 				#require_once('UKMNorge/Wordpress/Controller/festival/juni.controller.php');
-				break; 
+				break;
 			case 'festival/juni':
 				$view_template = 'Festival/juni';
 				require_once('UKMNorge/Wordpress/Controller/festival/juni.controller.php');
@@ -54,9 +54,9 @@ switch( get_option('site_type') ) {
 		$section = new stdClass();
 		$section->title = 'Redaksjonelt';
 		$section->link = Sitemap::getPage('egoego', 'forsiden');
-		$WP_TWIG_DATA['section'] = $section;//null; // Fjern section-header på forsiden
-#		$WP_TWIG_DATA['HEADER']->logo->url = '//grafikk.ukm.no/profil/ego/EGO_logo.png';
-#		$WP_TWIG_DATA['HEADER']->logo->link = Sitemap::getPage('egoego', 'forsiden');
+		$WP_TWIG_DATA['section'] = $section; //null; // Fjern section-header på forsiden
+		#		$WP_TWIG_DATA['HEADER']->logo->url = '//grafikk.ukm.no/profil/ego/EGO_logo.png';
+		#		$WP_TWIG_DATA['HEADER']->logo->link = Sitemap::getPage('egoego', 'forsiden');
 		break;
 	case 'organisasjonen':
 		$view_template = 'Page/home_organisasjonen';
@@ -76,38 +76,44 @@ switch( get_option('site_type') ) {
 		break;
 	case 'norge':
 		$now = new DateTime();
-		$start_mgpjr = DateTime::createFromFormat ( 'Y-m-d H:i', '2018-11-03 20:00' );
-		$stop_mgpjr = DateTime::createFromFormat ( 'Y-m-d H:i', '2018-11-10 23:59' );
-		
-		$start_fylker = DateTime::createFromFormat ( 'Y-m-d H:i', date('Y').'-04-01 00:00' );
-		$stop_fylker = DateTime::createFromFormat ( 'Y-m-d H:i', date('Y').'-05-16 23:59' );
-		
-		if( ($start_mgpjr < $now && $stop_mgpjr > $now) || isset($_GET['mgpjr']) ) {
+
+		$start_festivalperiode = DateTime::createFromFormat('m-d H:i', '05-17 00:00');
+		$stop_festivalperiode = DateTime::createFromFormat('m-d H:i', '08-01 00:00');
+
+		$start_mgpjr = DateTime::createFromFormat('Y-m-d H:i', '2018-11-03 20:00');
+		$stop_mgpjr = DateTime::createFromFormat('Y-m-d H:i', '2018-11-10 23:59');
+
+		$start_fylker = DateTime::createFromFormat('Y-m-d H:i', date('Y') . '-04-01 00:00');
+		$stop_fylker = DateTime::createFromFormat('Y-m-d H:i', date('Y') . '-05-16 23:59');
+
+		if (false && $start_festivalperiode < $now && $stop_festivalperiode > $now || isset($_GET['festivalperiode'])) {
+			$view_template = 'Norge/home_festival';
+		} elseif (($start_mgpjr < $now && $stop_mgpjr > $now) || isset($_GET['mgpjr'])) {
 			$view_template = 'Page/home_norge_mgpjr';
-		} elseif( ($start_fylker < $now && $stop_fylker > $now) || isset($_GET['fylker']) ) {
-			$view_template = 'Norge/home_fylke'; 
+		} elseif (($start_fylker < $now && $stop_fylker > $now) || isset($_GET['fylker'])) {
+			$view_template = 'Norge/home_fylke';
 		} else {
 			$view_template = 'Page/home_norge';
 		}
 		require_once('UKMNorge/Wordpress/Controller/norge.controller.php');
-        break;
-    default:
-        $view_template = 'Page/fullpage';
-        require_once(PATH_WORDPRESSBUNDLE. 'Controller/banner.controller.php');
+		break;
+	default:
+		$view_template = 'Page/fullpage';
+		require_once(PATH_WORDPRESSBUNDLE . 'Controller/banner.controller.php');
 
-        if( $page_template == 'meny' || isset( $WP_TWIG_DATA['page']->getPage()->meta->UKM_block ) && $WP_TWIG_DATA['page']->getPage()->meta->UKM_block == 'sidemedmeny'  ) {
-            require_once('UKMNorge/Wordpress/Controller/menu.controller.php');
-            $view_template = 'Page/fullpage_with_menu';
-        }
+		if ($page_template == 'meny' || isset($WP_TWIG_DATA['page']->getPage()->meta->UKM_block) && $WP_TWIG_DATA['page']->getPage()->meta->UKM_block == 'sidemedmeny') {
+			require_once('UKMNorge/Wordpress/Controller/menu.controller.php');
+			$view_template = 'Page/fullpage_with_menu';
+		}
 		break;
 }
-echo WP_TWIG::render( $view_template, $WP_TWIG_DATA );
+echo WP_TWIG::render($view_template, $WP_TWIG_DATA);
 
 wp_footer();
-if(is_user_logged_in() ) {
+if (is_user_logged_in()) {
 	echo '<style>body {margin-top: 33px;} @media (max-width:782px) {body {margin-top: 48px;}}</style>';
 }
 
-if( WP_ENV == 'dev' ) {
-	echo '<script language="javascript">console.debug("'.basename(__FILE__).'");</script>';
+if (WP_ENV == 'dev') {
+	echo '<script language="javascript">console.debug("' . basename(__FILE__) . '");</script>';
 }
