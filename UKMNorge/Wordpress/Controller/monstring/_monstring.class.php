@@ -113,6 +113,8 @@ abstract class monstringController {
 	 *
 	 */	
 	public static function getLive() {
+		// Inntil mønstringen er startet må det stå en tekst,
+		// men ikke lenke.
 		$link		= get_option('ukm_live_link');
 		$embedcode	= get_option('ukm_live_embedcode');
 			
