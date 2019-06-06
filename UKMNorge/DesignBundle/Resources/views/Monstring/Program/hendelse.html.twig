@@ -6,7 +6,7 @@
 			<div class="col-12">
 				<h3>{{ hendelse.getNavn() }}</h3>
 				<p>{{ hendelse.getStart()|dato('l j.M H:i')|capitalize }}, {{ hendelse.getSted() }}</p>
-				{% if not empty hendelse.getBeskrivelse() %}
+				{% if hendelse.getBeskrivelse() is not empty %}
 					<p>{{ hendelse.getBeskrivelse()|nl2br }}</p>
 				{% endif %}
 				
