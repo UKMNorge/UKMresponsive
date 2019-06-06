@@ -86,7 +86,7 @@ switch (get_option('site_type')) {
 		$start_fylker = DateTime::createFromFormat('Y-m-d H:i', date('Y') . '-04-01 00:00');
 		$stop_fylker = DateTime::createFromFormat('Y-m-d H:i', date('Y') . '-05-16 23:59');
 
-		if (false && $start_festivalperiode < $now && $stop_festivalperiode > $now || isset($_GET['festivalperiode'])) {
+		if ($start_festivalperiode < $now && $stop_festivalperiode > $now || isset($_GET['festivalperiode'])) {
 			$view_template = 'Norge/home_festival';
 		} elseif (($start_mgpjr < $now && $stop_mgpjr > $now) || isset($_GET['mgpjr'])) {
 			$view_template = 'Page/home_norge_mgpjr';
