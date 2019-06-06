@@ -6,6 +6,9 @@
 			<div class="col-12">
 				<h3>{{ hendelse.getNavn() }}</h3>
 				<p>{{ hendelse.getStart()|dato('l j.M H:i')|capitalize }}, {{ hendelse.getSted() }}</p>
+				{% if not empty hendelse.getBeskrivelse() %}
+					<p>{{ hendelse.getBeskrivelse()|nl2br }}</p>
+				{% endif %}
 				
 				{% for innslag in hendelse.getInnslag().getAll() %}
 					<div class="card innslagCard UKMcard mb-2 p-0" data-visning="skjult" data-id="{{ innslag.getId() }}">
