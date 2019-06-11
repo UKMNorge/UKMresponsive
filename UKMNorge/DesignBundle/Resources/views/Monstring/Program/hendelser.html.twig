@@ -1,5 +1,5 @@
 {% for hendelse in hendelser %}
-	<div class="card innslagCard UKMcard mb-2 p-0">
+	<div class="card innslagCard UKMcard mb-2 p-0" {% if hendelse.getColor() %} style="border-color: {{hendelse.getColor()}}" {% endif %}>
 		<div class="card-body m-0 p-0">
 			<div class="hendelse">
 				<div class="husk float-right">
