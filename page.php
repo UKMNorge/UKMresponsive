@@ -2,6 +2,7 @@
 
 use UKMNorge\DesignBundle\Utils\Sitemap;
 use UKMNorge\DesignBundle\Utils\SEO;
+use Symfony\Component\BrowserKit\Request;
 
 require_once('header.php');
 
@@ -96,7 +97,12 @@ switch( $page_template ) {
 
 	case 'festival/direkte':
 		$view_template = 'Festival/direkte';
-		require_once('UKMNorge/Wordpress/Controller/festival/direkte.controller.php');
+		require_once('UKMorge/Wordpress/Controller/festival/direkte.controller.php');
+		break;
+
+	case 'festival/nyhetsbrev':
+		$view_template = 'Festival/nyhetsbrev';
+		require_once('UKMNorge/Wordpress/Controller/festival/nyhetsbrev.controller.php');
 		break;
 
 

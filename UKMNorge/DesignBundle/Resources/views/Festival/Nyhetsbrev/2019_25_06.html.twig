@@ -1,0 +1,27 @@
+{% extends "Festival:Nyhetsbrev:2019_framework.html.twig"|UKMpath %}
+
+{% block content %}
+    <script>
+		$(document).on('click', '.clickContainer', function(e){
+			e.preventDefault();
+			window.location.href = $(this).find('.momClickMeClickMe').attr('href');
+		});
+	</script>
+
+    <style>
+
+        #marqee_top {
+            background: rgba(0, 0, 76, 1);
+            color: white;
+            padding: 1rem 0;
+            font-size: 1.4rem;
+        }
+    </style>
+
+    <div class="row ticker clickContainer" id="marqee_top">
+        <marquee behavior="scroll" scrollamount="5" direction="left">FORESTILLINGER UKM TV - FORESTILLINGER UKM TV</marquee>
+		<a href="https://tv.ukm.no/festivalen/2019/" class="momClickMeClickMe hidden">
+    </div>
+
+
+{% endblock %}
