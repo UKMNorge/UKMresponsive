@@ -222,7 +222,7 @@
 						
 						{# Bilder av innslag #}
 
-						{% if innslag.getBilder().getAntall() > 0 %}
+						{% if innslag.getBilder().getAntall() > 1 %}
 								<div class="{{ col_right }}">
 								<h4 class="linje">Bilder</h4>
 
@@ -252,6 +252,21 @@
 								</div>
 							</div>
 						{% endif %}
+						{% if innslag.getBilder().getAntall() == 1 %}
+							<div class="{{ col_right }}">
+								<h4 class="linje">Bilder</h4>
+								<center>
+									{% for bilde in innslag.getBilder().getAll() %}
+										<a href="{{ bilde.getSize("original").getUrl()|replace({'http:':'https:'}) }}" target="_blank">
+											<img src="{{ bilde.getSize("medium").getUrl()|replace({'http:':'https:'}) }}" class="mt-2" />
+										</a>
+										<p class="lead">Foto: {{ bilde.getAuthor().getDisplayName() }}</p>
+									{% endfor %}
+								</center>
+							</div>
+						{% endif %}
+
+
 						
 					</div>
 
@@ -288,8 +303,4 @@
 
 		</div>
 	</div>
-
-
-
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 {% endblock content %}
