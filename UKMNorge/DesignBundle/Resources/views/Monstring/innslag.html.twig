@@ -217,22 +217,46 @@
 								</div>
 							{% endif %}
 	
-							{# I UKM-TV #}
-							{% if innslag.getBilder().getAntall() > 0 %}
+						
+						
+						
+						{# Bilder av innslag #}
+
+						{% if innslag.getBilder().getAntall() > 0 %}
 								<div class="{{ col_right }}">
-									<h4 class="linje">Bilder</h4>
-									<center>
-										{% for bilde in innslag.getBilder().getAll() %}
-											<a href="{{ bilde.getSize("original").getUrl()|replace({'http:':'https:'}) }}" target="_blank">
-												<img src="{{ bilde.getSize("medium").getUrl()|replace({'http:':'https:'}) }}" class="mt-2" />
-											</a>
-											<p class="lead">Foto: {{ bilde.getAuthor().getDisplayName() }}</p>
-										{% endfor %}
-									</center>
+								<h4 class="linje">Bilder</h4>
+
+								<div id="imageslider" class="carousel slide" data-ride="carousel">
+									<div class="carousel-inner">
+									{% for bilde in innslag.getBilder().getAll() %}
+										
+											<div class="carousel-item {% if loop.first %} active {% endif %} ">
+												<a href="{{ bilde.getSize("original").getUrl()|replace({'http:':'https:'}) }}" target="_blank">
+													<img src="{{ bilde.getSize("medium").getUrl()|replace({'http:':'https:'}) }}" class="d-block w-100"/>
+												</a>
+												<div class="carousel-caption d-none d-md-block">
+													<p class="lead" style="margin-bottom: -4rem;">Foto: {{ bilde.getAuthor().getDisplayName() }}</p>
+												</div>
+											</div>
+									{% endfor %}
+
+									</div>
+									<a class="carousel-control-prev" href="#imageslider" role="button" data-slide="prev">
+										<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+										<span class="sr-only">Previous</span>
+									</a>
+									<a class="carousel-control-next" href="#imageslider" role="button" data-slide="next">
+										<span class="carousel-control-next-icon" aria-hidden="true"></span>
+										<span class="sr-only">Next</span>
+									</a>
 								</div>
-							{% endif %}
-						</div>
+							</div>
+						{% endif %}
+						
 					</div>
+
+
+
 				{% endif %}
 			</div>{# /ROW #}
 
@@ -264,4 +288,8 @@
 
 		</div>
 	</div>
+
+
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 {% endblock content %}
