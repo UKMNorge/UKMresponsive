@@ -15,8 +15,37 @@
 			</div>
 		</div>
 	</div>
-	
+
+	{% if page.getPage().meta.UKMviseng is defined and page.getPage().meta.UKMviseng == 'liste' %}
+
+		<style>
+			.pageListContent.icon {
+				margin-left: 4rem;
+			}
+			.pageList.icon > .pageListContent .icon {
+				margin-left: -3.6rem;
+			    margin-top: 0.1rem;
+				font-size: 2rem;
+				float: left;
+			}
+			.pageListContent .header {
+				font-weight: bold;
+			}
+			
+		</style>
+		<div class="container">
+			<div class="row">
+				<div class="col-10 ml-auto mr-auto col-lg-8">
+					<ol class="list-group pageListItem">
+	{% endif %}	
 	{% for section in page.getPageBlocks().getAll() %}
 		{% embed ("UKMDesignBundle:PageBlock:"~ section.template ~".html.twig")|UKMpath with{ block: section } %}{% endembed %}
 	{% endfor %}
+
+	{% if page.getPage().meta.UKMviseng is defined and page.getPage().meta.UKMviseng == 'liste' %}
+					</ol>
+				</div>
+			</div>
+		</div>
+	{% endif %}
 {% endblock %}

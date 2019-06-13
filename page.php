@@ -177,6 +177,7 @@ switch( $page_template ) {
 	case 'fullpage_wide':
 		$view_template = 'Page/fullpage_wide';
 		break;
+	case 'liste':
 	default:
 		$view_template = 'Page/fullpage';
 		break;

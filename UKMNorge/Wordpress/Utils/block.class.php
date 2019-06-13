@@ -28,6 +28,9 @@ class block {
 			case 'image_right':
 				$this->_image_oob_right();
 				break;
+			case 'list':
+				$this->_list();
+				break;
 			default:
 				return false;
 	    }
@@ -53,6 +56,12 @@ class block {
 	private function _lead_center() {
 		$this->_setup_block_post();
 		$this->template = 'TextCenter';
+		return $this;
+	}	
+
+	private function _list() {
+		$this->_setup_block_post();
+		$this->template = 'List';
 		return $this;
 	}
 

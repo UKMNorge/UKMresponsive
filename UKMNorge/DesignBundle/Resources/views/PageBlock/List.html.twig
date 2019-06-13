@@ -1,0 +1,13 @@
+<li class="list-group-item pageListItem {{ block.page.meta.icon is defined ? 'icon'}}">
+	<div class="pageListContent">
+		{% if block.page.meta.icon is defined %}
+			<div class="UKMtoggle click icon" data-target="list-item-{{ block.page.ID }}">{{ block.page.meta.icon }}</div>	
+		{% endif %}
+		<div class="UKMtoggle click header mt-1 mb-2" data-target="list-item-{{ block.page.ID }}">
+			{{ block.title }}
+		</div>
+		<div class="UKMtoggleContent" id="list-item-{{ block.page.ID }}" style="display:none;">
+			{{ block.content|raw }}
+		</div>
+	</div>
+</li>
