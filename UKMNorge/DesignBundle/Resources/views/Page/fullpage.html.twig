@@ -19,16 +19,16 @@
 	{% if page.getPage().meta.UKMviseng is defined and page.getPage().meta.UKMviseng == 'liste' %}
 
 		<style>
-			.pageListContent.icon {
+			.pageListItem.icon > .pageListItemContent {
 				margin-left: 4rem;
 			}
-			.pageList.icon > .pageListContent .icon {
+			.pageListItem.icon .pageListItemIcon {
 				margin-left: -3.6rem;
 			    margin-top: 0.1rem;
 				font-size: 2rem;
 				float: left;
 			}
-			.pageListContent .header {
+			.pageListItem .pageListItemHeader {
 				font-weight: bold;
 			}
 			
@@ -36,7 +36,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-10 ml-auto mr-auto col-lg-8">
-					<ol class="list-group pageListItem">
+					<ol class="list-group pageList">
 	{% endif %}	
 	{% for section in page.getPageBlocks().getAll() %}
 		{% embed ("UKMDesignBundle:PageBlock:"~ section.template ~".html.twig")|UKMpath with{ block: section } %}{% endembed %}
