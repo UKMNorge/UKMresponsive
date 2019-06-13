@@ -1,3 +1,10 @@
+// @codekit-prepend "jquery-3.2.1.min.js";
+// @codekit-prepend "jquery-autoshrink.min.js";
+// @codekit-prepend "aos.js";
+// @codekit-prepend "jquery.imagesGrid.js";
+// @codekit-prepend "cookie.js";
+// @codekit-prepend "UKMmobil.js";
+
 /**
  * MAIN MENU BUTTON TOGGLE
 **/
