@@ -2311,6 +2311,15 @@ ul.innslag li a:visited {
   src: local('Impact'), url(//fonts.gstatic.com/s/opensans/v15/DXI1ORHCpsQm3Vp6mXoaTRampu5_7CjHW5spxoeN3Vs.woff2) format('ttf');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
 }
+/*
+ * Nyhetsbrev avant-garde
+ */
+@font-face {
+  font-family: 'itcavantgardeprobold';
+  font-style: bold;
+  font-weight: 300;
+  src: local('ITCAvantGardePro-Bold'), url(grafikk.ukm.no/fonts/ITCAvantGardePro-Bold.otf) format('opentype');
+}
 #UKMheader.navbar-with-slogan {
   background-image: url('//grafikk.ukm.no/UKMresponsive/img/banner-test-cherry.jpg');
 }
