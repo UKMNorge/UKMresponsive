@@ -281,6 +281,14 @@
 		"oAP": "/fonts/Impact.ttf",
 		"oF": 0
 		},
+	"/fonts/ITCAvantGardePro-Bold.otf": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 2,
+		"oAP": "/fonts/ITCAvantGardePro-Bold.otf",
+		"oF": 1
+		},
 	"/img/banner-test-cherry.jpg": {
 		"ft": 16384,
 		"iS": 23125,
