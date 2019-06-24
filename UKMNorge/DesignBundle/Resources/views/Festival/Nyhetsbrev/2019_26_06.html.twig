@@ -1,0 +1,126 @@
+{% extends "Festival:Nyhetsbrev:2019_framework.html.twig"|UKMpath %}
+
+{% block content %}
+    <script>
+        $(document).on('click', '.clickContainer', function (e) {
+            e.preventDefault();
+            window.location.href = $(this).find('.momClickMeClickMe').attr('href');
+        });
+    </script>
+
+
+    <style>:root
+    {
+        --ukm_blaa: rgba(0, 0, 71, 1);
+        --ukm_rosa: rgba(255, 18, 139, 1);
+        --ukm_gul: rgba(255, 240, 86, 1);
+        --ukm_gronn: rgba(0, 255, 137, 1);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    a,
+    a:link,
+    marquee {
+        font-family: 'itcavantgardeprobold' !important;
+    }
+
+    .bg-blaa {
+        background: var(--ukm_blaa);
+    }
+    .bg-rosa {
+        background: var(--ukm_rosa);
+    }
+    .bg-gul {
+        background: var(--ukm_gul);
+    }
+    .bg-gronn {
+        background: var(--ukm_gronn);
+    }
+
+    .text-blaa {
+        color: var(--ukm_blaa);
+        opacity: 1;
+    }
+    .text-rosa {
+        color: var(--ukm_rosa);
+        opacity: 1;
+    }
+    .text-gul {
+        color: var(--ukm_gul);
+        opacity: 1;
+    }
+    .text-gronn {
+        color: var(--ukm_gronn);
+        opacity: 1;
+    }
+    .text-white {
+        color: white;
+        opacity: 1;
+    }
+    .text-black {
+        color: black;
+        opacity: 1;
+    }
+
+    .nav-link {
+        font-size: .5rem !important;
+        padding: .1rem;
+        
+    }
+
+    .nav-tabs .nav-item {
+        border-right: 1px solid var(--ukm_gul);
+        border-left: 1px solid var(--ukm_gul);
+        background: var(--ukm_blaa);
+    }
+
+    .nav-tabs .nav-item .active {
+        background: var(--ukm_gul);
+        color: var(--ukm_blaa);
+        border: none;
+        border-top-left-radius: 0 !important;
+        border-top-right-radius: 0 !important;
+    }
+
+    .nav-tabs .nav-link {
+        border: none;
+        color: var(--ukm_gul)
+
+    }
+</style>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <ul class="nav nav-tabs nav-fill">
+                <li class="nav-item">
+                    <a class="nav-link" href="../mandag/">Mandag</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../tirsdag/">Tirsdag</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="../onsdag/">Onsdag</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../torsdag/">Torsdag</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../fredag/">Fredag</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 bg-blaa text-gul" style="height: 100vh;">
+            <center>
+                <h1 style="padding-top: 34vh; font-size: 3.2rem; opacity: 1;">Så ivrig du var da....<br>Du må nok vente litt lengre</h1>
+                <h1 style="font-size: 20rem; opacity: 1; margin-top: 4rem;">😇</h1>
+            </center>
+        </div>
+    </div>
+</div>{% endblock %}
