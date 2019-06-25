@@ -8,7 +8,7 @@ namespace UKMNorge\DesignBundle\Services;
  */
 class RandomTextService {	
 	
- 	var $navn = array(
+ 	public static $navn = array(
 		"Magnus",
 		"Jonas",
 		"Thomas",
@@ -22,7 +22,7 @@ class RandomTextService {
 		"Sara"
 	);
 
-	var $action = array(
+	public static $action = array(
 		"juletreklatring (førstemann til stjerna)",
 		"pepperkakebaking",
 		"kurs i brillepussing",
@@ -32,7 +32,7 @@ class RandomTextService {
 		"ballongblåse-workshop"
 	);
 
-	var $where = array(
+	public static $where = array(
 		"i bakgården",
 		"på Kimen",
 		"i 1001 natt",
