@@ -4,7 +4,7 @@
 **/
 if( !isset( $_COOKIE['UKMMobil'] ) ) {
 	if( isset( $_POST['mobil'] ) ) {
-		setcookie('UKMMobil', $_POST['mobil'], time()+31536000, '/', '.ukm.no', 1);
+		setcookie('UKMMobil', $_POST['mobil'], time()+31536000, '/', 'ukm-festivalen.no', 1);
 
 		header("Location: ". $WP_TWIG_DATA['page']->getPage()->url . ( isset( $_GET['code'] ) ? '?code='. $_GET['code'] : '') );
 		exit();
