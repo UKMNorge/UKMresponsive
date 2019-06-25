@@ -8,6 +8,84 @@
         });
     </script>
 
+    <script type="text/javascript">
+    $(document).on('click', '.clickMomDiv', function(e) {
+        e.preventDefault();
+        $(this).parents('.momDiv').click();
+    });
+    $ ( document ).ready(function () {
+
+
+        var latestArticle = null;
+        $(".expandOnClick").click(function(event) {
+            // if (jQuery(event.target).is("a") ) {
+            //     return;
+            // }
+            console.log(event);
+            event.preventDefault();            
+            var link = jQuery(event.target).find(".articleLink");
+            console.log('link: ');
+            console.log(link);
+            var articleBox = jQuery('.articleBox#articleBox-'+jQuery(link).attr('data-articleBox-id'));
+            var articleContent = jQuery(articleBox).find(".articleContent");
+            var newArticle = jQuery(link).attr('id');
+            /*console.log(newArticle);*/
+            var url = link.attr("href");
+            
+            if (undefined == url) {
+                url = jQuery(event.target).attr("href");
+            }
+
+            if ( "{{ UKM_HOSTNAME }}" == "ukm.dev" ) {
+                url = "https://ukm.dev/blog/2014/06/06/av-med-og-for-ungdom/?singleMode=true";
+            }
+
+            // Lukk samme artikkel
+            if( articleBox.is(':visible') && latestArticle == newArticle ) {
+                articleBox.slideUp();
+                // Sleep 300ms??
+                articleContent.html("Laster inn...");
+            }
+            // Ny artikkel, men en annen vises
+            else if (latestArticle != null && latestArticle != newArticle) {
+                articleContent.html("Laster inn...");
+
+                jQuery.post(
+                    url+"?singleMode=true",
+                    {
+                        'singleMode': true,
+                    },
+                    function(data) {
+                        articleContent.html(data);
+                    },
+                );
+                latestArticle = newArticle;
+            }
+            // Første gang artikkelboks åpnes.
+            else {
+                articleBox.slideDown();
+
+                jQuery.post(
+                    url+"?singleMode=true",
+                    {
+                        'singleMode': true,
+                    },
+                    function(data) {
+                        jQuery(articleBox).find(".articleContent").html(data);
+                    },
+                );
+                latestArticle = newArticle;
+            }
+        });
+
+        $(".closeButton").click( function (event) {
+            jQuery(event.target).parent().parent().slideUp();
+            console.log(jQuery(event.target).parent().parent().attr("id"));
+            scrollTo(jQuery(event.target).parent().parent().attr("id"));
+        });
+    });
+    </script>
+
 
     <style>:root
     {
@@ -26,7 +104,11 @@
     a,
     a:link,
     marquee {
-        font-family: 'Helvetica' !important;
+        font-family: 'itcavantgardeprobold' !important;
+    }
+
+    a:hover {
+        text-decoration: none;
     }
 
     .bg-blaa {
@@ -93,6 +175,642 @@
 
     }
 </style>
+
+
+<style>
+    #box2 {
+        font-size: 18vw;
+        padding-top: 5rem;
+        padding-bottom: 4rem;
+        width: 100%;
+        text-transform: uppercase;
+        text-justify: distribute;
+        text-align: center;
+        line-height: 22vw;
+        background: var(--ukm_gronn);
+        color: var(--ukm_rosa);
+        z-index: -10;
+    }
+
+    #box3 {
+        height: 46vw;
+        width: 50vw;
+        font-size: 10vw;
+        text-transform: uppercase;
+        text-justify: distribute;
+        text-align: center;
+        background: url('https://media.giphy.com/media/lvzdeWk12qjmM/source.gif');
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        margin-right: -1rem;
+    }
+
+    
+
+    #box4 {
+        height: 46vw;
+        font-size: 10vw;
+        padding-top: 3.8rem;
+        text-transform: uppercase;
+        text-justify: distribute;
+        text-align: center;
+        line-height: 0;
+        margin-left: -1rem;
+    }
+
+    #box4fix {
+        margin: 0;
+        padding: 0;
+        height: 46vw;
+    }
+
+    #box4a {
+        font-size: 9vw;
+    }
+
+    #dagens_blinkskudd {
+        position: absolute;
+        top: 34vw;
+        left: 18vw;
+        width: 50%;
+        z-index: 10;
+
+    }
+
+    #box7 {
+        height: 46vw;
+        width: 50vw;
+        font-size: 10vw;
+        text-transform: uppercase;
+        text-justify: distribute;
+        text-align: center;
+        background: url('https://media.giphy.com/media/13hxeOYjoTWtK8/giphy.gif');
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        margin-left: -1rem;
+    }
+    /* iPhone 5 */
+    @media only screen and (min-width: 320px) {
+        #box1 {
+            padding-top: 6rem;
+            padding-bottom: 2rem;
+            text-transform: uppercase;
+            text-justify: distribute;
+            text-align: center;
+            line-height: 3rem;
+        }
+
+        #box1a {
+            font-size: 6rem;
+            color: var(--ukm_blaa);
+        }
+
+        #box1b {
+            font-size: 2.3rem;
+            color: var(--ukm_blaa);
+        }
+
+        #sendinnsporsmaal {
+            position: absolute;
+            top: 11.5rem;
+            right: 1.5rem;
+            width: 15%;
+            z-index: 10;
+        }
+
+        #marqee_top {
+            padding: 2.6rem 0 1.6 0;
+            font-size: 1.2rem;
+        }
+
+        marquee p {
+            margin-top: .6rem;
+        }
+
+        #advarsel {
+            position: relative;
+            top: -2.2rem;
+            width: 30%;
+            left: .7rem;
+            z-index: 10;
+            margin-bottom: 3rem;
+        }
+
+        #box4b {
+            font-size: 1.2rem;
+            position: absolute;
+            bottom: 3rem;
+            left: 2.2rem;
+        }
+
+        #programsticker {
+            position: relative;
+            top: -2.8rem;
+            width: 35%;
+            left: 6rem;
+            z-index: 10;
+            margin-bottom: 3rem;
+        }
+
+        #box2 {
+            margin-top: -1rem;
+            padding-top: 3rem;
+            padding-bottom: 4rem;
+            text-transform: uppercase;
+            text-justify: distribute;
+            text-align: center;
+            line-height: 3.4rem;
+        }
+
+        #box2a {
+            font-size: 2.6rem;
+            color: var(--ukm_rosa);
+        }
+        #box2b {
+            font-size: 3.2rem;
+            color: var(--ukm_rosa);
+        }
+
+        #box6 {
+            padding-top: .8rem;
+            padding-bottom: -5rem;
+            text-transform: uppercase;
+            text-justify: distribute;
+            text-align: center;
+            line-height: 3.8rem;
+        }
+
+        #box6a {
+            font-size: 1.2rem;
+            margin-left: 1rem;
+            color: var(--ukm_blaa);
+        }
+
+        #box6b {
+            margin-top: -2rem;
+            font-size: 3.6rem;
+            margin-left: 1rem;
+        }
+
+        #box5 {
+            /* height: 250px; */
+            z-index: -10;
+            padding-top: 6rem;
+            padding-bottom: 2rem;
+            text-transform: uppercase;
+            text-justify: distribute;
+            text-align: center;
+            line-height: 3rem;
+        }
+
+        #box5a {
+            font-size: 7.6rem;
+            color: var(--ukm_gronn);
+        }
+
+        #box5b {
+            font-size: 2.7rem;
+            color: var(--ukm_gronn);
+        }
+
+        #sesimorgen {
+            font-size: 2.2rem;
+            padding-top: 6rem;
+            padding-bottom: 4.8rem;
+            text-transform: uppercase;
+            text-justify: distribute;
+            text-align: center;
+            background: url('https://media.giphy.com/media/NqZn5kPN8VVrW/giphy.gif');
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            margin-right: -1rem;
+        }
+    }
+    /* iPhone X, 6/7 */
+    @media only screen and (min-width: 375px) {
+        #box1 {
+            padding-top: 8rem;
+            padding-bottom: 4rem;
+            text-transform: uppercase;
+            text-justify: distribute;
+            text-align: center;
+            line-height: 3rem;
+        }
+
+        #box1a {
+            font-size: 6rem;
+            color: var(--ukm_blaa);
+        }
+
+        #box1b {
+            font-size: 2.3rem;
+            color: var(--ukm_blaa);
+        }
+
+        #sendinnsporsmaal {
+            position: absolute;
+            top: 13rem;
+            right: 2rem;
+            width: 15%;
+            z-index: 10;
+        }
+
+        #marqee_top {
+            padding: 2.6rem 0 1.6 0;
+            font-size: 1.8rem;
+        }
+
+        marquee p {
+            margin-top: .6rem;
+        }
+
+        #advarsel {
+            position: relative;
+            top: -2.6rem;
+            width: 40%;
+            left: .8rem;
+            z-index: 10;
+            margin-bottom: 3.8rem;
+        }
+
+        #box4b {
+            position: absolute;
+            font-size: 1.5rem;
+            bottom: 3.2rem;
+            left: 2.6rem;
+        }
+
+        #programsticker {
+            position: relative;
+            top: -2.8rem;
+            width: 35%;
+            left: 6rem;
+            z-index: 10;
+            margin-bottom: 3rem;
+        }
+
+        #box2 {
+            margin-top: -1rem;
+            padding-top: 4rem;
+            padding-bottom: 5rem;
+            text-transform: uppercase;
+            text-justify: distribute;
+            text-align: center;
+            line-height: 3.4rem;
+        }
+
+        #box2a {
+            font-size: 3rem;
+            color: var(--ukm_rosa);
+        }
+        #box2b {
+            font-size: 3.6rem;
+            color: var(--ukm_rosa);
+        }
+
+        #box6 {
+            padding-top: 2rem;
+            padding-bottom: -5rem;
+            text-transform: uppercase;
+            text-justify: distribute;
+            text-align: center;
+            line-height: 4rem;
+        }
+
+        #box6a {
+            font-size: 1.4rem;
+            margin-left: 1rem;
+            color: var(--ukm_blaa);
+        }
+
+        #box6b {
+            margin-top: -2rem;
+            font-size: 4rem;
+            margin-left: 1rem;
+        }
+
+        #box5 {
+            /* height: 250px; */
+            z-index: -10;
+            padding-top: 6rem;
+            padding-bottom: 2rem;
+            text-transform: uppercase;
+            text-justify: distribute;
+            text-align: center;
+            line-height: 10vw;
+        }
+
+        #box5a {
+            font-size: 7.6rem;
+            color: var(--ukm_gronn);
+        }
+
+        #box5b {
+            font-size: 2.7rem;
+            color: var(--ukm_gronn);
+        }
+
+        #sesimorgen {
+            font-size: 2.6rem;
+            padding-top: 6rem;
+            padding-bottom: 4.8rem;
+            text-transform: uppercase;
+            text-justify: distribute;
+            text-align: center;
+            background: url('https://media.giphy.com/media/NqZn5kPN8VVrW/giphy.gif');
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            margin-right: -1rem;
+        }
+    }
+    /* iPad */
+    @media only screen and (min-width: 768px) {
+        #box1 {
+            padding-top: 16rem;
+            padding-bottom: 8rem;
+            text-transform: uppercase;
+            text-justify: distribute;
+            text-align: center;
+            line-height: 6rem;
+        }
+
+        #box1a {
+            font-size: 14.4rem;
+            color: var(--ukm_blaa);
+        }
+
+        #box1b {
+            font-size: 5.4rem;
+            color: var(--ukm_blaa);
+        }
+
+        #sendinnsporsmaal {
+            position: absolute;
+            top: 28rem;
+            right: 4vw;
+            width: 15%;
+            z-index: 10;
+        }
+
+        #marqee_top {
+            padding: 2.6rem 0 1.6 0;
+            font-size: 1.8rem;
+        }
+
+        marquee p {
+            margin-top: .6rem;
+        }
+
+        #advarsel {
+            position: relative;
+            top: 1.4rem;
+            width: 40%;
+            left: .8rem;
+            z-index: 10;
+            margin-bottom: 3.8rem;
+        }
+
+        #box4b {
+            position: absolute;
+            font-size: 3.2rem;
+            bottom: 4.2rem;
+            left: 3.8rem;
+        }
+
+        #programsticker {
+            position: relative;
+            top: -4rem;
+            width: 35%;
+            left: 13rem;
+            z-index: 10;
+            margin-bottom: 3rem;
+        }
+
+        #box2 {
+            margin-top: -1rem;
+            padding-top: 10rem;
+            padding-bottom: 9rem;
+            text-transform: uppercase;
+            text-justify: distribute;
+            text-align: center;
+            line-height: 6.4rem;
+        }
+
+        #box2a {
+            font-size: 5.7rem;
+            color: var(--ukm_rosa);
+        }
+        #box2b {
+            font-size: 7rem;
+            color: var(--ukm_rosa);
+        }
+
+        #box6 {
+            padding-top: 5rem;
+            padding-bottom: -5rem;
+            text-transform: uppercase;
+            text-justify: distribute;
+            text-align: center;
+            line-height: 6.4rem;
+        }
+
+        #box6a {
+            font-size: 3.2rem;
+            margin-left: 1rem;
+            color: var(--ukm_blaa);
+        }
+
+        #box6b {
+            margin-top: -2rem;
+            font-size: 8rem;
+            margin-left: 1rem;
+        }
+
+        #box5 {
+            /* height: 250px; */
+            z-index: -10;
+            padding-top: 16rem;
+            padding-bottom: 5rem;
+            text-transform: uppercase;
+            text-justify: distribute;
+            text-align: center;
+            line-height: 10vw;
+        }
+
+        #box5a {
+            font-size: 16.3rem;
+            color: var(--ukm_gronn);
+        }
+
+        #box5b {
+            font-size: 5.7rem;
+            color: var(--ukm_gronn);
+        }
+
+        #sesimorgen {
+            font-size: 5rem;
+            padding-top: 16rem;
+            padding-bottom: 14rem;
+            text-transform: uppercase;
+            text-justify: distribute;
+            text-align: center;
+            background: url('https://media.giphy.com/media/NqZn5kPN8VVrW/giphy.gif');
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            margin-right: -1rem;
+        }
+
+    }
+    /* iPad Pro */
+    @media only screen and (min-width: 1024px) {
+
+        #box1 {
+            padding-top: 18rem;
+            padding-bottom: 8rem;
+            text-transform: uppercase;
+            text-justify: distribute;
+            text-align: center;
+            line-height: 6rem;
+        }
+
+        #box1a {
+            font-size: 20rem;
+            color: var(--ukm_blaa);
+        }
+
+        #box1b {
+            font-size: 7.4rem;
+            color: var(--ukm_blaa);
+        }
+
+        #sendinnsporsmaal {
+            position: absolute;
+            top: 32rem;
+            right: 4vw;
+            width: 15%;
+            z-index: 10;
+        }
+
+        #marqee_top {
+            padding: 2.6rem 0 1.6 0;
+            font-size: 1.8rem;
+        }
+
+        marquee p {
+            margin-top: .6rem;
+        }
+
+        #advarsel {
+            position: relative;
+            top: 1.4rem;
+            width: 40%;
+            left: .8rem;
+            z-index: 10;
+            margin-bottom: 3.8rem;
+        }
+
+        #box4b {
+            position: absolute;
+            font-size: 3.2rem;
+            bottom: 8rem;
+            left: 7.2rem;
+        }
+
+        #programsticker {
+            position: relative;
+            top: -6rem;
+            width: 40%;
+            left: 14rem;
+            z-index: 10;
+            margin-bottom: 3rem;
+        }
+        
+        #box2 {
+            margin-top: -1rem;
+            padding-top: 10rem;
+            padding-bottom: 9rem;
+            text-transform: uppercase;
+            text-justify: distribute;
+            text-align: center;
+            line-height: 8rem;
+        }
+
+        #box2a {
+            font-size: 7rem;
+            color: var(--ukm_rosa);
+        }
+        #box2b {
+            font-size: 8.6rem;
+            color: var(--ukm_rosa);
+        }
+        #box6 {
+            padding-top: 5rem;
+            padding-bottom: -5rem;
+            text-transform: uppercase;
+            text-justify: distribute;
+            text-align: center;
+            line-height: 15vw;
+        }
+
+        #box6a {
+            font-size: 4rem;
+            margin-left: 1rem;
+            color: var(--ukm_blaa);
+        }
+
+        #box6b {
+            margin-top: -2rem;
+            font-size: 10rem;
+            margin-left: 1rem;
+        }
+
+        #box5 {
+            /* height: 250px; */
+            z-index: -10;
+            padding-top: 16rem;
+            padding-bottom: 5rem;
+            text-transform: uppercase;
+            text-justify: distribute;
+            text-align: center;
+            line-height: 10vw;
+        }
+
+        #box5a {
+            font-size: 30vw;
+            color: var(--ukm_gronn);
+        }
+
+        #box5b {
+            font-size: 10vw;
+            color: var(--ukm_gronn);
+        }
+
+        #sesimorgen {
+            font-size: 7rem;
+            padding-top: 16rem;
+            padding-bottom: 14rem;
+            text-transform: uppercase;
+            text-justify: distribute;
+            text-align: center;
+            background: url('https://media.giphy.com/media/NqZn5kPN8VVrW/giphy.gif');
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            margin-right: -1rem;
+        }
+    }
+
+    #box6fix {
+        margin: 0;
+        padding: 0;
+        height: 46vw;
+    }
+</style>
     <div class="row">
         <div class="col-12">
             <ul class="nav nav-tabs nav-fill">
@@ -114,12 +832,30 @@
             </ul>
         </div>
     </div>
-    <div class="row">
-        <div class="col-12 bg-blaa text-gul" style="height: 100vh;">
-            <center>
-                <h1 style="padding-top: 34vh; font-size: 3.2rem; opacity: 1;">Så ivrig du var da....<br>Du må nok vente litt lengre</h1>
-                <h1 style="font-size: 20rem; opacity: 1; margin-top: 4rem;">😇</h1>
-            </center>
-        </div>
+    
+		{# HALVBREDDE-SAK #}
+		<div class="row">
+			<div class="col-12 bg-rosa expandOnClick momDiv" style="letter-spacing: 0.2rem;" id="box1">
+                <span id="box1a">
+                    <a href="ukm-festivalen.no/2019/06/24/har-du-et-problem-du-trenger-hjelp-til-a-lose/" data-articleBox-id=1 id="article-1" class="articleLink clickMomDiv text-gul">UKM-</a>
+                </span>
+                <span id="box1b">
+                    <a href="ukm-festivalen.no/2019/06/24/har-du-et-problem-du-trenger-hjelp-til-a-lose/" data-articleBox-id=1 id="article-1" class="articleLink clickMomDiv text-gul">psykologen</a>
+                </span>
+			</div>
+			<div class="clearfix"></div>
+			<div class="col-12 articleBox bg-rosa" id="articleBox-1" style="display:none;">
+				<br />
+				<div class="articleContent">
+					Laster inn...
+					<br />
+					<br />
+				</div>
+				<div class="col-12 close center text-center">
+					<button class="btn btn-block btn-outline-primary closeButton">Lukk artikkel</button>
+					<br />
+				</div>
+			</div>
+		</div>
     </div>
 {% endblock %}
