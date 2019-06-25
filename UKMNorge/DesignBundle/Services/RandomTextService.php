@@ -44,7 +44,7 @@ class RandomTextService {
 		$navnRand = rand(0,sizeof(self::$navn)-1);
 		$actionRand = rand(0, sizeof(self::$action)-1);
 		$where = rand(0, sizeof(self::$where)-1);
-		return self::$navn[$navnRand] . ' ' . self::$action[$actionRand] . ' ' . self::$where[$whereRand];
+		return self::$navn[$navnRand] . ' inviterer til ' . self::$action[$actionRand] . ' ' . self::$where[$whereRand];
 	}
 	
 	
