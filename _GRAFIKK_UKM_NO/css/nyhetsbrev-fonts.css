@@ -13,5 +13,5 @@
   font-family: 'itcavantgardeprobold';
   font-style: bold;
   font-weight: 300;
-  src: local('ITCAvantGardePro-Bold'), url(//grafikk.ukm.no/UKMresponsive/fonts/ITCAvantGardePro-Bold.otf) format('opentype');
+  src: url("//grafikk.ukm.no/UKMresponsive/fonts/ITCAvantGardePro-Bold.otf") format('opentype');
 }
