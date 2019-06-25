@@ -2321,7 +2321,7 @@ ul.innslag li a:visited {
   font-family: 'itcavantgardeprobold';
   font-style: bold;
   font-weight: 300;
-  src: local('ITCAvantGardePro-Bold'), url(//grafikk.ukm.no/fonts/ITCAvantGardePro-Bold.otf) format('opentype');
+  src: local('ITCAvantGardePro-Bold'), url(//grafikk.ukm.no/UKMresponsive/fonts/ITCAvantGardePro-Bold.otf) format('opentype');
 }
 #UKMheader.navbar-with-slogan {
   background-image: url('//grafikk.ukm.no/UKMresponsive/img/banner-test-gul-ish.jpg');
