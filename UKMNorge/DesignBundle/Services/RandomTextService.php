@@ -8,7 +8,7 @@ namespace UKMNorge\DesignBundle\Services;
  */
 class RandomTextService {	
 	
- 	var $navn = [
+ 	var $navn = array(
 		"Magnus",
 		"Jonas",
 		"Thomas",
@@ -20,9 +20,9 @@ class RandomTextService {
 		"Mari",
 		"Stine",
 		"Sara"
-	];
+	);
 
-	var $action = [
+	var $action = array(
 		"juletreklatring (førstemann til stjerna)",
 		"pepperkakebaking",
 		"kurs i brillepussing",
@@ -30,15 +30,15 @@ class RandomTextService {
 		"kaffetrakte-kurs",
 		"birøkter-kurs",
 		"ballongblåse-workshop"
-	];
+	);
 
-	var $where = [
+	var $where = array(
 		"i bakgården",
 		"på Kimen",
 		"i 1001 natt",
 		"i bestemorkroken",
 		"på soverommet"
-	];
+	);
 
 	public static function getText() {
 		$navnRand = rand(0,sizeof($navn)-1);
