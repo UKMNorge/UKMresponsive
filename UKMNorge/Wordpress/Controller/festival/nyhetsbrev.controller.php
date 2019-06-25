@@ -9,4 +9,12 @@ $WP_TWIG_DATA['HEADER']->hideLogo = true;
 
 $current_date = $WP_TWIG_DATA['page']->getPage()->meta->dato;
 
+
+
+
+
+require_once('UKM/tv.class.php');
+// Tøffelvideo
+$WP_TWIG_DATA['mandag_toffel'] = new TV(14744);
+
 $view_template = 'Festival/Nyhetsbrev/2019_'. $current_date;

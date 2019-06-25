@@ -6,8 +6,9 @@
             e.preventDefault();
             window.location.href = $(this).find('.momClickMeClickMe').attr('href');
         });
+        
     </script>
-
+    
     <script type="text/javascript">
     $(document).on('click', '.clickMomDiv', function(e) {
         e.preventDefault();
@@ -86,7 +87,6 @@
     });
     </script>
 
-
     <style>:root
     {
         --ukm_blaa: rgba(0, 0, 71, 1);
@@ -94,23 +94,19 @@
         --ukm_gul: rgba(255, 240, 86, 1);
         --ukm_gronn: rgba(0, 255, 137, 1);
     }
-
+    /* Default settings */
     h1,
     h2,
     h3,
     h4,
     h5,
     h6,
+    p,
     a,
     a:link,
     marquee {
         font-family: 'itcavantgardeprobold' !important;
     }
-
-    a:hover {
-        text-decoration: none;
-    }
-
     .bg-blaa {
         background: var(--ukm_blaa);
     }
@@ -123,7 +119,6 @@
     .bg-gronn {
         background: var(--ukm_gronn);
     }
-
     .text-blaa {
         color: var(--ukm_blaa);
         opacity: 1;
@@ -147,6 +142,13 @@
     .text-black {
         color: black;
         opacity: 1;
+    }
+    #marqee_top {
+        font-size: 1.4rem;
+    }
+
+    a:hover {
+        text-decoration: none;
     }
 
     .nav-link {
@@ -175,7 +177,6 @@
 
     }
 </style>
-
 
 <style>
     #box2 {
@@ -811,51 +812,276 @@
         height: 46vw;
     }
 </style>
-    <div class="row">
-        <div class="col-12">
-            <ul class="nav nav-tabs nav-fill">
-                <li class="nav-item">
-                    <a class="nav-link" href="../mandag/">Mandag</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="../tirsdag/">Tirsdag</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../onsdag/">Onsdag</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../torsdag/">Torsdag</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../fredag/">Fredag</a>
-                </li>
-            </ul>
-        </div>
+
+
+<div class="row">
+    <div class="col-12">
+        <ul class="nav nav-tabs nav-fill">
+            <li class="nav-item">
+                <a class="nav-link active" href="../mandag/">Mandag</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../tirsdag/">Tirsdag</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../onsdag/">Onsdag</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../torsdag/">Torsdag</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../fredag/">Fredag</a>
+            </li>
+        </ul>
     </div>
-    
-		{# HALVBREDDE-SAK #}
-		<div class="row">
-			<div class="col-12 bg-rosa expandOnClick momDiv" style="letter-spacing: 0.2rem;" id="box1">
+</div>
+
+<div class="row">
+    <div class="col-12 bg-rosa">
+        <a class="link-blaa" href="https://ukm-festivalen.no/2019/06/24/har-du-et-problem-du-trenger-hjelp-til-a-lose/">
+            <p class="expandOnClick" id="box1">
                 <span id="box1a">
-                    <a href="ukm-festivalen.no/2019/06/24/har-du-et-problem-du-trenger-hjelp-til-a-lose/" data-articleBox-id=1 id="article-1" class="articleLink clickMomDiv text-gul">UKM-</a>
+                    UKM-
                 </span>
                 <span id="box1b">
-                    <a href="ukm-festivalen.no/2019/06/24/har-du-et-problem-du-trenger-hjelp-til-a-lose/" data-articleBox-id=1 id="article-1" class="articleLink clickMomDiv text-gul">psykologen</a>
-                </span>
-			</div>
-			<div class="clearfix"></div>
-			<div class="col-12 articleBox bg-rosa" id="articleBox-1" style="display:none;">
-				<br />
-				<div class="articleContent">
-					Laster inn...
-					<br />
-					<br />
-				</div>
-				<div class="col-12 close center text-center">
-					<button class="btn btn-block btn-outline-primary closeButton">Lukk artikkel</button>
-					<br />
-				</div>
-			</div>
-		</div>
+                    psykologen</span>
+            </p>
+        </a>
+
+        <a href="https://ukm-festivalen.no/2019/06/24/har-du-et-problem-du-trenger-hjelp-til-a-lose/">
+        <svg id="sendinnsporsmaal" viewbox="0 0 903.66 903.66" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <style>
+                    .sendinnsporsmaal-cls-1 {
+                        fill: none;
+                    }
+                    .sendinnsporsmaal-cls-2 {
+                        clip-path: url('#clip-path');
+                    }
+                    .sendinnsporsmaal-cls-3 {
+                        fill: #fff056;
+                    }
+                    .sendinnsporsmaal-cls-4,
+                    .sendinnsporsmaal-cls-5,
+                    .sendinnsporsmaal-cls-6 {
+                        isolation: isolate;
+                    }
+                    .sendinnsporsmaal-cls-5 {
+                        font-size: 7.8rem;
+                    }
+                    .sendinnsporsmaal-cls-5,
+                    .sendinnsporsmaal-cls-6 {
+                        fill: #00004c;
+                        font-family: 'itcavantgardeprobold';
+                        font-weight: 700;
+
+                    }
+                    .sendinnsporsmaal-cls-6 {
+                        font-size: 6.8rem;
+                    }
+                    .sendinnsporsmaal-cls-7 {
+                        letter-spacing: 0.02em;
+                    }
+                </style>
+                <clipPath id="clip-path"><rect class="sendinnsporsmaal-cls-1" height="903.64" width="903.64"/></clipPath>
+            </defs>
+            <title>sendinnsporsmaal</title>
+            <g data-name="Layer 2" id="Layer_2">
+                <g data-name="Layer 1" id="Layer_1-2">
+                    <g data-name="Group 3" id="Group_3">
+                        <g class="sendinnsporsmaal-cls-2">
+                            <g data-name="Component 3 6" id="Component_3_6"><circle class="sendinnsporsmaal-cls-3" cx="451.83" cy="451.83" data-name="Ellipse 1" id="Ellipse_1" r="451.83"/></g>
+                        </g>
+                        <g class="sendinnsporsmaal-cls-4" data-name="SEND INN SPØRSMÅL" id="SEND_INN_SPØRSMÅL">
+                            <text class="sendinnsporsmaal-cls-5" transform="matrix(0.96, 0.29, -0.29, 0.96, 196.32, 348.34)">SEND INN</text>
+                            <text class="sendinnsporsmaal-cls-6" transform="matrix(0.96, 0.29, -0.29, 0.96, 161.87, 461.02)">SPØRSMÅL</text>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </svg>
+        </a>
     </div>
+</div>
+
+<div class="row ticker clickContainer bg-gronn text-blaa" id="marqee_top">
+    <marquee behavior="scroll" direction="left" loop="1" scrollamount="5"><p>VELKOMMEN TIL NYHETSBREVET - VELKOMMEN TIL NYHETSBREVET - VELKOMMEN TIL NYHETSBREVET - VELKOMMEN TIL NYHETSBREVET - VELKOMMEN TIL NYHETSBREVET - VELKOMMEN TIL NYHETSBREVET - VELKOMMEN TIL NYHETSBREVET - VELKOMMEN TIL NYHETSBREVET - VELKOMMEN TIL NYHETSBREVET - VELKOMMEN TIL NYHETSBREVET - VELKOMMEN TIL NYHETSBREVET - VELKOMMEN TIL NYHETSBREVET<p></marquee>
+    <a class="momClickMeClickMe hidden" href="https://tv.ukm.no/festivalen/2019/"></a>
+</div>
+
+<div class="row" style="margin-top: -1rem;">
+    <div class="col-6">
+
+            <p id="box3">
+            </p>
+    </div>
+    <div class="col-6 bg-blaa" id="box4fix">
+    <a href="http://ukm.no/festivalen/files/2019/06/advarsel_mandag.png">
+            <p class="text-gronn" id="box4">
+                <span id="box4a">
+<svg id="advarsel" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 867 797.16">
+    <defs>
+        <style>
+            .advarsel-cls-1 {
+                fill: #00ff89;
+            }
+
+            .advarsel-cls-2,
+            .advarsel-cls-3 {
+                isolation: isolate;
+            }
+
+            .advarsel-cls-3 {
+                font-size: 30rem;
+                fill: #00004c;
+                font-family: 'itcavantgardeprobold';
+                font-weight: 700;
+            }
+        </style>
+    </defs>
+    <title>advarsel</title>
+    <a href="http://ukm.no/festivalen/files/2019/06/advarsel_mandag.png">
+    <g id="Layer_2" data-name="Layer 2">
+        <g id="Layer_1-2" data-name="Layer 1">
+            <g id="Group_5" data-name="Group 5">
+                <path id="Polygon_1" data-name="Polygon 1" class="advarsel-cls-1" d="M433.5,0,867,746.58H0Z" />
+                <g id="_" data-name=" " class="advarsel-cls-2"><text class="advarsel-cls-3" transform="translate(353.3 662.29)">!</text>
+                </g>
+            </g>
+        </g>
+    </g>
+    </a>
+</svg>
+
+                </span>
+                <br>
+                <span id="box4b">
+                    ADVARSEL:</span>
+            </p>
+            </a>
+        <svg id="programsticker" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 812.29 812.29">
+    <defs>
+        <style>
+
+            .program-cls-2 {
+                clip-path: url(#clip-path);
+            }
+
+            .program-cls-3 {
+                fill: #fff056;
+            }
+
+            .program-cls-5,
+            .program-cls-9 {
+                isolation: isolate;
+            }
+
+            .program-cls-5 {
+                font-size: 97.53px;
+            }
+
+            .program-cls-5,
+            .program-cls-9 {
+                fill: #00004c;
+                font-family: 'itcavantgardeprobold';
+                font-weight: 700;
+            }
+
+            .program-cls-9 {
+                font-size: 113.78px;
+            }
+        </style>
+        <clipPath id="clip-path">
+            <rect class="program-cls-1" width="812.29" height="812.29" />
+        </clipPath>
+    </defs>
+    <title>program</title>
+        <a href="https://ukm-festivalen.no/deltakerprogram/">
+
+    <g id="Layer_2" data-name="Layer 2">
+        <g id="Layer_1-2" data-name="Layer 1">
+            <g id="Group_7" data-name="Group 7">
+                <g id="Group_4" data-name="Group 4">
+                    <g class="program-cls-2">
+                        <g id="Component_3_1" data-name="Component 3 1">
+                            <circle id="Ellipse_1" data-name="Ellipse 1" class="program-cls-3" cx="406.14" cy="406.14"
+                                r="406.14" />
+                        </g>
+                    </g>
+                    <g id="HVA_SKJER_PROGRAM" data-name="HVA SKJER PROGRAM" class="program-cls-4">
+                        <text class="program-cls-5" transform="translate(113.65 357.43) rotate(6.02)">HVA SKJER?</text>
+                        <text class="program-cls-9" transform="translate(92.3 477.76) rotate(6.02)">PROGRAM</text>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</a>
+
+</svg>
+
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-12">
+            <a href="https://tv.ukm.no/festivalen/2019/14744-Thomas-tffel/">
+                <p class="text-gul" id="box2">
+                <span id="box2a">
+                        THOMAS HAR
+                    </span>
+                    <span id="box2b">
+                        GLEMT SKO</span>
+                </p>
+            </a>
+            {# {{ mandag_toffel.embedCodeVH()|raw }} #}
+    </div>
+</div>
+
+
+<div class="row" style="margin-top: -1rem;">
+    <div class="col-6 bg-gul">
+        <a href="http://ukm.no/festivalen/files/2019/06/Anbefaling_mandag-copy.png">
+            <p class="text-gronn" id="box6">
+                <span id="box6a">
+                Anbefaling:
+                </span>
+                <br>
+                <span id="box6b">
+                😍
+                </span>
+            </p>
+        </a>
+
+    </div>
+    <div class="col-6">
+            <p id="box7">
+
+            </p>
+    </div>
+</div>
+
+<div class="row" style="margin-top: -1rem;">
+    <div class="col-12 bg-rosa">
+        <a class="link-gronn" href="https://ukm.no/2019/06/24/en-hilsen/">
+            <p id="box5">
+                <span id="box5a">
+                    FØR
+                </span>
+                <span id="box5b">
+                    FESTIVALEN</span>
+            </p>
+        </a>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12 text-gul">
+        <p id="sesimorgen">
+            SES I MORGEN!
+        </p>
+    </div>
+</div>
+
 {% endblock %}

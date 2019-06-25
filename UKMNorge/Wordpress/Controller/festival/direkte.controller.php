@@ -2,7 +2,7 @@
 use UKMNorge\DesignBundle\Utils\SEO;
 use UKMNorge\DesignBundle\Utils\SEOImage;
 
-$WP_TWIG_DATA['HEADER']->background->url = '//grafikk.ukm.no/UKMresponsive/img/festival/forsidebilde.jpg';
+$WP_TWIG_DATA['HEADER']->background->url = '//grafikk.ukm.no/UKMresponsive/img/banner-test-gul-ish.jpg';
 $WP_TWIG_DATA['HEADER']->hideSection = true;
 $WP_TWIG_DATA['HEADER']->hideLogo = true;
 $image = new SEOImage( str_replace('http:','https:', $WP_TWIG_DATA['HEADER']->background->url ) );
