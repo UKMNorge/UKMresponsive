@@ -41,9 +41,9 @@ class RandomTextService {
 	];
 
 	public static function getText() {
-		$navnRand = rand(0,size($navn)-1);
-		$actionRand = rand(0, size($action)-1);
-		$where = rand(0, size($where)-1);
+		$navnRand = rand(0,sizeof($navn)-1);
+		$actionRand = rand(0, sizeof($action)-1);
+		$where = rand(0, sizeof($where)-1);
 		return $navn[$navnRand] + ' ' + $action[$actionRand] + ' ' + $where[$whereRand];
 	}
 	
