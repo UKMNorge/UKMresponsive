@@ -6,8 +6,86 @@
             e.preventDefault();
             window.location.href = $(this).find('.momClickMeClickMe').attr('href');
         });
+        
     </script>
+    
+    <script type="text/javascript">
+    $(document).on('click', '.clickMomDiv', function(e) {
+        e.preventDefault();
+        $(this).parents('.momDiv').click();
+    });
+    $ ( document ).ready(function () {
 
+
+        var latestArticle = null;
+        $(".expandOnClick").click(function(event) {
+            // if (jQuery(event.target).is("a") ) {
+            //     return;
+            // }
+            console.log(event);
+            event.preventDefault();            
+            var link = jQuery(event.target).find(".articleLink");
+            console.log('link: ');
+            console.log(link);
+            var articleBox = jQuery('.articleBox#articleBox-'+jQuery(link).attr('data-articleBox-id'));
+            var articleContent = jQuery(articleBox).find(".articleContent");
+            var newArticle = jQuery(link).attr('id');
+            /*console.log(newArticle);*/
+            var url = link.attr("href");
+            
+            if (undefined == url) {
+                url = jQuery(event.target).attr("href");
+            }
+
+            if ( "{{ UKM_HOSTNAME }}" == "ukm.dev" ) {
+                url = "https://ukm.dev/blog/2014/06/06/av-med-og-for-ungdom/?singleMode=true";
+            }
+
+            // Lukk samme artikkel
+            if( articleBox.is(':visible') && latestArticle == newArticle ) {
+                articleBox.slideUp();
+                // Sleep 300ms??
+                articleContent.html("Laster inn...");
+            }
+            // Ny artikkel, men en annen vises
+            else if (latestArticle != null && latestArticle != newArticle) {
+                articleContent.html("Laster inn...");
+
+                jQuery.post(
+                    url+"?singleMode=true",
+                    {
+                        'singleMode': true,
+                    },
+                    function(data) {
+                        articleContent.html(data);
+                    },
+                );
+                latestArticle = newArticle;
+            }
+            // Første gang artikkelboks åpnes.
+            else {
+                articleBox.slideDown();
+
+                jQuery.post(
+                    url+"?singleMode=true",
+                    {
+                        'singleMode': true,
+                    },
+                    function(data) {
+                        jQuery(articleBox).find(".articleContent").html(data);
+                    },
+                );
+                latestArticle = newArticle;
+            }
+        });
+
+        $(".closeButton").click( function (event) {
+            jQuery(event.target).parent().parent().slideUp();
+            console.log(jQuery(event.target).parent().parent().attr("id"));
+            scrollTo(jQuery(event.target).parent().parent().attr("id"));
+        });
+    });
+    </script>
 
     <style>:root
     {
@@ -27,7 +105,7 @@
     a,
     a:link,
     marquee {
-        font-family: 'Helvetica' !important;
+        font-family: 'itcavantgardeprobold' !important;
     }
     .bg-blaa {
         background: var(--ukm_blaa);
@@ -761,7 +839,7 @@
 <div class="row">
     <div class="col-12 bg-rosa">
         <a class="link-blaa" href="https://ukm-festivalen.no/2019/06/24/har-du-et-problem-du-trenger-hjelp-til-a-lose/">
-            <p id="box1">
+            <p class="expandOnClick" id="box1">
                 <span id="box1a">
                     UKM-
                 </span>
@@ -794,7 +872,7 @@
                     .sendinnsporsmaal-cls-5,
                     .sendinnsporsmaal-cls-6 {
                         fill: #00004c;
-                        font-family: 'Helvetica';
+                        font-family: 'itcavantgardeprobold';
                         font-weight: 700;
 
                     }
@@ -856,7 +934,7 @@
             .advarsel-cls-3 {
                 font-size: 30rem;
                 fill: #00004c;
-                font-family: 'Helvetica';
+                font-family: 'itcavantgardeprobold';
                 font-weight: 700;
             }
         </style>
@@ -905,7 +983,7 @@
             .program-cls-5,
             .program-cls-9 {
                 fill: #00004c;
-                font-family: 'Helvetica';
+                font-family: 'itcavantgardeprobold';
                 font-weight: 700;
             }
 
