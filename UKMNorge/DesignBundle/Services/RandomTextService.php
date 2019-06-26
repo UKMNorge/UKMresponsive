@@ -19,7 +19,13 @@ class RandomTextService {
 		"Anna",
 		"Mari",
 		"Stine",
-		"Sara"
+		"Sara",
+		"Markus",
+		"Morten",
+		"Inger",
+		"Linda",
+		"Ingeborg",
+		"Oskar"
 	);
 
 	public static $action = array(
@@ -29,7 +35,18 @@ class RandomTextService {
 		"snømåke-workshop",
 		"kaffetrakte-kurs",
 		"birøkter-kurs",
-		"ballongblåse-workshop"
+		"ballongblåse-workshop",
+		"skitrehopping",
+		"kurs i sparkesykling",
+		"boksstabling",
+		"hekkeløp",
+		"epleslang",
+		"granplanting",
+		"plenklipping med saks",
+		"tapekunst-workshop",
+		"introduksjon i rørleggerfaget",
+		"VM i hutring",
+		"rubiks Kube-battle"
 	);
 
 	public static $where = array(
@@ -37,7 +54,9 @@ class RandomTextService {
 		"på Kimen",
 		"i 1001 natt",
 		"i bestemorkroken",
-		"på soverommet"
+		"på soverommet",
+		"i kantina",
+		"hos sjefen"
 	);
 
 	public static function getText() {

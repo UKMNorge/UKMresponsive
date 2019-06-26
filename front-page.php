@@ -44,6 +44,10 @@ switch (get_option('site_type')) {
 				$view_template = 'Festival/juni';
 				require_once('UKMNorge/Wordpress/Controller/festival/juni.controller.php');
 				break;
+			case 'festival/underveis':
+				$view_template = 'Festival/underveis';
+				require_once('UKMNorge/Wordpress/Controller/festival/underveis.controller.php');
+				break;
 			default:
 				$view_template = 'Page/fullpage';
 				break;
