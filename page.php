@@ -104,7 +104,12 @@ switch( $page_template ) {
 		$view_template = 'Festival/nyhetsbrev';
 		require_once('UKMNorge/Wordpress/Controller/festival/nyhetsbrev.controller.php');
 		break;
-
+	
+	case 'festival/underveis':
+		$view_template = 'Festival/underveis';
+		require_once('UKMNorge/Wordpress/Controller/festival/underveis.controller.php');
+		break;
+		
 	## HOVEDSIDER
 	# Norgeskartet
 	case 'dinmonstring':
