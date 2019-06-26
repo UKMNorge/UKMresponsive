@@ -3,8 +3,14 @@
 {% block content %}
     <script>
         $(document).on('click', '.clickContainer', function (e) {
+            console.log(e);
+            
             e.preventDefault();
             window.location.href = $(this).find('.momClickMeClickMe').attr('href');
+        });
+        $(document).on('click', '.clickMomDiv', function(e) {
+            e.preventDefault();
+            $(this).parents('.momDiv').click();
         });
     </script>
 
@@ -1779,8 +1785,8 @@
 
     </div>
     <div class="col-6 clickContainer" >
-        <p id="box7">
-            <a class="momClickMeClickMe hidden" style="" href="https://ukm.no/festivalen/2019/06/26/diskvalifisert-fylkeskontakt-stoppa-av-politiet/"></a>
+        <p id="box7" class="momDiv">
+            <a class="momClickMeClickMe hidden" style="" href="https://ukm.no/festivalen/2019/06/26/diskvalifisert-fylkeskontakt-stoppa-av-politiet/" />
         </p>
     </div>
 </div>
