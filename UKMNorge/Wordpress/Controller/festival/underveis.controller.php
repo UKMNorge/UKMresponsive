@@ -2,7 +2,7 @@
 use UKMNorge\DesignBundle\Utils\SEO;
 use UKMNorge\DesignBundle\Utils\SEOImage;
 
-$WP_TWIG_DATA['HEADER']->background->url = '//grafikk.ukm.no/festivalen/2019/skolentilkimen.jpg';
+$WP_TWIG_DATA['HEADER']->background->url = '//grafikk.ukm.no/festivalen/2019/apningsshow.jpg';
 $WP_TWIG_DATA['HEADER']->hideSection = true;
 $WP_TWIG_DATA['HEADER']->hideLogo = true;
 $WP_TWIG_DATA['HEADER']->button->background = 'rgba(0,0,47, .6)';
