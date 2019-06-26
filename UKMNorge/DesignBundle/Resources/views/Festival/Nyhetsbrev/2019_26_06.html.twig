@@ -8,10 +8,6 @@
             e.preventDefault();
             window.location.href = $(this).find('.momClickMeClickMe').attr('href');
         });
-        $(document).on('click', '.clickMomDiv', function(e) {
-            e.preventDefault();
-            $(this).parents('.momDiv').click();
-        });
     </script>
 
     <script type="text/javascript">
@@ -1785,9 +1781,11 @@
 
     </div>
     <div class="col-6 clickContainer" >
-        <p id="box7" class="momDiv">
-            <a class="momClickMeClickMe hidden" style="" href="https://ukm.no/festivalen/2019/06/26/diskvalifisert-fylkeskontakt-stoppa-av-politiet/" />
-        </p>
+        <a class="momClickMeClickMe hidden" style="" href="https://ukm.no/festivalen/2019/06/26/diskvalifisert-fylkeskontakt-stoppa-av-politiet/">
+            <p id="box7" class="momDiv">
+                
+            </p>
+        </a>
     </div>
 </div>
 <div class="row" style="margin-top: -1rem;">
