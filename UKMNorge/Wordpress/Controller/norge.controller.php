@@ -2,8 +2,11 @@
 
 require_once('UKM/fylker.class.php');
 $WP_TWIG_DATA['fylker'] = fylker::getAll();
-$WP_TWIG_DATA['pamelding_apen'] = time() > strtotime( str_replace('YYYY', 2018, WP_CONFIG::get('pamelding')['starter'] ) );
-
+if( date('m') < 9 && date('m') > 6 ) {
+	$WP_TWIG_DATA['pamelding_apen'] = time() > strtotime( str_replace('YYYY', get_site_option('season'), WP_CONFIG::get('pamelding')['starter'] ) );
+} else {
+	$WP_TWIG_DATA['pamelding_apen'] = false;
+}
 
 // PUSH TO FRONT
 if( function_exists('UKMpush_to_front_load_all_fm_data') ) {	

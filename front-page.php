@@ -97,7 +97,7 @@ switch (get_option('site_type')) {
 		} elseif (($start_fylker < $now && $stop_fylker > $now) || isset($_GET['fylker'])) {
 			$view_template = 'Norge/home_fylke';
 		} else {
-			$view_template = 'Page/home_norge';
+			$view_template = 'Norge/home';
 		}
 		require_once('UKMNorge/Wordpress/Controller/norge.controller.php');
 		break;
