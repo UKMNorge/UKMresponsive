@@ -134,6 +134,4 @@ $WP_TWIG_DATA['page_next'] 		= $WP_TWIG_DATA['posts']->getPageNext();
 $WP_TWIG_DATA['page_prev']		= $WP_TWIG_DATA['posts']->getPagePrev();
 
 require_once(PATH_WORDPRESSBUNDLE. 'Controller/banner.controller.php');
-
-$meny = wp_get_nav_menu_object( get_option('UKM_menu') );	
-$WP_TWIG_DATA['meny'] = wp_get_nav_menu_items( $meny );
+require_once(PATH_WORDPRESSBUNDLE. 'Controller/monstring/meny.controller.php');

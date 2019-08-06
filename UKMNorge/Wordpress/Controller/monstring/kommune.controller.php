@@ -111,3 +111,4 @@ $WP_TWIG_DATA['direkte']			= kommuneController::getLive();
 $WP_TWIG_DATA['ukmtv']				= kommuneController::getUKMTV();
 
 require_once(PATH_WORDPRESSBUNDLE. 'Controller/banner.controller.php');
+require_once(PATH_WORDPRESSBUNDLE. 'Controller/monstring/meny.controller.php');

@@ -67,5 +67,17 @@
             </div>
         </div>
     {% endfor %}
+
+	{% if meny is defined and meny|length > 0 %}
+		<div class="row">
+			<div class="col-12">
+				{% for element in meny %}
+					<a href="{{ element.url }}" class="btn btn-outline-primary btn-block btn-sm">
+						{{ element.title }}
+					</a>
+				{% endfor %}
+			</div>
+		</div>
+	{% endif %}
 	<div class="clearfix"></div>
 </div>
