@@ -1,17 +1,19 @@
 <?php
+
+use UKMNorge\Arrangement\Arrangement;
 use UKMNorge\DesignBundle\Utils\SEO;
 use UKMNorge\DesignBundle\Utils\SEOImage;
+use UKMNorge\Geografi\Fylker;
+use UKMNorge\Innslag\Typer;
 
-require_once('UKM/monstring.class.php');
-require_once('UKM/innslag.class.php');
+require_once('UKM/Autoloader.php');
 
 $id = $WP_TWIG_DATA['page']->getLastParameter();
-$monstring = new monstring_v2(get_option('pl_id'));;
+$monstring = new Arrangement(get_option('pl_id'));;
 
 ## Skal hente ut ETT innslag, gitt i $id.
 if( is_numeric( $id ) ) {
 	if( isset( $_GET['cid'] ) ) {
-		require_once('UKM/forestilling.class.php');
 		$WP_TWIG_DATA['hendelse'] = $monstring->getProgram()->get( (int) $_GET['cid'] );
 	}
 
@@ -31,12 +33,10 @@ if( is_numeric( $id ) ) {
 }
 ## Skal hente ut alle påmeldte innslag til påmeldte-oversikten.
 else {
-	require_once('UKM/fylker.class.php');
-	require_once('UKM/innslag_typer.class.php');
 	// /pameldte/ - vil altså laste inn oversikten.
-	$WP_TWIG_DATA['monstring'] = new monstring_v2(get_option('pl_id'));
-	$WP_TWIG_DATA['fylker'] = fylker::getAllInkludertGjester();
-	$WP_TWIG_DATA['kategorier'] = innslag_typer::getAllTyper();
+	$WP_TWIG_DATA['monstring'] = new Arrangement(get_option('pl_id'));
+	$WP_TWIG_DATA['fylker'] = Fylker::getAllInkludertGjester();
+	$WP_TWIG_DATA['kategorier'] = Typer::getAllTyper();
 	$view_template = 'Monstring/pameldte';
 
 	SEO::setTitle( 'Påmeldte til '. $WP_TWIG_DATA['monstring']->getNavn() );
