@@ -2,10 +2,12 @@
 
 use UKMNorge\DesignBundle\Utils\Sitemap;
 use UKMNorge\DesignBundle\Utils\SEO;
+use UKMNorge\Geografi\Kommune;
 
 require_once('header.php');
 require_once('UKMNorge/Wordpress/Utils/page.class.php');
 require_once('UKMNorge/Wordpress/Utils/posts.class.php');
+require_once('UKM/Autoloader.php');
 
 SEO::setCanonical($WP_TWIG_DATA['blog_url']);
 SEO::setDescription(
@@ -28,11 +30,20 @@ if (isset($WP_TWIG_DATA['page']->getPage()->meta->UKMviseng)) {
 
 
 switch (get_option('site_type')) {
-	case 'fylke':
-		require_once('UKMNorge/Wordpress/Controller/monstring/fylke.controller.php');
+    case 'fylke':
+        if( get_option('pl_id') ) {
+            require_once('UKMNorge/Wordpress/Controller/monstring/fylke.controller.php');
+        } else {
+            $view_template = 'Fylke/uten_arrangement';
+        }
 		break;
-	case 'kommune':
-		require_once('UKMNorge/Wordpress/Controller/monstring/kommune.controller.php');
+    case 'kommune':
+        if( get_option('pl_id') ) {
+            require_once('UKMNorge/Wordpress/Controller/monstring/kommune.controller.php');
+        } else {
+            $WP_TWIG_DATA['kommune'] = new Kommune( get_option('kommuner') );
+            $view_template = 'Kommune/uten_arrangement';
+        }
 		break;
 	case 'land':
 		switch ($page_template) {
