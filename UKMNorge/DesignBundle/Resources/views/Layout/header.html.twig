@@ -20,11 +20,11 @@
 			<div class="navbar-header float-left">
 				{% if HEADER.logo.url is defined and HEADER.hideLogo is not defined %}
 					<a href="{{ HEADER.logo.link }}">
-						<img src="{{ HEADER.logo.url }}" id="CUSTOMlogo" width="70" />
+						<img src="{{ HEADER.logo.url }}" id="CUSTOMlogo" />
 					</a>
 				{% elseif HEADER.hideLogo is not defined %}
 					<a href="{{ Sitemap.getPage('UKM', 'forsiden') }}">
-						<img src="//grafikk.ukm.no/profil/logo/UKM_logo{{ HEADER.background.url is defined and HEADER.background.url is not empty ? '_helhvit_0100' : '_sort_0100' }}.png" id="UKMlogo" width="70" />
+						<img src="//grafikk.ukm.no/profil/logo/UKM_logo{{ HEADER.background.url is defined and HEADER.background.url is not empty ? '_helhvit_0100' : '_bla_0100' }}.png" id="UKMlogo" />
 					</a>
 				{% endif %}
 			</div>
