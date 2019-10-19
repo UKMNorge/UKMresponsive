@@ -4,6 +4,7 @@ use UKMNorge\DesignBundle\Utils\Sitemap;
 use UKMNorge\DesignBundle\Utils\SEO;
 
 require_once('wp_twig.dateFilter.inc.php');
+require_once('wp_twig.onelineFilter.inc.php');
 require_once('wp_twig.ukm.inc.php');
 
 class WP_TWIG {
@@ -153,7 +154,10 @@ class WP_TWIG {
 		// Add telefon-filter
 		$filter_telefon = new Twig_SimpleFilter('telefon', 'UKMtelefon');
 		$twig->addFilter($filter_telefon);
-			
+        
+        $filter_oneline = new Twig_SimpleFilter('oneline', 'TWIGoneline');
+        $twig->addFilter($filter_oneline);
+
 		// Add asset-function
 		$function_ukmasset = new Twig_SimpleFunction('UKMasset', function( $path ) {
 			if( 'ukm.dev' == UKM_HOSTNAME ) {

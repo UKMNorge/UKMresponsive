@@ -1,5 +1,8 @@
 <?php
 function WP_TWIG_date($time, $format='d.M Y H:i') {
+    if( is_null( $time ) ) {
+        return '';
+    }
 	if( !is_string( $time ) && get_class( $time ) == 'DateTime' ) 
 	{
 		$time = $time->getTimestamp();
