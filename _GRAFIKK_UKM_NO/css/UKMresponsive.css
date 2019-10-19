@@ -2337,6 +2337,11 @@ ul.innslag li a:visited {
   font-weight: 300;
   src: url("//grafikk.ukm.no/UKMresponsive/fonts/ITCAvantGardePro-Bold.otf") format('opentype');
 }
+.kontaktPlaceholder {
+  font-size: 6em;
+  color: #00004c;
+  margin: 0.15em;
+}
 #UKMheader.navbar-with-slogan {
   background-image: url('//grafikk.ukm.no/UKMresponsive/img/banner-test-gul-ish.jpg');
 }

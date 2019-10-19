@@ -2334,3 +2334,8 @@ ul.innslag li a:visited {
   font-weight: 300;
   src: url("//grafikk.ukm.no/UKMresponsive/fonts/ITCAvantGardePro-Bold.otf") format('opentype');
 }
+.kontaktPlaceholder {
+  font-size: 6em;
+  color: #a65ea5;
+  margin: 0.15em;
+}
