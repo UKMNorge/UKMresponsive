@@ -30,7 +30,9 @@
 
 .fylkesfestival-banner {
 	background: @color-primary;
-	color: #fff;	
+    color: #fff;	
+    margin-left: 0px !important;
+    margin-right: 0px !important;
 }
 
 .fylkesfestival-banner .title {
@@ -38,9 +40,9 @@
 	font-weight: 100;
 }
 
-.fylkesfestival-banner-menu-container {
-	margin-left: -15px !important;
-	margin-right: -15px !important;
+.fylkesfestival-banner-container {
+	margin-left: -30px !important;
+	margin-right: -30px !important;
 }
 
 .fylkesfestival-banner-menu {
@@ -52,14 +54,28 @@
     padding-top: 0.5em;
     padding-bottom: 1.5em;
 }
-
-@media (min-width: 992px) {
-	.fylkesfestival-banner-menu {
-		border-left: 2px solid @color-primary;
-		border-right: 2px solid @color-primary;
-	}
+.fylkesfestival-banner-menu .row {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
 }
 
+
+@media (min-width: 768px) {
+    .fylkesfestival-banner-container {
+        margin-left: 0px !important;
+        margin-right: 0px !important;
+    }
+	.fylkesfestival-banner-menu {
+		border-left: 2px solid @color-primary;
+        border-right: 2px solid @color-primary;
+    }
+
+    // Passer på at ting flyter til høyre i md-view
+    #searchListKommune.found-few,
+    #searchListKommune.found-none {
+        margin-bottom: 10em !important;
+    }
+}
 
 .fylke-pameldte {
 	margin-top: -1rem;

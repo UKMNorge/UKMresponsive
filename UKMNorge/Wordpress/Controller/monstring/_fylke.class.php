@@ -32,7 +32,8 @@ class fylkeController extends monstringController {
 	}
 
 	public static function getLokalmonstringer() {
-		$monstringer = new monstringer_v2( self::getMonstring()->getSesong() );
+        return [];
+        $monstringer = new monstringer_v2( self::getMonstring()->getSesong() );
 		return $monstringer->utenGjester( $monstringer->getAllByFylke( self::getMonstring()->getFylke()->getId() ) );
 	}
 }

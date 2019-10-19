@@ -35,11 +35,6 @@ if( isset( $WP_TWIG_DATA['page']->getPage()->meta->UKMviseng ) ) {
 // SELECT CORRECT TEMPLATE, INCLUDE AND RUN CONTROLLER
 switch( $page_template ) {
 	## TILHØRENDE MØNSTRINGEN
-	# Lokalmønstringer i fylket
-	case 'lokalmonstringer':
-		require_once('UKMNorge/Wordpress/Controller/monstring/lokalmonstringer.controller.php');
-		$view_template = 'Fylke/lokalmonstringer_fullpage';
-		break;
 	# Påmeldte til mønstringen
 	case 'pameldte':
 		require_once("UKMNorge/Wordpress/Controller/monstring/pameldte.controller.php");

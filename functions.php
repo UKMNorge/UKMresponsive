@@ -4,6 +4,8 @@ use UKMNorge\DesignBundle\Utils\Sitemap;
 use UKMNorge\DesignBundle\Utils\SEO;
 use UKMNorge\DesignBundle\Utils\SEOImage;
 
+require_once('UKM/Autoloader.php');
+
 add_theme_support( 'post-thumbnails' );
 add_theme_support( 'menus' );
 

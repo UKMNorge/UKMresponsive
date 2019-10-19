@@ -1906,14 +1906,16 @@ cite {
 .fylkesfestival-banner {
   background: #a65ea5;
   color: #fff;
+  margin-left: 0px !important;
+  margin-right: 0px !important;
 }
 .fylkesfestival-banner .title {
   font-size: 1.5rem;
   font-weight: 100;
 }
-.fylkesfestival-banner-menu-container {
-  margin-left: -15px !important;
-  margin-right: -15px !important;
+.fylkesfestival-banner-container {
+  margin-left: -30px !important;
+  margin-right: -30px !important;
 }
 .fylkesfestival-banner-menu {
   background: rgba(184, 157, 204, 0.17);
@@ -1924,10 +1926,22 @@ cite {
   padding-top: 0.5em;
   padding-bottom: 1.5em;
 }
-@media (min-width: 992px) {
+.fylkesfestival-banner-menu .row {
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+}
+@media (min-width: 768px) {
+  .fylkesfestival-banner-container {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+  }
   .fylkesfestival-banner-menu {
     border-left: 2px solid #a65ea5;
     border-right: 2px solid #a65ea5;
+  }
+  #searchListKommune.found-few,
+  #searchListKommune.found-none {
+    margin-bottom: 10em !important;
   }
 }
 .fylke-pameldte {

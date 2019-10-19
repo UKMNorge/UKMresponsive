@@ -1,4 +1,8 @@
 <?php
+
+use UKMNorge\Geografi\Fylker;
+use UKMNorge\Geografi\Kommune;
+
 /** 
  *	STATIC HELPER CLASS FOR frontpage.controller.php
 **/
@@ -15,17 +19,55 @@ abstract class monstringController {
 	static $harProgram = null;
 
 	static $harInfoPage = null;
-	static $infoPage = null;
+    static $infoPage = null;
+    
+    static $geo_id = null;
+    static $fylke = null;
+    static $kommune = null;
 
 
 	abstract public static function setState( $state );
 #	abstract public static function _loadPameldingApen();
 
-	public static function init( $pl_id ) {
-		self::$pl_id = $pl_id;
-		self::_loadMonstring();
-		self::_loadPameldingStarter();
-	}
+	public static function init( $pl_id, $geo_id=null ) {
+        self::$pl_id = $pl_id;
+        if( is_numeric( $pl_id ) ) {
+            self::_loadMonstring();
+            self::_loadPameldingStarter();
+        }
+        if( $geo_id != null ) {
+            self::$geo_id = $geo_id;
+        }
+    }
+    public static function harMonstring() {
+        return is_numeric( self::$pl_id );
+    }
+
+    public static function getFylke() {
+        if( null == self::$fylke ) {
+            if( get_called_class() == 'fylkeController' ) {
+                self::$fylke = Fylker::getById( self::$geo_id );
+            }
+            elseif( get_called_class() == 'kommuneController' ) {
+                self::$fylke = self::getKommune()->getFylke();
+            }
+        }
+        return self::$fylke;
+    }
+
+    public static function getKommune() {
+        if( null == self::$kommune ) {
+            if( get_called_class() == 'kommuneController' ) {
+                self::$kommune = new Kommune( self::$geo_id );   
+            }
+            if( get_called_class() == 'fylkeController' ) {
+                throw new Exception(
+                    'Beklager, kan ikke hente kommune for et fylke'
+                );
+            }
+        }
+        return self::$kommune;
+    }
 	
 	
 	public static function _loadPameldingStarter() {
@@ -34,6 +76,9 @@ abstract class monstringController {
 	}
 	
 	public static function getUKMTV() {
+        if( !self::harMonstring() ) {
+            return false;
+        }
 		require_once('UKM/tv_files.class.php');
 		
 		// Hent filer fra mønstringen
@@ -62,6 +107,9 @@ abstract class monstringController {
 	}
 	
 	public static function getMonstring() {
+        if( !self::harMonstring() ) {
+            return false;
+        }
 		return self::$monstring;
 	}
 	
@@ -70,12 +118,18 @@ abstract class monstringController {
 	}
 		
 	public static function harProgram() {
+        if( !self::harMonstring() ) {
+            return false;
+        }
 		self::_loadProgram();
 		return self::$harProgram;
 	}
 	
 	
 	public static function harPameldte() {
+        if( !self::harMonstring() ) {
+            return false;
+        }
 		return self::$monstring->getInnslag()->harInnslag();//->getAntall( true ) > 0;
 	}
 	
