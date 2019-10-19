@@ -14,7 +14,9 @@ SEO::setDescription(
 );
 $WP_TWIG_DATA['page'] = new page();
 $WP_TWIG_DATA['posts'] = new posts(12);
-$WP_TWIG_DATA['page_next'] = get_permalink(get_option('page_for_posts'));
+if( $WP_TWIG_DATA['posts']->paged > 1 ) {
+    $WP_TWIG_DATA['page_next'] = get_permalink(get_option('page_for_posts'));
+}
 
 // PAGE TEMPLATE - FOR OVERRIDES
 if (isset($WP_TWIG_DATA['page']->getPage()->meta->UKMviseng)) {
@@ -29,10 +31,14 @@ if (isset($WP_TWIG_DATA['page']->getPage()->meta->UKMviseng)) {
 
 switch (get_option('site_type')) {
 	case 'fylke':
-		require_once('UKMNorge/Wordpress/Controller/monstring/fylke.controller.php');
+		require_once('UKMNorge/Wordpress/Controller/fylke.controller.php');
 		break;
-	case 'kommune':
-		require_once('UKMNorge/Wordpress/Controller/monstring/kommune.controller.php');
+    case 'kommune':
+        if( get_option('pl_id') ) {
+            require_once('UKMNorge/Wordpress/Controller/arrangement.controller.php');
+        } else {
+            require_once('UKMNorge/Wordpress/Controller/kommune.controller.php');
+        }
 		break;
 	case 'land':
 		switch ($page_template) {

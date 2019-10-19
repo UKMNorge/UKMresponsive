@@ -1,0 +1,35 @@
+/* FADE-COLLAPSIBLE */
+
+@media (max-width: 768px) {
+    .fade-collapsible .content {
+        position: relative;
+        overflow: hidden;
+        height: 40vh;
+        transition: max-height 1s ease;
+    }
+
+    .fade-collapsible .content.-expanded {
+        max-height: 90vh;
+        overflow: scroll;
+    }
+
+    .fade-collapsible .content:not(.-expanded)::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 10%;
+        background: linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(255,255,255,0.8) 30%, rgba(255, 255, 255, 1) 90%);
+    }
+
+    .fade-collapsible .actions {
+        height: 2em;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    .fade-collapsible .actions .dashicons {
+        font-size: 2em;
+    }
+}
