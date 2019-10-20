@@ -29,7 +29,7 @@
             {% else %}
                 <div class="col-12 col-md-4 col-xl-3 float-right mb-4">
                     {% for arrangement in omrade.getArrangementer(sesong).getAll() if arrangement.erRegistrert() %}
-                        {% include "UKMDesignBundle:Fylke:Arrangement.html.twig"|UKMpath with {visNettside: omrade.getArrangementer(sesong).getAntall() > 1} %}
+                        {% include "UKMDesignBundle:Omrade:Arrangement.html.twig"|UKMpath with {visNettside: omrade.getArrangementer(sesong).getAntall() > 1} %}
                     {% endfor %}
                 </div>
             {% endif %}

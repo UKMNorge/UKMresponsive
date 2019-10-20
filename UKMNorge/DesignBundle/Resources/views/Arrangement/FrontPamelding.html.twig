@@ -1,0 +1,29 @@
+{% extends "Layout/_"~ (singleMode is defined and singleMode ? 'singleMode' : 'base' ) ~".html.twig"|UKMpath %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row-flex">
+            <div class="col-12 col-md-8 col-xl-9 float-left">
+                {% if pamelding.apen %}
+                    {% include "UKMDesignBundle:Arrangement:Pamelding.html.twig"|UKMpath %}
+                {% endif %}
+            </div>
+            <div class="col-12 col-md-4 col-xl-3 float-right mb-4">
+                {% if not pamelding.apen %}
+                    {% include "UKMDesignBundle:Omrade:Husk.html.twig"|UKMpath with {fylkeid: omrade.getFylke().getId() } %}
+                {% endif %}
+                <h3>Kontaktpersoner for {{ arrangement.getNavn() }}</h3>
+                {% include "UKMDesignBundle:Omrade:Kontaktpersoner.html.twig"|UKMpath with {fullframe:true, navn: arrangement.getNavn(), kontaktpersoner: arrangement.getKontaktpersonerEllerAdministratorer()} %}
+
+            </div>
+            <div class="col-12 col-md-8 col-xl-9 float-left">
+                {% embed "UKMDesignBundle:Category:list.html.twig"|UKMpath with {singleMode:true, posts: posts.getAll(), hideNoneFound: true} %}{% endembed %}
+                <h3>Hva er UKM?</h3>
+                <p>{{ THEME_CONFIG.get('hvaerukm').kort|raw }} 
+                    <br />
+                    <a href="{{ THEME_CONFIG.get('hvaerukm').lesmer }}" >Les mer</a>
+                </p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

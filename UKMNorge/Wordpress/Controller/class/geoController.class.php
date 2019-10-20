@@ -54,6 +54,10 @@ class geoController {
             $configDatePameldingStarter = str_replace('YYYY', (get_site_option('season')-1), WP_CONFIG::get('pamelding')['starter'] );
             static::$pamelding->starter = DateTime::createFromFormat( 'd.m.Y H:i:s', $configDatePameldingStarter .' 00:00:00' );
             static::$pamelding->apen = static::$pamelding->starter < new DateTime('now');
+            // DEBUGGER
+            static::$pamelding->apen = true;
+            static::$pamelding->starter = DateTime::createFromFormat( 'd.m.Y H:i:s', '01.11.2018' .' 00:00:00' );
+
         }
         
         return static::$pamelding;

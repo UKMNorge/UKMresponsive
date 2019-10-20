@@ -8,7 +8,7 @@
             </div>
             {% for arrangement in omrade.getArrangementer( sesong ).getAll() %}
                 <div class="col-12 col-sm-6 col-lg-4">
-                    {% include "UKMDesignBundle:Fylke:arrangement.html.twig"|UKMpath with{visNettside:true} %}
+                    {% include "UKMDesignBundle:Omrade:Arrangement.html.twig"|UKMpath with{visNettside:true} %}
                 </div>
             {% endfor %}
         </div>
