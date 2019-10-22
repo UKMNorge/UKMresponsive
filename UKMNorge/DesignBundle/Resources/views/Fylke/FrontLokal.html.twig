@@ -18,7 +18,7 @@
                     {{ fylke.erOslo() ? 'bydel' : 'kommune' }}
                 </h3>
             {% endif %}
-                {% include "UKMDesignBundle:Fylke:VelgLokalmonstring.html.twig"|UKMpath with {fylke: omrade.getFylke()} %}
+                {% include "UKMDesignBundle:Fylke:VelgKommune.html.twig"|UKMpath with {fylke: omrade.getFylke()} %}
             </div>
 
             {% if not omrade.getArrangementer(sesong).har() %}
