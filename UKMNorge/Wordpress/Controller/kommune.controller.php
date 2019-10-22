@@ -28,10 +28,14 @@ class kommuneController extends geoController {
 $kommune_id = get_option('pl_owner_id');
 if( !$kommune_id ) {
     $kommune_id = explode(',', get_option('kommuner'));
+    if( is_array( $kommune_id ) ) {
+        $kommune_id = $kommune_id[0];
+    }
 }
 if( !$kommune_id ) {
     throw new Exception('Klarte ikke å finne kommune-ID');
 }
+$kommune_id = (Int) $kommune_id;
 // her har kommunen alltid 1 id, da flere ID'er kun er mulig i arrangement,
 // som nå blir håndtert av arrangement.controller.php
 kommuneController::setOmrade( Omrade::getByKommune( $kommune_id ) );
