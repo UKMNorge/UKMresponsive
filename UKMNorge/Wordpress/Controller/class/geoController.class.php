@@ -55,7 +55,7 @@ class geoController {
             static::$pamelding->starter = DateTime::createFromFormat( 'd.m.Y H:i:s', $configDatePameldingStarter .' 00:00:00' );
             static::$pamelding->apen = static::$pamelding->starter < new DateTime('now');
             // DEBUGGER
-            static::$pamelding->apen = true;
+            #static::$pamelding->apen = true;
             #static::$pamelding->starter = DateTime::createFromFormat( 'd.m.Y H:i:s', '01.11.2018' .' 00:00:00' );
         }
         
