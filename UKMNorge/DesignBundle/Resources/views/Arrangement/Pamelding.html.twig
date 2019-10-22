@@ -1,0 +1,69 @@
+<h2>Påmeldingen er åpen</h2>
+<div class="mt-0 mb-1">
+    {% if arrangement.getFrist1() == arrangement.getFrist2() or not arrangement_tillater_tittellose %}
+        Fristen går ut
+        {{ arrangement.getFrist1()|dato('l j. F') }}
+        kl.
+        {{ arrangement.getFrist1()|dato('H:i') }}
+    {% else %}
+        <div class="frister mb">
+            <div class="frist mb-3">
+                <div class="header-line">
+                    {% if arrangement.erPameldingApen(1) %}
+                        <div class="float-left">
+                            Frist 1:
+                        </div>
+                        <div class="float-right">
+                            {{ arrangement.getFrist1()|dato('l j. F') }}
+                            kl.
+                            {{ arrangement.getFrist1()|dato('H:i')}}
+                        </div>
+                    {% else %}
+                        Fristen har gått ut for
+                    {% endif %}
+                    <div class="clearfix"></div>
+                </div>
+                {% if arrangement.erPameldingApen(1) %}
+                    Gjelder:
+                {% endif %}
+                {% for type in arrangement.getInnslagTyper() if type.getFrist() == 1 %}
+                    {{ type }},
+                {% endfor %}
+            </div>
+
+            <div class="frist mb-3">
+                <div class="header-line">
+                    {% if arrangement.erPameldingApen(2) %}
+                        <div class="float-left">
+                            Frist 2:
+                        </div>
+                        <div class="float-right">
+                            {{ arrangement.getFrist2()|dato('l j. F') }}
+                            kl.
+                            {{ arrangement.getFrist2()|dato('H:i')}}
+                        </div>
+                    {% else %}
+                        Fristen har gått ut for
+                    {% endif %}
+                    <div class="clearfix"></div>
+                </div>
+                {% if arrangement.erPameldingApen(2) %}
+                    Gjelder:
+                {% endif %}
+                {% for type in arrangement.getInnslagTyper() if type.getFrist() == 2 %}
+                    {{ type }},
+                {% endfor %}
+            </div>
+
+        </div>
+    {% endif %}
+    <div class="clearfix"></div>
+</div>
+<p class="mt-0 small">
+    Har du startet en påmelding, kan du
+    <a href="//delta.{{ UKM_HOSTNAME }}/">logge inn og redigere den her</a>
+</p>
+
+<p class="mt-5 mb-4 center">
+    <a href="//delta.{{ UKM_HOSTNAME }}" class="btn btn-block btn-primary">Start påmelding</a>
+</p>

@@ -1907,14 +1907,16 @@ cite {
 .fylkesfestival-banner {
   background: #151e3f;
   color: #fff;
+  margin-left: 0px !important;
+  margin-right: 0px !important;
 }
 .fylkesfestival-banner .title {
   font-size: 1.5rem;
   font-weight: 100;
 }
-.fylkesfestival-banner-menu-container {
-  margin-left: -15px !important;
-  margin-right: -15px !important;
+.fylkesfestival-banner-container {
+  margin-left: -30px !important;
+  margin-right: -30px !important;
 }
 .fylkesfestival-banner-menu {
   background: rgba(184, 157, 204, 0.17);
@@ -1925,10 +1927,22 @@ cite {
   padding-top: 0.5em;
   padding-bottom: 1.5em;
 }
-@media (min-width: 992px) {
+.fylkesfestival-banner-menu .row {
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+}
+@media (min-width: 768px) {
+  .fylkesfestival-banner-container {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+  }
   .fylkesfestival-banner-menu {
     border-left: 2px solid #151e3f;
     border-right: 2px solid #151e3f;
+  }
+  #finnKommune.found-few,
+  #finnKommune.found-none {
+    margin-bottom: 10em !important;
   }
 }
 .fylke-pameldte {
@@ -2320,4 +2334,39 @@ ul.innslag li a:visited {
   font-style: bold;
   font-weight: 300;
   src: url("//grafikk.ukm.no/UKMresponsive/fonts/ITCAvantGardePro-Bold.otf") format('opentype');
+}
+.kontaktPlaceholder {
+  font-size: 6em;
+  color: #151e3f;
+  margin: 0.15em;
+}
+/* FADE-COLLAPSIBLE */
+@media (max-width: 768px) {
+  .fade-collapsible .content {
+    position: relative;
+    overflow: hidden;
+    height: 40vh;
+    transition: max-height 1s ease;
+  }
+  .fade-collapsible .content.-expanded {
+    max-height: 90vh;
+    overflow: scroll;
+  }
+  .fade-collapsible .content:not(.-expanded)::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 10%;
+    background: linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.8) 30%, #ffffff 90%);
+  }
+  .fade-collapsible .actions {
+    height: 2em;
+    text-align: center;
+    cursor: pointer;
+  }
+  .fade-collapsible .actions .dashicons {
+    font-size: 2em;
+  }
 }

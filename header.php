@@ -64,7 +64,8 @@ if( get_current_blog_id() == 1 ) {
 		// 3: ORGANISASJONEN
 		case 'fylke':
 		case 'kommune':
-		case 'land':
+        case 'land':
+        case 'arrangement':
 			break;
 		case 'organisasjonen':
 			$WP_TWIG_DATA['THEME'] = 'cherry';

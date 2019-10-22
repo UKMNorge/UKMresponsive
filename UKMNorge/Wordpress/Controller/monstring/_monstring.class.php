@@ -1,4 +1,9 @@
 <?php
+
+use UKMNorge\Geografi\Fylker;
+use UKMNorge\Geografi\Kommune;
+use UKMNorge\Nettverk\Omrade;
+
 /** 
  *	STATIC HELPER CLASS FOR frontpage.controller.php
 **/
@@ -15,29 +20,112 @@ abstract class monstringController {
 	static $harProgram = null;
 
 	static $harInfoPage = null;
-	static $infoPage = null;
+    static $infoPage = null;
+    
+    static $geo_id = null;
+    static $omrade = null;
+    static $fylke = null;
+    static $kommune = null;
 
 
 	abstract public static function setState( $state );
 #	abstract public static function _loadPameldingApen();
 
-	public static function init( $pl_id ) {
-		self::$pl_id = $pl_id;
-		self::_loadMonstring();
-		self::_loadPameldingStarter();
-	}
+	public static function init( $pl_id, $geo_id=null ) {
+        static::$pl_id = $pl_id;
+        if( is_numeric( $pl_id ) ) {
+            static::_loadMonstring();
+            static::_loadPameldingStarter();
+        }
+        if( $geo_id != null ) {
+            static::$geo_id = $geo_id;
+        }
+    }
+    public static function harMonstring() {
+        return is_numeric( static::$pl_id );
+    }
+
+    public static function getFylke() {
+        if( null == static::$fylke ) {
+            if( static::erFylke() ) {
+                static::$fylke = Fylker::getById( static::$geo_id );
+            }
+            elseif( static::erKommune() ) {
+                static::$fylke = static::getKommune()->getFylke();
+            }
+        }
+        return static::$fylke;
+    }
+
+    public static function getOmrade() {
+        if( static::$omrade == null ) {
+            static::$omrade = new Omrade( static::getType(), static::getGeoId() );
+        }
+        return static::$omrade;
+    }
+
+    public static function getKommune() {
+        if( null == static::$kommune ) {
+            if( static::erKommune()) {
+                static::$kommune = new Kommune( static::getGeoId() );   
+            }
+            if( static::erFylke() ) {
+                throw new Exception(
+                    'Beklager, kan ikke hente kommune for et fylke'
+                );
+            }
+        }
+        return static::$kommune;
+    }
+
+    /**
+     * Hent hvilket område dette er 
+     *
+     * @return Int $omrade
+     */
+    public static function getGeoId() {
+        return static::$geo_id;
+    }
+
+    /**
+     * Hent hvilken type controller dette er
+     *
+     * @throws Exception ukjent controller
+     * @return String $omrade_type
+     */
+    public static function getType() {
+        if( get_called_class() == 'kommuneController' ) {
+            return 'kommune';
+        }
+        if( get_called_class() == 'fylkeController' ) {
+            return 'fylke';
+        }
+        throw new Exception(
+            'Beklager, ukjent type monstringController'
+        );
+    }
+
+    public static function erFylke() {
+        return static::getType() == 'fylke';
+    }
+    public static function erKommune() {
+        return static::getType() == 'kommune';
+    }
 	
 	
 	public static function _loadPameldingStarter() {
-		$configDatePameldingStarter = str_replace('YYYY', (self::getMonstring()->getSesong()-1), WP_CONFIG::get('pamelding')['starter'] );
-		self::$pameldingStarter = DateTime::createFromFormat( 'd.m.Y H:i:s', $configDatePameldingStarter .' 00:00:00' );
+		$configDatePameldingStarter = str_replace('YYYY', (static::getMonstring()->getSesong()-1), WP_CONFIG::get('pamelding')['starter'] );
+		static::$pameldingStarter = DateTime::createFromFormat( 'd.m.Y H:i:s', $configDatePameldingStarter .' 00:00:00' );
 	}
 	
 	public static function getUKMTV() {
+        if( !static::harMonstring() ) {
+            return false;
+        }
 		require_once('UKM/tv_files.class.php');
 		
 		// Hent filer fra mønstringen
-		$tv_files = new tv_files( 'place', self::getMonstring()->getId() );
+		$tv_files = new tv_files( 'place', static::getMonstring()->getId() );
 		$tv_files->limit(1);
 		$tv_files->fetch();
 		
@@ -46,54 +134,63 @@ abstract class monstringController {
 	
 	
 	public static function getPameldingStarter() {
-		return self::$pameldingStarter;
+		return static::$pameldingStarter;
 	}
 	public static function erPameldingStartet() {
 		$now = new DateTime('now');
-		return self::getPameldingStarter() < $now;
+		return static::getPameldingStarter() < $now;
 	}
 	
 	public static function getTemplate() {
-		return self::$template;
+		return static::$template;
 	}
 	
 	public static function getState() {
-		return self::$state;
+		return static::$state;
 	}
 	
 	public static function getMonstring() {
-		return self::$monstring;
+        if( !static::harMonstring() ) {
+            return false;
+        }
+		return static::$monstring;
 	}
 	
 	public static function getPameldingApen() {
-		return self::$pameldingApen;
+		return static::$pameldingApen;
 	}
 		
 	public static function harProgram() {
-		self::_loadProgram();
-		return self::$harProgram;
+        if( !static::harMonstring() ) {
+            return false;
+        }
+		static::_loadProgram();
+		return static::$harProgram;
 	}
 	
 	
 	public static function harPameldte() {
-		return self::$monstring->getInnslag()->harInnslag();//->getAntall( true ) > 0;
+        if( !static::harMonstring() ) {
+            return false;
+        }
+		return static::$monstring->getInnslag()->harInnslag();//->getAntall( true ) > 0;
 	}
 	
 	private static function _loadProgram() {
-		if( null === self::$harProgram ) {
-			self::$harProgram = self::getMonstring()->getProgram()->getAntall() > 0;
+		if( null === static::$harProgram ) {
+			static::$harProgram = static::getMonstring()->getProgram()->getAntall() > 0;
 		}
 	}
 	
 	private static function _loadMonstring() {
-		self::$monstring = new monstring_v2( self::$pl_id );
+		static::$monstring = new monstring_v2( static::$pl_id );
 	}
 	
 	public static function getInfoPage() {
-		if( null === self::$harInfoPage ) {
-			self::_loadInfoPage();
+		if( null === static::$harInfoPage ) {
+			static::_loadInfoPage();
 		}
-		return self::$infoPage;
+		return static::$infoPage;
 	}
 	public static function harInfoPage() {
 		$page = get_page_by_path('info');
@@ -103,8 +200,8 @@ abstract class monstringController {
 
 	public static function _loadInfoPage() {
 		$page = get_page_by_path('info');
-		self::$infoPage = new page( $page );
-		self::$harInfoPage = ( is_object( $page ) && $page->post_status == 'publish' );
+		static::$infoPage = new page( $page );
+		static::$harInfoPage = ( is_object( $page ) && $page->post_status == 'publish' );
 	}
 	
 	

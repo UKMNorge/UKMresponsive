@@ -7,6 +7,10 @@
 // @codekit-prepend "UKMmobil.js";
 // @codekit-prepend "UKMkonkurranse.js";
 // @codekit-prepend "UKMpameldte.js";
+// @codekit-append "UKMfylke.js";
+// @codekit-append "UKMfadecollapsible.js";
+
+var UKMresponsive = {};
 
 /**
  * MAIN MENU BUTTON TOGGLE
@@ -300,19 +304,17 @@ $(document).on('skjulInnslag', function(e, innslag) {
     buttonContainer.fadeOut();
 });
 
-/* 
-$( document ).on('click', '.innslagCard .header', function( e ){
-	e.preventDefault();
-	var innslag = $( this ).parents('.innslagCard');
-	if( innslag.attr('data-visning') == 'synlig' ) {
-		$( document ).trigger('skjulInnslag', [ innslag ] );
-	} else {
-		$( document ).trigger('visInnslag', [ innslag ] );
-	}
-	
-	return false;
+$(document).on('click', '.innslagCard .header', function(e) {
+    e.preventDefault();
+    var innslag = $(this).parents('.innslagCard');
+    if (innslag.attr('data-visning') == 'synlig') {
+        $(document).trigger('skjulInnslag', [innslag]);
+    } else {
+        $(document).trigger('visInnslag', [innslag]);
+    }
+
+    return false;
 });
-*/
 
 $(document).on('click', '.hideInnslag', function() {
     var innslag = $(this).parents('.innslagCard');

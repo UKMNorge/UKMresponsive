@@ -1,10 +1,10 @@
 <div class="page-menu">
 	<div class="row">
-		{% if linkToWebsite is defined and linkToWebsite != false %}
+		{% if visNettside is defined and visNettside != false %}
 			<div class="col menu-item">
-				<a href="{{ monstring.getLink() }}">
+				<a href="{{ arrangement.getLink() }}">
 					<div class="icon icon-home"></div>
-					<div class="text">Nettsiden</div>
+					<div class="text">Gå til nettsiden</div>
 				</a>
 			</div>
 		{% endif %}

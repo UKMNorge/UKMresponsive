@@ -12,6 +12,9 @@ class kommuneController extends monstringController {
 			return false;
 		}
 		switch( $state ) {
+            case 'uten_arrangement':
+                self::$template = 'Kommune/front_uten_arrangement';
+                break;
 			case 'arkiv':
 				self::$template = 'Kommune/front_arkiv';
 				break;

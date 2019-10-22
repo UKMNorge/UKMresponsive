@@ -1,0 +1,18 @@
+{% extends "Layout/_"~ (singleMode is defined and singleMode ? 'singleMode' : 'base' ) ~".html.twig"|UKMpath %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row mt-2">
+            <div class="col-12">
+                <h3>Velg hvilket arrangement du er interessert i</h3>
+            </div>
+            {% for arrangement in omrade.getArrangementer( sesong ).getAll() %}
+                <div class="col-12 col-sm-6 col-lg-4">
+                    {% include "UKMDesignBundle:Omrade:Arrangement.html.twig"|UKMpath with{visNettside:true} %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% set singleMode = true %}
+    {% embed "UKMDesignBundle:Category:list.html.twig"|UKMpath with {posts: posts.getAll(), hideNoneFound: true} %}{% endembed %}
+</div>{% endblock %}

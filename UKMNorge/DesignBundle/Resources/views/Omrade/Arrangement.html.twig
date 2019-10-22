@@ -1,0 +1,30 @@
+<div class="fylkesfestival-banner-container mb-4">
+    <div class="row align-items-center fylkesfestival-banner py-3 px-3">
+        <div class="col-7 title">
+            {{ arrangement.getNavn() }}
+        </div>
+        <div class="col-5 date right small">
+            {% if arrangement.getStart()|dato('m') == arrangement.getStop()|dato('m') %}
+                {% if arrangement.getStart()|dato('j') == arrangement.getStop()|dato('j') %}
+                    {{ arrangement.getStop()|dato('j. F') }}
+                {% else %}
+                    {{ arrangement.getStart()|dato('j') }}
+                    -
+                    {{ arrangement.getStop()|dato('j. F') }}
+                {% endif %}
+            {% else %}
+                {{ arrangement.getStart()|dato('j.M') }}
+                -
+                {{ arrangement.getStop()|dato('j.M') }}
+            {% endif %}
+            <br/>
+            {{ arrangement.getSted() }}
+        </div>
+    </div>
+
+    <div class="row-flex fylkesfestival-banner-menu-container">
+        <div class="mt-4 fylkesfestival-banner-menu">
+            {% embed "UKMDesignBundle:Arrangement:meny.html.twig"|UKMpath %}{% endembed %}
+        </div>
+    </div>
+</div>
