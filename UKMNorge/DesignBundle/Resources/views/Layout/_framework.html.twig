@@ -16,7 +16,7 @@
 
 		{# STYLES #}
 		<link href="{{ UKMasset("css/bootstrap.min.css") }}" rel="stylesheet" />
-		<link href="{{ UKMasset("css/UKMresponsive"~ (THEME is defined and THEME is not empty ? '-'~THEME : '') ~".css") }}?20190130" rel="stylesheet" />
+		<link href="{{ UKMasset("css/UKMresponsive"~ (THEME is defined and THEME is not empty ? '-'~THEME : '') ~".css") }}?20190930-Marte" rel="stylesheet" />
 		<link href="{{ UKMasset("swipebox/css/swipebox.css") }}" rel="stylesheet" />
 		{% block css %}{% endblock %}
 		
@@ -24,7 +24,7 @@
 		{% if ajax_url is defined %}
 		<script type="text/javascript">var ajaxurl = '{{ ajax_url }}';</script>
 		{% endif %}
-		<script type="text/javascript" src="{{ UKMasset("js/UKMresponsive.min.js") }}?20190614-Jenny"></script>
+		<script type="text/javascript" src="{{ UKMasset("js/UKMresponsive.min.js") }}?20190930-Marte"></script>
 		<script src="{{ UKMasset("swipebox/js/jquery.swipebox.js") }}"></script>
 		{% block javascripts %}{% endblock %}
 		

@@ -1288,7 +1288,8 @@ iframe {
   /*	background: rgba(255,255,255,0.4);*/
 }
 #UKMlogo {
-  margin-top: -0.4em;
+  width: 3.8em;
+  margin-top: -0.1em;
 }
 .navbar-separator #skygge {
   height: 15vh;

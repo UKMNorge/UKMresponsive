@@ -2,10 +2,12 @@
 
 use UKMNorge\DesignBundle\Utils\Sitemap;
 use UKMNorge\DesignBundle\Utils\SEO;
+use UKMNorge\Geografi\Kommune;
 
 require_once('header.php');
 require_once('UKMNorge/Wordpress/Utils/page.class.php');
 require_once('UKMNorge/Wordpress/Utils/posts.class.php');
+require_once('UKM/Autoloader.php');
 
 SEO::setCanonical($WP_TWIG_DATA['blog_url']);
 SEO::setDescription(

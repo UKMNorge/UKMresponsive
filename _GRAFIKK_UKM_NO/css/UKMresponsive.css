@@ -1137,7 +1137,7 @@ body[data-aos-easing=ease-in-out-quart] [data-aos] {
   text-transform: uppercase;
 }
 .huskMeg {
-  color: #00004c;
+  color: #010260;
 }
 /* BUTTONS */
 button {
@@ -1145,7 +1145,7 @@ button {
 }
 /* LINKS */
 a {
-  color: #000028;
+  color: #01013d;
   cursor: pointer;
 }
 a .nocolor {
@@ -1158,7 +1158,7 @@ a:visited,
 a:focus,
 a:active,
 a:hover {
-  color: #000028;
+  color: #01013d;
 }
 .wp-caption,
 img {
@@ -1181,14 +1181,14 @@ img {
 }
 .menu-item a:hover {
   text-decoration: none;
-  color: #00004c !important;
+  color: #010260 !important;
 }
 .menu-item .icon {
   font-size: 1.5em;
 }
 .header-line {
-  border-bottom: 2px solid #00004c;
-  color: #00004c;
+  border-bottom: 2px solid #010260;
+  color: #010260;
   margin-bottom: 0.5em;
   text-transform: uppercase;
 }
@@ -1196,34 +1196,34 @@ img {
   word-break: break-word;
 }
 .text-color-primary {
-  color: #00004c;
+  color: #010260;
 }
 .text-color-primary-dark {
-  color: #000028;
+  color: #01013d;
 }
 .text-color-primary-dark-dark {
   color: #000000;
 }
 .text-color-primary-light {
-  color: #000099;
+  color: #0204ac;
 }
 .text-color-primary-light-light {
-  color: #0000cc;
+  color: #0205de;
 }
 .background-color-primary {
-  background-color: #00004c;
+  background-color: #010260;
 }
 .background-color-primary-dark {
-  background-color: #000028;
+  background-color: #01013d;
 }
 .background-color-primary-dark-dark {
   background-color: #000000;
 }
 .background-color-primary-light {
-  background-color: #000099;
+  background-color: #0204ac;
 }
 .background-color-primary-light-light {
-  background-color: #0000cc;
+  background-color: #0205de;
 }
 /** OVERUNDER **/
 .overunder {
@@ -1268,7 +1268,7 @@ iframe {
 }
 .navbar-separator {
   margin-bottom: 1rem;
-  border-bottom: 5px solid #00004c;
+  border-bottom: 5px solid #010260;
 }
 #UKMslogan {
   color: #ffffff;
@@ -1291,7 +1291,8 @@ iframe {
   /*	background: rgba(255,255,255,0.4);*/
 }
 #UKMlogo {
-  margin-top: -0.4em;
+  width: 3.8em;
+  margin-top: -0.1em;
 }
 .navbar-separator #skygge {
   height: 15vh;
@@ -1325,7 +1326,7 @@ iframe {
 #UKMheader .sectionTitle {
   font-size: 1.5em;
   font-weight: 100;
-  color: #00004c;
+  color: #010260;
   padding-top: 0.75rem;
 }
 #UKMheader.background .sectionTitle {
@@ -1345,13 +1346,13 @@ body > footer {
   margin-bottom: 0px !important;
 }
 .sitemap .section .header {
-  color: #00004c;
-  border-bottom: 4px solid #00004c;
+  color: #010260;
+  border-bottom: 4px solid #010260;
   text-transform: uppercase;
 }
 .sitemap .section .header a,
 .sitemap .section .header a:visited {
-  color: #00004c;
+  color: #010260;
   text-decoration: none;
 }
 .sitemap a,
@@ -1362,16 +1363,16 @@ body > footer {
   font-size: 1rem;
 }
 .sitemap .pageContainer .page {
-  border: 5px solid #00004c;
+  border: 5px solid #010260;
   padding-top: 1em !important;
   padding-bottom: 1em !important;
   text-transform: uppercase;
   font-weight: bold;
-  color: #00004c;
+  color: #010260;
 }
 .sitemap .pageContainer .page a,
 .sitemap .pageContainer .page a:visited {
-  color: #00004c;
+  color: #010260;
 }
 @media (min-width: 992px) {
   .sitemap .divider {
@@ -1437,10 +1438,10 @@ label + .help {
   margin-bottom: 0.2em;
 }
 .form-control {
-  border-color: #0000cc;
+  border-color: #0205de;
 }
 .form-control:focus {
-  border-color: #00004c;
+  border-color: #010260;
   transition-duration: 0.2s;
   transition-timing-function: ease-in;
   transition-property: border-color;
@@ -1456,8 +1457,8 @@ a.btn-primary:active,
 a.btn-primary:visited,
 .btn-primary:focus,
 a.btn-primary:focus {
-  background-color: #00004c;
-  border-color: #00004c;
+  background-color: #010260;
+  border-color: #010260;
   color: #fff !important;
 }
 .btn-danger {
@@ -1471,18 +1472,18 @@ a.btn-primary:focus {
 .btn-outline-primary,
 .btn-outline-primary:visited {
   background-color: transparent;
-  border-color: #00004c !important;
-  color: #00004c !important;
+  border-color: #010260 !important;
+  color: #010260 !important;
 }
 .btn-outline-primary:hover {
   background-color: transparent;
-  border-color: #000028 !important;
-  color: #000028 !important;
+  border-color: #01013d !important;
+  color: #01013d !important;
 }
 .btn-outline-primary:active,
 .btn-outline-primary:focus,
 .btn-outline-primary:active:focus {
-  background-color: #00004c !important;
+  background-color: #010260 !important;
 }
 .btn-outline-primary:focus,
 .btn-outline-primary:active {
@@ -1582,14 +1583,14 @@ h4.linje {
   border-radius: 0;
 }
 .badge-primary {
-  background-color: #00004c;
-  border-color: #00004c;
+  background-color: #010260;
+  border-color: #010260;
 }
 /* ALERTS */
 .alert-primary {
   background-color: #fff;
-  border-color: #000028 !important;
-  color: #000028 !important;
+  border-color: #01013d !important;
+  color: #01013d !important;
 }
 .alert.alert-danger {
   background-color: #ff128b;
@@ -1611,7 +1612,7 @@ h4.linje {
   margin-bottom: 6px;
 }
 .post-grid-pretty {
-  background: #000099;
+  background: #0204ac;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1680,7 +1681,7 @@ h4.linje {
   margin-bottom: 1em;
 }
 .post-grid-default .image {
-  background: #000099;
+  background: #0204ac;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1695,7 +1696,7 @@ a .post-grid-default {
 }
 .post-grid-default .image > .repost {
   color: #fff;
-  background: #00004c;
+  background: #010260;
   padding: 0.5em;
   text-transform: uppercase;
   font-size: 0.75em;
@@ -1712,7 +1713,7 @@ a .post-grid-default {
   margin-bottom: 1em;
   height: 40vh;
   width: 100vw;
-  background: #000099;
+  background: #0204ac;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1729,8 +1730,8 @@ a .post-grid-default {
 }
 .postmeta {
   font-size: 0.9em;
-  border-top: 1px solid #000099;
-  border-bottom: 1px solid #000099;
+  border-top: 1px solid #0204ac;
+  border-bottom: 1px solid #0204ac;
   margin-bottom: 1em;
 }
 @media (min-width: 768px) {
@@ -1763,7 +1764,7 @@ a .post-grid-default {
   text-transform: capitalize;
   font-weight: bold;
   line-height: 1.1em;
-  color: #00004c;
+  color: #010260;
   margin: 0;
   margin-bottom: 0.2em;
 }
@@ -1872,14 +1873,14 @@ cite {
   font-size: 0.9rem;
 }
 .card-primary-light {
-  background-color: #0000cc;
+  background-color: #0205de;
 }
 .UKMcard {
-  border-color: #00004c;
+  border-color: #010260;
   border-radius: 3px;
   box-shadow: 2px 3px 3px 0px #e1dfdf;
   margin-bottom: 1.2em !important;
-  border-left: 6px solid #00004c;
+  border-left: 6px solid #010260;
   padding-left: 0.4em !important;
 }
 .UKMtoggleContent#UKMtoggleLokal {
@@ -1903,11 +1904,11 @@ cite {
   }
 }
 .fylkesfestival {
-  background: #00004c;
+  background: #010260;
   color: #fff;
 }
 .fylkesfestival-banner {
-  background: #00004c;
+  background: #010260;
   color: #fff;
   margin-left: 0px !important;
   margin-right: 0px !important;
@@ -1923,7 +1924,7 @@ cite {
 .fylkesfestival-banner-menu {
   background: rgba(184, 157, 204, 0.17);
   border: none;
-  border-bottom: 2px solid #00004c;
+  border-bottom: 2px solid #010260;
   border-top: none;
   margin-top: -1px !important;
   padding-top: 0.5em;
@@ -1939,8 +1940,8 @@ cite {
     margin-right: 0px !important;
   }
   .fylkesfestival-banner-menu {
-    border-left: 2px solid #00004c;
-    border-right: 2px solid #00004c;
+    border-left: 2px solid #010260;
+    border-right: 2px solid #010260;
   }
   #finnKommune.found-few,
   #finnKommune.found-none {
@@ -1949,7 +1950,7 @@ cite {
 }
 .fylke-pameldte {
   margin-top: -1rem;
-  color: #00004c;
+  color: #010260;
   font-size: 0.7em;
   font-weight: 400;
   float: right;
@@ -1987,7 +1988,7 @@ cite {
   font-weight: bold;
 }
 .program .husk {
-  color: #00004c;
+  color: #010260;
 }
 .frister .header-line {
   border-bottom: 2px solid rgba(0, 0, 0, 0.65);
@@ -2013,7 +2014,7 @@ cite {
   font-size: 2em;
   line-height: 2.1em;
   margin: -0.29em 0.5em -0.5em -0.5em;
-  background: #00004c;
+  background: #010260;
   color: #fff;
   width: 2.1em;
   text-align: center;
@@ -2040,7 +2041,7 @@ cite {
   float: right;
 }
 #innslag .data {
-  background: #00004c;
+  background: #010260;
   color: #fff;
 }
 #innslag .data .sjanger {
@@ -2071,15 +2072,15 @@ cite {
   }
 }
 .UKMfavoritt .icon-heart {
-  color: #00004c;
+  color: #010260;
   font-size: 1.3em;
 }
 .kort_om_UKM .header {
-  background: #00004c;
+  background: #010260;
   color: #fff;
 }
 .kort_om_UKM .body {
-  border: 2px solid #00004c;
+  border: 2px solid #010260;
   border-top: none;
 }
 @media (max-width: 767px) {
@@ -2108,7 +2109,7 @@ cite {
 }
 /* FILE: delta.less */
 .delta-header {
-  border-bottom: 3px solid #00004c;
+  border-bottom: 3px solid #010260;
 }
 /*** ***/
 .delta-home {
@@ -2124,7 +2125,7 @@ cite {
   padding-top: 3px;
   padding-left: 0.6em;
   padding-right: 0em;
-  border: 1px solid #00004c;
+  border: 1px solid #010260;
   border-radius: 5px;
 }
 .delta-home img {
@@ -2241,8 +2242,8 @@ ul.innslag li a:visited {
 }
 .UKMliste > li {
   list-style-type: none;
-  border: 1px solid #00004c;
-  border-left: 6px solid #00004c;
+  border: 1px solid #010260;
+  border-left: 6px solid #010260;
   box-shadow: 3px 3px 3px 0px #e1dfdf;
   margin-bottom: 1.2em !important;
   padding: 0.5em;

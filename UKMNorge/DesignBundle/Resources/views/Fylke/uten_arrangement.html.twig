@@ -1,0 +1,15 @@
+{% extends "Layout/_"~ (singleMode is defined and singleMode ? 'singleMode' : 'base' ) ~".html.twig"|UKMpath %}
+
+{% block content %}
+	<div class="container-fluid">
+		<div class="row-flex">
+			<div class="col-12">
+				<h1>
+					Kommer snart
+				</h1>
+			</div>
+		</div>
+		{% set singleMode = true %}
+		{% embed "UKMDesignBundle:Category:list.html.twig"|UKMpath with {posts: posts.getAll(), hideNoneFound: true} %}{% endembed %}
+	</div>
+{% endblock %}
