@@ -3,8 +3,10 @@
 use UKMNorge\DesignBundle\Utils\Sitemap;
 use UKMNorge\DesignBundle\Utils\SEO;
 use Symfony\Component\BrowserKit\Request;
+use UKMNorge\Geografi\Fylker;
 
 require_once('header.php');
+require_once('UKM/Autoloader.php');
 
 require_once('UKMNorge/Wordpress/Utils/page.class.php');
 $WP_TWIG_DATA['page'] = new page();
@@ -107,7 +109,8 @@ switch( $page_template ) {
 		
 	## HOVEDSIDER
 	# Norgeskartet
-	case 'dinmonstring':
+    case 'dinmonstring':
+        $WP_TWIG_DATA['fylker'] = Fylker::getAll();
 		$view_template = 'Kart/fullpage';
 		break;
 	# Vis menyen som side
