@@ -24,9 +24,17 @@ class kommuneController extends geoController {
 }
 
 // INIT
+
+$kommune_id = get_option('pl_owner_id');
+if( !$kommune_id ) {
+    $kommune_id = explode(',', get_option('kommuner'));
+}
+if( !$kommune_id ) {
+    throw new Exception('Klarte ikke å finne kommune-ID');
+}
 // her har kommunen alltid 1 id, da flere ID'er kun er mulig i arrangement,
 // som nå blir håndtert av arrangement.controller.php
-kommuneController::setOmrade( Omrade::getByKommune( get_option('kommuner') ) );
+kommuneController::setOmrade( Omrade::getByKommune( $kommune_id ) );
 kommuneController::isActiveArkiv( $WP_TWIG_DATA );
 
 // Manuelt set init-state
