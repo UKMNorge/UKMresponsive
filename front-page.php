@@ -30,6 +30,9 @@ if (isset($WP_TWIG_DATA['page']->getPage()->meta->UKMviseng)) {
 
 
 switch (get_option('site_type')) {
+    case 'arrangement':
+        require_once('UKMNorge/Wordpress/Controller/arrangement.controller.php');
+        break;
 	case 'fylke':
 		require_once('UKMNorge/Wordpress/Controller/fylke.controller.php');
 		break;
