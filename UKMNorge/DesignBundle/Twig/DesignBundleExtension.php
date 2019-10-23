@@ -14,7 +14,9 @@ class DesignBundleExtension extends \Twig_Extension
 	{
 		return array(
 			new \Twig_SimpleFilter('UKMpath', array($this, 'UKMpathFilter')),
-			new \Twig_SimpleFilter('dato', array($this, 'dato')),
+            new \Twig_SimpleFilter('dato', array($this, 'dato')),
+            new \Twig_SimpleFilter('oneline', [$this, 'oneline']),
+
 		);
 	}
 
@@ -22,7 +24,8 @@ class DesignBundleExtension extends \Twig_Extension
 		return array(
 			new \Twig_SimpleFunction('UKMasset', array($this, "UKMasset")),
 			new \Twig_SimpleFunction('THEME_CONFIG', array($this, "theme_config")),
-			new \Twig_SimpleFunction('UKMroute', array($this, "theme_config")),
+            new \Twig_SimpleFunction('UKMroute', array($this, "theme_config")),
+            
 		);
 	}
 
@@ -70,5 +73,16 @@ class DesignBundleExtension extends \Twig_Extension
 						  		'jan','feb','mar','apr','mai','jun',
 						  		'jul','aug','sep','okt','nov','des'), 
 						  $date);
-	}
+    }
+    
+    /**
+     * TWIG-filter |oneline
+     * Fjerner linjeskift
+     *
+     * @param String $multiline
+     * @return String $singelline
+     */
+    public function oneline( String $multiline ) {
+        return str_replace(["\r","\n"],'', $multiline);
+    }
 }
