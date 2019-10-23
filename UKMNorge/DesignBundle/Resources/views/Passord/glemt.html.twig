@@ -35,10 +35,10 @@
 					Skriv inn e-postadressen din nedenfor, så ordner vi nytt passord til deg.
 				</p>
 
-				<form method="POST">
+				<form method="POST" action="wp-login.php?action=lostpassword">
 					<div class="form-group">
 						<label for="email">E-postadresse</label>
-						<input class="form-control" type="email" id="email" name="email" required="required" placeholder="Skriv inn din e-postadresse" value="" />
+						<input class="form-control" type="email" id="email" name="user_login" required="required" placeholder="Skriv inn din e-postadresse" value="" />
 					</div>
 					<div>
 						<input class="btn btn-outline-primary btn-block" type="submit" value="Send meg passord" />
@@ -46,8 +46,6 @@
 				</form>
 
 			</div>
-			
-			
 		</div>
 	</div>
 {% endblock %}

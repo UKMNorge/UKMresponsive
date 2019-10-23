@@ -124,8 +124,8 @@ switch( $page_template ) {
 		break;
 	# Glemt passord
 	case 'glemt-passord':
-		require_once('UKMNorge/Wordpress/Controller/glemt-passord.controller.php');
-		break;
+        $view_template = 'Passord/glemt';
+    	break;
 	
 		
 	## ORGANISASJONEN
