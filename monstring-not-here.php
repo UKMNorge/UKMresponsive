@@ -12,8 +12,8 @@ if( !isset($_GET['retry'] ) ) {
     $season = get_option('season');
     if( !$season || get_site_option('season') < date('Y') ) {
         delete_option('status_monstring');
-        echo '<script type="javascript">window.location.href = window.location.href";</script>';
         header("Location: ". get_bloginfo('url') .'?retry=true');
+        echo '<script type="javascript">window.location.href = window.location.href";</script>';
         exit();
     }
 }
