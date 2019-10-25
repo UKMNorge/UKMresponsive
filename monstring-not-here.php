@@ -15,7 +15,7 @@ if( !isset($_GET['retry'] ) ) {
         $kommune_id = get_option('kommune');
         if( $kommune_id ) {
             $kommune = new Kommune( $kommune_id );
-            update_uption('blogname', $kommune->getNavn());
+            update_option('blogname', $kommune->getNavn());
         }
 
         delete_option('status_monstring');
