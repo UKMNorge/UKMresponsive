@@ -11,6 +11,13 @@ if( !isset($_GET['retry'] ) ) {
     // Hvis det er satt for forrige sesong, så skal det også bort.
     $season = get_option('season');
     if( !$season || get_site_option('season') < date('Y') ) {
+
+        $kommune_id = get_option('kommune');
+        if( $kommune_id ) {
+            $kommune = new Kommune( $kommune_id );
+            update_uption('blogname', $kommune->getNavn());
+        }
+
         delete_option('status_monstring');
         header("Location: ". get_bloginfo('url') .'?retry=true');
         echo '<script type="javascript">window.location.href = window.location.href";</script>';
