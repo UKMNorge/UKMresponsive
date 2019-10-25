@@ -36,9 +36,20 @@ if( !$kommune_id ) {
     throw new Exception('Klarte ikke å finne kommune-ID');
 }
 $kommune_id = (Int) $kommune_id;
+
+$omrade = Omrade::getByKommune( $kommune_id );
+
+if( $omrade->getArrangementer( geoController::getSesong() )->getAntall() == 1 ) {
+    $arrangement = $omrade->getArrangementer( geoController::getSesong() )->getFirst();
+    if( $arrangement->erFellesmonstring() ) {
+        header("Location: ". $arrangement->getLink());
+        echo '<script type="text/javascript">window.location.href = "'. $arrangement->getLink() .'";</script>';
+        exit();
+    }
+}
 // her har kommunen alltid 1 id, da flere ID'er kun er mulig i arrangement,
 // som nå blir håndtert av arrangement.controller.php
-kommuneController::setOmrade( Omrade::getByKommune( $kommune_id ) );
+kommuneController::setOmrade( $omrade );
 kommuneController::isActiveArkiv( $WP_TWIG_DATA );
 
 // Manuelt set init-state
