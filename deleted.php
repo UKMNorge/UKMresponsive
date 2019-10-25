@@ -25,10 +25,12 @@ switch (get_option('site_type')) {
                 exit();
             }
         }
-        $links[] = [
-            'link' => $fylke->getLink(false),
-            'navn' => $fylke->getNavn()
-        ];
+        if( Blog::eksisterer( $fylke->getLink(false) ) ) {
+            $links[] = [
+                'link' => $fylke->getLink(false),
+                'navn' => $fylke->getNavn()
+            ];
+        }
         break;
 
         // Dette var en kommuneside
@@ -55,11 +57,13 @@ switch (get_option('site_type')) {
             if( $kommune->erOvertatt() ) {
                 $kommune = $kommune->getOvertattAv();
             }
-            $links[] = [
-                'link' => $kommune->getLink(),
-                'navn' => $kommune->getNavn(),
-                'tidligere' => $kommune->getTidligereNavnListe()
-            ];
+            if( Blog::eksisterer( $kommune->getLink() ) ) {
+                $links[] = [
+                    'link' => $kommune->getLink(),
+                    'navn' => $kommune->getNavn(),
+                    'tidligere' => $kommune->getTidligereNavnListe()
+                ];
+            }
         }
 
         // Info om fylket kommunen er i
@@ -70,10 +74,12 @@ switch (get_option('site_type')) {
                 $fylke = $fylke->getOvertattAv();
             }
 
-            $links[] = [
-                'link' => $fylke->getLink(false),
-                'navn' => $fylke->getNavn()
-            ];
+            if( Blog::eksisterer( $fylke->getLink(false) ) ) {
+                $links[] = [
+                    'link' => $fylke->getLink(false),
+                    'navn' => $fylke->getNavn()
+                ];
+            }
         }
         break;
         // Dette var et arrangement
@@ -93,21 +99,25 @@ switch (get_option('site_type')) {
                     exit();
                 }
                 // Hvis fylket ikke er overtatt, foreslå fylkessiden (skal vel egentlig ikke skje)
-                $links[] = [
-                    'link' => $fylke->getLink(false),
-                    'navn' => $fylke->getNavn()
-                ];
+                if( Blog::eksisterer( $fylke->getLink(false) ) ) {
+                    $links[] = [
+                        'link' => $fylke->getLink(false),
+                        'navn' => $fylke->getNavn()
+                    ];
+                }
             } elseif ($arrangement->getEierType() == 'kommune') {
                 // Kommuneside for flere kommuner - list
                 foreach ($arrangement->getKommuner()->getAll() as $kommune) {
                     if( $kommune->erOvertatt() ) {
                         $kommune = $kommune->getOvertattAv();
                     }
-                    $links[] = [
-                        'link' => $kommune->getLink(),
-                        'navn' => $kommune->getNavn(),
-                        'tidligere' => $kommune->getTidligereNavnListe()
-                    ];
+                    if( Blog::eksisterer( $kommune->getLink() ) ) {
+                        $links[] = [
+                            'link' => $kommune->getLink(),
+                            'navn' => $kommune->getNavn(),
+                            'tidligere' => $kommune->getTidligereNavnListe()
+                        ];
+                    }
                 }
             }
             // Lands-arrangement?
