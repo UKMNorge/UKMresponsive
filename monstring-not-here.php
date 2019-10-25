@@ -1,16 +1,27 @@
 <?php
-use UKMNorge\DesignBundle\Utils\Sitemap;
-use UKMNorge\DesignBundle\Utils\SEO;
+
+use UKMNorge\Arrangement\Load;
+use UKMNorge\Geografi\Kommune;
 
 require_once('header.php');
-require_once('UKM/monstringer.class.php');
+require_once('UKM/Autoloader.php');
 
+if( !isset($_GET['retry'] ) ) {
+    // Hvis sesong-parameteret mangler, henger dette igjen fra tidligere
+    // Hvis det er satt for forrige sesong, så skal det også bort.
+    $season = get_option('season');
+    if( !$season || get_site_option('season') < date('Y') ) {
+        delete_option('status_monstring');
+        echo '<script type="javascript">window.location.href = window.location.href";</script>';
+        header("Location: ". get_bloginfo('url') .'?retry=true');
+        exit();
+    }
+}
 
 $template = 'Monstring/'.get_option('status_monstring');
 
 // Prøv å finn nye mønstringer for kommunen
 $monstringer = [];
-
 
 /**
  * Hent kommuner fra bloggen
@@ -24,11 +35,9 @@ if( is_array( $kommuner ) ) {
 		// Prøv å finne en mønstring for kommunen
 		#echo '<br /> Finn mønstring for kommune '. $kommune_id .' i '. get_site_option('season') .'-sesongen:';
 		try {
-			$monstring = monstringer_v2::kommune( $kommune_id, get_site_option('season') );
+			$monstring = Load::forKommune( get_site_option('season'), $kommune_id );
 			$monstringer[ $monstring->getId() ] = $monstring;
-			#echo 'Fant '. $monstring->getId() .' - '. $monstring->getNavn();
 		} catch( Exception $e ) {
-			#echo $e->getMessage();
 			// Ignorer mønstringer vi ikke finner
 		}
 	}
@@ -50,7 +59,7 @@ if( sizeof( $monstringer ) == 1 ) {
 switch( str_replace('Monstring/', '', $template) ) {
 	case 'avlyst':
 		try {
-			$WP_TWIG_DATA['kommune'] = new kommune( $kommuner[0] );
+			$WP_TWIG_DATA['kommune'] = new Kommune( $kommuner[0] );
 		} catch( Exception $e ) {
 			// Ignorer hvis vi ikke finner gitt kommune - view håndterer det
 		}
