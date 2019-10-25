@@ -20,7 +20,7 @@ if( !isset($_GET['retry'] ) ) {
 
         delete_option('status_monstring');
         header("Location: ". get_bloginfo('url') .'?retry=true');
-        echo '<script type="javascript">window.location.href = window.location.href";</script>';
+        echo '<script type="javascript">window.location.href = window.location.href + "?retry=true";</script>';
         exit();
     }
 }
