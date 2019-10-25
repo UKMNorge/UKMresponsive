@@ -103,9 +103,15 @@ WP_TWIG::setDebug( WP_ENV == 'dev' );
 $WP_TWIG_DATA = [];
 
 function UKMresponsive_pageExists( $template ) {
+    // Bloggen er slettet
+    if( get_site()->deleted ) {
+        return locate_template( ['deleted.php'] );
+    }
+    // Arrangementet som brukte å være her er borte (pre-2020-problemstilling?)
 	if( get_option('status_monstring') != false ) {
 		return locate_template( array('monstring-not-here.php') );
-	}
+    }
+    // Business as ususal
 	return $template;
 }
 
