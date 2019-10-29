@@ -3,7 +3,6 @@
 use UKMNorge\DesignBundle\Utils\Sitemap;
 use UKMNorge\DesignBundle\Utils\SEO;
 
-require_once('lib/autoload.php');
 require_once('wp_twig.dateFilter.inc.php');
 require_once('wp_twig.onelineFilter.inc.php');
 require_once('wp_twig.ukm.inc.php');
@@ -100,7 +99,6 @@ class WP_TWIG {
 			throw new Exception('Cannot render Twig. Missing templateDir parameter');
 		}
 		// Loader + filesystem
-		require_once('Twig/Autoloader.php');
 		Twig_Autoloader::register();
 		$loader = new Twig_Loader_Filesystem( self::getTemplateDir() );
 		if( defined( 'FULLSTORY_PATH' ) ) {
