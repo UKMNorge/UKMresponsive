@@ -1,9 +1,12 @@
 <?php
 namespace UKMNorge\DesignBundle\Twig;
 
+use Twig\Extension\AbstractExtension;
+use Twig\TwigFilter;
+use Twig\TwigFunction;
 use UKMNorge\DesignBundle\Utils\Sitemap;
 
-class DesignBundleExtension extends \Twig_Extension
+class DesignBundleExtension extends AbstractExtension
 {
 
 	public function getName() {
@@ -13,18 +16,18 @@ class DesignBundleExtension extends \Twig_Extension
 	public function getFilters()
 	{
 		return array(
-			new \Twig_SimpleFilter('UKMpath', array($this, 'UKMpathFilter')),
-            new \Twig_SimpleFilter('dato', array($this, 'dato')),
-            new \Twig_SimpleFilter('oneline', [$this, 'oneline']),
+			new TwigFilter('UKMpath', array($this, 'UKMpathFilter')),
+            new TwigFilter('dato', array($this, 'dato')),
+            new TwigFilter('oneline', [$this, 'oneline']),
 
 		);
 	}
 
 	public function getFunctions() {
 		return array(
-			new \Twig_SimpleFunction('UKMasset', array($this, "UKMasset")),
-			new \Twig_SimpleFunction('THEME_CONFIG', array($this, "theme_config")),
-            new \Twig_SimpleFunction('UKMroute', array($this, "theme_config")),
+			new TwigFunction('UKMasset', array($this, "UKMasset")),
+			new TwigFunction('THEME_CONFIG', array($this, "theme_config")),
+            new TwigFunction('UKMroute', array($this, "theme_config")),
             
 		);
 	}
