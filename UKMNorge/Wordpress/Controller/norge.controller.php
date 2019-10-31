@@ -2,8 +2,9 @@
 
 require_once('UKM/fylker.class.php');
 $WP_TWIG_DATA['fylker'] = fylker::getAll();
-if( date('m') < 9 && date('m') > 6 ) {
-	$WP_TWIG_DATA['pamelding_apen'] = time() > strtotime( str_replace('YYYY', get_site_option('season'), WP_CONFIG::get('pamelding')['starter'] ) );
+
+if( date('m') > 8 && date('Y') != get_site_option('season') ) {
+	$WP_TWIG_DATA['pamelding_apen'] = time() > strtotime( str_replace('YYYY', get_site_option('season')-1, WP_CONFIG::get('pamelding')['starter'] ) );
 } else {
 	$WP_TWIG_DATA['pamelding_apen'] = false;
 }
