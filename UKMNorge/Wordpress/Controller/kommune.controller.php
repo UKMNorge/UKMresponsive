@@ -32,6 +32,10 @@ if( !$kommune_id ) {
         $kommune_id = $kommune_id[0];
     }
 }
+if(!$kommune_id ) {
+    $kommune_id = get_option('kommune');
+}
+
 if( !$kommune_id ) {
     throw new Exception('Klarte ikke å finne kommune-ID');
 }
