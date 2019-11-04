@@ -1,20 +1,20 @@
-UKMresponsive.kommuneliste = (filter_container) => {
+UKMresponsive.kommuneliste = function(filter_container) {
     var self = {
-        getSearchSelector: () => {
+        getSearchSelector: function() {
             return filter_container + ' input[name="search"]';
         },
-        getKommuneSelector: () => {
+        getKommuneSelector: function() {
             return filter_container + ' .kommune';
         },
-        bind: () => {
+        bind: function() {
             $(document).on('keyup', self.getSearchSelector(), self.filter);
         },
 
-        filter: () => {
+        filter: function() {
             var words = $(self.getSearchSelector()).val().toLowerCase().split(' ');
             $(self.getKommuneSelector()).hide();
 
-            $(self.getKommuneSelector()).filter((index, element) => {
+            $(self.getKommuneSelector()).filter(function(index, element) {
                 var searchIn = $(element).attr('data-filter').toLowerCase();
                 var found = false;
                 words.forEach(function(word) {
@@ -29,7 +29,7 @@ UKMresponsive.kommuneliste = (filter_container) => {
             self.addCountHelper();
         },
 
-        addCountHelper: () => {
+        addCountHelper: function() {
             var numShown = $(self.getKommuneSelector() + ':visible').length;
             $(filter_container).removeClass('found-none found-few found-many').attr('data-count', numShown);
             if (numShown == 0) {
@@ -41,8 +41,6 @@ UKMresponsive.kommuneliste = (filter_container) => {
             }
         }
     }
-
     self.bind();
-
     return self;
 }
