@@ -13,6 +13,11 @@
             </div>
             {# VIS ENTEN POSTS ELLER HVA ER UKM #}
             <div class="col-12 col-md-8 col-xl-9 float-left" style="min-height:12em;">
+                {% if har_infoside %}
+                    {{ infoside|raw }}
+                    <div class="clearfix"></div>
+                {% endif %}
+
                 {% if posts.getAntall() > 0 %}
                     {% embed "UKMDesignBundle:Category:list.html.twig"|UKMpath with {singleMode:true, posts: posts.getAll(), hideNoneFound: true} %}{% endembed %}
                 {% else %}

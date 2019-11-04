@@ -1,5 +1,7 @@
 <?php
 
+use UKMNorge\Wordpress\Blog;
+
 require_once('class/geoController.class.php');
 
 class arrangementController extends geoController {
@@ -43,3 +45,11 @@ $WP_TWIG_DATA['arrangement'] = arrangementController::getArrangement();
 $WP_TWIG_DATA['arrangement_tillater_tittellose'] = arrangementController::tillaterTittellose();
 $WP_TWIG_DATA['fylke'] = arrangementController::getArrangement()->getFylke();
 $WP_TWIG_DATA['pamelding'] = arrangementController::getPamelding();
+
+global $blog_id;
+if( Blog::harSide($blog_id,'info')) {
+    $WP_TWIG_DATA['har_infoside'] = true;
+    $WP_TWIG_DATA['infoside'] = Blog::hentSideByPath($blog_id,'info')->post_content;
+} else {
+    $WP_TWIG_DATA['har_infoside'] = false;
+}

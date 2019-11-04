@@ -20,6 +20,10 @@
 
             </div>
             <div class="col-12 col-md-8 col-xl-9 float-left">
+                {% if har_infoside %}
+                    {{ infoside|raw }}
+                    <div class="clearfix"></div>
+                {% endif %}
                 {% embed "UKMDesignBundle:Category:list.html.twig"|UKMpath with {singleMode:true, posts: posts.getAll(), hideNoneFound: true} %}{% endembed %}
                 <h3>Hva er UKM?</h3>
                 <p>{{ THEME_CONFIG.get('hvaerukm').kort|raw }} 
