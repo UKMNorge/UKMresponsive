@@ -15,6 +15,8 @@ add_shortcode('gallery', 'UKMresponsive_gallery');
 
 add_action( "template_include", "UKMresponsive_pageExists", 10000 );
 
+add_filter('ms_site_check', 'UKMresponsive_skip_site_check');
+
 add_action( 'wp_ajax_nopriv_UKMresponsive', 'UKMresponsive_ajax' );
 add_action( 'wp_ajax_UKMresponsive', 'UKMresponsive_ajax' );
 add_action( 'after_setup_theme', 'UKMresponsive_imageSizes' );
@@ -139,4 +141,14 @@ function UKMresponsive_ajax() {
 	
 	echo json_encode( $response );
 	wp_die();
+}
+
+/**
+ * Ettersom vi uansett håndterer redirect av slettede blogger i
+ * UKMresponsive_pageExists kan alle få lov til å "se" slettede blogger 
+ *
+ * @return void
+ */
+function UKMresponsive_skip_site_check() {
+    return true;
 }
