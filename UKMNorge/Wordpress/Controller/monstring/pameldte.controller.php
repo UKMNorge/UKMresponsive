@@ -4,7 +4,7 @@ use UKMNorge\Arrangement\Arrangement;
 use UKMNorge\DesignBundle\Utils\SEO;
 use UKMNorge\DesignBundle\Utils\SEOImage;
 use UKMNorge\Geografi\Fylker;
-use UKMNorge\Innslag\Typer;
+use UKMNorge\Innslag\Typer\Typer;
 
 require_once('UKM/Autoloader.php');
 
