@@ -5,6 +5,7 @@ use UKMNorge\Arrangement\Load;
 use UKMNorge\Geografi\Fylker;
 use UKMNorge\Geografi\Kommune;
 use UKMNorge\Wordpress\Blog;
+use UKMNorge\Database\SQL\Query;
 
 require_once('header.php');
 require_once('UKM/Autoloader.php');
@@ -35,10 +36,44 @@ switch (get_option('site_type')) {
 
         // Dette var en kommuneside
     case 'kommune':
-        $kommuner = explode(',', get_option('kommuner'));
+        $kommuner = get_option('kommuner');
 
+        if( !$kommuner ) {
+            // Hoi, nå begynner vi å bli desperate nå!
+            // Prøv å finne ut hvilket arrangement hadde denne path'en før, og
+            // via det finne en kommune eller flere å sende de til.
+            $query = new Query(
+                "SELECT `smartukm_rel_pl_k`.`k_id`
+                FROM `smartukm_place`
+                JOIN `smartukm_rel_pl_k`
+                    ON(`smartukm_rel_pl_k`.`pl_id` = `smartukm_place`.`pl_id`)
+                WHERE `pl_link` = '#link'
+                AND `smartukm_place`.`season` = '#sesong'",
+                [
+                    'link' => trim(
+                        str_replace(
+                            ['https://','http://',UKM_HOSTNAME],
+                            '',
+                            $WP_TWIG_DATA['blog_url']),
+                        '/'),
+                    'sesong' => get_site_option('season')-1
+                ]
+            );
+            $res = $query->run();
+            $kommuner = [];
+            while( $row = Query::fetch($res) ) {
+                $kommuner[] = $row['k_id'];
+            }
+        } else {
+            $kommuner = explode(',', $kommuner);
+        }
+
+        // Fant ingen kommuner
+        if( sizeof( $kommuner ) == 0 ) {
+            $template = '404/404';
+        }
         // Komuneside for én kommune - go there
-        if (sizeof($kommuner) == 1 ) {
+        elseif (sizeof($kommuner) == 1 ) {
             $kommune = new Kommune($kommuner[0]);
             if( $kommune->erOvertatt() ) {
                 $kommune = $kommune->getOvertattAv();
@@ -50,35 +85,37 @@ switch (get_option('site_type')) {
                 exit();
             }
         }
-
-        // Kommuneside for flere kommuner - list
-        foreach ($kommuner as $kommune_id) {
-            $kommune = new Kommune($kommune_id);
-            if( $kommune->erOvertatt() ) {
-                $kommune = $kommune->getOvertattAv();
-            }
-            if( Blog::eksisterer( $kommune->getLink() ) ) {
-                $links[] = [
-                    'link' => $kommune->getLink(),
-                    'navn' => $kommune->getNavn(),
-                    'tidligere' => $kommune->getTidligereNavnListe()
-                ];
-            }
-        }
-
-        // Info om fylket kommunen er i
-        if( get_option('fylke') ) {
-            $fylke = Fylker::getById(get_option('fylke'));
-            // Hvis fylket har blitt overtatt, vis dette
-            if ($fylke->erOvertatt()) {
-                $fylke = $fylke->getOvertattAv();
+        // Vi har funnet flere kommuner (oh the possibilities 🤩)
+        else {
+            // Kommuneside for flere kommuner - list
+            foreach ($kommuner as $kommune_id) {
+                $kommune = new Kommune($kommune_id);
+                if( $kommune->erOvertatt() ) {
+                    $kommune = $kommune->getOvertattAv();
+                }
+                if( Blog::eksisterer( $kommune->getLink() ) ) {
+                    $links[] = [
+                        'link' => $kommune->getLink(),
+                        'navn' => $kommune->getNavn(),
+                        'tidligere' => $kommune->getTidligereNavnListe()
+                    ];
+                }
             }
 
-            if( Blog::eksisterer( $fylke->getLink(false) ) ) {
-                $links[] = [
-                    'link' => $fylke->getLink(false),
-                    'navn' => $fylke->getNavn()
-                ];
+            // Info om fylket kommunen er i
+            if( get_option('fylke') ) {
+                $fylke = Fylker::getById(get_option('fylke'));
+                // Hvis fylket har blitt overtatt, vis dette
+                if ($fylke->erOvertatt()) {
+                    $fylke = $fylke->getOvertattAv();
+                }
+
+                if( Blog::eksisterer( $fylke->getLink(false) ) ) {
+                    $links[] = [
+                        'link' => $fylke->getLink(false),
+                        'navn' => $fylke->getNavn()
+                    ];
+                }
             }
         }
         break;
