@@ -62,11 +62,17 @@ switch (get_option('site_type')) {
             $res = $query->run();
             $kommuner = [];
             while( $row = Query::fetch($res) ) {
-                $kommuner[] = $row['k_id'];
+                $kommune = new Kommune( $row['k_id']);
+                if($kommune->erOvertatt()) {
+                    $kommune = $kommune->getOvertattAv();
+                }
+                $kommuner[] = $kommune->getId();
             }
         } else {
             $kommuner = explode(',', $kommuner);
         }
+
+        $kommuner = array_unique($kommuner);
 
         // Fant ingen kommuner
         if( sizeof( $kommuner ) == 0 ) {
