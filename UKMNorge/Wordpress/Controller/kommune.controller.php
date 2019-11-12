@@ -2,6 +2,7 @@
 
 use UKMNorge\Nettverk\Omrade;
 use UKMNorge\Samtykke\Kommunikasjon;
+use UKMNorge\Wordpress\Blog;
 
 require_once('class/geoController.class.php');
 
@@ -37,7 +38,23 @@ if(!$kommune_id ) {
 }
 
 if( !$kommune_id ) {
-    throw new Exception('Klarte ikke å finne kommune-ID');
+    // Nå er det vel på tide å markere denne som slettet, og refreshe
+    // deleted.php bør være i stand til å finne ut hvor brukeren skal,
+    // eller kaste en seriøs exception
+    $path = str_replace(
+        [
+            'https://',
+            'http://',
+            UKM_HOSTNAME
+        ],
+        '',
+        $WP_TWIG_DATA['blog_url']
+    );
+    Blog::deaktiver( 
+        Blog::getIdByPath( $path )
+    );
+    header("Location: ". $WP_TWIG_DATA['blog_url'] );
+    exit();
 }
 $kommune_id = (Int) $kommune_id;
 
