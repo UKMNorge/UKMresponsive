@@ -23,7 +23,7 @@ if( is_numeric( $id ) ) {
 	SEO::setCanonical( SEO::getCanonical(). $id .'/'); // Already set to correct page, but is missing id
 	SEO::setTitle( $innslag->getNavn() .' @ UKM');
 	SEO::setDescription( 'Les mer om '. $innslag->getNavn() .' som deltar.' );
-	if( $innslag->getBilder()->har() ) {
+	if( $innslag->getBilder()->getAntall() > 0 ) {
 		$image = $innslag->getBilder()->first()->getSize('large');
 		$SEOimage = new SEOimage( $image->getUrl(), $image->getWidth(), $image->getHeight(), $image->getMimeType() );
 		SEO::setImage( $SEOimage );
