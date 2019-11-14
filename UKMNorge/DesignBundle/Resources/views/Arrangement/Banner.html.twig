@@ -2,7 +2,11 @@
 	<div class="container-fluid mb-3" style="margin-top:-1em;">
 		<div class="row align-items-center py-3">
 			<div class="col-12 title">
-                {% if arrangement.getSted() is not empty %}
+                {% if arrangement.harKart() and arrangement.getKart().getName() is not empty %}
+                    <div class="icon icon-location-pin float-left mr-2 mt-2" style="font-size: 2em;"></div>
+                    <p class="mb-1" style="margin-top: 0.1rem !important">{{ arrangement.getKart().getName()|upper }}</p>
+                    <p class="mb-2 mt-0 small">
+                {% elseif arrangement.getSted() is not empty %}
                     <div class="icon icon-location-pin float-left mr-2 mt-2" style="font-size: 2em;"></div>
                     <p class="mb-1" style="margin-top: 0.1rem !important">{{ arrangement.getSted()|upper }}</p>
                     <p class="mb-2 mt-0 small">
