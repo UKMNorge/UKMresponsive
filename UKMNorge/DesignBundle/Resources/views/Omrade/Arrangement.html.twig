@@ -18,7 +18,11 @@
                 {{ arrangement.getStop()|dato('j.M') }}
             {% endif %}
             <br/>
-            {{ arrangement.getSted() }}
+            {% if arrangement.harKart() and arrangement.getKart().getName() is not empty %}
+                {{ arrangement.getKart().getName() }}
+            {% else %}
+                {{ arrangement.getSted() }}
+            {% endif %}
         </div>
     </div>
 
