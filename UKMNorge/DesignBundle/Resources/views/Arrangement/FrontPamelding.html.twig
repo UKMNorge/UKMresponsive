@@ -15,6 +15,7 @@
                 {% if not pamelding.apen %}
                     {% include "UKMDesignBundle:Omrade:Husk.html.twig"|UKMpath with {fylkeid: omrade.getFylke().getId() } %}
                 {% endif %}
+                {% include "UKMDesignBundle:Arrangement:Kart.html.twig"|UKMpath %}
                 <h3>Kontaktpersoner for {{ arrangement.getNavn() }}</h3>
                 {% include "UKMDesignBundle:Omrade:Kontaktpersoner.html.twig"|UKMpath with {fullframe:true, navn: arrangement.getNavn(), kontaktpersoner: arrangement.getKontaktpersonerEllerAdministratorer()} %}
 
