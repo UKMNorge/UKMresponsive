@@ -7,7 +7,7 @@
     <div class="container-fluid">
         <div class="row-flex">
             <div class="col-12 col-md-8 col-xl-9 float-left">
-                {% if pamelding.apen %}
+                {% if arrangement.harPamelding() and pamelding.apen %}
                     {% include "UKMDesignBundle:Arrangement:Pamelding.html.twig"|UKMpath %}
                 {% endif %}
             </div>
