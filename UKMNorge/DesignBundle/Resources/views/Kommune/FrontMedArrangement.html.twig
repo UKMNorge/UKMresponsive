@@ -6,7 +6,7 @@
             <div class="col-12">
                 <h3>Velg hvilket arrangement du er interessert i</h3>
             </div>
-            {% for arrangement in omrade.getArrangementer( sesong ).getAll() %}
+            {% for arrangement in omrade.getArrangementer( sesong ).getAll() if arrangement.erRegistrert() and arrangement.erSynlig() %}
                 <div class="col-12 col-sm-6 col-lg-4">
                     {% include "UKMDesignBundle:Omrade:Arrangement.html.twig"|UKMpath with{visNettside:true} %}
                 </div>
