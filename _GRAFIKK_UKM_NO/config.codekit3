@@ -575,14 +575,6 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"/img/Entypo-social/Icon\r": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 2,
-		"oAP": "/img/Entypo-social/Icon\r",
-		"oF": 0
-		},
 	"/img/Entypo-social/instagram-with-circle.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -2853,14 +2845,6 @@
 		"plM": 3758088159,
 		"prP": 0
 		},
-	"/img/Entypo/Icon\r": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 2,
-		"oAP": "/img/Entypo/Icon\r",
-		"oF": 0
-		},
 	"/img/Entypo/image-inverted.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -4937,6 +4921,14 @@
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
+		},
+	"/js/UKMresponsive.min.js.map": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 2,
+		"oAP": "/js/UKMresponsive.min.js.map",
+		"oF": 0
 		},
 	"/less/aos.less": {
 		"aP": 0,
