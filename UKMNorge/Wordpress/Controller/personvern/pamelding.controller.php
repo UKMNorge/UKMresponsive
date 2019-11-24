@@ -4,8 +4,9 @@ use UKMNorge\DesignBundle\Utils\SEOImage;
 use Symfony\Component\Yaml\Yaml;
 
 use UKMNorge\Samtykke;
+use UKMNorge\Samtykke\Person;
 
-require_once('UKM/samtykke/person.class.php');
+require_once('UKM/Autoloader.php');
 //require_once(PATH_THEME.'vendor/autoload.php');
 
 $IP = isset( $_SERVER['HTTP_CF_CONNECTING_IP'] ) ? 
@@ -38,7 +39,7 @@ try {
 			throw new Exception('Mangler numerisk mobil-nummer og ID-felt');
 		}
 		
-		$samtykke = Samtykke\Person::getById( $id );
+		$samtykke = Person::getById( $id );
 		if( $samtykke->getMobil() != $mobil ) {
 			throw new Exception('Feil i ID-felt.');
 		}
@@ -107,7 +108,7 @@ try {
 			**/
 			if( isset( $_POST['foresatt_navn'] ) ) {
 				// SEND SMS TIL FORESATT
-                $samtykke = Samtykke\Person::getById( $id );
+                $samtykke = Person::getById( $id );
                 $samtykke->getKommunikasjon()->sendMelding('samtykke_foresatt');
 			}
 		}
