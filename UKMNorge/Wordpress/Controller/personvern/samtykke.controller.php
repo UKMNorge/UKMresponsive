@@ -5,10 +5,7 @@ use UKMNorge\Samtykke\Write;
 use UKMNorge\Samtykke\Request;
 use UKMNorge\Samtykke\Approval;
 
-require_once('UKM/samtykke/write.class.php');
-require_once('UKM/samtykke/prosjekt.class.php');
-require_once('UKM/samtykke/request.class.php');
-require_once('UKM/samtykke/approval.class.php');
+require_once('UKM/Autoloader.php');
 
 try {
     $request = Request::loadFromHash( $_GET['prosjekt'], $_GET['samtykke'] );
