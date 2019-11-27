@@ -2,8 +2,16 @@
 
 {% block content %}
     <div class="container-fluid">
+        {% if har_infoside %}
+            <div class="row mt-2">
+                <div class="col-12 col-sm-12">
+                    {{ infoside|raw }}
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        {% endif %}
         <div class="row mt-2">
-            <div class="col-12">
+            <div class="col-12 col-sm-12">
                 <h3>Velg hvilket arrangement du er interessert i</h3>
             </div>
             {% for arrangement in omrade.getArrangementer( sesong ).getAll() if arrangement.erRegistrert() and arrangement.erSynlig() %}
