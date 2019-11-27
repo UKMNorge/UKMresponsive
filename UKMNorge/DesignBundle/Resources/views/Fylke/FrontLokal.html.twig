@@ -2,6 +2,14 @@
 
 {% block content %}
     <div class="container-fluid">
+        {% if har_infoside %}
+            <div class="row-flex mt-2">
+                <div class="col-12 col-sm-12">
+                    {{ infoside|raw }}
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        {% endif %}
         <div class="row-flex">
             <div class="col-12 col-md-4 col-xl-3 float-right mb-4">
                 {% if pamelding.apen %}

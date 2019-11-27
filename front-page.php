@@ -36,6 +36,7 @@ switch (get_option('site_type')) {
         require_once('UKMNorge/Wordpress/Controller/arrangement.controller.php');
         break;
 	case 'fylke':
+		require_once(PATH_WORDPRESSBUNDLE . 'Controller/banner.controller.php');
 		require_once('UKMNorge/Wordpress/Controller/fylke.controller.php');
 		break;
     case 'kommune':
