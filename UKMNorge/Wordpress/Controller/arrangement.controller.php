@@ -28,6 +28,10 @@ class arrangementController extends geoController {
         }
         return false;
     }
+
+    public static function harPameldte() {
+        return static::getArrangement()->getInnslag()->harInnslag(false);
+    }
 }
 
 $arrangement = arrangementController::getArrangement();
@@ -45,6 +49,7 @@ $WP_TWIG_DATA['arrangement'] = arrangementController::getArrangement();
 $WP_TWIG_DATA['arrangement_tillater_tittellose'] = arrangementController::tillaterTittellose();
 $WP_TWIG_DATA['fylke'] = arrangementController::getArrangement()->getFylke();
 $WP_TWIG_DATA['pamelding'] = arrangementController::getPamelding();
+$WP_TWIG_DATA['har_pameldte'] = arrangementController::harPameldte();
 
 global $blog_id;
 if( Blog::harSide($blog_id,'info')) {
