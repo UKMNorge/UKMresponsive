@@ -30,15 +30,16 @@ if (isset($WP_TWIG_DATA['page']->getPage()->meta->UKMviseng)) {
 	$page_template = false;
 }
 
-
 switch (get_option('site_type')) {
     case 'arrangement':
+		require_once(PATH_WORDPRESSBUNDLE . 'Controller/banner.controller.php');
         require_once('UKMNorge/Wordpress/Controller/arrangement.controller.php');
         break;
 	case 'fylke':
 		require_once('UKMNorge/Wordpress/Controller/fylke.controller.php');
 		break;
     case 'kommune':
+		require_once(PATH_WORDPRESSBUNDLE . 'Controller/banner.controller.php');
         if( get_option('pl_id') ) {
             require_once('UKMNorge/Wordpress/Controller/arrangement.controller.php');
         } else {
