@@ -22,7 +22,7 @@
 				{% if monstring.erPameldingApen(1) %}
 					Gjelder:
 				{% endif %}
-				{% for type in monstring.getInnslagTyper() if type.getFrist() == 1 %}
+				{% for type in monstring.getInnslagTyper()|filter(type => type.getFrist() == 1) %}
 					{{ type }}, 
 				{% endfor %}
 			</div>
@@ -44,7 +44,7 @@
 				{% if monstring.erPameldingApen(2) %}
 					Gjelder:
 				{% endif %}
-				{% for type in monstring.getInnslagTyper() if type.getFrist() == 2 %}
+				{% for type in monstring.getInnslagTyper()|filter(type => type.getFrist() == 2) %}
 					{{ type }}, 
 				{% endfor %}
 			</div>

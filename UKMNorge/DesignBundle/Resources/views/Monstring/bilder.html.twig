@@ -4,12 +4,12 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-12">
-				{% for forestilling in monstring.getProgram().getAll() if forestilling.getInnslag().getAntall > 0 and (visAlle or forestilling.getId() == vis ) %}
+				{% for forestilling in monstring.getProgram().getAll()|filter( (forestilling, visAlle, vis) => forestilling.getInnslag().getAntall > 0 and (visAlle or forestilling.getId() == vis )) %}
 					<h2>{{ forestilling.getNavn() }}</h2>
 						
 					<div class="images-grid">
 						{% for innslag in forestilling.getInnslag().getAll() %}
-							{% for bilde in innslag.getBilder().getAll() if bilde.getPlid() == monstring.getId() %}
+							{% for bilde in innslag.getBilder().getAll()|filter((bilde,monstring) => bilde.getPlid() == monstring.getId()) %}
 								{% spaceless %}
 										<a href="{{ bilde.getSize('large').getUrl() }}" class="swipebox image-wrapper" data-width="{{ bilde.getSize('lite','medium').getWidth() }}" data-height="{{ bilde.getSize('lite','medium').getHeight() }}" title="{{ innslag.getNavn() }} av {{ bilde.getAuthor().getNiceName() }}">
 											<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-src="{{ bilde.getSize('lite', 'medium').getUrl() }}" alt="" class="image-thumb lazyLoad" />

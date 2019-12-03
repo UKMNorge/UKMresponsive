@@ -53,7 +53,7 @@
 										<p class="mt-0 small text-muted">
 											<b>I PROGRAMMET</b>
 											<br /> 
-											{% for category in post.categories if category.term_id != 3 %}
+											{% for category in post.categories|filter(category => category.term_id != 3) %}
 												{#<a href="{{ category.url }}" class="badge badge-primary">{{ category.name }}</a>#}
 												{{ category.name }}{#{ not loop.last ? ', ' :'' }#}
 											{% endfor %}

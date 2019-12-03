@@ -2,6 +2,11 @@
 
 use UKMNorge\DesignBundle\Utils\Sitemap;
 use UKMNorge\DesignBundle\Utils\SEO;
+use Twig\TwigFilter;
+use Twig\TwigFunction;
+use Twig\Loader\FilesystemLoader;
+use Twig\Environment;
+use Twig\Extension\DebugExtension;
 
 require_once('wp_twig.dateFilter.inc.php');
 require_once('wp_twig.onelineFilter.inc.php');
@@ -99,8 +104,8 @@ class WP_TWIG {
 			throw new Exception('Cannot render Twig. Missing templateDir parameter');
 		}
 		// Loader + filesystem
-		Twig_Autoloader::register();
-		$loader = new Twig_Loader_Filesystem( self::getTemplateDir() );
+		#Twig_Autoloader::register();
+		$loader = new FilesystemLoader( self::getTemplateDir() );
 		if( defined( 'FULLSTORY_PATH' ) ) {
 			self::addTemplateDir( FULLSTORY_PATH );
 		}
@@ -133,32 +138,32 @@ class WP_TWIG {
 			$environment['cache'] = false;
 		}
 
-		$twig = new Twig_Environment($loader, $environment);
+		$twig = new Environment($loader, $environment);
 		$twig->addGlobal('Sitemap', new Sitemap);
 		$twig->addGlobal('SEO', new SEO);
 		$twig->addGlobal('THEME_CONFIG', new WP_CONFIG);
 		
 		// Add dato-filter
-		$filter_dato = new Twig_SimpleFilter('dato', 'WP_TWIG_date');
+		$filter_dato = new TwigFilter('dato', 'WP_TWIG_date');
 		$twig->addFilter($filter_dato);
 		
 		// Add maned-filter
-		$filter_maned = new Twig_SimpleFilter('maned', 'WP_TWIG_maned');
+		$filter_maned = new TwigFilter('maned', 'WP_TWIG_maned');
 		$twig->addFilter($filter_maned);
 		
 		// Add path-filter
-		$filter_path = new Twig_SimpleFilter('UKMpath', 'UKMpath');
+		$filter_path = new TwigFilter('UKMpath', 'UKMpath');
 		$twig->addFilter($filter_path);
 
 		// Add telefon-filter
-		$filter_telefon = new Twig_SimpleFilter('telefon', 'UKMtelefon');
+		$filter_telefon = new TwigFilter('telefon', 'UKMtelefon');
 		$twig->addFilter($filter_telefon);
         
-        $filter_oneline = new Twig_SimpleFilter('oneline', 'TWIGoneline');
+        $filter_oneline = new TwigFilter('oneline', 'TWIGoneline');
         $twig->addFilter($filter_oneline);
 
 		// Add asset-function
-		$function_ukmasset = new Twig_SimpleFunction('UKMasset', function( $path ) {
+		$function_ukmasset = new TwigFunction('UKMasset', function( $path ) {
 			if( 'ukm.dev' == UKM_HOSTNAME ) {
 				return URL_THEME . '/_GRAFIKK_UKM_NO/'. $path;
 			}
@@ -167,7 +172,7 @@ class WP_TWIG {
 		$twig->addFunction($function_ukmasset);
 
 		// Add GET-function
-		$function_get = new Twig_SimpleFunction('GET', function( $var ) {
+		$function_get = new TwigFunction('GET', function( $var ) {
 			if( !isset( $_GET[ $var ] ) ) {
 				return false;
 			}
@@ -177,26 +182,26 @@ class WP_TWIG {
 		$twig->addFunction($function_get);
 		
 		// Add husk-function
-		$function_ukmhusk = new Twig_SimpleFunction('HUSK', function( $identifier ) {
+		$function_ukmhusk = new TwigFunction('HUSK', function( $identifier ) {
 			return UKMhusk( $identifier );
 		});
 		$twig->addFunction($function_ukmhusk);
 
 		// Add dynamically added functions
 		foreach( self::getFunctions() as $twig_name => $function_data ) {
-			$function = new Twig_SimpleFunction( $twig_name, $function_data['callback'], $function_data['options'] );
+			$function = new TwigFunction( $twig_name, $function_data['callback'], $function_data['options'] );
 			$twig->addFunction( $function );
 		}
 		
 		// Add dynamically added filters
 		foreach( self::getFilters() as $twig_name => $filter_data ) {
-			$filter = new Twig_SimpleFilter( $twig_name, $filter_data['callback'], $filter_data['options'] );
+			$filter = new TwigFilter( $twig_name, $filter_data['callback'], $filter_data['options'] );
 			$twig->addFilter( $filter );
 		}
 		
 		// Debug
 		if( self::getDebug() ) {
-			$twig->addExtension( new Twig_Extension_Debug() );
+			$twig->addExtension( new DebugExtension() );
 		}
 
 		// Set language

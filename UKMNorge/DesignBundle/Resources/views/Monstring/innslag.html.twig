@@ -131,7 +131,7 @@
 						{% if innslag.getProgram().getAntall() > 0 %}
 							<div class="{{ col_right }}">
 								<h4 class="linje">I programmet</h4>
-								{% for forestilling in innslag.program.getAll() if forestilling.erSynligDetaljprogram() %}
+								{% for forestilling in innslag.program.getAll()|filter(forestilling => forestilling.erSynligDetaljprogram()) %}
 									{% if showOppmoteTid == false and forestilling.erSynligOppmotetid() %}
 										{% set showOppmoteTid = true %}
 									{% endif %}
@@ -175,7 +175,7 @@
 						{% if showOppmoteTid %}
 							<div class="{{ col_right }}">
 								<h4 class="linje">Oppmøtetidspunkt</h4>
-								{% for forestilling in innslag.program.getAll() if forestilling.erSynligOppmotetid() %}
+								{% for forestilling in innslag.program.getAll()|filter(forestilling => forestilling.erSynligOppmotetid()) %}
 									<div class="row">
 										<div class="col-7">
 											{{ forestilling.getNavn() }}
