@@ -6,6 +6,7 @@ use UKMNorge\DesignBundle\Utils\SEOImage;
 
 require_once('UKM/Autoloader.php');
 require_once('lib/autoload.php');
+require_once('vendor/autoload.php');
 
 add_theme_support( 'post-thumbnails' );
 add_theme_support( 'menus' );
