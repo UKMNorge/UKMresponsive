@@ -1,12 +1,12 @@
 <?php
+
+use UKMNorge\Arrangement\Arrangement;
 use UKMNorge\DesignBundle\Utils\SEO;
 use UKMNorge\DesignBundle\Utils\SEOImage;
 
-require_once('UKM/monstring.class.php');
-require_once('UKM/innslag.class.php');
-require_once('UKM/forestilling.class.php');
+require_once('UKM/Autoloader.php');
 
-$monstring = new monstring_v2( get_option('pl_id') );
+$monstring = new Arrangement( get_option('pl_id') );
 $WP_TWIG_DATA['monstring'] = $monstring;
 $id = $WP_TWIG_DATA['page']->getLastParameter();
 
