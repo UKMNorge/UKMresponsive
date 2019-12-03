@@ -1,0 +1,146 @@
+{% extends "Layout/_framework.html.twig" %}
+
+{% block css %}
+    <link rel="stylesheet" href="https://use.typekit.net/prj2bdq.css" />
+    <style>
+        body {
+            background-color: rgb(16,0,84);
+            overflow-x: hidden;
+            color: #fff;
+            font-family: futura-pt, sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 18px;
+        }
+        body p {
+            font-family: futura-pt, sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+        a {
+            color: #fff;
+        }
+        a:hover,
+        a:visited {
+            color: #fff;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .gradient {
+            /*background: rgb(129,32,130);*/
+            background: radial-gradient(circle, rgba(129,32,130,1) 0%, rgba(16,0,84,1) 50%, rgba(16,0,84,0) 70%);
+            position: absolute;
+            width: 120vw;
+            height: 120vh;
+            overflow: hidden;
+            z-index: -10;
+        }
+        
+        #topgradient {
+            top: -32vh;
+            left: -46vw;
+        }
+        #bottomgradient {
+            margin-bottom: -140vh;
+            bottom: 0;
+            right: -46vw;
+        }
+        .courier {
+            font-family: "Courier New", Courier, monospace;
+        }
+        .center {
+            text-align: center !important;
+        }
+
+        #textcontainer {
+            margin-top: 8vh;
+        }
+        #frontpage {
+            min-height: 90vh;
+        }
+        #frontpagecontent {
+            min-height: 100vh;
+        }
+        #tittel, #sted {
+            font-size: 5vw;
+        }
+        #sporsmalet {
+            font-size: 12vw;
+            font-weight: bold;
+            margin-bottom: .8em;
+            margin-top: 1em;
+        }
+        #nav {
+            padding-top: 4vh;
+            padding-bottom: 4vh;
+        }
+
+        #pilned {
+            text-align: center;
+            width: 4vw;
+        }
+
+        #cta {
+            font-family: "Courier New", Courier, monospace;
+            font-weight: bold;
+            font-size: 1.8rem;
+            padding: .8em;
+            border: 6px solid #fff;
+            width: 100%;
+            text-align:center;
+            color:#fff;
+            display: block;
+            margin-top: 2.2em;
+        }
+        #cta:hover,
+        #cta:visited,
+        #cta:active,
+        #cta:focus {
+            color: #fff;
+            text-decoration:none;
+        }
+
+        @media (min-width: 768px) {
+            #tittel, #sted {
+                font-size: 4vw;
+            }
+            #sporsmalet {
+                font-size: 10vw;
+            }
+        }
+        @media (min-width: 992px) {
+            #tittel, #sted {
+                font-size: 3vw;
+            }
+            #sporsmalet {
+                font-size: 8vw;
+            }
+        }
+        @media (min-width: 1200px) {
+            #tittel, #sted {
+                font-size: 2rem;
+            }
+            #sporsmalet {
+                font-size: 6rem;
+            }
+        }
+    </style>
+{% endblock %}
+{% block framework_content %}
+    <div class="gradient" id="topgradient"></div>
+
+    <div class="container" id="nav">
+        <div class="row">
+            <div class="col-4 center courier">
+                <a href="/program/">PROGRAM</a>
+            </div>
+            <div class="col-4 center courier">
+                <a href="/pamelding/">PÅMELDING</a>
+            </div>
+            <div class="col-4 center courier">
+                <a href="/info/">INFO</a>
+            </div>
+        </div>
+    </div>
+    {% block content %}{% endblock %}
+{% endblock %}

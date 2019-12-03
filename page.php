@@ -33,9 +33,17 @@ if( isset( $WP_TWIG_DATA['page']->getPage()->meta->UKMviseng ) ) {
 } else {
 	$page_template = false;
 }
+if( get_option('site_type') == 'datakultur' ) {
+    $page_template = 'datakultur';
+}
 
 // SELECT CORRECT TEMPLATE, INCLUDE AND RUN CONTROLLER
 switch( $page_template ) {
+    case 'datakultur':
+        WP_TWIG::addTemplateDir(PATH_DATAKULTURBUNDLE.'Resources/views');
+        SEO::setSiteName('Møteplass datakultur');
+        $view_template = 'Datakultur/page';
+    break;
 	## TILHØRENDE MØNSTRINGEN
 	# Påmeldte til mønstringen
 	case 'pameldte':
