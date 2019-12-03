@@ -30,12 +30,7 @@ if (isset($WP_TWIG_DATA['page']->getPage()->meta->UKMviseng)) {
 	$page_template = false;
 }
 
-switch (get_option('site_type')) {
-    case 'datakultur':
-        WP_TWIG::addTemplateDir(PATH_DATAKULTURBUNDLE.'Resources/views');
-        SEO::setSiteName('Møteplass datakultur');
-        $view_template = 'Datakultur/front';
-    break;
+switch(get_option('site_type')) {
     case 'arrangement':
 		require_once(PATH_WORDPRESSBUNDLE . 'Controller/banner.controller.php');
         require_once('UKMNorge/Wordpress/Controller/arrangement.controller.php');

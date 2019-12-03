@@ -72,7 +72,6 @@ function UKMresponsive_gallery( $gallery ) {
 define('PATH_THEME', TEMPLATEPATH . '/');
 define('PATH_DESIGNBUNDLE', PATH_THEME .'UKMNorge/DesignBundle/');
 define('PATH_WORDPRESSBUNDLE', PATH_THEME .'UKMNorge/Wordpress/');
-define('PATH_DATAKULTURBUNDLE', PATH_THEME .'UKMNorge/DatakulturBundle/');
 define('URL_THEME', get_stylesheet_directory_uri() );
 define( 'WP_ENV', (strpos( $_SERVER['HTTP_HOST'], 'ukm.dev' ) !== false || isset($_GET['debug'])) ? 'dev' : 'prod' );
 
