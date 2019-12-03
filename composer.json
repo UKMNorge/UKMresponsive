@@ -19,6 +19,7 @@
         }
     },
     "require": {
+        "twig/twig": "^3.0",
         "symfony/yaml": ">=2.0",
         "mariusmandal/wpoo": "^1.0"
     }
