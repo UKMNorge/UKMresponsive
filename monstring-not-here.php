@@ -41,6 +41,9 @@ if( is_array( $kommuner ) ) {
 	foreach( $kommuner as $kommune_id ) {
 		// Prøv å finne en mønstring for kommunen
 		#echo '<br /> Finn mønstring for kommune '. $kommune_id .' i '. get_site_option('season') .'-sesongen:';
+        if( empty( $kommune_id ) ) {
+            continue;
+        }
 		try {
 			$monstring = Load::forKommune( (Int) get_site_option('season'), new Kommune( $kommune_id ) );
 			$monstringer[ $monstring->getId() ] = $monstring;
