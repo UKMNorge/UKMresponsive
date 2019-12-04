@@ -42,7 +42,7 @@ if( is_array( $kommuner ) ) {
 		// Prøv å finne en mønstring for kommunen
 		#echo '<br /> Finn mønstring for kommune '. $kommune_id .' i '. get_site_option('season') .'-sesongen:';
 		try {
-			$monstring = Load::forKommune( get_site_option('season'), $kommune_id );
+			$monstring = Load::forKommune( (Int) get_site_option('season'), new Kommune( $kommune_id ) );
 			$monstringer[ $monstring->getId() ] = $monstring;
 		} catch( Exception $e ) {
 			// Ignorer mønstringer vi ikke finner
