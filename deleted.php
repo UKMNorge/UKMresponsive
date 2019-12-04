@@ -13,7 +13,12 @@ require_once('UKM/Autoloader.php');
 $template = '404/deleted';
 
 $links = [];
-switch (get_option('site_type')) {
+
+$site_type = get_option('site_type');
+if( get_option('kommuner') ) {
+    $site_type = 'kommune';   
+}
+switch ($site_type) {
         // Dette var en fylkesside
     case 'fylke':
         $fylke = Fylker::getById(get_option('fylke'));
