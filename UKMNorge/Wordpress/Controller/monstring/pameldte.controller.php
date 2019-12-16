@@ -36,7 +36,7 @@ else {
 	// /pameldte/ - vil altså laste inn oversikten.
 	$WP_TWIG_DATA['monstring'] = new Arrangement(get_option('pl_id'));
 	$WP_TWIG_DATA['fylker'] = Fylker::getAllInkludertGjester();
-	$WP_TWIG_DATA['kategorier'] = Typer::getAllTyper();
+	$WP_TWIG_DATA['kategorier'] = $WP_TWIG_DATA['monstring']->getInnslagTyper()->getAll();
 	$view_template = 'Monstring/pameldte';
 
 	SEO::setTitle( 'Påmeldte til '. $WP_TWIG_DATA['monstring']->getNavn() );
