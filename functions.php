@@ -62,9 +62,11 @@ function UKMresponsive_gallery( $gallery ) {
 	$ids = explode(',', $gallery['ids']);
 	$WP_TWIG_DATA['bilder'] = [];
 	foreach( $ids as $image_id ) {
-		$image = wp_get_attachment_metadata( $image_id );
-		$image['baseurl'] = wp_upload_dir()['baseurl'] .'/'. dirname( $image['file'] ).'/';
-		$WP_TWIG_DATA['bilder'][] = $image;
+        $image = wp_get_attachment_metadata( $image_id );
+        if( is_array($image) && isset( $image['baseurl'] ) && isset($image['file'] ) ) {
+            $image['baseurl'] = wp_upload_dir()['baseurl'] .'/'. dirname( $image['file'] ).'/';
+            $WP_TWIG_DATA['bilder'][] = $image;
+        }
 	}
 	#echo '<pre>';	var_dump( $WP_TWIG_DATA['bilder'][0] ); echo '</pre>';	
 	return WP_TWIG::render( 'Bilder/galleri', $WP_TWIG_DATA );
