@@ -16,7 +16,7 @@ Installer med composer "ukmnorge/designbundle"
     },
 ``` 
 
-## Config.yml må ha disse linjene:
+### Config.yml må ha disse linjene:
 ```
 globals:
     UKM_HOSTNAME: %UKM_HOSTNAME%
@@ -26,7 +26,7 @@ globals:
     section: "%UKMresponsive.section%"
 ```
 
-## Parameters.yml må ha disse linjene:
+### Parameters.yml må ha disse linjene:
 ```
 UKMresponsive.theme: ''
 UKMresponsive.section:
@@ -39,6 +39,7 @@ SEOdefaultsApp:
     description: Kommer du?
     siteName: UKM RSVP
     section: organisasjon
+    description: Kommer du?
 ```
 
 ### Sitemap auto-update
@@ -80,4 +81,3 @@ OBS: Bruk `$WP_TWIG_DATA` da denne også brukes av loaderen.
 $WP_TWIG_DATA[ key ] = [ value ];
 echo WP_TWIG::render( 'Folder/Template', $WP_TWIG_DATA );
 ```
-    description: Kommer du?
