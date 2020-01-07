@@ -16,7 +16,8 @@
 		{% if kontakt.getBeskrivelse() is not empty %}
 			<p>{{ kontakt.getBeskrivelse()|raw }}</p>
 		{% endif %}
-		<div style="height: 10px; width: 10px;"></div> <!-- Lager mellomrom mellom navn eller tittel og informasjonen under.  -->
+		<div style="height: 10px; width: 10px;"></div>
+		<!-- Lager mellomrom mellom navn eller tittel og informasjonen under.  -->
 		{% if kontakt.getTelefon() is not empty %}
 			<div class="text-og-ikon">
 				<div class="icon icon-mobile kontakt-elment-ikon"></div>
@@ -40,3 +41,4 @@
 			{% endif %}
 		</div>
 	</div>
+</div>
