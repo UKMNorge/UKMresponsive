@@ -1,86 +1,70 @@
 .UKMtoggleContent#UKMtoggleLokal {
-	display: none;
+  display: none;
 }
 
 @media (min-width: 768px) {
-	.UKMtoggleContent#UKMtoggleLokal {
-		display: block;
-		display: flex;
-	}
+  .UKMtoggleContent#UKMtoggleLokal {
+    display: block;
+    display: flex;
+  }
 }
 
-
 .kontaktperson-bilde {
-	padding-bottom: 66%;
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center center;
-} 
+  padding-bottom: 66%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
 @-moz-document url-prefix() {
-	.kontaktperson-bilde {
-		display: table;
-	}
+  .kontaktperson-bilde {
+    display: table;
+  }
 }
 
 .fylkesfestival {
-	background: @color-primary;
-	color: #fff;	
-}
-
-
-.fylkesfestival-banner {
-	background: @color-primary;
-    color: #fff;	
-    margin-left: 0px !important;
-    margin-right: 0px !important;
-}
-
-.fylkesfestival-banner .title {
-	font-size: 1.5rem;
-	font-weight: 100;
+  background: @color-primary;
+  color: #fff;
 }
 
 .fylkesfestival-banner-container {
-	margin-left: -30px !important;
-	margin-right: -30px !important;
+  margin: 0 !important;
 }
 
-.fylkesfestival-banner-menu {
-    background: rgba(184, 157, 204, 0.17);
-	border: none;
-	border-bottom: 2px solid @color-primary;
-	border-top: none;
-    margin-top: -1px !important;
-    padding-top: 0.5em;
-    padding-bottom: 1.5em;
-}
-.fylkesfestival-banner-menu .row {
-    margin-left: 0px !important;
-    margin-right: 0px !important;
+.fylkesfestival-banner {
+  padding-bottom: 0px !important;
 }
 
+.fylkesfestival-banner .title {
+  line-height: 1.1;
+  bottom: 0;
+  margin-top: -20px;
+}
+
+.fylkesfestival-banner .innformasjon {
+  margin-left: 0px !important;
+}
+
+.fylkesfestival-banner .knapper .menu-item {
+  padding: 0px !important;
+}
 
 @media (min-width: 768px) {
-    .fylkesfestival-banner-container {
-        margin-left: 0px !important;
-        margin-right: 0px !important;
-    }
-	.fylkesfestival-banner-menu {
-		border-left: 2px solid @color-primary;
-        border-right: 2px solid @color-primary;
-    }
+  .fylkesfestival-banner-container {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+  }
 
-    // Passer på at ting flyter til høyre i md-view
-    #finnKommune.found-few,
-    #finnKommune.found-none {
-        margin-bottom: 10em !important;
-    }
+  // Passer på at ting flyter til høyre i md-view
+  #finnKommune.found-few,
+  #finnKommune.found-none {
+    margin-bottom: 10em !important;
+  }
 }
 
 .fylke-pameldte {
-	margin-top: -1rem;
-	color: @color-primary;
-	font-size: 0.7em;
-	font-weight: 400;
-	float: right;
+  margin-top: -1rem;
+  color: @color-primary;
+  font-size: 0.7em;
+  font-weight: 400;
+  float: right;
 }
