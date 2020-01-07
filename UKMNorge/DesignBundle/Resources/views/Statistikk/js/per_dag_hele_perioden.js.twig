@@ -2,7 +2,7 @@ google.charts.setOnLoadCallback(pameldte_per_dag_hele_perioden);
 
 function pameldte_per_dag_hele_perioden() {
 	var data = google.visualization.arrayToDataTable([
-		{% spaceless %}
+		
 		['Sesong', {% for ar in stat_ar %}'{{ ar }}'{{ loop.last ? '' : ','}}{% endfor %}],
 		{% for mnd, dager in stat_mnd %}
 			{% for dag in 1..dager %}
@@ -10,7 +10,6 @@ function pameldte_per_dag_hele_perioden() {
 ' : ''}}{% endfor %}{{ not loop.last ? ', ' : ''}}
 		{% endfor %}
 	]);
-	{% endspaceless %}
 	
 	var options = {
 		chartArea: {width: '100%'},
