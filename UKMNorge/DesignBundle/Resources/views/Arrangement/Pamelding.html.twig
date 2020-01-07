@@ -1,6 +1,6 @@
 <h2>Påmeldingen er åpen</h2>
 <div class="mt-0 mb-1">
-    {% if arrangement.getFrist1() == arrangement.getFrist2() or not arrangement_tillater_tittellose %}
+    {% if arrangement.getFrist1() == arrangement.getFrist2() or not arrangement_tillater_tittellose or arrangement.erArrangement() %}
         Fristen går ut
         {{ arrangement.getFrist1()|dato('l j. F') }}
         kl.
