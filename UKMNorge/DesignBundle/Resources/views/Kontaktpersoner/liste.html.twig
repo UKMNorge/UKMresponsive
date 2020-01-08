@@ -12,13 +12,11 @@
 		</div>
 		<div class="col-12 col-md-10 col-lg-8 ml-auto mr-auto">
 			<div class="row">
-				<div class="row">
-					{% for kontakt in kontakter %}
-						<div class="col-12 col-sm-6 col-md-4 my-3">
-							{% embed "UKMDesignBundle:Kontaktpersoner:grid.html.twig"|UKMpath %}{% endembed %}
-						</div>
-					{% endfor %}
-				</div>
+				{% for kontakt in kontakter %}
+					<div class="col-12 col-sm-6 col-md-4 my-3">
+						{% embed "UKMDesignBundle:Kontaktpersoner:grid.html.twig"|UKMpath %}{% endembed %}
+					</div>
+				{% endfor %}
 			</div>
 		</div>
 	</div>

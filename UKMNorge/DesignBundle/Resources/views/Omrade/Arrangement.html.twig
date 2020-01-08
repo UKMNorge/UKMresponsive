@@ -1,34 +1,53 @@
 <div class="fylkesfestival-banner-container mb-4">
-    <div class="row align-items-center fylkesfestival-banner py-3 px-3">
-        <div class="col-7 title">
-            {{ arrangement.getNavn() }}
-        </div>
-        <div class="col-5 date right small">
-            {% if arrangement.getStart()|dato('m') == arrangement.getStop()|dato('m') %}
-                {% if arrangement.getStart()|dato('j') == arrangement.getStop()|dato('j') %}
-                    {{ arrangement.getStop()|dato('j. F') }}
-                {% else %}
-                    {{ arrangement.getStart()|dato('j') }}
-                    -
-                    {{ arrangement.getStop()|dato('j. F') }}
-                {% endif %}
-            {% else %}
-                {{ arrangement.getStart()|dato('j.M') }}
-                -
-                {{ arrangement.getStop()|dato('j.M') }}
-            {% endif %}
-            <br/>
-            {% if arrangement.harKart() and arrangement.getKart().getName() is not empty %}
-                {{ arrangement.getKart().getName() }}
-            {% else %}
-                {{ arrangement.getSted() }}
-            {% endif %}
-        </div>
-    </div>
+	<div class="row fylkesfestival-banner py-3 px-3">
+		<div class="col-12 title">
+			<h2>{{ arrangement.getNavn() }}</h2>
+		</div>
+		<div class="row innformasjon">
+			<div
+				class="sted col-12">
+				{# HAR KART #}
+				{% if arrangement.harKart() and arrangement.getKart().getName() is not empty %}
+					{{ arrangement.getKart().getName()|trim }}{{ arrangement.getKart().getName() is not empty ? ', ' }}
+					{# ^LEGGER TIL KOMMA ETTER NAVNET PÅ ARRANMENETET #}
+					{# HAR IKKE KART (SKRIV STEDSNAVN) #}
+				{% else %}
+					{{ arrangement.getSted()|trim  }}{{ arrangement.getSted() is not empty ? ', ' }}
+					{# ^LEGGER TIL KOMMA ETTER NAVNET PÅ ARRANMENETET #}
+					
+				{% endif %}
 
-    <div class="row-flex fylkesfestival-banner-menu-container">
-        <div class="mt-4 fylkesfestival-banner-menu">
-            {% embed "UKMDesignBundle:Arrangement:Meny.html.twig"|UKMpath %}{% endembed %}
-        </div>
-    </div>
+				{# SAMME MÅNED #}
+				{% if arrangement.getStart()|dato('m') == arrangement.getStop()|dato('m') %}
+					{% if arrangement.getStart()|dato('j') == arrangement.getStop()|dato('j') %}
+						{{ arrangement.getStop()|dato('j. F') }}
+					{% else %}
+						{{ arrangement.getStart()|dato('j') }}
+						-
+						{{ arrangement.getStop()|dato('j. F') }}
+					{% endif %}
+					{# IKKE SAMME MÅNED #}
+				{% else %}
+					{{ arrangement.getStart()|dato('j.M') }}
+					-
+					{{ arrangement.getStop()|dato('j.M') }}
+				{% endif %}
+			</div>
+		</div>
+		<div class="row knapper rigth col-12">
+			<div class="col menu-item">
+				<a href="{{ arrangement.getLink() }}kontaktpersoner/">
+					<div class="icon icon-mobile"></div>
+					<div class="text">Kontakt</div>
+				</a>
+			</div>
+			<div class="col menu-item ">
+				<a href="{{ arrangement.getLink() }}">
+					<div class="icon icon-earth-fill"></div>
+					<div class="text">Mer info</div>
+				</a>
+
+			</div>
+		</div>
+	</div>
 </div>
