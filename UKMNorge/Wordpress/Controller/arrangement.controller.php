@@ -58,3 +58,5 @@ if( Blog::harSide($blog_id,'info')) {
 } else {
     $WP_TWIG_DATA['har_infoside'] = false;
 }
+
+$WP_TWIG_DATA['HEADER']->hideSection = true;
