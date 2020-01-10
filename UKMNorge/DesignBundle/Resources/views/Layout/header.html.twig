@@ -29,7 +29,7 @@
 				{% endif %}
 			</div>
 			
-			{% if section is defined and HEADER.background.url is not defined%}
+			{% if section is defined and HEADER.background.url is not defined and HEADER.hideSection is not defined %}
 				<div class="sectionTitle center">
 					<a href="{{ section.url }}">{{ section.title }}</a>
 				</div>
