@@ -10,15 +10,16 @@
                 </div>
             </div>
         {% endif %}
-        <div class="row mt-2">
+        <div class="row mt-2 mb-3">
             <div class="col-12 col-sm-12">
                 <h3>Velg hvilket arrangement du er interessert i</h3>
             </div>
             {% for arrangement in omrade.getArrangementer( sesong ).getAll()|filter(arrangement => arrangement.erRegistrert() and arrangement.erSynlig()) %}
-                <div class="col-12 col-sm-6 col-lg-4">
+                <div class="col-12 col-sm-6 col-lg-4 mt-4">
                     {% include "UKMDesignBundle:Omrade:Arrangement.html.twig"|UKMpath with{visNettside:true} %}
                 </div>
             {% endfor %}
+            <div class="clearfix"></div>
         </div>
     </div>
     {% set singleMode = true %}
