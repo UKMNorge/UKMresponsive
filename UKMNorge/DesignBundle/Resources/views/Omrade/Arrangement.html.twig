@@ -1,11 +1,11 @@
 <div class="fylkesfestival-banner-container mb-4">
 	<div class="row fylkesfestival-banner py-3 px-3">
-		<div class="col-12 title">
+		<div class="col-12 mb-3">
 			<a href="{{ arrangement.getLink() }}" class="btn btn-block btn-outline-primary mt-4">
-				<h2 class="mt-0">
+				<h3 class="mt-0">
 					{{ arrangement.getNavn() }}
 
-				</h2>
+				</h3>
 				{# HAR KART #}
 				{% if arrangement.harKart() and arrangement.getKart().getName() is not empty %}
 					{{ arrangement.getKart().getName()|trim }}{{ arrangement.getKart().getName() is not empty ? ', ' }}
