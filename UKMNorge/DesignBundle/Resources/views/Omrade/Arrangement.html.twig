@@ -1,15 +1,11 @@
 <div class="fylkesfestival-banner-container mb-4">
 	<div class="row fylkesfestival-banner py-3 px-3">
 		<div class="col-12 title">
-			<h2>
-                <a href="{{ arrangement.getLink() }}">
-                    {{ arrangement.getNavn() }}
-                </a>
-            </h2>
-		</div>
-		<div class="row innformasjon">
-			<div
-				class="sted col-12">
+			<a href="{{ arrangement.getLink() }}" class="btn btn-block btn-outline-primary mt-4">
+				<h2 class="mt-0">
+					{{ arrangement.getNavn() }}
+
+				</h2>
 				{# HAR KART #}
 				{% if arrangement.harKart() and arrangement.getKart().getName() is not empty %}
 					{{ arrangement.getKart().getName()|trim }}{{ arrangement.getKart().getName() is not empty ? ', ' }}
@@ -18,7 +14,7 @@
 				{% else %}
 					{{ arrangement.getSted()|trim  }}{{ arrangement.getSted() is not empty ? ', ' }}
 					{# ^LEGGER TIL KOMMA ETTER NAVNET PÅ ARRANMENETET #}
-					
+
 				{% endif %}
 
 				{# SAMME MÅNED #}
@@ -36,22 +32,7 @@
 					-
 					{{ arrangement.getStop()|dato('j.M') }}
 				{% endif %}
-			</div>
-		</div>
-		<div class="row knapper rigth col-12">
-			<div class="col menu-item">
-				<a href="{{ arrangement.getLink() }}kontaktpersoner/">
-					<div class="icon icon-mobile"></div>
-					<div class="text">Kontakt</div>
-				</a>
-			</div>
-			<div class="col menu-item ">
-				<a href="{{ arrangement.getLink() }}">
-					<div class="icon icon-earth-fill"></div>
-					<div class="text">Mer info</div>
-				</a>
-
-			</div>
+			</a>
 		</div>
 	</div>
 </div>
