@@ -1,10 +1,10 @@
 {# Selve innslagets info-side. Embeddes i /pameldte/ når noen trykker på et innslag, vises i standalone-mode når noen åpner /pameldte/id/ #}
 {% extends "Layout/_"~ (singleMode is defined and singleMode ? 'singleMode' : 'base' ) ~".html.twig"|UKMpath %}
 
-{% set col_right = 'col-12 ' ~ (innslag.getFilmer()|length > 0 or innslag.getBilder().getAntall() > 0 ? 'float-right' : 'col-md-6 col-xl-4') ~' mt-3' %}
+{% set col_right = 'col-12 ' ~ (innslag.getFilmer().getAntall() > 0 or innslag.getBilder().getAntall() > 0 ? 'float-right' : 'col-md-6 col-xl-4') ~' mt-3' %}
 
 
-{#% set col_left = innslag.getFilmer()|length > 0 or innslag.getBilder().getAntall() > 0 ? 'col-md-7 col-xl-8 float-left'%#}
+{#% set col_left = innslag.getFilmer().getAntall() > 0 or innslag.getBilder().getAntall() > 0 ? 'col-md-7 col-xl-8 float-left'%#}
 
 {% block content %}
 	<div id="innslag">
@@ -60,7 +60,7 @@
 
 			{# COL RIGHT / FULL PAGE IF NO IMAGE AND VIDEO #}
 			<div class="row-fluid bs-margin-fix">
-				<div class="col-12 {{ innslag.getFilmer()|length > 0 or innslag.getBilder().getAntall() > 0 ? 'col-md-5 col-lg-4 float-right' }}">
+				<div class="col-12 {{ innslag.getFilmer().getAntall() > 0 or innslag.getBilder().getAntall() > 0 ? 'col-md-5 col-lg-4 float-right' }}">
 					<div class="row">
 					
 						{# PERSONER #}
@@ -194,22 +194,22 @@
 				</div>
 
 				{# COL LEFT - BILDER OG STUFF #}
-				{% if innslag.getFilmer()|length > 0 or innslag.getBilder().getAntall() > 0 %}
+				{% if innslag.getFilmer().getAntall() > 0 or innslag.getBilder().getAntall() > 0 %}
 					<div class="col-12 col-md-7 col-lg-8 float-left">
 						<div class="row">
 						
 							{# I UKM-TV #}
-							{% if innslag.getFilmer()|length > 0 %}
+							{% if innslag.getFilmer().getAntall() > 0 %}
 								<div class="{{ col_right }}">
 									<h4 class="linje">I UKM-TV</h4>
-									{% for film in innslag.getFilmer() %}
+									{% for film in innslag.getFilmer().getAll() %}
 										<div class="row">
 											<div class="col-12">
 												{{ film.getTitle() }}
 											</div>
 											<div class="col-12">
 												<div class="iframe-container iframe-container-16x9">
-													{{ film.embedCodeVH()|raw }}
+													{{ film.getEmbedHtml()|raw }}
 												</div>
 											</div>
 										</div>
