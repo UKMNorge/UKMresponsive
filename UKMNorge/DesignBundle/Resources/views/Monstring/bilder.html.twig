@@ -10,11 +10,11 @@
 					<div class="images-grid">
 						{% for innslag in forestilling.getInnslag().getAll() %}
 							{% for bilde in innslag.getBilder().getAll()|filter(bilde => bilde.getPlid() == monstring.getId()) %}
-								{% spaceless %}
+								{% apply spaceless %}
 										<a href="{{ bilde.getSize('large').getUrl() }}" class="swipebox image-wrapper" data-width="{{ bilde.getSize('lite','medium').getWidth() }}" data-height="{{ bilde.getSize('lite','medium').getHeight() }}" title="{{ innslag.getNavn() }} av {{ bilde.getAuthor().getNiceName() }}">
 											<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-src="{{ bilde.getSize('lite', 'medium').getUrl() }}" alt="" class="image-thumb lazyLoad" />
 										</a>
-								{% endspaceless %}
+								{% endapply %}
 							{% endfor %}
 						{% endfor %}
 					</div>
