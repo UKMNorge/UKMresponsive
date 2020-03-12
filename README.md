@@ -1,3 +1,13 @@
+
+ARKIVERT!
+=============
+For oppdatert utgave, se:
+- [UKMDesignWordpress](https://github.com/UKMNorge/UKMDesignWordpress)
+- [UKMDesignSymfony2](https://github.com/UKMNorge/UKMDesignSymfony2)
+- [UKMDesignSymfony5](https://github.com/UKMNorge/UKMDesignSymfony5)
+- [UKMDesignVanilla](https://github.com/UKMNorge/UKMDesignVanilla)
+
+
 UKMresponsive
 =============
 Design for UKM Norges nettsteder. Kjører både på wordpress og symfony out-of-the-box
